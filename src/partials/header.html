@@ -1,0 +1,344 @@
+
+            <!-- Google Tag Manager (noscript) -->
+        
+        <!-- End Google Tag Manager (noscript) -->
+
+        <!-- Paradome (noscript) -->
+        
+        <!-- End Paradome (noscript) -->
+    
+        <div id="app">
+        <div class="relative top-header-wrapper bg-green max-lg:overflow-x-hidden">
+    <div class="top-header">
+        <div class="flex gap-x-5 items-center">
+            <div class="hidden relative gap-x-6 language-switcher lg:flex" x-data="{ open: false }" @click.away="open = false">
+    <button type="button" class="inline-flex gap-x-2 items-center lg:gap-x-3" aria-expanded="false" @click="open = ! open">
+        <span class="selected-lang ts-flag-en"></span>
+        <span class="uppercase selected-lang-text">en</span>
+        <span class="selected-lang-arrow-icon i-ic-outline-keyboard-arrow-down" x-show="!open"></span>
+        <span class="selected-lang-arrow-icon i-ic-outline-keyboard-arrow-up" x-show="open" style="display: none;"></span>
+    </button>
+
+    <div class="hidden absolute left-0 mt-4 w-screen max-w-min lg:mt-8 z-100 language-switcher-wrapper"
+        :class="{ 'is-active': open }"
+        x-show="open" x-transition x-cloak>
+        <div class="px-3.5 py-3 w-44 text-sm leading-6 bg-white rounded-sm shadow-lg shrink text-anthracite">
+                                        
+                <a href="https://yourtanzaniatrip.com" class="flex items-center px-1 py-1.5 leading-[normal] hover:underline">
+                    <span class="mr-2 text-base text-white ts-flag ts-flag-nl"></span>
+                    Dutch                </a>
+                            
+                </div>
+    </div>
+</div>            <div class="hidden relative gap-x-6 currency-switcher lg:flex lg:mr-auto" nitro-exclude
+    x-data="{
+        open: false,
+        currentCurrency: 'usd',
+        setCurrency(currency) {
+            const url = new URL(window.location);
+            url.searchParams.set('currency', currency);
+            window.location.href = url.toString();
+        }
+     }"
+    @click.away="open = false">
+    <button
+        type="button"
+        class="inline-flex gap-x-2 items-center lg:gap-x-3"
+        aria-expanded="false"
+        @click="open = ! open"
+        data-tooltip
+        data-tooltip-title="Currency selector has been added"
+        data-tooltip-content="Now you can switch between different currencies on the website."
+        data-tooltip-close-btn="Got it">
+        <span class="currency-symbol ts-currency-usd">$</span>
+        <span class="selected-currency-text">U.S. Dollar</span>
+        <span class="selected-currency-arrow-icon i-ic-outline-keyboard-arrow-down" x-show="!open"></span>
+        <span class="selected-currency-arrow-icon i-ic-outline-keyboard-arrow-up" x-show="open" style="display: none;"></span>
+    </button>
+
+    <div class="hidden absolute left-0 mt-4 w-screen max-w-min lg:mt-8 z-100 currency-switcher-wrapper"
+        :class="{ 'is-active': open }"
+        x-show="open" x-transition x-cloak>
+        <ul class="w-44 shrink rounded-sm bg-white !my-0 !py-3 !list-none text-sm leading-6 shadow-lg !px-3.5 text-anthracite">
+            
+                            <li class="!my-0 !pl-0">
+                    <button type="button"
+                        class="flex items-center gap-x-2 w-full px-0 py-1.5 leading-[normal] group"
+                        @click="setCurrency('usd')">
+                        <span class="currency-symbol">$</span>
+                        <span class="text-sm text-left group-hover:underline">U.S. Dollar</span>
+                    </button>
+                </li>
+                            <li class="!my-0 !pl-0">
+                    <button type="button"
+                        class="flex items-center gap-x-2 w-full px-0 py-1.5 leading-[normal] group"
+                        @click="setCurrency('eur')">
+                        <span class="currency-symbol">€</span>
+                        <span class="text-sm text-left group-hover:underline">Euro</span>
+                    </button>
+                </li>
+                            <li class="!my-0 !pl-0">
+                    <button type="button"
+                        class="flex items-center gap-x-2 w-full px-0 py-1.5 leading-[normal] group"
+                        @click="setCurrency('gbp')">
+                        <span class="currency-symbol">£</span>
+                        <span class="text-sm text-left group-hover:underline">British Pound</span>
+                    </button>
+                </li>
+                    </ul>
+    </div>
+</div>
+        </div>
+
+        <div class="flex relative gap-4 items-center md:gap-6 lg:mx-auto">
+  <a href="/our-partner/" class="flex items-center gap-3 text-white partner-line">
+    <span class="i-cib-tripadvisor text-2xl" aria-hidden="true"></span>
+    <span class="stars-ratings flex" aria-hidden="true"><svg class="text-yellow" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.199 1.191-5.914 5.88 1.398 8.174L12 18.897l-7.351 3.86 1.398-8.174-5.914-5.88 8.199-1.191z"/></svg><svg class="text-yellow" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.199 1.191-5.914 5.88 1.398 8.174L12 18.897l-7.351 3.86 1.398-8.174-5.914-5.88 8.199-1.191z"/></svg><svg class="text-yellow" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.199 1.191-5.914 5.88 1.398 8.174L12 18.897l-7.351 3.86 1.398-8.174-5.914-5.88 8.199-1.191z"/></svg><svg class="text-yellow" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.199 1.191-5.914 5.88 1.398 8.174L12 18.897l-7.351 3.86 1.398-8.174-5.914-5.88 8.199-1.191z"/></svg><svg class="text-yellow" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.199 1.191-5.914 5.88 1.398 8.174L12 18.897l-7.351 3.86 1.398-8.174-5.914-5.88 8.199-1.191z"/></svg></span>
+    <span class="hidden md:inline"><strong>5.0/5</strong> · 208 reviews of our local partner Kilimanjaro Nature Tours</span>
+    <span class="sr-only">Tripadvisor score checked [FILL: date the score was last checked, e.g. 23 October 2026]</span>
+  </a>
+</div>
+
+
+        <ul id="menu-header-secondary" class="js-alpine-menu secondary-menu hidden text-xs lg:flex lg:items-center lg:gap-x-6"><li id="menu-item-6248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children hide"><a href="/practical-information/"><span class="menu-title">Practical info</span><span class="menu-border"></span><span class="menu-toggle menu-toggle--icon-down" x-show="!open"></span><span class="menu-toggle menu-toggle--icon-up" x-show="open" style="display: none;"></span></a>
+<ul class="sub-menu" style="display:none">
+	<li id="menu-item-21518" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/contact/">Contact</a></li>
+	<li id="menu-item-212" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about-tanzania-specialist/">About Your Tanzania Trip</a></li>
+ <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/our-partner/">Our local partner</a></li>
+	<li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about-tanzania-specialist/our-tanzania-travel-experts/">Our Experts</a></li>
+	<li id="menu-item-21855" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/faqs/tanzania/">Frequently Asked Questions</a></li>
+	<li id="menu-item-6255" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/practical-information/when-to-visit-tanzania/">Best Time to Visit Tanzania</a></li>
+	<li id="menu-item-6257" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/practical-information/tanzania-weather/">Tanzania weather</a></li>
+	<li id="menu-item-19233" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/practical-information/travel-insurance/">Travel Insurance</a></li>
+	<li id="menu-item-6259" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/practical-information/tanzania-travel-advice/">Tanzania Travel Advice</a></li>
+	<li id="menu-item-15491" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/practical-information/tanzania-yellow-fever-requirements/">Tanzania Yellow Fever Requirements</a></li>
+	<li id="menu-item-18259" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/practical-information/visa-tanzania/">Visa Tanzania</a></li>
+	<li id="menu-item-6254" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/practical-information/flying-doctors/">Flying Doctors Services</a></li>
+	<li id="menu-item-6253" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/practical-information/responsible-travel/">Sustainable Travel</a></li>
+	<li id="menu-item-6252" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/practical-information/hakuna-matata-academy/">The Hakuna Matata Academy</a></li>
+	<li id="menu-item-18386" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/practical-information/easy-payments/">Easy payments</a></li>
+</ul>
+</li>
+<li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about-tanzania-specialist/">About Us</a></li>
+</ul>
+                
+            </div>
+</div>
+
+<div class="top-0 header-wrapper bg-green  header-wrapper-sticky">
+    <div class="pt-1 -mt-1 bg-sand ts-mask-top"></div>
+
+    <header class="js-header bg-sand">
+        <nav id="primary-navigation" aria-label="Global">
+            <div class="header-logo">
+                <a href="/" class="header-logo-link">
+                    <span class="sr-only">Your Tanzania Trip</span>
+                                                                <img src="/brand/logo-primary.png" class="brand-logo no-lazyload" width="1888" height="732" alt="Your Tanzania Trip" fetchpriority="high" loading="eager" decoding="async">
+                                    </a>
+            </div>
+
+            <ul id="menu-header-primary" class="js-alpine-menu primary-menu"><li id="menu-item-15902" class="mega-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children hide"><a title="All trips" href="/tanzania-travel/"><span class="menu-title">Itineraries</span><span class="menu-border"></span><span class="menu-toggle menu-toggle--icon-down" x-show="!open"></span><span class="menu-toggle menu-toggle--icon-up" x-show="open" style="display: none;"></span></a>
+<ul class="sub-menu" style="display:none">
+	<li id="menu-item-14174" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#"><span class="menu-title">[SUBMENU-HOLDER]</span><span class="menu-border"></span><span class="menu-toggle menu-toggle--icon-down" x-show="!open"></span><span class="menu-toggle menu-toggle--icon-up" x-show="open" style="display: none;"></span></a>
+	<ul class="sub-menu" style="display:none">
+		<li id="menu-item-459" class="menu-landing-item menu-item menu-item-type-post_type menu-item-object-page"><a href="/tanzania-travel/">View all sample itineraries</a></li>
+		<li id="menu-item-14175" class="menu-collage menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#"><span class="menu-title">[SUBMENU-HOLDER]</span><span class="menu-border"></span><span class="menu-toggle menu-toggle--icon-down" x-show="!open"></span><span class="menu-toggle menu-toggle--icon-up" x-show="open" style="display: none;"></span></a>
+		<ul class="sub-menu" style="display:none">
+			<li id="menu-item-21161" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/tanzania-safari/"><img src="/wp-content/uploads/2023/07/safari_home-1.jpg"  alt="safari_home"  width="920" height="580" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/safari_home-1.jpg 920w, /wp-content/uploads/2023/07/safari_home-1-300x189.jpg 300w, /wp-content/uploads/2023/07/safari_home-1-768x484.jpg 768w, /wp-content/uploads/2023/07/safari_home-1-60x38.jpg 60w" sizes="auto"/>Safaris</a></li>
+			<li id="menu-item-14177" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/tanzania-travel/?_types=safari%2Czanzibar"><img src="/wp-content/uploads/2023/07/safaritanzania_home.jpg"  alt="safari+tanzania_home"  width="920" height="580" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/safaritanzania_home.jpg 920w, /wp-content/uploads/2023/07/safaritanzania_home-300x189.jpg 300w, /wp-content/uploads/2023/07/safaritanzania_home-768x484.jpg 768w, /wp-content/uploads/2023/07/safaritanzania_home-60x38.jpg 60w" sizes="auto"/>Safari + Zanzibar</a></li>
+			<li id="menu-item-21162" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/zanzibar-holiday/"><img src="/wp-content/uploads/2023/07/zanzibar_home.jpg"  alt="zanzibar_home"  width="920" height="580" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/zanzibar_home.jpg 920w, /wp-content/uploads/2023/07/zanzibar_home-300x189.jpg 300w, /wp-content/uploads/2023/07/zanzibar_home-768x484.jpg 768w, /wp-content/uploads/2023/07/zanzibar_home-60x38.jpg 60w" sizes="auto"/>Zanzibar</a></li>
+			<li id="menu-item-21163" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/climbing-kilimanjaro/"><img src="/wp-content/uploads/2026/04/Summit-1900x1000-1-1024x539.avif"  alt="Summit-1900x1000-1"  width="1024" height="539" loading="lazy" fetchpriority="low"/>Kilimanjaro</a></li>
+			<li id="menu-item-18265" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/tanzania-honeymoon/"><img src="/wp-content/uploads/2024/04/Couple-Honeymoon-e1753350185731-1024x592.jpg"  alt="Couple Honeymoon"  width="1024" height="592" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2024/04/Couple-Honeymoon-e1753350185731-1024x592.jpg 1024w, /wp-content/uploads/2024/04/Couple-Honeymoon-e1753350185731-300x173.jpg 300w, /wp-content/uploads/2024/04/Couple-Honeymoon-e1753350185731-768x444.jpg 768w, /wp-content/uploads/2024/04/Couple-Honeymoon-e1753350185731-1536x888.jpg 1536w, /wp-content/uploads/2024/04/Couple-Honeymoon-e1753350185731-2048x1184.jpg 2048w, /wp-content/uploads/2024/04/Couple-Honeymoon-e1753350185731-60x35.jpg 60w" sizes="auto"/>Honeymoon trips</a></li>
+			<li id="menu-item-18266" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/family-tours/"><img src="/wp-content/uploads/2024/04/Family-holiday-1024x683.jpg"  alt="Family holiday"  width="1024" height="683" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2024/04/Family-holiday-1024x683.jpg 1024w, /wp-content/uploads/2024/04/Family-holiday-300x200.jpg 300w, /wp-content/uploads/2024/04/Family-holiday-768x512.jpg 768w, /wp-content/uploads/2024/04/Family-holiday-1536x1024.jpg 1536w, /wp-content/uploads/2024/04/Family-holiday-2048x1366.jpg 2048w, /wp-content/uploads/2024/04/Family-holiday-60x40.jpg 60w" sizes="auto"/>Family-Friendly Tours</a></li>
+			<li id="menu-item-21164" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/diamond-luxury/"><img src="/wp-content/uploads/2024/01/Jabali-Infinity-Pool_smaller-1024x585.jpg"  alt="Jabali-Infinity-Pool_smaller"  width="1024" height="585" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2024/01/Jabali-Infinity-Pool_smaller-1024x585.jpg 1024w, /wp-content/uploads/2024/01/Jabali-Infinity-Pool_smaller-300x171.jpg 300w, /wp-content/uploads/2024/01/Jabali-Infinity-Pool_smaller-768x439.jpg 768w, /wp-content/uploads/2024/01/Jabali-Infinity-Pool_smaller-1536x878.jpg 1536w, /wp-content/uploads/2024/01/Jabali-Infinity-Pool_smaller-60x34.jpg 60w, /wp-content/uploads/2024/01/Jabali-Infinity-Pool_smaller.jpg 1680w" sizes="auto"/>Diamond Luxury</a></li>
+			<li id="menu-item-21629" class="menu-item menu-item-type-post_type menu-item-object-trips"><a href="/itineraries/5-day-tanzania-safari-small-group-trip/"><img src="/wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg"  alt="IM_TZ_SER_Guide and guests looking at tree"  width="1024" height="683" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg 1024w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-300x200.jpg 300w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-768x512.jpg 768w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1536x1024.jpg 1536w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-2048x1365.jpg 2048w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-60x40.jpg 60w" sizes="auto"/>Small group trip</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li id="menu-item-14173" class="menu-cta menu-item menu-item-type-post_type menu-item-object-page"><div class="menu-cta-title">START THE ADVENTURE!</div><img src="/wp-content/uploads/2023/08/guide_tanzania_specialist-1024x683.jpg"  alt="guide_tanzania_specialist"  width="1024" height="683" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/08/guide_tanzania_specialist-1024x683.jpg 1024w, /wp-content/uploads/2023/08/guide_tanzania_specialist-300x200.jpg 300w, /wp-content/uploads/2023/08/guide_tanzania_specialist-768x512.jpg 768w, /wp-content/uploads/2023/08/guide_tanzania_specialist-1536x1024.jpg 1536w, /wp-content/uploads/2023/08/guide_tanzania_specialist-60x40.jpg 60w, /wp-content/uploads/2023/08/guide_tanzania_specialist.jpg 1920w" sizes="auto"/><div class="menu-cta-description">Tell us your preferences and get inspired by our unique travel ideas. All sample itineraries are 100% customisable. Contact us now and start your dream adventure!</div><a title="START THE ADVENTURE!" href="/travel-proposal/">Request Travel Proposal</a><div class="menu-cta-info">No strings attached. We’ll design your trip - no cost, no commitment.</div></li>
+</ul>
+</li>
+<li id="menu-item-6269" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/tanzania-safari/">Safaris</a></li>
+<li id="menu-item-6270" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/climbing-kilimanjaro/">Kilimanjaro</a></li>
+<li id="menu-item-6271" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/zanzibar-holiday/">Zanzibar</a></li>
+<li id="menu-item-15951" class="mega-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children hide"><a href="/discover-tanzania/"><span class="menu-title">Discover Tanzania</span><span class="menu-border"></span><span class="menu-toggle menu-toggle--icon-down" x-show="!open"></span><span class="menu-toggle menu-toggle--icon-up" x-show="open" style="display: none;"></span></a>
+<ul class="sub-menu" style="display:none">
+	<li id="menu-item-14189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#"><span class="menu-title">[SUBMENU-HOLDER]</span><span class="menu-border"></span><span class="menu-toggle menu-toggle--icon-down" x-show="!open"></span><span class="menu-toggle menu-toggle--icon-up" x-show="open" style="display: none;"></span></a>
+	<ul class="sub-menu" style="display:none">
+		<li id="menu-item-6391" class="menu-landing-item menu-item menu-item-type-post_type menu-item-object-page"><a href="/discover-tanzania/">Discover Tanzania</a></li>
+		<li id="menu-item-14190" class="menu-collage menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#"><span class="menu-title">[SUBMENU-HOLDER]</span><span class="menu-border"></span><span class="menu-toggle menu-toggle--icon-down" x-show="!open"></span><span class="menu-toggle menu-toggle--icon-up" x-show="open" style="display: none;"></span></a>
+		<ul class="sub-menu" style="display:none">
+			<li id="menu-item-6386" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/national-parks-tanzania/"><img src="/wp-content/uploads/2023/05/photo-1528275646751-ff237d1cd935-1024x683.jpeg"  alt="photo-1528275646751-ff237d1cd935"  width="1024" height="683" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/05/photo-1528275646751-ff237d1cd935-1024x683.jpeg 1024w, /wp-content/uploads/2023/05/photo-1528275646751-ff237d1cd935-300x200.jpeg 300w, /wp-content/uploads/2023/05/photo-1528275646751-ff237d1cd935-768x512.jpeg 768w, /wp-content/uploads/2023/05/photo-1528275646751-ff237d1cd935-60x40.jpeg 60w, /wp-content/uploads/2023/05/photo-1528275646751-ff237d1cd935.jpeg 1080w" sizes="auto"/>National parks</a></li>
+			<li id="menu-item-6385" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/islands/"><img src="/wp-content/uploads/2023/07/fanjove2.jpg"  alt="fanjove2"  width="540" height="357" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/fanjove2.jpg 540w, /wp-content/uploads/2023/07/fanjove2-300x198.jpg 300w, /wp-content/uploads/2023/07/fanjove2-60x40.jpg 60w" sizes="auto"/>Islands</a></li>
+			<li id="menu-item-458" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/accommodations/"><img src="/wp-content/uploads/2023/08/Accommodation-example-Tanzania-Specialist.jpg"  alt="Accommodation example Your Tanzania Trip"  width="834" height="555" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/08/Accommodation-example-Tanzania-Specialist.jpg 834w, /wp-content/uploads/2023/08/Accommodation-example-Tanzania-Specialist-300x200.jpg 300w, /wp-content/uploads/2023/08/Accommodation-example-Tanzania-Specialist-768x511.jpg 768w, /wp-content/uploads/2023/08/Accommodation-example-Tanzania-Specialist-60x40.jpg 60w" sizes="auto"/>Accommodations</a></li>
+			<li id="menu-item-6301" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/activities/"><img src="/wp-content/uploads/2023/07/rubondo-island4.jpg"  alt="rubondo-island4"  width="712" height="475" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/rubondo-island4.jpg 712w, /wp-content/uploads/2023/07/rubondo-island4-300x200.jpg 300w, /wp-content/uploads/2023/07/rubondo-island4-60x40.jpg 60w" sizes="auto"/>Activities</a></li>
+			<li id="menu-item-18035" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/great-wildebeest-migration/"><img src="/wp-content/uploads/2023/10/Tanzania_NgorongoroCrater-_andBeyondWildlifeMigrationWildebeest-1024x681.jpg"  alt="activity"  width="1024" height="681" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/10/Tanzania_NgorongoroCrater-_andBeyondWildlifeMigrationWildebeest-1024x681.jpg 1024w, /wp-content/uploads/2023/10/Tanzania_NgorongoroCrater-_andBeyondWildlifeMigrationWildebeest-300x200.jpg 300w, /wp-content/uploads/2023/10/Tanzania_NgorongoroCrater-_andBeyondWildlifeMigrationWildebeest-768x511.jpg 768w, /wp-content/uploads/2023/10/Tanzania_NgorongoroCrater-_andBeyondWildlifeMigrationWildebeest-60x40.jpg 60w, /wp-content/uploads/2023/10/Tanzania_NgorongoroCrater-_andBeyondWildlifeMigrationWildebeest.jpg 1203w" sizes="auto"/>Great Migration</a></li>
+			<li id="menu-item-14195" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/blog/"><img src="/wp-content/uploads/2023/07/Serengetei-NP-2.jpeg"  alt="activity"  width="800" height="423" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/Serengetei-NP-2.jpeg 800w, /wp-content/uploads/2023/07/Serengetei-NP-2-300x159.jpeg 300w, /wp-content/uploads/2023/07/Serengetei-NP-2-768x406.jpeg 768w, /wp-content/uploads/2023/07/Serengetei-NP-2-60x32.jpeg 60w" sizes="auto"/>Blog</a></li>
+			<li id="menu-item-14529" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/tanzania-traveller-reviews/"><img src="/wp-content/uploads/2023/08/tripadvisor_menu.jpeg"  alt="tripadvisor_menu"  width="765" height="634" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/08/tripadvisor_menu.jpeg 765w, /wp-content/uploads/2023/08/tripadvisor_menu-300x249.jpeg 300w, /wp-content/uploads/2023/08/tripadvisor_menu-60x50.jpeg 60w" sizes="auto"/>Traveller Reviews</a></li>
+			<li id="menu-item-14193" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/travel-proposal/"><img src="/wp-content/uploads/2023/08/request_thumbnail.jpeg"  alt="request_thumbnail"  width="472" height="280" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/08/request_thumbnail.jpeg 472w, /wp-content/uploads/2023/08/request_thumbnail-300x178.jpeg 300w, /wp-content/uploads/2023/08/request_thumbnail-60x36.jpeg 60w" sizes="auto"/>Make a Request</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li id="menu-item-14191" class="menu-cta no-a-tag menu-item menu-item-type-custom menu-item-object-custom"><div class="menu-cta-title">Iconic destinations</div><div class="menu-cta-description"></div><ul class="menu-repeater"><li><a href="/serengeti-safari/"><img src="/wp-content/uploads/2023/07/Jonge-leeuw-Serengeti.jpg"  alt="Jonge-leeuw-Serengeti"  width="1000" height="731" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/Jonge-leeuw-Serengeti.jpg 1000w, /wp-content/uploads/2023/07/Jonge-leeuw-Serengeti-300x219.jpg 300w, /wp-content/uploads/2023/07/Jonge-leeuw-Serengeti-768x561.jpg 768w, /wp-content/uploads/2023/07/Jonge-leeuw-Serengeti-60x44.jpg 60w" sizes="auto"/><span class="menu-cta-repeater-text">Serengeti National Park</span></a></li><li><a href="/national-parks/lake-manyara/"><img src="/wp-content/uploads/2023/07/Lake-Manyara-Flamingo-Tanzania-Specialist-1900x1000-1-1024x539.jpg"  alt="Lake-Manyara-Flamingo-Tanzania-Specialist-1900x1000"  width="1024" height="539" loading="lazy" fetchpriority="low"/><span class="menu-cta-repeater-text">Lake Manyara</span></a></li><li><a href="/national-parks/ngorongoro/"><img src="/wp-content/uploads/2023/07/Ngorongoro-Conservation-Area-4--1024x680.jpeg"  alt="activity"  width="1024" height="680" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/Ngorongoro-Conservation-Area-4--1024x680.jpeg 1024w, /wp-content/uploads/2023/07/Ngorongoro-Conservation-Area-4--300x199.jpeg 300w, /wp-content/uploads/2023/07/Ngorongoro-Conservation-Area-4--768x510.jpeg 768w, /wp-content/uploads/2023/07/Ngorongoro-Conservation-Area-4--1536x1020.jpeg 1536w, /wp-content/uploads/2023/07/Ngorongoro-Conservation-Area-4--60x40.jpeg 60w, /wp-content/uploads/2023/07/Ngorongoro-Conservation-Area-4-.jpeg 1542w" sizes="auto"/><span class="menu-cta-repeater-text">Ngorongoro Crater</span></a></li><li><a href="/national-parks/arusha-national-park/"><img src="/wp-content/uploads/2023/06/arusha.jpeg"  alt="arusha"  width="1000" height="667" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/06/arusha.jpeg 1000w, /wp-content/uploads/2023/06/arusha-300x200.jpeg 300w, /wp-content/uploads/2023/06/arusha-768x512.jpeg 768w, /wp-content/uploads/2023/06/arusha-60x40.jpeg 60w" sizes="auto"/><span class="menu-cta-repeater-text">Arusha National Park</span></a></li><li><a href="/national-parks/tarangire/"><img src="/wp-content/uploads/2023/07/Tarangire-NP-1.jpeg"  alt="activity"  width="800" height="534" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/Tarangire-NP-1.jpeg 800w, /wp-content/uploads/2023/07/Tarangire-NP-1-300x200.jpeg 300w, /wp-content/uploads/2023/07/Tarangire-NP-1-768x513.jpeg 768w, /wp-content/uploads/2023/07/Tarangire-NP-1-60x40.jpeg 60w" sizes="auto"/><span class="menu-cta-repeater-text">Tarangire National Park</span></a></li></ul></li>
+</ul>
+</li>
+</ul>
+            <div class="header-buttons">
+                                    <a href="/wishlist/" title="Wishlist" class="relative text-3xl leading-none transition-colors text-red hover:text-green">
+                        <span class="i-ic-baseline-favorite"></span>
+                        <div class="hidden absolute -top-3 -right-3 wishlist-counter-container">
+                            <span class="wishlist-counter">0</span>
+                        </div>
+                    </a>
+                
+                <button aria-label="Open search"
+                        title="Open search (⌘ + K)"
+                        class="text-3xl leading-none transition-colors text-anthracite hover:text-brown"
+                        type="button"
+                        x-data="{ showSearch: false }"
+                        x-on:click="$dispatch('toggle-search')">
+                    <span class="i-ion-search-outline"></span>
+                </button>
+
+                                    <a href="/travel-proposal/"
+                       class="travel-proposal-button">
+                        Make a request                    </a>
+                            </div>
+
+            <!-- hamburger menu -->
+            <div class="hamburger-wrapper xl:hidden">
+                <div class="cover ts-mask-top"></div>
+
+                <div class="mobile-menu-switchers">
+                    <div class="hidden relative gap-x-6 language-switcher lg:flex" x-data="{ open: false }" @click.away="open = false">
+    <button type="button" class="inline-flex gap-x-2 items-center lg:gap-x-3" aria-expanded="false" @click="open = ! open">
+        <span class="selected-lang ts-flag-en"></span>
+        <span class="uppercase selected-lang-text">en</span>
+        <span class="selected-lang-arrow-icon i-ic-outline-keyboard-arrow-down" x-show="!open"></span>
+        <span class="selected-lang-arrow-icon i-ic-outline-keyboard-arrow-up" x-show="open" style="display: none;"></span>
+    </button>
+
+    <div class="hidden absolute left-0 mt-4 w-screen max-w-min lg:mt-8 z-100 language-switcher-wrapper"
+        :class="{ 'is-active': open }"
+        x-show="open" x-transition x-cloak>
+        <div class="px-3.5 py-3 w-44 text-sm leading-6 bg-white rounded-sm shadow-lg shrink text-anthracite">
+                                        
+                <a href="https://yourtanzaniatrip.com" class="flex items-center px-1 py-1.5 leading-[normal] hover:underline">
+                    <span class="mr-2 text-base text-white ts-flag ts-flag-nl"></span>
+                    Dutch                </a>
+                            
+                </div>
+    </div>
+</div>                    <div class="hidden relative gap-x-6 currency-switcher lg:flex lg:mr-auto" nitro-exclude
+    x-data="{
+        open: false,
+        currentCurrency: 'usd',
+        setCurrency(currency) {
+            const url = new URL(window.location);
+            url.searchParams.set('currency', currency);
+            window.location.href = url.toString();
+        }
+     }"
+    @click.away="open = false">
+    <button
+        type="button"
+        class="inline-flex gap-x-2 items-center lg:gap-x-3"
+        aria-expanded="false"
+        @click="open = ! open"
+        data-tooltip
+        data-tooltip-title="Currency selector has been added"
+        data-tooltip-content="Now you can switch between different currencies on the website."
+        data-tooltip-close-btn="Got it">
+        <span class="currency-symbol ts-currency-usd">$</span>
+        <span class="selected-currency-text">U.S. Dollar</span>
+        <span class="selected-currency-arrow-icon i-ic-outline-keyboard-arrow-down" x-show="!open"></span>
+        <span class="selected-currency-arrow-icon i-ic-outline-keyboard-arrow-up" x-show="open" style="display: none;"></span>
+    </button>
+
+    <div class="hidden absolute left-0 mt-4 w-screen max-w-min lg:mt-8 z-100 currency-switcher-wrapper"
+        :class="{ 'is-active': open }"
+        x-show="open" x-transition x-cloak>
+        <ul class="w-44 shrink rounded-sm bg-white !my-0 !py-3 !list-none text-sm leading-6 shadow-lg !px-3.5 text-anthracite">
+            
+                            <li class="!my-0 !pl-0">
+                    <button type="button"
+                        class="flex items-center gap-x-2 w-full px-0 py-1.5 leading-[normal] group"
+                        @click="setCurrency('usd')">
+                        <span class="currency-symbol">$</span>
+                        <span class="text-sm text-left group-hover:underline">U.S. Dollar</span>
+                    </button>
+                </li>
+                            <li class="!my-0 !pl-0">
+                    <button type="button"
+                        class="flex items-center gap-x-2 w-full px-0 py-1.5 leading-[normal] group"
+                        @click="setCurrency('eur')">
+                        <span class="currency-symbol">€</span>
+                        <span class="text-sm text-left group-hover:underline">Euro</span>
+                    </button>
+                </li>
+                            <li class="!my-0 !pl-0">
+                    <button type="button"
+                        class="flex items-center gap-x-2 w-full px-0 py-1.5 leading-[normal] group"
+                        @click="setCurrency('gbp')">
+                        <span class="currency-symbol">£</span>
+                        <span class="text-sm text-left group-hover:underline">British Pound</span>
+                    </button>
+                </li>
+                    </ul>
+    </div>
+</div>
+                </div>
+
+                <button type="button" class="js-hamburger hamburger">
+                    <span class="sr-only">Menu / Close</span>
+                    <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+                </button>
+
+                
+                <nav>
+                    <div class="mobile-menu-scroll">
+                                                    <ul class="mobile-menu"><li id="menu-item-24936" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24936"><a href="/tanzania-travel/" title="no-border">All itineraries</a></li>
+<li id="menu-item-14284" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14284"><a href="/tanzania-safari/">Safaris</a></li>
+<li id="menu-item-24930" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24930"><a href="/tanzania-travel/?_types=safari%2Czanzibar">Safari + Zanzibar</a></li>
+<li id="menu-item-14286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14286"><a href="/zanzibar-holiday/">Zanzibar</a></li>
+<li id="menu-item-14285" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14285"><a href="/climbing-kilimanjaro/">Kilimanjaro</a></li>
+<li id="menu-item-24935" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24935"><button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-submenu-24935">Themes</button><ul class="sub-menu" id="mobile-submenu-24935">	<li id="menu-item-24931" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24931"><a href="/tanzania-honeymoon/">Honeymoon trips</a></li>
+	<li id="menu-item-24932" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24932"><a href="/family-tours/">Family-Friendly Tours</a></li>
+	<li id="menu-item-24933" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24933"><a href="/diamond-luxury/">Diamond Luxury</a></li>
+	<li id="menu-item-24934" class="menu-item menu-item-type-post_type menu-item-object-trips menu-item-24934"><a href="/itineraries/5-day-tanzania-safari-small-group-trip/">Small group trip</a></li>
+</ul>
+</li>
+<li id="menu-item-15368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-15368"><button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-submenu-15368">Discover Tanzania</button><ul class="sub-menu" id="mobile-submenu-15368">	<li id="menu-item-14287" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14287"><a href="/discover-tanzania/">Discover Tanzania</a></li>
+	<li id="menu-item-14288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14288"><a href="/national-parks-tanzania/">National parks</a></li>
+	<li id="menu-item-24938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24938"><a href="/great-wildebeest-migration/">Great Wildebeest Migration</a></li>
+	<li id="menu-item-14289" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14289"><a href="/islands/">Islands</a></li>
+	<li id="menu-item-14291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14291"><a href="/accommodations/">Accommodations</a></li>
+	<li id="menu-item-14290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14290"><a href="/activities/">Activities</a></li>
+</ul>
+</li>
+</ul>
+                        
+                                                    <ul class="mobile-menu mobile-menu--secondary"><li id="menu-item-14294" class="mobile-menu-divider first menu-item menu-item-type-post_type menu-item-object-page menu-item-14294"><a href="/about-tanzania-specialist/">About us</a></li>
+<li class="mobile-menu-divider menu-item menu-item-type-post_type menu-item-object-page"><a href="/our-partner/">Our local partner</a></li>
+<li id="menu-item-14292" class="mobile-menu-divider menu-item menu-item-type-post_type menu-item-object-page menu-item-14292"><a href="/blog/">Blog</a></li>
+<li id="menu-item-24939" class="mobile-menu-divider menu-item menu-item-type-post_type menu-item-object-page menu-item-24939"><a href="/practical-information/">Practical info</a></li>
+<li id="menu-item-21854" class="mobile-menu-divider menu-item menu-item-type-post_type menu-item-object-page menu-item-21854"><a href="/faqs/tanzania/">FAQs</a></li>
+<li id="menu-item-14293" class="mobile-menu-divider menu-item menu-item-type-post_type menu-item-object-page menu-item-14293"><a href="/contact/">Contact</a></li>
+</ul>
+                                            </div>
+
+                                            <ul class="mobile-menu-dock"><li id="menu-item-14296" class="mobile-menu-cta-btn menu-item menu-item-type-post_type menu-item-object-page menu-item-14296"><a href="/travel-proposal/">Travel proposal</a></li>
+</ul>
+                                    </nav>
+            </div>
+            <!-- /hamburger menu -->
+        </nav>
+    </header>
+</div>
+
+<button type="button" class="js-hamburger-sticky hamburger xl:hidden">
+    <span class="sr-only">Menu / Close</span>
+    <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+</button>

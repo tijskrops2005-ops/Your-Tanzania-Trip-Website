@@ -1,0 +1,492 @@
+
+
+
+    <div class="ts-jumbotron relative isolate lg:ts-mask-bottom is-pre-form-visible">
+        <div
+            class="ts-jumbotron-wrapper  "
+            >
+                                                                <img loading="eager"
+                        fetchpriority="high"
+                        src="/wp-content/uploads/2023/08/jeep-5.jpg"
+                        class="no-lazyload ts-jumbotron-image absolute inset-0 -z-10 h-full w-full object-cover ts-object-center"
+                        alt="Islands"
+                        title="Islands" width="1920" height="1080" decoding="async">
+                            
+                            <div class="w-full ts-jumbotron-inner custom-bg-gradient-black">
+                    <div class="flex relative flex-col items-end mx-auto max-w-9xl lg:flex-row">
+                        <div class="relative mx-auto flex w-full flex-col items-end px-4 max-w-7xl container-2xl gap-x-12 md:px-5 lg:flex-row justify-between">
+                            <div class="w-full max-w-none prose-p:text-sm prose-h1:font-black prose-p:leading-6 prose-p:tracking-wider prose-h1:tracking-wider prose-h1:uppercase prose-h1:text-white prose-p:text-white ts-jumbotron-content prose prose-h1:md:text-4xl prose-h1:lg:-mb-2 prose-p:lg:text-base prose-h2:mt-5 prose-h2:text-white prose-h2:text-base prose-h2:md:text-lg prose-h2:tracking-wider prose-h2:font-black prose-p:lg:leading-7 lg:max-w-3xl text-left">
+                                <!--
+                                    <a href="#" title="Wishlist" class="inline-flex justify-center items-center mb-5 text-sm tracking-wider leading-none text-white no-underline group md:text-base">
+                                        <span class="hidden lg:inline"></span>
+
+                                        <span class="flex justify-center items-center w-9 h-9 text-lg rounded-full transition-colors bg-sand text-anthracite md:h-9 md:w-9 md:text-2xl lg:ml-4">
+                                            <span class="w-7 h-7 i-ic-baseline-favorite-border lg-h-6 group-hover:hidden lg:w-6"></span>
+                                            <span class="hidden w-7 h-7 i-ic-baseline-favorite text-red group-hover:block lg:h-6 lg:w-6"></span>
+                                        </span>
+                                    </a>
+                                --> <!-- Hide Wishlist button until this feature is build -->
+
+                                
+                                
+                                <h1 style="text-wrap: balance;" class="!leading-tight">Tanzanias beautiful islands</h1>
+
+                                
+                                                                    <p style="text-wrap: balance;">You can visit Tanzania for the amazing safaris, the rich indigenous African culture and the Kilimanjaro. Nonetheless, its vibrant coastal life is something you don’t want to miss! Tanzania’s islands are therefore a must on your checklist of experiencing Tanzania’s best. The tropical and paradise-like beaches almost make you think you are in the Caribbean and yet you are in the heart of East Africa.
+
+So let’s dive into Tanzania’s wondrous marine life! Explore its palm-fringed white sandy beaches, the azure blue ocean, its exclusive resorts and more. Below, you will see Tanzania’s most popular and private islands for your dream beach vacation.</p>
+
+                                                                    
+                                
+
+                                                            </div>
+
+                                                            <div class="pre-form-wrapper hidden lg:block">
+    <div class="flex justify-between items-center mb-6 md:mb-5">
+        <div class="max-w-xs text-xl font-black tracking-wider text-white uppercase md:text-2xl" style="text-wrap: balance;">
+            Let’s plan your dream trip together!        </div>
+
+                    <img class="inline-block object-cover w-14 h-14 rounded-full md:h-16 md:w-16 aspect-video"
+                src="/wp-content/uploads/2023/11/test_image_2-1-150x150.jpg" alt="" width="150" height="150" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+
+    <form action="/travel-proposal/" class="ts-jumbotron-pre-form" x-data="{ adults: '2', adultsFirstClick: true, children: '0', childrenFirstClick: true }">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col form-group">
+                <label for="adults">Adults</label>
+                <div class="relative mt-auto">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite"
+                        type="number" id="adults" name="adults" value="2" inputmode="numeric" pattern="[0-9]*" required
+                        x-model="adults" @click="if (adultsFirstClick) { adults = ''; adultsFirstClick = false; }">
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-6" width="10" height="24" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/adult.png" alt="Adult icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col form-group">
+                <label for="children">Children</label>
+                <div class="relative mt-auto">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite"
+                        type="number" id="children" name="children" value="0" inputmode="numeric" pattern="[0-9]*"
+                        x-model="children" @click="if (childrenFirstClick) { children = ''; childrenFirstClick = false; }">
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-5" width="14" height="20" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/kid.png" alt="Child icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-2 form-group">
+                <label for="estimated_arrival_date">Estimated arrival date</label>
+                <div class="relative">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer estimated_arrival_date form-input text-anthracite"
+                        type="date"
+                        id="estimated_arrival_date"
+                        name="estimated_arrival_date"
+                        required>
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-5" width="20" height="20" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/calendar.png" alt="Calendar icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-2 form-group">
+                <input type="submit" value="Start customizing" class="mt-3 w-full btn btn-small btn-yellow">
+                <div class="no-strings-attached-info">
+                    No strings attached. We’ll design your trip - no cost, no commitment.                </div>
+            </div>
+        </div>
+    </form>
+</div>
+                                                    </div>
+
+                        <div class="associations-logos absolute hidden right-4 visibility-hide top-0">
+                                                    </div>
+                    </div>
+
+                                    </div>
+                    </div>
+    </div>
+
+    
+        <div class="usps-container ">
+        <div class="px-4 max-w-7xl usps-container-wrapper lg:mx-auto container-2xl">
+            <ul class="grid gap-6 py-8 sm:grid-cols-2 lg:flex lg:justify-between">
+                                                            <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            All trips are 100% tailor-made                        </li>
+                                                                                                        <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            Local partner rated 5.0/5                        </li>
+                                                                                                        <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            Best value &amp; free quotation                        </li>
+                                                                                                                                                </ul>
+        </div>
+
+                    <div class="px-4 mx-auto mb-8 w-full usps-container-button">
+                <a href="/travel-proposal/" class="w-full rounded-3xl btn btn-small btn-yellow">
+                    Start customizing                </a>
+            </div>
+            </div>
+
+        <div class="w-full flyout-btn lg:hidden">
+        <!-- FILTER/RESET BUTTON ON LANDING PAGES WITH FACETWP -->
+        <div class="flex items-center justify-between gap-4">
+            <button class="flex items-center justify-center w-full h-full py-3 tracking-wide border-0 text-anthracite btn btn-sand facetwp-flyout-open hover:bg-sand hover:text-anthracite">
+                                                                                        Filter islands                                                                            <span class="ml-3 text-2xl i-ic-outline-filter-alt"></span>
+            </button>
+
+            <button onclick="FWP.reset()" id="js-facetwp-reset" class="hidden flex-shrink-0 items-center justify-center border-0 bg-black/20 py-3 tracking-wide facet-flyout-toggle text-anthracite">
+                <span class="text-2xl i-ic-outline-filter-alt-off"></span>
+            </button>
+        </div>
+
+        <div class="tracking-wide ts-filter-selections">
+            <div class="facetwp-selections"></div>
+        </div>
+
+        <div class="facetwp-flyout-tpl" style="display: none;">
+            <h2 class="pt-2 mb-5 font-black tracking-wider uppercase text-green">
+                                                                                        Filter islands                                                                        </h2>
+
+            {content}
+
+            <button onclick="FWP.flyout.close()" class="fixed bottom-0 left-0 right-0 w-full ts-flyout-filter-close-btn btn btn-green hover:bg-green hover:border-green hover:text-white max-lg:z-20">
+                Save filter            </button>
+        </div>
+    </div>
+    <img
+        width="1700"
+        height="1644"
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 top-36"
+        src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png"
+        alt=""
+        aria-hidden="true"
+        role="presentation" />
+<div class="relative z-10 px-5 mx-auto max-w-7xl container-2xl"><ul id="breadcrumbs" class="flex items-center py-4 md:py-6 gap-x-3"></span><li><a href="/">Home</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li>  <li class="active"><a href="/islands/">Islands</a></li></span></ul></div>
+
+<div class="mx-auto px-0 pt-0 pb-10 max-w-7xl container-2xl lg:px-5 lg:pb-24 lg:pt-8 overview-islands">
+    <div class="grid grid-cols-12 gap-y-5 gap-x-8 overview-grid">
+        
+
+        <div class="col-span-12 lg:col-span-9 overview-col">
+            <div class="flex flex-nowrap justify-between items-center mb-12 w-full text-brown fwp-sort-by max-md:px-4 max-lg:px-5 max-sm:mt-3 max-lg:mb-6">
+                <div class="tracking-wider max-sm:tracking-wide max-sm:text-md">
+                    <div class="facetwp-facet facetwp-facet-_total_rows facetwp-type-pager" data-name="_total_rows" data-type="pager"></div>                </div>
+
+                            </div>
+
+            <div class=" flex flex-col justify-center gap-y-5 facetwp-template">
+                
+                                    <!--fwp-loop-->
+                        <article class="relative isolate flex flex-col bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1000" height="663" src="/wp-content/uploads/2023/07/Beach-and-shaded-area.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" fetchpriority="high" srcset="/wp-content/uploads/2023/07/Beach-and-shaded-area.avif 1000w, /wp-content/uploads/2023/07/Beach-and-shaded-area-300x199.avif 300w, /wp-content/uploads/2023/07/Beach-and-shaded-area-768x509.avif 768w, /wp-content/uploads/2023/07/Beach-and-shaded-area-60x40.avif 60w" sizes="(max-width: 1000px) 100vw, 1000px"  loading="eager"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="13378"
+                data-wishlist-post-type="islands">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="relative w-full py-8 px-5 lg:pr-14 lg:pl-10">
+        <div class="relative flex w-full flex-col">
+            <div class="relative">
+                <div class="mb-2 lg:mb-5 max-w-sm">
+                    <h3 class="text-lg font-bold uppercase leading-6 tracking-wider text-gray-900 text-anthracite group-hover:text-yellow">
+                        <a href="/islands/zanzibar-island/">Zanzibar Island</a>
+                    </h3>
+                </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Zanzibar is part of the Zanzibar Archipelago together with Pemba Island and many other smaller islands. Zanzibar Island offers a laidback beach life, but also a large variety of activities, a colorful culture and a deep history. You can go on a spice tour or explore the amazing coral reefs and swim among tropical reef [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/islands/zanzibar-island/">
+                View Island            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative isolate flex flex-col bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="768" src="/wp-content/uploads/2023/07/Pemba-Island-Tanzania-10.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Pemba Eiland strand, Tanzania" decoding="async" srcset="/wp-content/uploads/2023/07/Pemba-Island-Tanzania-10.jpg 1024w, /wp-content/uploads/2023/07/Pemba-Island-Tanzania-10-300x225.jpg 300w, /wp-content/uploads/2023/07/Pemba-Island-Tanzania-10-768x576.jpg 768w, /wp-content/uploads/2023/07/Pemba-Island-Tanzania-10-60x45.jpg 60w" sizes="(max-width: 1024px) 100vw, 1024px"  loading="eager" fetchpriority="high"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="13371"
+                data-wishlist-post-type="islands">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="relative w-full py-8 px-5 lg:pr-14 lg:pl-10">
+        <div class="relative flex w-full flex-col">
+            <div class="relative">
+                <div class="mb-2 lg:mb-5 max-w-sm">
+                    <h3 class="text-lg font-bold uppercase leading-6 tracking-wider text-gray-900 text-anthracite group-hover:text-yellow">
+                        <a href="/islands/pemba/">Pemba Island</a>
+                    </h3>
+                </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Pemba Island is one of the lesser known islands of the Zanzibar Archipelago. It is however a popular honeymoon destination. If you are looking for rest, tranquility and a romantic atmosphere – this is the place to be! The coral reefs surrounding the entire island form a magnificent playground for snorkelers and divers. The Pemba [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/islands/pemba/">
+                View Island            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative isolate flex flex-col bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="881" src="/wp-content/uploads/2023/07/Zanzibar-Mnemba-Island-aerial-dhow-_4_-1024x881.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2023/07/Zanzibar-Mnemba-Island-aerial-dhow-_4_-1024x881.jpg 1024w, /wp-content/uploads/2023/07/Zanzibar-Mnemba-Island-aerial-dhow-_4_-300x258.jpg 300w, /wp-content/uploads/2023/07/Zanzibar-Mnemba-Island-aerial-dhow-_4_-768x661.jpg 768w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="13361"
+                data-wishlist-post-type="islands">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="relative w-full py-8 px-5 lg:pr-14 lg:pl-10">
+        <div class="relative flex w-full flex-col">
+            <div class="relative">
+                <div class="mb-2 lg:mb-5 max-w-sm">
+                    <h3 class="text-lg font-bold uppercase leading-6 tracking-wider text-gray-900 text-anthracite group-hover:text-yellow">
+                        <a href="/islands/mnemba-island/">Mnemba Island</a>
+                    </h3>
+                </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Mnemba Island is an exclusive barefoot paradise off the northeast coast of Zanzibar, owned by &amp;Beyond (a luxury safari company). A triangular shaped reef – part of the Marine Protected Area – surrounds this island with its beautiful scuba dive sites, corals, fish and stunning ocean views. This is how you stay! The &amp;Beyond Mnemba Island Lodge provides [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/islands/mnemba-island/">
+                View Island            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative isolate flex flex-col bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="539" src="/wp-content/uploads/2023/07/555efd-1900x1000-1-1024x539.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Mafia Island strand met palmbomen" decoding="async" srcset="/wp-content/uploads/2023/07/555efd-1900x1000-1-1024x539.jpg 1024w, /wp-content/uploads/2023/07/555efd-1900x1000-1-300x158.jpg 300w, /wp-content/uploads/2023/07/555efd-1900x1000-1-768x404.jpg 768w, /wp-content/uploads/2023/07/555efd-1900x1000-1-1536x808.jpg 1536w, /wp-content/uploads/2023/07/555efd-1900x1000-1-60x32.jpg 60w, /wp-content/uploads/2023/07/555efd-1900x1000-1.jpg 1900w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="13354"
+                data-wishlist-post-type="islands">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="relative w-full py-8 px-5 lg:pr-14 lg:pl-10">
+        <div class="relative flex w-full flex-col">
+            <div class="relative">
+                <div class="mb-2 lg:mb-5 max-w-sm">
+                    <h3 class="text-lg font-bold uppercase leading-6 tracking-wider text-gray-900 text-anthracite group-hover:text-yellow">
+                        <a href="/islands/mafia/">Mafia Island</a>
+                    </h3>
+                </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Mafia Island is a perfect escape from the fast pace and busy daily life. This island is still pure and untouched, which means there are no tarmac roads and only few tourists. It’s like Zanzibar a few decades ago. The atmosphere is peaceful and the islanders are very friendly. Mafia is part of the Zanzibar Archipelago [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/islands/mafia/">
+                View Island            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative isolate flex flex-col bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="575" src="/wp-content/uploads/2023/07/Laba-Fanjove-Aerial-View-1024x575.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2023/07/Laba-Fanjove-Aerial-View-1024x575.avif 1024w, /wp-content/uploads/2023/07/Laba-Fanjove-Aerial-View-300x169.avif 300w, /wp-content/uploads/2023/07/Laba-Fanjove-Aerial-View-768x432.avif 768w, /wp-content/uploads/2023/07/Laba-Fanjove-Aerial-View-1536x863.avif 1536w, /wp-content/uploads/2023/07/Laba-Fanjove-Aerial-View-2048x1151.avif 2048w, /wp-content/uploads/2023/07/Laba-Fanjove-Aerial-View-60x34.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="13347"
+                data-wishlist-post-type="islands">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="relative w-full py-8 px-5 lg:pr-14 lg:pl-10">
+        <div class="relative flex w-full flex-col">
+            <div class="relative">
+                <div class="mb-2 lg:mb-5 max-w-sm">
+                    <h3 class="text-lg font-bold uppercase leading-6 tracking-wider text-gray-900 text-anthracite group-hover:text-yellow">
+                        <a href="/islands/fanjove-island/">Fanjove Private Island</a>
+                    </h3>
+                </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">The Fanjove Private Island is part of the Songo Songo Archipelago, a group of five islands south of Mafia Island. The warm waters of the Indian Ocean support the diverse flora and fauna of this enchanting world, both in the water and on land. Here, the coral reefs attract many turtles that lay their eggs on [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/islands/fanjove-island/">
+                View Island            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative isolate flex flex-col bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="768" src="/wp-content/uploads/2023/07/httpstanzaniaspecialist.comwp-contentuploads202009chumbe-3-1024x768.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Chumbe Island" decoding="async" srcset="/wp-content/uploads/2023/07/httpstanzaniaspecialist.comwp-contentuploads202009chumbe-3-1024x768.jpg 1024w, /wp-content/uploads/2023/07/httpstanzaniaspecialist.comwp-contentuploads202009chumbe-3-300x225.jpg 300w, /wp-content/uploads/2023/07/httpstanzaniaspecialist.comwp-contentuploads202009chumbe-3-768x576.jpg 768w, /wp-content/uploads/2023/07/httpstanzaniaspecialist.comwp-contentuploads202009chumbe-3-60x45.jpg 60w, /wp-content/uploads/2023/07/httpstanzaniaspecialist.comwp-contentuploads202009chumbe-3.jpg 1200w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="6379"
+                data-wishlist-post-type="islands">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="relative w-full py-8 px-5 lg:pr-14 lg:pl-10">
+        <div class="relative flex w-full flex-col">
+            <div class="relative">
+                <div class="mb-2 lg:mb-5 max-w-sm">
+                    <h3 class="text-lg font-bold uppercase leading-6 tracking-wider text-gray-900 text-anthracite group-hover:text-yellow">
+                        <a href="/islands/chumbe-island/">Chumbe Island Coral Park</a>
+                    </h3>
+                </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Chumbe Island Coral Park is an award-winning private nature reserve. It is located only a few kilometers off the southwest coast of Zanzibar, near Stone Town. The reserve includes a fully protected coral reef sanctuary and a forest reserve. It harbors rare wildlife, a visitor and education center, a small eco-lodge, nature walks and historical [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/islands/chumbe-island/">
+                View Island            </a>
+        </div>
+    </div>
+</article>
+                                                </div>
+
+            <div class="facetwp-facet facetwp-facet-page facetwp-type-pager" data-name="page" data-type="pager"></div>        </div>
+    </div>
+</div>
+
+                        <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-1 ts-mask-top bg-transparent content-default">
+                                <img
+        width="1700"
+        height="1644"
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 -top-1/2"
+        src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png"
+        alt=""
+        aria-hidden="true"
+        role="presentation" />
+
+
+<div class="px-5 py-12 mx-auto md:py-20">
+    <div class="mx-auto ts-prose">
+        <p><span class='flying-press-youtube' data-src='https://www.youtube.com/embed/6qb2mMxtNsc?feature=oembed&autoplay=1' onclick='load_flying_press_youtube_video(this)'>
+        <img src='/wp-content/cache/flying-press/59a4b99a321e305a8da76fc270faa41f.jpg' width='1280' height='720' alt='Discover Zanzibar and other beautiful islands of Tanzania - Your Tanzania Trip' loading="lazy" fetchpriority="low"/>
+        <svg xmlns='http://www.w3.org/2000/svg' width=68 height=48><path fill=red d='M67 8c-1-3-3-6-6-6-5-2-27-2-27-2S12 0 7 2C4 2 2 5 1 8L0 24l1 16c1 3 3 6 6 6 5 2 27 2 27 2s22 0 27-2c3 0 5-3 6-6l1-16-1-16z'/><path d='M45 24L27 14v20' fill=#fff /></svg>
+        </span></p>
+    </div>
+
+    
+            <div class="flex flex-col justify-center gap-5 mt-10 md:mt-16 md:flex-row lg:gap-8 3xl:gap-12">
+                            <a class="btn btn-green btn--stretched"
+                   href="/zanzibar-holiday/" target="_self">
+                    Our Zanzibar holidays                </a>
+            
+                            <a class="btn btn-red btn-red--outlined btn--stretched"
+                   href="/travel-proposal/" target="_self">
+                    Get a free travel quote                </a>
+                    </div>
+    </div>
+                    </div>
+    
+                
+            <div class="relative z-10 px-5 mx-auto -mb-1 max-w-7xl container-2xl md:py-12">
+                            <div class="grid grid-cols-12 -mx-5 ts-mask-top md:mx-0">
+                    <div class="col-span-12 lg:col-span-6 lg:row-start-1 lg:col-start-1 px-5 lg:px-7 py-12 lg:py-7 text-center flex flex-col justify-center bg-green">
+                        <h3 class="cta-title text-white" style="text-wrap: balance;">Let us create your tailor-made trip</h3>
+                        <p class="cta-subtitle">Receive a free, no obligation quote</p>
+
+                        
+                        <a class="mx-auto mt-7 w-full max-w-sm text-sm leading-none btn btn-yellow"
+                            href="/travel-proposal/"
+                            target="">
+                            Start planning your dream trip                        </a>
+                    </div>
+
+                    <div class="col-span-12 row-start-1 lg:col-span-6 lg:col-start-7 lg:flex-auto">
+                        <img width="1230" height="580" src="/wp-content/uploads/2023/08/guide_tanzania_specialist-1230x580.jpg" class="block w-full object-cover object-center cta-image" alt="" decoding="async" loading="lazy"  fetchpriority="low"/>                    </div>
+                </div>
+            
+                            <div class="grid grid-cols-12 -mx-5 ts-mask-bottom md:mx-0">
+                    <div class="flex flex-col-reverse col-span-12 gap-x-10 justify-center items-center px-5 py-12 lg:px-7 bg-sand lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:flex-row lg:py-7">
+                        <img width="641" height="641" src="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg" class="hidden lg:block mask-img w-48 h-48" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg 641w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-300x300.jpg 300w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-150x150.jpg 150w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-60x60.jpg 60w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-580x580.jpg 580w" sizes="auto"  fetchpriority="low"/>
+                        <div class="flex flex-col justify-center text-center md:text-left" style="content-visibility: auto;contain-intrinsic-size: auto 262px;">
+                            <h3 class="cta-title text-brown">Call an expert</h3>
+                            <p class="mt-2 mb-7 font-black tracking-widest uppercase text-brown md:mt-0 md:text-sm md:tracking-wider">Our specialists are here to assist you</p>
+
+                            <img width="641" height="641" src="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg" class="mt-4 mx-auto hidden mask-img w-36 h-36" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg 641w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-300x300.jpg 300w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-150x150.jpg 150w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-60x60.jpg 60w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-580x580.jpg 580w" sizes="auto"  fetchpriority="low"/>
+                                                                                                
+                                    <a class="mx-auto !pl-5 !py-3 gap-x-4 flex items-center justify-center cursor-pointer lg:justify-normal mt-2.5 w-auto lg:w-full max-w-sm text-center leading-none tracking-widest btn btn-small btn-red"
+                                        href="tel:+31629351377"
+                                        target="">
+                                        <span class="flex gap-2.5 items-center">
+                                            <span class="!w-[2.01em] !h-[1.50em] text-white ts-flag-nl"></span>
+<span class="!text-base">NL: </span>
+                                        </span>
+
+                                        <span>+31 6 29351377</span>
+                                    </a>
+                                                                    
+                                    <a class="mt-5 text-base text-anthracite tracking-wide font-black uppercase hover:!no-underline" href="/contact/">
+                                    <u>other countries</u>
+                                </a>
+                                                    </div>
+                    </div>
+
+                    <div class="flex-auto col-span-12 lg:col-span-6 md:col-start-1 md:row-start-1">
+                        <img width="800" height="423" src="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg" class="block w-full object-cover object-top cta-image" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg 800w, /wp-content/uploads/2023/09/Serengetei-NP-2-300x159.jpeg 300w, /wp-content/uploads/2023/09/Serengetei-NP-2-768x406.jpeg 768w, /wp-content/uploads/2023/09/Serengetei-NP-2-60x32.jpeg 60w" sizes="auto"  fetchpriority="low"/>                    </div>
+                </div>
+                    </div>
+    
+            

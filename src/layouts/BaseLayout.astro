@@ -1,0 +1,59 @@
+---
+import { readPartial, markCurrentMenu } from '../lib/site.js';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/marcellus/400.css';
+import '../styles/fonts.css';
+import '../styles/head.css';
+import '../styles/brand.css';
+
+const { page } = Astro.props;
+const canonical = new URL(page.path, Astro.site).href;
+
+const [headLinks, headScripts, header, footer] = await Promise.all(
+  ['head-links.html', 'head-scripts.html', 'header.html', 'footer.html'].map(readPartial)
+);
+const hasFacets = page.extraScripts.some(s => s.includes('FWP_JSON'));
+const stickyCta = page.stickyCta
+  ? `<a href="${page.stickyCta.href}" class="hidden sticky-travel-proposal-btn">${page.stickyCta.label}</a>`
+  : '';
+const ogImage = new URL(page.ogImage || '/brand/og-image.jpg', Astro.site).href;
+---
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{page.title}</title>
+    {page.description && <meta name="description" content={page.description} />}
+    {page.robots && <meta name="robots" content={page.robots} />}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:locale" content="en_US" />
+    {page.ogType && <meta property="og:type" content={page.ogType} />}
+    {page.ogTitle && <meta property="og:title" content={page.ogTitle} />}
+    {page.ogDescription && <meta property="og:description" content={page.ogDescription} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Your Tanzania Trip" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#20281B" />
+    <link rel="icon" href="/brand/favicon.ico" sizes="any" />
+    <link rel="icon" href="/brand/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/brand/favicon-16.png" sizes="16x16" type="image/png" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    {page.ldJson.map(json => <script type="application/ld+json" set:html={json} />)}
+    <script is:inline src="/assets/js/static-ajax.js"></script>
+    <Fragment set:html={headLinks} />
+    <Fragment set:html={page.extraStyles.join('\n')} />
+    <Fragment set:html={headScripts} />
+  </head>
+  <body class={page.bodyClass}>
+    <Fragment set:html={markCurrentMenu(header, page.path)} />
+    <slot />
+    <Fragment set:html={markCurrentMenu(footer, page.path).replace('<!--STICKY_CTA-->', stickyCta)} />
+    <Fragment set:html={page.extraScripts.join('\n')} />
+    {hasFacets && <script is:inline src="/assets/js/facetwp-static.js" data-facets={`/facetwp-static/${page.slug}.json`}></script>}
+  </body>
+</html>

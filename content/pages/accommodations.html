@@ -1,0 +1,933 @@
+
+
+
+    <div class="ts-jumbotron relative isolate lg:ts-mask-bottom is-pre-form-visible">
+        <div
+            class="ts-jumbotron-wrapper  "
+            >
+                                                                <img width="1700" height="800" src="/wp-content/uploads/2023/08/accommodation_header-1-1920x800.jpg" class="no-lazyload ts-jumbotron-image absolute inset-0 -z-10 h-full w-full object-cover ts-object-center wp-post-image" alt="accommodation example" fetchpriority="high" loading="eager" sizes="(max-width: 768px) 768px, 1700px" decoding="async" />                            
+                            <div class="w-full ts-jumbotron-inner custom-bg-gradient-black">
+                    <div class="flex relative flex-col items-end mx-auto max-w-9xl lg:flex-row">
+                        <div class="relative mx-auto flex w-full flex-col items-end px-4 max-w-7xl container-2xl gap-x-12 md:px-5 lg:flex-row justify-between">
+                            <div class="w-full max-w-none prose-p:text-sm prose-h1:font-black prose-p:leading-6 prose-p:tracking-wider prose-h1:tracking-wider prose-h1:uppercase prose-h1:text-white prose-p:text-white ts-jumbotron-content prose prose-h1:md:text-4xl prose-h1:lg:-mb-2 prose-p:lg:text-base prose-h2:mt-5 prose-h2:text-white prose-h2:text-base prose-h2:md:text-lg prose-h2:tracking-wider prose-h2:font-black prose-p:lg:leading-7 lg:max-w-3xl text-left">
+                                <!--
+                                    <a href="#" title="Wishlist" class="inline-flex justify-center items-center mb-5 text-sm tracking-wider leading-none text-white no-underline group md:text-base">
+                                        <span class="hidden lg:inline"></span>
+
+                                        <span class="flex justify-center items-center w-9 h-9 text-lg rounded-full transition-colors bg-sand text-anthracite md:h-9 md:w-9 md:text-2xl lg:ml-4">
+                                            <span class="w-7 h-7 i-ic-baseline-favorite-border lg-h-6 group-hover:hidden lg:w-6"></span>
+                                            <span class="hidden w-7 h-7 i-ic-baseline-favorite text-red group-hover:block lg:h-6 lg:w-6"></span>
+                                        </span>
+                                    </a>
+                                --> <!-- Hide Wishlist button until this feature is build -->
+
+                                
+                                
+                                <h1 style="text-wrap: balance;" class="!leading-tight">Our Accommodations</h1>
+
+                                
+                                                                    <p style="text-wrap: balance;">Below you will find an overview of the various accommodations we offer in Tanzania. Whether you are looking for a luxury hotel in Dar es Salaam, a comfortable lodge in the Serengeti, a tented camp in the wilderness, or a beach resort in Zanzibar, you have come to the right place. We have carefully selected accommodations that cater to every budget and travel style.</p>
+
+                                                                    
+                                
+
+                                                            </div>
+
+                                                            <div class="pre-form-wrapper hidden lg:block">
+    <div class="flex justify-between items-center mb-6 md:mb-5">
+        <div class="max-w-xs text-xl font-black tracking-wider text-white uppercase md:text-2xl" style="text-wrap: balance;">
+            Let’s plan your dream trip together!        </div>
+
+                    <img class="inline-block object-cover w-14 h-14 rounded-full md:h-16 md:w-16 aspect-video"
+                src="/wp-content/uploads/2023/11/test_image_2-1-150x150.jpg" alt="" width="150" height="150" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+
+    <form action="/travel-proposal/" class="ts-jumbotron-pre-form" x-data="{ adults: '2', adultsFirstClick: true, children: '0', childrenFirstClick: true }">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col form-group">
+                <label for="adults">Adults</label>
+                <div class="relative mt-auto">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite"
+                        type="number" id="adults" name="adults" value="2" inputmode="numeric" pattern="[0-9]*" required
+                        x-model="adults" @click="if (adultsFirstClick) { adults = ''; adultsFirstClick = false; }">
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-6" width="10" height="24" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/adult.png" alt="Adult icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col form-group">
+                <label for="children">Children</label>
+                <div class="relative mt-auto">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite"
+                        type="number" id="children" name="children" value="0" inputmode="numeric" pattern="[0-9]*"
+                        x-model="children" @click="if (childrenFirstClick) { children = ''; childrenFirstClick = false; }">
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-5" width="14" height="20" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/kid.png" alt="Child icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-2 form-group">
+                <label for="estimated_arrival_date">Estimated arrival date</label>
+                <div class="relative">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer estimated_arrival_date form-input text-anthracite"
+                        type="date"
+                        id="estimated_arrival_date"
+                        name="estimated_arrival_date"
+                        required>
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-5" width="20" height="20" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/calendar.png" alt="Calendar icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-2 form-group">
+                <input type="submit" value="Start customizing" class="mt-3 w-full btn btn-small btn-yellow">
+                <div class="no-strings-attached-info">
+                    No strings attached. We’ll design your trip - no cost, no commitment.                </div>
+            </div>
+        </div>
+    </form>
+</div>
+                                                    </div>
+
+                        <div class="associations-logos absolute hidden right-4 visibility-hide top-0">
+                                                    </div>
+                    </div>
+
+                                    </div>
+                    </div>
+    </div>
+
+    
+        <div class="usps-container ">
+        <div class="px-4 max-w-7xl usps-container-wrapper lg:mx-auto container-2xl">
+            <ul class="grid gap-6 py-8 sm:grid-cols-2 lg:flex lg:justify-between">
+                                                            <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            All trips are 100% tailor-made                        </li>
+                                                                                                        <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            Local partner rated 5.0/5                        </li>
+                                                                                                        <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            Best value &amp; free quotation                        </li>
+                                                                                                                                                </ul>
+        </div>
+
+                    <div class="px-4 mx-auto mb-8 w-full usps-container-button">
+                <a href="/travel-proposal/" class="w-full rounded-3xl btn btn-small btn-yellow">
+                    Start customizing                </a>
+            </div>
+            </div>
+
+        <div class="w-full flyout-btn lg:hidden">
+        <!-- FILTER/RESET BUTTON ON LANDING PAGES WITH FACETWP -->
+        <div class="flex items-center justify-between gap-4">
+            <button class="flex items-center justify-center w-full h-full py-3 tracking-wide border-0 text-anthracite btn btn-sand facetwp-flyout-open hover:bg-sand hover:text-anthracite">
+                                                                                        Filter accommodations                                                                            <span class="ml-3 text-2xl i-ic-outline-filter-alt"></span>
+            </button>
+
+            <button onclick="FWP.reset()" id="js-facetwp-reset" class="hidden flex-shrink-0 items-center justify-center border-0 bg-black/20 py-3 tracking-wide facet-flyout-toggle text-anthracite">
+                <span class="text-2xl i-ic-outline-filter-alt-off"></span>
+            </button>
+        </div>
+
+        <div class="tracking-wide ts-filter-selections">
+            <div class="facetwp-selections"></div>
+        </div>
+
+        <div class="facetwp-flyout-tpl" style="display: none;">
+            <h2 class="pt-2 mb-5 font-black tracking-wider uppercase text-green">
+                                                                                        Filter accommodations                                                                        </h2>
+
+            {content}
+
+            <button onclick="FWP.flyout.close()" class="fixed bottom-0 left-0 right-0 w-full ts-flyout-filter-close-btn btn btn-green hover:bg-green hover:border-green hover:text-white max-lg:z-20">
+                Save filter            </button>
+        </div>
+    </div>
+    <img
+        width="1700"
+        height="1644"
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 top-36"
+        src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png"
+        alt=""
+        aria-hidden="true"
+        role="presentation" />
+<div class="relative z-10 px-5 mx-auto max-w-7xl container-2xl"><ul id="breadcrumbs" class="flex items-center py-4 md:py-6 gap-x-3"></span><li><a href="/">Home</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li>  <li class="active"><a href="/accommodations/">Accommodations</a></li></span></ul></div>
+<!--fwp-loop-->
+
+<div class="mx-auto px-0 pt-0 pb-10 max-w-7xl container-2xl lg:px-5 lg:pb-24 lg:pt-8 overview-accommodations">
+    <div class="grid grid-cols-12 gap-y-5 gap-x-8 overview-grid">
+        
+            <div class="sticky-wrapper relative ts-span-3 hidden lg:block">
+            <div class="sidebar sidebar-facetwp-2 make-sticky flex flex-col gap-y-7">
+                <section id="block-15" class="widget widget_block">
+<strong class="wp-block-heading">Location</strong>
+</section><section id="block-16" class="widget widget_block"><p><div class="facetwp-facet facetwp-facet-locations facetwp-type-checkboxes" data-name="locations" data-type="checkboxes"></div></p>
+</section><section id="block-25" class="widget widget_block">
+<strong class="wp-block-heading">Accommodation level</strong>
+</section><section id="block-26" class="widget widget_block"><p><div class="facetwp-facet facetwp-facet-luxe facetwp-type-checkboxes" data-name="luxe" data-type="checkboxes"></div></p>
+</section>            </div>
+        </div>
+    
+        <div class="col-span-12 lg:col-span-9 overview-col">
+            <div class="flex flex-nowrap justify-between items-center mb-12 w-full text-brown fwp-sort-by max-md:px-4 max-lg:px-5 max-sm:mt-3 max-lg:mb-6">
+                <div class="tracking-wider max-sm:tracking-wide max-sm:text-md">
+                    <div class="facetwp-facet facetwp-facet-_total_rows facetwp-type-pager" data-name="_total_rows" data-type="pager"></div>                </div>
+
+                            </div>
+
+            <div class=" flex flex-col justify-center gap-y-5 facetwp-template">
+                
+                                    <!--fwp-loop-->
+                        <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/07/Kiriche-Luxury-Camp_Double-tent-Website-pics-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/07/Kiriche-Luxury-Camp_Double-tent-Website-pics-1024x683.avif 1024w, /wp-content/uploads/2026/07/Kiriche-Luxury-Camp_Double-tent-Website-pics-300x200.avif 300w, /wp-content/uploads/2026/07/Kiriche-Luxury-Camp_Double-tent-Website-pics-768x512.avif 768w, /wp-content/uploads/2026/07/Kiriche-Luxury-Camp_Double-tent-Website-pics-1536x1025.avif 1536w, /wp-content/uploads/2026/07/Kiriche-Luxury-Camp_Double-tent-Website-pics-2048x1366.avif 2048w, /wp-content/uploads/2026/07/Kiriche-Luxury-Camp_Double-tent-Website-pics-60x40.avif 60w" sizes="(max-width: 1024px) 100vw, 1024px"  loading="eager" fetchpriority="high"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="24184"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Central Serengeti            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/kiriche-luxury-camp/">Kiriche Luxury Camp</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Central Serengeti                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Kiriche Luxury Camp sits along the Warangi River in Serengeti National Park, which makes it a comfortable and intimate stay in the middle of Tanzania’s wilderness. The camp has 7 spacious ensuite tents and a family tent with two rooms and a lounge. All tents feature raised platforms, hot and cold water showers, flushing toilets, [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/kiriche-luxury-camp/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 358px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/07/Sharazad-Wonders_Room-Website-pics-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/07/Sharazad-Wonders_Room-Website-pics-1024x683.avif 1024w, /wp-content/uploads/2026/07/Sharazad-Wonders_Room-Website-pics-300x200.avif 300w, /wp-content/uploads/2026/07/Sharazad-Wonders_Room-Website-pics-768x512.avif 768w, /wp-content/uploads/2026/07/Sharazad-Wonders_Room-Website-pics-1536x1024.avif 1536w, /wp-content/uploads/2026/07/Sharazad-Wonders_Room-Website-pics-2048x1365.avif 2048w, /wp-content/uploads/2026/07/Sharazad-Wonders_Room-Website-pics-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="24071"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="absolute top-4 right-4 pt-2.5 pb-2 text-sm leading-none font-black tracking-wider text-anthracite px-3.5 w-1/2 lg:w-1/3 text-center uppercase silver-gradient">
+                Silver            </span>
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Zanzibar - Stone Town            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/sharazad-wonders-boutique-hotel-stone-town/">Sharazad Wonders Boutique Hotel &#8211; Stone Town</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Zanzibar - Stone Town                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Sharazad Wonders Boutique Hotel in Stone Town has just 8 rooms, split between four suites, two suites with private balconies, and two veranda Suites (a good fit for families, with one king bed and two twin beds). Every room comes with an en-suite bathroom with a hot and cold shower, as well as a ceiling [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/sharazad-wonders-boutique-hotel-stone-town/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 358px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="684" src="/wp-content/uploads/2026/07/Pool-and-bar-area-1-1024x684.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/07/Pool-and-bar-area-1-1024x684.avif 1024w, /wp-content/uploads/2026/07/Pool-and-bar-area-1-300x200.avif 300w, /wp-content/uploads/2026/07/Pool-and-bar-area-1-768x513.avif 768w, /wp-content/uploads/2026/07/Pool-and-bar-area-1-1536x1026.avif 1536w, /wp-content/uploads/2026/07/Pool-and-bar-area-1-60x40.avif 60w, /wp-content/uploads/2026/07/Pool-and-bar-area-1.avif 2048w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="24070"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="absolute top-4 right-4 pt-2.5 pb-2 text-sm leading-none font-black tracking-wider text-anthracite px-3.5 w-1/2 lg:w-1/3 text-center uppercase gold-gradient">
+                Gold            </span>
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Zanzibar - Jambiani            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/sharazad-boutique-hotel-jambiani/">Sharazad Boutique Hotel &#8211; Jambiani</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Zanzibar - Jambiani                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Beach days come easy at Sharazad Boutique Hotel. Set along a 230-metre stretch of Jambiani beach, the property offers 42 rooms spread across garden rooms, sea-view rooms, and beachfront suites, all with private en-suite bathrooms, coffee and tea facilities, room safes, ceiling fans, and free Wi-Fi. All rooms include private verandas or balconies, while the [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/sharazad-boutique-hotel-jambiani/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 334px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="682" src="/wp-content/uploads/2026/06/Zondela-House_Pool-1024x682.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/06/Zondela-House_Pool-1024x682.avif 1024w, /wp-content/uploads/2026/06/Zondela-House_Pool-300x200.avif 300w, /wp-content/uploads/2026/06/Zondela-House_Pool-768x512.avif 768w, /wp-content/uploads/2026/06/Zondela-House_Pool-1536x1023.avif 1536w, /wp-content/uploads/2026/06/Zondela-House_Pool-60x40.avif 60w, /wp-content/uploads/2026/06/Zondela-House_Pool.avif 2026w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="24063"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Arusha            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/zondela-house/">Zondela House</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Arusha                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Mountain views and handmade furniture set the scene at Zondela House, located 8 kilometres from Arusha town in the quiet hills of Kambi Chupa, where you can spot Mount Meru from the rooftop bar and catch glimpses of Mount Kilimanjaro on clear mornings. The lodge features 16 rooms with natural brick walls decorated in warm, [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/zondela-house/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 334px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/06/Kenzan-Central-Camp-Tent-exteriors-28429-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/06/Kenzan-Central-Camp-Tent-exteriors-28429-1024x683.avif 1024w, /wp-content/uploads/2026/06/Kenzan-Central-Camp-Tent-exteriors-28429-300x200.avif 300w, /wp-content/uploads/2026/06/Kenzan-Central-Camp-Tent-exteriors-28429-768x512.avif 768w, /wp-content/uploads/2026/06/Kenzan-Central-Camp-Tent-exteriors-28429-1536x1024.avif 1536w, /wp-content/uploads/2026/06/Kenzan-Central-Camp-Tent-exteriors-28429-2048x1365.avif 2048w, /wp-content/uploads/2026/06/Kenzan-Central-Camp-Tent-exteriors-28429-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="24056"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Central Serengeti            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/kenzan-central-camp/">Kenzan Central Camp</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Central Serengeti                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">In central Serengeti at Turner 5, Kenzan Central Camp puts you in the middle of the plains, where wildlife movement becomes part of daily camp life and nights come with a few distant calls too! The camp has 12 guest tents (including family tents), each equipped with en-suite bathrooms, beds with mosquito nets, side tables, [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/kenzan-central-camp/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 358px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/06/Kenzan-Mara-Tented-Camp-Exterior-of-tent-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Kenzan Mara Tented Camp - Exterior of tent" decoding="async" srcset="/wp-content/uploads/2026/06/Kenzan-Mara-Tented-Camp-Exterior-of-tent-1024x683.avif 1024w, /wp-content/uploads/2026/06/Kenzan-Mara-Tented-Camp-Exterior-of-tent-300x200.avif 300w, /wp-content/uploads/2026/06/Kenzan-Mara-Tented-Camp-Exterior-of-tent-768x512.avif 768w, /wp-content/uploads/2026/06/Kenzan-Mara-Tented-Camp-Exterior-of-tent-1536x1024.avif 1536w, /wp-content/uploads/2026/06/Kenzan-Mara-Tented-Camp-Exterior-of-tent-2048x1365.avif 2048w, /wp-content/uploads/2026/06/Kenzan-Mara-Tented-Camp-Exterior-of-tent-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="24051"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="absolute top-4 right-4 pt-2.5 pb-2 text-sm leading-none font-black tracking-wider text-anthracite px-3.5 w-1/2 lg:w-1/3 text-center uppercase silver-gradient">
+                Silver            </span>
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Northern Serengeti            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/kenzan-migration-camp/">Kenzan Migration Camp &#8211; Kogatende</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Northern Serengeti                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Located in northern Serengeti, Kenzan Migration Camp is a mobile camp that follows the Great Migration and offers 10 tents set near the Mara River in the Kogatende area. From July to October, when the Great Migration reaches the northern Serengeti, the camp is ideally positioned for watching river crossings and spotting wildlife such as [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/kenzan-migration-camp/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 334px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/06/Manya-Luxury-Camp-Sunset-and-tent-exterior-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/06/Manya-Luxury-Camp-Sunset-and-tent-exterior-1024x683.avif 1024w, /wp-content/uploads/2026/06/Manya-Luxury-Camp-Sunset-and-tent-exterior-300x200.avif 300w, /wp-content/uploads/2026/06/Manya-Luxury-Camp-Sunset-and-tent-exterior-768x513.avif 768w, /wp-content/uploads/2026/06/Manya-Luxury-Camp-Sunset-and-tent-exterior-1536x1025.avif 1536w, /wp-content/uploads/2026/06/Manya-Luxury-Camp-Sunset-and-tent-exterior-2048x1367.avif 2048w, /wp-content/uploads/2026/06/Manya-Luxury-Camp-Sunset-and-tent-exterior-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="24042"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Central Serengeti            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/manya-luxury-camp/">Manya Luxury Camp</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Central Serengeti                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Manya Luxury Camp brings you close to nature in the heart of Serengeti National Park while keeping you comfortable in spacious, elegantly designed tents. The camp features 7 ensuite tents in double, twin, triple, and family configurations, so there’s a space for you whether you’re travelling as a couple, with friends, or with kids. Your [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/manya-luxury-camp/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 334px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/06/Matawi-Serengeti-Camp-Exterior-28229-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/06/Matawi-Serengeti-Camp-Exterior-28229-1024x683.avif 1024w, /wp-content/uploads/2026/06/Matawi-Serengeti-Camp-Exterior-28229-300x200.avif 300w, /wp-content/uploads/2026/06/Matawi-Serengeti-Camp-Exterior-28229-768x512.avif 768w, /wp-content/uploads/2026/06/Matawi-Serengeti-Camp-Exterior-28229-1536x1024.avif 1536w, /wp-content/uploads/2026/06/Matawi-Serengeti-Camp-Exterior-28229-2048x1365.avif 2048w, /wp-content/uploads/2026/06/Matawi-Serengeti-Camp-Exterior-28229-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="24040"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Central Serengeti            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/matawi-serengeti-camp/">Matawi Serengeti Camp</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Central Serengeti                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Surrounded by the endless plains of the Serengeti, Matawi Serengeti Tented Camp is a combination of comfort and wilderness. The camp features 7 tents on raised wooden platforms that reflect the glamour of old Africa. Decorated in earthy tones and clean lines, they feature warm wooden-plank floors, king-size beds with mosquito nets, a sitting area, [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/matawi-serengeti-camp/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 334px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="576" src="/wp-content/uploads/2026/03/Luwela-Camp-28by-Lake-Duluti-Lodge29_From-outside-Website-pics-1024x576.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/03/Luwela-Camp-28by-Lake-Duluti-Lodge29_From-outside-Website-pics-1024x576.avif 1024w, /wp-content/uploads/2026/03/Luwela-Camp-28by-Lake-Duluti-Lodge29_From-outside-Website-pics-300x169.avif 300w, /wp-content/uploads/2026/03/Luwela-Camp-28by-Lake-Duluti-Lodge29_From-outside-Website-pics-768x432.avif 768w, /wp-content/uploads/2026/03/Luwela-Camp-28by-Lake-Duluti-Lodge29_From-outside-Website-pics-1536x864.avif 1536w, /wp-content/uploads/2026/03/Luwela-Camp-28by-Lake-Duluti-Lodge29_From-outside-Website-pics-2048x1152.avif 2048w, /wp-content/uploads/2026/03/Luwela-Camp-28by-Lake-Duluti-Lodge29_From-outside-Website-pics-60x34.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="22399"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Central Serengeti            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/luwela-camp-by-lake-duluti-lodge/">Luwela Camp</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Central Serengeti                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Front-row seats to the Serengeti, with coffee in hand! The Luwela Camp in central Serengeti lies on Makoma Hill, an area renowned for year-round wildlife viewings. The camp has 9 solar-powered tents, each with a private veranda, lounge seating, and wide views over the plains. Inside, expect super king or twin beds, a desk, and [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/luwela-camp-by-lake-duluti-lodge/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 358px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/05/IM_TZ_MAN_Manyara-Best-View-Lodge-26-Spa_Pool-28629-compressed-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/05/IM_TZ_MAN_Manyara-Best-View-Lodge-26-Spa_Pool-28629-compressed-1024x683.avif 1024w, /wp-content/uploads/2026/05/IM_TZ_MAN_Manyara-Best-View-Lodge-26-Spa_Pool-28629-compressed-300x200.avif 300w, /wp-content/uploads/2026/05/IM_TZ_MAN_Manyara-Best-View-Lodge-26-Spa_Pool-28629-compressed-768x512.avif 768w, /wp-content/uploads/2026/05/IM_TZ_MAN_Manyara-Best-View-Lodge-26-Spa_Pool-28629-compressed-1536x1024.avif 1536w, /wp-content/uploads/2026/05/IM_TZ_MAN_Manyara-Best-View-Lodge-26-Spa_Pool-28629-compressed-2048x1365.avif 2048w, /wp-content/uploads/2026/05/IM_TZ_MAN_Manyara-Best-View-Lodge-26-Spa_Pool-28629-compressed-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="22233"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="absolute top-4 right-4 pt-2.5 pb-2 text-sm leading-none font-black tracking-wider text-anthracite px-3.5 w-1/2 lg:w-1/3 text-center uppercase platinum-gradient">
+                Platinum            </span>
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Lake Manyara            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/manyara-best-view-lodge-spa-upgrade/">Manyara Best View Lodge and Spa &#8211; Upgrade</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Lake Manyara                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">The Manyara Best View Lodge &amp; Spa is an astonishing lodge in one of Tanzania&#8217;s most beautiful locations, surrounded by lush nature and an abundance of tropical birds and other wildlife. Here, you are welcomed in luxuriously appointed rooms, comfortably furnished with fluffy kingsize beds, a beautiful bathroom with an outside shower and bathtub, and [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/manyara-best-view-lodge-spa-upgrade/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 358px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="567" src="/wp-content/uploads/2026/02/Lolkisale-Tarangire-Camp-by-Top-Guides_Tent1-1024x567.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/02/Lolkisale-Tarangire-Camp-by-Top-Guides_Tent1-1024x567.avif 1024w, /wp-content/uploads/2026/02/Lolkisale-Tarangire-Camp-by-Top-Guides_Tent1-300x166.avif 300w, /wp-content/uploads/2026/02/Lolkisale-Tarangire-Camp-by-Top-Guides_Tent1-768x426.avif 768w, /wp-content/uploads/2026/02/Lolkisale-Tarangire-Camp-by-Top-Guides_Tent1-1536x851.avif 1536w, /wp-content/uploads/2026/02/Lolkisale-Tarangire-Camp-by-Top-Guides_Tent1-2048x1135.avif 2048w, /wp-content/uploads/2026/02/Lolkisale-Tarangire-Camp-by-Top-Guides_Tent1-60x33.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="22197"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Tarangire            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/lolkisale-tarangire-camp-by-top-guides/">Lolkisale Tarangire Camp by Top Guides</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Tarangire                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Lolkisale Tarangire Camp is a serene and luxurious getaway in the Tarangire National Park. The camp has 8 custom-designed safari tents, on an elevated wooden platform. Located right by the wetlands, you see herds passing through in search of water from your private porch at the break of day. Thoughtfully selected interiors, with soft natural [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/lolkisale-tarangire-camp-by-top-guides/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 334px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="682" src="/wp-content/uploads/2026/02/IM_TZ_TAR_Tarangire-Safari-Lodge_Room-from-outside-1024x682.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/02/IM_TZ_TAR_Tarangire-Safari-Lodge_Room-from-outside-1024x682.avif 1024w, /wp-content/uploads/2026/02/IM_TZ_TAR_Tarangire-Safari-Lodge_Room-from-outside-300x200.avif 300w, /wp-content/uploads/2026/02/IM_TZ_TAR_Tarangire-Safari-Lodge_Room-from-outside-768x511.avif 768w, /wp-content/uploads/2026/02/IM_TZ_TAR_Tarangire-Safari-Lodge_Room-from-outside-1536x1023.avif 1536w, /wp-content/uploads/2026/02/IM_TZ_TAR_Tarangire-Safari-Lodge_Room-from-outside-2048x1364.avif 2048w, /wp-content/uploads/2026/02/IM_TZ_TAR_Tarangire-Safari-Lodge_Room-from-outside-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="22196"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Tarangire            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/tarangire-safari-lodge/">Tarangire Safari Lodge</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Tarangire                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Tarangire Safari Lodge is a combined lodge and tented camp in the north of Tarangire National Park, with some of the most amazing views of the park. The safari tents, with thatched roofs and mesh-screened windows, welcome you to rest comfortably after your game drive. For more space, you can opt for a circular bungalow, [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/tarangire-safari-lodge/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 334px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="512" src="/wp-content/uploads/2026/02/IM_TZ_NCAA_Ngorongoro-Lodge-by-Melia_Pool-and-sunbeds-1024x512.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/02/IM_TZ_NCAA_Ngorongoro-Lodge-by-Melia_Pool-and-sunbeds-1024x512.avif 1024w, /wp-content/uploads/2026/02/IM_TZ_NCAA_Ngorongoro-Lodge-by-Melia_Pool-and-sunbeds-300x150.avif 300w, /wp-content/uploads/2026/02/IM_TZ_NCAA_Ngorongoro-Lodge-by-Melia_Pool-and-sunbeds-768x384.avif 768w, /wp-content/uploads/2026/02/IM_TZ_NCAA_Ngorongoro-Lodge-by-Melia_Pool-and-sunbeds-1536x768.avif 1536w, /wp-content/uploads/2026/02/IM_TZ_NCAA_Ngorongoro-Lodge-by-Melia_Pool-and-sunbeds-2048x1024.avif 2048w, /wp-content/uploads/2026/02/IM_TZ_NCAA_Ngorongoro-Lodge-by-Melia_Pool-and-sunbeds-60x30.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="22195"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Ngorongoro            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/ngorongoro-lodge-by-melia/">Ngorongoro Lodge by Melia</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Ngorongoro                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">The Ngorongoro Lodge by Melia lies in the heart of the Ngorongoro Highlands, overlooking the famous UNESCO-protected conservation area of Ngorongoro crater. With 28 rooms and 24 spacious suites boasting breathtaking views over the crater, this newly renovated lodge provides luxury services but also keeps sustainability at heart. It indeed generates a significant part of [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/ngorongoro-lodge-by-melia/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 358px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/02/IM_TZ_NCAA_Lake-Masek-Tented-Lodge-28129-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/02/IM_TZ_NCAA_Lake-Masek-Tented-Lodge-28129-1024x683.avif 1024w, /wp-content/uploads/2026/02/IM_TZ_NCAA_Lake-Masek-Tented-Lodge-28129-300x200.avif 300w, /wp-content/uploads/2026/02/IM_TZ_NCAA_Lake-Masek-Tented-Lodge-28129-768x512.avif 768w, /wp-content/uploads/2026/02/IM_TZ_NCAA_Lake-Masek-Tented-Lodge-28129-1536x1024.avif 1536w, /wp-content/uploads/2026/02/IM_TZ_NCAA_Lake-Masek-Tented-Lodge-28129-2048x1365.avif 2048w, /wp-content/uploads/2026/02/IM_TZ_NCAA_Lake-Masek-Tented-Lodge-28129-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="22194"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Ndutu Area            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/lake-masek-tented-lodge-by-tanganyika-wilderness-camps/">Lake Masek Tented Lodge by Tanganyika Wilderness Camps</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Ndutu Area                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">The Lake Masek Tented Lodge is a lodge with luxury safari tents right in the middle of Ndutu – the area just south of Serengeti National Park that is famous as the area where the calving season of the Great Migration takes place. Each of the 30 tents is set up on a wooden platform [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/lake-masek-tented-lodge-by-tanganyika-wilderness-camps/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 334px;">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/07/Giraffe-Manor-Tanzania_Pool-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/07/Giraffe-Manor-Tanzania_Pool-1024x683.avif 1024w, /wp-content/uploads/2026/07/Giraffe-Manor-Tanzania_Pool-300x200.avif 300w, /wp-content/uploads/2026/07/Giraffe-Manor-Tanzania_Pool-768x512.avif 768w, /wp-content/uploads/2026/07/Giraffe-Manor-Tanzania_Pool-1536x1024.avif 1536w, /wp-content/uploads/2026/07/Giraffe-Manor-Tanzania_Pool-2048x1365.avif 2048w, /wp-content/uploads/2026/07/Giraffe-Manor-Tanzania_Pool-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" 
+                title="Wishlist" 
+                class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="22182"
+                data-wishlist-post-type="accommodations">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="absolute top-4 right-4 pt-2.5 pb-2 text-sm leading-none font-black tracking-wider text-anthracite px-3.5 w-1/2 lg:w-1/3 text-center uppercase platinum-gradient">
+                Platinum            </span>
+            </div>
+
+            <div class="flex justify-between items-center px-5 py-4 text-sm font-bold tracking-wider leading-none uppercase bg-green lg:hidden">
+            <h4 class="text-white">
+                Location: Arusha            </h4>
+        </div>
+    
+    <div class="relative px-5 py-8 w-full lg:pr-14 lg:pl-10">
+        <div class="flex relative flex-col w-full">
+            <div class="relative">
+                <div class="mb-2 max-w-sm lg:mb-6">
+                    <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/accommodation/giraffe-manor-tanzania/">Giraffe Manor Tanzania</a>
+                    </h3>
+
+                                            <h4 class="hidden mt-2 text-sm font-bold tracking-wider leading-6 uppercase text-anthracite lg:block">
+                            Location: Arusha                        </h4>
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Giraffe Manor Tanzania is a one-of-a-kind lodge set on the serene Dolly Estate just outside Arusha, where mornings often come with giraffes walking by as you sip your first cup of coffee! Surrounded by lush lawns, flowering gardens, and acacia woodland with birdlife, impala, elands, zebra, and wildebeest, the lodge offers a peaceful setting while [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/accommodation/giraffe-manor-tanzania/">
+                View accommodation            </a>
+        </div>
+    </div>
+</article>
+                                                </div>
+
+            <div class="facetwp-facet facetwp-facet-page facetwp-type-pager" data-name="page" data-type="pager"></div>        </div>
+    </div>
+</div>
+
+
+                
+            <div class="relative z-10 px-5 mx-auto -mb-1 max-w-7xl container-2xl md:py-12">
+                            <div class="grid grid-cols-12 -mx-5 ts-mask-top md:mx-0">
+                    <div class="col-span-12 lg:col-span-6 lg:row-start-1 lg:col-start-1 px-5 lg:px-7 py-12 lg:py-7 text-center flex flex-col justify-center bg-green">
+                        <h3 class="cta-title text-white" style="text-wrap: balance;">Let us create your tailor-made trip</h3>
+                        <p class="cta-subtitle">Receive a free, no obligation quote</p>
+
+                        
+                        <a class="mx-auto mt-7 w-full max-w-sm text-sm leading-none btn btn-yellow"
+                            href="/travel-proposal/"
+                            target="">
+                            Start planning your dream trip                        </a>
+                    </div>
+
+                    <div class="col-span-12 row-start-1 lg:col-span-6 lg:col-start-7 lg:flex-auto">
+                        <img width="1230" height="580" src="/wp-content/uploads/2023/08/guide_tanzania_specialist-1230x580.jpg" class="block w-full object-cover object-center cta-image" alt="" decoding="async" loading="lazy"  fetchpriority="low"/>                    </div>
+                </div>
+            
+                            <div class="grid grid-cols-12 -mx-5 ts-mask-bottom md:mx-0">
+                    <div class="flex flex-col-reverse col-span-12 gap-x-10 justify-center items-center px-5 py-12 lg:px-7 bg-sand lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:flex-row lg:py-7">
+                        <img width="641" height="641" src="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg" class="hidden lg:block mask-img w-48 h-48" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg 641w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-300x300.jpg 300w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-150x150.jpg 150w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-60x60.jpg 60w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-580x580.jpg 580w" sizes="auto"  fetchpriority="low"/>
+                        <div class="flex flex-col justify-center text-center md:text-left" style="content-visibility: auto;contain-intrinsic-size: auto 262px;">
+                            <h3 class="cta-title text-brown">Call an expert</h3>
+                            <p class="mt-2 mb-7 font-black tracking-widest uppercase text-brown md:mt-0 md:text-sm md:tracking-wider">Our specialists are here to assist you</p>
+
+                            <img width="641" height="641" src="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg" class="mt-4 mx-auto hidden mask-img w-36 h-36" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg 641w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-300x300.jpg 300w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-150x150.jpg 150w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-60x60.jpg 60w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-580x580.jpg 580w" sizes="auto"  fetchpriority="low"/>
+                                                                                                
+                                    <a class="mx-auto !pl-5 !py-3 gap-x-4 flex items-center justify-center cursor-pointer lg:justify-normal mt-2.5 w-auto lg:w-full max-w-sm text-center leading-none tracking-widest btn btn-small btn-red"
+                                        href="tel:+31629351377"
+                                        target="">
+                                        <span class="flex gap-2.5 items-center">
+                                            <span class="!w-[2.01em] !h-[1.50em] text-white ts-flag-nl"></span>
+<span class="!text-base">NL: </span>
+                                        </span>
+
+                                        <span>+31 6 29351377</span>
+                                    </a>
+                                                                    
+                                    <a class="mt-5 text-base text-anthracite tracking-wide font-black uppercase hover:!no-underline" href="/contact/">
+                                    <u>other countries</u>
+                                </a>
+                                                    </div>
+                    </div>
+
+                    <div class="flex-auto col-span-12 lg:col-span-6 md:col-start-1 md:row-start-1">
+                        <img width="800" height="423" src="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg" class="block w-full object-cover object-top cta-image" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg 800w, /wp-content/uploads/2023/09/Serengetei-NP-2-300x159.jpeg 300w, /wp-content/uploads/2023/09/Serengetei-NP-2-768x406.jpeg 768w, /wp-content/uploads/2023/09/Serengetei-NP-2-60x32.jpeg 60w" sizes="auto"  fetchpriority="low"/>                    </div>
+                </div>
+                    </div>
+    
+            

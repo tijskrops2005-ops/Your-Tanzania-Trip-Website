@@ -1,0 +1,385 @@
+{
+  "_source": "docs/brand-style-guide.pdf (Version 1.0, October 2026). Transcribed; the PDF wins if they differ.",
+  "color": {
+    "forest": {
+      "hex": "#20281B",
+      "rgb": [
+        32,
+        40,
+        27
+      ],
+      "role": "primary",
+      "use": "Headings, body text, header and footer backgrounds"
+    },
+    "copper": {
+      "hex": "#A83800",
+      "rgb": [
+        168,
+        56,
+        0
+      ],
+      "role": "action",
+      "use": "Primary buttons and links"
+    },
+    "copper-dark": {
+      "hex": "#8C2F00",
+      "rgb": [
+        140,
+        47,
+        0
+      ],
+      "role": "supporting",
+      "use": "Hover and active states of buttons and links"
+    },
+    "gold": {
+      "hex": "#E69016",
+      "rgb": [
+        230,
+        144,
+        22
+      ],
+      "role": "highlight",
+      "use": "Highlights, icons, badges, accents on dark"
+    },
+    "amber": {
+      "hex": "#FCAB2A",
+      "rgb": [
+        252,
+        171,
+        42
+      ],
+      "role": "supporting",
+      "use": "Light end of sunset gradients only"
+    },
+    "mountain": {
+      "hex": "#355248",
+      "rgb": [
+        53,
+        82,
+        72
+      ],
+      "role": "secondary",
+      "use": "Calm section backgrounds, secondary headings, panels"
+    },
+    "sand": {
+      "hex": "#DCC496",
+      "rgb": [
+        220,
+        196,
+        150
+      ],
+      "role": "neutral",
+      "use": "Borders, dividers, soft panels"
+    },
+    "ivory": {
+      "hex": "#FAF6EC",
+      "rgb": [
+        250,
+        246,
+        236
+      ],
+      "role": "base",
+      "use": "Page background"
+    },
+    "white": {
+      "hex": "#FFFFFF",
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "role": "supporting",
+      "use": "Cards and form fields"
+    },
+    "logo-lettering": {
+      "hex": "#000800",
+      "use": "Near-black lettering in the primary logo (reference only)"
+    }
+  },
+  "proportions": {
+    "ivory": 0.55,
+    "forest": 0.2,
+    "sand": 0.1,
+    "mountain": 0.07,
+    "copper": 0.05,
+    "gold": 0.03
+  },
+  "gradient": {
+    "sunset": [
+      "#FCAB2A",
+      "#E69016",
+      "#A83800"
+    ],
+    "use": "Decoration only: dividers, image overlays, call-to-action band"
+  },
+  "contrast": {
+    "forest-on-ivory": 14.1,
+    "mountain-on-ivory": 7.9,
+    "ivory-on-forest": 13.9,
+    "forest-on-sand": 9,
+    "copper-on-ivory": 6,
+    "ivory-on-copper": 6,
+    "gold-on-forest": 6.1,
+    "copper-on-sand": {
+      "ratio": 3.8,
+      "allowed": false,
+      "note": "Never small copper text on sand; use forest"
+    }
+  },
+  "font": {
+    "heading": {
+      "family": "Marcellus",
+      "source": "Google Fonts",
+      "fallback": "Georgia, serif"
+    },
+    "body": {
+      "family": "Inter",
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "source": "Google Fonts",
+      "fallback": "Arial, sans-serif"
+    }
+  },
+  "type-scale": {
+    "display": {
+      "font": "heading",
+      "size": 56
+    },
+    "h1": {
+      "font": "heading",
+      "size": 40
+    },
+    "h2": {
+      "font": "heading",
+      "size": 28
+    },
+    "h3": {
+      "font": "body",
+      "weight": 600,
+      "size": 20
+    },
+    "body": {
+      "font": "body",
+      "weight": 400,
+      "size": 17,
+      "lineHeight": 1.6,
+      "minSize": 16
+    },
+    "small": {
+      "font": "body",
+      "weight": 400,
+      "size": 13
+    },
+    "label": {
+      "font": "body",
+      "weight": 600,
+      "size": [
+        12,
+        13
+      ],
+      "transform": "uppercase",
+      "letterSpacing": "0.15em"
+    }
+  },
+  "radius": {
+    "button": 8,
+    "field": 8,
+    "card": 12
+  },
+  "component": {
+    "button-primary": {
+      "background": "copper",
+      "text": "ivory",
+      "hover": "copper-dark",
+      "rule": "One primary button per screen"
+    },
+    "button-secondary": {
+      "background": "ivory",
+      "border": "1.5px forest"
+    },
+    "button-on-dark": {
+      "border": "ivory",
+      "text": "ivory"
+    },
+    "field": {
+      "label": "persistent, above the field",
+      "focus": "forest border + 2px gold ring",
+      "error": "specific, below the field"
+    },
+    "card": {
+      "background": "white or ivory",
+      "border": "sand",
+      "radius": 12,
+      "shadow": "soft",
+      "hover": "image zoom, respect prefers-reduced-motion"
+    },
+    "link": {
+      "color": "copper",
+      "decoration": "underline"
+    },
+    "icons": {
+      "set": "one outline set, e.g. Lucide",
+      "color": [
+        "forest",
+        "gold"
+      ],
+      "stroke": 1.5
+    }
+  },
+  "logo": {
+    "primary": {
+      "file": "public/brand/logo-primary.png",
+      "size": [
+        1888,
+        732
+      ],
+      "on": "light backgrounds",
+      "where": "header"
+    },
+    "primary-600": {
+      "file": "public/brand/logo-primary-600.png",
+      "size": [
+        600,
+        233
+      ]
+    },
+    "reversed": {
+      "file": "public/brand/logo-reversed.png",
+      "size": [
+        1913,
+        722
+      ],
+      "on": "forest, mountain, dark photos",
+      "where": "footer"
+    },
+    "reversed-600": {
+      "file": "public/brand/logo-reversed-600.png",
+      "size": [
+        600,
+        226
+      ]
+    },
+    "icon": {
+      "file": "public/brand/icon.png",
+      "size": [
+        1092,
+        1092
+      ]
+    },
+    "icon-512": {
+      "file": "public/brand/icon-512.png"
+    },
+    "icon-192": {
+      "file": "public/brand/icon-192.png"
+    },
+    "apple-touch-icon": {
+      "file": "public/brand/apple-touch-icon.png",
+      "size": [
+        180,
+        180
+      ]
+    },
+    "favicon": [
+      "public/brand/favicon.ico",
+      "public/brand/favicon-32.png",
+      "public/brand/favicon-16.png"
+    ],
+    "og-image": {
+      "file": "public/brand/og-image.jpg",
+      "size": [
+        1200,
+        630
+      ]
+    },
+    "alt": "Your Tanzania Trip",
+    "headerHeight": {
+      "desktop": [
+        56,
+        64
+      ],
+      "mobile": 44
+    },
+    "minWidth": {
+      "screen": 160,
+      "print": "40mm"
+    },
+    "clearSpace": "height of the capital letters in the wordmark"
+  },
+  "company": {
+    "brand": "Your Tanzania Trip",
+    "domain": "yourtanzaniatrip.com",
+    "owner": "Tijs Krops",
+    "address": "Sluitgatweg 10, 8308 RE Nagele, Netherlands",
+    "kvk": "97223344",
+    "vat": "NL005256557B94",
+    "email": "info@yourtanzaniatrip.com",
+    "phone": "+31 6 29351377",
+    "whatsapp": "[FILL: confirm whether WhatsApp uses the same number]",
+    "tagline": "[FILL: owner picks one]",
+    "taglineProposals": [
+      "Your trip, planned with care",
+      "Tanzania, tailor-made for you",
+      "Safari, summit and sea, your way"
+    ],
+    "protection": "[FILL] claim none until confirmed"
+  },
+  "partner": {
+    "name": "Kilimanjaro Nature Tours",
+    "url": "https://kilimanjaronaturetours.com",
+    "city": "Arusha, Tanzania",
+    "owner": "Baraka Dalali",
+    "email": "info@kilimanjaronaturetours.com",
+    "postal": "P.O. Box 611, USA River, Arusha",
+    "credentials": {
+      "permissionGranted": false,
+      "items": [
+        "TATO (Tanzania Association of Tour Operators)",
+        "TANAPA (Tanzania National Parks)",
+        "Tanzania Tourist Board",
+        "TALA licence [FILL: number]"
+      ]
+    },
+    "tripadvisor": {
+      "url": "[FILL: Tripadvisor profile URL of Kilimanjaro Nature Tours]",
+      "score": "5.0",
+      "scale": 5,
+      "count": 208,
+      "awards": [
+        "Travellers' Choice 2023",
+        "Travellers' Choice 2024"
+      ],
+      "checkedOn": "[FILL: date the score was last checked, e.g. 23 October 2026]"
+    },
+    "whatDoesWhat": {
+      "ytt": "Your Tanzania Trip plans your trip with you, sends the proposal and the invoice, and is your contact before departure.",
+      "knt": "Kilimanjaro Nature Tours provides the guides, drivers, vehicles, mountain crew, park permits and bookings, and looks after you during the trip."
+    }
+  },
+  "voice": {
+    "values": [
+      "Personal",
+      "Honest",
+      "Calm",
+      "Concrete"
+    ],
+    "dutchAddress": "je / jouw / jullie, never u",
+    "terms": {
+      "trip": "reis",
+      "itinerary": "reisprogramma",
+      "quote": "offerte",
+      "Plan your trip": "Plan je reis",
+      "Price on request": "Prijs op aanvraag"
+    }
+  },
+  "never": [
+    "bright olive green",
+    "mustard yellow",
+    "stretched or recoloured logos",
+    "borrowed ratings or awards",
+    "invented reviews or prices",
+    "photos from other travel sites"
+  ]
+}

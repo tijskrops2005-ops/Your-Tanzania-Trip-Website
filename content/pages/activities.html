@@ -1,0 +1,867 @@
+
+
+
+    <div class="ts-jumbotron relative isolate lg:ts-mask-bottom is-pre-form-visible">
+        <div
+            class="ts-jumbotron-wrapper  "
+            >
+                                                                <img width="1700" height="800" src="/wp-content/uploads/2023/07/DSC03886-1920x800.jpg" class="no-lazyload ts-jumbotron-image absolute inset-0 -z-10 h-full w-full object-cover ts-object-bottom wp-post-image" alt="hot air balloon tanzania" fetchpriority="high" loading="eager" sizes="(max-width: 768px) 768px, 1700px" decoding="async" />                            
+                            <div class="w-full ts-jumbotron-inner custom-bg-gradient-black">
+                    <div class="flex relative flex-col items-end mx-auto max-w-9xl lg:flex-row">
+                        <div class="relative mx-auto flex w-full flex-col items-end px-4 max-w-7xl container-2xl gap-x-12 md:px-5 lg:flex-row justify-between">
+                            <div class="w-full max-w-none prose-p:text-sm prose-h1:font-black prose-p:leading-6 prose-p:tracking-wider prose-h1:tracking-wider prose-h1:uppercase prose-h1:text-white prose-p:text-white ts-jumbotron-content prose prose-h1:md:text-4xl prose-h1:lg:-mb-2 prose-p:lg:text-base prose-h2:mt-5 prose-h2:text-white prose-h2:text-base prose-h2:md:text-lg prose-h2:tracking-wider prose-h2:font-black prose-p:lg:leading-7 lg:max-w-3xl text-left">
+                                <!--
+                                    <a href="#" title="Wishlist" class="inline-flex justify-center items-center mb-5 text-sm tracking-wider leading-none text-white no-underline group md:text-base">
+                                        <span class="hidden lg:inline"></span>
+
+                                        <span class="flex justify-center items-center w-9 h-9 text-lg rounded-full transition-colors bg-sand text-anthracite md:h-9 md:w-9 md:text-2xl lg:ml-4">
+                                            <span class="w-7 h-7 i-ic-baseline-favorite-border lg-h-6 group-hover:hidden lg:w-6"></span>
+                                            <span class="hidden w-7 h-7 i-ic-baseline-favorite text-red group-hover:block lg:h-6 lg:w-6"></span>
+                                        </span>
+                                    </a>
+                                --> <!-- Hide Wishlist button until this feature is build -->
+
+                                
+                                
+                                <h1 style="text-wrap: balance;" class="!leading-tight">Activities</h1>
+
+                                
+                                                                    <p style="text-wrap: balance;">Activities next to the game drives can take your safari adventure to the next level. Game drives in the dark? Check! On foot, by boat? No problem! Visits to traditional tribes? We take you!
+
+Simply check the list of all national parks below to see what activity you can do there. Then contact your travel consultant, and we will happily arrange it for you!
+
+The activities include English-speaking guides and are mostly private. 
+
+
+</p>
+
+                                                                    
+                                
+
+                                                            </div>
+
+                                                            <div class="pre-form-wrapper hidden lg:block">
+    <div class="flex justify-between items-center mb-6 md:mb-5">
+        <div class="max-w-xs text-xl font-black tracking-wider text-white uppercase md:text-2xl" style="text-wrap: balance;">
+            Let’s plan your dream trip together!        </div>
+
+                    <img class="inline-block object-cover w-14 h-14 rounded-full md:h-16 md:w-16 aspect-video"
+                src="/wp-content/uploads/2023/11/test_image_2-1-150x150.jpg" alt="" width="150" height="150" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+
+    <form action="/travel-proposal/" class="ts-jumbotron-pre-form" x-data="{ adults: '2', adultsFirstClick: true, children: '0', childrenFirstClick: true }">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col form-group">
+                <label for="adults">Adults</label>
+                <div class="relative mt-auto">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite"
+                        type="number" id="adults" name="adults" value="2" inputmode="numeric" pattern="[0-9]*" required
+                        x-model="adults" @click="if (adultsFirstClick) { adults = ''; adultsFirstClick = false; }">
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-6" width="10" height="24" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/adult.png" alt="Adult icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col form-group">
+                <label for="children">Children</label>
+                <div class="relative mt-auto">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite"
+                        type="number" id="children" name="children" value="0" inputmode="numeric" pattern="[0-9]*"
+                        x-model="children" @click="if (childrenFirstClick) { children = ''; childrenFirstClick = false; }">
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-5" width="14" height="20" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/kid.png" alt="Child icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-2 form-group">
+                <label for="estimated_arrival_date">Estimated arrival date</label>
+                <div class="relative">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer estimated_arrival_date form-input text-anthracite"
+                        type="date"
+                        id="estimated_arrival_date"
+                        name="estimated_arrival_date"
+                        required>
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-5" width="20" height="20" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/calendar.png" alt="Calendar icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-2 form-group">
+                <input type="submit" value="Start customizing" class="mt-3 w-full btn btn-small btn-yellow">
+                <div class="no-strings-attached-info">
+                    No strings attached. We’ll design your trip - no cost, no commitment.                </div>
+            </div>
+        </div>
+    </form>
+</div>
+                                                    </div>
+
+                        <div class="associations-logos absolute hidden right-4 visibility-hide top-0">
+                                                    </div>
+                    </div>
+
+                                    </div>
+                    </div>
+    </div>
+
+    
+        <div class="usps-container ">
+        <div class="px-4 max-w-7xl usps-container-wrapper lg:mx-auto container-2xl">
+            <ul class="grid gap-6 py-8 sm:grid-cols-2 lg:flex lg:justify-between">
+                                                            <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            All trips are 100% tailor-made                        </li>
+                                                                                                        <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            Local partner rated 5.0/5                        </li>
+                                                                                                        <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            Best value &amp; free quotation                        </li>
+                                                                                                                                                </ul>
+        </div>
+
+                    <div class="px-4 mx-auto mb-8 w-full usps-container-button">
+                <a href="/travel-proposal/" class="w-full rounded-3xl btn btn-small btn-yellow">
+                    Start customizing                </a>
+            </div>
+            </div>
+
+        <div class="w-full flyout-btn lg:hidden">
+        <!-- FILTER/RESET BUTTON ON LANDING PAGES WITH FACETWP -->
+        <div class="flex items-center justify-between gap-4">
+            <button class="flex items-center justify-center w-full h-full py-3 tracking-wide border-0 text-anthracite btn btn-sand facetwp-flyout-open hover:bg-sand hover:text-anthracite">
+                                                                                        Filter excursions                                                                            <span class="ml-3 text-2xl i-ic-outline-filter-alt"></span>
+            </button>
+
+            <button onclick="FWP.reset()" id="js-facetwp-reset" class="hidden flex-shrink-0 items-center justify-center border-0 bg-black/20 py-3 tracking-wide facet-flyout-toggle text-anthracite">
+                <span class="text-2xl i-ic-outline-filter-alt-off"></span>
+            </button>
+        </div>
+
+        <div class="tracking-wide ts-filter-selections">
+            <div class="facetwp-selections"></div>
+        </div>
+
+        <div class="facetwp-flyout-tpl" style="display: none;">
+            <h2 class="pt-2 mb-5 font-black tracking-wider uppercase text-green">
+                                                                                        Filter excursions                                                                        </h2>
+
+            {content}
+
+            <button onclick="FWP.flyout.close()" class="fixed bottom-0 left-0 right-0 w-full ts-flyout-filter-close-btn btn btn-green hover:bg-green hover:border-green hover:text-white max-lg:z-20">
+                Save filter            </button>
+        </div>
+    </div>
+    <img
+        width="1700"
+        height="1644"
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 top-36"
+        src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png"
+        alt=""
+        aria-hidden="true"
+        role="presentation" />
+<div class="relative z-10 px-5 mx-auto max-w-7xl container-2xl"><ul id="breadcrumbs" class="flex items-center py-4 md:py-6 gap-x-3"></span><li><a href="/">Home</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li>  <li class="active"><a href="/activities/">Activities</a></li></span></ul></div>
+<!--fwp-loop-->
+
+<div class="mx-auto px-0 pt-0 pb-10 max-w-7xl container-2xl lg:px-5 lg:pb-24 lg:pt-8 overview-excursions">
+    <div class="grid grid-cols-12 gap-y-5 gap-x-8 overview-grid">
+        
+            <div class="sticky-wrapper relative ts-span-3 hidden lg:block">
+            <div class="sidebar sidebar-facetwp-4 make-sticky flex flex-col gap-y-7">
+                <section id="block-17" class="widget widget_block">
+<strong class="wp-block-heading">Location</strong>
+</section><section id="block-18" class="widget widget_block"><p><div class="facetwp-facet facetwp-facet-excursion_locations facetwp-type-checkboxes" data-name="excursion_locations" data-type="checkboxes"></div></p>
+</section>            </div>
+        </div>
+    
+        <div class="col-span-12 lg:col-span-9 overview-col">
+            <div class="flex flex-nowrap justify-between items-center mb-12 w-full text-brown fwp-sort-by max-md:px-4 max-lg:px-5 max-sm:mt-3 max-lg:mb-6">
+                <div class="tracking-wider max-sm:tracking-wide max-sm:text-md">
+                    <div class="facetwp-facet facetwp-facet-_total_rows facetwp-type-pager" data-name="_total_rows" data-type="pager"></div>                </div>
+
+                            </div>
+
+            <div class=" flex flex-col justify-center gap-y-5 facetwp-template">
+                
+                                    <!--fwp-loop-->
+                        <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="597" src="/wp-content/uploads/2026/01/woman-snorkeling-1024x597.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/01/woman-snorkeling-1024x597.jpg 1024w, /wp-content/uploads/2026/01/woman-snorkeling-300x175.jpg 300w, /wp-content/uploads/2026/01/woman-snorkeling-768x448.jpg 768w, /wp-content/uploads/2026/01/woman-snorkeling-1536x896.jpg 1536w, /wp-content/uploads/2026/01/woman-snorkeling-2048x1194.jpg 2048w, /wp-content/uploads/2026/01/woman-snorkeling-60x35.jpg 60w" sizes="(max-width: 1024px) 100vw, 1024px"  loading="eager" fetchpriority="high"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="21933"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Zanzibar            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/mnemba-snorkelling-private-boat-tour/">Mnemba snorkelling (private boat tour)</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Discover the vibrant underwater world at Mnemba Island with our exclusive private boat tour for snorkeling. Located off the coast of Zanzibar, this hidden gem is renowned for its crystal-clear waters and diverse marine life, including colorful coral reefs and playful dolphins. Our experienced guides ensure a personalized experience, catering to both beginners and seasoned [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/mnemba-snorkelling-private-boat-tour/"
+            data-id="21933"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/04/Balloon-safari_Balloon-in-the-air-Website-pics-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/04/Balloon-safari_Balloon-in-the-air-Website-pics-1024x683.avif 1024w, /wp-content/uploads/2026/04/Balloon-safari_Balloon-in-the-air-Website-pics-300x200.avif 300w, /wp-content/uploads/2026/04/Balloon-safari_Balloon-in-the-air-Website-pics-768x512.avif 768w, /wp-content/uploads/2026/04/Balloon-safari_Balloon-in-the-air-Website-pics-1536x1024.avif 1536w, /wp-content/uploads/2026/04/Balloon-safari_Balloon-in-the-air-Website-pics-2048x1365.avif 2048w, /wp-content/uploads/2026/04/Balloon-safari_Balloon-in-the-air-Website-pics-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="19967"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Tarangire            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/hot-air-balloon-flight-in-tarangire/">Hot air balloon flight in Tarangire</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">This 45-minute to an-hour hot air balloon flight gives you panoramic views of Tarangire National Park while drifting peacefully through the air. At the crack of dawn, you rise up into mid-air, soaring high enough for breathtaking views of the sunrise and the Tarangire River and low enough to watch the baobabs, elephants, lions and [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/hot-air-balloon-flight-in-tarangire/"
+            data-id="19967"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="800" height="408" src="/wp-content/uploads/2026/04/Canoe.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/04/Canoe.avif 800w, /wp-content/uploads/2026/04/Canoe-300x153.avif 300w, /wp-content/uploads/2026/04/Canoe-768x392.avif 768w, /wp-content/uploads/2026/04/Canoe-60x31.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="19961"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Arusha            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/canoeing-on-lake-duluti/">Canoeing on Lake Duluti</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Canoe safaris are a great way to have fun and relax at the same time, while you experience nature from another perspective &#8211; from the water! In this activity, you take your canoe to the small crater lake of Lake Duluti, close to Arusha town. Surrounded by forest, you can spot eagles, kingfishers and darters [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/canoeing-on-lake-duluti/"
+            data-id="19961"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="522" src="/wp-content/uploads/2026/04/Maasai-tribe-dancing-Website-pics-1024x522.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/04/Maasai-tribe-dancing-Website-pics-1024x522.avif 1024w, /wp-content/uploads/2026/04/Maasai-tribe-dancing-Website-pics-300x153.avif 300w, /wp-content/uploads/2026/04/Maasai-tribe-dancing-Website-pics-768x392.avif 768w, /wp-content/uploads/2026/04/Maasai-tribe-dancing-Website-pics-1536x784.avif 1536w, /wp-content/uploads/2026/04/Maasai-tribe-dancing-Website-pics-2048x1045.avif 2048w, /wp-content/uploads/2026/04/Maasai-tribe-dancing-Website-pics-60x31.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="19464"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Lake Manyara            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/maasai-wedding-experience/">Maasai Wedding Experience</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Rounding off your wedding (or renewing) your vows together with the Maasai is a colourful, energizing, and very romantic way to celebrate your love. You join in a traditional ceremony in the middle of the African savannah, dressed in colourful Maasai wedding atire and surrounded by the community. The groom is led by the warriors, [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/maasai-wedding-experience/"
+            data-id="19464"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="522" src="/wp-content/uploads/2026/04/Bush-dinner--1024x522.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/04/Bush-dinner--1024x522.avif 1024w, /wp-content/uploads/2026/04/Bush-dinner--300x153.avif 300w, /wp-content/uploads/2026/04/Bush-dinner--768x392.avif 768w, /wp-content/uploads/2026/04/Bush-dinner--1536x784.avif 1536w, /wp-content/uploads/2026/04/Bush-dinner--2048x1045.avif 2048w, /wp-content/uploads/2026/04/Bush-dinner--60x31.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="19231"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Central Serengeti            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/bush-dinner-in-the-serengeti/">Bush dinner in the Serengeti</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">A bush dinner right on the plains of Serengeti National Park is the ultimate romantic dining experience! During a bush dinner, a delicious meal is served on the savannah plains under a sky glittering with stars. Enjoy the crackling of a campfire while listening to the animals scurrying in the dark around you. Usually, tables [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/bush-dinner-in-the-serengeti/"
+            data-id="19231"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="689" src="/wp-content/uploads/2024/04/Downloading-images-for-new-website-1024x689.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2024/04/Downloading-images-for-new-website-1024x689.jpg 1024w, /wp-content/uploads/2024/04/Downloading-images-for-new-website-300x202.jpg 300w, /wp-content/uploads/2024/04/Downloading-images-for-new-website-768x516.jpg 768w, /wp-content/uploads/2024/04/Downloading-images-for-new-website-1536x1033.jpg 1536w, /wp-content/uploads/2024/04/Downloading-images-for-new-website-2048x1377.jpg 2048w, /wp-content/uploads/2024/04/Downloading-images-for-new-website-60x40.jpg 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="17809"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Zanzibar            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/sunset-cruise-on-a-yacht-charter-walkabout-50ft-voyage-yacht-at-nungwi-bay/">Sunset Cruise on a Yacht Charter (walkabout-50ft Voyage Yacht) at Nungwi Bay</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Take a cruise over the Indian Ocean on a beautiful catamaran, and sail straight into the sunset! This cruise starts at 3:30 pm and takes you from Nungwi in the north of Zanzibar to the beautiful Nungwi Bay, with some great tunes on the sound system and of course an ice cold drink in hand! [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/sunset-cruise-on-a-yacht-charter-walkabout-50ft-voyage-yacht-at-nungwi-bay/"
+            data-id="17809"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="695" src="/wp-content/uploads/2026/04/IM_TZ_RUA_Hot-air-balloon-wildebeest-28129-1024x695.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/04/IM_TZ_RUA_Hot-air-balloon-wildebeest-28129-1024x695.avif 1024w, /wp-content/uploads/2026/04/IM_TZ_RUA_Hot-air-balloon-wildebeest-28129-300x204.avif 300w, /wp-content/uploads/2026/04/IM_TZ_RUA_Hot-air-balloon-wildebeest-28129-768x521.avif 768w, /wp-content/uploads/2026/04/IM_TZ_RUA_Hot-air-balloon-wildebeest-28129-1536x1042.avif 1536w, /wp-content/uploads/2026/04/IM_TZ_RUA_Hot-air-balloon-wildebeest-28129-2048x1390.avif 2048w, /wp-content/uploads/2026/04/IM_TZ_RUA_Hot-air-balloon-wildebeest-28129-60x41.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="17209"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Ruaha            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/hot-air-balloon-flight-in-ruaha-mid-june-to-end-of-october-only/">Hot air balloon flight in Ruaha &#8211; mid June to end of October only</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Soar above the breathtaking landscapes of Ruaha National Park with our exclusive hot air balloon flight. Available only from mid June to end of October, this extraordinary experience offers panoramic views of the untouched wilderness, teeming with diverse wildlife. Admire the gentle sunrise painting the sky as you float gracefully above the enchanting savannah. Immerse [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/hot-air-balloon-flight-in-ruaha-mid-june-to-end-of-october-only/"
+            data-id="17209"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="684" src="/wp-content/uploads/2024/07/owl-1024x684.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2024/07/owl-1024x684.jpg 1024w, /wp-content/uploads/2024/07/owl-300x200.jpg 300w, /wp-content/uploads/2024/07/owl-768x513.jpg 768w, /wp-content/uploads/2024/07/owl-1536x1025.jpg 1536w, /wp-content/uploads/2024/07/owl-60x40.jpg 60w, /wp-content/uploads/2024/07/owl.jpg 1600w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="17205"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Mikumi            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/night-game-drive-in-mikumi-national-park/">Night game drive in Mikumi National Park</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">As the sun sets over Mikumi National Park, the bush transforms into a different world entirely. Nocturnal creatures emerge from their hiding places &#8211; leopards begin to hunt, hyenas roam, and bush babies dart between the trees. Your guide will help you spot and understand the animals that only come alive after dark, from 7 [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/night-game-drive-in-mikumi-national-park/"
+            data-id="17205"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="522" src="/wp-content/uploads/2026/03/group-of-elephants-1024x522.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/03/group-of-elephants-1024x522.avif 1024w, /wp-content/uploads/2026/03/group-of-elephants-300x153.avif 300w, /wp-content/uploads/2026/03/group-of-elephants-768x392.avif 768w, /wp-content/uploads/2026/03/group-of-elephants-1536x784.avif 1536w, /wp-content/uploads/2026/03/group-of-elephants-2048x1045.avif 2048w, /wp-content/uploads/2026/03/group-of-elephants-60x31.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="17202"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Ruaha            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/walking-safari-in-ruaha-national-park-half-day/">Walking safari in Ruaha National Park &#8211; Half day</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Experience the beauty of Ruaha National Park on a half-day walking safari. Explore the untamed wilderness, encounter incredible wildlife up close, and immerse yourself in the sights and sounds of nature. Our expert guides will lead you through the park, sharing their knowledge about the flora and fauna that call this place home. This is [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/walking-safari-in-ruaha-national-park-half-day/"
+            data-id="17202"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/04/Elephants-Website-pics-compressed-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/04/Elephants-Website-pics-compressed-1024x683.avif 1024w, /wp-content/uploads/2026/04/Elephants-Website-pics-compressed-300x200.avif 300w, /wp-content/uploads/2026/04/Elephants-Website-pics-compressed-768x512.avif 768w, /wp-content/uploads/2026/04/Elephants-Website-pics-compressed-1536x1024.avif 1536w, /wp-content/uploads/2026/04/Elephants-Website-pics-compressed-2048x1365.avif 2048w, /wp-content/uploads/2026/04/Elephants-Website-pics-compressed-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="17199"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Nyerere            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/walking-safari-in-selous/">Walking safari in Nyerere National Park</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">If you enjoy adventure, do not miss out on this 2-hour walking safari in Julius Nyerere National Park. A knowledgeable guide and an armed ranger accompany you during the activity to protect you and teach you funny facts, like how to identify a bird by its sound or how steaming dung indicates an elephant passing [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/walking-safari-in-selous/"
+            data-id="17199"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/04/Manyara-Best-View-Lodge-26-Spa_Sunbeds-view-Website-pics-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/04/Manyara-Best-View-Lodge-26-Spa_Sunbeds-view-Website-pics-1024x683.avif 1024w, /wp-content/uploads/2026/04/Manyara-Best-View-Lodge-26-Spa_Sunbeds-view-Website-pics-300x200.avif 300w, /wp-content/uploads/2026/04/Manyara-Best-View-Lodge-26-Spa_Sunbeds-view-Website-pics-768x512.avif 768w, /wp-content/uploads/2026/04/Manyara-Best-View-Lodge-26-Spa_Sunbeds-view-Website-pics-1536x1024.avif 1536w, /wp-content/uploads/2026/04/Manyara-Best-View-Lodge-26-Spa_Sunbeds-view-Website-pics-2048x1365.avif 2048w, /wp-content/uploads/2026/04/Manyara-Best-View-Lodge-26-Spa_Sunbeds-view-Website-pics-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="16858"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Lake Manyara            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/relaxing-day-in-manyara-best-view-lodge/">Relaxing day in Manyara Best View Lodge</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">The Manyara Best View Lodge near Lake Manyara National Park is the perfect place for a day of rest in between safaris. You can spend the whole day at the infinity pool in the lodge, and enjoy the good service and amazing views. Or you go out and about and discover the many things you [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/relaxing-day-in-manyara-best-view-lodge/"
+            data-id="16858"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2023/11/Gibbs-Farm-harvest-1-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Women harvesting vegetables in a green field at Gibb&#039;s Farm" decoding="async" srcset="/wp-content/uploads/2023/11/Gibbs-Farm-harvest-1-1024x683.jpg 1024w, /wp-content/uploads/2023/11/Gibbs-Farm-harvest-1-300x200.jpg 300w, /wp-content/uploads/2023/11/Gibbs-Farm-harvest-1-768x512.jpg 768w, /wp-content/uploads/2023/11/Gibbs-Farm-harvest-1-1536x1025.jpg 1536w, /wp-content/uploads/2023/11/Gibbs-Farm-harvest-1-60x40.jpg 60w, /wp-content/uploads/2023/11/Gibbs-Farm-harvest-1.jpg 1950w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="16829"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Karatu            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/gibbs-farm-walk-lunch/">Gibb&#8217;s Farm walk &amp; lunch</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Gibb&#8217;s Farm offers the old-age rhythm of an African farm and coffee plantation, right on the slopes of Ngorongoro Highlands. Walk around on this sanctuary of peace and tranquility, and watch vegetables being harvested, coffee roasted, cows milked, and pigs fed. The vegetable gardens, fruit trees, and herbs provide inspiration for the farm&#8217;s chefs, who [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/gibbs-farm-walk-lunch/"
+            data-id="16829"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="683" src="/wp-content/uploads/2026/06/Maasai-Village-Foot-on-Africa-Website-pics-1024x683.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/06/Maasai-Village-Foot-on-Africa-Website-pics-1024x683.avif 1024w, /wp-content/uploads/2026/06/Maasai-Village-Foot-on-Africa-Website-pics-300x200.avif 300w, /wp-content/uploads/2026/06/Maasai-Village-Foot-on-Africa-Website-pics-768x512.avif 768w, /wp-content/uploads/2026/06/Maasai-Village-Foot-on-Africa-Website-pics-1536x1024.avif 1536w, /wp-content/uploads/2026/06/Maasai-Village-Foot-on-Africa-Website-pics-2048x1365.avif 2048w, /wp-content/uploads/2026/06/Maasai-Village-Foot-on-Africa-Website-pics-60x40.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="16746"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Lake Manyara            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/a-taste-of-culture-mto-wa-mbu-mountain-bike-ride-maasai-village/">A taste of culture &#8211; Mto wa Mbu: Mountain bike ride &amp; Maasai village</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Mto wa Mbu is a village close to Lake Manyara National Park, where it stands out as a green oasis in the middle of the surrounding Maasai plains. Get a taste of culture and discover this lovely little village, the surrounding lush green nature, and the banana plantations by hopping on a mountainbike. Then get [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/a-taste-of-culture-mto-wa-mbu-mountain-bike-ride-maasai-village/"
+            data-id="16746"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="522" src="/wp-content/uploads/2026/04/Leopard_Night-Game-Drive-Website-pics-1024x522.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/04/Leopard_Night-Game-Drive-Website-pics-1024x522.avif 1024w, /wp-content/uploads/2026/04/Leopard_Night-Game-Drive-Website-pics-300x153.avif 300w, /wp-content/uploads/2026/04/Leopard_Night-Game-Drive-Website-pics-768x392.avif 768w, /wp-content/uploads/2026/04/Leopard_Night-Game-Drive-Website-pics-1536x784.avif 1536w, /wp-content/uploads/2026/04/Leopard_Night-Game-Drive-Website-pics-2048x1045.avif 2048w, /wp-content/uploads/2026/04/Leopard_Night-Game-Drive-Website-pics-60x31.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="16254"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Tarangire            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/night-game-drive-in-tarangire-national-park/">Night game drive in Tarangire National Park</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">A night game drive gives your safari a completely different twist as you see all the nocturnal animals that you not see during the day. These animals now appear with eyes lighting up in the darkness when the headlights of the safari jeep meet them. Your guide tells you all about these night lovers, and [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/night-game-drive-in-tarangire-national-park/"
+            data-id="16254"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                            <article class="relative flex flex-col isolate bg-sand md:mx-0 lg:flex-row">
+    <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
+                    <img width="1024" height="597" src="/wp-content/uploads/2026/04/Shira-plateau-28329-1024x597.avif" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2026/04/Shira-plateau-28329-1024x597.avif 1024w, /wp-content/uploads/2026/04/Shira-plateau-28329-300x175.avif 300w, /wp-content/uploads/2026/04/Shira-plateau-28329-768x448.avif 768w, /wp-content/uploads/2026/04/Shira-plateau-28329-1536x896.avif 1536w, /wp-content/uploads/2026/04/Shira-plateau-28329-2048x1194.avif 2048w, /wp-content/uploads/2026/04/Shira-plateau-28329-60x35.avif 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+        <!-- Wishlist button -->
+        <div class="absolute top-4 left-4">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
+                data-wishlist-post-id="16227"
+                data-wishlist-post-type="excursions">
+                <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
+                <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
+            </a>
+        </div>
+
+                    <span class="card-label bg-beige">
+                Moshi            </span>
+            </div>
+
+    
+    <div class="relative w-full px-5 py-8 lg:pr-14 lg:pl-10">
+        <div class="relative flex flex-col w-full">
+            <div class="relative">
+                <div class="max-w-sm mb-2 lg:mb-6">
+                    <h3 class="text-lg font-bold leading-6 tracking-wider text-gray-900 uppercase text-anthracite group-hover:text-yellow">
+                        <a href="/activity/day-trip-to-shira-plateau/">Day hike on the Shira Plateau</a>
+                    </h3>
+
+                                    </div>
+
+                <div class="content-wrapper ts-prose">
+                    <p class="line-clamp-4 !text-sm !leading-7">Make a dayhike on the Shira plateau, halfway up the famous Mount Kilimanjaro! This hike is perfect for those who want to experience the Kili, without actually going to the top. A driver takes you up to the Londorossi Gate on the westside of the mountain, at an altitude of 3,407 meters. Here your five-hour [&hellip;]</p>
+                </div>
+            </div>
+
+            <a class="mb-4 mt-6 lg:mb-0 btn btn-small btn-red xl:btn--stretched lg:btn-green !grow-0 overview-card-btn" href="/activity/day-trip-to-shira-plateau/"
+            data-id="16227"
+            id="js-excursions-toggle">
+                View this activity            </a>
+        </div>
+    </div>
+</article>
+                                                </div>
+
+            <div class="facetwp-facet facetwp-facet-page facetwp-type-pager" data-name="page" data-type="pager"></div>        </div>
+    </div>
+</div>
+
+
+                
+            <div class="relative z-10 px-5 mx-auto -mb-1 max-w-7xl container-2xl md:py-12">
+                            <div class="grid grid-cols-12 -mx-5 ts-mask-top md:mx-0">
+                    <div class="col-span-12 lg:col-span-6 lg:row-start-1 lg:col-start-1 px-5 lg:px-7 py-12 lg:py-7 text-center flex flex-col justify-center bg-green">
+                        <h3 class="cta-title text-white" style="text-wrap: balance;">Let us create your tailor-made trip</h3>
+                        <p class="cta-subtitle">Receive a free, no obligation quote</p>
+
+                        
+                        <a class="mx-auto mt-7 w-full max-w-sm text-sm leading-none btn btn-yellow"
+                            href="/travel-proposal/"
+                            target="">
+                            Start planning your dream trip                        </a>
+                    </div>
+
+                    <div class="col-span-12 row-start-1 lg:col-span-6 lg:col-start-7 lg:flex-auto">
+                        <img width="1230" height="580" src="/wp-content/uploads/2023/08/guide_tanzania_specialist-1230x580.jpg" class="block w-full object-cover object-center cta-image" alt="" decoding="async" loading="lazy"  fetchpriority="low"/>                    </div>
+                </div>
+            
+                            <div class="grid grid-cols-12 -mx-5 ts-mask-bottom md:mx-0">
+                    <div class="flex flex-col-reverse col-span-12 gap-x-10 justify-center items-center px-5 py-12 lg:px-7 bg-sand lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:flex-row lg:py-7">
+                        <img width="641" height="641" src="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg" class="hidden lg:block mask-img w-48 h-48" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg 641w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-300x300.jpg 300w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-150x150.jpg 150w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-60x60.jpg 60w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-580x580.jpg 580w" sizes="auto"  fetchpriority="low"/>
+                        <div class="flex flex-col justify-center text-center md:text-left" style="content-visibility: auto;contain-intrinsic-size: auto 262px;">
+                            <h3 class="cta-title text-brown">Call an expert</h3>
+                            <p class="mt-2 mb-7 font-black tracking-widest uppercase text-brown md:mt-0 md:text-sm md:tracking-wider">Our specialists are here to assist you</p>
+
+                            <img width="641" height="641" src="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg" class="mt-4 mx-auto hidden mask-img w-36 h-36" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg 641w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-300x300.jpg 300w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-150x150.jpg 150w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-60x60.jpg 60w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-580x580.jpg 580w" sizes="auto"  fetchpriority="low"/>
+                                                                                                
+                                    <a class="mx-auto !pl-5 !py-3 gap-x-4 flex items-center justify-center cursor-pointer lg:justify-normal mt-2.5 w-auto lg:w-full max-w-sm text-center leading-none tracking-widest btn btn-small btn-red"
+                                        href="tel:+31629351377"
+                                        target="">
+                                        <span class="flex gap-2.5 items-center">
+                                            <span class="!w-[2.01em] !h-[1.50em] text-white ts-flag-nl"></span>
+<span class="!text-base">NL: </span>
+                                        </span>
+
+                                        <span>+31 6 29351377</span>
+                                    </a>
+                                                                    
+                                    <a class="mt-5 text-base text-anthracite tracking-wide font-black uppercase hover:!no-underline" href="/contact/">
+                                    <u>other countries</u>
+                                </a>
+                                                    </div>
+                    </div>
+
+                    <div class="flex-auto col-span-12 lg:col-span-6 md:col-start-1 md:row-start-1">
+                        <img width="800" height="423" src="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg" class="block w-full object-cover object-top cta-image" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg 800w, /wp-content/uploads/2023/09/Serengetei-NP-2-300x159.jpeg 300w, /wp-content/uploads/2023/09/Serengetei-NP-2-768x406.jpeg 768w, /wp-content/uploads/2023/09/Serengetei-NP-2-60x32.jpeg 60w" sizes="auto"  fetchpriority="low"/>                    </div>
+                </div>
+                    </div>
+    
+            

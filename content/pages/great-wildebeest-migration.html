@@ -1,0 +1,791 @@
+
+
+
+    <div class="ts-jumbotron relative isolate lg:ts-mask-bottom is-pre-form-visible">
+        <div
+            class="ts-jumbotron-wrapper  "
+            >
+                                                                <img width="1700" height="800" src="/wp-content/uploads/2024/07/Wildebeest-Migration-Tierwanderung-3-1960x800.jpg" class="no-lazyload ts-jumbotron-image absolute inset-0 -z-10 h-full w-full object-cover ts-object-bottom wp-post-image" alt="Countless wildebeest running over the Tanzanian plains during the Great Wildebeest Migration" fetchpriority="high" loading="eager" sizes="(max-width: 768px) 768px, 1700px" decoding="async" />                            
+                            <div class="w-full ts-jumbotron-inner custom-bg-gradient-black">
+                    <div class="flex relative flex-col items-end mx-auto max-w-9xl lg:flex-row">
+                        <div class="relative mx-auto flex w-full flex-col items-end px-4 max-w-7xl container-2xl gap-x-12 md:px-5 lg:flex-row justify-center">
+                            <div class="w-full max-w-none prose-p:text-sm prose-h1:font-black prose-p:leading-6 prose-p:tracking-wider prose-h1:tracking-wider prose-h1:uppercase prose-h1:text-white prose-p:text-white ts-jumbotron-content prose prose-h1:md:text-4xl prose-h1:lg:-mb-2 prose-p:lg:text-base prose-h2:mt-5 prose-h2:text-white prose-h2:text-base prose-h2:md:text-lg prose-h2:tracking-wider prose-h2:font-black prose-p:lg:leading-7 lg:max-w-3xl text-center">
+                                <!--
+                                    <a href="#" title="Wishlist" class="inline-flex justify-center items-center mb-5 text-sm tracking-wider leading-none text-white no-underline group md:text-base">
+                                        <span class="hidden lg:inline"></span>
+
+                                        <span class="flex justify-center items-center w-9 h-9 text-lg rounded-full transition-colors bg-sand text-anthracite md:h-9 md:w-9 md:text-2xl lg:ml-4">
+                                            <span class="w-7 h-7 i-ic-baseline-favorite-border lg-h-6 group-hover:hidden lg:w-6"></span>
+                                            <span class="hidden w-7 h-7 i-ic-baseline-favorite text-red group-hover:block lg:h-6 lg:w-6"></span>
+                                        </span>
+                                    </a>
+                                --> <!-- Hide Wishlist button until this feature is build -->
+
+                                
+                                
+                                <h1 style="text-wrap: balance;" class="!leading-tight">THE GREAT WILDEBEEST MIGRATION</h1>
+
+                                
+                                                                    <p style="text-wrap: balance;">The Great Wildebeest Migration is one of the largest land mammal migrations in the world and one of the "Seven Natural Wonders of Africa". It’s a true spectacle of nature, with millions of wildebeest, zebras, and gazelles thundering across the endless plains of the Serengeti throughout the year in search of fresh grazing and higher-quality water. For many travelers, the epic crossing of the Grumeti and Mara Rivers is the ultimate highlight!</p>
+
+                                                                    
+                                
+
+                                                            </div>
+
+                                                            <div class="pre-form-wrapper hidden lg:block">
+    <div class="flex justify-between items-center mb-6 md:mb-5">
+        <div class="max-w-xs text-xl font-black tracking-wider text-white uppercase md:text-2xl" style="text-wrap: balance;">
+            Let’s plan your dream trip together!        </div>
+
+                    <img class="inline-block object-cover w-14 h-14 rounded-full md:h-16 md:w-16 aspect-video"
+                src="/wp-content/uploads/2023/11/test_image_2-1-150x150.jpg" alt="" width="150" height="150" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+
+    <form action="/travel-proposal/" class="ts-jumbotron-pre-form" x-data="{ adults: '2', adultsFirstClick: true, children: '0', childrenFirstClick: true }">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col form-group">
+                <label for="adults">Adults</label>
+                <div class="relative mt-auto">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite"
+                        type="number" id="adults" name="adults" value="2" inputmode="numeric" pattern="[0-9]*" required
+                        x-model="adults" @click="if (adultsFirstClick) { adults = ''; adultsFirstClick = false; }">
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-6" width="10" height="24" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/adult.png" alt="Adult icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col form-group">
+                <label for="children">Children</label>
+                <div class="relative mt-auto">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite"
+                        type="number" id="children" name="children" value="0" inputmode="numeric" pattern="[0-9]*"
+                        x-model="children" @click="if (childrenFirstClick) { children = ''; childrenFirstClick = false; }">
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-5" width="14" height="20" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/kid.png" alt="Child icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-2 form-group">
+                <label for="estimated_arrival_date">Estimated arrival date</label>
+                <div class="relative">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer estimated_arrival_date form-input text-anthracite"
+                        type="date"
+                        id="estimated_arrival_date"
+                        name="estimated_arrival_date"
+                        required>
+
+                    <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
+                        <img class="w-auto h-5" width="20" height="20" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/calendar.png" alt="Calendar icon" fetchpriority="high" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-2 form-group">
+                <input type="submit" value="Start customizing" class="mt-3 w-full btn btn-small btn-yellow">
+                <div class="no-strings-attached-info">
+                    No strings attached. We’ll design your trip - no cost, no commitment.                </div>
+            </div>
+        </div>
+    </form>
+</div>
+                                                    </div>
+
+                        <div class="associations-logos absolute hidden right-4 visibility-hide top-0">
+                                                    </div>
+                    </div>
+
+                                    </div>
+                    </div>
+    </div>
+
+    
+        <div class="usps-container ">
+        <div class="px-4 max-w-7xl usps-container-wrapper lg:mx-auto container-2xl">
+            <ul class="grid gap-6 py-8 sm:grid-cols-2 lg:flex lg:justify-between">
+                                                            <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            All trips are 100% tailor-made                        </li>
+                                                                                                        <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            Local partner rated 5.0/5                        </li>
+                                                                                                        <li class="usp-item" style="text-wrap: pretty;">
+                            <div class="flex justify-center items-center w-8 h-8 rounded-full shrink-0 bg-yellow">
+                                <svg height="13" viewBox="0 0 17 13" width="17" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m15.2115425 24c-.2937388-.0009624-.5739103-.1260473-.7736522-.3454035l-5.15061616-5.5804257c-.40093738-.4351737-.37958544-1.1189832.04769089-1.5273312.42727632-.4083479 1.09867617-.3866014 1.49961357.0485724l4.366366 4.7385046 8.9128975-9.9303513c.2464575-.3125742.6427029-.4602854 1.0290467-.3836051.3863438.0766804.6991369.3651195.8123215.7490743.1131846.3839549.0081139.8001701-.2728678 1.0809081l-9.6865498 10.79386c-.1978789.2233494-.4782992.3524578-.7736522.3561974z" fill="#20281B" transform="translate(-9 -11)"/>
+                                </svg>
+                            </div>
+
+                            Best value &amp; free quotation                        </li>
+                                                                                                                                                </ul>
+        </div>
+
+                    <div class="px-4 mx-auto mb-8 w-full usps-container-button">
+                <a href="/travel-proposal/" class="w-full rounded-3xl btn btn-small btn-yellow">
+                    Start customizing                </a>
+            </div>
+            </div>
+
+        <img
+        width="1700"
+        height="1644"
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 top-36"
+        src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png"
+        alt=""
+        aria-hidden="true"
+        role="presentation" />
+<div class="relative z-10 px-5 mx-auto max-w-7xl container-2xl"><ul id="breadcrumbs" class="flex items-center py-4 md:py-6 gap-x-3"></span><li><a href="/">Home</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li>  <li class="active"><a href="/great-wildebeest-migration/">Great Wildebeest Migration</a></li></span></ul></div>
+
+                        <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-1 ts-mask-top bg-transparent content-default">
+                            <div class="flex gap-x-10 px-5 py-12 mx-auto max-w-7xl container-2xl">
+    <div class="ts-prose ts-prose-xl no-image">
+        <p>Therefore, it comes as no surprise that this unforgettable experience is one of the primary reasons for tourists to go to Tanzania every year. If the <strong>wildebeest migration in Serengeti National Park</strong> is also on top of your to-see-list, it’s important to know where the herds are.</p>
+<p>That’s why <strong>we want to tell you</strong></p>
+<ul>
+<li><strong>when and where</strong> the Great Wildebeest Migration occurs month-by-month,</li>
+<li>the <strong>best time to watch</strong> the migration,</li>
+<li>the <strong>best place to see</strong> the migration and</li>
+<li><strong>tips</strong> for the most intense experience.</li>
+</ul>
+    </div>
+
+    </div>
+                    </div>
+                    <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-2 ts-mask-top bg-sand content-brown">
+                                <div class="relative overflow-hidden isolate">
+        <div class="flex px-5 py-12 mx-auto md:items-center max-w-7xl container-2xl md:pb-20">
+                            <div class="ts-prose ts-prose-xl">
+                    <h2><strong>QUICK FACTS ABOUT THE GREAT WILDEBEEST MIGRATION</strong></h2>
+<ul>
+<li>The Great Wildebeest Migration is one of the largest land mammal migrations in the world, with almost two million animals crossing the Tanzanian plains each year.</li>
+<li>Although named after wildebeests, which make the majority of animals, the migrating herds also include zebras, topi, gazelles, and other animals.</li>
+<li>The migration typically begins in <strong>December and lasts until November</strong>, although its beginning depends on the start of the rainy season in Tanzania.</li>
+<li>The herds cover approximately 1,000 kilometers during the migration cycle.</li>
+<li>Up to 250,000 wildebeests are killed by predators during the migration.</li>
+<li>Migrating wildebeests divide into herds of hundreds of thousands of animals.</li>
+</ul>
+
+                                    </div>
+            
+                            <div class="flex-none hidden mx-auto ml-20 2xl:ml-40 max-w-none xl:block">
+                    <div class="flex-none -mt-12 max-w-none">
+                        <img width="1800" height="1800" src="/wp-content/uploads/2024/07/North-Serengeti-2B-Great-Migration-28mara-crossing29-compressed-1800x1800.jpg" class="mask-img block max-w-4xl" alt="" decoding="async" srcset="/wp-content/uploads/2024/07/North-Serengeti-2B-Great-Migration-28mara-crossing29-compressed-1800x1800.jpg 1800w, /wp-content/uploads/2024/07/North-Serengeti-2B-Great-Migration-28mara-crossing29-compressed-150x150.jpg 150w, /wp-content/uploads/2024/07/North-Serengeti-2B-Great-Migration-28mara-crossing29-compressed-580x580.jpg 580w" sizes="auto"  loading="lazy" fetchpriority="low"/>                    </div>
+                </div>
+                    </div>
+    </div>
+                    </div>
+                    <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-3 ts-mask-top bg-white content-default">
+                            <div class="flex gap-x-10 px-5 py-12 mx-auto max-w-7xl container-2xl">
+    <div class="ts-prose ts-prose-xl no-image" style="content-visibility: auto;contain-intrinsic-size: auto 1084px;">
+        <h2><strong>WHEN AND WHERE IS THE GREAT WILDEBEEST MIGRATION?</strong></h2>
+<p>Here’s the trick – the exact timing of the Serengeti wildebeest migration depends upon the rainfall patterns each year. This makes predicting where and when the migration begins. It’s something not even wildebeests know!</p>
+<p>Due to climate changes, the rainy seasons haven’t been occurring regularly, nor are they easily predictable. That’s also why the migration has been thrown out of synch in recent years.</p>
+<p>However, thanks to our experienced Your Tanzania Trip guides, we are able to make a fairly accurate prediction. This is one of the main reasons why <a href="/tanzania-safari/">our Tanzania safaris</a> are so popular for everyone who wants to see this spectacle with their own eyes.</p>
+<p><span class='flying-press-youtube' data-src='https://www.youtube.com/embed/IXo3f1BmIas?feature=oembed&autoplay=1' onclick='load_flying_press_youtube_video(this)'>
+        <img src='/wp-content/cache/flying-press/6a239ded575271d54f9d64f0ac28a894.jpg' width='1280' height='720' alt='THIS is WHY you should put the GREAT WILDEBEEST MIGRATION in Tanzania on your bucket list.' loading="lazy" fetchpriority="low"/>
+        <svg xmlns='http://www.w3.org/2000/svg' width=68 height=48><path fill=red d='M67 8c-1-3-3-6-6-6-5-2-27-2-27-2S12 0 7 2C4 2 2 5 1 8L0 24l1 16c1 3 3 6 6 6 5 2 27 2 27 2s22 0 27-2c3 0 5-3 6-6l1-16-1-16z'/><path d='M45 24L27 14v20' fill=#fff /></svg>
+        </span></p>
+    </div>
+
+    </div>
+                    </div>
+                    <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-4 ts-mask-top bg-brown content-white">
+                            
+<div class="isolate overflow-hidden relative heading">
+    <div class="mx-auto flex justify-center md:items-center px-5 pt-8 pb-12  max-w-7xl container-2xl md:pb-14">
+                    <div class="mt-2 text-center md:mt-0">
+                <h2 class="max-w-5xl text-2xl font-black tracking-wider uppercase text-green md:mb-3 md:text-4xl" style="text-wrap: balance;">
+                    Great Wildebeest Migration safari itineraries                </h2>
+
+                                    <p class="mt-8 max-w-5xl text-base tracking-wide md:text-lg" style="text-wrap: balance;">
+                        Get inspired by these wonderful itineraries and experience the wonder of the Great Wildebeest Migration.                    </p>
+                            </div>
+            </div>
+</div>
+
+    <div class="px-5 pb-12 mx-auto max-w-10xl">
+        <ul role="list" class="ts-items !mt-0" style="content-visibility: auto;contain-intrinsic-size: auto 286px;">
+                            <li class="relative">
+                    <a href="/itineraries/18-days-tanzania-safari-zanzibar-vacation-wildebeest-migration/">
+                        
+                                                    <span class="item-price-label">
+                                                                                                    From $3,204 <small>USD</small><span class="text-sm align-text-bottom asterisk">*</span>                                                            </span>
+                        
+                        <div class="block overflow-hidden relative w-full group aspect-w-16 aspect-h-10">
+                            <div class="ts-item-overlay">
+                                <div class="ts-item-overlay-content">
+                                    <p class="ts-item-overlay-title">
+                                                                                    18 Days Tanzania Safari + Zanzibar vacation [Suitable to include the Wildebeest Migration]                                                                            </p>
+                                    
+                                                                            <span class="ts-item-overlay-text">
+                                                                                    </span>
+                                    
+                                    <div class="ts-item-overlay-arrow">
+                                        <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ts-item-content">
+                                <h3 class="ts-item-title">
+                                                                            18 Days Tanzania Safari + Zanzibar vacation [Suitable to include the Wildebeest Migration]                                                                    </h3>
+
+                                
+                                <div class="ts-item-arrow">
+                                    <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                                                            <img width="920" height="580" src="/wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-920x580.jpg" class="object-cover" alt="Wildebeest migration" decoding="async" srcset="/wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-920x580.jpg 920w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-60x37.jpg 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>                                                    </div>
+                    </a>
+                </li>
+                            <li class="relative">
+                    <a href="/itineraries/10-days-tanzania-safari-all-northern-parks-in-1-trip-wildebeest-migration/">
+                        
+                                                    <span class="item-price-label">
+                                                                                                    From $2,461 <small>USD</small><span class="text-sm align-text-bottom asterisk">*</span>                                                            </span>
+                        
+                        <div class="block overflow-hidden relative w-full group aspect-w-16 aspect-h-10">
+                            <div class="ts-item-overlay">
+                                <div class="ts-item-overlay-content">
+                                    <p class="ts-item-overlay-title">
+                                                                                    10 Days Tanzania safari, all northern parks in 1 trip! [Suitable to include the wildebeest migration]                                                                            </p>
+                                    
+                                                                            <span class="ts-item-overlay-text">
+                                                                                    </span>
+                                    
+                                    <div class="ts-item-overlay-arrow">
+                                        <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ts-item-content">
+                                <h3 class="ts-item-title">
+                                                                            10 Days Tanzania safari, all northern parks in 1 trip! [Suitable to include the wildebeest migration]                                                                    </h3>
+
+                                
+                                <div class="ts-item-arrow">
+                                    <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                                                            <img width="920" height="580" src="/wp-content/uploads/2023/07/10-Days-Tanzania-safari-all-northern-parks-in-1-trip-wildebeest-migration-920x580.jpg" class="object-cover" alt="Two rhinos with flamingo&#039;s in the background" decoding="async"  loading="lazy" fetchpriority="low"/>                                                    </div>
+                    </a>
+                </li>
+                            <li class="relative">
+                    <a href="/itineraries/12-days-safari-and-beach-wildebeest-migration-near-the-mara-river-flight-north-serengeti-zanzibar/">
+                        
+                                                    <span class="item-price-label">
+                                                                                                    From $3,088 <small>USD</small><span class="text-sm align-text-bottom asterisk">*</span>                                                            </span>
+                        
+                        <div class="block overflow-hidden relative w-full group aspect-w-16 aspect-h-10">
+                            <div class="ts-item-overlay">
+                                <div class="ts-item-overlay-content">
+                                    <p class="ts-item-overlay-title">
+                                                                                    12 days safari and beach [chance to see the Mara River crossing plus a flight to Zanzibar]                                                                            </p>
+                                    
+                                                                            <span class="ts-item-overlay-text">
+                                                                                    </span>
+                                    
+                                    <div class="ts-item-overlay-arrow">
+                                        <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ts-item-content">
+                                <h3 class="ts-item-title">
+                                                                            12 days safari and beach [chance to see the Mara River crossing plus a flight to Zanzibar]                                                                    </h3>
+
+                                
+                                <div class="ts-item-arrow">
+                                    <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                                                            <img width="920" height="580" src="/wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-920x580.jpg" class="object-cover" alt="" decoding="async"  loading="lazy" fetchpriority="low"/>                                                    </div>
+                    </a>
+                </li>
+                            <li class="relative">
+                    <a href="/itineraries/9-days-safari-wildebeest-migration-near-the-mara-river/">
+                        
+                                                    <span class="item-price-label">
+                                                                                                    From $2,365 <small>USD</small><span class="text-sm align-text-bottom asterisk">*</span>                                                            </span>
+                        
+                        <div class="block overflow-hidden relative w-full group aspect-w-16 aspect-h-10">
+                            <div class="ts-item-overlay">
+                                <div class="ts-item-overlay-content">
+                                    <p class="ts-item-overlay-title">
+                                                                                    9 days safari                                                                             </p>
+                                    
+                                                                            <span class="ts-item-overlay-text">
+                                            Wildebeest Migration and Mara River crossing                                        </span>
+                                    
+                                    <div class="ts-item-overlay-arrow">
+                                        <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ts-item-content">
+                                <h3 class="ts-item-title">
+                                                                            9 days safari                                                                     </h3>
+
+                                                                    <p class="px-12 ts-item-text">
+                                        Wildebeest Migration and Mara River crossing                                    </p>
+                                
+                                <div class="ts-item-arrow">
+                                    <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                                                            <img width="920" height="580" src="/wp-content/uploads/2024/07/Mara-River-3-920x580.jpg" class="object-cover" alt="" decoding="async"  loading="lazy" fetchpriority="low"/>                                                    </div>
+                    </a>
+                </li>
+                    </ul>
+
+                    <div class="flex flex-col gap-5 mt-10 flexible-buttons md:mt-16 md:flex-row md:justify-center lg:gap-8 3xl:gap-12">
+                                    <a class="btn btn-red !text-white !text-md !px-10 whitespace-nowrap"
+                       href="/travel-proposal/" target="_self">
+                        Get your travel proposal                    </a>
+                
+                            </div>
+            </div>
+
+                    </div>
+                    <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-5 ts-mask-top bg-white content-default">
+                            <div class="mx-auto px-5 py-12 md:py-20" style="content-visibility: auto;contain-intrinsic-size: auto 3888px;">
+    <div class="mx-auto ts-prose">
+        <h2><strong>A MONTH-BY-MONTH BREAKDOWN</strong></h2>
+<h3><strong>December to April</strong></h3>
+<p>The migration typically begins in late November or early December, when migrating herds arrive in the southern parts of Tanzania’s <a href="/national-parks/serengeti/">Serengeti National Park</a> in the Ndutu area.</p>
+<p>When in the Serengeti, the animals are free to move wherever they want. It’s a truly magnificent sight of <strong>almost two million wildebeests and zebras</strong> dispersed throughout Tanzania’s plains, enjoying fresh and nutritious grasses.</p>
+<p>In February, the <strong>calving season</strong> begins, with half a million calves born on these southern plains. You can also see a lot of predators at this time, who are all waiting for easy prey.</p>
+<p>Around April, the herds head for the central and western part of the Serengeti in search of fresh, long grass. The rains start, and the <strong>mating season</strong> begins.</p>
+<p><img decoding="async" class="alignnone wp-image-19483 size-large" src="/wp-content/uploads/2024/12/Great-Migration-in-Tanzania-English-1-1024x1024.jpg" alt="" width="1024" height="1024" srcset="/wp-content/uploads/2024/12/Great-Migration-in-Tanzania-English-1-1024x1024.jpg 1024w, /wp-content/uploads/2024/12/Great-Migration-in-Tanzania-English-1-300x300.jpg 300w, /wp-content/uploads/2024/12/Great-Migration-in-Tanzania-English-1-150x150.jpg 150w, /wp-content/uploads/2024/12/Great-Migration-in-Tanzania-English-1-768x768.jpg 768w, /wp-content/uploads/2024/12/Great-Migration-in-Tanzania-English-1-60x60.jpg 60w, /wp-content/uploads/2024/12/Great-Migration-in-Tanzania-English-1-580x580.jpg 580w, /wp-content/uploads/2024/12/Great-Migration-in-Tanzania-English-1.jpg 1080w" sizes="auto"  loading="lazy" fetchpriority="low"/></p>
+<h3><strong>May to June</strong></h3>
+<p>In May and June, the herds of wildebeests and zebras migrate further north to get ready for the dangerous <strong>Grumeti River crossing</strong> full of giant crocodiles.</p>
+<p>It’s a scary sight as you watch thousands of these magnificent creatures struggle against the forces of nature and predators. Unfortunately, not all animals survive the crossing.</p>
+<p>The survivors continue their journey, with some herds heading through the Grumeti Game Reserve and Ikorongo Game Reserve while others choose the path piercing through the heart of the Serengeti National Park.</p>
+    </div>
+
+    <div class="-mx-5 mt-10 !max-w-7xl 2xl:!max-w-9xl md:mx-auto lg:mt-14">
+        <div class="grid justify-between gap-5 lg:grid-cols-2 lg:gap-8 3xl:gap-12">
+                            <div class="relative col-span-2 overflow-hidden aspect-[16/9] lg:col-span-1">
+                    <img
+                        class="absolute inset-0 h-full w-full object-cover object-center"
+                        src="/wp-content/uploads/2024/07/Mara-River-1-1024x683.jpg"
+                        alt="Mara River (1)"
+                        decoding="async"
+                        loading="lazy" width="1024" height="683" fetchpriority="low">
+                </div>
+                                </div>
+    </div>
+
+            <div class="mx-auto ts-prose mt-10 lg:mt-14">
+            <h3><strong>July to September</strong></h3>
+<p>From July till September, you’ll find the herds around the Mara River, which they need to cross to get to Kenya. The sights are impressive as well as dramatic around this time. The fast-flowing water and crocodiles make this crossing extremely dangerous for the herds.</p>
+<p>The <strong>Mara River crossing</strong> is the most serious obstacle during the migration, creating a spectacular yet often hair-raising spectacle of panic and confusion as herds consisting of hundreds of thousands of animals try to get through the gushing river.</p>
+<p>Interestingly, in the last two years, almost two-thirds of the migration did not cross the Mara River since there was enough fresh grass left in the northern Serengeti.</p>
+<p><img decoding="async" class="alignnone wp-image-20006 size-large" src="/wp-content/uploads/2025/02/DSC_1116-1024x683.jpg" alt="" width="1024" height="683" srcset="/wp-content/uploads/2025/02/DSC_1116-1024x683.jpg 1024w, /wp-content/uploads/2025/02/DSC_1116-300x200.jpg 300w, /wp-content/uploads/2025/02/DSC_1116-768x512.jpg 768w, /wp-content/uploads/2025/02/DSC_1116-1536x1024.jpg 1536w, /wp-content/uploads/2025/02/DSC_1116-2048x1365.jpg 2048w, /wp-content/uploads/2025/02/DSC_1116-60x40.jpg 60w" sizes="auto"  loading="lazy" fetchpriority="low"/></p>
+<h3><strong>October to December</strong></h3>
+<p>From October till November, the wildebeest migration leaves the northern Serengeti and makes its way back to the southern part/Ndutu via the central Seronera region. The herds remain there until late November/early December, and the annual cycle starts all over again.</p>
+        </div>
+    </div>
+                    </div>
+                    <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-6 ts-mask-top bg-green content-white">
+                                <div class="relative overflow-hidden isolate">
+        <div class="flex px-5 py-12 mx-auto md:items-center max-w-7xl container-2xl md:pb-20">
+                            <div class="ts-prose ts-prose-xl" style="content-visibility: auto;contain-intrinsic-size: auto 716px;">
+                    <h2><strong>WHEN IS THE BEST TIME TO SEE THE GREAT WILDEBEEST MIGRATION IN TANZANIA?</strong></h2>
+<p>It’s hard to say what the best time is to experience the Great Wildebeest Migration, as it all depends on what you’d like to witness. Also, given how unpredictable the rain seasons have become, pinpointing the exact date is mighty difficult.</p>
+<p>In general, we can divide the migration into five events/seasons:</p>
+<table>
+<tbody>
+<tr>
+<td><strong>Approximate Period</strong></td>
+<td><strong>Event</strong></td>
+<td><strong>Place</strong></td>
+</tr>
+<tr>
+<td><strong>December to January</strong></td>
+<td>Beginning of the migration</td>
+<td>Southern Serengeti</td>
+</tr>
+<tr>
+<td><strong>February to April</strong></td>
+<td>Calving &amp; breeding season</td>
+<td>Southern Serengeti</td>
+</tr>
+<tr>
+<td><strong>May to June</strong></td>
+<td>Grumeti River crossing</td>
+<td>Western Serengeti</td>
+</tr>
+<tr>
+<td><strong>July to September</strong></td>
+<td>Mara River crossing</td>
+<td>Masai Mara and Northern Serengeti</td>
+</tr>
+<tr>
+<td><strong>October to November</strong></td>
+<td>The trek south</td>
+<td>Masai Mara and Northern Serengeti to Southern Serengeti</td>
+</tr>
+</tbody>
+</table>
+<p>All in all, most travelers wanting to see the migration plan their safari trip <strong>between July and September</strong>. That’s mostly because of the Mara River crossing, which is by far the most exciting and spectacular event of the Great Wildebeest Migration.</p>
+
+                                    </div>
+            
+                            <div class="flex-none hidden mx-auto ml-20 2xl:ml-40 max-w-none xl:block">
+                    <div class="flex-none -mt-12 max-w-none">
+                        <img width="1800" height="1080" src="/wp-content/uploads/2022/12/wildebeest-1800x1080.jpg" class="mask-img block max-w-4xl" alt="" decoding="async"  loading="lazy" fetchpriority="low"/>                    </div>
+                </div>
+                    </div>
+    </div>
+                    </div>
+                    <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-7 ts-mask-top bg-white content-default">
+                            <div class="flex gap-x-10 px-5 py-12 mx-auto max-w-7xl container-2xl">
+    <div class="ts-prose ts-prose-xl no-image" style="content-visibility: auto;contain-intrinsic-size: auto 1558px;">
+        <h2><strong>WHAT IS THE BEST PLACE TO SEE THE GREAT WILDEBEEST MIGRATION?</strong></h2>
+<p>As with the best time, the best place to see the wildebeest migration depends on what you want to see. For instance, from December to April, it’s best to search for accommodation in the <strong>Southern and Central Serengeti</strong>.</p>
+<p>This is the period during which herds cover the plains of Southern Serengeti and stay there for the calving and breeding season. The calving season is very popular among tourists who want to witness the dance of life and death as predators try to take advantage of young calves and find easy prey.</p>
+<p><img decoding="async" class="wp-image-19590 size-large alignnone" src="/wp-content/uploads/2022/08/wildebeest-calf-1024x683.jpg" alt="" width="1024" height="683" srcset="/wp-content/uploads/2022/08/wildebeest-calf-1024x683.jpg 1024w, /wp-content/uploads/2022/08/wildebeest-calf-300x200.jpg 300w, /wp-content/uploads/2022/08/wildebeest-calf-768x512.jpg 768w, /wp-content/uploads/2022/08/wildebeest-calf-1536x1024.jpg 1536w, /wp-content/uploads/2022/08/wildebeest-calf-2048x1365.jpg 2048w, /wp-content/uploads/2022/08/wildebeest-calf-60x40.jpg 60w" sizes="auto"  loading="lazy" fetchpriority="low"/></p>
+<p>If you’d like to witness the mighty river crossings, though, these occur in the <strong>northern parts of Serengeti</strong> and the <a href="/national-parks/masai-mara-national-reserve/">Masai Mara</a> region (Kenya).</p>
+<p>There are multiple tented camps located in key areas that are perfect for witnessing the Great Wildebeest Migration in Tanzania in all its glory.</p>
+    </div>
+
+    </div>
+                    </div>
+                    <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-8 ts-mask-top bg-brown content-white">
+                            
+<div class="isolate overflow-hidden relative heading">
+    <div class="mx-auto flex justify-center md:items-center px-5 pt-8 pb-12  max-w-7xl container-2xl md:pb-14">
+                    <div class="mt-2 text-center md:mt-0">
+                <h2 class="max-w-5xl text-2xl font-black tracking-wider uppercase text-green md:mb-3 md:text-4xl" style="text-wrap: balance;">
+                    The best accommodations for your safari                </h2>
+
+                                    <p class="mt-8 max-w-5xl text-base tracking-wide md:text-lg" style="text-wrap: balance;">
+                        Experience the thrill of the Great Wildebeest Migration and relax in (your) style afterwards.                    </p>
+                            </div>
+            </div>
+</div>
+
+    <div class="px-5 pb-12 mx-auto max-w-10xl">
+        <ul role="list" class="ts-items !mt-0" style="content-visibility: auto;contain-intrinsic-size: auto 286px;">
+                            <li class="relative">
+                    <a href="/accommodation/baobab-mara-luxury-camp/">
+                        
+                                                    <span class="item-title-label">
+                                Accommodation                            </span>
+                        
+                        <div class="block overflow-hidden relative w-full group aspect-w-16 aspect-h-10">
+                            <div class="ts-item-overlay">
+                                <div class="ts-item-overlay-content">
+                                    <p class="ts-item-overlay-title">
+                                                                                    Baobab Mara Luxury Camp                                                                            </p>
+                                    
+                                                                            <span class="ts-item-overlay-text">
+                                            Accommodation                                        </span>
+                                    
+                                    <div class="ts-item-overlay-arrow">
+                                        <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ts-item-content">
+                                <h3 class="ts-item-title">
+                                                                            Baobab Mara Luxury Camp                                                                    </h3>
+
+                                
+                                <div class="ts-item-arrow">
+                                    <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                                                            <img width="920" height="580" src="/wp-content/uploads/2026/06/Baobab-Mara-Luxury-Camp_Main-area-exterior-Website-pics-compressed-920x580.avif" class="object-cover" alt="" decoding="async"  loading="lazy" fetchpriority="low"/>                                                    </div>
+                    </a>
+                </li>
+                            <li class="relative">
+                    <a href="/accommodation/serengeti-river-camp/">
+                        
+                                                    <span class="item-title-label">
+                                Accommodation                            </span>
+                        
+                        <div class="block overflow-hidden relative w-full group aspect-w-16 aspect-h-10">
+                            <div class="ts-item-overlay">
+                                <div class="ts-item-overlay-content">
+                                    <p class="ts-item-overlay-title">
+                                                                                    Serengeti Mara River Camp by Karibu Camps and Lodges                                                                            </p>
+                                    
+                                                                            <span class="ts-item-overlay-text">
+                                            Accommodation                                        </span>
+                                    
+                                    <div class="ts-item-overlay-arrow">
+                                        <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ts-item-content">
+                                <h3 class="ts-item-title">
+                                                                            Serengeti Mara River Camp by Karibu Camps and Lodges                                                                    </h3>
+
+                                
+                                <div class="ts-item-arrow">
+                                    <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                                                            <img width="920" height="580" src="/wp-content/uploads/2025/02/IM_TZ_NCAA_Outside-920x580.jpg" class="object-cover" alt="" decoding="async"  loading="lazy" fetchpriority="low"/>                                                    </div>
+                    </a>
+                </li>
+                            <li class="relative">
+                    <a href="/accommodation/nimali-mara/">
+                        
+                                                    <span class="item-title-label">
+                                Accommodation                            </span>
+                        
+                        <div class="block overflow-hidden relative w-full group aspect-w-16 aspect-h-10">
+                            <div class="ts-item-overlay">
+                                <div class="ts-item-overlay-content">
+                                    <p class="ts-item-overlay-title">
+                                                                                    Nimali Mara                                                                            </p>
+                                    
+                                                                            <span class="ts-item-overlay-text">
+                                            Accommodation                                        </span>
+                                    
+                                    <div class="ts-item-overlay-arrow">
+                                        <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ts-item-content">
+                                <h3 class="ts-item-title">
+                                                                            Nimali Mara                                                                    </h3>
+
+                                
+                                <div class="ts-item-arrow">
+                                    <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                                                            <img width="920" height="580" src="/wp-content/uploads/2026/05/Nimali-Mara_Bedroom-with-view-of-wildlife-Website-pics-compressed-920x580.avif" class="object-cover" alt="" decoding="async"  loading="lazy" fetchpriority="low"/>                                                    </div>
+                    </a>
+                </li>
+                            <li class="relative">
+                    <a href="/accommodation/serengeti-sound-of-silence-tented-camp/">
+                        
+                                                    <span class="item-title-label">
+                                Accommodation                            </span>
+                        
+                        <div class="block overflow-hidden relative w-full group aspect-w-16 aspect-h-10">
+                            <div class="ts-item-overlay">
+                                <div class="ts-item-overlay-content">
+                                    <p class="ts-item-overlay-title">
+                                                                                    Serengeti Sound of Silence Tented Camp                                                                            </p>
+                                    
+                                                                            <span class="ts-item-overlay-text">
+                                            Accommodation                                        </span>
+                                    
+                                    <div class="ts-item-overlay-arrow">
+                                        <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ts-item-content">
+                                <h3 class="ts-item-title">
+                                                                            Serengeti Sound of Silence Tented Camp                                                                    </h3>
+
+                                
+                                <div class="ts-item-arrow">
+                                    <svg height="18" viewBox="0 0 25 18" width="25" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m.53074988 10.2361066 7.40207744 7.2619666c.68214781.6692357 1.81894053.6692357 2.50108838 0 .6821478-.6692357.6821478-1.7845106 0-2.4537463l-4.37064526-4.3124787h16.16836026c.9852595 0 1.7683693-.76828663 1.7683693-1.73489652s-.7831098-1.73489656-1.7683693-1.73489656h-16.16836026l4.37046476-4.28773807c.6821478-.66923572.6821478-1.78451056 0-2.45374628-.3536738-.34697932-.80850823-.52057077-1.26315313-.52057077-.45464491 0-.90947027.17357817-1.26315315.52057077l-7.37681437 7.23718172c-.32847396.32225641-.53061455.76828668-.53061455 1.23924345s.17692715.91699589.53061455 1.23924346z" fill="#20281B" transform="matrix(-1 0 0 1 24.651652 0)"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                                                            <img width="920" height="580" src="/wp-content/uploads/2023/10/sounds-of-silence-bedroom-1-920x580.jpg" class="object-cover" alt="" decoding="async" srcset="/wp-content/uploads/2023/10/sounds-of-silence-bedroom-1-920x580.jpg 920w, /wp-content/uploads/2023/10/sounds-of-silence-bedroom-1-60x37.jpg 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>                                                    </div>
+                    </a>
+                </li>
+                    </ul>
+
+            </div>
+
+                    </div>
+                    <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-9 ts-mask-top bg-transparent content-default">
+                            <div class="flex gap-x-10 px-5 py-12 mx-auto max-w-7xl container-2xl">
+    <div class="ts-prose ts-prose-xl no-image" style="content-visibility: auto;contain-intrinsic-size: auto 1576px;">
+        <h2><strong>HOW TO EXPERIENCE THE GREAT WILDEBEEST MIGRATION?</strong></h2>
+<p>Witnessing the Great Wildebeest Migration is a magical experience. However, to fully immerse yourself in this mystical adventure, you need to travel to Tanzania with a <strong>trusted and experienced safari guide</strong>.</p>
+<p>That is something Your Tanzania Trip can help you with. Each of our safaris offers a unique experience that you can fully customize to your preferences. We want this to be an adventure you won’t forget, providing you with an experience that will last a lifetime and be cherished forever.</p>
+<p><img decoding="async" class="wp-image-15044 size-full alignnone" src="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg" alt="" width="800" height="423" srcset="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg 800w, /wp-content/uploads/2023/09/Serengetei-NP-2-300x159.jpeg 300w, /wp-content/uploads/2023/09/Serengetei-NP-2-768x406.jpeg 768w, /wp-content/uploads/2023/09/Serengetei-NP-2-60x32.jpeg 60w" sizes="auto"  loading="lazy" fetchpriority="low"/></p>
+<h2><strong>HOW TO PLAN THE GREAT WILDEBEEST MIGRATION SAFARI?</strong></h2>
+<p>Okay, so you know when, where, and with whom to experience the Great Wildebeest Migration in Tanzania (hint: with us). The one remaining question is <em>how</em>.</p>
+<p>Well, we won’t lie to you: planning a wildebeest migration safari can take some time, and it’s not something that you should treat trivially. While we can make this adventure even more magical once you’re here, there are still several things you should do before you leave for Tanzania.</p>
+<p>Here are some tips on how to plan the wildebeest migration safari.</p>
+    </div>
+
+    </div>
+                    </div>
+                    <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-10 ts-mask-top bg-sand content-white">
+                                <div class="relative overflow-hidden isolate">
+        <div class="flex px-5 py-12 mx-auto md:items-center max-w-7xl container-2xl md:pb-20">
+                            <div class="ts-prose ts-prose-xl" style="content-visibility: auto;contain-intrinsic-size: auto 1024px;">
+                    <h3><strong>Book Early</strong></h3>
+<p>Planning and booking a safari is not something that you should do on short notice. That rule applies to any safari offer, but is especially important during the peak wildebeest migration season from June to October.</p>
+<p>This is when most tourists flood Tanzania to witness the migration, which means that camps and lodges fill up fast. Therefore, if you want to see the river crossings, be sure to book your trip early, at least a year in advance.</p>
+<h3><strong>Know When to Go</strong></h3>
+<p>As said, there’s no shortage of tourists in Tanzania during the peak season, especially in the Serengeti National Park, where most of the migration occurs. If you’d like to avoid the crowds, it might be better to consider another time of the year to experience the migration on your own terms, without the hordes of tourists fighting for the best spots.</p>
+<p>One of the key advantages of booking a migration safari through Your Tanzania Trip is that our camps are located a bit further away from the hot spots. This allows you to enjoy your safari in a more tranquil environment, allowing you to fully immerse yourself in the experience.</p>
+<h3><strong>Diversify Your Experience</strong></h3>
+<p>Although witnessing the Great Wildebeest Migration is amazing on its own, there are multiple ways to intensify your safari experience. At Your Tanzania Trip, each safari we offer comes with a <strong>list of additional activities</strong> you can book to make your trip even more personal.</p>
+<p>For more safari planning tips, refer to our complete guide on <a href="/blog/how-to-plan-your-first-safari-vacation/">how to plan your first safari</a>. It will provide you with a better overview of key considerations to keep in mind when planning your safari adventure in Tanzania.</p>
+
+                                    </div>
+            
+                            <div class="flex-none hidden mx-auto ml-20 2xl:ml-40 max-w-none xl:block">
+                    <div class="flex-none -mt-12 max-w-none">
+                        <img width="1800" height="1800" src="/wp-content/uploads/2024/07/Wildebeest-Migration-Tierwanderung-2-1800x1800.jpg" class="mask-img block max-w-4xl" alt="" decoding="async" srcset="/wp-content/uploads/2024/07/Wildebeest-Migration-Tierwanderung-2-1800x1800.jpg 1800w, /wp-content/uploads/2024/07/Wildebeest-Migration-Tierwanderung-2-150x150.jpg 150w, /wp-content/uploads/2024/07/Wildebeest-Migration-Tierwanderung-2-580x580.jpg 580w" sizes="auto"  loading="lazy" fetchpriority="low"/>                    </div>
+                </div>
+                    </div>
+    </div>
+                    </div>
+                    <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-11 ts-mask-top bg-white content-default">
+                                <img
+        width="1700"
+        height="1644"
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 -top-1/2"
+        src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png"
+        alt=""
+        aria-hidden="true"
+        role="presentation" />
+
+
+<div class="px-5 py-12 mx-auto md:py-20">
+    <div class="mx-auto ts-prose">
+        <h2 class="ai-optimize-6"><strong>WRAPPING UP</strong></h2>
+<p class="ai-optimize-7">As one of the &#8220;Seven Natural Wonders of Africa&#8221;, the Great Wildebeest Migration is not something to avoid when planning your trip to Tanzania. It’s a once-in-a-lifetime experience that will be with you forever, and a spectacle that doesn’t disappoint.</p>
+<p class="ai-optimize-8">And when looking for a migration safari, look no further than Your Tanzania Trip. We have years of experience organizing tours and safaris throughout Tanzania, providing our clients with everything Tanzania has to offer.</p>
+<p class="ai-optimize-9">See you on the Tanzanian plains!</p>
+    </div>
+
+    
+            <div class="flex flex-col justify-center gap-5 mt-10 md:mt-16 md:flex-row lg:gap-8 3xl:gap-12">
+                            <a class="btn btn-green btn--stretched"
+                   href="/travel-proposal/" target="_self">
+                    Get your travel proposal                </a>
+            
+                            <a class="btn btn-red btn-red--outlined btn--stretched"
+                   href="/discover-tanzania/" target="_self">
+                    Discover more of Tanzania                </a>
+                    </div>
+    </div>
+                    </div>
+    
+
+                
+            <div class="relative z-10 px-5 mx-auto -mb-1 max-w-7xl container-2xl md:py-12">
+                            <div class="grid grid-cols-12 -mx-5 ts-mask-top md:mx-0">
+                    <div class="col-span-12 lg:col-span-6 lg:row-start-1 lg:col-start-1 px-5 lg:px-7 py-12 lg:py-7 text-center flex flex-col justify-center bg-green">
+                        <h3 class="cta-title text-white" style="text-wrap: balance;">Let us create your tailor-made trip</h3>
+                        <p class="cta-subtitle">Receive a free, no obligation quote</p>
+
+                        
+                        <a class="mx-auto mt-7 w-full max-w-sm text-sm leading-none btn btn-yellow"
+                            href="/travel-proposal/"
+                            target="">
+                            Start planning your dream trip                        </a>
+                    </div>
+
+                    <div class="col-span-12 row-start-1 lg:col-span-6 lg:col-start-7 lg:flex-auto">
+                        <img width="1230" height="580" src="/wp-content/uploads/2023/08/guide_tanzania_specialist-1230x580.jpg" class="block w-full object-cover object-center cta-image" alt="" decoding="async" loading="lazy"  fetchpriority="low"/>                    </div>
+                </div>
+            
+                            <div class="grid grid-cols-12 -mx-5 ts-mask-bottom md:mx-0">
+                    <div class="flex flex-col-reverse col-span-12 gap-x-10 justify-center items-center px-5 py-12 lg:px-7 bg-sand lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:flex-row lg:py-7">
+                        <img width="641" height="641" src="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg" class="hidden lg:block mask-img w-48 h-48" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg 641w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-300x300.jpg 300w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-150x150.jpg 150w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-60x60.jpg 60w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-580x580.jpg 580w" sizes="auto"  fetchpriority="low"/>
+                        <div class="flex flex-col justify-center text-center md:text-left" style="content-visibility: auto;contain-intrinsic-size: auto 262px;">
+                            <h3 class="cta-title text-brown">Call an expert</h3>
+                            <p class="mt-2 mb-7 font-black tracking-widest uppercase text-brown md:mt-0 md:text-sm md:tracking-wider">Our specialists are here to assist you</p>
+
+                            <img width="641" height="641" src="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg" class="mt-4 mx-auto hidden mask-img w-36 h-36" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/11/team_member_tanzania_yellow.jpg 641w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-300x300.jpg 300w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-150x150.jpg 150w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-60x60.jpg 60w, /wp-content/uploads/2023/11/team_member_tanzania_yellow-580x580.jpg 580w" sizes="auto"  fetchpriority="low"/>
+                                                                                                
+                                    <a class="mx-auto !pl-5 !py-3 gap-x-4 flex items-center justify-center cursor-pointer lg:justify-normal mt-2.5 w-auto lg:w-full max-w-sm text-center leading-none tracking-widest btn btn-small btn-red"
+                                        href="tel:+31629351377"
+                                        target="">
+                                        <span class="flex gap-2.5 items-center">
+                                            <span class="!w-[2.01em] !h-[1.50em] text-white ts-flag-nl"></span>
+<span class="!text-base">NL: </span>
+                                        </span>
+
+                                        <span>+31 6 29351377</span>
+                                    </a>
+                                                                    
+                                    <a class="mt-5 text-base text-anthracite tracking-wide font-black uppercase hover:!no-underline" href="/contact/">
+                                    <u>other countries</u>
+                                </a>
+                                                    </div>
+                    </div>
+
+                    <div class="flex-auto col-span-12 lg:col-span-6 md:col-start-1 md:row-start-1">
+                        <img width="800" height="423" src="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg" class="block w-full object-cover object-top cta-image" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg 800w, /wp-content/uploads/2023/09/Serengetei-NP-2-300x159.jpeg 300w, /wp-content/uploads/2023/09/Serengetei-NP-2-768x406.jpeg 768w, /wp-content/uploads/2023/09/Serengetei-NP-2-60x32.jpeg 60w" sizes="auto"  fetchpriority="low"/>                    </div>
+                </div>
+                    </div>
+    
+            

@@ -1,0 +1,193 @@
+/*
+ * Your Tanzania Trip brand layer (docs/brand-style-guide.md).
+ * scripts/brand-theme.mjs swaps the theme's colour values and fonts; this file handles the
+ * places where the context decides the colour, plus typography rules the guide sets.
+ * Loaded last (Astro bundle), so it wins at equal specificity.
+ */
+:root {
+  --c-forest: #20281b;
+  --c-copper: #a83800;
+  --c-copper-dark: #8c2f00;
+  --c-gold: #e69016;
+  --c-amber: #fcab2a;
+  --c-mountain: #355248;
+  --c-sand: #dcc496;
+  --c-ivory: #faf6ec;
+  --c-white: #ffffff;
+  --font-heading: "Marcellus", Georgia, serif;
+  --font-body: "Inter", Arial, sans-serif;
+}
+
+/* Page base */
+html {
+  background-color: var(--c-ivory);
+  font-family: var(--font-body);
+}
+
+/* Headings: Marcellus, sentence case, normal tracking (the theme forced heavy uppercase). */
+h1,
+h2,
+h3,
+h4,
+.cta-title,
+.font-serif {
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: 0.01em !important;
+}
+/* Small UI headings in the footer and sidebars stay labels. */
+#ts-footer h2,
+.sidebar h2,
+.sidebar h3 {
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  font-size: 0.8125rem !important;
+}
+
+/* Header: ivory, so the primary logo sits on a light background. */
+.header-wrapper .bg-sand,
+.js-header.bg-sand,
+.pt-1.-mt-1.bg-sand.ts-mask-top {
+  background-color: var(--c-ivory);
+}
+.brand-logo {
+  height: 3.25rem;
+  width: auto;
+}
+@media (min-width: 1024px) {
+  .brand-logo {
+    height: 4rem;
+  }
+}
+
+/* Owner placeholders ([FILL: …]) stay visible until they are replaced; see TODO-OWNER.md. */
+.fill-marker {
+  background-color: #fff3cc;
+  color: var(--c-forest);
+  padding: 0 0.3em;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Footer: forest with ivory text and gold labels, so the reversed logo sits on dark. */
+#ts-footer {
+  background-color: var(--c-forest);
+  color: var(--c-ivory);
+}
+#ts-footer .text-anthracite,
+#ts-footer .text-brown,
+#ts-footer .text-green,
+#ts-footer p,
+#ts-footer li {
+  color: var(--c-ivory);
+}
+/* The theme colours menu links forest with a more specific selector; on the forest footer they must be ivory. */
+#ts-footer a:not(.btn):not(.bg-yellow) {
+  color: var(--c-ivory) !important;
+}
+#ts-footer h2 {
+  color: var(--c-gold);
+}
+#ts-footer .text-brown svg path,
+#ts-footer .partner-line svg path {
+  fill: var(--c-gold);
+}
+#ts-footer .ts-mask-bottom.bg-green {
+  background-color: var(--c-mountain);
+}
+#ts-footer input,
+#ts-footer textarea {
+  background-color: var(--c-white);
+  color: var(--c-forest);
+}
+#ts-footer input::placeholder {
+  color: var(--c-mountain);
+}
+#ts-footer .bg-yellow {
+  background-color: var(--c-gold);
+}
+#ts-footer .bg-yellow,
+#ts-footer .bg-yellow a,
+#ts-footer .bg-yellow span {
+  color: var(--c-forest);
+}
+#ts-footer .ts-footer-copyright a {
+  color: var(--c-ivory);
+}
+
+/* Copper is for buttons and links only; copper text on sand is too low in contrast. */
+.bg-sand .text-red:not(.btn),
+.bg-sand-light .text-red:not(.btn),
+.bg-beige .text-red:not(.btn) {
+  color: var(--c-forest);
+}
+
+/* Links in running text: copper, underlined; hover copper dark. */
+.ts-prose a:not(.btn),
+.ts-prose a:not(.btn) span,
+.prose a:not(.btn) {
+  color: var(--c-copper) !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ts-prose a:not(.btn):hover,
+.prose a:not(.btn):hover {
+  color: var(--c-copper-dark) !important;
+}
+.bg-green .ts-prose a:not(.btn),
+.btn-green .ts-prose a:not(.btn),
+.bg-green .ts-prose a:not(.btn) span,
+.bg-green-light a:not(.btn) {
+  color: var(--c-gold) !important;
+}
+
+/* Primary button hover: copper dark (the theme used brown). */
+.btn-red:hover,
+.btn-red:focus-visible,
+.sticky-travel-proposal-btn:hover,
+.travel-proposal-button:hover {
+  background-color: var(--c-copper-dark) !important;
+  border-color: var(--c-copper-dark) !important;
+  color: var(--c-ivory) !important;
+}
+.btn-yellow {
+  color: var(--c-forest) !important;
+}
+
+/* Focus: forest border plus a 2px gold ring. */
+:focus-visible {
+  outline: 2px solid var(--c-gold);
+  outline-offset: 2px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--c-forest) !important;
+  box-shadow: 0 0 0 2px var(--c-gold) !important;
+  outline: none;
+}
+
+/* Partner blocks (home, reviews, trip pages) */
+.partner-card {
+  background-color: var(--c-mountain);
+  color: var(--c-ivory);
+}
+.partner-card h3,
+.partner-card h4 {
+  color: var(--c-ivory);
+}
+.partner-card .partner-score {
+  color: var(--c-ivory);
+}
+/* Copper buttons keep white text, also inside prose where the theme colours links. */
+.btn-red:not(.btn-red--outlined),
+.ts-prose a.btn-red:not(.btn-red--outlined) {
+  color: var(--c-white) !important;
+}
+.partner-line {
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "yourtanzaniatrip",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "serve": "node serve.mjs",
+    "screenshot": "node screenshot.mjs",
+    "sync": "node scripts/crawl.mjs && node scripts/discover.mjs && node scripts/extract.mjs && node scripts/download-assets.mjs .cache/assets-needed.txt && node scripts/facets.mjs && node scripts/download-assets.mjs .cache/facet-assets.txt && node scripts/ajax-cache.mjs && node scripts/download-assets.mjs .cache/ajax-assets.txt && node scripts/patch-theme.mjs && node scripts/rebrand.mjs && node scripts/brand-theme.mjs",
+    "compare": "node scripts/compare.mjs",
+    "check-links": "node scripts/check-links.mjs",
+    "rebrand": "node scripts/extract.mjs && node scripts/rebrand.mjs && node scripts/brand-theme.mjs"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/marcellus": "^5.3.0",
+    "astro": "^5.18.2",
+    "cheerio": "^1.2.0",
+    "puppeteer": "^25.14.0"
+  },
+  "devDependencies": {
+    "pixelmatch": "^8.0.0",
+    "pngjs": "^7.0.0"
+  }
+}

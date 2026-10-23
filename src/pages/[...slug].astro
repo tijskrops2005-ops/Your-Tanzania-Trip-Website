@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { pages, readPageBody } from '../lib/site.js';
+
+export function getStaticPaths() {
+  return pages.map(page => ({
+    params: { slug: page.slug === 'index' ? undefined : page.path.replace(/^\/|\/$/g, '') },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const body = await readPageBody(page.slug);
+---
+<BaseLayout page={page}>
+  <Fragment set:html={body} />
+</BaseLayout>
