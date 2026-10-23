@@ -229,6 +229,13 @@ textarea:focus {
 .partner-card .partner-score {
   color: var(--c-ivory);
 }
+/* The theme has no text-white/90 utility; inside prose columns the paragraphs fell back to grey. */
+.partner-card p,
+.partner-card li,
+.ts-prose .partner-card p {
+  color: var(--c-ivory) !important;
+  opacity: 0.92;
+}
 /* Copper buttons keep white text, also inside prose where the theme colours links. */
 .btn-red:not(.btn-red--outlined),
 .ts-prose a.btn-red:not(.btn-red--outlined) {
