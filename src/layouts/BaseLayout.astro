@@ -1,4 +1,5 @@
 ---
+import fs from 'node:fs';
 import { readPartial, markCurrentMenu } from '../lib/site.js';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/600.css';
@@ -19,6 +20,9 @@ const stickyCta = page.stickyCta
   ? `<a href="${page.stickyCta.href}" class="hidden sticky-travel-proposal-btn">${page.stickyCta.label}</a>`
   : '';
 const ogImage = new URL(page.ogImage || '/brand/og-image.jpg', Astro.site).href;
+// Form delivery (public/assets/js/forms.js): endpoint and company e-mail from the brand tokens.
+const tokens = JSON.parse(fs.readFileSync(new URL('../../docs/brand-tokens.json', import.meta.url), 'utf8'));
+const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', accessKey: tokens.forms?.accessKey || '', email: tokens.company.email });
 ---
 <!doctype html>
 <html lang="en-US">
@@ -55,5 +59,7 @@ const ogImage = new URL(page.ogImage || '/brand/og-image.jpg', Astro.site).href;
     <Fragment set:html={markCurrentMenu(footer, page.path).replace('<!--STICKY_CTA-->', stickyCta)} />
     <Fragment set:html={page.extraScripts.join('\n')} />
     {hasFacets && <script is:inline src="/assets/js/facetwp-static.js" data-facets={`/facetwp-static/${page.slug}.json`}></script>}
+    <script is:inline set:html={`window.YTT_FORMS=${formsConfig};`} />
+    <script is:inline src="/assets/js/forms.js"></script>
   </body>
 </html>

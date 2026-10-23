@@ -144,7 +144,10 @@ h4,
   color: var(--c-gold) !important;
 }
 
-/* Primary button hover: copper dark (the theme used brown). */
+/*
+ * Hover states: a darker shade of the same colour, with text that stays readable.
+ * The theme turned every hover into brown/green, which is now one near-black forest tone.
+ */
 .btn-red:hover,
 .btn-red:focus-visible,
 .sticky-travel-proposal-btn:hover,
@@ -155,6 +158,50 @@ h4,
 }
 .btn-yellow {
   color: var(--c-forest) !important;
+}
+.btn-yellow:hover,
+.btn-yellow:focus-visible {
+  background-color: #c97c10 !important;
+  border-color: #c97c10 !important;
+  color: var(--c-forest) !important;
+}
+.btn-green:hover,
+.btn-green:focus-visible,
+.btn-sand:hover,
+.btn-sand:focus-visible,
+.btn-green--outlined:hover {
+  background-color: var(--c-mountain) !important;
+  border-color: var(--c-mountain) !important;
+  color: var(--c-white) !important;
+}
+/* Utility hovers (cards, tiles, menu items): mountain surface, white text. */
+.hover\:bg-green:hover,
+.hover\:bg-brown:hover {
+  background-color: var(--c-mountain) !important;
+}
+.hover\:bg-green:hover:not([class*="hover:text-"]):not([class*="hover:!text-"]),
+.hover\:bg-brown:hover:not([class*="hover:text-"]):not([class*="hover:!text-"]),
+.hover\:bg-green:hover .text-green,
+.hover\:bg-green:hover .text-brown,
+.hover\:bg-green:hover .text-anthracite,
+.hover\:bg-brown:hover .text-green,
+.hover\:bg-brown:hover .text-brown,
+.hover\:bg-brown:hover .text-anthracite {
+  color: var(--c-white) !important;
+}
+.hover\:bg-green:hover svg path[fill="#20281B"],
+.hover\:bg-brown:hover svg path[fill="#20281B"] {
+  fill: var(--c-white);
+}
+.hover\:border-green:hover {
+  border-color: var(--c-mountain) !important;
+}
+/* Gold text on hover only works on dark surfaces; on the ivory header and sand panels use copper. */
+.js-header .hover\:text-yellow:hover,
+.bg-sand .hover\:text-yellow:hover,
+.bg-sand-light .hover\:text-yellow:hover,
+.bg-white .hover\:text-yellow:hover {
+  color: var(--c-copper) !important;
 }
 
 /* Focus: forest border plus a 2px gold ring. */
@@ -190,4 +237,28 @@ textarea:focus {
 .partner-line {
   font-size: 0.8125rem;
   letter-spacing: 0.02em;
+}
+
+/* Form feedback (public/assets/js/forms.js) */
+.ytt-form-message {
+  background-color: var(--c-white);
+  border: 2px solid var(--c-gold);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  color: var(--c-forest);
+}
+.ytt-form-message h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+.ytt-form-message a {
+  color: var(--c-copper);
+  text-decoration: underline;
+}
+.gfield_error input,
+.gfield_error select,
+.gfield_error textarea {
+  border-color: var(--c-copper) !important;
+  box-shadow: 0 0 0 2px rgba(168, 56, 0, 0.35) !important;
 }

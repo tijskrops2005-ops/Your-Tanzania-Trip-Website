@@ -381,5 +381,10 @@
     "borrowed ratings or awards",
     "invented reviews or prices",
     "photos from other travel sites"
-  ]
+  ],
+  "forms": {
+    "_note": "Form delivery for the static site (public/assets/js/forms.js). Without an endpoint the visitor's e-mail app opens with the request.",
+    "endpoint": "[FILL: form endpoint, e.g. https://api.web3forms.com/submit]",
+    "accessKey": "[FILL: Web3Forms access key (free, sent to info@yourtanzaniatrip.com at web3forms.com)]"
+  }
 }

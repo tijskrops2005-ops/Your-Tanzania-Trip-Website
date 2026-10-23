@@ -166,6 +166,13 @@ const membershipRules = [
 ];
 
 const reviewRules = [
+  // YouTube videos of the old operator (its logo is in every thumbnail and video), with the headings that introduce them
+  [/<h[2-4][^>]*>[^<]*(?:video is worth|worth watching|watching this video)[^<]*<\/h[2-4]>\s*/gi, ""],
+  [/<h[2-4][^>]*>The (?:Tanzania Specialist|Your Tanzania Trip) Kilimanjaro Preparation Guide<\/h[2-4]>\s*(?=(?:<p>\s*)?<span class='flying-press-youtube')/g, ""],
+  [/<p>\s*<span class='flying-press-youtube'[\s\S]*?<\/span>\s*<\/p>/g, "<!--VIDEO-->"],
+  [/<span class='flying-press-youtube'[\s\S]*?<\/span>/g, "<!--VIDEO-->"],
+  [/<iframe[^>]*youtube(?:-nocookie)?\.com\/embed\/[^>]*>\s*<\/iframe>/g, ""],
+  [/<h[2-4][^>]*>\s*Curious for more\? You won(?:’|'|&#8217;)t regret watching this video\s*<\/h[2-4]>/g, ""],
   [/<a class="ts-award[^"]*"[\s\S]*?<\/a>/g, ""],
   [/<img[^>]*(?:Tripadvisor-TC-Badge|Tripadvisor-travellers-choice|tripadvisor-tc-badge|tripadvisorlogo|tripadvisor-tc-title)[^>]*\/?>/g, ""],
   [/<a[^>]*>\s*<\/a>/g, ""],
@@ -179,6 +186,8 @@ const reviewRules = [
   // USP bar under the hero: the 5-star claim belongs to the partner
   [/5-star customer reviews/g, `Local partner rated ${P.tripadvisor.score}/${P.tripadvisor.scale}`],
   [/\b(?:5247|1689)\+ reviews\b/g, "[FILL: review count]"],
+  // Park pages: "Tripadvisor experiences" heading over the (now removed) old profile link
+  [/<h4>Tripadvisor experiences<\/h4>\s*<p>\s*<\/p>/g, ""],
 ];
 
 const svgColorRules = [
@@ -196,6 +205,11 @@ const allRules = [...brandRules, ...contactRules, ...founderRules, ...sisterRule
 
 function rebrandText(s) {
   for (const [re, to] of allRules) s = s.replace(re, to);
+  for (const [re, to] of imageRules) {
+    s = s.replace(re, to);
+    // The same paths inside JSON strings, where slashes are escaped
+    s = s.replace(new RegExp(re.source.replace(/\\\//g, "(?:\\\\\\\\)?\\/"), re.flags), to.replace(/\//g, "\\/"));
+  }
   // Sentence starts after the founder replacements.
   s = s.replace(/(^|[.!?]\s+|<p>|<h\d[^>]*>|<li>|<em>)our (founder|team in Arusha)/g, (m, pre, rest) => `${pre}Our ${rest}`);
   return s;
@@ -379,8 +393,19 @@ function tileScoreRow() {
 }
 const TILE_SCORES_OPEN = /<div class="flex flex-wrap gap-3 items-center mt-6 md:gap-6">/;
 
+/** Sidebar widget "How previous guests rated us" (travel-proposal and similar templates). */
+function sidebarPartnerWidget() {
+  return `<section id="ts_reviews_widget-4" class="widget widget_ts_reviews_widget"><h2 class="text-lg font-bold tracking-widest uppercase text-anthracite">Our local partner</h2>
+<p class="mt-3 text-sm">Your trip is operated on the ground by <a href="/our-partner/" class="underline">${P.name}</a>, ${P.city}.</p>
+<p class="mt-2 flex items-center gap-2"><span class="stars-ratings flex" aria-hidden="true">${stars(5, "text-yellow", 16)}</span><strong>${P.tripadvisor.score}/${P.tripadvisor.scale}</strong></p>
+<p class="text-sm partner-line">${P.tripadvisor.count} reviews on Tripadvisor · checked ${fillSpan(P.tripadvisor.checkedOn)}</p>
+<p class="mt-2 text-sm"><a href="${PARTNER_REVIEWS_HREF}"${PARTNER_REVIEWS_TARGET} class="underline">Read reviews on Tripadvisor</a></p>
+</section>`;
+}
+
 function stripOldTrust(html) {
   html = replaceDivs(html, RATINGS_OPEN, "");
+  html = html.replace(/<section id="ts_reviews_widget-\d+"[^>]*>[\s\S]*?<\/section>/g, sidebarPartnerWidget());
   html = replaceDivs(html, TILE_SCORES_OPEN, tileScoreRow(), (inner) => /4\.[79]\/5/.test(inner));
   html = replaceDivs(html, CAROUSEL_OPEN, partnerCompact(), (inner) => inner.includes("review-card"));
   return html;
@@ -410,6 +435,9 @@ function aboutPage(html) {
   html = html.replace(/(<h2 id="our-story">Our Story<\/h2>)\s*<p>Born from a passion[\s\S]*?<\/p>/, `$1\n<p>${fillSpan("[FILL: the story of Your Tanzania Trip in a few sentences: why Tijs Krops started it, and how the partnership with Kilimanjaro Nature Tours came about]")}</p>`);
   html = html.replace(/(<h2 id="our-offices">Our Offices<\/h2>)\s*<p>Your Tanzania Trip has two offices[\s\S]*?<\/p>/, `$1\n<p>${BRAND} is based in Nagele, the Netherlands. Our local partner <a href="/our-partner/">${P.name}</a> works from ${P.city}, close to the northern parks and Kilimanjaro. You plan and book with us in the Netherlands; on the ground you are looked after by their team.</p>`);
   html = html.replace(/<p><span class='flying-press-youtube'[\s\S]*?<\/span><\/p>/, "");
+  // Tab to the old team page (the page itself redirects to /our-partner/)
+  html = html.replace(/(<a href="\/our-partner\/"[\s\S]{0,400}?)Our experts/i, "$1Our local partner");
+  html = html.replace(/<option value="[^"]*"\s*>\s*Our experts\s*<\/option>/i, '<option value="/our-partner/">Our local partner</option>');
   return html;
 }
 
@@ -460,7 +488,65 @@ const removed = {
   "/blog/5-questions-with-tanzania-specialist-director-epimark-bernard/": "/blog/",
   "/africa-safari-trips/": "/",
   "/practical-information/travelife-partner-status/": "/practical-information/responsible-travel/",
+  // Posts and pages about the old operator's staff, team events, certifications and partnerships
+  "/blog/get-to-know-the-faces-behind-tanzania-specialist-in-the-hot-seat-killow/": "/our-partner/",
+  "/blog/get-to-know-the-faces-behind-tanzania-specialist-in-the-hot-seat-tyo/": "/our-partner/",
+  "/blog/get-to-know-the-team-esther/": "/our-partner/",
+  "/blog/get-to-know-the-faces-behind-tanzania-specialist-in-the-hot-seat-elke/": "/our-partner/",
+  "/blog/get-to-know-the-team-romina/": "/our-partner/",
+  "/blog/meet-our-experts-mathanje-tanzania/": "/our-partner/",
+  "/blog/meet-our-experts-willemijn-tanzania/": "/our-partner/",
+  "/blog/safari-guide-tanzania-interview-albino-animals/": "/our-partner/",
+  "/blog/serengeti-safari-marathon-2022/": "/blog/",
+  "/blog/serengeti-safari-marathon-2023/": "/blog/",
+  "/blog/serengeti-safari-marathon-photos/": "/blog/",
+  "/blog/press-release-increased-sightings-of-rare-albino-animals/": "/blog/",
+  "/blog/why-choose-tanzania-specialist/": "/about-tanzania-specialist/",
+  "/blog/certified-responsible-climbing-on-kilimanjaro/": "/climbing-kilimanjaro/",
+  "/blog/why-chapka-travel-insurance/": "/practical-information/travel-insurance/",
+  "/about-tanzania-specialist/our-tanzania-travel-experts/": "/our-partner/",
+  "/job-offers/": "/contact/",
+  "/job-offers-content-writer-translator/": "/contact/",
 };
+const removedHref = new RegExp('href="(?:https?://[^/"]+)?(' + Object.keys(removed).map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ')"');
+
+/** Cards, list items and tab links that point to a removed page go with it. */
+function stripRemovedLinks(html) {
+  html = html.replace(/<article\b[^>]*>[\s\S]*?<\/article>/g, (m) => (removedHref.test(m) ? "" : m));
+  html = html.replace(/<li\b[^>]*>(?:(?!<li\b)[\s\S]){0,1500}?<\/li>/g, (m) => (removedHref.test(m) ? "" : m));
+  // Blog overview: the result count follows the number of cards left.
+  html = html.replace(/(\d+) results\b/, () => `${(html.match(/<article class="post-item/g) || []).length} results`);
+  // Remaining links in running text and buttons follow the redirect.
+  html = html.replace(/href="(?:https?:\/\/[^/"]+)?(\/[^"]*\/)"/g, (m, p) => (removed[p] ? `href="${removed[p]}"` : m));
+  html = html.replace(/<a href="\/our-partner\/"([^>]*)>(\s*)Meet our experts(\s*)<\/a>/g, '<a href="/our-partner/"$1>$2Meet our local partner$3</a>');
+  return html;
+}
+
+// Photos that show the old operator's logo (jeeps, uniforms) or its staff -> logo-free photos from
+// the same library, or the brand placeholder where it shows a person who is not part of the team.
+const U = "/wp-content/uploads/";
+const imageRules = [
+  [/\/wp-content\/uploads\/2023\/08\/guide_tanzania_specialist(?:-\d+x\d+)?\.jpg/g, `${U}2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg`],
+  [/\/wp-content\/uploads\/2023\/08\/people_taking_pictures_in_jeep(?:_v2|-1)?(?:-\d+x\d+)?\.jpg/g, `${U}2023/07/Elephants-jeep-Tarangire-1024x683.jpg`],
+  [/\/wp-content\/uploads\/2026\/01\/IM_TZ_SER_Meulemans-safari-couple-on-jeep-roof-2(?:-scaled)?(?:-1)?(?:-\d+x\d+)?\.jpg/g, `${U}2023/07/Serengeti-Jeep-1024x683.jpg`],
+  [/\/wp-content\/uploads\/2023\/08\/jeep-[345](?:-\d+x\d+)?\.jpg/g, `${U}2024/12/Africa-Safari-jeep-2-1024x682.jpg`],
+  [/\/wp-content\/uploads\/2023\/07\/Jeep(?:-\d+x\d+)?\.jpg/g, `${U}2024/12/Africa-Safari-jeep-2-1024x682.jpg`],
+  [/\/wp-content\/uploads\/2025\/04\/Safari-jeep-3(?:-\d+x\d+)?\.jpg/g, `${U}2024/12/Africa-Safari-jeep-2-1024x682.jpg`],
+  [/\/wp-content\/uploads\/2024\/12\/Africa-Safari-jeep-3(?:-\d+x\d+)?\.jpg/g, `${U}2024/12/Africa-Safari-jeep-2-1024x682.jpg`],
+  [/\/wp-content\/uploads\/2026\/01\/CI_Jeep-and-clients-4(?:-scaled)?(?:-\d+x\d+)?\.jpg/g, `${U}2023/07/Serengeti-Jeep-1024x683.jpg`],
+  [/\/wp-content\/uploads\/2024\/07\/Safari-jeep-cheetahs-private(?:-\d+x\d+)?\.jpg/g, `${U}2024/06/Safari-Jeep-lion.jpg`],
+  [/\/wp-content\/uploads\/2023\/11\/team_tanzania_specialist_jeeps(?:-\d+x\d+)?\.jpg/g, `${U}2024/12/Africa-Safari-jeep-2-1024x682.jpg`],
+  [/\/wp-content\/uploads\/2025\/02\/IM_TZ_MAK_Sunset-and-jeep-TS-logo(?:-scaled)?(?:-1)?(?:-\d+x\d+)?\.jpg/g, `${U}2024/06/Safari-Jeep-lion.jpg`],
+  // Consultant portraits of the old team (hero form, "Call an expert", contact)
+  [/\/wp-content\/uploads\/2023\/11\/team_member_tanzania_yellow(?:-\d+x\d+)?\.jpg/g, "/brand/placeholder-photo.jpg"],
+  [/\/wp-content\/uploads\/2023\/11\/test_image_2-1(?:-\d+x\d+)?\.jpg/g, "/brand/placeholder-photo.jpg"],
+  // Menu thumbnail in the old handwriting style -> brand version (scripts/make-request-thumbnail.mjs)
+  [/\/wp-content\/uploads\/2023\/08\/request_thumbnail(?:-\d+x\d+)?\.jpeg/g, "/brand/request-thumbnail.jpg"],
+  [/\/wp-content\/uploads\/2023\/10\/C0453\.00_00_00_000\.Still001(?:-\d+x\d+)?\.jpg/g, `${U}2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg`],
+  [/alt="guide_tanzania_specialist"/g, 'alt="Guide and guests on safari"'],
+  [/alt="(?:people_taking_pictures_in_jeep(?:_v2)?|team_tanzania_specialist_jeeps|jeep-\d)"/g, 'alt="Safari jeep in Tanzania"'],
+  [/alt="request_thumbnail"/g, 'alt="Request a proposal at no charge"'],
+];
 fs.writeFileSync(path.join(root, "content/redirects-brand.json"), JSON.stringify(removed, null, 1));
 
 // 2. Page content
@@ -473,7 +559,11 @@ for (const p of walk(path.join(root, "content/pages"), [".html"])) {
   }
   processFile(p, (s) => {
     s = stripOldTrust(s);
+    s = stripRemovedLinks(s);
     s = callAnExpert(s);
+    // Trip pages: the old promo video sat next to the price box; the partner block fills that spot.
+    if (slug.startsWith("itineraries__") && slug.split("__").length === 2) s = s.replace("<!--VIDEO-->", `<div class="mt-8">${partnerCompact(true)}</div>`);
+    s = s.replace(/<!--VIDEO-->/g, "");
     if (slug === "index") s = replaceDivs(s, /<div class="pt-8 pb-12 -mb-1\.5 bg-green ts-mask-bottom md:pt-20 md:pb-24">/, partnerHomeSection(), (inner) => inner.includes("What Travellers Say"));
     if (slug === "contact") s = contactPage(s);
     if (slug === "about-tanzania-specialist") s = aboutPage(s);
@@ -487,6 +577,7 @@ fs.writeFileSync(path.join(root, "content/pages/our-partner.html"), partnerPageB
 for (const p of walk(path.join(root, "public/ajax"), [".html", ".json"])) {
   processFile(p, (s) => {
     s = stripOldTrust(s);
+    s = stripRemovedLinks(s);
     if (p.endsWith(".json")) {
       try {
         const data = JSON.parse(s);
@@ -530,7 +621,7 @@ function fixJsonLd(json) {
     }
   }
   if (Array.isArray(data["@graph"])) data["@graph"] = kept;
-  return JSON.stringify(data);
+  return rebrandText(JSON.stringify(data)); // second pass: image paths were escaped before parsing
 }
 
 {
@@ -539,6 +630,12 @@ function fixJsonLd(json) {
   for (const pg of pages) {
     for (const k of ["title", "description", "ogTitle", "ogDescription"]) if (pg[k]) pg[k] = rebrandText(pg[k]);
     if (!pg.ogImage || /DSC04060|social\.png/.test(pg.ogImage)) pg.ogImage = "/brand/og-image.jpg";
+    pg.ogImage = rebrandText(pg.ogImage);
+    // Blog overview: the preloaded result count follows the cards that are left after removals.
+    if (pg.slug === "blog") {
+      const n = pages.filter((q) => /^\/blog\/.+/.test(q.path)).length;
+      pg.extraScripts = pg.extraScripts.map((s) => s.replace(/"_total_rows":"\d+ results"/, `"_total_rows":"${n} results"`));
+    }
     pg.extraScripts = (pg.extraScripts || []).map(rebrandText);
     pg.extraStyles = (pg.extraStyles || []).map(rebrandText);
     pg.ldJson = (pg.ldJson || []).map(fixJsonLd).filter(Boolean);
@@ -565,6 +662,7 @@ function fixJsonLd(json) {
 
 // 5. Header
 processFile(path.join(root, "src/partials/header.html"), (s) => {
+  s = stripRemovedLinks(s);
   s = s.replace(/<picture>[\s\S]*?<\/picture>/, `<img src="/brand/logo-primary.png" class="brand-logo no-lazyload" width="1888" height="732" alt="${BRAND}" fetchpriority="high" loading="eager" decoding="async">`);
   // Cross-sell to the former sister company (its anchor is already unwrapped by the text rules).
   s = s.replace(/<a href="https:\/\/africasafaritrips\.com"[^>]*class="top-header-cross-sell">[\s\S]*?<\/a>/, "");
@@ -581,6 +679,7 @@ processFile(path.join(root, "src/partials/header.html"), (s) => {
 
 // 6. Footer
 processFile(path.join(root, "src/partials/footer.html"), (s) => {
+  s = stripRemovedLinks(s);
   const bandStart = s.indexOf('<div class="text-white ts-mask-bottom bg-green">');
   const bandEnd = s.indexOf('<div class="px-5 py-12 mx-auto max-w-7xl md:pb-24 container-2xl">');
   if (bandStart !== -1 && bandEnd > bandStart) s = s.slice(0, bandStart) + footerBand() + "\n " + s.slice(bandEnd);
