@@ -160,10 +160,31 @@ h4,
   color: var(--c-forest) !important;
 }
 .btn-yellow:hover,
-.btn-yellow:focus-visible {
+.btn-yellow:focus-visible,
+.gform_footer .button:hover,
+.gform_button:hover,
+#field_submit .button:hover,
+.content-wrapper #field_submit .button:hover,
+footer .widget_block #field_submit .button:hover,
+.gform-wishlist .gform_button:hover,
+#quiz-modal .gform_wrapper.gravity-theme .gform_button:hover,
+#quiz-start-btn:hover {
   background-color: #c97c10 !important;
   border-color: #c97c10 !important;
   color: var(--c-forest) !important;
+}
+/* Mega-menu CTA and quiz navigation sit on dark panels: hover must stay visible there. */
+#primary-navigation .mega-menu .menu-cta > a:hover,
+#quiz-modal .gform_wrapper.gravity-theme .gform_next_button:hover,
+#quiz-modal .gform_wrapper.gravity-theme .gform_previous_button:hover,
+#quiz-modal .quiz-back-btn:hover,
+#quiz-modal .quiz-back-to-intro:hover,
+.quiz-result-cta:hover,
+.quiz-result-cta-itineraries:hover,
+.hamburger-wrapper .mobile-menu-dock a:hover {
+  background-color: var(--c-mountain) !important;
+  border-color: var(--c-mountain) !important;
+  color: var(--c-white) !important;
 }
 .btn-green:hover,
 .btn-green:focus-visible,

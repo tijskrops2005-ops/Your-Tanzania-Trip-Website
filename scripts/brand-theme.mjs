@@ -95,6 +95,20 @@ function recolorPlain(s) {
   return s;
 }
 
+// The theme's hover state was "turn brown/green": after recolouring both are the near-black forest,
+// which is invisible on dark panels (forms, footer). Hover surfaces become mountain with white text.
+function fixHovers(css) {
+  const [mr, mg, mb] = hexToRgb(C.mountain);
+  return css.replace(/([^{}]*:hover[^{]*)\{([^}]*)\}/g, (all, sel, body) => {
+    if (!/background-color:rgb\(32 40 27/.test(body)) return all;
+    body = body
+      .replace(/background-color:rgb\(32 40 27\//g, `background-color:rgb(${mr} ${mg} ${mb}/`)
+      .replace(/border-color:rgb\(32 40 27\//g, `border-color:rgb(${mr} ${mg} ${mb}/`)
+      .replace(/color:rgb\(230 144 22\//g, "color:rgb(255 255 255/");
+    return `${sel}{${body}}`;
+  });
+}
+
 function refont(css) {
   return css
     .replace(/https?:\/\/(?:www\.)?tanzania-specialist\.com/g, "") // asset URLs become site-relative
@@ -106,10 +120,10 @@ function refont(css) {
 
 // 1. Theme CSS
 const appCss = fs.readFileSync(path.join(original, "css/app.css"), "utf8");
-fs.writeFileSync(path.join(themeDir, "css/app.css"), refont(recolorCss(appCss)));
+fs.writeFileSync(path.join(themeDir, "css/app.css"), fixHovers(refont(recolorCss(appCss))));
 for (const f of fs.readdirSync(path.join(original, "cache"))) {
   const css = fs.readFileSync(path.join(original, "cache", f), "utf8");
-  fs.writeFileSync(path.join(root, "public/wp-content/cache/flying-press", f), refont(recolorCss(css)));
+  fs.writeFileSync(path.join(root, "public/wp-content/cache/flying-press", f), fixHovers(refont(recolorCss(css))));
 }
 
 // 2. fonts.css: only the Gravity Forms icon font remains; Inter and Marcellus come from @fontsource.

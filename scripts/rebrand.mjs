@@ -96,6 +96,11 @@ const brandRules = [
   // Claims about the old operator's scale, rewritten to the partner's reality
   [/Thousands of travelers have explored Tanzania with us and had an unforgettable experience\./g, "Hundreds of travellers have explored Tanzania with Baraka and his crew, and their reviews say it all."],
   [/Our past travelers confirm: it(?:’|'|&#8217;)s an unforgettable experience\./g, "Travellers who went before you confirm it: an unforgettable experience."],
+  // Plain wording instead of the idiom (read as an error message by some visitors)
+  [/No strings attached\. We(?:’|'|&#8217;)ll design your trip - no cost, no commitment\./g, "Free and without obligation. We design your trip, you decide."],
+  [/\bno strings attached\b/g, "without obligation"],
+  // Flight booking help: the owner's fee
+  [/from \$1,000 extra p\.p\./g, "from $250 extra p.p."],
   [/\ba Your Tanzania Trip\b/g, "our"],
   [/\bA Your Tanzania Trip\b/g, "Our"],
 ];
