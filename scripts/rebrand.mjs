@@ -93,6 +93,9 @@ const brandRules = [
   [/Tanzania Specialist logo/g, `${BRAND} logo`],
   // lower-case "Tanzania specialist(s)" in running text; the brand name itself is handled above
   [/\b[Tt]anzania specialists?\b/g, "Tanzania experts"],
+  // Claims about the old operator's scale, rewritten to the partner's reality
+  [/Thousands of travelers have explored Tanzania with us and had an unforgettable experience\./g, "Hundreds of travellers have explored Tanzania with Baraka and his crew, and their reviews say it all."],
+  [/Our past travelers confirm: it(?:’|'|&#8217;)s an unforgettable experience\./g, "Travellers who went before you confirm it: an unforgettable experience."],
   [/\ba Your Tanzania Trip\b/g, "our"],
   [/\bA Your Tanzania Trip\b/g, "Our"],
 ];
@@ -105,14 +108,14 @@ const contactRules = [
   [/<strong>Socratesstraat 1,<\/strong>\s*2675 XD,?\s*Honselersdijk,?\s*The Netherlands/g, `<strong>Sluitgatweg 10,</strong> 8308 RE Nagele, The Netherlands`],
   [/Socratesstraat 1[^<]{0,40}Honselersdijk[^<]{0,30}Netherlands/g, "Sluitgatweg 10, 8308 RE Nagele, The Netherlands"],
   [/<p>Socratesstraat 1<\/p>\s*<p>2675 ?XD (?:Honselersdijk|Nagele)<\/p>/g, "<p>Sluitgatweg 10</p>\n<p>8308 RE Nagele</p>"],
-  [/<p><strong>Rabobank<\/strong><\/p>\s*<p>Croeselaan 18<\/p>\s*<p>3521 CB Utrecht<\/p>/g, "<p>[FILL: bank name and address]</p>"],
+  [/<p><strong>Rabobank<\/strong><\/p>\s*<p>Croeselaan 18<\/p>\s*<p>3521 CB Utrecht<\/p>/g, `<p><strong>${CO.bank}</strong></p>\n<p>IBAN ${CO.iban}</p>\n<p>BIC ${CO.bic}</p>`],
   [/\bHonselersdijk\b/g, "Nagele"],
   [/<strong>Mlimani Mateves[^<]*<\/strong>[^<]*Arusha,? Tanzania/g, `<strong>${P.name} (our local partner)</strong> ${P.postal}, Tanzania`],
   [/Mlimani Mateves[^<]*Arusha,? Tanzania/g, `${P.name} (our local partner), ${P.postal}, Tanzania`],
   [/\b65050401\b/g, CO.kvk],
   [/NL ?8559 ?61 ?351 ?B\.?01/g, CO.vat],
-  [/NL39 RABO 0308 5684 78/g, "[FILL: IBAN]"],
-  [/\bRABONL2U\b/g, "[FILL: BIC]"],
+  [/NL39 RABO 0308 5684 78/g, CO.iban],
+  [/\bRABONL2U\b/g, CO.bic],
   [/\s*\(Rabobank\)/g, ""],
   [/\s*\((?:<span[^>]*>)?NL and (?:<span[^>]*>)?RABO written in letters, the rest are numbers\)?(?:<\/span>)?/g, ""],
   [/\s*\((?:<span[^>]*>)?RABO is all letters(?:<\/span>)?\)/g, ""],
@@ -145,24 +148,49 @@ const sisterRules = [
   [/our sister company,? our partners in East Africa,?/g, "our partners in East Africa"],
 ];
 
-const PROTECTION_FILL = "[FILL: package-travel protection / insolvency cover, if any]";
+// The company is not a member of a travel guarantee fund; the texts say what does apply.
+const PROTECTION_TEXT = `you book with ${CO.brand} (${CO.legalName}, KvK ${CO.kvk}), pay a deposit on confirmation and the balance before departure, and your trip is operated by ${P.name}, a licensed Tanzanian tour operator and member of the Tanzania Association of Tour Operators. We confirm every booking with them in writing before we invoice you`;
 const membershipRules = [
   // Repair file names an earlier (unguarded) run touched in persisted ajax fragments.
   [/uploads\/(\d{4}\/\d{2})\/\[FILL: sustainability certification\]/g, "uploads/$1/Travelife"],
-  [/we are an active member of the SGR[\s\S]*?Certificate can be viewed via this link: <a[^>]*>[^<]*<\/a>\.?/g, `we will list our package-travel protection here: ${PROTECTION_FILL}.`],
+  [/we are an active member of the SGR[\s\S]*?Certificate can be viewed via this link: <a[^>]*>[^<]*<\/a>\.?/g, `${PROTECTION_TEXT}.`],
   // Claims of being bonded under the old operator's guarantee fund (About, Terms)
-  [/Your Tanzania Trip is fully accredited and bonded under the\s*(?:<a[^>]*>)?Dutch SGR\s*(?:<\/a>)?\((?:<a[^>]*>)?ATOL(?:<\/a>)?\s*in the UK\), which secures all online payments\./g, `Package-travel protection: ${PROTECTION_FILL}.`],
-  [/All payments you make to us will be secured by SGR, as Your Tanzania Trip is a fully accredited and bonded SGR member \(SGR number: 3700\)\.\s*You can find more information about this certificate\s*(?:<\/span>|<span[^>]*>|<a[^>]*>|<\/a>)*here(?:<\/span>|<span[^>]*>|<\/a>)*\.?/g, `Package-travel protection: ${PROTECTION_FILL}.`],
+  [/Your Tanzania Trip is fully accredited and bonded under the\s*(?:<a[^>]*>)?Dutch SGR\s*(?:<\/a>)?\((?:<a[^>]*>)?ATOL(?:<\/a>)?\s*in the UK\), which secures all online payments\./g, `${PROTECTION_TEXT.charAt(0).toUpperCase() + PROTECTION_TEXT.slice(1)}.`],
+  [/All payments you make to us will be secured by SGR, as Your Tanzania Trip is a fully accredited and bonded SGR member \(SGR number: 3700\)\.\s*You can find more information about this certificate\s*(?:<\/span>|<span[^>]*>|<a[^>]*>|<\/a>)*here(?:<\/span>|<span[^>]*>|<\/a>)*\.?/g, `${PROTECTION_TEXT.charAt(0).toUpperCase() + PROTECTION_TEXT.slice(1)}.`],
+  // Terms and conditions: the old operator's ANVR/SGR clauses
+  [/Your Tanzania Trip Terms and Conditions and the ANVR Traveller Terms/g, `${CO.brand} Terms and Conditions`],
+  [/On all booked trips, both the additional terms and conditions from Your Tanzania Trip and the ANVR Traveller Terms<\/span>[\s\S]*?regardless of the year of travel\./g, `On all booked trips the terms and conditions of ${CO.brand} apply.</span><span style="font-weight: 400">`],
+  [/,\s*mobile app “Africa Safari App”/g, ""],
+  [/,\s*including those of the ANVR \(Algemene Nederlandse Vereniging van Reisondernemingen\), that are also applicable to all trips operated by us/g, ""],
+  [/<p><span style="font-weight: 400">As a Dutch company, we cannot be a member of, for example ATOL, but we are a member of the Dutch Guarantee Fund \(SGR\), which gives you the same coverage\. When you pay, your payment will be secured by SGR\.\s*<\/span><\/p>\s*/g, ""],
+  // Traveller guide and its meta description
+  [/<a href="https?:\/\/(?:www\.)?anvr\.nl[^"]*"[^>]*>ANVR Member<\/a> • <a href="https?:\/\/(?:www\.)?sgr\.nl[^"]*"[^>]*>SGR Affiliated<\/a>/g, '<a href="/our-partner/">Licensed Tanzanian operator (TATO member)</a> • <a href="/practical-information/guarantees/">Written booking confirmation</a>'],
+  [/<a href="[^"]*travelife-partner-status\/"[^>]*>Travelife Partner<\/a> \(globally recognized tourism sustainability standard\) • <a href="[^"]*"[^>]*>Certified Kilimanjaro Responsible Trekking Organization<\/a> \(KRTO\)/g, '<a href="/practical-information/responsible-travel/">Fair pay and proper gear for porters</a> • <a href="/our-partner/">5% of each trip funds local schooling</a>'],
+  // KRTO certification of the old operator -> what the partner's crew actually does
+  [/And did we mention that we are a partner of the Kilimanjaro Responsible Travel Organisation \(KRTO\)\? That means we take care of our crew and the mountain during our climb, making sure you can climb with a clear conscience\./g, "And our partner Kilimanjaro Nature Tours hires its porters fairly, with proper gear, weighed loads and daily health checks on the mountain, so you can climb with a clear conscience."],
+  [/<h2>A Milestone in Ethical Climbing: Our KRTO Certification<\/h2>\s*<p>We’re proud to announce[\s\S]*?<\/p>\s*<p><img[^>]*Kilimanjaro-vertified[\s\S]*?<\/p>/g, `<h2>How we climb responsibly</h2>\n<p>Every climb is run by our partner Kilimanjaro Nature Tours in Arusha. Their guides are licensed by the Kilimanjaro National Park authority and trained in Wilderness First Response, first aid and CPR; porters are hired properly, with fair pay, proper gear and weighed loads, and everyone gets a daily health check on the mountain. About 5% of each trip funds schooling in a village near the mountain. When you climb with us, you climb with a crew that is looked after, and that is how you reach the summit with a clear conscience.</p>`],
+  [/Certified for Ethical Climbing/g, "Fairly paid, well-equipped crew"],
+  [/>\s*About our experts\s*</gi, ">About our local partner<"],
+  [/<h2 id="certified-sustainable-travel-africa"[^>]*>[\s\S]*?<p><img[^>]*Kilimanjaro-vertified[\s\S]*?<\/p>/g, `<h2 id="fair-practices-on-kilimanjaro">Fair practices on Kilimanjaro</h2>\n<p>Every climb is run by our partner Kilimanjaro Nature Tours in Arusha, founded by Baraka Dalali, who started on the mountain as a porter himself. Porters are hired properly, with fair pay, proper gear and weighed loads; guides are licensed by the Kilimanjaro National Park authority and trained in Wilderness First Response, first aid and CPR; and everyone on the mountain gets a daily health check. Anyone with serious symptoms descends.</p>\n<p>The crew follows <em>Leave No Trace</em> principles to keep the impact of trekking on Kilimanjaro's ecosystem as small as possible, and about 5% of each trip funds schooling in a village near the mountain. Choosing Your Tanzania Trip means choosing a crew that is looked after, on a mountain that is looked after.</p>`],
+  [/each Your Tanzania Trip employee undergoes an exhaustive selection process\. With a team filled with the best of the best, we are proud to pay our team substantially higher than the average\./g, "every guide and driver in our partner's crew is selected by Baraka personally, and the crew is paid above the local average."],
+  [/<p>To know the reputation of a company, it is best to listen to the people who have already used it\. You can do this by checking their reviews on [\s\S]*?SafariBookings<\/a>\.<\/p>/g, `<p>To know the reputation of a company, listen to the people who travelled before you: read the reviews of our partner Kilimanjaro Nature Tours on <a href="${P.tripadvisor.url}" target="_blank" rel="noopener noreferrer">Tripadvisor</a> and <a href="${P.google.url}" target="_blank" rel="noopener noreferrer">Google</a>.</p>`],
+  [/alt="Travelife-Tanzania-Specialist_zebras"/g, 'alt="Zebras on the plains of Tanzania"'],
+  [/<a href="#travelife-partner-status"[\s\S]*?<\/a>\s*/g, ""],
+  [/ANVR Member • SGR Affiliated/g, "Licensed Tanzanian operator (TATO member) • Written booking confirmation"],
+  [/Travelife Partner \(globally recognized tourism sustainability standard\) • Certified Kilimanjaro Responsible Trekking Organization \(KRTO\)/g, "Fair pay and proper gear for porters • 5% of each trip funds local schooling"],
+  // About: listings and awards of the old operator
+  [/<p>We are also partners and listed on renowned websites such as <a[^>]*safaribookings\.com[^>]*>SafariBookings\.com<\/a>\.<\/p>\s*/g, ""],
   [/<a[^>]*href="https?:\/\/(?:www\.)?(?:sgr|anvr)\.nl[^"]*"[^>]*>([\s\S]*?)<\/a>/g, "$1"],
   [/<img[^>]*(?:ANVR_logo|logo-sgr|sgr-logo|anvr-logo|Travelife_logo|partner-Travelife)[^>]*\/?>/g, ""],
   [/\s*More information can be found on https?:\/\/(?:www\.)?sgr\.nl[^\s<]*/g, ""],
-  [/\bSGR-3700\b/g, "[FILL: member number]"],
+  [/\s*\(SGR-3700\)/g, ""],
+  [/\bSGR-3700\b/g, ""],
   // Text only: file names and URLs with these words stay intact.
-  [/(?<![/_-])\bANVR\b(?![-_])/g, "[FILL: travel association]"],
-  [/(?<![/_-])\bSGR\b(?![-_])/g, "[FILL: travel guarantee fund]"],
+  [/(?<![/_-])\bANVR\b(?![-_])/g, "the Dutch travel trade"],
+  [/(?<![/_-])\bSGR\b(?![-_])/g, "a travel guarantee fund"],
   [/<li\b[^>]*>\s*<a[^>]*travelife-partner-status[^>]*>[\s\S]*?<\/a>\s*<\/li>\s*/g, ""],
-  [/Travelife Partner Status/g, "[FILL: sustainability certification]"],
-  [/(?<![/_-])\bTravelife\b(?![-_])/g, "[FILL: sustainability certification]"],
+  [/Travelife Partner Status/g, "responsible travel"],
+  [/(?<![/_-])\bTravelife\b(?![-_])/g, "responsible-travel"],
 ];
 
 const reviewRules = [
@@ -181,7 +209,11 @@ const reviewRules = [
   [/https?:\/\/g\.co\/kgs\/[^"'\s<]*/g, "/our-partner/"],
   [/https?:\/\/www\.google\.[a-z.]+\/maps\/place\/[^"'\s<]*/g, "/our-partner/"],
   [/https?:\/\/www\.google\.[a-z.]+\/search\?[^"'\s<]*tanzania\+specialist[^"'\s<]*/g, "/our-partner/"],
+  [/✓ TripAdvisor Travell?ers(?:’|'|&#8217;|&#039;)? Choice(?: Award)?(?: \d{4})?/g, "✓ Local partner rated 5.0 on Tripadvisor"],
   [/Travell?ers(?:’|'|&#8217;|&#039;)? Choice(?: Award)?(?: \d{4})?/g, "[FILL: award]"],
+  // The old operator's responsible-travel award (certificate image, heading and paragraph)
+  [/<p><img[^>]*Kilimanjaro-vertified[^>]*\/><\/p>\s*/g, ""],
+  [/(?:<h3><\/h3>\s*)?<h2>We(?:’|'|&#8217;)re Proud to Have Achieved [^<]*<\/h2>\s*<p>[\s\S]*?<\/p>\s*/g, ""],
   [/<i>\s*Based on <u>(?:5247|1689)\+ reviews<\/u>\s*<\/i>/g, ""],
   // USP bar under the hero: the 5-star claim belongs to the partner
   [/5-star customer reviews/g, `Local partner rated ${P.tripadvisor.score}/${P.tripadvisor.scale}`],
@@ -208,7 +240,7 @@ function rebrandText(s) {
   for (const [re, to] of imageRules) {
     s = s.replace(re, to);
     // The same paths inside JSON strings, where slashes are escaped
-    s = s.replace(new RegExp(re.source.replace(/\\\//g, "(?:\\\\\\\\)?\\/"), re.flags), to.replace(/\//g, "\\/"));
+    s = s.replace(new RegExp(re.source.replace(/\\\//g, "(?:\\\\)?\\/"), re.flags), to.replace(/\//g, "\\/"));
   }
   // Sentence starts after the founder replacements.
   s = s.replace(/(^|[.!?]\s+|<p>|<h\d[^>]*>|<li>|<em>)our (founder|team in Arusha)/g, (m, pre, rest) => `${pre}Our ${rest}`);
@@ -223,15 +255,38 @@ const star = (cls = "text-yellow", size = 16) =>
 const stars = (n = 5, cls, size) => Array.from({ length: n }, () => star(cls, size)).join("");
 const fillSpan = (v) => String(v).replace(/\[FILL:[^\]]*\]/g, (m) => `<span class="fill-marker">${m}</span>`);
 
-const scoreLine = () => `${P.tripadvisor.score}/${P.tripadvisor.scale} on Tripadvisor · ${P.tripadvisor.count} reviews · checked ${fillSpan(P.tripadvisor.checkedOn)}`;
+const TA = P.tripadvisor;
+const GOOGLE_HREF = P.google.url;
+const EXT = ' target="_blank" rel="noopener noreferrer"';
+const WA_HREF = "https://wa.me/" + CO.whatsapp.replace(/[^\d]/g, "");
+const BARAKA_IMG = "/brand/partner/baraka-dalali.webp";
+const CREW_IMG = "/brand/partner/crew-summit.webp";
+const AWARDS = TA.awards.join(" · ");
+const scoreLine = () => `${TA.score}/${TA.scale} on Tripadvisor · ${TA.count} reviews · checked ${TA.checkedOn}`;
+const quoteCards = (cls = "") =>
+  P.quotes
+    .map(
+      (q) => `<figure class="quote-card ${cls}">
+  <blockquote><p>“${q.text}”</p></blockquote>
+  <figcaption>${q.name} · review on <a href="${GOOGLE_HREF}"${EXT}>${q.platform}</a></figcaption>
+</figure>`
+    )
+    .join("\n");
+const badgeRow = () => `<ul class="badge-row" aria-label="Recognised by">
+  <li><img src="/brand/partner/badge-tripadvisor-2023.webp" width="83" height="104" alt="Tripadvisor Travellers' Choice 2023" loading="lazy"></li>
+  <li><img src="/brand/partner/badge-tripadvisor-2024.webp" width="83" height="104" alt="Tripadvisor Travellers' Choice 2024" loading="lazy"></li>
+  <li><img src="/brand/partner/badge-tato.webp" width="80" height="80" alt="Tanzania Association of Tour Operators" loading="lazy"></li>
+  <li><img src="/brand/partner/badge-tanapa.webp" width="71" height="80" alt="Tanzania National Parks" loading="lazy"></li>
+  <li><img src="/brand/partner/badge-ttb.webp" width="116" height="80" alt="Tanzania Tourist Board" loading="lazy"></li>
+</ul>`;
 
 function headerTrustItem() {
   return `<div class="flex relative gap-4 items-center md:gap-6 lg:mx-auto">
-  <a href="${PARTNER_REVIEWS_HREF}"${PARTNER_REVIEWS_TARGET} class="flex items-center gap-3 text-white partner-line">
+  <a href="${TA.url}"${EXT} class="flex items-center gap-3 text-white partner-line">
     <span class="i-cib-tripadvisor text-2xl" aria-hidden="true"></span>
     <span class="stars-ratings flex" aria-hidden="true">${stars(5, "text-yellow", 14)}</span>
-    <span class="hidden md:inline"><strong>${P.tripadvisor.score}/${P.tripadvisor.scale}</strong> · ${P.tripadvisor.count} reviews of our local partner ${P.name}</span>
-    <span class="sr-only">Tripadvisor score checked ${P.tripadvisor.checkedOn}</span>
+    <span class="hidden md:inline"><strong>${TA.score}/${TA.scale}</strong> · ${TA.count} reviews of our local partner ${P.name}</span>
+    <span class="sr-only">Tripadvisor score checked ${TA.checkedOn}</span>
   </a>
 </div>
 `;
@@ -250,11 +305,11 @@ function footerBand() {
       <div class="flex items-center gap-3">
         <div class="flex justify-center items-center w-10 h-10 text-2xl rounded-full text-anthracite bg-yellow" aria-hidden="true"><span class="i-cib-tripadvisor"></span></div>
         <div>
-          <div class="flex items-center gap-2"><span class="text-lg font-bold tracking-widest">${P.tripadvisor.score}/${P.tripadvisor.scale}</span><span class="stars-ratings flex" aria-hidden="true">${stars(5, "text-yellow", 18)}</span></div>
-          <p class="text-sm"><i>${P.tripadvisor.count} reviews of ${P.name} · checked ${fillSpan(P.tripadvisor.checkedOn)}</i></p>
+          <div class="flex items-center gap-2"><span class="text-lg font-bold tracking-widest">${TA.score}/${TA.scale}</span><span class="stars-ratings flex" aria-hidden="true">${stars(5, "text-yellow", 18)}</span></div>
+          <p class="text-sm"><i>${TA.count} reviews of ${P.name} · ${AWARDS} · checked ${TA.checkedOn}</i></p>
         </div>
       </div>
-      <a href="${PARTNER_REVIEWS_HREF}"${PARTNER_REVIEWS_TARGET} class="font-bold tracking-wider uppercase underline">Read reviews on Tripadvisor</a>
+      <a href="${TA.url}"${EXT} class="font-bold tracking-wider uppercase underline">Read reviews on Tripadvisor</a>
     </div>
   </div>
 </div>
@@ -263,7 +318,7 @@ function footerBand() {
 
 function footerPartnerLine() {
   return `<p class="mt-8 text-sm partner-line">Trips operated on the ground by <a href="/our-partner/" class="underline">${P.name}</a>, ${P.city}.</p>
-<p class="mt-2 text-sm partner-line">${fillSpan("[FILL: package-travel protection / memberships, if any]")}</p>
+<p class="mt-2 text-sm partner-line">E-mail <a href="mailto:${CO.email}" class="underline">${CO.email}</a> · WhatsApp <a href="${WA_HREF}"${EXT} class="underline">${CO.whatsapp}</a></p>
 `;
 }
 
@@ -271,13 +326,14 @@ function footerPartnerLine() {
 function partnerCompact(stacked = false) {
   return `<div class="mx-auto max-w-4xl partner-card rounded-md">
   <div class="flex flex-col gap-6 px-6 py-8 ${stacked ? "" : "md:flex-row md:items-center "}md:px-10">
+    <img src="${BARAKA_IMG}" alt="${P.owner}, founder of ${P.name}" width="700" height="700" class="w-24 h-24 rounded-full object-cover shrink-0 ${stacked ? "" : "md:w-28 md:h-28"}" loading="lazy" />
     <div class="flex-1">
       <h3 class="text-2xl text-white">Reviews of our local partner</h3>
-      <p class="mt-2 text-white/90">Every trip is run on the ground by ${P.name} in ${P.city}. Travellers review them on Tripadvisor; we show the score with the date we last checked it and link to the original profile.</p>
+      <p class="mt-2">Every trip is run on the ground by ${P.name} in ${P.city}, led by ${P.owner}. Travellers rate them ${TA.score} out of ${TA.scale} on Tripadvisor (${AWARDS}). We show the score with the date we last checked it and link to the original profile.</p>
       <p class="mt-3 flex flex-wrap items-center gap-2"><span class="stars-ratings flex" aria-hidden="true">${stars(5, "text-yellow", 18)}</span><span class="partner-score font-bold tracking-wider">${scoreLine()}</span></p>
     </div>
     <div class="flex flex-col gap-3 shrink-0">
-      <a href="${PARTNER_REVIEWS_HREF}"${PARTNER_REVIEWS_TARGET} class="btn btn-small btn-yellow text-center">Read reviews on Tripadvisor</a>
+      <a href="${TA.url}"${EXT} class="btn btn-small btn-yellow text-center">Read reviews on Tripadvisor</a>
       <a href="/our-partner/" class="btn btn-small btn-red--outlined text-center !text-white !border-white">Meet our partner</a>
     </div>
   </div>
@@ -295,23 +351,26 @@ function partnerHomeSection() {
     <div class="grid gap-6 mx-auto max-w-7xl container-2xl md:grid-cols-3">
       <div class="partner-card rounded-md p-6 md:col-span-2 md:p-10">
         <h3 class="text-2xl text-white">Who runs your trip on the ground</h3>
-        <p class="mt-3 text-white/90">${BRAND} is the party you book with: we plan the trip with you, send the proposal and the invoice, and are your contact before departure. The trip itself is operated by <strong>${P.name}</strong>, a tour operator in ${P.city} led by ${P.owner}. Their guides, drivers, cooks and mountain crew are the people you will meet every day.</p>
+        <p class="mt-3">${BRAND} is the party you book with: we plan the trip with you, send the proposal and the invoice, and are your contact before departure. The trip itself is operated by <strong>${P.name}</strong>, a licensed tour operator in ${P.city} founded by ${P.owner}. His guides, drivers, cooks and mountain crew are the people you will meet every day.</p>
         <ul class="mt-5 grid gap-3 sm:grid-cols-2">
-          <li class="flex gap-3 text-white/90"><span class="text-yellow" aria-hidden="true">✓</span> ${P.whatDoesWhat.ytt}</li>
-          <li class="flex gap-3 text-white/90"><span class="text-yellow" aria-hidden="true">✓</span> ${P.whatDoesWhat.knt}</li>
+          <li class="flex gap-3"><span class="text-yellow" aria-hidden="true">✓</span> ${P.whatDoesWhat.ytt}</li>
+          <li class="flex gap-3"><span class="text-yellow" aria-hidden="true">✓</span> ${P.whatDoesWhat.knt}</li>
         </ul>
+        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+${quoteCards("quote-card--dark")}
+        </div>
         <p class="mt-6 flex flex-wrap gap-3">
           <a href="/our-partner/" class="btn btn-small btn-yellow">Meet our partner</a>
-          <a href="${PARTNER_REVIEWS_HREF}"${PARTNER_REVIEWS_TARGET} class="btn btn-small btn-red--outlined !text-white !border-white">Read reviews on Tripadvisor</a>
+          <a href="${TA.url}"${EXT} class="btn btn-small btn-red--outlined !text-white !border-white">Read reviews on Tripadvisor</a>
         </p>
       </div>
-      <div class="partner-card rounded-md p-6 text-center">
-        <img src="/brand/placeholder-photo.jpg" alt="${P.owner}, ${P.name}" width="800" height="800" class="mx-auto w-40 h-40 rounded-full object-cover" loading="lazy" />
+      <div class="partner-card rounded-md p-6 text-center flex flex-col justify-center">
+        <img src="${BARAKA_IMG}" alt="${P.owner}, founder of ${P.name}" width="700" height="700" class="mx-auto w-44 h-44 rounded-full object-cover" loading="lazy" />
         <h4 class="mt-4 text-xl text-white">${P.owner}</h4>
-        <p class="text-sm text-white/80">Founder of ${P.name}, ${P.city}</p>
+        <p class="text-sm">Founder and licensed Kilimanjaro guide, ${P.name}, ${P.city}</p>
         <p class="mt-4 flex justify-center" aria-hidden="true">${stars(5, "text-yellow", 20)}</p>
-        <p class="partner-score font-bold tracking-wider">${P.tripadvisor.score}/${P.tripadvisor.scale} on Tripadvisor</p>
-        <p class="text-sm text-white/80">${P.tripadvisor.count} reviews · checked ${fillSpan(P.tripadvisor.checkedOn)}</p>
+        <p class="partner-score font-bold tracking-wider">${TA.score}/${TA.scale} on Tripadvisor</p>
+        <p class="text-sm">${TA.count} reviews · ${AWARDS}<br>checked ${TA.checkedOn}</p>
       </div>
     </div>
   </div>
@@ -320,47 +379,68 @@ function partnerHomeSection() {
 
 /** The /our-partner/ page body. */
 function partnerPageBody() {
-  const credentials = P.credentials.items.map((c) => `<li>${fillSpan(c)}</li>`).join("\n");
+  const video = P.youtubeVideoId ? `
+      <h2>On the mountain with Baraka's crew</h2>
+      <p>A short clip from the ${P.name} YouTube channel: the last stretch to the roof of Africa.</p>
+      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/${P.youtubeVideoId}" title="Kilimanjaro Nature Tours: the last stretch to the summit" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <p><a href="${P.youtube}"${EXT}>More videos on the ${P.name} channel</a>.</p>` : "";
   return `<div class="relative z-10 px-5 pt-6 pb-12 mx-auto max-w-7xl container-2xl">
   <ul id="breadcrumbs" class="flex items-center py-4 md:py-6 gap-x-3"><li><a href="/">Home</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li><li class="active"><a href="/our-partner/">Our local partner</a></li></ul>
   <div class="grid grid-cols-1 gap-y-8 gap-x-12 lg:grid-cols-2">
     <div class="col-span-1 ts-prose">
       <h1>Our local partner: ${P.name}</h1>
-      <p>Every trip you book with ${BRAND} is operated in Tanzania by ${P.name}. This page explains who they are and how the roles are divided, so you know who you are dealing with before and during your trip.</p>
-      <h2>Who is ${P.name}?</h2>
-      <p>${P.name} is a tour operator based in ${P.city}, in northern Tanzania, led by ${P.owner}. From Arusha they run safaris on the northern and southern circuits, trips around the Great Migration, Kilimanjaro climbs and Mount Meru climbs, and combinations with Zanzibar.</p>
-      <p>When you travel with us, their guides, drivers, cooks and porters are the people you see every day. They know the parks, the roads and the lodges, and they make the decisions on the ground, for example when the weather changes or a route can be improved.</p>
+      <p>Every trip you book with ${BRAND} is operated in Tanzania by ${P.name}. This page tells you who they are, who you will meet, and how the roles are divided, so you know exactly who you are dealing with before and during your trip.</p>
+      <h2>Meet ${P.owner}</h2>
+      <p>${P.founderBio}</p>
+      <p>Baraka was also where ${BRAND} began: ${CO.owner} and ${CO.cofounder} did their internship with him in Arusha, helped him set up his company for international guests, and decided to keep working together. You can read that story on our <a href="/about-tanzania-specialist/">About page</a>.</p>
+      <h2>The crew you will meet</h2>
+      <p>${P.crew}</p>
+      <p>On safari you travel in a private 4×4 with your own driver-guide; on Kilimanjaro you climb with a guide, assistant guides, a cook and porters, with daily health checks on the mountain. On Zanzibar the team hands you over to trusted local hosts and picks you up again for the flight home.</p>
       <h2>Who does what</h2>
       <ul>
-        <li><strong>${BRAND}</strong>: ${P.whatDoesWhat.ytt}</li>
-        <li><strong>${P.name}</strong>: ${P.whatDoesWhat.knt}</li>
+        <li><strong>${BRAND}</strong> (${CO.owner}, Nagele, the Netherlands): ${P.whatDoesWhat.ytt}</li>
+        <li><strong>${P.name}</strong> (${P.owner}, ${P.city}): ${P.whatDoesWhat.knt}</li>
       </ul>
-      <h2>Contact during your trip</h2>
-      <p>Before departure everything goes through ${BRAND}. During the trip you also have the direct contact details of ${P.name}:</p>
+      <h2>How a booking works</h2>
+      <ol>
+        <li><strong>Plan with us.</strong> Send us your dates and wishes; you get a day-by-day proposal and a price from ${BRAND}, free and without obligation.</li>
+        <li><strong>We confirm with Baraka.</strong> Once you say yes, we fix the itinerary, lodges and permits with ${P.name} and send you the invoice and the travel documents.</li>
+        <li><strong>You travel with his crew.</strong> From the airport in Kilimanjaro or Arusha onwards, Baraka's team takes care of you. We stay reachable in the Netherlands throughout.</li>
+      </ol>
+      <h2>Recognised by</h2>
+      <p>${P.name} is a member of the Tanzania Association of Tour Operators, works under Tanzania National Parks and the Tanzania Tourist Board, and has received the Tripadvisor Travellers' Choice award in 2023 and 2024.</p>
+      ${badgeRow()}
+      <h2>What travellers say about ${P.name}</h2>
+      <p><span class="stars-ratings inline-flex align-middle" aria-hidden="true">${stars(5, "text-yellow", 18)}</span> <strong>${scoreLine()}</strong></p>
+      <div class="grid gap-4 md:grid-cols-3 not-prose">
+${quoteCards()}
+      </div>
+      <p class="flex flex-wrap gap-3"><a class="btn btn-small btn-red" href="${TA.url}"${EXT}>Read reviews on Tripadvisor</a> <a class="btn btn-small btn-green--outlined" href="${GOOGLE_HREF}"${EXT}>Reviews on Google</a></p>
+      ${video}
+      <h2>Contact before and during your trip</h2>
+      <p>Before departure everything goes through ${BRAND}: <a href="mailto:${CO.email}">${CO.email}</a>, <a href="tel:${CO.phone.replace(/[^\d+]/g, "")}">${CO.phone}</a> or <a href="${WA_HREF}"${EXT}>WhatsApp</a>. During the trip you also have the direct contact details of ${P.name}:</p>
       <ul>
         <li>Email: <a href="mailto:${P.email}">${P.email}</a></li>
-        <li>Website: <a href="${P.url}" target="_blank" rel="noopener noreferrer">${P.url.replace("https://", "")}</a></li>
+        <li>Website: <a href="${P.url}"${EXT}>${P.url.replace("https://", "")}</a></li>
         <li>Postal address: ${P.postal}, Tanzania</li>
       </ul>
-      <h2>Licences and memberships</h2>
-      <p>${P.name} has told us it holds licences and memberships with the organisations below. We show the numbers once we have their written permission and have verified them.</p>
-      <ul>
-${credentials}
-      </ul>
-      <h2>Reviews of ${P.name}</h2>
-      <p>Travellers review ${P.name} on independent platforms. We show the score per platform with the date we checked it and link to the original profile, so you can read the reviews there. These scores belong to our partner, not to ${BRAND}.</p>
-      <p><span class="stars-ratings inline-flex align-middle" aria-hidden="true">${stars(5, "text-yellow", 18)}</span> <strong>${scoreLine()}</strong></p>
-      <p><a class="btn btn-small btn-red" href="${PARTNER_REVIEWS_HREF}"${PARTNER_REVIEWS_TARGET}>Read reviews on Tripadvisor</a></p>
     </div>
     <div class="col-span-1">
       <div class="partner-card rounded-md p-6 text-center">
-        <img src="/brand/placeholder-photo.jpg" alt="${P.owner}, ${P.name}" width="800" height="800" class="mx-auto w-48 h-48 rounded-full object-cover" loading="lazy" />
+        <img src="${BARAKA_IMG}" alt="${P.owner}, founder of ${P.name}, on the trail with Kilimanjaro behind him" width="700" height="700" class="mx-auto w-48 h-48 rounded-full object-cover" loading="lazy" />
         <h3 class="mt-4 text-2xl text-white">${P.owner}</h3>
-        <p class="text-white/80">Founder, ${P.name}</p>
+        <p>Founder and licensed Kilimanjaro guide, ${P.name}</p>
+        <p class="mt-3 flex justify-center" aria-hidden="true">${stars(5, "text-yellow", 20)}</p>
+        <p class="partner-score font-bold tracking-wider">${TA.score}/${TA.scale} on Tripadvisor · ${TA.count} reviews</p>
+        <p class="text-sm">${AWARDS}</p>
       </div>
       <figure class="mt-6">
-        <img src="/brand/placeholder-team.jpg" alt="The ${P.name} team in ${P.city}" width="1200" height="800" class="w-full rounded-md" loading="lazy" />
-        <figcaption class="mt-2 text-sm text-anthracite">Team photo: <span class="fill-marker">[FILL: photo of the ${P.name} team, with permission]</span></figcaption>
+        <img src="${CREW_IMG}" alt="The ${P.name} crew on the summit of Kilimanjaro" width="1920" height="663" class="w-full rounded-md" loading="lazy" />
+        <figcaption class="mt-2 text-sm text-anthracite">Baraka's crew on the summit of Kilimanjaro. You climb with a team, not with a name on a website.</figcaption>
+      </figure>
+      <figure class="mt-6">
+        <img src="/brand/partner/safari-lions.webp" alt="Lions seen from a ${P.name} safari vehicle" width="1920" height="663" class="w-full rounded-md" loading="lazy" />
+        <figcaption class="mt-2 text-sm text-anthracite">On safari you travel in a private 4×4 with your own driver-guide.</figcaption>
       </figure>
       <div class="mt-8 p-6 bg-sand rounded-md">
         <h3 class="text-2xl">Plan your trip</h3>
@@ -385,8 +465,8 @@ function tileScoreRow() {
   <div class="flex items-center">
     <div class="flex justify-center items-center mr-2 w-7 h-7 text-xl bg-white rounded-full text-green md:mr-3 md:h-8 md:w-8" aria-hidden="true"><span class="i-cib-tripadvisor ![mask-size:contain] ![mask-position:center]"></span></div>
     <div class="flex flex-col items-start">
-      <div class="flex items-center"><div class="mr-2 text-base font-bold tracking-wider text-white">${P.tripadvisor.score}/${P.tripadvisor.scale}</div><div class="stars-ratings flex" aria-hidden="true">${stars(5, "text-yellow", 14)}</div></div>
-      <p class="text-sm text-white"><i>${P.name}, our local partner · ${P.tripadvisor.count} reviews · checked ${fillSpan(P.tripadvisor.checkedOn)}</i></p>
+      <div class="flex items-center"><div class="mr-2 text-base font-bold tracking-wider text-white">${TA.score}/${TA.scale}</div><div class="stars-ratings flex" aria-hidden="true">${stars(5, "text-yellow", 14)}</div></div>
+      <p class="text-sm text-white"><i>${P.name}, our local partner · ${TA.count} reviews · ${AWARDS} · checked ${TA.checkedOn}</i></p>
     </div>
   </div>
 </div>`;
@@ -396,15 +476,19 @@ const TILE_SCORES_OPEN = /<div class="flex flex-wrap gap-3 items-center mt-6 md:
 /** Sidebar widget "How previous guests rated us" (travel-proposal and similar templates). */
 function sidebarPartnerWidget() {
   return `<section id="ts_reviews_widget-4" class="widget widget_ts_reviews_widget"><h2 class="text-lg font-bold tracking-widest uppercase text-anthracite">Our local partner</h2>
-<p class="mt-3 text-sm">Your trip is operated on the ground by <a href="/our-partner/" class="underline">${P.name}</a>, ${P.city}.</p>
-<p class="mt-2 flex items-center gap-2"><span class="stars-ratings flex" aria-hidden="true">${stars(5, "text-yellow", 16)}</span><strong>${P.tripadvisor.score}/${P.tripadvisor.scale}</strong></p>
-<p class="text-sm partner-line">${P.tripadvisor.count} reviews on Tripadvisor · checked ${fillSpan(P.tripadvisor.checkedOn)}</p>
-<p class="mt-2 text-sm"><a href="${PARTNER_REVIEWS_HREF}"${PARTNER_REVIEWS_TARGET} class="underline">Read reviews on Tripadvisor</a></p>
+<p class="mt-3 text-sm">Your trip is operated on the ground by <a href="/our-partner/" class="underline">${P.name}</a>, ${P.city}, founded by ${P.owner}.</p>
+<p class="mt-2 flex items-center gap-2"><span class="stars-ratings flex" aria-hidden="true">${stars(5, "text-yellow", 16)}</span><strong>${TA.score}/${TA.scale}</strong></p>
+<p class="text-sm partner-line">${TA.count} reviews on Tripadvisor · ${AWARDS} · checked ${TA.checkedOn}</p>
+<p class="mt-2 text-sm"><a href="${TA.url}"${EXT} class="underline">Read reviews on Tripadvisor</a></p>
 </section>`;
 }
 
 function stripOldTrust(html) {
   html = replaceDivs(html, RATINGS_OPEN, "");
+  // FAQ items about the old operator's Travelife status
+  html = replaceDivs(html, /<div x-data="\{ open: false \}"[^>]*>/, "", (inner) => /Travelife|KRTO|responsible-travel Partner/.test(inner));
+  html = replaceDivs(html, /<div id="travelife-partner-status"[^>]*>/, "");
+  html = html.replace(/<option value="travelife-partner-status"[^>]*>[^<]*<\/option>\s*/g, "");
   html = html.replace(/<section id="ts_reviews_widget-\d+"[^>]*>[\s\S]*?<\/section>/g, sidebarPartnerWidget());
   html = replaceDivs(html, TILE_SCORES_OPEN, tileScoreRow(), (inner) => /4\.[79]\/5/.test(inner));
   html = replaceDivs(html, CAROUSEL_OPEN, partnerCompact(), (inner) => inner.includes("review-card"));
@@ -412,28 +496,59 @@ function stripOldTrust(html) {
 }
 
 function callAnExpert(html) {
-  // Two office buttons (USA, UK) -> one button with the brand's phone number.
+  // Two office buttons (USA, UK) -> one phone button and a WhatsApp button; the portrait is Baraka's.
   html = html.replace(/<span class="!w-\[2\.01em\] !h-\[1\.50em\] text-white ts-flag-usa"><\/span>\s*<span class="!text-base">USA: <\/span>/g, '<span class="!w-[2.01em] !h-[1.50em] text-white ts-flag-nl"></span>\n<span class="!text-base">NL: </span>');
-  html = html.replace(/<a class="[^"]*btn-red"\s+href="[^"]*"\s+target="">\s*<span class="flex gap-2\.5 items-center">\s*<span class="[^"]*ts-flag-gb"><\/span>[\s\S]*?<\/a>\s*/g, "");
+  html = html.replace(/<a class="([^"]*btn-red)"\s+href="[^"]*"\s+target="">\s*<span class="flex gap-2\.5 items-center">\s*<span class="[^"]*ts-flag-gb"><\/span>[\s\S]*?<\/a>\s*/g, (m, cls) => `<a class="${cls}" href="${WA_HREF}" target="_blank" rel="noopener noreferrer"><span class="flex gap-2.5 items-center"><span class="i-cib-whatsapp text-xl" aria-hidden="true"></span><span class="!text-base">WhatsApp: </span>${CO.whatsapp}</span></a>\n`);
+  html = html.replace(/Our specialists are here to assist you/gi, `${CO.owner} in the Netherlands and ${P.owner} in Arusha are here to help`);
+  html = html.replace(/<a class="([^"]*)"\s+href="\/contact\/">\s*<u>other countries<\/u>\s*<\/a>/gi, (m, cls) => `<a class="${cls}" href="mailto:${CO.email}"><u>${CO.email}</u></a>`);
   return html;
 }
 
 function contactPage(html) {
-  html = html.replace(/<p><strong><span style="font-weight: 400">Founded by [\s\S]*?<\/span><\/strong><\/p>/, `<p>${BRAND} is run by ${CO.owner} from Nagele in the Netherlands. Every trip is operated on the ground by our local partner <a href="/our-partner/">${P.name}</a> in Arusha, Tanzania: their guides, drivers and mountain crew are the people you meet during your trip.</p>`);
-  html = html.replace(/<p><strong>To speak with one of our amazing travel consultants:<\/strong><\/p>\s*<ul[^>]*>[\s\S]*?<\/ul>/, `<p><strong>To talk about your trip:</strong></p>\n<ul>\n<li>Email: <a href="mailto:${CO.email}">${CO.email}</a></li>\n<li>Phone: <a href="${PHONE_TEL}">${CO.phone}</a> (Netherlands / English and Dutch)</li>\n<li>WhatsApp: ${fillSpan(CO.whatsapp)}</li>\n</ul>`);
-  html = html.replace(/<p><strong>For suppliers to get in touch with our reservations team:<\/strong><\/p>\s*<ul>[\s\S]*?<\/ul>/, `<p><strong>For suppliers and partners:</strong></p>\n<ul>\n<li>Email: <a href="mailto:${CO.email}">${CO.email}</a></li>\n<li>Local operations in Tanzania: ${P.name}, <a href="mailto:${P.email}">${P.email}</a></li>\n</ul>`);
-  html = html.replace(/<h2>Financial Information<\/h2>\s*<p>[\s\S]*?<\/p>/, `<h2>Company details</h2>\n<p><span style="text-decoration: underline">Chamber of Commerce (KvK)</span>: ${CO.kvk}<br />\n<span style="text-decoration: underline">VAT (BTW)</span>: ${CO.vat}<br />\n<span style="text-decoration: underline">Bank account</span>: ${fillSpan("[FILL: IBAN]")} · BIC ${fillSpan("[FILL: BIC]")}</p>`);
+  html = html.replace(/<p><strong><span style="font-weight: 400">Founded by [\s\S]*?<\/span><\/strong><\/p>/, `<p>${BRAND} is run by ${CO.owner} and ${CO.cofounder} from Nagele in the Netherlands. Every trip is operated on the ground by our local partner <a href="/our-partner/">${P.name}</a> in Arusha, Tanzania, founded by ${P.owner}: his guides, drivers and mountain crew are the people you meet during your trip.</p>`);
+  html = html.replace(/<p><strong>To speak with one of our amazing travel consultants:<\/strong><\/p>\s*<ul[^>]*>[\s\S]*?<\/ul>/, `<p><strong>To talk about your trip:</strong></p>\n<ul>\n<li>Email: <a href="mailto:${CO.email}">${CO.email}</a></li>\n<li>Phone: <a href="${PHONE_TEL}">${CO.phone}</a> (Netherlands, English and Dutch)</li>\n<li>WhatsApp: <a href="${WA_HREF}" target="_blank" rel="noopener noreferrer">${CO.whatsapp}</a></li>\n</ul>`);
+  html = html.replace(/<p><strong>For suppliers to get in touch with our reservations team:<\/strong><\/p>\s*<ul>[\s\S]*?<\/ul>/, `<p><strong>During your trip in Tanzania:</strong></p>\n<ul>\n<li>${P.name}, ${P.city}: <a href="mailto:${P.email}">${P.email}</a> · <a href="${P.url}" target="_blank" rel="noopener noreferrer">${P.url.replace("https://", "")}</a></li>\n</ul>`);
+  html = html.replace(/<p><strong>Questions about our <a[^>]*>sustainability policy<\/a>:<\/strong><\/p>\s*<ul>[\s\S]*?<\/ul>/, `<p><strong>Suppliers, partners and press:</strong></p>\n<ul>\n<li>Email: <a href="mailto:${CO.email}">${CO.email}</a></li>\n</ul>`);
+  html = html.replace(/<h2>Financial Information<\/h2>\s*<p>[\s\S]*?<\/p>/, `<h2>Company details</h2>\n<p><span style="text-decoration: underline">Company</span>: ${CO.legalName}, trading as ${BRAND}<br />\n<span style="text-decoration: underline">Chamber of Commerce (KvK)</span>: ${CO.kvk}<br />\n<span style="text-decoration: underline">VAT (BTW)</span>: ${CO.vat}<br />\n<span style="text-decoration: underline">Bank</span>: ${CO.bank} · IBAN ${CO.iban} · BIC ${CO.bic}</p>`);
   html = html.replace(/<p><span class='flying-press-youtube'[\s\S]*?<\/span><\/p>/, "");
   html = html.replace(/\s*Check out all the latest travel stories from our guests on the <a[^>]*>[^<]*<\/a> page!/, "");
   return html;
 }
 
+/** Guarantees page: the old fund/association texts become what the company actually guarantees. */
+function guaranteesPage(html) {
+  const body = `<h2>No worries… or… Hakuna Matata!</h2>
+<p>A well-known phrase to anyone who has ever travelled to Africa, and exactly how we want you to feel when you book with us. So here is, in plain words, what ${BRAND} guarantees and how your money and your trip are protected.</p>
+<h3>Who you book with</h3>
+<p>You book with ${BRAND} (${CO.legalName}, Chamber of Commerce ${CO.kvk}, VAT ${CO.vat}) in the Netherlands. Your trip is operated in Tanzania by <a href="/our-partner/">${P.name}</a>, a licensed Tanzanian tour operator and member of the Tanzania Association of Tour Operators, founded by ${P.owner}. We confirm every booking with them in writing before we send you an invoice.</p>
+<h3>How your payment works</h3>
+<ul>
+<li>You pay a deposit when you confirm your trip and the balance before departure; the exact amounts and dates are on your proposal and invoice.</li>
+<li>Park fees, permits and lodges are reserved in your name as soon as your deposit is in, so your dates are fixed.</li>
+<li>We do not use a travel guarantee fund. We tell you that up front, and we keep the money trail short: one invoice, one bank account (${CO.bank}, IBAN ${CO.iban}), no third parties in between.</li>
+</ul>
+<h3>What we guarantee</h3>
+<ul>
+<li><strong>A clear price.</strong> The price on your proposal is the price you pay. Park fees, accommodation, transport, guide, meals as listed and the permits are in it; what is not included is written down.</li>
+<li><strong>A licensed crew.</strong> Guides are licensed by the Kilimanjaro National Park authority and trained in Wilderness First Response, first aid and CPR; porters are hired fairly, with proper gear and weighed loads.</li>
+<li><strong>One contact, two time zones.</strong> ${CO.owner} in the Netherlands before and during your trip, and Baraka's team in Arusha on the ground, by phone, e-mail and WhatsApp.</li>
+<li><strong>Flexibility.</strong> Change your dates, route or lodges before departure and we rework the proposal; on the ground the crew adapts the day to the weather and the wildlife.</li>
+<li><strong>Honest reviews.</strong> We show our partner's score with the date we checked it and link to the source, and we ask you to review your trip where the next traveller can read it.</li>
+</ul>
+<h3>Travel insurance</h3>
+<p>Take out travel insurance that covers cancellation, medical costs and, if you climb Kilimanjaro, high-altitude evacuation. We are happy to tell you what to look for; see <a href="/practical-information/travel-insurance/">travel insurance</a>.</p>
+`;
+  return html.replace(/(<h1>Our Guarantees<\/h1>)[\s\S]*?(<p><img[^>]*Walking-safari-Masaai[\s\S]*?<\/p>)/, (m, h1, img) => `${h1}\n${body}${img}`);
+}
+
 function aboutPage(html) {
-  html = html.replace(/<p>Your Tanzania Trip was founded in 2017 by [^<]*?\. /, `<p>${BRAND} is run by ${CO.owner} from the Netherlands and works with one local partner in Tanzania: <a href="/our-partner/">${P.name}</a> in Arusha, led by ${P.owner}. `);
+  html = html.replace(/<p>Your Tanzania Trip was founded in 2017 by [^<]*?\. /, `<p>${BRAND} is run by ${CO.owner} and ${CO.cofounder} from the Netherlands and works with one local partner in Tanzania: <a href="/our-partner/">${P.name}</a> in Arusha, founded by ${P.owner}. `);
   // The old founders' story, staff count and office video do not apply to the new company.
   html = html.replace(/\s*<p><em>Your Tanzania Trip founders:[^<]*<\/em><\/p>/, "");
-  html = html.replace(/(<h2 id="our-story">Our Story<\/h2>)\s*<p>Born from a passion[\s\S]*?<\/p>/, `$1\n<p>${fillSpan("[FILL: the story of Your Tanzania Trip in a few sentences: why Tijs Krops started it, and how the partnership with Kilimanjaro Nature Tours came about]")}</p>`);
-  html = html.replace(/(<h2 id="our-offices">Our Offices<\/h2>)\s*<p>Your Tanzania Trip has two offices[\s\S]*?<\/p>/, `$1\n<p>${BRAND} is based in Nagele, the Netherlands. Our local partner <a href="/our-partner/">${P.name}</a> works from ${P.city}, close to the northern parks and Kilimanjaro. You plan and book with us in the Netherlands; on the ground you are looked after by their team.</p>`);
+  html = html.replace(/the prestigious <a[^>]*>TripAdvisor \[FILL: award\] for 2026<\/a>,\s*<strong>placing us among the top 10% attractions worldwide<\/strong>/, `the <a href="${TA.url}" target="_blank" rel="noopener noreferrer">Tripadvisor Travellers' Choice award in 2023 and 2024</a> for ${P.name}, <strong>the crew that runs your trip on the ground</strong>`);
+  html = html.replace(/(<h2 id="our-story">Our Story<\/h2>)\s*<p>Born from a passion[\s\S]*?<\/p>/, `$1\n<p>${tokens.story.en}</p>\n<figure><img src="${CREW_IMG}" alt="The ${P.name} crew on the summit of Kilimanjaro" width="1920" height="663" loading="lazy" /><figcaption>Baraka's crew on the summit of Kilimanjaro.</figcaption></figure>`);
+  html = html.replace(/(<h2 id="our-offices">Our Offices<\/h2>)\s*<p>Your Tanzania Trip has two offices[\s\S]*?<\/p>/, `$1\n<p>${BRAND} is based in Nagele, the Netherlands. Our local partner <a href="/our-partner/">${P.name}</a> works from ${P.city}, close to the northern parks and Kilimanjaro. You plan and book with us in the Netherlands; on the ground you are looked after by Baraka and his crew. We are a small team on both sides, which is exactly why you always speak to someone who knows your trip.</p>`);
+  html = html.replace(/(<h2 id="guaranteed-security">Guaranteed Security<\/h2>)\s*<p>[\s\S]*?<\/p>/, `$1\n<p>You book with ${BRAND} (${CO.legalName}, KvK ${CO.kvk}) and pay a deposit on confirmation and the balance before departure. Your trip is operated by ${P.name}, a licensed Tanzanian tour operator and member of the Tanzania Association of Tour Operators. We confirm every booking with them in writing before we invoice you, and we are reachable by phone, e-mail and WhatsApp before and during your trip. More questions? <a href="/contact/">Get in touch</a>.</p>`);
   html = html.replace(/<p><span class='flying-press-youtube'[\s\S]*?<\/span><\/p>/, "");
   // Tab to the old team page (the page itself redirects to /our-partner/)
   html = html.replace(/(<a href="\/our-partner\/"[\s\S]{0,400}?)Our experts/i, "$1Our local partner");
@@ -452,15 +567,21 @@ function reviewsPage(html) {
   <div class="grid grid-cols-1 gap-y-8 gap-x-12 lg:grid-cols-2">
     <div class="col-span-1 ts-prose">
       <h2>What travellers say about our local partner</h2>
-      <p>${BRAND} is new. The trips are operated by ${P.name} in Arusha, which travellers have been reviewing for longer. We show their score per platform with the date we checked it, and link to the original profile so you can read the reviews there. These scores belong to our partner, not to ${BRAND}.</p>
-      <p><span class="stars-ratings inline-flex align-middle" aria-hidden="true">${stars(5, "text-yellow", 18)}</span> <strong>${scoreLine()}</strong></p>
-      <p><a class="btn btn-small btn-red" href="${PARTNER_REVIEWS_HREF}"${PARTNER_REVIEWS_TARGET}>Read reviews on Tripadvisor</a></p>
-      <h2>Reviews of ${BRAND}</h2>
-      <p>We only publish individual reviews with the reviewer's first name, the date and a link to the source. None have been added yet. After your trip we will ask you to share your experience on an independent platform.</p>
-      <p><a href="/our-partner/">Meet our local partner</a> or <a href="/travel-proposal/">request a travel proposal</a>.</p>
+      <p>Every ${BRAND} journey is run on the ground by ${P.name} in Arusha, the crew travellers have been reviewing for years. We show their score with the date we checked it and link to the original profiles, so you can read every review at the source.</p>
+      <p><span class="stars-ratings inline-flex align-middle" aria-hidden="true">${stars(5, "text-yellow", 18)}</span> <strong>${scoreLine()}</strong><br><span class="text-sm">${AWARDS}</span></p>
+      <div class="grid gap-4 not-prose">
+${quoteCards()}
+      </div>
+      <p class="flex flex-wrap gap-3"><a class="btn btn-small btn-red" href="${TA.url}"${EXT}>Read reviews on Tripadvisor</a> <a class="btn btn-small btn-green--outlined" href="${GOOGLE_HREF}"${EXT}>Reviews on Google</a></p>
+      <h2>Share your own story</h2>
+      <p>After your trip we ask you to leave a review on Tripadvisor or Google, with your first name and the date, so the next traveller can read it where it was written. <a href="/our-partner/">Meet our local partner</a> or <a href="/travel-proposal/">request a travel proposal</a>.</p>
     </div>
     <div class="col-span-1">
       ${partnerCompact(true)}
+      <figure class="mt-6">
+        <img src="${CREW_IMG}" alt="The ${P.name} crew on the summit of Kilimanjaro" width="1920" height="663" class="w-full rounded-md" loading="lazy" />
+        <figcaption class="mt-2 text-sm text-anthracite">Baraka's crew on the summit of Kilimanjaro.</figcaption>
+      </figure>
     </div>
   </div>
 </div>
@@ -537,9 +658,15 @@ const imageRules = [
   [/\/wp-content\/uploads\/2024\/07\/Safari-jeep-cheetahs-private(?:-\d+x\d+)?\.jpg/g, `${U}2024/06/Safari-Jeep-lion.jpg`],
   [/\/wp-content\/uploads\/2023\/11\/team_tanzania_specialist_jeeps(?:-\d+x\d+)?\.jpg/g, `${U}2024/12/Africa-Safari-jeep-2-1024x682.jpg`],
   [/\/wp-content\/uploads\/2025\/02\/IM_TZ_MAK_Sunset-and-jeep-TS-logo(?:-scaled)?(?:-1)?(?:-\d+x\d+)?\.jpg/g, `${U}2024/06/Safari-Jeep-lion.jpg`],
+  // Home hero and quiz intro: jeeps with both old logos on the spare wheels (AVIF, so swapped by path)
+  [/\/wp-content\/uploads\/2026\/10\/IM_TZ_LNDU_Meulemans-safari_Looking-at-zebras-and-another-TS-jeep-scaled-1(?:-scaled)?(?:-\d+x\d+)?\.avif/g, "/brand/partner/safari-lions.webp"],
+  [/\/wp-content\/uploads\/2025\/06\/Tanzania-vacation(?:-scaled)?(?:-\d+x\d+)?\.jpg/g, `${U}2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg`],
+  // Hero videos of the old operator (its crew, jeeps and logo) -> our own slow-pan loop from partner photos
+  [/\/wp-content\/uploads\/20\d\d\/\d\d\/(?:Video-TS-20s-169-NO-TEXT|50-16-9-20s-3|Photographic-safari-Tanzania-TS|YTDown\.com_YouTube_[^"'\s]*|Couple-16-9-20s|Family-young-children-1-1-20s-2)\.mp4/g, "/brand/video/safari-loop.mp4"],
+  [/\/wp-content\/uploads\/20\d\d\/\d\d\/(?:WhatsApp-Image-2026-02-28-at-18\.32\.46|DSC_1116|photographer-jeep-2-e1769950478451|Tanzania-Travel-Tanzania-Specialist-jeep|DSC08965-1|Family-holiday)(?:-\d+x\d+)?\.(?:avif|jpg)/g, "/brand/video/safari-loop-poster.jpg"],
   // Consultant portraits of the old team (hero form, "Call an expert", contact)
-  [/\/wp-content\/uploads\/2023\/11\/team_member_tanzania_yellow(?:-\d+x\d+)?\.jpg/g, "/brand/placeholder-photo.jpg"],
-  [/\/wp-content\/uploads\/2023\/11\/test_image_2-1(?:-\d+x\d+)?\.jpg/g, "/brand/placeholder-photo.jpg"],
+  [/\/wp-content\/uploads\/2023\/11\/team_member_tanzania_yellow(?:-\d+x\d+)?\.jpg/g, "/brand/partner/baraka-dalali.webp"],
+  [/\/wp-content\/uploads\/2023\/11\/test_image_2-1(?:-\d+x\d+)?\.jpg/g, "/brand/partner/baraka-dalali.webp"],
   // Menu thumbnail in the old handwriting style -> brand version (scripts/make-request-thumbnail.mjs)
   [/\/wp-content\/uploads\/2023\/08\/request_thumbnail(?:-\d+x\d+)?\.jpeg/g, "/brand/request-thumbnail.jpg"],
   [/\/wp-content\/uploads\/2023\/10\/C0453\.00_00_00_000\.Still001(?:-\d+x\d+)?\.jpg/g, `${U}2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg`],
@@ -567,11 +694,43 @@ for (const p of walk(path.join(root, "content/pages"), [".html"])) {
     if (slug === "index") s = replaceDivs(s, /<div class="pt-8 pb-12 -mb-1\.5 bg-green ts-mask-bottom md:pt-20 md:pb-24">/, partnerHomeSection(), (inner) => inner.includes("What Travellers Say"));
     if (slug === "contact") s = contactPage(s);
     if (slug === "about-tanzania-specialist") s = aboutPage(s);
+    if (slug === "practical-information__guarantees") s = guaranteesPage(s);
+    // Traveller guide: the reviews tile lost its badge image and title with the old awards
+    if (slug === "traveller-guide") s = s.replace(/(Read the reviews from our travellers[\s\S]*?<h3 class="theme-card-title">)\s*(<\/h3>\s*<\/div>)(\s*<\/div>\s*<\/a>)/, `$1Partner reviews$2\n<img width="920" height="580" src="${CREW_IMG}" class="object-cover" alt="Baraka's crew on the summit of Kilimanjaro" loading="lazy" decoding="async"/>$3`);
     if (slug === "tanzania-traveller-reviews") s = reviewsPage(s);
     return s;
   });
 }
 fs.writeFileSync(path.join(root, "content/pages/our-partner.html"), partnerPageBody());
+
+// 2b. Practical-information fragments (public/ajax/fetch_post_content/<id>.html) are the article body of the
+// page with that id; regenerate them from the rebranded pages so tabs and pages never drift apart.
+{
+  const dir = path.join(root, "public/ajax/fetch_post_content");
+  const idToPath = {};
+  for (const p of walk(path.join(root, "content/pages"), [".html"])) {
+    const s = fs.readFileSync(p, "utf8");
+    for (const m of s.matchAll(/<a href="(\/[^"]*\/)"\s+data-id="(\d+)"/g)) idToPath[m[2]] = m[1];
+  }
+  let regenerated = 0;
+  for (const [id, urlPath] of Object.entries(idToPath)) {
+    const file = path.join(dir, `${id}.html`);
+    if (removed[urlPath]) {
+      if (fs.existsSync(file)) fs.unlinkSync(file);
+      continue;
+    }
+    const page = path.join(root, "content/pages", urlPath.replace(/^\/|\/$/g, "").replace(/\//g, "__") + ".html");
+    if (!fs.existsSync(page)) continue;
+    const html = fs.readFileSync(page, "utf8");
+    const open = html.indexOf('<div class="content-wrapper ts-prose">');
+    if (open === -1) continue;
+    const end = matchDiv(html, open);
+    const inner = html.slice(open + '<div class="content-wrapper ts-prose">'.length, end - "</div>".length).trim();
+    fs.writeFileSync(file, inner + "\n");
+    regenerated++;
+  }
+  console.log(`practical-information fragments regenerated: ${regenerated}`);
+}
 
 // 3. AJAX fragments and FacetWP card data (wishlist/post lists lose the removed pages)
 for (const p of walk(path.join(root, "public/ajax"), [".html", ".json"])) {
@@ -591,6 +750,8 @@ for (const p of walk(path.join(root, "public/ajax"), [".html", ".json"])) {
   });
 }
 for (const p of walk(path.join(root, "public/facetwp-static"), [".json"])) processFile(p);
+// Stale fragments that still carry placeholders belong to removed pages; drop them.
+for (const p of walk(path.join(root, "public/ajax"), [".html"])) if (fs.readFileSync(p, "utf8").includes("[FILL")) fs.unlinkSync(p);
 
 // 4. Metadata and JSON-LD (structural, so escaped JSON strings are handled correctly)
 function fixJsonLd(json) {

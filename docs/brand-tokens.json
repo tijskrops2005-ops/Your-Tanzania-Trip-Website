@@ -315,16 +315,22 @@
     "address": "Sluitgatweg 10, 8308 RE Nagele, Netherlands",
     "kvk": "97223344",
     "vat": "NL005256557B94",
-    "email": "info@yourtanzaniatrip.com",
+    "email": "tijskrops2005@gmail.com",
     "phone": "+31 6 29351377",
-    "whatsapp": "[FILL: confirm whether WhatsApp uses the same number]",
-    "tagline": "[FILL: owner picks one]",
+    "whatsapp": "+31 6 29351377",
+    "tagline": "Your trip, planned with care",
     "taglineProposals": [
       "Your trip, planned with care",
       "Tanzania, tailor-made for you",
       "Safari, summit and sea, your way"
     ],
-    "protection": "[FILL] claim none until confirmed"
+    "protection": "none",
+    "legalName": "Tijs Krops",
+    "cofounder": "Edrian Waterman",
+    "emailNote": "Temporary: switches to info@yourtanzaniatrip.com once that mailbox exists (change here and run npm run rebrand).",
+    "iban": "NL74 KNAB 0776 8630 37",
+    "bic": "KNABNL2H",
+    "bank": "Knab"
   },
   "partner": {
     "name": "Kilimanjaro Nature Tours",
@@ -333,17 +339,8 @@
     "owner": "Baraka Dalali",
     "email": "info@kilimanjaronaturetours.com",
     "postal": "P.O. Box 611, USA River, Arusha",
-    "credentials": {
-      "permissionGranted": false,
-      "items": [
-        "TATO (Tanzania Association of Tour Operators)",
-        "TANAPA (Tanzania National Parks)",
-        "Tanzania Tourist Board",
-        "TALA licence [FILL: number]"
-      ]
-    },
     "tripadvisor": {
-      "url": "[FILL: Tripadvisor profile URL of Kilimanjaro Nature Tours]",
+      "url": "https://www.tripadvisor.com/Attraction_Review-g297913-d12179305-Reviews-Kilimanjaro_Nature_Tours-Arusha_Arusha_Region.html",
       "score": "5.0",
       "scale": 5,
       "count": 208,
@@ -351,12 +348,43 @@
         "Travellers' Choice 2023",
         "Travellers' Choice 2024"
       ],
-      "checkedOn": "[FILL: date the score was last checked, e.g. 23 October 2026]"
+      "checkedOn": "27 October 2026"
     },
     "whatDoesWhat": {
       "ytt": "Your Tanzania Trip plans your trip with you, sends the proposal and the invoice, and is your contact before departure.",
       "knt": "Kilimanjaro Nature Tours provides the guides, drivers, vehicles, mountain crew, park permits and bookings, and looks after you during the trip."
-    }
+    },
+    "google": {
+      "url": "https://www.google.com/search?q=Kilimanjaro+Nature+Tours+Arusha+reviews"
+    },
+    "youtube": "https://www.youtube.com/channel/UCeIh_GNu50hBjGoUz7PV9hA",
+    "founderBio": "Baraka grew up in the Udzungwa Mountains, came to Kilimanjaro as a porter and worked his way up to licensed guide (KINAPA) before founding Kilimanjaro Nature Tours in Arusha. He is certified in Wilderness First Response, teaches first aid and CPR to his crew, and still answers every message himself.",
+    "crew": "Guides, cooks, drivers and porters, most of them from Arusha and the villages around the mountain. Guides are licensed by KINAPA and trained in Wilderness First Response, first aid and CPR. Porters are hired properly, with fair pay, proper gear and weighed loads, and about 5% of each trip funds schooling in a local village.",
+    "recognisedBy": [
+      "Tripadvisor Travellers' Choice 2023",
+      "Tripadvisor Travellers' Choice 2024",
+      "Tanzania Association of Tour Operators (TATO)",
+      "Tanzania National Parks (TANAPA)",
+      "Tanzania Tourist Board"
+    ],
+    "quotes": [
+      {
+        "name": "Deanne",
+        "platform": "Google",
+        "text": "We were well cared for and always felt our safety was the main priority."
+      },
+      {
+        "name": "Alex",
+        "platform": "Google",
+        "text": "Baraka and crew were not only phenomenal guides and porters, but the most amazing ambassadors for Tanzania and Kilimanjaro."
+      },
+      {
+        "name": "Kara",
+        "platform": "Google",
+        "text": "I stood at the world's tallest free-standing mountain, 19,341 feet above sea level."
+      }
+    ],
+    "youtubeVideoId": "IqFgJyubDKg"
   },
   "voice": {
     "values": [
@@ -383,8 +411,10 @@
     "photos from other travel sites"
   ],
   "forms": {
-    "_note": "Form delivery for the static site (public/assets/js/forms.js). Without an endpoint the visitor's e-mail app opens with the request.",
-    "endpoint": "[FILL: form endpoint, e.g. https://api.web3forms.com/submit]",
-    "accessKey": "[FILL: Web3Forms access key (free, sent to info@yourtanzaniatrip.com at web3forms.com)]"
+    "_note": "Form delivery for the static site (public/assets/js/forms.js). FormSubmit sends every submission to the company e-mail; the first submission triggers a one-time activation e-mail that must be confirmed.",
+    "endpoint": "https://formsubmit.co/ajax/tijskrops2005@gmail.com"
+  },
+  "story": {
+    "en": "Your Tanzania Trip started with an internship. Tijs Krops and Edrian Waterman, two students from the Netherlands, spent their internship in Arusha with Baraka Dalali and his crew at Kilimanjaro Nature Tours. They helped Baraka with marketing and with setting up his company for international guests, climbed with his guides and drove along on safari. When it was time to go home, none of us wanted to stop working together. So we set up this partnership: Your Tanzania Trip plans and books your trip from the Netherlands, and Baraka and his crew run it in Tanzania. It works because both sides do what they are best at."
   }
 }

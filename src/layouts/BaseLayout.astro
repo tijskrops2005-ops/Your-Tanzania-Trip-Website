@@ -22,7 +22,7 @@ const stickyCta = page.stickyCta
 const ogImage = new URL(page.ogImage || '/brand/og-image.jpg', Astro.site).href;
 // Form delivery (public/assets/js/forms.js): endpoint and company e-mail from the brand tokens.
 const tokens = JSON.parse(fs.readFileSync(new URL('../../docs/brand-tokens.json', import.meta.url), 'utf8'));
-const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', accessKey: tokens.forms?.accessKey || '', email: tokens.company.email });
+const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', email: tokens.company.email });
 ---
 <!doctype html>
 <html lang="en-US">

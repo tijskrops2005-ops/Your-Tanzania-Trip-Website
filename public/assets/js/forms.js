@@ -4,7 +4,7 @@
 // opens with the filled-in request addressed to the company e-mail address, so a request never gets lost.
 (function () {
   var cfg = window.YTT_FORMS || {};
-  var endpoint = cfg.endpoint && cfg.endpoint.indexOf("[FILL") === -1 ? cfg.endpoint : "";
+  var endpoint = cfg.endpoint && cfg.endpoint.indexOf("[" + "FILL") === -1 ? cfg.endpoint : "";
   var email = cfg.email || "";
   var SKIP = /^(gform_ajax|is_submit|gform_submit|gform_unique_id|state_|gform_target_page|gform_source_page|gform_field_values|version_hash|honeypot|input_\d+_honeypot)/;
 
@@ -88,7 +88,9 @@
     var subject = subjectFor(form);
     var data = collect(form);
     if (!endpoint) return fallback(form, subject, data);
-    var payload = Object.assign({ subject: subject, page: location.href }, cfg.accessKey ? { access_key: cfg.accessKey } : {}, data);
+    // FormSubmit-style endpoint: _subject/_template/_replyto are delivery hints, the rest is the message.
+    var replyTo = Object.keys(data).filter(function (k) { return /mail/i.test(k); }).map(function (k) { return data[k]; })[0] || "";
+    var payload = Object.assign({ _subject: subject, _template: "table", _replyto: replyTo, _captcha: "false", page: location.href }, data);
     var button = form.querySelector(".gform_button");
     if (button) button.disabled = true;
     fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload) })
