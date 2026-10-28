@@ -22,6 +22,8 @@ const stickyCta = page.stickyCta
 const ogImage = new URL(page.ogImage || '/brand/og-image.jpg', Astro.site).href;
 // Form delivery (public/assets/js/forms.js): endpoint and company e-mail from the brand tokens.
 const tokens = JSON.parse(fs.readFileSync(new URL('../../docs/brand-tokens.json', import.meta.url), 'utf8'));
+// Cache-busting version for the site's own scripts (changes with every build).
+const v = Date.now().toString(36);
 const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', email: tokens.company.email });
 ---
 <!doctype html>
@@ -58,9 +60,11 @@ const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', ema
     <slot />
     <Fragment set:html={markCurrentMenu(footer, page.path).replace('<!--STICKY_CTA-->', stickyCta)} />
     <Fragment set:html={page.extraScripts.join('\n')} />
-    {hasFacets && <script is:inline src="/assets/js/facetwp-static.js" data-facets={`/facetwp-static/${page.slug}.json`}></script>}
+    {hasFacets && <script is:inline src={`/assets/js/facetwp-static.js?v=${v}`} data-facets={`/facetwp-static/${page.slug}.json`}></script>}
     <script is:inline set:html={`window.YTT_FORMS=${formsConfig};`} />
-    <script is:inline src="/assets/js/forms.js"></script>
-    <script is:inline src="/assets/js/site-search.js"></script>
+    <script is:inline src={`/assets/js/forms.js?v=${v}`}></script>
+    <script is:inline src={`/assets/js/site-search.js?v=${v}`}></script>
+    <script is:inline src={`/assets/js/currency.js?v=${v}`}></script>
+    <script is:inline src={`/assets/js/translate.js?v=${v}`}></script>
   </body>
 </html>

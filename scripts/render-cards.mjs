@@ -54,6 +54,11 @@ const CARDS = [
     text: "On safari a licensed local guide from Kilimanjaro Nature Tours shows you the country’s nature, history, wildlife and culture, and answers all your questions.",
   },
   {
+    file: "2026/07/No-big-payments-TS.png", photoBottom: 1058, cy: 1037,
+    title: "Clear payments", color: "#20281B",
+    text: "You pay a deposit when you confirm your trip and the balance before departure. The amounts and dates are on your proposal and invoice, with no surprises afterwards.",
+  },
+  {
     file: "2026/07/Safe-on-the-road-TS.avif", photoBottom: 1105, cy: 1054,
     photo: "2024/06/Safari-Jeep-lion.jpg",
     title: "Safe on the road", color: "#E69016",

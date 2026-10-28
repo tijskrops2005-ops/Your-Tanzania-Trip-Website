@@ -28,7 +28,10 @@ Status: 2026-10-27. Everything the site needs is filled in; there are no placeho
 - **Removed:** Instagram "social feed" blocks, the old operator's park videos, Drive links, the "Africa Safari App" page, insurance affiliate codes, the sister-company and two-offices claims.
 - **Fixed:** site search (now our own index instead of the old Algolia one), sorting on trip overviews (price and duration), partner block (larger text, portrait fully visible).
 
-Worth a look when you have time: the pages still describe the Hakuna Matata payment terms of the old site ("pay 25% when more than 120 days away"); adjust if your terms differ.
+- **Payments:** the old 25%-deposit / 120-days rule is gone everywhere; the site now says: a deposit on confirmation and the balance before departure, amounts on your proposal. The "No big payments" card is now "Clear payments".
+- **Currency switch** (top bar and form box) converts all prices to EUR or GBP with the day's ECB rate (frankfurter.app); the choice is remembered. You still invoice in your own currency.
+- **Language switch:** English plus automatic translation (Google Translate) into Dutch, German, French, Spanish and Italian. Machine translation may use the formal "u" in Dutch; for a fully hand-written Dutch site, ask for an /nl/ version.
+- **Errors:** a check over 34 page types reports no JavaScript errors, failed requests or 404s (`node scripts/console-check.mjs`).
 
 ## Technical
 

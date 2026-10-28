@@ -99,6 +99,8 @@ const brandRules = [
   // Plain wording instead of the idiom (read as an error message by some visitors)
   [/No strings attached\. We(?:’|'|&#8217;)ll design your trip - no cost, no commitment\./g, "Free and without obligation. We design your trip, you decide."],
   [/\bno strings attached\b/g, "without obligation"],
+  // Form intro: the "* indicates a required field." line reads like an error; the asterisks say enough.
+  [/\s*<div class="mb-10 font-medium tracking-wide text-white text-md">\s*<span class="text-red"><span class="gfield_required gfield_required_asterisk">\*<\/span><\/span> indicates a required field\.\s*<\/div>/g, ""],
   // Flight booking help: the owner's fee
   [/from \$1,000 extra p\.p\./g, "from $250 extra p.p."],
   [/\ba Your Tanzania Trip\b/g, "our"],
@@ -771,6 +773,11 @@ fs.writeFileSync(path.join(root, "content/pages/our-partner.html"), partnerPageB
     [/<p[^>]*>(?:Through our|Our) sister company,? <strong[^>]*>our partners in East Africa<\/strong>,?[\s\S]*?<\/p>\s*/g, ""],
     [/<p>[^<]*sister company,? our partners in East Africa[^<]*<\/p>\s*/g, ""],
     [/\s*Our sister company,? (?:<strong[^>]*>)?our partners in East Africa(?:<\/strong>)?,?[^.]*\./g, ""],
+    // The old operator's payment terms (25% deposit when departure is more than 120 days away)
+    [/,? and when your departure is more than 120 days away, a 25% deposit is all you pay at booking\./g, ". You pay a deposit when you confirm your trip and the balance before departure; the amounts and dates are on your proposal."],
+    [/alt="Flexible safari payment option with 25% due at booking when departure is more than 120 days away"/g, 'alt="Clear payments: a deposit on confirmation and the balance before departure"'],
+    [/\bFlexible payment options\b/g, "Clear payment schedule"],
+    [/\bflexible payment options\b/g, "a clear payment schedule"],
     [/Swahili for (?:“|")long rush(?:”|")/g, "Swahili for “slowly, slowly”"],
     [/\bHarabi\b/g, "Habari"],
   ];

@@ -286,6 +286,51 @@ textarea:focus {
   font-size: 0.9375rem;
 }
 
+/* Gravity Forms' "* indicates required fields" note reads like an error message; the asterisks
+   next to the questions already say it. */
+.gform_required_legend {
+  display: none !important;
+}
+
+/* Top bar dropdowns (currency, language) open above the sticky header. */
+.top-header-wrapper {
+  position: relative;
+  z-index: 1000020;
+}
+/* Alpine's x-show transition can get stuck on display:none inside the form box; the open state wins. */
+.currency-switcher-wrapper.is-active,
+.language-switcher-wrapper.is-active {
+  display: flex !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.currency-switcher-wrapper.is-active ul,
+.language-switcher-wrapper.is-active > div {
+  box-shadow: 0 12px 30px rgba(32, 40, 27, 0.18);
+}
+.currency-switcher-wrapper ul button,
+.language-switcher-wrapper a {
+  color: var(--c-forest) !important;
+}
+
+/* Google Translate (public/assets/js/translate.js): hide Google's own banner and tooltips */
+.goog-te-banner-frame,
+.skiptranslate iframe.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
 /* Site search (public/assets/js/site-search.js) */
 .site-search-results {
   margin-top: 0.75rem;
