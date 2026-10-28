@@ -1,0 +1,15 @@
+{
+  "slug": "activity__local-lunch-in-mto-wa-mbu-optional-cooking-class",
+  "blocks": [
+    {
+      "id": 1,
+      "orig": "Discover the Tanzanian way of cooking, smack in the middle of a banana farm. Pick three local dishes and see and learn how they are prepared. Learn to cook pilau (spiced rice), makande (corn and brown beans in a lovely mix) or ndizi nyama (plaintains with meat), and get a taste of Tanzania!",
+      "html": "Find out how Tanzanians cook, right in the heart of a banana farm. Choose three local dishes and watch and learn how they are made. You can learn to make pilau (spiced rice), makande (a tasty mix of corn and brown beans) or ndizi nyama (plaintains with meat), and get a real taste of Tanzania!"
+    },
+    {
+      "id": 2,
+      "orig": "Duration (without cooking class): 1 hour",
+      "html": "Length (excluding cooking class): 1 hour"
+    }
+  ]
+}

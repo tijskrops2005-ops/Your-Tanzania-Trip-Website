@@ -32,7 +32,7 @@ function original(rel) {
 function pngData(file, crop) {
   const out = path.join(root, ".cache/card-tmp.png");
   const py = `from PIL import Image\nim=Image.open(${JSON.stringify(file)}).convert('RGB')\n${crop ? `im=im.crop(${JSON.stringify(crop)})` : ""}\nim.save(${JSON.stringify(out)})`;
-  execFileSync("python3", ["-c", py]);
+  execFileSync(fs.existsSync("/usr/bin/python3") ? "/usr/bin/python3" : "python3", ["-c", py]);
   return "data:image/png;base64," + b64(out);
 }
 
@@ -104,7 +104,7 @@ async function main() {
     await page.screenshot({ path: shot, clip: { x: 0, y: 0, width: 1587, height: 2245 } });
     const dest = path.join(UP, c.file);
     // Write the card and every WordPress size variant of it (name-WxH.ext), so srcset never serves the old one.
-    execFileSync("python3", ["-c", `
+    execFileSync(fs.existsSync("/usr/bin/python3") ? "/usr/bin/python3" : "python3", ["-c", `
 import os, re
 from PIL import Image
 dest = ${JSON.stringify(dest)}

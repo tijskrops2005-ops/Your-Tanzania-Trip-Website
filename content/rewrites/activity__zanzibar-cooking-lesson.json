@@ -1,0 +1,15 @@
+{
+  "slug": "activity__zanzibar-cooking-lesson",
+  "blocks": [
+    {
+      "id": 1,
+      "orig": "Bring the taste of Zanzibar home with a Swahili cooking lesson! This is a great way to learn more about the Zanzibar way of life, as you first go shopping for ingredients at the local market, after which you learn to cook various Zanzibar-style dishes like chapatis, a curry with fresh coconut or yummy pilau rice. Along the way, you learn all about the exotic spices Zanzibar is famous for, and how to integrate them in your cooking. And of course you get to taste afterwards!",
+      "html": "Take the flavours of Zanzibar home with you after a Swahili cooking lesson! It is a lovely way to get to know Zanzibar life: you start by buying ingredients at the local market, and then you learn to prepare a range of Zanzibar-style dishes such as chapatis, a fresh coconut curry or tasty pilau rice. As you go, you find out all about the exotic spices that Zanzibar is known for and how to use them in your own cooking. Naturally, you get to taste the results at the end!"
+    },
+    {
+      "id": 2,
+      "orig": "<span style=\"font-weight: 400\">Join a daily cooking class for a maximum of 4 people</span>",
+      "html": "<span style=\"font-weight: 400\">Take part in a daily cooking class with no more than 4 people</span>"
+    }
+  ]
+}

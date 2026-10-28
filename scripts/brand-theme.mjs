@@ -153,7 +153,7 @@ const rasterMap = {
   "page-bg.png": "#f0e8d5", // soft blob behind sections, between ivory and sand
 };
 for (const [file, color] of Object.entries(rasterMap)) {
-  execFileSync("python3", [path.join(root, "scripts/recolor-assets.py"), path.join(original, "images", file), path.join(themeDir, "images", file), color], { stdio: "inherit" });
+  execFileSync(fs.existsSync("/usr/bin/python3") ? "/usr/bin/python3" : "python3", [path.join(root, "scripts/recolor-assets.py"), path.join(original, "images", file), path.join(themeDir, "images", file), color], { stdio: "inherit" });
 }
 
 // 5. Theme header comment (metadata only)

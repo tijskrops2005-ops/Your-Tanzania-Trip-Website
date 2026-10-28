@@ -232,6 +232,15 @@ const reviewRules = [
   // USP bar under the hero: the 5-star claim belongs to the partner
   [/5-star customer reviews/g, `Local partner rated ${P.tripadvisor.score}/${P.tripadvisor.scale}`],
   [/\b(?:5247|1689)\+ reviews\b/g, "[FILL: review count]"],
+  // Factual slips and borrowed claims in the source texts
+  [/<p><strong>THIS SUMMER:[^<]*<\/strong>(?:<br \/>)?[\s\S]*?<\/p>\s*/g, ""],
+  [/\bCoyotes\b/g, "Jackals"],
+  [/\bcoyotes\b/g, "jackals"],
+  [/\bmoose\b/g, "eland"],
+  [/,?\s*officially the most beautiful climbing route in the world!/g, ", known as one of the most scenic routes on the mountain."],
+  [/was once voted the most beautiful climbing route in the world!/g, "is known as one of the most scenic routes on Kilimanjaro."],
+  [/(?:is|was) (?:once )?(?:voted )?the most beautiful climbing route in the world/g, "is one of the most scenic routes on Kilimanjaro"],
+  [/voted (?:the )?most beautiful (?:climbing )?route in the world/g, "known as one of the most scenic routes on Kilimanjaro"],
   // Park pages: "Tripadvisor experiences" heading over the (now removed) old profile link
   [/<h4>Tripadvisor experiences<\/h4>\s*<p>\s*<\/p>/g, ""],
 ];
@@ -749,7 +758,7 @@ fs.writeFileSync(path.join(root, "content/pages/our-partner.html"), partnerPageB
           skipped++;
           continue;
         }
-        html = html.replace(b.orig, () => b.html);
+        html = html.split(b.orig).join(b.html); // every copy of a repeated block
         applied++;
         changed = true;
       }
@@ -773,6 +782,7 @@ fs.writeFileSync(path.join(root, "content/pages/our-partner.html"), partnerPageB
     [/<p[^>]*>(?:Through our|Our) sister company,? <strong[^>]*>our partners in East Africa<\/strong>,?[\s\S]*?<\/p>\s*/g, ""],
     [/<p>[^<]*sister company,? our partners in East Africa[^<]*<\/p>\s*/g, ""],
     [/\s*Our sister company,? (?:<strong[^>]*>)?our partners in East Africa(?:<\/strong>)?,?[^.]*\./g, ""],
+    // Time-limited lodge offers of the old site (no fake urgency) and factual slips in the source
     // The old operator's payment terms (25% deposit when departure is more than 120 days away)
     [/,? and when your departure is more than 120 days away, a 25% deposit is all you pay at booking\./g, ". You pay a deposit when you confirm your trip and the balance before departure; the amounts and dates are on your proposal."],
     [/alt="Flexible safari payment option with 25% due at booking when departure is more than 120 days away"/g, 'alt="Clear payments: a deposit on confirmation and the balance before departure"'],
