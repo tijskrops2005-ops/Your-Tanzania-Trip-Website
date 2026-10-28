@@ -66,5 +66,8 @@ const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', ema
     <script is:inline src={`/assets/js/site-search.js?v=${v}`}></script>
     <script is:inline src={`/assets/js/currency.js?v=${v}`}></script>
     <script is:inline src={`/assets/js/translate.js?v=${v}`}></script>
+    <!-- Vercel Web Analytics and Speed Insights (served by Vercel on the live domain only) -->
+    {import.meta.env.PROD && <script is:inline defer src="/_vercel/insights/script.js"></script>}
+    {import.meta.env.PROD && <script is:inline defer src="/_vercel/speed-insights/script.js"></script>}
   </body>
 </html>

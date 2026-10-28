@@ -1,0 +1,15 @@
+{
+  "slug": "traveller-guide",
+  "blocks": [
+    {
+      "id": 1,
+      "orig": "<a href=\"/our-partner/\">Licensed Tanzanian operator (TATO member)</a> • <a href=\"/practical-information/guarantees/\">Written booking confirmation</a> • <a href=\"/hakuna-matata-package/\">Hakuna Matata free package</a>",
+      "html": "<a href=\"/our-partner/\">Tanzanian operator with a licence (TATO member)</a> • <a href=\"/practical-information/guarantees/\">Your booking confirmed in writing</a> • <a href=\"/hakuna-matata-package/\">Free Hakuna Matata package</a>"
+    },
+    {
+      "id": 2,
+      "orig": "<a href=\"/practical-information/responsible-travel/\">Fair pay and proper gear for porters</a> • <a href=\"/our-partner/\">5% of each trip funds local schooling</a>",
+      "html": "<a href=\"/practical-information/responsible-travel/\">Porters get fair pay and proper gear</a> • <a href=\"/our-partner/\">5% of every trip goes to local schooling</a>"
+    }
+  ]
+}

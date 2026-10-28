@@ -1,0 +1,15 @@
+{
+  "slug": "accommodation__serengeti-four-seasons-safari-lodge",
+  "blocks": [
+    {
+      "id": 1,
+      "orig": "The <strong>Serengeti Four Seasons Safari Lodge</strong> is a beautiful lodge in the middle of Serengeti National Park, where it offers 77 luxury appointed rooms, 12 suites and 5 villas. All accommodations boast a lovely contemporary design with sumptuous beds, private terraces with amazing views and bathtubs to soak off the dust of the day. Some accommodations even boast their own private swimming pool. ",
+      "html": "In the middle of Serengeti National Park stands the beautiful <strong>Serengeti Four Seasons Safari Lodge</strong>, with 77 luxuriously appointed rooms, 12 suites and 5 villas. Every room has an attractive contemporary design, sumptuous beds, a private terrace with wonderful views and a bathtub where you can wash away the dust of the day. Some of them even have a private swimming pool of their own. "
+    },
+    {
+      "id": 2,
+      "orig": "The lodge offers various restaurants and bars, including the &#8216;boma grill&#8217; where delicious grilled meals with fresh ingredients are prepared on an open fire place. On the edge of the beautiful infinity pool you will find a watering hole where animals come to drink and bath. Last but not least, there are some small spas scattered around the lodge where you can relish massages, scrubs or a mask while enjoying one of the most beautiful views in the world!",
+      "html": "You can choose from several restaurants and bars at the lodge, among them the &#8216;boma grill&#8217;, where tasty grilled dishes made with fresh ingredients are cooked over an open fire. Right beside the beautiful infinity pool is a watering hole where animals come to drink and bathe. Finally, small spas are dotted around the lodge, where you can treat yourself to a massage, scrub or mask while taking in one of the most beautiful views in the world!"
+    }
+  ]
+}

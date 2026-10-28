@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /wishlist/
+Disallow: /processing-your-payment/
+Disallow: /ajax/
+Disallow: /facetwp-static/
+
+Sitemap: https://yourtanzaniatrip.com/sitemap.xml

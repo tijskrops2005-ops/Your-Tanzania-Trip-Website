@@ -1,0 +1,15 @@
+{
+ "slug": "activity__deep-sea-fishing-full-day",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "Board an engined boat to enjoy a full-day deep sea fishing in the turquoise waters of the Indian Ocean, right off the shore of Zanzibar. With a captain who knows the area well, you&#8217;ll have the opportunity to fish for black and blue marlin, acrobatic sailfish, dorado, yellowfin tuna, wahoo, barracuda, or kingfish, depending on the season. An unforgettable experience!",
+   "html": "Step aboard an engined boat for a full day of deep sea fishing in the turquoise Indian Ocean, just off the coast of Zanzibar. Together with a captain who knows these waters well, you&#8217;ll get the chance to fish for black and blue marlin, acrobatic sailfish, dorado, yellowfin tuna, wahoo, barracuda or kingfish, depending on the season. An experience to remember!"
+  },
+  {
+   "id": 2,
+   "orig": "Boat: Engined, accommodates up to 5 guests.",
+   "html": "Boat: engined, with room for up to 5 guests."
+  }
+ ]
+}

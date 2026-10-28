@@ -24,9 +24,9 @@ for (const u of urls) {
   const page = await browser.newPage();
   const issues = [];
   page.on("pageerror", (e) => issues.push("JS: " + String(e.message || e).split("\n")[0].slice(0, 200)));
-  page.on("console", (m) => { if (m.type() === "error") issues.push("console: " + m.text().slice(0, 200)); });
-  page.on("requestfailed", (r) => { const url = r.url(); if (!/google-analytics|googletagmanager|doubleclick|facebook|hotjar|clarity/.test(url)) issues.push("failed: " + url.slice(0, 160) + " " + (r.failure() || {}).errorText); });
-  page.on("response", (r) => { if (r.status() >= 400) issues.push(`HTTP ${r.status()}: ${r.url().slice(0, 160)}`); });
+  page.on("console", (m) => { if (m.type() === "error" && !/Failed to load resource/.test(m.text())) issues.push("console: " + m.text().slice(0, 200)); });
+  page.on("requestfailed", (r) => { const url = r.url(); if (!/google-analytics|googletagmanager|doubleclick|facebook|hotjar|clarity|_vercel/.test(url)) issues.push("failed: " + url.slice(0, 160) + " " + (r.failure() || {}).errorText); });
+  page.on("response", (r) => { if (r.status() >= 400 && !/_vercel/.test(r.url())) issues.push(`HTTP ${r.status()}: ${r.url().slice(0, 160)}`); });
   try {
     await page.setViewport({ width: 1440, height: 900 });
     await page.goto(base + u, { waitUntil: "networkidle2", timeout: 60000 });

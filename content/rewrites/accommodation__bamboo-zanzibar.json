@@ -1,0 +1,20 @@
+{
+ "slug": "accommodation__bamboo-zanzibar",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "<strong>Bamboo Zanzibar</strong> is a small design hotel in Jambiani, on Zanzibar&#8217;s southeast coast. With its 10 suites in a modern concrete and sand building, it is a perfect union of minimalism, harmony, and sophisticated beach chic.",
+   "html": "In Jambiani, on Zanzibar&#8217;s southeast coast, you will find <strong>Bamboo Zanzibar</strong>, a small design hotel. Its 10 suites sit in a modern building of concrete and sand, bringing together minimalism, harmony and refined beach chic."
+  },
+  {
+   "id": 2,
+   "orig": "All suites in this <em>adults only </em>hotel have an ocean view, doors that open up fully to the ocean, and a private plunge pool at the end of a private terrace. The suites are located on the ground floor, under the 100-meter-long infinity pool and terrace above (!). The beautifully designed double rooms have a large bed, a sitting area, air conditioning, mini-fridge, coffee maker and beach bag for your visit to the Indian Ocean.",
+   "html": "Every suite in this <em>adults only </em>hotel looks out over the ocean, has doors that open completely onto the sea and a private plunge pool at the far end of its own terrace. You stay on the ground floor, beneath the 100-meter-long infinity pool and terrace overhead (!). The beautifully designed double rooms come with a large bed, a seating area, air conditioning, a mini-fridge, a coffee maker and a beach bag for your trips to the Indian Ocean."
+  },
+  {
+   "id": 3,
+   "orig": "Cool off with the plunge pool on your private veranda or the infinity pool above, while the bar and restaurant serve selected wines and exquisite dishes. Nestled in the white cliffs of the Jambiani coast, Bamboo Zanzibar redefines African hospitality for design-minded Zanzibar lovers.",
+   "html": "Cool down in the plunge pool on your own veranda or in the infinity pool above, while the bar and restaurant serve a selection of wines and refined dishes. Set into the white cliffs of the Jambiani coast, Bamboo Zanzibar offers a fresh take on African hospitality for Zanzibar lovers with an eye for design."
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "accommodation__haradali-home-stay",
+  "blocks": [
+    {
+      "id": 1,
+      "orig": "<span>The <strong>Haradali Home</strong> offers a unique and authentic experience in Arusha, away from the hustle and bustle of the city&#8217;s busy districts. Embrace the serenity and tranquility of the lush gardens and the family-like atmosphere of this 5-star hotel. Here, you will find a type of homestay with a swimming pool offering several categories of en-suite rooms (single, twin or double, triple, and family) as well as a two-bedroom house for families, designed to accommodate up to six guests.</span>",
+      "html": "<span>At <strong>Haradali Home</strong> you get a special, authentic stay in Arusha, well away from the noise and bustle of the city&#8217;s busy neighbourhoods. Enjoy the calm and peace of the green gardens and the family atmosphere of this 5-star hotel. It is a kind of homestay with a swimming pool, offering en-suite rooms in several categories (single, twin or double, triple and family), plus a two-bedroom house for families that sleeps up to six guests.</span>"
+    },
+    {
+      "id": 2,
+      "orig": "<span>Wander through the garden dotted with fruit trees, pick a banana straight from the tree, take a dip at the pool, and enjoy an array of delicious homemade African dishes at the buffet. The owners, Francisca and Said, are happy to share their little paradise with you and, along with their staff, go above and beyond to make you feel right at home. You will leave this hidden oasis with lasting memories and the feeling of belonging to the Haradali family.</span>",
+      "html": "<span>Stroll through the garden full of fruit trees, pick a banana right off the tree, cool off in the pool and tuck into a range of tasty homemade African dishes from the buffet. Owners Francisca and Said love sharing their small paradise with you, and together with their team they do everything they can to make you feel at home. You will leave this hidden oasis with memories that last and a sense of being part of the Haradali family.</span>"
+    },
+    {
+      "id": 3,
+      "orig": "<span><strong>Please note</strong>: Haradali Home does not sell alcohol.</span>",
+      "html": "<span><strong>Good to know</strong>: alcohol is not sold at Haradali Home.</span>"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+ "slug": "accommodation__ruaha-river-lodge",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "<strong>The Ruaha River Lodge </strong>is set on one of the most stunning stretches of the Great Ruaha River. You can see the game throughout the day from the comfort of your veranda. The 24 stone chalets are stretched along the river bank, decorated with a feel of African wilderness and feature a sitting area, writing desk, comfy beds and large bathrooms. The Ruaha River restaurant is lovingly situated by the side of the river and offers delicious meals. ",
+   "html": "<strong>The Ruaha River Lodge </strong>lies along one of the most beautiful stretches of the Great Ruaha River. From your comfortable veranda you can watch the animals all day long. The 24 stone chalets line the river bank, are furnished with an African wilderness feel and have a seating area, writing desk, comfortable beds and large bathrooms. The Ruaha River restaurant has a lovely spot right beside the river and serves tasty meals. "
+  },
+  {
+   "id": 2,
+   "orig": "Wake up to the sounds of the nature surrounding you, and enjoy your morning coffee while you watch the game meandering down to the river for their morning drink. ",
+   "html": "Wake up to the sounds of the nature around you, and sip your morning coffee as the animals wander down to the river for their morning drink. "
+  }
+ ]
+}

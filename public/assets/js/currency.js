@@ -64,6 +64,34 @@
     });
   }
 
+  // Forms: budget sliders (range inputs with data-currency="$") and plain "$250" amounts in labels.
+  function convertForms(root, rate) {
+    if (cur === "usd") return;
+    var c = CUR[cur];
+    var round = function (v, to) { return Math.max(to, Math.round(v / to) * to); };
+    root.querySelectorAll('input.range-input[data-currency="$"]:not([data-ytt-cur])').forEach(function (r) {
+      r.setAttribute("data-ytt-cur", cur);
+      ["min", "max"].forEach(function (k) { if (r.getAttribute(k)) r.setAttribute(k, round(Number(r.getAttribute(k)) * rate, 100)); });
+      if (r.getAttribute("step")) r.setAttribute("step", round(Number(r.getAttribute("step")) * rate, 50));
+      if (r.value) r.value = round(Number(r.value) * rate, 50);
+      r.setAttribute("data-currency", c.symbol);
+      r.dispatchEvent(new Event("input", { bubbles: true }));
+      r.dispatchEvent(new Event("change", { bubbles: true }));
+    });
+    var walker = document.createTreeWalker(root.querySelector ? root : document, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        return /\$\s?\d/.test(n.nodeValue) && n.parentElement && n.parentElement.closest("form, .gform_wrapper, .range") && !n.parentElement.closest("script, style") ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      },
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (n) {
+      n.nodeValue = n.nodeValue.replace(/\$\s?([\d,]+)(\+?)/g, function (m, whole, plus) {
+        return c.symbol + fmt(round(Number(whole.replace(/,/g, "")) * rate, 10), 0) + plus;
+      });
+    });
+  }
+
   function setCurrency(next) {
     if (!CUR[next]) return;
     store(KEY, next);
@@ -117,8 +145,12 @@
     rates().then(function (r) {
       var rate = r[CUR[cur].code] || FALLBACK[CUR[cur].code];
       convert(document, rate);
+      // Sliders are drawn by the theme after load; convert once it has run.
+      setTimeout(function () { convertForms(document, rate); }, 300);
       new MutationObserver(function (list) {
-        list.forEach(function (m) { m.addedNodes.forEach(function (n) { if (n.nodeType === 1) convert(n, rate); }); });
+        list.forEach(function (m) {
+          m.addedNodes.forEach(function (n) { if (n.nodeType === 1) convert(n, rate); });
+        });
       }).observe(document.body, { childList: true, subtree: true });
     });
   }

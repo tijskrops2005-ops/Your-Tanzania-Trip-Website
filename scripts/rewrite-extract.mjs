@@ -12,7 +12,7 @@ const src = path.join(root, "content/pages");
 const out = path.join(root, ".cache/rewrite-src");
 fs.mkdirSync(out, { recursive: true });
 
-const SKIP_PREFIX = ["itineraries__", "accommodation__", "wishlist", "travel-proposal", "travel-quiz", "newsletter", "processing-your-payment", "privacy-policy", "terms-conditions", "sustainability-policy", "review-your-opinion-matters", "contact", "our-partner", "app", "tanzania-traveller-reviews", "about-tanzania-specialist", "practical-information__guarantees"];
+const SKIP_PREFIX = ["wishlist", "travel-proposal", "travel-quiz", "newsletter", "processing-your-payment", "privacy-policy", "terms-conditions", "sustainability-policy", "review-your-opinion-matters", "contact", "our-partner", "app", "tanzania-traveller-reviews", "about-tanzania-specialist", "practical-information__guarantees"];
 const SKIP_TEXT = /Kilimanjaro Nature Tours|Tripadvisor|Baraka|Your Tanzania Trip is run by|Edrian|gfield|<input|<img|<iframe|<svg|<form|<select|<button/;
 
 function matchDiv(s, start) {
@@ -54,12 +54,16 @@ import { fileURLToPath } from "node:url";
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   let pages = 0, total = 0;
   const index = [];
+  // Only pages Google indexes (noindex sub-pages such as itinerary tabs are left alone).
+  const meta = JSON.parse(fs.readFileSync(path.join(root, "content/pages.json"), "utf8"));
+  const indexable = new Set(meta.filter((p) => !(p.robots || "").includes("noindex")).map((p) => p.slug));
   for (const f of fs.readdirSync(src).sort()) {
     if (!f.endsWith(".html")) continue;
     const slug = f.slice(0, -5);
     if (SKIP_PREFIX.some((p) => slug === p || slug.startsWith(p))) continue;
+    if (!indexable.has(slug)) continue;
     const blocks = extractBlocks(fs.readFileSync(path.join(src, f), "utf8"));
-    if (blocks.length < 3) continue;
+    if (blocks.length < 1) continue;
     fs.writeFileSync(path.join(out, slug + ".json"), JSON.stringify({ slug, blocks }, null, 1));
     const words = blocks.reduce((n, b) => n + b.html.split(/\s+/).length, 0);
     index.push({ slug, blocks: blocks.length, words });

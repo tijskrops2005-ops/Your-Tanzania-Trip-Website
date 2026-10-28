@@ -1,0 +1,20 @@
+{
+ "slug": "accommodation__ngorongoro-lodge-by-melia",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "The <strong>Ngorongoro Lodge by Melia</strong> lies in the heart of the Ngorongoro Highlands, overlooking the famous UNESCO-protected conservation area of Ngorongoro crater.",
+   "html": "In the heart of the Ngorongoro Highlands you find the <strong>Ngorongoro Lodge by Melia</strong>, looking out over the famous Ngorongoro crater conservation area, which is protected by UNESCO."
+  },
+  {
+   "id": 2,
+   "orig": "With 28 rooms and 24 spacious suites boasting breathtaking views over the crater, this newly renovated lodge provides luxury services but also keeps sustainability at heart. It indeed generates a significant part of its electricity through solar panels and avoids plastic consumption by having a water bottling plant onsite.<br />The interiors are inspired by Masai traditions and art and all furniture is locally made. In the bedrooms, you find rain showers or bath tubes, elegant beddings, and wide windows and some even have a terrace to enjoy the view to its fullest.",
+   "html": "This recently renovated lodge has 28 rooms and 24 roomy suites with breathtaking crater views, and it combines luxury service with a real focus on sustainability. A large share of its electricity comes from solar panels, and an on-site water bottling plant helps it avoid plastic.<br />Maasai traditions and art inspired the interior, and all of the furniture is made locally. The bedrooms have rain showers or bathtubs, elegant bedding and large windows, and some even come with a terrace so you can make the most of the view."
+  },
+  {
+   "id": 3,
+   "orig": "In addition, the lodge features two gourmet restaurants using local and organic products, an infinity pool with unbeatable views, a barbeque area and a spa to pamper yourself. An unforgettable place in a unique area.",
+   "html": "On top of that, the lodge has two gourmet restaurants that cook with local and organic produce, an infinity pool with superb views, a barbecue area and a spa where you can treat yourself. A memorable place in a unique region."
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "slug": "accommodation__little-chem-chem",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "<span>Located near Lake Burunge and the north gate of Tarangire National Park,</span><strong><span> Little Chem Chem</span></strong><span> is a camp that offers the perfect combination of luxury and vintage. It is a wildlife lovers&#8217; paradise, as it is surrounded and visited by all kinds of majestic animals such as zebras, elephants, lions and leopards (but do not worry, it is completely safe!).</span>",
+   "html": "<span>Close to Lake Burunge and the northern gate of Tarangire National Park,</span><strong><span> Little Chem Chem</span></strong><span> is a camp that blends luxury and vintage style in just the right way. Wildlife lovers will be in their element here, as all kinds of impressive animals such as zebras, elephants, lions and leopards live around the camp and pass through it (don&#8217;t worry, it is entirely safe!).</span>"
+  },
+  {
+   "id": 2,
+   "orig": "<span>The natural and simple design of the camp is marked by green, white, and brown tones, mimicking the landscapes surrounding it, making you feel in harmony with nature. There are six luxurious tents, one of which is perfect for families as it has two bedrooms and two bathrooms. But also the standard tents can accommodate one child. All tents are equipped with a kingsize bed, wooden furniture, a fan, a private veranda with a sitting area, and two showers: one interior and one exterior. The exterior one is surrounded by walls that give privacy but still allow the sounds and views of nature to enter. Make sure to take a shower under the starry night &#8211; it will leave you speechless!</span>",
+   "html": "<span>Green, white and brown tones define the camp&#8217;s simple, natural design, echoing the surrounding landscape so you feel at one with nature. The camp has six luxurious tents, one of them ideal for families with two bedrooms and two bathrooms, while the standard tents can also sleep one child. Every tent has a king-size bed, wooden furniture, a fan, a private veranda with seating and two showers: one inside and one outside. The outdoor shower is enclosed by walls for privacy, yet the sights and sounds of nature still come through. Be sure to shower beneath the starry night sky &#8211; it will take your breath away!</span>"
+  },
+  {
+   "id": 3,
+   "orig": "<span>Subsequently, the camp offers free WiFi, spa treatments, a dining tent with an outdoor area, a lounge tent, and a court of petanque. The best part, however, is the waterhole right in front of the camp that attracts lots of animals in need of a drink or bath. A great place to unwind after your safari! </span>",
+   "html": "<span>On top of that, the camp has free WiFi, spa treatments, a dining tent with an outdoor area, a lounge tent and a petanque court. The highlight, though, is the waterhole just in front of the camp, which draws many animals coming to drink or bathe. A wonderful spot to relax after a day on safari! </span>"
+  },
+  {
+   "id": 4,
+   "orig": "<span>Note: the camp only accepts children of 8 years and older as the area is unfenced. And even though a team of guards protects the camp 24 hours a day, parents must accompany their older children at all times. Younger children are accepted only if the camp is hired exclusively.</span>",
+   "html": "<span>Please note: because the area is unfenced, the camp only welcomes children aged 8 and over. Although a team of guards watches over the camp 24 hours a day, parents must stay with their older children at all times. Younger children are only allowed when the camp is booked exclusively.</span>"
+  }
+ ]
+}

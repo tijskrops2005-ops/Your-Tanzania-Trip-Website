@@ -1,0 +1,20 @@
+{
+ "slug": "accommodation__legendary-lodge",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "At the <strong>Legendary Lodge</strong> you can experience peaceful luxury at the foot of the beautiful Mount Meru. The lodge is surrounded by lush tropical gardens and century-old coffee trees and its tranquility and proximity to the airport (a 15 minute drive) make it a perfect starting point for your safari.",
+   "html": "The <strong>Legendary Lodge</strong> offers calm, peaceful luxury at the foot of beautiful Mount Meru. Lush tropical gardens and century-old coffee trees surround the lodge, and with its tranquillity and short distance to the airport (a 15 minute drive) it is an ideal base from which to begin your safari."
+  },
+  {
+   "id": 2,
+   "orig": "Legendary Lodge has twelve colonial-style cottages with an Afro-European touch, two of which are for families. They are all equipped with oversized beds, mosquito nets, and free Wi-Fi connection. You will also be able to relax and leave all your worries behind by visiting their spa, where they offer restorative wellness treatments that will make you feel great all day.",
+   "html": "The lodge has twelve colonial-style cottages with an Afro-European feel, including two family cottages. Each one comes with an oversized bed, mosquito nets and free Wi-Fi. You can also unwind and forget your worries at the spa, which offers restorative wellness treatments to leave you feeling great all day."
+  },
+  {
+   "id": 3,
+   "orig": "Whenever you feel hungry, you find delicious food waiting for you in the restaurant and refreshing drinks in the bar. Or, if what you need is to cool down to put up with the high temperatures, you can then visit their amazing swimming pool. In short, Legendary is the start of your safari!",
+   "html": "When hunger strikes, the restaurant serves delicious food and the bar has refreshing drinks. If you need to cool off in the heat, head to the lovely swimming pool. In short, your safari starts at Legendary!"
+  }
+ ]
+}
