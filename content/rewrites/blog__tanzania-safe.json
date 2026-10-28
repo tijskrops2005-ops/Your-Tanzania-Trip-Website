@@ -1,0 +1,30 @@
+{
+ "slug": "blog__tanzania-safe",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "Tanzania is known as one of Africa’s safest and friendliest countries, especially when you go on an organised safari. About a million tourists visit Tanzania every year and most of them do not face any incidents. But as with many tourist destinations, there are some things to be aware of before you go.",
+   "html": "Tanzania has a reputation as one of the safest and most welcoming countries in Africa, particularly if you travel on an organised safari. Around a million visitors come to Tanzania each year, and the great majority never run into any trouble. Still, like many holiday destinations, there are a few things worth knowing before you set off."
+  },
+  {
+   "id": 2,
+   "orig": "<span style=\"font-weight: 400\">As most incidents happen in </span><span style=\"font-weight: 400\">big </span><span style=\"font-weight: 400\">cities like Dar es Salaam and Arusha, we do not recommend walking alone in the city after dark (</span><span style=\"font-weight: 400\">7pm</span><span style=\"font-weight: 400\">). </span><span style=\"font-weight: 400\">This rule applies throughout </span><span style=\"font-weight: 400\">Africa and not just Tanzania. Use safe transport like </span><span style=\"font-weight: 400\">taxis, </span><span style=\"font-weight: 400\">or ask your hotel or guide to arrange the transfer.</span>",
+   "html": "<span style=\"font-weight: 400\">Because most incidents take place in </span><span style=\"font-weight: 400\">large </span><span style=\"font-weight: 400\">cities such as Dar es Salaam and Arusha, we advise against walking around town on your own once it gets dark (</span><span style=\"font-weight: 400\">7pm</span><span style=\"font-weight: 400\">). </span><span style=\"font-weight: 400\">That advice holds across </span><span style=\"font-weight: 400\">Africa, not only in Tanzania. Choose safe transport such as </span><span style=\"font-weight: 400\">a taxi, </span><span style=\"font-weight: 400\">or let your hotel or guide organise the transfer for you.</span>"
+  },
+  {
+   "id": 3,
+   "orig": "Common sense goes a long way. Make sure you take some precautions, such as not wearing costly jewellery or let an expensive camera hang down your neck. Never carry valuable things in your pocket but lock them in the hotel safe. Keep important things like your passport and credit card in a money belt under your clothes, out of sight.",
+   "html": "A bit of common sense gets you a long way. Take a few simple precautions: leave the expensive jewellery at home and don’t walk around with a costly camera hanging from your neck. Rather than carrying valuables in your pocket, lock them away in the hotel safe. Important items such as your passport and credit card belong in a money belt under your clothing, where nobody can see them."
+  },
+  {
+   "id": 4,
+   "orig": "Tanzanian people are known for their hospitality. They are very friendly and helpful. If you walk on the street, local people can come up to you for a chat or trying to sell some of their wares. If you just tell them friendly you are not interested, they will leave you alone.",
+   "html": "Tanzanians are well known for their hospitality; people are warm and happy to help. When you are out on the street, locals may approach you for a chat or to offer you something they are selling. A friendly but clear “no thanks” is enough and they will let you be."
+  },
+  {
+   "id": 5,
+   "orig": "If you have other question about safety in Tanzania, please <a href=\"/contact/\">contact us</a> or ask your guide for advice during your safari.",
+   "html": "Do you have any further questions about staying safe in Tanzania? Feel free to <a href=\"/contact/\">get in touch with us</a>, or ask your guide for advice while you are on safari."
+  }
+ ]
+}

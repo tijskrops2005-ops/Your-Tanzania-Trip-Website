@@ -1,0 +1,110 @@
+{
+ "slug": "blog__jambiani",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "<span style=\"font-weight: 400\">Zanzibar’s cultural diversity, beautiful nature, and friendly people make this tropical island the perfect getaway, and it’s all best experienced in Jambiani. If you enjoy beautiful beaches, thrilling activities, delicious meals at local restaurants, and genuine experiences, this might be the place for you, too.</span>",
+   "html": "<span style=\"font-weight: 400\">With its cultural variety, lovely nature and welcoming people, Zanzibar makes an ideal tropical escape, and Jambiani is where you experience all of it at its best. If beautiful beaches, exciting activities, tasty meals in local restaurants and real experiences appeal to you, you may find this is your place as well.</span>"
+  },
+  {
+   "id": 2,
+   "orig": "<span style=\"font-weight: 400\">Jambiani is an old fishing village that is still really authentic, with lovely lodges and boutique hotels, a laid-back vibe, and friendly locals who happily mingle with visitors. The main source of income is fishing and seaweed farming. </span>",
+   "html": "<span style=\"font-weight: 400\">Jambiani, an old fishing village, has kept much of its authentic character, with charming lodges and boutique hotels, an easy-going atmosphere and friendly residents who are happy to mix with visitors. Most people here earn their living from fishing and seaweed farming. </span>"
+  },
+  {
+   "id": 3,
+   "orig": "<span style=\"font-weight: 400\">Pick one of the several good restaurants at the beach, enjoy seafood or other local delicacies, and take a little stroll in the sand afterwards. Yes, Jambiani truly is that beautiful! </span><span style=\"font-weight: 400\">Another good thing is that neighbouring Paje is easily reachable, offering more beach vibes, a relaxed atmosphere, kite-surf spots and shops. It’s a busier and more touristy place than Jambiani, though, which is why that still is our fav place to be. </span>",
+   "html": "<span style=\"font-weight: 400\">Choose one of the many good beach restaurants, tuck into seafood or other local specialities, then take a short walk along the sand. Yes, Jambiani really is that lovely! </span><span style=\"font-weight: 400\">A further plus is that Paje next door is within easy reach, with more beach life, a laid-back feel, kitesurf spots and shops. Paje is busier and more geared to tourists than Jambiani, though, and that is why Jambiani remains our favourite place to stay. </span>"
+  },
+  {
+   "id": 4,
+   "orig": "<span style=\"font-weight: 400\">Let’s stay at the beach! The 7-kilometre-long beach with powdery white sand and swaying palms has hardly any rocks or sea-urchins – contrary to some beaches in the north. The barrier reef lies a few kilometres out, with a beautiful, crystal turquoise lagoon in between. This is the perfect place for wading, snorkelling, and diving, and offers excellent opportunities to spot marine life. Thanks to its steady side shore winds, Jambiani is also an ideal spot for kitesurfing. At high tide, it’s nice to swim in the Indian Ocean, and at low tide, you can enjoy a nice beach walk.</span>",
+   "html": "<span style=\"font-weight: 400\">Back to the beach! Lined with swaying palms and powdery white sand, the 7-kilometre-long beach has barely any rocks or sea urchins – unlike some beaches in the north. A few kilometres offshore lies the barrier reef, and between it and the beach is a beautiful, clear turquoise lagoon. It is ideal for wading, snorkelling and diving, and gives you excellent chances to see marine life. The steady side-shore winds also make Jambiani a great spot for kitesurfing. Swimming in the Indian Ocean is pleasant at high tide, while low tide is the moment for a lovely walk along the beach.</span>"
+  },
+  {
+   "id": 5,
+   "orig": "<span style=\"font-weight: 400\">Exploring Jambiani’s restaurants is part of the fun. Many are right on the beach. At </span><b>Bamboo Zanzibar</b><span style=\"font-weight: 400\">, you enjoy a refined dining experience with a focus on fresh, locally sourced ingredients – from lobster dinners to traditional curries with a modern twist. If you’re looking for variety, head to </span><b>Fun Beach Hotel</b><span style=\"font-weight: 400\">, where the menu ranges from international favourites like pasta and burgers to Swahili-inspired dishes. For a more relaxed yet authentic experience, try the restaurant at </span><b>Blue Oyster Hotel</b><span style=\"font-weight: 400\">, well-known for its fresh seafood and vegetarian dishes. For something a little different, </span><b>Be Zanziba</b><span style=\"font-weight: 400\">r offers a menu with a strong focus on plant-based dishes at their Meze restaurant alongside other locally inspired meals featuring fresh seafood and seasonal specialties. </span>",
+   "html": "<span style=\"font-weight: 400\">Trying out the restaurants in Jambiani is half the fun, and plenty of them sit right on the sand. </span><b>Bamboo Zanzibar</b><span style=\"font-weight: 400\"> offers refined dining built around fresh, locally sourced ingredients – think lobster dinners or classic curries with a modern touch. For more choice, go to </span><b>Fun Beach Hotel</b><span style=\"font-weight: 400\">, whose menu covers international favourites such as burgers and pasta as well as Swahili-inspired dishes. If you prefer something relaxed but authentic, the restaurant at </span><b>Blue Oyster Hotel</b><span style=\"font-weight: 400\"> is known for its fresh seafood and vegetarian options. For a change, </span><b>Be Zanzibar</b><span style=\"font-weight: 400\"> has a strongly plant-based menu at its Meze restaurant, next to other locally inspired dishes with fresh seafood and seasonal specialities. </span>"
+  },
+  {
+   "id": 6,
+   "orig": "<span style=\"font-weight: 400\">With so many great restaurants in Jambiani, it’s best to make a bed-and-breakfast booking at your hotel, allowing you to try different spots for lunch and dinner.</span>",
+   "html": "<span style=\"font-weight: 400\">Because Jambiani has so many good restaurants, we suggest booking bed and breakfast at your hotel, so you are free to try different places for lunch and dinner.</span>"
+  },
+  {
+   "id": 7,
+   "orig": "<strong>Live music, food, and drinks in Jambiani and Paje</strong>",
+   "html": "<strong>Food, drinks and live music in Jambiani and Paje</strong>"
+  },
+  {
+   "id": 8,
+   "orig": "<span style=\"font-weight: 400\">Most hotels have restaurants where non-sleeping guests are welcome for a drink or a delicious meal. To keep guests entertained, hotels often host live music, happy hours, barbecues, parties, and more.</span>",
+   "html": "<span style=\"font-weight: 400\">Most hotels have a restaurant that welcomes non-residents for a drink or a good meal. Hotels also regularly put on live music, happy hours, barbecues, parties and more to keep their guests entertained.</span>"
+  },
+  {
+   "id": 9,
+   "orig": "<strong><b>Daily: </b><span style=\"font-weight: 400\">BBQ lunch specials Tuesday-Sunday, 12:30–15:00 at Blue Oyster Hotel (Jambiani)</span></strong>",
+   "html": "<strong><b>Daily: </b><span style=\"font-weight: 400\">BBQ lunch specials from Tuesday to Sunday, 12:30–15:00, at Blue Oyster Hotel (Jambiani)</span></strong>"
+  },
+  {
+   "id": 10,
+   "orig": "<b>Daily: </b><span style=\"font-weight: 400\">Exclusive BBQ with ocean views in private lounges at Bamboo Zanzibar (Jambiani)</span>",
+   "html": "<b>Daily: </b><span style=\"font-weight: 400\">Private-lounge BBQ with a view of the ocean at Bamboo Zanzibar (Jambiani)</span>"
+  },
+  {
+   "id": 11,
+   "orig": "<strong><b>Tuesday: </b><span style=\"font-weight: 400\">Wicked Tunes Tuesdays (live music &amp; tapas) at Mr. Kahawa (Paje)</span></strong>",
+   "html": "<strong><b>Tuesday: </b><span style=\"font-weight: 400\">Wicked Tunes Tuesdays (tapas &amp; live music) at Mr. Kahawa (Paje)</span></strong>"
+  },
+  {
+   "id": 12,
+   "orig": "<strong><b>Thursday:</b><span style=\"font-weight: 400\"> BBQ buffet, live music, and Afrobeat party at Demani Lodge (Jambiani)</span></strong>",
+   "html": "<strong><b>Thursday:</b><span style=\"font-weight: 400\"> Afrobeat party, live music and a BBQ buffet at Demani Lodge (Jambiani)</span></strong>"
+  },
+  {
+   "id": 13,
+   "orig": "<strong><b>Friday, Saturday, and Sunday:</b><span style=\"font-weight: 400\"> Party at Nanga Nightclub (Paje)</span></strong>",
+   "html": "<strong><b>Friday, Saturday, and Sunday:</b><span style=\"font-weight: 400\"> Parties at Nanga Nightclub (Paje)</span></strong>"
+  },
+  {
+   "id": 14,
+   "orig": "<b>Saturday:</b><span style=\"font-weight: 400\"> BBQ and later electronic music and DJ sessions at B4 (Paje)</span>",
+   "html": "<b>Saturday:</b><span style=\"font-weight: 400\"> A BBQ followed by DJ sets and electronic music at B4 (Paje)</span>"
+  },
+  {
+   "id": 15,
+   "orig": "<strong>Deep Sea Fishing</strong><br />\nWe can arrange a half or full day deep sea fishing tour. With a huge variety of fish, such as tuna, marlin, sailfish, barracuda and dorado, the Indian Ocean is famous for excellent game fishing. Sail out to the deep waters to catch some spectacular big fish that can easily weight up to 60 kg.",
+   "html": "<strong>Deep sea fishing</strong><br />\nWe can organise a deep sea fishing trip for a half or a full day. The Indian Ocean is well known for superb game fishing, with a wide range of species including tuna, marlin, sailfish, barracuda and dorado. Head out into deep water and try to land some impressive big fish, which can easily weigh as much as 60 kg."
+  },
+  {
+   "id": 16,
+   "orig": "<strong>Scuba diving</strong><br />\nThe beautiful coral reefs host some of Africa’s finest corals. There are several diving spots and the variety of marine life is impressive. We work together with the diving school Nakupenda, located at The Loop, so that you can meet seahorses, octopuses, stingrays, frogfish, Napoleon fish and turtles in their home.",
+   "html": "<strong>Scuba diving</strong><br />\nThe lovely reefs here are home to some of the finest corals in Africa. You can choose from several dive sites, and the range of marine life is remarkable. We team up with the Nakupenda diving school at The Loop, so you can see turtles, seahorses, octopuses, stingrays, frogfish and Napoleon fish in their natural habitat."
+  },
+  {
+   "id": 17,
+   "orig": "<strong>Kitesurfing<br />\n</strong>Due to its steady side shore winds, Jambiani is an ideal spot for wind or kitesurfing. The beaches are quiet, and the waters are shallow with little sea-urchins. Of course, you can also ditch the kite and ride the waves with just a board.",
+   "html": "<strong>Kitesurfing<br />\n</strong>The steady side-shore winds make Jambiani a perfect place for windsurfing or kitesurfing. The beaches are calm, and the shallow water has few sea urchins. You can of course leave the kite behind and simply surf the waves on a board."
+  },
+  {
+   "id": 18,
+   "orig": "<strong>Visit local village<br />\n</strong>Discover local life by visiting a school, tailor or boat builder. You can also see how locals make soap or cream out of seaweed or all the products they create out of coconuts.",
+   "html": "<strong>Visit a local village<br />\n</strong>Get to know everyday life by calling in at a school, a tailor or a boat builder. You can also watch how villagers turn seaweed into soap or cream, and see the many products they make from coconuts."
+  },
+  {
+   "id": 19,
+   "orig": "<strong>Snorkelling at Blue Lagoon<br />\n</strong>Start the day by driving to Dongwe (15 minutes), where the Blue Lagoon is located. This is one of the best snorkelling spots in Zanzibar due to its beautiful coral and tropical fish. The visibility is good and the depth range, between 1 and 4 metres, is perfect for snorkelling. Treat yourself afterwards to nice food and drinks at The Rock. This restaurant is built on a rock in the ocean. An awesome place to enjoy the views. End the day at Kae Funk in Michamvi where you can experience the most beautiful sunset in Zanzibar.",
+   "html": "<strong>Snorkelling at the Blue Lagoon<br />\n</strong>Begin your day with a 15-minute drive to Dongwe, home of the Blue Lagoon. Thanks to its lovely coral and tropical fish, it ranks among the best places to snorkel in Zanzibar. Visibility is good, and with a depth of 1 to 4 metres it suits snorkelling perfectly. Afterwards, treat yourself to good food and drinks at The Rock, a restaurant built on a rock out in the ocean and a great spot to take in the view. Finish the day at Kae Funk in Michamvi, where you can watch the most beautiful sunset in Zanzibar."
+  },
+  {
+   "id": 20,
+   "orig": "Jambiani is about 55 kilometres from Stone Town which means, it will take you just about 1.5 hours to get there (absolutely worth it!).",
+   "html": "Jambiani lies roughly 55 kilometres from Stone Town, so the journey takes you only about 1.5 hours (and it is well worth it!)."
+  },
+  {
+   "id": 21,
+   "orig": "You want to see this hidden gem for yourself? Or maybe you’d like to combine relaxation deluxe with a once-in-a-lifetime safari? Whatever you want your Tanzania holiday to look like, get in touch, and we’ll make your dream come true!",
+   "html": "Would you like to discover this hidden gem for yourself? Or perhaps pair deluxe relaxation with a once-in-a-lifetime safari? However you picture your Tanzania holiday, get in touch and we will help make it happen!"
+  }
+ ]
+}

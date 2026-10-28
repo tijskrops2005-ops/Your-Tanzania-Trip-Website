@@ -206,6 +206,13 @@ const reviewRules = [
   [/<span class='flying-press-youtube'[\s\S]*?<\/span>/g, "<!--VIDEO-->"],
   [/<iframe[^>]*youtube(?:-nocookie)?\.com\/embed\/[^>]*>\s*<\/iframe>/g, ""],
   [/<h[2-4][^>]*>\s*Curious for more\? You won(?:’|'|&#8217;)t regret watching this video\s*<\/h[2-4]>/g, ""],
+  // The old operator's park videos ("Watch the video of the park here.") and Drive/YouTube links
+  [/\s*(?:<em>)?\s*Watch the video of the park\s*(?:<\/em>)?\s*<a[^>]*youtu\.be[^>]*>\s*(?:<em>)?here(?:<\/em>)?\s*<\/a>\s*(?:<em>)?\.?(?:<\/em>)?/g, ""],
+  [/\s*Access our Kilimanjaro gets Connected <a[^>]*drive\.google\.com[^>]*>[^<]*<\/a>\.?/g, ""],
+  [/<a[^>]*href="https:\/\/(?:youtu\.be|www\.youtube\.com\/watch|drive\.google\.com)[^"]*"[^>]*>([\s\S]*?)<\/a>/g, "$1"],
+  // Insurance affiliate links of the old operator -> plain insurer link
+  [/https:\/\/www\.chapkadirect\.com\/index\.php\?action=produit&amp;id=824&amp;app=(?:cd_tanzaniaspecialist|afrikasafari)/g, "https://www.chapkadirect.com/"],
+  [/https:\/\/www\.google\.com\/url\?q=https:\/\/www\.chapkadirect\.com\/index\.php\?action%3Dproduit%26id%3D824%26app%3D(?:cd_tanzaniaspecialist|afrikasafari)[^"']*/g, "https://www.chapkadirect.com/"],
   [/<a class="ts-award[^"]*"[\s\S]*?<\/a>/g, ""],
   [/<img[^>]*(?:Tripadvisor-TC-Badge|Tripadvisor-travellers-choice|tripadvisor-tc-badge|tripadvisorlogo|tripadvisor-tc-title)[^>]*\/?>/g, ""],
   [/<a[^>]*>\s*<\/a>/g, ""],
@@ -490,6 +497,8 @@ function sidebarPartnerWidget() {
 
 function stripOldTrust(html) {
   html = replaceDivs(html, RATINGS_OPEN, "");
+  // Instagram "social feed" rows: posts of the old operator's followers
+  html = replaceDivs(html, /<div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-\d+[^"]*">/, "", (inner) => inner.includes("Published on: Instagram"));
   // FAQ items about the old operator's Travelife status
   html = replaceDivs(html, /<div x-data="\{ open: false \}"[^>]*>/, "", (inner) => /Travelife|KRTO|responsible-travel Partner/.test(inner));
   html = replaceDivs(html, /<div id="travelife-partner-status"[^>]*>/, "");
@@ -633,6 +642,7 @@ const removed = {
   "/about-tanzania-specialist/our-tanzania-travel-experts/": "/our-partner/",
   "/job-offers/": "/contact/",
   "/job-offers-content-writer-translator/": "/contact/",
+  "/app/": "/", // the old operator's "Africa Safari App"
 };
 const removedHref = new RegExp('href="(?:https?://[^/"]+)?(' + Object.keys(removed).map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ')"');
 
@@ -707,6 +717,73 @@ for (const p of walk(path.join(root, "content/pages"), [".html"])) {
   });
 }
 fs.writeFileSync(path.join(root, "content/pages/our-partner.html"), partnerPageBody());
+
+// 2a. Paraphrased text blocks (content/rewrites/<slug>.json, made with scripts/rewrite-extract.mjs):
+// each block's original inner HTML is replaced by the rewritten one when the tags still match.
+{
+  const dir = path.join(root, "content/rewrites");
+  let pages = 0, applied = 0, skipped = 0;
+  const tagsOf = (h) => (h.match(/<[^>]+>/g) || []).map((t) => t.replace(/\s+/g, " ").trim()).join("|");
+  if (fs.existsSync(dir)) {
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith(".json")) continue;
+      const page = path.join(root, "content/pages", f.replace(/\.json$/, ".html"));
+      if (!fs.existsSync(page)) continue;
+      let html = fs.readFileSync(page, "utf8");
+      let data;
+      try {
+        data = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
+      } catch {
+        console.warn("rewrites: invalid JSON in", f);
+        continue;
+      }
+      let changed = false;
+      for (const b of data.blocks || []) {
+        if (!b.orig || !b.html || b.orig === b.html) continue;
+        // Rules added after the paraphrases were made apply to both sides, so they keep matching.
+        b.orig = rebrandText(b.orig);
+        b.html = rebrandText(b.html);
+        if (tagsOf(b.orig) !== tagsOf(b.html) || !html.includes(b.orig)) {
+          skipped++;
+          continue;
+        }
+        html = html.replace(b.orig, () => b.html);
+        applied++;
+        changed = true;
+      }
+      if (changed) {
+        fs.writeFileSync(page, html);
+        pages++;
+      }
+    }
+  }
+  console.log(`rewrites: ${pages} pages, ${applied} blocks applied, ${skipped} skipped`);
+
+  // Claims about the old operator's offices, sister company and size, in original or paraphrased form.
+  const P_FIX = [
+    [/<p[^>]*>(?:(?!<\/p>)[\s\S])*?(?:Through our|Our) sister company,? <strong[^>]*>our partners in East Africa<\/strong>[\s\S]*?<\/p>\s*/g, ""],
+    [/<p>[^<]*two offices[^<]*(?:headquarters|head office)[^<]*<\/p>/gi, `<p>${BRAND} is based in Nagele, the Netherlands; our local partner ${P.name} works from ${P.city}, close to the northern parks and Kilimanjaro.</p>`],
+    [/<p>(?:Our|Through our) sister company,? (?:<strong[^>]*>)?our partners in East Africa(?:<\/strong>)?,? (?:also )?has offices in Nairobi \(Kenya\) and Kampala \(Uganda\)\.<\/p>\s*/gi, ""],
+    [/<p>[^<]*having our headquarters in Europe[^<]*<\/p>/gi, `<p>Planning with us in the Netherlands and travelling with ${P.name} on the ground gives you one clear contact before departure and an experienced crew in Tanzania.</p>`],
+    [/<p>[^<]*headquarters in Europe[^<]*<\/p>/gi, `<p>Planning with us in the Netherlands and travelling with ${P.name} on the ground gives you one clear contact before departure and an experienced crew in Tanzania.</p>`],
+    [/(?:Our headquarters are right here on the ground in Tanzania|We are based right here in Tanzania)\./g, `Our partner ${P.name} is based right here in Tanzania.`],
+    [/\s*(?:With|Together with) its sister company,? our partners in East Africa,? it(?:’|'|&#8217;)?s? (?:is )?<strong>one of the leading safari companies in East Africa<\/strong>\./g, ` Every trip is run on the ground by our partner <strong>${P.name}</strong> in ${P.city}.`],
+    [/<p[^>]*>(?:Through our|Our) sister company,? <strong[^>]*>our partners in East Africa<\/strong>,?[\s\S]*?<\/p>\s*/g, ""],
+    [/<p>[^<]*sister company,? our partners in East Africa[^<]*<\/p>\s*/g, ""],
+    [/\s*Our sister company,? (?:<strong[^>]*>)?our partners in East Africa(?:<\/strong>)?,?[^.]*\./g, ""],
+    [/Swahili for (?:“|")long rush(?:”|")/g, "Swahili for “slowly, slowly”"],
+    [/\bHarabi\b/g, "Habari"],
+  ];
+  let fixed = 0;
+  for (const f of fs.readdirSync(path.join(root, "content/pages"))) {
+    const p = path.join(root, "content/pages", f);
+    const before = fs.readFileSync(p, "utf8");
+    let after = before;
+    for (const [re, to] of P_FIX) after = after.replace(re, to);
+    if (after !== before) { fs.writeFileSync(p, after); fixed++; }
+  }
+  console.log(`old-company claims fixed on ${fixed} pages`);
+}
 
 // 2b. Practical-information fragments (public/ajax/fetch_post_content/<id>.html) are the article body of the
 // page with that id; regenerate them from the rebranded pages so tabs and pages never drift apart.
@@ -865,6 +942,24 @@ processFile(path.join(root, "src/partials/footer.html"), (s) => {
   s = s.replace(/href="https:\/\/yourtanzaniatrip\.com">\s*<span class="sr-only">/, 'href="/">\n <span class="sr-only">');
   return s;
 });
+
+// 6b. Site search index (public/search-index.json) for public/assets/js/site-search.js,
+// replacing the old operator's Algolia index.
+{
+  const pages = JSON.parse(fs.readFileSync(path.join(root, "content/pages.json"), "utf8"));
+  const skip = /^\/(wishlist|travel-proposal|travel-quiz|newsletter|processing-your-payment|privacy-policy|terms-conditions|review-your-opinion-matters|sustainability-policy)\//;
+  const kind = (p) => {
+    const seg = p.split("/")[1] || "";
+    if (p.includes("/request-this-trip/")) return null;
+    if (/\/(itinerary|prices|accommodations|activities|practical-information|diamond-luxury|family-tours|honeymoon)\/$/.test(p) && seg === "itineraries") return null;
+    return { itineraries: "Trip", accommodation: "Accommodation", activity: "Activity", blog: "Blog", "national-parks": "Destination", islands: "Island", "practical-information": "Practical information", faqs: "FAQ" }[seg] || "Page";
+  };
+  const index = pages
+    .filter((p) => !skip.test(p.path) && kind(p.path))
+    .map((p) => ({ u: p.path, t: (p.title || "").replace(/\s*[|l·-]\s*Your Tanzania Trip\s*$/i, "").trim(), d: (p.description || "").slice(0, 160), k: kind(p.path) }));
+  fs.writeFileSync(path.join(root, "public/search-index.json"), JSON.stringify(index));
+  console.log(`search index: ${index.length} entries`);
+}
 
 // 7. Layout text (og:site_name etc.)
 processFile(path.join(root, "src/layouts/BaseLayout.astro"));

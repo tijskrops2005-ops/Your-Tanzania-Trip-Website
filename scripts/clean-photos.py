@@ -45,6 +45,13 @@ REPLACE = {
     "2023/11/IMG_9772-800x500-1.webp": f"{BRAND}/crew-summit.webp",
     "2022/08/Are-Tanzanians-Friendly-A-Tourist-Guide-1.jpg": f"{BRAND}/crew-summit.webp",
     "2026/01/CI_AS_Client-having-a-view-from-AST-jeep-scaled.jpg": f"{UP}/2025/10/IM_TZ_TAR_Guests-and-guide-in-jeep-scaled.jpg",
+    # spare-wheel covers / bottle with the old logo: too large to paint out, replaced (scan 2026-10-28)
+    "2023/07/Jeep-lion-2.jpg": f"{BRAND}/safari-lions.webp",
+    "2023/10/Tanzania-Specialist-safari-vehicule-1.jpg": f"{UP}/2023/07/Elephants-jeep-Tarangire-scaled.jpg",
+    "2025/09/CI_AS_Client-having-a-view-from-AST-jeep.jpg": f"{BRAND}/safari.webp",
+    "2026/01/CI_TS_Serengeti_Robbin-and-Mathanje-11-scaled.jpg": f"{UP}/2024/06/Safari-Jeep-lion.jpg",
+    "2023/11/chair-and-TS-bottle.jpg": f"{BRAND}/crew-summit.webp",
+    "2023/11/chair-and-TS-bottle-1.jpg": f"{BRAND}/kilimanjaro-dawn.webp",
 }
 
 # (file, box as fractions of width/height) -> the logo patch is filled with blurred surroundings

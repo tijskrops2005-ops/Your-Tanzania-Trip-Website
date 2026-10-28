@@ -1,0 +1,30 @@
+{
+ "slug": "vehicles__tanzania",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "<span style=\"font-weight: 400\">As Your Tanzania Trip, we have our own safari jeeps: a 4&#215;4 Toyota Land Cruiser. We have both 5-seater and 7-seater safari jeeps that prioritize safety and comfort, offering you a smooth and private safari experience. Every jeep is equipped with a pop-up roof and big extended windows (bigger than usual) for the best viewing experience.</span>",
+   "html": "<span style=\"font-weight: 400\">At Your Tanzania Trip we run our own safari jeeps, all of them 4&#215;4 Toyota Land Cruisers. You can travel in a 5-seater or a 7-seater, and both are set up with safety and comfort first, so your safari runs smoothly and privately. Each jeep has a pop-up roof plus extra-large extended windows (bigger than you normally find), giving you the clearest possible view.</span>"
+  },
+  {
+   "id": 2,
+   "orig": "<span style=\"font-weight: 400\">The comfortable seats have a headrest, armrest, and seatbelts and each seat is a window seat. In the vehicle, you have charging ports for your devices and a refrigerator to cool your drinks. There is also a good boot space at the back for your luggage.</span>",
+   "html": "<span style=\"font-weight: 400\">Every seat is a window seat and comes with a headrest, an armrest and a seatbelt, so you sit comfortably. Inside you will find charging ports for your devices and a fridge that keeps your drinks cold. At the back there is plenty of boot space for your bags.</span>"
+  },
+  {
+   "id": 3,
+   "orig": "<span style=\"font-weight: 400\">When you start your safari, the jeep will be completely clean. To keep it clean at all times, we put a non-smoking sticker in the car and one indicating not to put shoes on the seats. A trash bin is also provided, especially since throwing your trash out of the car is not allowed. </span>",
+   "html": "<span style=\"font-weight: 400\">Your jeep is fully cleaned before your safari begins. To help it stay that way, we place a no-smoking sticker inside, along with one asking you not to rest your shoes on the seats. You also get a rubbish bin, not least because throwing litter out of the car is forbidden. </span>"
+  },
+  {
+   "id": 4,
+   "orig": "<span style=\"font-weight: 400\">To perfect your experience further, our professional driver guides have great driving skills and are equipped with the best communication tools. This allows them to be in touch with fellow guides and the office at all times. So fasten your seatbelts, sit back and enjoy your safari in Tanzania!</span>",
+   "html": "<span style=\"font-weight: 400\">Our professional driver guides round off the experience: they are skilled behind the wheel and carry the best communication equipment. That way they can reach other guides and our office whenever needed. So buckle up, lean back and enjoy your Tanzania safari!</span>"
+  },
+  {
+   "id": 5,
+   "orig": "<b>Please note!</b><span style=\"font-weight: 400\"> Safari jeeps are not equipped with AC. But the large windows and open roof usually keep the car cool enough. Also, WiFi is not included. But if you want to be online while on the road, we can arrange it for the duration of your safari for a small surcharge. </span>",
+   "html": "<b>Please note!</b><span style=\"font-weight: 400\"> There is no AC in the safari jeeps. Even so, the open roof and the large windows normally keep the inside cool enough. WiFi is not included either. If you would like to stay online on the road, we can set it up for the length of your safari at a small extra cost. </span>"
+  }
+ ]
+}

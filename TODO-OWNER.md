@@ -21,10 +21,21 @@ Status: 2026-10-27. Everything the site needs is filled in; there are no placeho
 - Photos and videos: every hero image on the site was checked. Photos showing the old logo on jeeps, or the old team, were replaced in place by logo-free photos (`scripts/clean-photos.py`, originals in `.cache/photos-original/`). The six hero videos of the old operator were replaced by our own 20-second slow-pan loop made from the partner's photos (`public/brand/video/safari-loop.mp4`). The Kilimanjaro Nature Tours YouTube clip is embedded on `/our-partner/`. If you ever shoot your own footage, drop the file in `public/brand/video/` and tell me.
 - Kept as products: Hakuna Matata Package / Academy.
 
+## Done on 2026-10-28
+
+- **Unique texts:** all 162 informative pages (80 blogs, 32 destinations, islands, practical information, FAQs, theme pages) were paraphrased block by block: same facts, structure and links, new wording. Source: `content/rewrites/<slug>.json`, applied by `scripts/rebrand.mjs`. A few source typos were corrected on the way ("pole pole" = "slowly, slowly", "Habari").
+- **Old logo in images:** every image on the site (2,553) was scanned with Apple Vision text recognition. Route maps, the migration map and infographics now carry the Your Tanzania Trip logo; small stickers on jeep doors were painted out; photos with large logos (spare-wheel covers, a branded bottle) were swapped for logo-free photos; the Hakuna Matata cards and the "Four reasons" flyer were re-rendered with true text.
+- **Removed:** Instagram "social feed" blocks, the old operator's park videos, Drive links, the "Africa Safari App" page, insurance affiliate codes, the sister-company and two-offices claims.
+- **Fixed:** site search (now our own index instead of the old Algolia one), sorting on trip overviews (price and duration), partner block (larger text, portrait fully visible).
+
+Worth a look when you have time: the pages still describe the Hakuna Matata payment terms of the old site ("pay 25% when more than 120 days away"); adjust if your terms differ.
+
 ## Technical
 
 - Build and view: `npx astro build`, then `node serve.mjs` → http://localhost:3000.
 - Rebrand after changing tokens or rules: `npm run rebrand` (= extract → `scripts/rebrand.mjs` → `scripts/brand-theme.mjs`), then build. Publish: `git add -A && git commit && git push` (Vercel deploys `main`).
+- Images (only needed again after a fresh `npm run sync`): `npm run images` (= `scripts/clean-photos.py` → `scripts/debrand.py` → `scripts/render-cards.mjs`; macOS, uses Apple Vision via `scripts/ocr-boxes.js`). Untouched originals are in `.cache/photos-original/`.
+- New paraphrases: `node scripts/rewrite-extract.mjs` lists the text blocks per page in `.cache/rewrite-src/`; rewritten blocks go in `content/rewrites/<slug>.json`.
 - Colours and fonts: `scripts/brand-theme.mjs` (from `.cache/theme-original/`) plus `src/styles/brand.css`. Content, header, footer, partner pages, image swaps and removals: `scripts/rebrand.mjs`. Forms: `public/assets/js/forms.js`. Practical-information tabs are regenerated from the pages (`public/ajax/fetch_post_content/`).
 - Compare with the example site: `node scripts/compare.mjs / /blog/ …` → `temporary screenshots/compare/`.
 - Known, pre-existing broken links from the source site (12 missing uploads / old park URLs): `node scripts/check-links.mjs`.

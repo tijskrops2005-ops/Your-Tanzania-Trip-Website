@@ -12,7 +12,8 @@
     "sync": "node scripts/crawl.mjs && node scripts/discover.mjs && node scripts/extract.mjs && node scripts/download-assets.mjs .cache/assets-needed.txt && node scripts/facets.mjs && node scripts/download-assets.mjs .cache/facet-assets.txt && node scripts/ajax-cache.mjs && node scripts/download-assets.mjs .cache/ajax-assets.txt && node scripts/patch-theme.mjs && node scripts/rebrand.mjs && node scripts/brand-theme.mjs",
     "compare": "node scripts/compare.mjs",
     "check-links": "node scripts/check-links.mjs",
-    "rebrand": "node scripts/extract.mjs && node scripts/rebrand.mjs && node scripts/brand-theme.mjs"
+    "rebrand": "node scripts/extract.mjs && node scripts/rebrand.mjs && node scripts/brand-theme.mjs",
+    "images": "python3 scripts/clean-photos.py && python3 scripts/debrand.py && node scripts/render-cards.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",

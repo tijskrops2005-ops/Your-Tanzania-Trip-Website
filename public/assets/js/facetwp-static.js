@@ -36,7 +36,27 @@
       selected[name] = (Array.isArray(v) ? v : v ? [v] : []).filter(Boolean);
     }
     const sortName = data.sortFacets.find(n => (post.facets[n] || [])[0]);
-    const order = data.order[sortName ? post.facets[sortName][0] : ''] || data.order[''];
+    const sortKey = sortName ? post.facets[sortName][0] : '';
+    // The pre-computed sort orders were captured unsorted, so sort here from the card itself:
+    // price = the "From $x" amount, duration = the first "N days" in the title.
+    const num = s => (s ? Number(s.replace(/[^\d]/g, '')) : NaN);
+    const price = key => num(((data.items[key] || '').match(/\$\s?([\d.,]+)/) || [])[1]);
+    const days = key => {
+      const title = ((data.items[key] || '').match(/<h3[^>]*>([\s\S]*?)<\/h3>/) || [, data.items[key] || ''])[1];
+      return num((title.match(/(\d+)\s*-?\s*days?/i) || [])[1]);
+    };
+    let order = data.order[''];
+    const metric = /price/.test(sortKey) ? price : /days/.test(sortKey) ? days : null;
+    if (metric) {
+      const desc = /high_to_low/.test(sortKey);
+      order = [...order].sort((a, b) => {
+        const va = metric(a), vb = metric(b);
+        if (isNaN(va) && isNaN(vb)) return 0;
+        if (isNaN(va)) return 1;
+        if (isNaN(vb)) return -1;
+        return desc ? vb - va : va - vb;
+      });
+    }
 
     // Within one filter the choices are OR'ed, across filters AND'ed (FacetWP checkbox default).
     const sets = {};

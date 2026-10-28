@@ -1,0 +1,70 @@
+{
+  "slug": "practical-information__easy-payments",
+  "blocks": [
+    {
+      "id": 1,
+      "orig": "Paying for your safari &#8211; it’s as easy as 1 &#8211; 2 &#8211; 3!",
+      "html": "Settling your safari bill &#8211; as simple as 1 &#8211; 2 &#8211; 3!"
+    },
+    {
+      "id": 2,
+      "orig": "When booking a safari, you want to focus on the joys of that experience. But before you can do that, you of course need to pay for your beautiful holiday plans. As Your Tanzania Trip, we’ve tried to make the payment process as smooth as possible. How? Read on to find out!",
+      "html": "Once you book a safari, you want to concentrate on looking forward to it. Before that, of course, your wonderful holiday plans need to be paid for. At Your Tanzania Trip we have done our best to make paying as straightforward as possible. How exactly? Keep reading!"
+    },
+    {
+      "id": 3,
+      "orig": "Since we have clients from different countries, we need to be as flexible as possible. That’s why we have a bank account in the Netherlands for bank transfers, but we also accept credit/ American Express/ debit card payments (<span style=\"font-weight: 400\">via </span><span style=\"font-weight: 400\">iDeal, Bancontact, EPS, Giropay and Sofort, but not Paypal)</span>.",
+      "html": "Our clients come from many different countries, so we have to stay as flexible as we can. For that reason we hold a bank account in the Netherlands for bank transfers, and we also take credit/ American Express/ debit card payments (<span style=\"font-weight: 400\">through </span><span style=\"font-weight: 400\">iDeal, Bancontact, EPS, Giropay and Sofort, though not Paypal)</span>."
+    },
+    {
+      "id": 4,
+      "orig": "Some people feel bank transfers are easier, whereas others prefer (credit) card payments for international transfers. In the end, it’s up to you.",
+      "html": "For some people a bank transfer is the easier option, while others would rather use a (credit) card for international payments. The choice is entirely yours."
+    },
+    {
+      "id": 5,
+      "orig": "Bank transfers are common in some countries, and uncommon in others, but we receive bank transfers from all over the world. As long as you have the details needed for a (international) transfer, it’s pretty straightforward and can usually be done online or in your banking app.",
+      "html": "In some countries bank transfers are the norm and in others they are rare, yet we receive them from every corner of the world. Provided you have the details required for an (international) transfer, the process is fairly simple and can normally be completed online or in your banking app."
+    },
+    {
+      "id": 6,
+      "orig": "When doing an international transfer, you need two important things: the IBAN of the receiving party, which is their bank account number written in the international standard. The second thing is the BIC/SWIFT code, which is the international code for your bank.",
+      "html": "Two things are essential for an international transfer. The first is the recipient’s IBAN, their bank account number in the international format. The second is the BIC/SWIFT code, the international identifier of your bank."
+    },
+    {
+      "id": 7,
+      "orig": "When paying for your safari in Tanzania, you need the bank details listed below:",
+      "html": "To pay for your safari in Tanzania, use the bank details below:"
+    },
+    {
+      "id": 8,
+      "orig": "<strong>Account holder’s name:</strong> Your Tanzania Trip",
+      "html": "<strong>Name of the account holder:</strong> Your Tanzania Trip"
+    },
+    {
+      "id": 9,
+      "orig": "<strong>International bank account number:</strong> NL74 KNAB 0776 8630 37",
+      "html": "<strong>IBAN (international bank account number):</strong> NL74 KNAB 0776 8630 37"
+    },
+    {
+      "id": 10,
+      "orig": "Paying by (credit) card is fairly simple, as you just use the payment link you receive with our invoice. It is good to keep in mind that we prefer you pay in euros and that all credit, debit, American Express and other direct card payments are charged a 2% fee for service costs.*",
+      "html": "Paying with a (credit) card is quite easy: you simply use the payment link that comes with our invoice. Please bear in mind that we prefer payment in euros, and that a 2% service fee applies to all credit, debit, American Express and other direct card payments.*"
+    },
+    {
+      "id": 11,
+      "orig": "In some cases, address details are needed for payments. Please find the address of our office and bank below:",
+      "html": "Occasionally a payment requires address details. You will find the addresses of our office and our bank below:"
+    },
+    {
+      "id": 12,
+      "orig": "<strong>What do others say about Your Tanzania Trip</strong>",
+      "html": "<strong>What others say about Your Tanzania Trip</strong>"
+    },
+    {
+      "id": 13,
+      "orig": "* In some countries, these charges are against the (national) law. Unfortunately, we cannot make exceptions and have to charge the 2% fee for ALL card payments.",
+      "html": "* In certain countries such charges are not permitted under (national) law. Unfortunately we are unable to make exceptions, and the 2% fee applies to ALL card payments."
+    }
+  ]
+}

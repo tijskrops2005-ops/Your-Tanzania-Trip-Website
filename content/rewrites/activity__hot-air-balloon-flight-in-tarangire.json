@@ -1,0 +1,25 @@
+{
+  "slug": "activity__hot-air-balloon-flight-in-tarangire",
+  "blocks": [
+    {
+      "id": 1,
+      "orig": "This 45-minute to an-hour hot air balloon flight gives you panoramic views of Tarangire National Park while drifting peacefully through the air. At the crack of dawn, you rise up into mid-air, soaring high enough for breathtaking views of the sunrise and the Tarangire River and low enough to watch the baobabs, elephants, lions and other animals in their natural habitat. Watching Africa&#8217;s wilderness from a bird’s eye view in the quiet stillness of a hot air balloon is an unmatched experience.",
+      "html": "Drifting quietly above Tarangire National Park, this hot air balloon flight of 45 minutes to an hour offers you sweeping panoramic views of the park. You lift off at first light, climbing high enough to take in the sunrise and the Tarangire River, yet staying low enough to see the baobabs, elephants, lions and other wildlife in their natural surroundings. Looking down on Africa&#8217;s wilderness from a bird’s eye view, in the calm silence of a balloon, is an experience nothing else quite matches."
+    },
+    {
+      "id": 2,
+      "orig": "Total duration: 3-4 hours (incl. pickup, flight, bush breakfast and drop off)",
+      "html": "Total time: 3-4 hours (covering pickup, the flight, a bush breakfast and drop off)"
+    },
+    {
+      "id": 3,
+      "orig": "Clothes: preferably warmer clothes for the early morning",
+      "html": "What to wear: ideally warmer clothing, as it is early in the morning"
+    },
+    {
+      "id": 4,
+      "orig": "Weight limit: typically 120 kg per person; extra seat may be required if exceeded",
+      "html": "Weight limit: usually 120 kg per person; above that, an extra seat may be needed"
+    }
+  ]
+}

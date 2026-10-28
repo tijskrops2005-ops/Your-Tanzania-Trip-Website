@@ -1,0 +1,255 @@
+{
+ "slug": "blog__language-in-tanzania",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "<span style=\"font-weight: 400\">Just as diverse as the Tanzanian landscape – we only say mountains, savannahs, jungles, crater, lakes, crater lakes – are the people calling this East African gem their home. The country is</span><span style=\"font-weight: 400\"> inhabited by over <a href=\"/blog/tribes-in-tanzania/\">100 ethnic groups</a>, who of course all have their own language. W</span><span style=\"font-weight: 400\">ith more than 120 languages and dialects, Tanzania has more than any other African country, creating an unparalleled cultural depth.</span>",
+   "html": "<span style=\"font-weight: 400\">The people who live in this East African gem are every bit as varied as its landscape – think mountains, savannahs, jungles, crater, lakes and crater lakes. More than</span><span style=\"font-weight: 400\"> <a href=\"/blog/tribes-in-tanzania/\">100 ethnic groups</a> make the country their home, and naturally each has a language of its own. </span><span style=\"font-weight: 400\">Counting over 120 languages and dialects, Tanzania has more than any other country in Africa, which gives it a cultural depth without equal.</span>"
+  },
+  {
+   "id": 2,
+   "orig": "Even without this information, you might have wondered whether your English <span style=\"font-weight: 400\">will see you through</span><span style=\"font-weight: 400\"> when travelling to Tanzania, right? Spoiler alert: you’ll be fine! Nevertheless, we’ll have a look at the main languages spoken in Tanzania and even provide you with some basic Swahili skills. The more you know…</span>",
+   "html": "Even before reading this, you may have asked yourself whether your English <span style=\"font-weight: 400\">will be enough</span><span style=\"font-weight: 400\"> on a trip to Tanzania, haven’t you? Spoiler: it will! Still, let’s look at the main languages spoken in Tanzania, and we will even give you a few basic Swahili skills. The more you know…</span>"
+  },
+  {
+   "id": 3,
+   "orig": "<b>How many languages are there in Tanzania?</b>",
+   "html": "<b>How many languages does Tanzania have?</b>"
+  },
+  {
+   "id": 4,
+   "orig": "<span style=\"font-weight: 400\">A total of 126 languages are spoken in Tanzania, with Swahili and English being the two official ones. On top of these, there are approximately 18 developing, 58 vigorous, 40 endangered, and 8 dying languages.</span>",
+   "html": "<span style=\"font-weight: 400\">Altogether, 126 languages are spoken in Tanzania, two of which – Swahili and English – are official. Besides these, there are roughly 18 developing, 58 vigorous, 40 endangered and 8 dying languages.</span>"
+  },
+  {
+   "id": 5,
+   "orig": "<b>What is the most spoken language in Tanzania?</b>",
+   "html": "<b>Which language is spoken most in Tanzania?</b>"
+  },
+  {
+   "id": 6,
+   "orig": "<span style=\"font-weight: 400\">Spoken by approximately 90% of the Tanzanian population, that would be Swahili. It’s also called Kiswahili by Tanzanians, and it is the primary social, political, and educational language. </span>",
+   "html": "<span style=\"font-weight: 400\">That is Swahili, spoken by about 90% of the people of Tanzania. Tanzanians also call it Kiswahili, and it is the main language of social life, politics and education. </span>"
+  },
+  {
+   "id": 7,
+   "orig": "<span style=\"font-weight: 400\">The second institutional language is English. It has, however, </span><span style=\"font-weight: 400\">been used as a second or third language and is taught in school</span><span style=\"font-weight: 400\">s. T</span><span style=\"font-weight: 400\">he level isn’t the best</span><span style=\"font-weight: 400\">, though, </span><span style=\"font-weight: 400\">so people might be able to read the language but might have a harder time understanding it.</span>",
+   "html": "<span style=\"font-weight: 400\">English is the second institutional language. Even so, </span><span style=\"font-weight: 400\">it has served as a second or third language and is taught in school</span><span style=\"font-weight: 400\">s. </span><span style=\"font-weight: 400\">The standard is not very high</span><span style=\"font-weight: 400\">, however, </span><span style=\"font-weight: 400\">so people may be able to read English yet find it harder to understand when spoken.</span>"
+  },
+  {
+   "id": 8,
+   "orig": "<span style=\"font-weight: 400\">I</span><span style=\"font-weight: 400\">t’s generally accepted that the language developed as a result of trade between the coast people of East Africa and the Arabs, and that its core originates in Bantu languages. Around the 19th century, many Tanzanians and Kenyans started identifying as Swahili. After the country’s independence, Swahili became Tanzania’s national language to unify the new nation. </span>",
+   "html": "<span style=\"font-weight: 400\">T</span><span style=\"font-weight: 400\">he common view is that the language grew out of trade between the Arabs and the coastal peoples of East Africa, with a core rooted in Bantu languages. From around the 19th century, many Kenyans and Tanzanians began to identify as Swahili. Once the country was independent, Swahili was made Tanzania’s national language to bring the new nation together. </span>"
+  },
+  {
+   "id": 9,
+   "orig": "As of today, Swahili is the primary language used in Tanzania and the government keeps advocating it becoming the one and only official Tanzanian language. <span style=\"font-weight: 400\">Swahili has recently become the primary language used throughout the educational system. This decision made Tanzania the first sub-Saharan country to introduce a native African language as the only official language of education.</span>",
+   "html": "Swahili is now the main language in Tanzania, and the government continues to push for it to be the sole official Tanzanian language. <span style=\"font-weight: 400\">Recently Swahili also became the main language throughout the education system. With this decision, Tanzania became the first sub-Saharan country to make a native African language the only official language of education.</span>"
+  },
+  {
+   "id": 10,
+   "orig": "<span style=\"font-weight: 400\">English was the dominant language in Tanzania during the British colonial period from 1919 to 1961. After Tanganyika and Zanzibar became the independent United Republic of Tanzania, however, it was dethroned by Swahili.</span>",
+   "html": "<span style=\"font-weight: 400\">During the British colonial period, from 1919 to 1961, English was Tanzania’s dominant language. Once Tanganyika and Zanzibar had become the independent United Republic of Tanzania, though, Swahili took its place.</span>"
+  },
+  {
+   "id": 11,
+   "orig": "<span style=\"font-weight: 400\">For a long time, English remained the primary language of secondary and higher education. As just mentioned, this is no longer the case, with Swahili now being the language used across the educational system.</span>",
+   "html": "<span style=\"font-weight: 400\">English long stayed the main language of secondary and higher education. As mentioned above, that has changed, and Swahili is now used throughout the education system.</span>"
+  },
+  {
+   "id": 12,
+   "orig": "<span style=\"font-weight: 400\">Still, English remains relatively popular, and you’re sure to encounter numerous English speakers on your Tanzanian adventures, especially in major cities and tourist areas.</span>",
+   "html": "<span style=\"font-weight: 400\">Even so, English is still fairly popular, and on your travels in Tanzania you will certainly meet plenty of people who speak it, above all in the larger cities and tourist areas.</span>"
+  },
+  {
+   "id": 13,
+   "orig": "<b>Other widely spoken language in Tanzania</b>",
+   "html": "<b>Other languages widely spoken in Tanzania</b>"
+  },
+  {
+   "id": 14,
+   "orig": "<span style=\"font-weight: 400\">Now </span><span style=\"font-weight: 400\">that </span><span style=\"font-weight: 400\">we’ve given you an overview of the </span><span style=\"font-weight: 400\">official languages of Tanzania</span><span style=\"font-weight: 400\">, it’s time to look at some lesser-know</span><span style=\"font-weight: 400\">n yet still widely spoken languages of</span><span style=\"font-weight: 400\"> Tanzania. </span>",
+   "html": "<span style=\"font-weight: 400\">With </span><span style=\"font-weight: 400\">this </span><span style=\"font-weight: 400\">overview of the </span><span style=\"font-weight: 400\">official languages of Tanzania</span><span style=\"font-weight: 400\"> behind us, let’s turn to a few less well-know</span><span style=\"font-weight: 400\">n but still widely spoken languages in</span><span style=\"font-weight: 400\"> Tanzania. </span>"
+  },
+  {
+   "id": 15,
+   "orig": "<span style=\"font-weight: 400\">These are the ethnic languages used</span><span style=\"font-weight: 400\"> in more spread-out communities and people</span><span style=\"font-weight: 400\">s. However, while they may not be as widely spoken or even recognized as official languages by the Tanzanian government, </span><span style=\"font-weight: 400\">these languages are just as important to the cultural landscape as any other.</span>",
+   "html": "<span style=\"font-weight: 400\">These are ethnic languages spoken</span><span style=\"font-weight: 400\"> by more scattered communities and people</span><span style=\"font-weight: 400\">s. They may be less widely spoken, and the Tanzanian government may not recognise them as official languages, yet </span><span style=\"font-weight: 400\">they matter to the cultural landscape just as much as any other.</span>"
+  },
+  {
+   "id": 16,
+   "orig": "<span style=\"font-weight: 400\">So, what other native Tanzania languages can you encounter when travelling through this marvellous country?</span>",
+   "html": "<span style=\"font-weight: 400\">Which other native Tanzania languages might you come across, then, as you travel through this marvellous country?</span>"
+  },
+  {
+   "id": 17,
+   "orig": "<b>Kisankasa</b><span style=\"font-weight: 400\"> is a good example of how diverse and rich the country’s linguistics is, as it’s a Bantu language that is still in wide use. The language is spoken by about half of the Kisi people who are from the Njombe region. </span>",
+   "html": "<b>Kisankasa</b><span style=\"font-weight: 400\"> shows well how rich and varied the country’s linguistics are: it is a Bantu language that is still widely used. Roughly half of the Kisi people, who come from the Njombe region, speak it. </span>"
+  },
+  {
+   "id": 18,
+   "orig": "<b>Pare</b><span style=\"font-weight: 400\"> is also a Bantu language group spoken by the Pare people in the northeast of Tanzania and also known as Chasu, Athu, and Chathu. About 500,000 people communicate in Pare, making it being used more than other dialects and some indigenous languages.</span>",
+   "html": "<b>Pare</b><span style=\"font-weight: 400\">, also called Chasu, Athu and Chathu, is another Bantu language group, spoken by the Pare people in north-east Tanzania. Around 500,000 people use Pare to communicate, so it is used more than other dialects and some indigenous languages.</span>"
+  },
+  {
+   "id": 19,
+   "orig": "<b>Bemba</b><span style=\"font-weight: 400\"> is spoken in the southern part of Tanzania, but also in the Democratic Republic of the </span><span style=\"font-weight: 400\">C</span><span style=\"font-weight: 400\">ongo and Zambia. It’s a common or bridge language used by most of the country’s indigenous people and also known as Chibemba, Cibemba, and Ichibemba, just to name a few variations. </span>",
+   "html": "<b>Bemba</b><span style=\"font-weight: 400\"> is spoken in southern Tanzania, as well as in the Democratic Republic of the </span><span style=\"font-weight: 400\">C</span><span style=\"font-weight: 400\">ongo and Zambia. Most of the country’s indigenous people use it as a common or bridge language, and it goes by names such as Chibemba, Cibemba and Ichibemba, to mention just a few variations. </span>"
+  },
+  {
+   "id": 20,
+   "orig": "<b>Hehe</b><span style=\"font-weight: 400\"> has a complex tense-aspect-mood system that is native to the Iringa region, which you can find south of the great Ruaha </span><span style=\"font-weight: 400\">R</span><span style=\"font-weight: 400\">iver. </span><span style=\"font-weight: 400\">The</span><span style=\"font-weight: 400\"> language is spoken by fewer than 200,000 people and has lost some of its distinct features over the last 150 years or so.</span>",
+   "html": "<b>Hehe</b><span style=\"font-weight: 400\">, native to the Iringa region, which lies south of the great Ruaha </span><span style=\"font-weight: 400\">R</span><span style=\"font-weight: 400\">iver, has a complex tense-aspect-mood system. </span><span style=\"font-weight: 400\">Fewer than 200,000 people speak the</span><span style=\"font-weight: 400\"> language, and over roughly the last 150 years it has lost some of its distinctive features.</span>"
+  },
+  {
+   "id": 21,
+   "orig": "<span style=\"font-weight: 400\">Other popular indigenous languages include Maasai, Digo, Datooga, and Chindali. </span><span style=\"font-weight: 400\">We know Tanzania in and out (the name Your Tanzania Trip didn’t come out of nowhere), and we’re still discovering the dialects and indigenous sub-languages spoken by different tribes. Exploring just never gets boring 😉</span>",
+   "html": "<span style=\"font-weight: 400\">Maasai, Digo, Datooga and Chindali are among the other popular indigenous languages. </span><span style=\"font-weight: 400\">We know Tanzania inside out (the name Your Tanzania Trip did not appear out of thin air), and still we keep discovering the dialects and indigenous sub-languages of different tribes. Exploring simply never gets dull 😉</span>"
+  },
+  {
+   "id": 22,
+   "orig": "<span style=\"font-weight: 400\">It’s natural for languages to slowly fade and eventually die. That’s especially true for countries with diverse linguistic landscapes, like Tanzania.</span>",
+   "html": "<span style=\"font-weight: 400\">Languages fading slowly and finally dying out is a natural process, all the more so in countries with a varied linguistic landscape such as Tanzania.</span>"
+  },
+  {
+   "id": 23,
+   "orig": "<span style=\"font-weight: 400\">One of these languages in Tanzania is A</span><span style=\"font-weight: 400\">sa from the </span><span style=\"font-weight: 400\">Asa people in the northern region of Tanzania. However, today it isn’t spoken by anyone natively. </span><span style=\"font-weight: 400\">Some forms of words might still have some meaning to specific communities, but some ar</span><span style=\"font-weight: 400\">e di</span><span style=\"font-weight: 400\">stant memory of an older generation. </span>",
+   "html": "<span style=\"font-weight: 400\">In Tanzania, one such language is A</span><span style=\"font-weight: 400\">sa, from the </span><span style=\"font-weight: 400\">Asa people of the country’s northern region. Nobody speaks it natively any more, though. </span><span style=\"font-weight: 400\">Certain word forms may still mean something to particular communities, while others ar</span><span style=\"font-weight: 400\">e a fa</span><span style=\"font-weight: 400\">ding memory of an older generation. </span>"
+  },
+  {
+   "id": 24,
+   "orig": "<span style=\"font-weight: 400\">To be honest: it can be difficult to track each of the approximately </span><span style=\"font-weight: 400\">126 </span><span style=\"font-weight: 400\">native languages in Tanzania. </span><span style=\"font-weight: 400\">As easy as some are to identify, political decisions play a big role in what languages they want to promote and integrate within their communities.</span>",
+   "html": "<span style=\"font-weight: 400\">Honestly, keeping track of all of the roughly </span><span style=\"font-weight: 400\">126 </span><span style=\"font-weight: 400\">native languages in Tanzania is not easy. </span><span style=\"font-weight: 400\">Some may be simple to identify, but political decisions have a large influence on which languages are promoted and integrated within communities.</span>"
+  },
+  {
+   "id": 25,
+   "orig": "<span style=\"font-weight: 400\">For instance, many blame the Tanzanian government for the ongoing extinction of indigenous languages. Political actions like the wide scale promotion of Swahili and banning ethnic dialects and languages from schools or television make preserving these sub-languages mighty difficult.</span>",
+   "html": "<span style=\"font-weight: 400\">Many people, for example, hold the Tanzanian government responsible for the continuing extinction of indigenous languages. Policies such as promoting Swahili on a wide scale and banning ethnic languages and dialects from television or schools make it very hard to preserve these sub-languages.</span>"
+  },
+  {
+   "id": 26,
+   "orig": "<span style=\"font-weight: 400\">For now, though, we can still enjoy and explore the diversity of the Tanzanian linguistic landscape. For how long, we cannot tell…</span>",
+   "html": "<span style=\"font-weight: 400\">For the time being, however, the variety of Tanzania’s linguistic landscape is still there for us to enjoy and explore. How long that will last, we cannot say…</span>"
+  },
+  {
+   "id": 27,
+   "orig": "<b>Other languages in Tanzania worth mentioning</b>",
+   "html": "<b>Other languages in Tanzania that deserve a mention</b>"
+  },
+  {
+   "id": 28,
+   "orig": "<span style=\"font-weight: 400\">Some languages we don’t want to sweep under the table, are the ‘imported’ ones, such as French, German, Portuguese, Gujarati, Arabic, and Hindustani. </span>",
+   "html": "<span style=\"font-weight: 400\">We also don’t want to overlook the ‘imported’ languages, such as French, German, Portuguese, Gujarati, Arabic and Hindustani. </span>"
+  },
+  {
+   "id": 29,
+   "orig": "<span style=\"font-weight: 400\">French, for instance, is another widely spoken languages in Tanzania</span><span style=\"font-weight: 400\">. </span><span style=\"font-weight: 400\">It has </span><span style=\"font-weight: 400\">recently </span>even become part of the school curriculum, and an estimated 1.5 million people in Tanzania are proficient speakers.",
+   "html": "<span style=\"font-weight: 400\">French, for example, is one more language widely spoken in Tanzania</span><span style=\"font-weight: 400\">. </span><span style=\"font-weight: 400\">It has </span><span style=\"font-weight: 400\">lately </span>even been added to the school curriculum, and around 1.5 million people in Tanzania are thought to speak it well."
+  },
+  {
+   "id": 30,
+   "orig": "<span style=\"font-weight: 400\">If we look at the tourism industry, almost all tour operators work with guides speaking English and sometimes even </span><span style=\"font-weight: 400\">Spanish, French, Italian, German, and Japanese.</span>",
+   "html": "<span style=\"font-weight: 400\">In the tourism industry, nearly every tour operator works with English-speaking guides, and sometimes with guides who speak </span><span style=\"font-weight: 400\">Spanish, French, Italian, German and Japanese too.</span>"
+  },
+  {
+   "id": 31,
+   "orig": "<span style=\"font-weight: 400\">But if you want an authentic Tanzanian experience and communicate in less populated areas, you might want to adopt some Swahili.</span>",
+   "html": "<span style=\"font-weight: 400\">Still, if you are after an authentic Tanzanian experience and want to communicate in quieter areas, picking up some Swahili is a good idea.</span>"
+  },
+  {
+   "id": 32,
+   "orig": "<span style=\"font-weight: 400\">Learning some Swahili basics can help you bridge the gap between cultures and make your <a href=\"/tanzania-travel/\">Tanzania experience</a> much easier – plus you’ll make a lot of people smile, including yourself. So grab a pen, your vocabulary book, and jot down some of these must-knows.</span>",
+   "html": "<span style=\"font-weight: 400\">A few basic Swahili words help you bridge cultures and make your <a href=\"/tanzania-travel/\">Tanzania experience</a> a lot easier – and you will put a smile on many faces, your own included. So take a pen and your vocabulary book, and write down a few of these essentials.</span>"
+  },
+  {
+   "id": 33,
+   "orig": "<b>Hello</b><span style=\"font-weight: 400\"> – <em>Harabi</em> or <em>Mambo</em> (which is more like &#8220;What’s up&#8221; or &#8220;How are things&#8221;),</span><span style=\"font-weight: 400\"> and for people older than yourself, you can use <em>Shikamoo</em>, which you can respond with <em>Marhaba</em></span>",
+   "html": "<b>Hello</b><span style=\"font-weight: 400\"> – <em>Harabi</em> or <em>Mambo</em> (closer to &#8220;What’s up&#8221; or &#8220;How are things&#8221;),</span><span style=\"font-weight: 400\"> and with people older than you, use <em>Shikamoo</em>, to which the reply is <em>Marhaba</em></span>"
+  },
+  {
+   "id": 34,
+   "orig": "<b>Goodbye</b><span style=\"font-weight: 400\"> – <em>Kwaheri</em> or <em>kwa herini</em> if referring to more than one person</span>",
+   "html": "<b>Goodbye</b><span style=\"font-weight: 400\"> – <em>Kwaheri</em>, or <em>kwa herini</em> when speaking to more than one person</span>"
+  },
+  {
+   "id": 35,
+   "orig": "<b>Nice to meet you</b><span style=\"font-weight: 400\"> – <em>Nafurahi kukuona</em> or <em>Ninafuraha kukutana na wewe</em></span>",
+   "html": "<b>Pleased to meet you</b><span style=\"font-weight: 400\"> – <em>Nafurahi kukuona</em> or <em>Ninafuraha kukutana na wewe</em></span>"
+  },
+  {
+   "id": 36,
+   "orig": "<b>See you later</b><span style=\"font-weight: 400\"> – <em>Baadaye </em>and<em> Kwa heri</em> for a goodbye over a longer period of time, or <em>Kesho</em> if it’s in the evening, and you won’t see them until the next day</span>",
+   "html": "<b>See you later</b><span style=\"font-weight: 400\"> – <em>Baadaye </em>and<em> Kwa heri</em> when you will be apart for longer, or <em>Kesho</em> in the evening when you will not meet again until the following day</span>"
+  },
+  {
+   "id": 37,
+   "orig": "<b>All is good, or I am well</b><span style=\"font-weight: 400\"> – <em>Poa</em> as a response to <em>Mambo</em>, <em>Nzuri</em> as a response to <em>Habari</em>, or <em>Marhaba</em> if the respondent is an older person</span>",
+   "html": "<b>Everything is fine, or I am well</b><span style=\"font-weight: 400\"> – <em>Poa</em> in reply to <em>Mambo</em>, <em>Nzuri</em> in reply to <em>Habari</em>, or <em>Marhaba</em> when the person answering is older</span>"
+  },
+  {
+   "id": 38,
+   "orig": "<b>Please</b><span style=\"font-weight: 400\"> – <em>Tafadhali</em> or </span><em><span style=\"font-weight: 400\">N</span></em><span style=\"font-weight: 400\"><em>aomba</em> if you want to request something politely</span>",
+   "html": "<b>Please</b><span style=\"font-weight: 400\"> – <em>Tafadhali</em>, or </span><em><span style=\"font-weight: 400\">N</span></em><span style=\"font-weight: 400\"><em>aomba</em> to ask for something politely</span>"
+  },
+  {
+   "id": 39,
+   "orig": "<b>Excuse me</b><span style=\"font-weight: 400\"> – <em>Samahani</em> or <em>Pole</em> which also means sorry and shows empathy</span>",
+   "html": "<b>Excuse me</b><span style=\"font-weight: 400\"> – <em>Samahani</em>, or <em>Pole</em>, which also means sorry and expresses empathy</span>"
+  },
+  {
+   "id": 40,
+   "orig": "<b>Can you help me?</b><span style=\"font-weight: 400\"> – <em>Tafadhali</em> or <em>naomba msaada</em></span>",
+   "html": "<b>Could you help me?</b><span style=\"font-weight: 400\"> – <em>Tafadhali</em> or <em>naomba msaada</em></span>"
+  },
+  {
+   "id": 41,
+   "orig": "<b>How do you say (insert word) in Swahili?</b><span style=\"font-weight: 400\"> – <em>Unasemaje</em> (insert word) <em>Kwa Kiswahili</em></span>",
+   "html": "<b>What is (insert word) in Swahili?</b><span style=\"font-weight: 400\"> – <em>Unasemaje</em> (insert word) <em>Kwa Kiswahili</em></span>"
+  },
+  {
+   "id": 42,
+   "orig": "<b>Where is the (insert place)?</b><span style=\"font-weight: 400\"> – (insert place) <em>iko wapi?</em></span>",
+   "html": "<b>Where can I find the (insert place)?</b><span style=\"font-weight: 400\"> – (insert place) <em>iko wapi?</em></span>"
+  },
+  {
+   "id": 43,
+   "orig": "<b>Bus station</b><span style=\"font-weight: 400\"> – <em>Stesheni ya basi</em> or <em>Kituo cha mabasi</em></span>",
+   "html": "<b>Bus station</b><span style=\"font-weight: 400\"> – <em>Stesheni ya basi</em> or <em>Kituo cha mabasi</em></span>"
+  },
+  {
+   "id": 44,
+   "orig": "<b>Where can I find a (insert service)?</b><span style=\"font-weight: 400\"> – (insert service) <em>iko wapi?</em></span>",
+   "html": "<b>Where is there a (insert service)?</b><span style=\"font-weight: 400\"> – (insert service) <em>iko wapi?</em></span>"
+  },
+  {
+   "id": 45,
+   "orig": "<b>It hurts here</b><span style=\"font-weight: 400\">  – <em>Inauma hapa</em> or <em>naumwa hapa</em></span>",
+   "html": "<b>I have pain here</b><span style=\"font-weight: 400\">  – <em>Inauma hapa</em> or <em>naumwa hapa</em></span>"
+  },
+  {
+   "id": 46,
+   "orig": "Of course, you don’t need to get fluent in Tanzania’s national language Swahili before your holiday. As we’ve said, you can definitely manage to navigate this country with English. But if you want to prepare a little in order not to find yourself in a linguistic pickle, we have three tips for you:",
+   "html": "You certainly don’t have to become fluent in Swahili, Tanzania’s national language, before your holiday. As mentioned, English will get you around this country without trouble. If you would like to prepare a bit so you don’t end up in a linguistic pickle, though, here are three tips:"
+  },
+  {
+   "id": 47,
+   "orig": "Note down the most important Swahili phrases in a little black book (or red, or brown…) or save them on your phone",
+   "html": "Write the key Swahili phrases down in a little black book (or a red one, or brown…) or store them on your phone"
+  },
+  {
+   "id": 48,
+   "orig": "If nothing works, simply ask your guide and smile 🙂",
+   "html": "And if all else fails, just ask your guide and smile 🙂"
+  },
+  {
+   "id": 49,
+   "orig": "And should you want to prepare a little more, check out our <a href=\"/blog/tanzania-travel-tips/\"><span style=\"font-weight: 400\">extensive guide to planning a trip to Tanzania</span></a><span style=\"font-weight: 400\">, watch documentaries or read <a href=\"/blog/must-reads-before-travelling-to-tanzania/\">books about Tanzania and by Tanzanians</a>. This way, you are more aware of customs and traditions, making your experience even more authentic. </span>Some typical customs in the country? Greet people, eat food with your right hand, ask permission before taking pictures of people, and respect older people’s views and beliefs.",
+   "html": "If you would like to prepare a bit further, have a look at our <a href=\"/blog/tanzania-travel-tips/\"><span style=\"font-weight: 400\">detailed guide to planning a trip to Tanzania</span></a><span style=\"font-weight: 400\">, watch some documentaries or pick up <a href=\"/blog/must-reads-before-travelling-to-tanzania/\">books about Tanzania and by Tanzanians</a>. That way you will know more about local customs and traditions, which makes your experience all the more authentic. </span>A few typical customs here? Greet people, use your right hand to eat, ask before you photograph anyone, and respect the views and beliefs of older people."
+  },
+  {
+   "id": 50,
+   "orig": "<span style=\"font-weight: 400\">For more guides and information about Tanzania, </span><a href=\"/blog/\"><span style=\"font-weight: 400\">check out our blog</span></a><span style=\"font-weight: 400\">. And if you have specific questions regarding travelling to Tanzania, don’t hesitate to </span><a href=\"/contact/\"><span style=\"font-weight: 400\">contact us directly</span></a><span style=\"font-weight: 400\">. We’ll be more than happy to help you plan your next big adventure!</span>",
+   "html": "<span style=\"font-weight: 400\">You will find more guides and information about Tanzania </span><a href=\"/blog/\"><span style=\"font-weight: 400\">on our blog</span></a><span style=\"font-weight: 400\">. Got specific questions about travelling to Tanzania? Feel free to </span><a href=\"/contact/\"><span style=\"font-weight: 400\">get in touch with us directly</span></a><span style=\"font-weight: 400\">. We would be glad to help you plan your next big adventure!</span>"
+  }
+ ]
+}

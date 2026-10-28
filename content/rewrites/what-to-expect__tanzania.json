@@ -1,0 +1,40 @@
+{
+ "slug": "what-to-expect__tanzania",
+ "blocks": [
+  {
+   "id": 1,
+   "orig": "<span style=\"font-weight: 400\">We organise private safaris, which means you have a private driver and car. In the city (for example, on the day of arrival), the use is limited, but once you are on safari, both the car and the guide are completely at your disposal. This means you can adjust these safari days to your preference. You can follow your nose during game drives, regardless of whether that nose guides you towards big cats, birds, or elephants. And nobody will push you to drive when you want to photograph or observe the same animal for hours on end. And if you want to be back in the lodge early for a relaxing sundowner with a view over the savannah? By all means, do so! You might even spot wildlife from the comfort of your tent. </span>",
+   "html": "<span style=\"font-weight: 400\">Our safaris are private, so a driver and a vehicle are reserved for you alone. While you are in town (on arrival day, for instance) that use is restricted, but from the moment the safari starts, both the car and your guide are entirely yours. That gives you room to shape each safari day as you like. On a game drive you can simply follow your instincts, whether those instincts pull you towards big cats, birds or elephants. Nobody will hurry you along when you would rather watch or photograph one animal for hours. Fancy heading back to the lodge early for a quiet sundowner overlooking the savannah? Go right ahead. There is even a chance of spotting wildlife from your own tent. </span>"
+  },
+  {
+   "id": 2,
+   "orig": "<span style=\"font-weight: 400\">To best use this freedom, it’s good to discuss all your wishes with your guide during the first briefing and at any time during your safari. Usually, you have an English-speaking guide who drives the car and knows everything about the national parks you visit – the animals and plants, the route, the hotels, and the regulations of the parks. He is an expert on game drives and can come up with suggestions to make your day even better. Together, you create your personal and perfect safari day!</span>",
+   "html": "<span style=\"font-weight: 400\">To make the most of that freedom, talk through your wishes with your guide at the first briefing, and again whenever you like during the trip. Your guide normally speaks English, drives the vehicle and knows the national parks you visit inside out: the wildlife and plants, the route, the hotels and the park regulations. As a game drive expert, he can offer ideas that make your day even better. Between the two of you, you shape your own perfect safari day.</span>"
+  },
+  {
+   "id": 3,
+   "orig": "<span style=\"font-weight: 400\">Ideally, a day of safari begins with an early rise at the sounds of the African savannah. After a healthy breakfast, you head out in a safari vehicle with your guide. This is the best time to see animals, which are most active just after sunrise (and just before sunset).</span>",
+   "html": "<span style=\"font-weight: 400\">In an ideal world, a safari day starts early, waking to the sounds of the African savannah. After a healthy breakfast you set off in the safari vehicle with your guide. This is the finest time for wildlife, because animals are at their most active just after sunrise (and again just before sunset).</span>"
+  },
+  {
+   "id": 4,
+   "orig": "<span style=\"font-weight: 400\">You explore the savannah until it’s time for a packed lunch from the lodge at one of the picnic areas in the park. You continue exploring the savannah until the sun sets, and you stop at a beautiful spot for the famous safari </span><i><span style=\"font-weight: 400\">sundowner.</span></i><span style=\"font-weight: 400\"> The day ends with a good shower, a sumptuous dinner, and an early night. Because at sunrise the next morning? It all starts again…!</span>",
+   "html": "<span style=\"font-weight: 400\">You roam the savannah until it is time for the packed lunch the lodge has prepared, eaten at one of the park's picnic areas. Then the exploring continues until sunset, when you pause at a lovely spot for the classic safari </span><i><span style=\"font-weight: 400\">sundowner.</span></i><span style=\"font-weight: 400\"> A good shower, a generous dinner and an early night round off the day. And when the sun rises the next morning? The whole thing begins again.</span>"
+  },
+  {
+   "id": 5,
+   "orig": "<span style=\"font-weight: 400\">This freedom of movement is limited by one important thing – the park rules. Park entry fees only allow ONE entry per 24 hours. This is relevant if you sleep outside the park, as you cannot use the same permit to go back the next morning or have lunch in the lodge during the day. Furthermore, game drives can only occur from 7 AM (sunrise) to 6 PM (sunset), and guests are expected to be back in the lodge outside those hours.</span>",
+   "html": "<span style=\"font-weight: 400\">One important thing does restrict this freedom of movement: the park rules. A park entry fee covers only ONE entry per 24 hours. That matters if you stay outside the park, because you cannot reuse the same permit to come back the following morning, or to pop out to the lodge for lunch. In addition, game drives are permitted only between 7 AM (sunrise) and 6 PM (sunset), and guests are expected to be in the lodge outside those times.</span>"
+  },
+  {
+   "id": 6,
+   "orig": "<b></b><span style=\"font-weight: 400\">Game drive days can be as packed or relaxed as you wish. Below, we give two examples of what a full day of game drives in the national parks could look like. Of course, days of driving to the next park come with their own schedule due to the distances between parks. </span>",
+   "html": "<b></b><span style=\"font-weight: 400\">A day of game drives can be as full or as laid-back as you want. Below are two examples of how a complete day of game drives in the national parks might unfold. Days spent travelling to the next park naturally follow their own rhythm, given the distances involved. </span>"
+  },
+  {
+   "id": 7,
+   "orig": "When booking a safari, the meal plan will always be full board. Once you are on safari, that usually looks like this:",
+   "html": "Whenever you book a safari, the meal plan is always full board. In practice, on safari that typically works out as follows:"
+  }
+ ]
+}

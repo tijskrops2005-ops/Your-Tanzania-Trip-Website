@@ -1,0 +1,35 @@
+{
+  "slug": "index",
+  "blocks": [
+    {
+      "id": 1,
+      "orig": "Your dream holiday to Tanzania starts here!",
+      "html": "Your dream trip to Tanzania begins right here!"
+    },
+    {
+      "id": 2,
+      "orig": "A <strong>Tanzania vacation</strong> is the ultimate once-in-a-lifetime holiday! Tanzania is a top safari destination, where you can experience incredible wildlife during a <a href=\"/tanzania-safari/\">Tanzania Safari</a>, relax on the white beaches of <a href=\"/islands/zanzibar-island/\">Zanzibar Island</a>, or even <a href=\"/climbing-kilimanjaro/\">climb Mount Kilimanjaro</a>. At Your Tanzania Trip, we design the perfect Tanzania vacation for you, 100% tailor-made.",
+      "html": "A <strong>Tanzania vacation</strong> is the kind of holiday you only take once in a lifetime! Few places rival Tanzania for safaris: watch extraordinary animals on a <a href=\"/tanzania-safari/\">Tanzania Safari</a>, unwind on the white sands of <a href=\"/islands/zanzibar-island/\">Zanzibar Island</a>, or even <a href=\"/climbing-kilimanjaro/\">climb Mount Kilimanjaro</a>. Your Tanzania Trip puts together the trip that suits you, 100% tailor-made."
+    },
+    {
+      "id": 3,
+      "orig": "Travel worry-free with our exclusive Hakuna Matata Package.<br />\n<!-- -->",
+      "html": "Travel without worries thanks to our exclusive Hakuna Matata Package.<br />\n<!-- -->"
+    },
+    {
+      "id": 4,
+      "orig": "With our experienced local team in Arusha, we oversee your journey from start to finish, guaranteeing the best prices, quality, and personal service. See you soon in Tanzania!",
+      "html": "Our experienced local team in Arusha looks after your trip from beginning to end, so you are assured of the best prices, quality and personal attention. We look forward to welcoming you to Tanzania!"
+    },
+    {
+      "id": 5,
+      "orig": "Professional private guides, comfortable private jeeps, flexible itineraries, and the best customer experiences. Our meticulous trip preparation ensures you can enjoy your journey stress-free and worry-free. Opt for an unforgettable trip with top-notch service.",
+      "html": "Private professional guides, comfortable private jeeps, itineraries that bend to your wishes, and customer experiences that speak for themselves. Because we prepare every trip down to the last detail, you can travel relaxed and carefree. Choose a trip you will never forget, with top-quality service."
+    },
+    {
+      "id": 6,
+      "orig": "Embark on an unforgettable journey through Tanzania with Your Tanzania Trip and our experts. Travellers who went before you confirm it: an unforgettable experience. Come aboard for a remarkable journey through this beautiful country.",
+      "html": "Set off with Your Tanzania Trip and our experts on a Tanzanian adventure you will never forget. Those who travelled with us before say the same thing: it stays with you. Join us for a remarkable trip through this beautiful country."
+    }
+  ]
+}

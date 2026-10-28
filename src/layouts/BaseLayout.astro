@@ -61,5 +61,6 @@ const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', ema
     {hasFacets && <script is:inline src="/assets/js/facetwp-static.js" data-facets={`/facetwp-static/${page.slug}.json`}></script>}
     <script is:inline set:html={`window.YTT_FORMS=${formsConfig};`} />
     <script is:inline src="/assets/js/forms.js"></script>
+    <script is:inline src="/assets/js/site-search.js"></script>
   </body>
 </html>

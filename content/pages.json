@@ -6289,27 +6289,6 @@
   ]
  },
  {
-  "slug": "app",
-  "path": "/app/",
-  "title": "Download our app | Your Tanzania Trip",
-  "description": null,
-  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-  "ogType": "article",
-  "ogTitle": "Download our app | Your Tanzania Trip",
-  "ogDescription": "Safari game drives are thrilling adventures, and special excursions can take your trip to the next level. Do you want to find out which excursions fit into your safari itinerary and how much they cost? Then download the Africa Safari app! The Africa Safari app: Shows all excursions that can be added to your current [&hellip;]",
-  "ogImage": "/wp-content/uploads/2024/11/DSC04520-scaled.jpg",
-  "bodyClass": "wp-singular page-template-default page page-id-19359 wp-embed-responsive wp-theme-tanzania-specialist",
-  "extraScripts": [],
-  "extraStyles": [],
-  "stickyCta": {
-   "href": "/travel-proposal/",
-   "label": "Make a request"
-  },
-  "ldJson": [
-   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"/app/\",\"url\":\"/app/\",\"name\":\"Download our app | Your Tanzania Trip\",\"isPartOf\":{\"@id\":\"/#website\"},\"primaryImageOfPage\":{\"@id\":\"/app/#primaryimage\"},\"image\":{\"@id\":\"/app/#primaryimage\"},\"thumbnailUrl\":\"/wp-content/uploads/2024/11/DSC04520-scaled.jpg\",\"datePublished\":\"2024-10-10T14:45:39+00:00\",\"dateModified\":\"2026-04-13T07:41:56+00:00\",\"breadcrumb\":{\"@id\":\"/app/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"/app/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"/app/#primaryimage\",\"url\":\"/wp-content/uploads/2024/11/DSC04520-scaled.jpg\",\"contentUrl\":\"/wp-content/uploads/2024/11/DSC04520-scaled.jpg\",\"width\":2560,\"height\":2555},{\"@type\":\"BreadcrumbList\",\"@id\":\"/app/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Download our app\"}]},{\"@type\":\"WebSite\",\"@id\":\"/#website\",\"url\":\"/\",\"name\":\"Your Tanzania Trip\",\"description\":\"Tailor-made safaris, Kilimanjaro climbs and Zanzibar trips in Tanzania\",\"publisher\":{\"@id\":\"/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"/#organization\",\"name\":\"Your Tanzania Trip\",\"url\":\"https://yourtanzaniatrip.com/\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"/#/schema/logo/image/\",\"url\":\"https://yourtanzaniatrip.com/brand/logo-primary.png\",\"contentUrl\":\"https://yourtanzaniatrip.com/brand/logo-primary.png\",\"width\":1888,\"height\":732,\"caption\":\"Your Tanzania Trip\"},\"image\":{\"@id\":\"/#/schema/logo/image/\"},\"sameAs\":[],\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"Sluitgatweg 10\",\"postalCode\":\"8308 RE\",\"addressLocality\":\"Nagele\",\"addressCountry\":\"NL\"},\"email\":\"tijskrops2005@gmail.com\",\"telephone\":\"+31 6 29351377\"}]}"
-  ]
- },
- {
   "slug": "blog",
   "path": "/blog/",
   "title": "Tanzania Travel Blog & Guide",

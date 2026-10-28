@@ -1,0 +1,60 @@
+{
+  "slug": "national-parks__mufindi-highlands",
+  "blocks": [
+    {
+      "id": 1,
+      "orig": "Take a break from the hustle and bustle of your Tanzania safari and visit the tranquil Mufindi Highlands. This peaceful retreat in the southern highlands offers you a much-needed break from the heat and dust of the safari route. The Mufindi Highlands are home to tea plantations, wild flowers and cool mountain air. Take a deep breath and relax in this picturesque and tranquil destination.",
+      "html": "Step away from the busy pace of your Tanzania safari with a stay in the quiet Mufindi Highlands. This calm retreat in the southern highlands gives you a welcome rest from the heat and dust of the safari route. Tea plantations, wild flowers and cool mountain air characterise the Mufindi Highlands. Breathe in deeply and unwind in this scenic, peaceful spot."
+    },
+    {
+      "id": 2,
+      "orig": "In Mufindi you are off the beaten track and that means you have time to enjoy the beautiful nature. This area has volcanic mountains, grassland, some forests, lakes and winding country lanes, tea and timber plantations and beautiful natural rainforest. Explore the area during the day and relax in the evening with a cosy open fire in a lodge.",
+      "html": "Mufindi lies well off the beaten track, which leaves you time to appreciate the lovely scenery. The area features volcanic mountains, grassland, patches of forest, lakes, winding country lanes, tea and timber plantations and beautiful natural rainforest. Spend the day exploring and the evening relaxing beside a cosy open fire in a lodge."
+    },
+    {
+      "id": 3,
+      "orig": "Mufindi’s rainforest is home to monkeys and plenty of birdlife. Among the region’s specials is Livingstone’s turaco, a handsome blue-and-green feathery friend named after David Livingstone’s brother Charles. This species is hard to miss, due to its strident tones!",
+      "html": "Monkeys and an abundance of birds live in Mufindi’s rainforest. One of the region’s specialities is Livingstone’s turaco, a handsome blue-and-green bird named after Charles, the brother of David Livingstone. With its loud call, this species is hard to overlook!"
+    },
+    {
+      "id": 4,
+      "orig": "There are various activities that you can enjoy in Mufindi Highlands. Horse riding trails offer a great way to explore the area on horseback with an experienced guide. Mountain biking is also a great way to explore the area. Fly fishing is possible, although rainbow trout stocks vary according to the season. Kayaking in the clear lakes is a relaxing way to spend an afternoon. Visits to tea plantations and a local village are also possible, even golf can be played here!",
+      "html": "The Mufindi Highlands offer a range of activities. Horse riding trails are a wonderful way to see the area from the saddle with an experienced guide, and mountain biking is another good way to get around. Fly fishing is an option too, though rainbow trout numbers depend on the season. An afternoon of kayaking on the clear lakes is wonderfully relaxing. You can also visit tea plantations and a local village, and it is even possible to play golf here!"
+    },
+    {
+      "id": 5,
+      "orig": "Travel Tips from our experts about Mufindi Highlands",
+      "html": "Expert travel tips for Mufindi Highlands"
+    },
+    {
+      "id": 6,
+      "orig": "This region is famed for two industries – timber and tea. In 1986 a working farm was developed from a parcel of land purchased by the Fox family. Over time the farm evolved into Mufindi Highland Lodge, effectively opening the area to tourism.",
+      "html": "Two industries made this region famous: timber and tea. In 1986 the Fox family bought a parcel of land and turned it into a working farm, which gradually grew into Mufindi Highland Lodge and in effect opened up the area to tourism."
+    },
+    {
+      "id": 7,
+      "orig": "The Mufindi highlands can be visited all year round. The dry season lasts from May to November, followed by small rain until February and big rain until April. Warm clothing is recommended for the cool mornings and evenings, especially in the peak of winter (July).",
+      "html": "A visit to the Mufindi highlands is possible throughout the year. The dry season runs from May to November, after which the small rains last until February and the big rains until April. Bring warm clothing for the chilly mornings and evenings, particularly at the height of winter (July)."
+    },
+    {
+      "id": 8,
+      "orig": "In Mufindi you are off the beaten track and you have time to enjoy the beautiful nature. Volcanic mountains, grassland, rainforest, lakes and tea and timber plantations offer you a break from the heat and dust of the safari route. Take a deep breath and relax in this picturesque and tranquil destination.",
+      "html": "Mufindi is off the beaten track, giving you time to appreciate the lovely scenery. Volcanic mountains, grassland, rainforest, lakes and tea and timber plantations provide a welcome rest from the heat and dust of the safari route. Breathe in deeply and unwind in this scenic, peaceful spot."
+    },
+    {
+      "id": 9,
+      "orig": "located near the town of Iringa (about 100km)",
+      "html": "about 100km from the town of Iringa"
+    },
+    {
+      "id": 10,
+      "orig": "between the <a href=\"/national-parks/ruaha-national-park/\">Ruaha</a> and <a href=\"/national-parks-tanzania/selous-game-reserve/\">Nyerere (Selous)</a> national parks",
+      "html": "situated between <a href=\"/national-parks/ruaha-national-park/\">Ruaha</a> and <a href=\"/national-parks-tanzania/selous-game-reserve/\">Nyerere (Selous)</a> national parks"
+    },
+    {
+      "id": 11,
+      "orig": "<a href=\"/national-parks/kitulo-national-park/\">Kitulo Plateau National Park</a> in the south",
+      "html": "<a href=\"/national-parks/kitulo-national-park/\">Kitulo Plateau National Park</a> lies to the south"
+    }
+  ]
+}
