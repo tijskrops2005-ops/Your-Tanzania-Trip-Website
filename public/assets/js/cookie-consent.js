@@ -1,14 +1,12 @@
-// Cookie consent + Google Analytics 4 for the static site.
-// GA4 (window.YTT_ANALYTICS.ga4) is only loaded after the visitor clicks "Accept" (basic consent
-// mode: nothing is sent to Google before that). The choice is remembered in localStorage
-// ("ytt-consent") for 12 months; any link with [data-cookie-settings] opens the banner again.
-// Vercel Web Analytics is cookieless and runs independently of this banner.
+// Cookie consent for Google Analytics 4 (Google consent mode v2).
+// The Google tag itself is in the <head> of every page (src/layouts/BaseLayout.astro), with
+// consent "denied" by default: GA then only receives cookieless pings. "Accept" switches
+// analytics_storage to "granted" (GA cookies); "Decline" keeps it denied and removes GA cookies.
+// The choice is remembered in localStorage ("ytt-consent") for 12 months; any link with
+// [data-cookie-settings] opens the banner again. Ads storage is always denied.
 (function () {
-  var cfg = window.YTT_ANALYTICS || {};
   var KEY = "ytt-consent";
   var MAX_AGE = 365 * 24 * 3600 * 1000;
-  // Only measure on the live domain, never on localhost or preview deployments.
-  var LIVE = /(^|\.)yourtanzaniatrip\.com$/.test(location.hostname);
 
   function read() {
     try {
@@ -20,20 +18,8 @@
     try { localStorage.setItem(KEY, JSON.stringify({ c: choice, t: Date.now() })); } catch (e) {}
   }
 
-  var loaded = false;
-  function loadGa() {
-    if (loaded || !cfg.ga4) return;
-    loaded = true;
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    gtag("consent", "default", { analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
-    gtag("js", new Date());
-    gtag("config", cfg.ga4);
-    if (!LIVE) { console.info("[consent] Google Analytics accepted (not loaded outside yourtanzaniatrip.com)"); return; }
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(cfg.ga4);
-    document.head.appendChild(s);
+  function grant() {
+    if (window.gtag) gtag("consent", "update", { analytics_storage: "granted" });
   }
 
   // Withdrawing consent: stop GA and remove its cookies.
@@ -59,8 +45,8 @@
     banner.setAttribute("aria-label", "Cookie settings");
     banner.innerHTML =
       '<p class="ytt-consent__title">Cookies</p>' +
-      '<p class="ytt-consent__text">We would like to use Google Analytics cookies to see how visitors use this site, so we can improve it. ' +
-      'We only place them if you accept. Read more in our <a href="/privacy-policy/">privacy policy</a>.</p>' +
+      '<p class="ytt-consent__text">We use Google Analytics to see how visitors use this site, so we can improve it. ' +
+      'It only places cookies if you accept. Read more in our <a href="/privacy-policy/">privacy policy</a>.</p>' +
       '<div class="ytt-consent__actions">' +
       '<button type="button" class="ytt-consent__btn ytt-consent__btn--accept" data-consent="granted">Accept</button>' +
       '<button type="button" class="ytt-consent__btn ytt-consent__btn--decline" data-consent="denied">Decline</button>' +
@@ -69,10 +55,9 @@
       var b = e.target.closest("[data-consent]");
       if (!b) return;
       var choice = b.getAttribute("data-consent");
-      var before = read();
       save(choice);
-      if (choice === "granted") loadGa();
-      else if (before === "granted") revokeGa();
+      if (choice === "granted") grant();
+      else revokeGa();
       hide();
     });
     document.body.appendChild(banner);
@@ -95,9 +80,7 @@
     show();
   });
 
-  var choice = read();
-  if (choice === "granted") loadGa();
-  else if (choice === null) {
+  if (read() === null) {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", show);
     else show();
   }

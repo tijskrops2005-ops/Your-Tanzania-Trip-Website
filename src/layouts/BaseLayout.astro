@@ -24,6 +24,24 @@ const ogImage = new URL(page.ogImage || '/brand/og-image.jpg', Astro.site).href;
 const tokens = JSON.parse(fs.readFileSync(new URL('../../docs/brand-tokens.json', import.meta.url), 'utf8'));
 // Cache-busting version for the site's own scripts (changes with every build).
 const v = Date.now().toString(36);
+// Google Analytics 4 with Google consent mode v2. Before any tag runs, consent defaults to
+// "denied" (cookieless pings only) unless the visitor accepted earlier in the cookie banner
+// (localStorage "ytt-consent", see public/assets/js/cookie-consent.js). Ads storage stays denied.
+// Outside the live domain (localhost, previews) GA is switched off with Google's opt-out flag.
+const ga4 = tokens.analytics?.ga4 || '';
+const consentDefault = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+(function(){var c=null;try{var v=JSON.parse(localStorage.getItem("ytt-consent")||"null");if(v&&Date.now()-v.t<31536000000)c=v.c;}catch(e){}
+gtag("consent","default",{analytics_storage:c==="granted"?"granted":"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"});
+if(!/(^|\\.)yourtanzaniatrip\\.com$/.test(location.hostname))window["ga-disable-${ga4}"]=true;})();`;
+const gtagSnippet = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${ga4}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${ga4}');
+</script>`;
 const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', email: tokens.company.email });
 ---
 <!doctype html>
@@ -31,6 +49,8 @@ const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', ema
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {ga4 && <script is:inline set:html={consentDefault} />}
+    {ga4 && <Fragment set:html={gtagSnippet} />}
     <title>{page.title}</title>
     {page.description && <meta name="description" content={page.description} />}
     {page.robots && <meta name="robots" content={page.robots} />}
@@ -66,8 +86,7 @@ const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', ema
     <script is:inline src={`/assets/js/site-search.js?v=${v}`}></script>
     <script is:inline src={`/assets/js/currency.js?v=${v}`}></script>
     <script is:inline src={`/assets/js/translate.js?v=${v}`}></script>
-    <!-- Google Analytics 4: loaded by cookie-consent.js only after the visitor accepts cookies -->
-    <script is:inline set:html={`window.YTT_ANALYTICS=${JSON.stringify({ ga4: tokens.analytics?.ga4 || '' })};`} />
+    <!-- Cookie banner: updates Google consent mode (analytics cookies only after "Accept") -->
     <script is:inline src={`/assets/js/cookie-consent.js?v=${v}`}></script>
     <!-- Vercel Web Analytics and Speed Insights (served by Vercel on the live domain only) -->
     {import.meta.env.PROD && <script is:inline defer src="/_vercel/insights/script.js"></script>}

@@ -418,7 +418,7 @@
     "en": "Your Tanzania Trip started with an internship. Tijs Krops and Edrian Waterman, two students from the Netherlands, spent their internship in Arusha with Baraka Dalali and his crew at Kilimanjaro Nature Tours. They helped Baraka with marketing and with setting up his company for international guests, climbed with his guides and drove along on safari. When it was time to go home, none of us wanted to stop working together. So we set up this partnership: Your Tanzania Trip plans and books your trip from the Netherlands, and Baraka and his crew run it in Tanzania. It works because both sides do what they are best at."
   },
   "analytics": {
-    "_note": "Google Analytics 4. Loaded by public/assets/js/cookie-consent.js only after the visitor accepts cookies. Vercel Web Analytics (cookieless) runs without consent.",
+    "_note": "Google Analytics 4. The Google tag is in the <head> of every page (BaseLayout.astro) with Google consent mode v2: analytics cookies only after 'Accept' in the cookie banner (public/assets/js/cookie-consent.js); without consent GA receives cookieless pings. Vercel Web Analytics (cookieless) runs independently.",
     "ga4": "G-SR9WMJQWTD"
   }
 }
