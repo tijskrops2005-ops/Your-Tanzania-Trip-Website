@@ -4,3 +4,8 @@ node_modules/
 .cache/
 temporary screenshots/
 .DS_Store
+
+# Local secrets
+.env
+.env.*
+/leads/
