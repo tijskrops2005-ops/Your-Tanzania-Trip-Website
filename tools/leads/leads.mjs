@@ -54,6 +54,7 @@ async function agencies(m, o) {
 
   return places
     .filter((p) => !p.permanentlyClosed && !p.temporarilyClosed && (p.website || p.phone))
+    .filter((p) => !p.countryCode || p.countryCode.toLowerCase() === m.code) // e.g. NL search also returns Sint Maarten
     .filter((p) => TRAVEL_CATEGORY.test([p.categoryName, ...(p.categories || [])].join(' ')))
     .map((p) => lead({
       type: 'agency', market: m.id, name: p.title,
