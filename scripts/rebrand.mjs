@@ -98,6 +98,8 @@ const brandRules = [
   [/Our past travelers confirm: it(?:’|'|&#8217;)s an unforgettable experience\./g, "Travellers who went before you confirm it: an unforgettable experience."],
   // Plain wording instead of the idiom (read as an error message by some visitors)
   [/No strings attached\. We(?:’|'|&#8217;)ll design your trip - no cost, no commitment\./g, "Free and without obligation. We design your trip, you decide."],
+  // Privacy policy: Google Analytics only runs after consent in the cookie banner (public/assets/js/cookie-consent.js).
+  [/You can prevent Google Analytics from recognizing you on return visits to this site by disabling cookies on your browser\./g, "We only load Google Analytics after you click “Accept” in the cookie banner. If you decline, no analytics cookies are placed. You can change your choice at any time via “Cookie settings” at the bottom of every page, or by disabling cookies in your browser."],
   [/\bno strings attached\b/g, "without obligation"],
   // Form intro: the "* indicates a required field." line reads like an error; the asterisks say enough.
   [/\s*<div class="mb-10 font-medium tracking-wide text-white text-md">\s*<span class="text-red"><span class="gfield_required gfield_required_asterisk">\*<\/span><\/span> indicates a required field\.\s*<\/div>/g, ""],
@@ -955,6 +957,8 @@ processFile(path.join(root, "src/partials/footer.html"), (s) => {
   s = s.replace(/<li>\s*<a[^>]*href="https:\/\/africasafaritrips\.com"[^>]*>[\s\S]*?<\/a>\s*<\/li>/g, "");
   s = s.replace(/<a[^>]*href="https:\/\/africasafaritrips\.com"[^>]*>[\s\S]*?<\/a>/g, "");
   s = s.replace(/(<ul id="menu-footer-reisinformatie"[^>]*>)/, '$1<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/our-partner/">Our local partner</a></li>');
+  // "Cookie settings" link after the privacy policy (both copyright menus); opens the consent banner again.
+  s = s.replace(/(<li[^>]*menu-item-privacy-policy[^>]*><a rel="privacy-policy" href="\/privacy-policy\/">Privacy policy<\/a><\/li>)/g, '$1\n<li class="menu-item"><a href="#cookie-settings" data-cookie-settings>Cookie settings</a></li>');
   s = s.replace(/&copy; 2026 Your Tanzania Trip/g, `&copy; 2026 ${BRAND} · KvK ${CO.kvk} · BTW ${CO.vat}`);
   s = s.replace(/href="https:\/\/yourtanzaniatrip\.com">\s*<span class="sr-only">/, 'href="/">\n <span class="sr-only">');
   return s;
