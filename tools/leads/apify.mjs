@@ -42,9 +42,10 @@ function runCost(run) {
 
 export const spent = { usd: 0 };
 
-export async function runActor(actorId, input, { maxCostUsd = 0.5, label = actorId } = {}) {
+export async function runActor(actorId, input, { maxCostUsd = 0.5, label = actorId, timeoutSecs } = {}) {
   // Apify refuses caps below $0.50; the actor's own limits (results per search, profiles) keep real cost far lower.
   const q = new URLSearchParams({ maxTotalChargeUsd: String(Math.max(0.5, maxCostUsd)) });
+  if (timeoutSecs) q.set('timeout', String(timeoutSecs));
   let run = await api(`/acts/${actorId.replace('/', '~')}/runs?${q}`, { method: 'POST', body: JSON.stringify(input) });
   process.stdout.write(`  ▸ ${label} `);
   while (!DONE.includes(run.status)) {

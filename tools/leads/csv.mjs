@@ -7,19 +7,22 @@ export const COLUMNS = [
   'city', 'country', 'category', 'notes', 'source', 'source_url', 'found_at',
 ];
 
-const BOM = '﻿'; // lets Excel detect UTF-8 (é, ü, å)
+// Public posts of people planning a trip: links to answer in the open, no contact details.
+export const INTENT_COLUMNS = ['status', 'market', 'platform', 'date', 'comments', 'title', 'url', 'snippet', 'found_at'];
+
+const BOM = '\uFEFF'; // lets Excel detect UTF-8 (é, ü, å)
 
 function cell(v) {
   const s = v == null ? '' : String(v);
   return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 }
 
-export function toCsv(rows) {
-  return BOM + [COLUMNS.join(','), ...rows.map((r) => COLUMNS.map((c) => cell(r[c])).join(','))].join('\n') + '\n';
+export function toCsv(rows, columns = COLUMNS) {
+  return BOM + [columns.join(','), ...rows.map((r) => columns.map((c) => cell(r[c])).join(','))].join('\n') + '\n';
 }
 
 export function parseCsv(text) {
-  text = text.replace(/^﻿/, '');
+  text = text.replace(/^\uFEFF/, '');
   const sep = text.split('\n', 1)[0].includes(';') && !text.split('\n', 1)[0].includes(',') ? ';' : ',';
   const rows = [];
   let row = [], field = '', quoted = false;
@@ -47,7 +50,7 @@ export function domainOf(url) {
 }
 
 // A lead is the same as another when it shares an email, website domain or Instagram handle.
-function keys(r) {
+export function leadKeys(r) {
   const k = [];
   for (const e of String(r.email || '').split(/[;\s]+/)) if (e) k.push(`e:${e.toLowerCase()}`);
   if (r.website) k.push(`d:${domainOf(r.website)}`);
@@ -56,11 +59,13 @@ function keys(r) {
   return k;
 }
 
-// Merges new leads into leads/leads.csv. Existing rows (and their status, e.g. "opt-out") are never
-// overwritten or re-added. Returns only the leads that were really new.
-export function mergeIntoMaster(dir, leads) {
+export const intentKeys = (r) => (r.url ? [`u:${r.url.replace(/[?#].*$/, '').replace(/\/$/, '').toLowerCase()}`] : []);
+
+// Merges new rows into the master file (leads/leads.csv by default). Existing rows (and their status,
+// e.g. "opt-out") are never overwritten or re-added. Returns only the rows that were really new.
+export function mergeIntoMaster(dir, leads, { name = 'leads.csv', columns = COLUMNS, keys = leadKeys } = {}) {
   mkdirSync(dir, { recursive: true });
-  const file = path.join(dir, 'leads.csv');
+  const file = path.join(dir, name);
   const master = existsSync(file) ? parseCsv(readFileSync(file, 'utf8')) : [];
   const seen = new Set(master.flatMap(keys));
   const fresh = [];
@@ -70,6 +75,6 @@ export function mergeIntoMaster(dir, leads) {
     k.forEach((x) => seen.add(x));
     fresh.push(lead);
   }
-  writeFileSync(file, toCsv([...master, ...fresh]));
+  writeFileSync(file, toCsv([...master, ...fresh], columns));
   return { file, fresh, total: master.length + fresh.length };
 }
