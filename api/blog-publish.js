@@ -359,9 +359,9 @@ function readBody(req) {
 }
 
 async function route(req) {
-  const expectedKey = process.env.BLOG_API_KEY;
+  const expectedKey = (process.env.BLOG_API_KEY || "").trim(); // pasted values often end in a newline
   if (!expectedKey) throw new HttpError(500, "The BLOG_API_KEY environment variable is not configured");
-  if (!safeEqual(String(req.headers["x-api-key"] || ""), expectedKey)) {
+  if (!safeEqual(String(req.headers["x-api-key"] || "").trim(), expectedKey)) {
     throw new HttpError(401, "Invalid or missing x-api-key header");
   }
 
