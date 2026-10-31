@@ -21,7 +21,7 @@
 //   GITHUB_TOKEN   fine-grained token with "Contents: read and write" on this repository only
 //   GITHUB_REPO    optional, default tijskrops2005-ops/Your-Tanzania-Trip-Website
 //   GITHUB_BRANCH  optional, default main
-//   SITE_URL       optional, default https://www.yourtanzaniatrip.com
+//   SITE_URL       optional, default https://yourtanzaniatrip.com
 import crypto from "node:crypto";
 import reservedSlugs from "./_blog-reserved.js";
 
@@ -45,7 +45,7 @@ class HttpError extends Error {
 }
 
 const env = (name, fallback) => process.env[name] || fallback;
-const siteUrl = () => env("SITE_URL", "https://www.yourtanzaniatrip.com").replace(/\/+$/, "");
+const siteUrl = () => env("SITE_URL", "https://yourtanzaniatrip.com").replace(/\/+$/, "");
 
 /** "How much to tip on safari?" -> "how-much-to-tip-on-safari" */
 export function slugify(text) {

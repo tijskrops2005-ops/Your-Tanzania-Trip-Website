@@ -38,14 +38,14 @@ Let op: omdat de API commits maakt op `main`, eerst `git pull --rebase` voordat 
 
    Daarna een redeploy, want nieuwe variabelen tellen pas mee na een nieuwe deploy.
 4. In Blog Studio (Ander systeem):
-   - Publish-URL: `https://www.yourtanzaniatrip.com/api/blog-publish`
+   - Publish-URL: `https://yourtanzaniatrip.com/api/blog-publish`
    - API-sleutel: de `BLOG_API_KEY`
-   - Image-upload-URL: `https://www.yourtanzaniatrip.com/api/blog-publish/upload`
+   - Image-upload-URL: `https://yourtanzaniatrip.com/api/blog-publish/upload`
 
 ## Testen
 
 ```bash
-curl "https://www.yourtanzaniatrip.com/api/blog-publish" -H "x-api-key: $BLOG_API_KEY"
+curl "https://yourtanzaniatrip.com/api/blog-publish" -H "x-api-key: $BLOG_API_KEY"
 ```
 
 De antwoorden betekenen:
@@ -74,7 +74,7 @@ in een antwoord heeft ook een `url`-veld met het publieke adres.
 Voorbeeld:
 
 ```bash
-curl -X POST "https://www.yourtanzaniatrip.com/api/blog-publish" \
+curl -X POST "https://yourtanzaniatrip.com/api/blog-publish" \
   -H "x-api-key: $BLOG_API_KEY" -H "Content-Type: application/json" \
   -d '{"title":"When is the best time for a Serengeti safari?","body":"The Serengeti is good all year, but ...\n\n## Dry season\n\n...","excerpt":"Month by month: where the herds are and what that means for your trip.","tags":["Serengeti","Best time to visit","Safari"]}'
 ```
@@ -87,7 +87,7 @@ Tanzania safaris, Kilimanjaro climbs and Zanzibar trips, planned from the Nether
 ground by our local partner Kilimanjaro Nature Tours in Arusha) through its blog API.
 
 API
-- Base URL: https://www.yourtanzaniatrip.com/api/blog-publish
+- Base URL: https://yourtanzaniatrip.com/api/blog-publish
 - Send the header `x-api-key` with the value of the environment variable $BLOG_API_KEY on EVERY
   request. Never put the key in files, commits or your answer.
 - Send JSON with `Content-Type: application/json`.
@@ -109,7 +109,7 @@ POST body
 
 How to work
 1. GET /api/blog-publish first and check the topic is not covered yet. The site also has 80 older
-   articles under https://www.yourtanzaniatrip.com/blog/ — do not repeat those topics.
+   articles under https://yourtanzaniatrip.com/blog/ — do not repeat those topics.
 2. Write in English, in the site's tone: personal, honest, calm and concrete. No superlatives, no
    false scarcity, no invented facts, prices, reviews or awards. Prices only as "Price on request"
    or as clearly indicative ranges.
