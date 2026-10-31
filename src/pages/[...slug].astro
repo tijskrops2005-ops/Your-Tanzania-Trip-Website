@@ -1,16 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { pages, readPageBody } from '../lib/site.js';
+import { blogPostPages, withLatestPosts } from '../lib/blog-posts.js';
 
 export function getStaticPaths() {
-  return pages.map(page => ({
+  return [...pages, ...blogPostPages].map(page => ({
     params: { slug: page.slug === 'index' ? undefined : page.path.replace(/^\/|\/$/g, '') },
     props: { page },
   }));
 }
 
 const { page } = Astro.props;
-const body = await readPageBody(page.slug);
+// Posts from the blog-publish API carry their own HTML; the blog overview lists them on top.
+let body = page.html ?? await readPageBody(page.slug);
+if (page.slug === 'blog') body = withLatestPosts(body);
 ---
 <BaseLayout page={page}>
   <Fragment set:html={body} />

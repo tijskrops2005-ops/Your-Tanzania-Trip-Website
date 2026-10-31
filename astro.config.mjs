@@ -7,6 +7,13 @@ const redirects = Object.fromEntries(
   Object.entries({ ...readJson('./content/redirects.json'), ...readJson('./content/redirects-brand.json') })
     .filter(([from, to]) => !to.startsWith('http') && from !== to)
 );
+// Renamed posts from the blog-publish API keep working on their old address.
+const postsDir = './content/blog-posts';
+for (const f of fs.existsSync(postsDir) ? fs.readdirSync(postsDir) : []) {
+  if (!f.endsWith('.json')) continue;
+  const post = readJson(`${postsDir}/${f}`);
+  if (post.published) for (const old of post.previous_slugs || []) redirects[`/blog/${old}/`] = `/blog/${post.slug}/`;
+}
 
 export default defineConfig({
   site: 'https://yourtanzaniatrip.com',

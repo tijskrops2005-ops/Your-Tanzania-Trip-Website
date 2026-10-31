@@ -9,7 +9,9 @@
   var index = null;
   function load() {
     if (index) return Promise.resolve(index);
-    return fetch("/search-index.json").then(function (r) { return r.json(); }).then(function (d) { index = d; return d; });
+    // Posts published through the blog API (/blog-search-index.json) come first.
+    var get = function (u) { return fetch(u).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }); };
+    return Promise.all([get("/blog-search-index.json"), get("/search-index.json")]).then(function (d) { index = d[0].concat(d[1]); return index; });
   }
 
   // Replace Algolia's input with our own (same look through the theme's aa-* classes).
