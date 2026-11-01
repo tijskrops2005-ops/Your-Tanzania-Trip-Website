@@ -981,6 +981,14 @@ function fixJsonLd(json) {
     return rebrandText(json);
   }
   const nodes = Array.isArray(data["@graph"]) ? data["@graph"] : [data];
+  // Yoast's URLs were made site-relative by extract.mjs; structured data needs absolute ones.
+  const absolutize = (v, key) => {
+    if (typeof v === "string") return /^\/(?!\/)/.test(v) && ["@id", "url", "item", "target", "thumbnailUrl", "contentUrl"].includes(key) ? SITE + v : v;
+    if (Array.isArray(v)) return v.map((x) => absolutize(x, key));
+    if (v && typeof v === "object") for (const k of Object.keys(v)) v[k] = absolutize(v[k], k);
+    return v;
+  };
+  absolutize(data, "");
   const kept = nodes.filter((n) => !["AggregateRating", "Review"].includes(n["@type"]));
   for (const n of kept) {
     delete n.aggregateRating;
@@ -988,8 +996,8 @@ function fixJsonLd(json) {
     if (n["@type"] === "Organization") {
       n.name = BRAND;
       n.url = SITE + "/";
-      n.logo = { "@type": "ImageObject", "@id": "/#/schema/logo/image/", url: `${SITE}/brand/logo-primary.png`, contentUrl: `${SITE}/brand/logo-primary.png`, width: 1888, height: 732, caption: BRAND };
-      n.image = { "@id": "/#/schema/logo/image/" };
+      n.logo = { "@type": "ImageObject", "@id": `${SITE}/#/schema/logo/image/`, url: `${SITE}/brand/logo-primary.png`, contentUrl: `${SITE}/brand/logo-primary.png`, width: 1888, height: 732, caption: BRAND };
+      n.image = { "@id": `${SITE}/#/schema/logo/image/` };
       n.address = { "@type": "PostalAddress", streetAddress: "Sluitgatweg 10", postalCode: "8308 RE", addressLocality: "Nagele", addressCountry: "NL" };
       n.legalName = CO.legalName;
       n.telephone = CO.phone;
@@ -1003,6 +1011,7 @@ function fixJsonLd(json) {
     }
     if (n["@type"] === "WebSite") {
       n.name = BRAND;
+      delete n.potentialAction; // Google retired the sitelinks search box; the search works client-side anyway
       n.description = "Tailor-made safaris, Kilimanjaro climbs and Zanzibar trips in Tanzania";
     }
   }
