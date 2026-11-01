@@ -1,0 +1,11 @@
+{
+  "title": "Contact Your Tanzania Trip: WhatsApp, phone, e-mail",
+  "description": "Talk to Tijs or Edrian in the Netherlands about your Tanzania trip: WhatsApp or call +31 6 29351377, send an e-mail or use the form. Free proposal within 24 hours.",
+  "replace": [
+    { "selector": "div.ts-prose > p:contains(\"Do you want to get in touch\")", "html": "Questions about a trip, a proposal you received, or something you cannot find on the site? Use the details below or the form at the bottom of this page. We reply within 24 hours, usually sooner." },
+    { "selector": "div.ts-prose > h2:contains(\"Customised safaris\")", "text": "What we plan" },
+    { "selector": "div.ts-prose > h2:contains(\"What we plan\") + p", "html": "Private safaris in the north and the south of Tanzania, Kilimanjaro climbs, Zanzibar beach stays and combinations of all three. Start from one of our <a href=\"/tanzania-travel/\">itineraries</a> or from a blank page; either way the proposal is free and without obligation." },
+    { "selector": "div.ts-prose > h3:contains(\"contact form\")", "text": "Or use the form below" }
+  ],
+  "remove": ["div.ts-prose > h2:empty"]
+}

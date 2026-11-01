@@ -154,10 +154,20 @@ function applyGeneric($, own) {
         $(el).contents().filter((j, n) => n.type === "text").remove();
         $(el).append(" " + esc(r.text));
       });
-    } else if (r.html != null) els.html(r.html);
-    else if (r.text != null) els.text(r.text);
+    } else if (r.html != null) {
+      els.each((i, el) => {
+        // keepImages: the block's images and figures survive the rewrite (appended after the new text,
+        // or put where the new html says "<!--IMG-->").
+        const kept = r.keepImages ? $(el).find("figure, img").filter((j, k) => !$(k).parents("figure").length).map((j, k) => $.html(k)).get() : [];
+        let html = r.html;
+        for (const k of kept) html = html.includes("<!--IMG-->") ? html.replace("<!--IMG-->", k) : html + "\n" + k;
+        $(el).html(html);
+      });
+    } else if (r.text != null) els.text(r.text);
   }
   for (const sel of own.remove || []) $(sel).remove();
+  // retag: change the element name (a second <h1> becomes an <h2>)
+  for (const r of own.retag || []) $(r.selector).each((i, el) => { el.name = r.tag; el.tagName = r.tag; });
   for (const r of own.before || []) $(r.selector).first().before(r.html);
   for (const r of own.after || []) $(r.selector).first().after(r.html);
   for (const a of own.alts || []) {
@@ -235,6 +245,20 @@ function tripLd(own, slug, pagePath) {
   return ld;
 }
 
+/** The questions and answers of an existing accordion on the page (.faq-question-heading + .faq-content). */
+function faqOnPage(slug) {
+  const file = path.join(root, "content/pages", slug + ".html");
+  if (!fs.existsSync(file)) return [];
+  const $ = load(fs.readFileSync(file, "utf8"));
+  const items = [];
+  $(".faq-question-heading").each((i, h) => {
+    const q = $(h).text().replace(/\s+/g, " ").trim();
+    const a = $(h).nextAll(".faq-content").first();
+    if (q && a.length) items.push({ q, a: a.html() });
+  });
+  return items;
+}
+
 /** Title, description and JSON-LD for pages.json; null when the page has no own content. */
 export function ownMeta(slug, pagePath) {
   const own = loadOwn(slug);
@@ -242,6 +266,12 @@ export function ownMeta(slug, pagePath) {
   const url = SITE + pagePath;
   const ldJson = [];
   if (own.faq) ldJson.push(JSON.stringify(faqLd(own.faq, url)));
+  // faqFromPage: FAQPage schema from the accordion that is already on the page, word for word.
+  if (own.faqFromPage) {
+    const items = faqOnPage(slug);
+    if (items.length) ldJson.push(JSON.stringify(faqLd({ items }, url)));
+    else console.warn(`own-content: no FAQ accordion found on ${slug}`);
+  }
   if (own.trip) ldJson.push(JSON.stringify(tripLd(own, slug, pagePath)));
   for (const extra of own.ldJson || []) ldJson.push(JSON.stringify(extra));
   return { title: own.title, description: own.description, ogTitle: own.ogTitle, ogDescription: own.ogDescription, ldJson };

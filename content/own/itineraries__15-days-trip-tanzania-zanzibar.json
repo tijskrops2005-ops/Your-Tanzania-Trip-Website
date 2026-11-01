@@ -1,0 +1,104 @@
+{
+  "title": "15 Days Tanzania Safari & Zanzibar | Your Tanzania Trip",
+  "description": "Two weeks at an easy pace: Arusha, Tarangire, three days in the Serengeti, the Ngorongoro Crater and four days on Zanzibar. Private guide and vehicle. From $3,039 p.p.",
+  "h1": "15 Days Safari & Zanzibar",
+  "replace": [
+    { "selector": "div.ts-prose > h2", "index": 0, "text": "15 Days Safari & Zanzibar" },
+    { "selector": "div[class*=single-trips-sidebar] > h3", "index": 0, "text": "15 Days Safari & Zanzibar" }
+  ],
+  "trip": {
+    "heroNote": "*Per person, based on 6 travellers in low season. Includes the flight to Zanzibar, your guide and safari vehicle, accommodation and park fees. International flights not included.",
+    "intro": [
+      "<p>Fifteen days is enough time to see the north of Tanzania without rushing. You land near Arusha and take four days to settle in: a free day at the lodge, a game drive in <a href=\"/national-parks/arusha-national-park/\">Arusha National Park</a> and a walk to the Mount Meru waterfalls. Only then does the big safari start: Tarangire, three days in the Serengeti and the Ngorongoro Crater.</p>",
+      "<p>On day ten you fly to Zanzibar, included in the price, for four days of beach. Throughout the safari you have your own guide and 4×4 from <a href=\"/our-partner/\">Kilimanjaro Nature Tours</a>, so every day runs at your pace. This is the trip we recommend to families and to anyone who wants to arrive rested rather than straight off the plane into a game drive.</p>"
+    ],
+    "why": {
+      "heading": "Why this trip",
+      "items": [
+        "An easy start: two quiet days around Arusha before the long drives begin.",
+        "Three full days in the Serengeti, so you can follow the animals instead of the clock.",
+        "Arusha National Park adds colobus monkeys, forest and crater lakes that most short safaris skip.",
+        "Private guide and your own 4×4 for the whole safari; the flight to Zanzibar is included.",
+        "Three comfort levels for every night (Silver, Gold, Platinum); you choose per lodge.",
+        "The free Hakuna Matata Package: travel file, airport transfers and 24/7 support."
+      ]
+    },
+    "priceNote": "* Per person in US dollars for the season and group size shown. International flights, visas and travel insurance are not included.",
+    "cta": {
+      "heading": "Request this trip",
+      "text": "Free and without obligation, with a reply within 24 hours. Tell us your dates, group size and comfort level, and we send you a proposal that fits. We design your trip, you decide.",
+      "button": "Request your free travel proposal"
+    },
+    "days": [
+      {
+        "html": "<p>Your guide from Kilimanjaro Nature Tours meets you in the arrivals hall of Kilimanjaro International Airport. Karibu. It is less than an hour to your lodge near Arusha, where dinner is waiting. No programme tonight: sleep off the flight.</p>"
+      },
+      {
+        "title": "A free day in Arusha",
+        "html": "<p>A day with nothing you have to do. Stay at the lodge, read by the pool and get used to the light and the birdsong. If you would rather be out, your guide can take you into Arusha for a walk through the town and the Maasai market, or arrange a mountain bike ride through the villages on the outskirts. You decide the evening before.</p>"
+      },
+      {
+        "html": "<p>Your first game drive, half an hour from town. Arusha National Park is small and green, with Mount Meru in the background. It is the place for black-and-white colobus monkeys, forest birds such as the silvery-cheeked hornbill, giraffes on the open grassland and flamingos on the Momella lakes. There are no lions here, which is why you can also do part of the park on foot with a ranger.</p>"
+      },
+      {
+        "title": "Lodge day or a walk to the Mount Meru waterfalls",
+        "html": "<p>Another day to use as you wish. Our tip is the walk to the Mount Meru waterfalls: a short hike through farmland and forest to a pool cold enough for a quick swim, with a picnic lunch beside the stream. Keep an eye on the trees on the way back; colobus monkeys and hornbills are often around. Prefer a rest? The pool is yours.</p>"
+      },
+      {
+        "html": "<p>Today the safari moves on. Tarangire, about two hours from Arusha, is elephant country: in the dry season herds gather along the Tarangire River, the only water for miles, and groups of a hundred or more are not unusual. Giant baobabs, lions, giraffes and a long list of birds complete the picture. After the game drive you continue to your lodge in the Lake Manyara area.</p>"
+      },
+      {
+        "html": "<p>You cross the Ngorongoro highlands and descend into the Serengeti for three days. With this much time your guide can go further: the Seronera valley for leopards and lions, the open plains for cheetahs, and, depending on the month, the area where the herds of the Great Migration are moving. Mornings start early, when the light is soft; afternoons can end at the pool if you prefer.</p><p>Three nights in one place also means no packing. Ask your guide about a sunrise drive or a picnic breakfast out on the plains.</p>"
+      },
+      {
+        "html": "<p>An early start for the drive to the Ngorongoro Crater, the floor of a volcano that collapsed around two million years ago. Inside the crater walls you can see lions, elephants, buffalo, hyenas and, with luck, a black rhino. Lunch is a picnic at the hippo pool. In the afternoon you climb back to the rim and drive to your lodge.</p>"
+      },
+      {
+        "title": "Flight to Zanzibar (included)",
+        "html": "<p>Your guide drops you at the airport for the flight to Zanzibar, which is included in the price. A driver meets you on the island and takes you to your beach hotel. The rest of the day is for the sea.</p>"
+      },
+      {
+        "html": "<p>Three beach days. Swim, snorkel, sleep. If you want more, we add it: a trip to the reef, a spice farm visit, a sunset dhow cruise or half a day in Stone Town with its carved doors and spice market. Book ahead with us or decide on the spot.</p>"
+      },
+      {
+        "title": "Flight home from Zanzibar (ZNZ)",
+        "html": "<p>Depending on your flight time there is a last morning on the beach. A driver takes you to Zanzibar airport for your flight home. Want to stay longer? Add days on Zanzibar, Pemba or Mafia Island and we adjust the proposal.</p>"
+      }
+    ],
+    "schema": {
+      "name": "15 Days Safari & Zanzibar",
+      "description": "Fifteen-day private trip through northern Tanzania and Zanzibar: Arusha National Park, Tarangire, three days in the Serengeti and the Ngorongoro Crater with your own guide and vehicle, then a flight to Zanzibar for four days on the beach.",
+      "price": 3039,
+      "touristType": ["Families", "Couples", "Honeymooners"]
+    }
+  },
+  "faq": {
+    "heading": "Questions about this trip",
+    "items": [
+      {
+        "q": "What does this trip cost for 2 people?",
+        "a": "<p>For two travellers the price is $3,780.50 per person in low season (1 April to 19 May), $4,111.13 in mid season and $4,799.56 in high season (July to September and 20 December to 10 January). The headline price of $3,039 is based on six travellers in low season. All prices exclude international flights.</p>"
+      },
+      {
+        "q": "What is included and excluded?",
+        "a": "<p>Included: all accommodation, full board during the safari, meals on Zanzibar according to your hotel package, the flight to Zanzibar, park fees, a private English-speaking guide with a 4×4 safari vehicle, game drives, airport transfers and 24/7 support. Not included: international flights (we can book them for you), visas and travel insurance.</p>"
+      },
+      {
+        "q": "When is the best time for this trip?",
+        "a": "<p>June to October and December to February are the dry months, with the easiest game viewing and the sunniest beach days; they are also the busiest. March and November are quieter, with moderate rates. April and May are the rainy months with the lowest prices; the parks are green and empty, and showers usually pass within the day.</p>"
+      },
+      {
+        "q": "Is this trip suitable for families or honeymooners?",
+        "a": "<p>It is our first choice for families: the slow start, the short drives and the beach days suit children well, and we pick lodges with family rooms and pools. Honeymooners like the same rhythm with a quieter beach hotel; tell us and we adjust the lodges and add a private dinner or a sunset cruise.</p>"
+      },
+      {
+        "q": "Can I change the itinerary?",
+        "a": "<p>Yes. Skip the free days to shorten the trip, add Lake Manyara, spend an extra night in the Serengeti or choose a different beach. The comfort level can differ per night. We adjust the proposal until it fits, before you book anything.</p>"
+      },
+      {
+        "q": "How do I book, and what do I pay when?",
+        "a": "<p>Request the trip with the button on this page. Within 24 hours you receive a proposal, free and without obligation. When you confirm, you pay a deposit; the balance is due before departure. The exact amounts and dates are on your proposal.</p>"
+      }
+    ]
+  }
+}

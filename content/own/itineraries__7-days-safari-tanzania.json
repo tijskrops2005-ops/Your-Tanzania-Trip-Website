@@ -1,0 +1,86 @@
+{
+  "title": "7 Days Northern Tanzania Safari | Your Tanzania Trip",
+  "description": "One week, three parks: Lake Manyara, two days in the Serengeti and the Ngorongoro Crater, with a private guide and your own 4×4. From $1,599 p.p., based on 6 travellers in low season.",
+  "h1": "7 Days Safari Tanzania",
+  "replace": [
+    { "selector": "div.ts-prose > h2", "index": 0, "text": "7 Days Safari Tanzania" },
+    { "selector": "div[class*=single-trips-sidebar] > h3", "index": 0, "text": "7 Days Safari Tanzania" }
+  ],
+  "trip": {
+    "heroNote": "*Per person, based on 6 travellers in low season. Includes your guide and safari vehicle, accommodation, park and crater fees. International flights not included.",
+    "intro": [
+      "<p>One week, three parks, no wasted days. You fly into Kilimanjaro, spend a day at Lake Manyara, two days in the Serengeti and a day in the Ngorongoro Crater, and fly home from Kilimanjaro again. The crater and the Serengeti are two of Africa's seven natural wonders, and this route gives you both.</p>",
+      "<p>It is the shortest trip we offer that still feels complete, and the one we suggest when you have limited holiday or want to combine Tanzania with something else. Your guide and 4×4 from <a href=\"/our-partner/\">Kilimanjaro Nature Tours</a> are yours alone, so you decide when the day starts and how long you stay with the animals.</p>"
+    ],
+    "why": {
+      "heading": "Why this trip",
+      "items": [
+        "Serengeti and Ngorongoro Crater in one week, with Lake Manyara as a varied first day.",
+        "Short drives between the parks: more time watching, less time on the road.",
+        "Private guide and your own 4×4 with drinking water on board.",
+        "Three comfort levels for every night (Silver, Gold, Platinum); you choose per lodge.",
+        "Easy to extend with Tarangire, Zanzibar or a Kilimanjaro climb.",
+        "The free Hakuna Matata Package: travel file, airport transfers and 24/7 support."
+      ]
+    },
+    "priceNote": "* Per person in US dollars for the season and group size shown. International flights, visas and travel insurance are not included.",
+    "cta": {
+      "heading": "Request this trip",
+      "text": "Free and without obligation, with a reply within 24 hours. Tell us your dates, group size and comfort level, and we send you a proposal that fits. We design your trip, you decide.",
+      "button": "Request your free travel proposal"
+    },
+    "days": [
+      {
+        "html": "<p>Your guide from Kilimanjaro Nature Tours is waiting at Kilimanjaro International Airport. Karibu. It is a short drive to your lodge near Arusha, where you have dinner and an early night. The vehicle that collects you is yours for the whole week.</p>"
+      },
+      {
+        "html": "<p>Lake Manyara lies at the foot of the Rift Valley escarpment, a wall some 400 metres high. The lake covers most of the park; around it are groundwater forest, woodland and open shore, each with its own animals. Expect baboons and blue monkeys in the forest, elephants in the woodland, hippos and flamingos at the water and, with luck, the lions that here sometimes rest in trees. You sleep on the escarpment above the lake.</p>"
+      },
+      {
+        "html": "<p>Over the highlands and down into the Serengeti. Two days around Seronera, where the wildlife stays all year: lions on the kopjes, leopards in the trees along the river, cheetahs on the open plains. Depending on the month the Great Migration herds may be nearby; your guide adjusts the route to where the animals are.</p><p>The second day starts early, when the light is soft and the cats are still moving. With a vehicle to yourselves there is no hurry: stay with a sighting as long as you like.</p>"
+      },
+      {
+        "html": "<p>An early departure from the Serengeti for the Ngorongoro Crater, the floor of a volcano that collapsed around two million years ago. Within the crater walls live lions, elephants, buffalo, hyenas and a small number of black rhinos, so there is a real chance of the Big Five in one morning. Picnic lunch at the hippo pool, then up to the rim and on to your lodge.</p>"
+      },
+      {
+        "title": "Flight home from Kilimanjaro International Airport (JRO)",
+        "html": "<p>Depending on your flight time you have a last morning at the lodge. Your guide drives you to Kilimanjaro International Airport for your flight home. Not ready to leave? Add Tarangire, a few days on Zanzibar or a Kilimanjaro climb and we adjust the proposal.</p>"
+      }
+    ],
+    "schema": {
+      "name": "7 Days Safari Tanzania",
+      "description": "Seven-day private safari in northern Tanzania: Lake Manyara, two days in the Serengeti and the Ngorongoro Crater, with your own guide and 4×4 vehicle.",
+      "price": 1599,
+      "touristType": ["Couples", "Families", "Groups of friends", "Solo travellers"]
+    }
+  },
+  "faq": {
+    "heading": "Questions about this trip",
+    "items": [
+      {
+        "q": "What does this trip cost for 2 people?",
+        "a": "<p>For two travellers the price is $2,155.24 per person in low season (1 April to 19 May), $2,381.50 in mid season and $2,847.97 in high season (July to September and 20 December to 10 January). The headline price of $1,599 is based on six travellers in low season. All prices exclude international flights.</p>"
+      },
+      {
+        "q": "What is included and excluded?",
+        "a": "<p>Included: all accommodation, full board during the safari, park fees and the crater fee, a private English-speaking guide with a 4×4 safari vehicle and drinking water on board, game drives, airport transfers and 24/7 support. Not included: international flights (we can book them for you), visas and travel insurance.</p>"
+      },
+      {
+        "q": "When is the best time for this trip?",
+        "a": "<p>June to October and December to February are the dry months with the easiest game viewing; they are also the busiest. March and November are quieter, with moderate rates. April and May are the rainy months with the lowest prices: green parks, few vehicles, and showers that usually pass within the day. This route works in every month.</p>"
+      },
+      {
+        "q": "Is this trip suitable for families or honeymooners?",
+        "a": "<p>Yes. The drives are short and the lodges have pools, which makes it a good first safari for children. Honeymooners usually add four or five days on Zanzibar at the end; we book the flight and the beach hotel. Tell us who is travelling and we adjust the lodges.</p>"
+      },
+      {
+        "q": "Can I change the itinerary?",
+        "a": "<p>Yes. Swap Lake Manyara for Tarangire, add a night in the Serengeti, add Zanzibar or a climb, or change the comfort level per night. We adjust the proposal until it fits, before you book anything.</p>"
+      },
+      {
+        "q": "How do I book, and what do I pay when?",
+        "a": "<p>Request the trip with the button on this page. Within 24 hours you receive a proposal, free and without obligation. When you confirm, you pay a deposit; the balance is due before departure. The exact amounts and dates are on your proposal.</p>"
+      }
+    ]
+  }
+}

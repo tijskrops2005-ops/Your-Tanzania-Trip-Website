@@ -30,6 +30,27 @@ Meting met `scripts/check-overlap.py`: zichtbare tekst van onze pagina en van de
 - **Home**: de kaartteksten van de 8 reizen, de tegels "Discover and explore" en de USP-lijst.
 - **About** (66,7%), **Contact** (72,5%) en **FAQ-index** (83,3%) zijn nog grotendeels de oorspronkelijke tekst.
 
-## Ná
+## Ná (1 november 2026, lokale build van branch `feature/own-content-seo`)
 
-_Volgt na fase 1._
+| Pagina | Vóór | Ná | Onze zinnen | Gelijk | Wat er nog gelijk is |
+|---|---|---|---|---|---|
+| / | 50% | **0%** | 88 | 0 | – |
+| /itineraries/11-days-safari-trip-tanzania-zanzibar/ | 37.9% | **1.1%** | 87 | 1 | “ole serai luxury camp turner springs by wellworth” |
+| /itineraries/15-days-trip-tanzania-zanzibar/ | 35.4% | **1%** | 96 | 1 | “serengeti sametu camp by karibu camps and lodges” |
+| /itineraries/9-days-safari-wildebeest-migration-near-the-mara-river/ | 41.2% | **2.2%** | 91 | 2 | “serengeti mara river camp by karibu camps and lodges”, “serengeti sametu camp by karibu camps and lodges” |
+| /itineraries/7-days-safari-tanzania/ | 41.9% | **1.2%** | 80 | 1 | “serengeti sametu camp by karibu camps and lodges” |
+| /itineraries/machame-route-7-days/ | 40% | **0%** | 103 | 0 | – |
+| /itineraries/10-days-zanzibar-island/ | 44.2% | **0%** | 67 | 0 | – |
+| /itineraries/10-days-safari-mikumi-udzungwa-ruaha-nyerere/ | 37.1% | **3%** | 99 | 3 | “half day boat safari in nyerere national park”, “stanley s kopje camp by foxes safari camps”, “vuma hills tented camp by foxes safari camps” |
+| /itineraries/5-day-tanzania-safari-small-group-trip/ | 43.5% | **1.3%** | 76 | 1 | “serengeti national park central west east ndutu only from end of december to march during the calving season of the great migration” |
+| /climbing-kilimanjaro/ | 35.7% | **2.3%** | 88 | 2 | “all our trips are tailor made and fully customizable”, “we ll adjust every detail to suit your wishes interests and travel style” |
+| /great-wildebeest-migration/ | 29.7% | **2.2%** | 93 | 2 | “masai mara and northern serengeti to southern serengeti”, “serengeti mara river camp by karibu camps and lodges” |
+| /islands/zanzibar-island/ | 40.3% | **1.9%** | 52 | 1 | “dar es salaam to zanzibar 90 one way” |
+| /about-us/ | 66.7% | **0%** | 56 | 0 | – |
+| /hakuna-matata-package/ | 46.6% | **0%** | 62 | 0 | – |
+| /faqs/ | 83.3% | **0%** | 22 | 0 | – |
+| /contact/ | 72.5% | **0%** | 28 | 0 | – |
+
+Wat overblijft zijn namen van lodges en kampen van acht of meer woorden (“Serengeti Sametu Camp by Karibu Camps and Lodges”, “Ole Serai Luxury Camp - Turner Springs by Wellworth”, “Vuma Hills Tented Camp by Foxes Safari Camps”). Dat zijn feitelijke namen die we niet veranderen. De 22 gedeelde footer-zinnen zijn op alle 768 pagina's weg.
+
+De meting is te herhalen met `python3 scripts/check-overlap.py --ours http://localhost:3000` (lokale build) of zonder `--ours` (live site).

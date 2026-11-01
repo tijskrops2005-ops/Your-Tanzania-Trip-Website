@@ -1,0 +1,86 @@
+{
+  "title": "Zanzibar beaches, reefs and Stone Town | Your Tanzania Trip",
+  "description": "Zanzibar in one page: which coast to choose, our three favourite places to stay, what to do from spice farms to Mnemba, flight prices from Arusha and Dar, and when to go.",
+  "replace": [
+    {
+      "selector": "[class*=ts-jumbotron-content] p",
+      "index": 0,
+      "html": "Zanzibar is the island where most of our safaris end: an hour's flight from Arusha, white beaches inside a coral reef, and Stone Town with its carved doors and spice market. Below: which coast suits you, where we like to stay, what to do, and when to go."
+    },
+    {
+      "selector": "div.ts-content-area > p",
+      "index": 0,
+      "html": "Zanzibar Island, Pemba and a scattering of small islands form the Zanzibar archipelago, 35 kilometres off the coast of Tanzania. The island does two things well: slow beach days inside the reef, and culture and history in Stone Town and on the spice farms. Below are our three favourite places to stay and the trips we combine with the island most often."
+    },
+    {
+      "selector": "div.ts-content-area > h3",
+      "index": 0,
+      "text": "Where to stay"
+    },
+    {
+      "selector": "div.ts-content-area > p",
+      "index": 1,
+      "html": "There are beaches on every side of the island. We usually send guests to the east coast: wide, quiet beaches, a reef you can walk to at low tide, plenty of activities and good restaurants within reach. It gives the most rounded stay. From the many resorts we have visited, these are our three picks, one per comfort level.<br>\n<a href=\"/accommodation/fun-beach/\"><strong>Silver: Fun Beach</strong></a>, a relaxed resort with 42 rooms looking at the pool or the sea, and everything you need without fuss.<br>\n<a href=\"/accommodation/next-paradise-boutique-resort/\"><strong>Gold: Next Paradise</strong></a>, a boutique resort on the ocean with 25 rooms in several categories and a kitchen we keep hearing about.<br>\n<a href=\"/accommodation/qambani-luxury-resort/\"><strong>Platinum: Qambani Luxury Resort</strong></a>, six villas, each with its own theme and its own staff. If one place on the island is worth the splurge, it is this one."
+    },
+    {
+      "selector": "div.ts-content-area > h3",
+      "index": 1,
+      "text": "Culture and history"
+    },
+    {
+      "selector": "div.ts-content-area > p",
+      "index": 2,
+      "html": "The islands were called the Spice Islands for a reason: cloves, pepper, cinnamon and nutmeg have been traded from here for centuries, and the farms are still there to visit. Stone Town, the old heart of Zanzibar City, is a mix of Swahili, Arab, Indian and European influences. Walk the lanes, see the former Sultan's Palace and the House of Wonders, and eat at the Forodhani night market or shop at Darajani."
+    },
+    {
+      "selector": "div.ts-content-area > h2",
+      "index": 0,
+      "text": "Things to do on Zanzibar"
+    },
+    {
+      "selector": "div.ts-content-area > ul",
+      "index": 0,
+      "html": "<li>Spice farm visit: a guide walks you through plantations of cloves, cinnamon, pepper, ginger, nutmeg and fruit, with tasting along the way.</li>\n<li>Kitesurfing on the beaches of Paje, Kiwengwa and Nungwi.</li>\n<li>Mountain bike tour through the villages inland.</li>\n<li>Stone Town walk: the lanes, the markets and the site of the old slave market, with a guide who grew up there.</li>\n<li>Prison Island: a half-hour boat ride to the island once used to hold slaves, now home to giant tortoises and the ruins of the prison.</li>\n<li>Safari Blue: a day by dhow to three islands with swimming, snorkelling and a seafood barbecue on a sandbank.</li>\n<li>Jozani forest: a walk through the island's last native forest, home to the red colobus monkey found only on Zanzibar.</li>\n<li>Diving and snorkelling on the reefs around the island.</li>\n<li>Village visit: half a day with a local family to see how the island lives away from the beach.</li>\n<li>Mnemba atoll: a boat trip to the island's clearest snorkelling water, with dolphins on a good day.</li>"
+    },
+    {
+      "selector": "div.ts-content-area > h2",
+      "index": 1,
+      "text": "Getting to Zanzibar"
+    },
+    {
+      "selector": "div.ts-content-area > p",
+      "index": 3,
+      "html": "From Dar es Salaam the flight takes about 20 minutes; from Arusha, the safari base some 420 kilometres away, about an hour and a half. We book the flight as part of your trip. Indicative one-way fares:"
+    },
+    {
+      "selector": "div.ts-content-area > h2",
+      "index": 2,
+      "text": "When to go for kitesurfing"
+    },
+    {
+      "selector": "div.ts-content-area > p",
+      "index": 4,
+      "html": "Zanzibar has two wind seasons, and the east coast around Paje is the place for them:"
+    },
+    {
+      "selector": "div[class*=info-block] > p",
+      "index": 0,
+      "html": "Zanzibar is the beach at the end of a safari, and a holiday on its own: white sand inside the reef, warm water, spice farms and Stone Town."
+    },
+    {
+      "selector": "div[class*=info-block] > h3",
+      "index": 0,
+      "text": "What Zanzibar is known for"
+    },
+    {
+      "selector": "div[class*=info-block] > ul",
+      "index": 0,
+      "html": "<li>White beaches lined with palms</li>\n<li>Warm, clear water inside the coral reef</li>\n<li>Snorkelling and diving on the reefs</li>\n<li>Stone Town, a UNESCO World Heritage Site</li>\n<li>Spice farms and Swahili food</li>\n<li>Easy to combine with a safari: an hour by air from Arusha</li>"
+    },
+    {
+      "selector": "div.ts-content-area > ul",
+      "index": 1,
+      "html": "<li>Arusha – Zanzibar: from € 285, one way</li>\n<li>Dar es Salaam – Zanzibar: from € 90, one way</li>\n<li>Kilimanjaro Airport – Zanzibar: from € 350, one way</li>"
+    }
+  ]
+}

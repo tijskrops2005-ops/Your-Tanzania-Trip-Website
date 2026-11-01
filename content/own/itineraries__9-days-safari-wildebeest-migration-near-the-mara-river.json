@@ -1,0 +1,93 @@
+{
+  "title": "9 Days Migration Safari, Mara River | Your Tanzania Trip",
+  "description": "Nine days built around the Great Migration: Tarangire, the central Serengeti, two days by the Mara River in the northern Serengeti and the Ngorongoro Crater. From $2,365 p.p.",
+  "h1": "9 Days Safari: Great Migration & Mara River",
+  "replace": [
+    { "selector": "div.ts-prose > h2", "index": 0, "text": "9 Days Safari: Great Migration & Mara River" },
+    { "selector": "div[class*=single-trips-sidebar] > h3", "index": 0, "text": "9 Days Safari: Great Migration & Mara River" }
+  ],
+  "trip": {
+    "heroNote": "*Per person, based on 6 travellers in low season. Includes your guide and safari vehicle, accommodation, park and crater fees. International flights not included.",
+    "intro": [
+      "<p>This safari has one goal: to put you on the bank of the Mara River when the herds come through. Between late July and early October the wildebeest and zebras of the Great Migration cross the river in the northern Serengeti, with crocodiles in the water and big cats on the far side. Two full days there give you a real chance of seeing a crossing.</p>",
+      "<p>The rest of the route is the classic north: Tarangire with its elephants, the central Serengeti with its resident lions and leopards, and the Ngorongoro Crater on the way back. You travel with your own guide and 4×4 from <a href=\"/our-partner/\">Kilimanjaro Nature Tours</a>, who knows where the herds were yesterday and where they are likely to be today. Outside the crossing months the same route still works: the migration is somewhere in the Serengeti all year, and we adjust the camps to where it is.</p>"
+    ],
+    "why": {
+      "heading": "Why this trip",
+      "items": [
+        "Two nights in the northern Serengeti, close to the Mara River, instead of a single rushed visit.",
+        "Tarangire, the central Serengeti and the Ngorongoro Crater on the same route.",
+        "Private guide and your own 4×4; your guide tracks the herds by radio and adjusts the day.",
+        "Camps chosen for their position near the river in crossing season.",
+        "Three comfort levels for every night (Silver, Gold, Platinum); you choose per camp.",
+        "The free Hakuna Matata Package: travel file, airport transfers and 24/7 support."
+      ]
+    },
+    "priceNote": "* Per person in US dollars for the season and group size shown. International flights, visas and travel insurance are not included.",
+    "cta": {
+      "heading": "Request this trip",
+      "text": "Free and without obligation, with a reply within 24 hours. Tell us your dates and we check where the herds should be, then send a proposal that fits. We design your trip, you decide.",
+      "button": "Request your free travel proposal"
+    },
+    "days": [
+      {
+        "html": "<p>Your guide from Kilimanjaro Nature Tours meets you at Kilimanjaro International Airport. Karibu. A short drive brings you to your lodge near Arusha for dinner and a good night's sleep. The 4×4 that picks you up is yours for the whole safari.</p>"
+      },
+      {
+        "html": "<p>After breakfast you drive to Tarangire, about two hours from Arusha. In the dry season the Tarangire River is the only water around, and elephant herds of a hundred or more come down to drink. Baobabs, lions, giraffes and hundreds of bird species complete the day. You overnight in the Lake Manyara area.</p>"
+      },
+      {
+        "html": "<p>You cross the Ngorongoro highlands and descend into the central Serengeti. Around Seronera the wildlife stays all year: lions on the rocky kopjes, leopards in the trees along the river, cheetahs on the plains. A full afternoon game drive, then your camp in the heart of the park.</p>"
+      },
+      {
+        "title": "Northern Serengeti and the Mara River (two days)",
+        "html": "<p>A long drive north through the Serengeti brings you to the Mara River area, the stage of the Great Migration between late July and early October. For two days your guide follows the herds. When a group gathers on the bank, you wait with them: a crossing can take minutes or hours to start, and the crocodiles in the water and the cats on the far bank make it the most dramatic sight on any safari.</p><p>Outside the crossing months the north is quiet and beautiful, with resident wildlife and few vehicles. Tell us your dates and we advise honestly on your chances.</p>"
+      },
+      {
+        "html": "<p>You drive back south through the Serengeti, with a game drive on the way. The route changes with the season; your guide picks the track with the best sightings. You sleep again in the central Serengeti.</p>"
+      },
+      {
+        "html": "<p>An early start for the Ngorongoro Crater, the floor of a volcano that collapsed around two million years ago. Inside the crater walls live lions, elephants, buffalo, hyenas and a small number of black rhinos. After a picnic lunch at the hippo pool you climb back to the rim and drive to your lodge near Lake Manyara.</p>"
+      },
+      {
+        "title": "Flight home from Kilimanjaro International Airport (JRO)",
+        "html": "<p>Depending on your flight time you have a last morning at the lodge. Your guide drives you to Kilimanjaro International Airport for your flight home. Not ready to leave? Add a few days on Zanzibar, Pemba or Mafia Island and we adjust the proposal.</p>"
+      }
+    ],
+    "schema": {
+      "name": "9 Days Safari: Great Migration & Mara River",
+      "description": "Nine-day private safari in northern Tanzania built around the Great Migration: Tarangire, the central Serengeti, two days near the Mara River in the northern Serengeti and the Ngorongoro Crater, with your own guide and vehicle.",
+      "price": 2365,
+      "touristType": ["Couples", "Groups of friends", "Photographers"]
+    }
+  },
+  "faq": {
+    "heading": "Questions about this trip",
+    "items": [
+      {
+        "q": "What does this trip cost for 2 people?",
+        "a": "<p>For two travellers the price is $3,087.51 per person in low season (1 April to 19 May), $3,345.40 in mid season and $4,201.51 in high season (July to September and 20 December to 10 January). The headline price of $2,365 is based on six travellers in low season. The crossing months fall in high season. All prices exclude international flights.</p>"
+      },
+      {
+        "q": "What is included and excluded?",
+        "a": "<p>Included: all accommodation, full board during the safari, park fees and the crater fee, a private English-speaking guide with a 4×4 safari vehicle, game drives, airport transfers and 24/7 support. Not included: international flights (we can book them for you), visas and travel insurance.</p>"
+      },
+      {
+        "q": "When is the best time for this trip?",
+        "a": "<p>For the Mara River crossings: late July to early October. The herds move with the rain, so no date is certain, but two days by the river give a good chance. From December to March the migration is in the southern Serengeti for the calving season; then we move the two northern nights south. April and May are the quietest and cheapest months, with the herds on the move in the centre and west.</p>"
+      },
+      {
+        "q": "Is this trip suitable for families or honeymooners?",
+        "a": "<p>It suits travellers who do not mind long drives for a big reward; the days in the north are full. For families with older children it works well. Honeymooners who want more beach can add Zanzibar at the end. Ask us and we tell you honestly whether it fits.</p>"
+      },
+      {
+        "q": "Can I change the itinerary?",
+        "a": "<p>Yes. Fly from the northern Serengeti instead of driving back, add a night at the river, swap Tarangire for Lake Manyara or add Zanzibar. The comfort level can differ per night. We adjust the proposal until it fits, before you book anything.</p>"
+      },
+      {
+        "q": "How do I book, and what do I pay when?",
+        "a": "<p>Request the trip with the button on this page. Within 24 hours you receive a proposal, free and without obligation. When you confirm, you pay a deposit; the balance is due before departure. The exact amounts and dates are on your proposal. For crossing season, book early: the river camps fill up months ahead.</p>"
+      }
+    ]
+  }
+}

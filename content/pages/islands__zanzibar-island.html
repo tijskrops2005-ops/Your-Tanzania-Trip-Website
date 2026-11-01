@@ -2,10 +2,8 @@
 
 
     <div class="ts-jumbotron relative isolate lg:ts-mask-bottom is-pre-form-visible">
-        <div
-            class="ts-jumbotron-wrapper  "
-            >
-                                                                <img width="1700" height="800" src="/wp-content/uploads/2023/07/Beach-and-shaded-area.avif" class="no-lazyload ts-jumbotron-image absolute inset-0 -z-10 h-full w-full object-cover ts-object-center wp-post-image" alt="" fetchpriority="high" loading="eager" sizes="(max-width: 768px) 768px, 1700px" decoding="async" srcset="/wp-content/uploads/2023/07/Beach-and-shaded-area.avif 1000w, /wp-content/uploads/2023/07/Beach-and-shaded-area-300x199.avif 300w, /wp-content/uploads/2023/07/Beach-and-shaded-area-768x509.avif 768w, /wp-content/uploads/2023/07/Beach-and-shaded-area-60x40.avif 60w" />                            
+        <div class="ts-jumbotron-wrapper  ">
+                                                                <img width="1700" height="800" src="/wp-content/uploads/2023/07/Beach-and-shaded-area.avif" class="no-lazyload ts-jumbotron-image absolute inset-0 -z-10 h-full w-full object-cover ts-object-center wp-post-image" alt fetchpriority="high" loading="eager" sizes="(max-width: 768px) 768px, 1700px" decoding="async" srcset="/wp-content/uploads/2023/07/Beach-and-shaded-area.avif 1000w, /wp-content/uploads/2023/07/Beach-and-shaded-area-300x199.avif 300w, /wp-content/uploads/2023/07/Beach-and-shaded-area-768x509.avif 768w, /wp-content/uploads/2023/07/Beach-and-shaded-area-60x40.avif 60w">                            
                             <div class="w-full ts-jumbotron-inner custom-bg-gradient-black">
                     <div class="flex relative flex-col items-end mx-auto max-w-9xl lg:flex-row">
                         <div class="relative mx-auto flex w-full flex-col items-end px-4 max-w-7xl container-2xl gap-x-12 md:px-5 lg:flex-row justify-between">
@@ -26,7 +24,7 @@
                                 <h1 style="text-wrap: balance;" class="!leading-tight">Zanzibar Island</h1>
 
                                 
-                                                                    <p style="text-wrap: balance;">Zanzibar Island is known as Africa’s tropical paradise, offering the world’s most beautiful beaches. Here, you find miles and miles of white sandy beaches dotted with palm trees, surrounded by the clear azure water of the Indian Ocean.</p>
+                                                                    <p style="text-wrap: balance;">Zanzibar is the island where most of our safaris end: an hour's flight from Arusha, white beaches inside a coral reef, and Stone Town with its carved doors and spice market. Below: which coast suits you, where we like to stay, what to do, and when to go.</p>
 
                                                                     
                                 
@@ -38,8 +36,7 @@
         <div class="max-w-xs text-xl font-black tracking-wider text-white uppercase md:text-2xl" style="text-wrap: balance;">
             Let’s plan your dream trip together!        </div>
 
-                    <img class="inline-block object-cover w-14 h-14 rounded-full md:h-16 md:w-16 aspect-video"
-                src="/brand/partner/baraka-dalali.webp" alt="" width="150" height="150" loading="eager" fetchpriority="high" decoding="async">
+                    <img class="inline-block object-cover w-14 h-14 rounded-full md:h-16 md:w-16 aspect-video" src="/brand/partner/baraka-dalali.webp" alt width="150" height="150" loading="eager" fetchpriority="high" decoding="async">
             </div>
 
     <form action="/travel-proposal/" class="ts-jumbotron-pre-form" x-data="{ adults: '2', adultsFirstClick: true, children: '0', childrenFirstClick: true }">
@@ -47,9 +44,7 @@
             <div class="flex flex-col form-group">
                 <label for="adults">Adults</label>
                 <div class="relative mt-auto">
-                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite"
-                        type="number" id="adults" name="adults" value="2" inputmode="numeric" pattern="[0-9]*" required
-                        x-model="adults" @click="if (adultsFirstClick) { adults = ''; adultsFirstClick = false; }">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite" type="number" id="adults" name="adults" value="2" inputmode="numeric" pattern="[0-9]*" required x-model="adults" @click="if (adultsFirstClick) { adults = ''; adultsFirstClick = false; }">
 
                     <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
                         <img class="w-auto h-6" width="10" height="24" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/adult.png" alt="Adult icon" fetchpriority="high" decoding="async">
@@ -60,9 +55,7 @@
             <div class="flex flex-col form-group">
                 <label for="children">Children</label>
                 <div class="relative mt-auto">
-                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite"
-                        type="number" id="children" name="children" value="0" inputmode="numeric" pattern="[0-9]*"
-                        x-model="children" @click="if (childrenFirstClick) { children = ''; childrenFirstClick = false; }">
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer form-input text-anthracite" type="number" id="children" name="children" value="0" inputmode="numeric" pattern="[0-9]*" x-model="children" @click="if (childrenFirstClick) { children = ''; childrenFirstClick = false; }">
 
                     <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
                         <img class="w-auto h-5" width="14" height="20" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/kid.png" alt="Child icon" fetchpriority="high" decoding="async">
@@ -73,11 +66,7 @@
             <div class="col-span-2 form-group">
                 <label for="estimated_arrival_date">Estimated arrival date</label>
                 <div class="relative">
-                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer estimated_arrival_date form-input text-anthracite"
-                        type="date"
-                        id="estimated_arrival_date"
-                        name="estimated_arrival_date"
-                        required>
+                    <input class="w-full h-10 text-lg tracking-wider border-0 cursor-pointer estimated_arrival_date form-input text-anthracite" type="date" id="estimated_arrival_date" name="estimated_arrival_date" required>
 
                     <div class="flex absolute top-0 right-0 justify-center items-center w-10 h-10 pointer-events-none bg-sand">
                         <img class="w-auto h-5" width="20" height="20" loading="eager" src="/wp-content/themes/tanzania-specialist/public/images/calendar.png" alt="Calendar icon" fetchpriority="high" decoding="async">
@@ -104,18 +93,8 @@
     </div>
 
 
-        <img
-        width="1700"
-        height="1644"
-        decoding="async"
-        fetchpriority="high"
-        loading="eager"
-        class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 top-36"
-        src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png"
-        alt=""
-        aria-hidden="true"
-        role="presentation" />
-<div class="relative z-10 px-5 mx-auto max-w-7xl container-2xl"><ul id="breadcrumbs" class="flex items-center py-4 md:py-6 gap-x-3"></span><li><a href="/">Home</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li>  <li><a href="/islands/">Islands</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li>  <li class="active"><a href="/islands/zanzibar-island/">Zanzibar Island</a></li></span></ul></div>
+        <img width="1700" height="1644" decoding="async" fetchpriority="high" loading="eager" class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 top-36" src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png" alt aria-hidden="true" role="presentation">
+<div class="relative z-10 px-5 mx-auto max-w-7xl container-2xl"><ul id="breadcrumbs" class="flex items-center py-4 md:py-6 gap-x-3"><li><a href="/">Home</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li>  <li><a href="/islands/">Islands</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li>  <li class="active"><a href="/islands/zanzibar-island/">Zanzibar Island</a></li></ul></div>
 
     <div class="page-content container-2xl">
                         <div class="grid grid-cols-12 gap-y-5 justify-between items-start sticky-wrapper single-main-content md:gap-x-16">
@@ -123,82 +102,63 @@
                         
                         
                         <div class="ts-content-area text-anthracite">
-                            <p>Together with Pemba Island and a host of smaller islands, Zanzibar forms the Zanzibar Archipelago. On Zanzibar Island you get relaxed beach living alongside a wide choice of activities, a vibrant culture and a rich history. Join a spice tour, or head out to the stunning coral reefs and swim among tropical reef fish.  Everything you need for a holiday to remember is here on Zanzibar Island. Below you'll find our own top three places to stay, plus our favourite <a href="/zanzibar-holiday/">Zanzibar island itineraries.</a></p>
+                            <p>Zanzibar Island, Pemba and a scattering of small islands form the Zanzibar archipelago, 35 kilometres off the coast of Tanzania. The island does two things well: slow beach days inside the reef, and culture and history in Stone Town and on the spice farms. Below are our three favourite places to stay and the trips we combine with the island most often.</p>
     <div class="f-carousel-container f-carousel-post not-prose mb-14 mt-8 min-w-full !w-full mx-auto lg:mx-0">
         <div class="f-carousel-inner">
             <div class="h-full f-carousel js-f-carousel">
                                                                                 <div class="f-carousel__slide">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                 data-lazy-src="/wp-content/uploads/2023/07/Stone-town-view.avif"
-                                 alt="">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-lazy-src="/wp-content/uploads/2023/07/Stone-town-view.avif" alt>
                         </div>
                                                                                                     <div class="f-carousel__slide">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                 data-lazy-src="/wp-content/uploads/2023/07/Nakupenda-Sandbank_Snorkelling-scaled.avif"
-                                 alt="">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-lazy-src="/wp-content/uploads/2023/07/Nakupenda-Sandbank_Snorkelling-scaled.avif" alt>
                         </div>
                                                                                                     <div class="f-carousel__slide">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                 data-lazy-src="/wp-content/uploads/2023/07/Jozani-Forest_Trees-and-path-scaled.avif"
-                                 alt="">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-lazy-src="/wp-content/uploads/2023/07/Jozani-Forest_Trees-and-path-scaled.avif" alt>
                         </div>
                                                                                                     <div class="f-carousel__slide">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                 data-lazy-src="/wp-content/uploads/2023/07/Dolphin-Adventure_Dolphins-swimming-scaled.avif"
-                                 alt="">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-lazy-src="/wp-content/uploads/2023/07/Dolphin-Adventure_Dolphins-swimming-scaled.avif" alt>
                         </div>
                                                                                                     <div class="f-carousel__slide">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                 data-lazy-src="/wp-content/uploads/2023/07/Dhow-on-the-sand.avif"
-                                 alt="">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-lazy-src="/wp-content/uploads/2023/07/Dhow-on-the-sand.avif" alt>
                         </div>
                                                                                                     <div class="f-carousel__slide">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                 data-lazy-src="/wp-content/uploads/2023/07/Jozani-Forest_Zanzibar-red-colobus-close-up-scaled.avif"
-                                 alt="">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-lazy-src="/wp-content/uploads/2023/07/Jozani-Forest_Zanzibar-red-colobus-close-up-scaled.avif" alt>
                         </div>
                                                                                                     <div class="f-carousel__slide">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                 data-lazy-src="/wp-content/uploads/2023/07/Prison-Island-Tour_Scuba-diving-scaled.avif"
-                                 alt="">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-lazy-src="/wp-content/uploads/2023/07/Prison-Island-Tour_Scuba-diving-scaled.avif" alt>
                         </div>
                                                                                                     <div class="f-carousel__slide">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                 data-lazy-src="/wp-content/uploads/2023/07/Sunset-and-boat.avif"
-                                 alt="">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-lazy-src="/wp-content/uploads/2023/07/Sunset-and-boat.avif" alt>
                         </div>
                                                 </div>
         </div>
     </div>
 
-<h3>This is how you stay!</h3>
-<p>Beaches and resorts can be found on every side of Zanzibar island, north, south, east and west. Our own favourite, though, is the east coast, chiefly for its beautiful, tranquil beaches, the wide range of activities and the many restaurants serving all kinds of cuisine, enough to please even the fussiest eater. In the view of our travel experts, this part of the island gives you the best all-round Zanzibar experience. With so many resorts and lodges to choose from, we have narrowed our three personal favourites down to three price categories.<br />
-In the Silver category our pick is <a href="/accommodation/fun-beach/"><strong>Fun Beach hotel</strong></a> – 42 rooms with pool or beach view and modern amenities for maximum comfort. In the Gold category we point you to <a href="/accommodation/next-paradise-boutique-resort/"><strong>Next Paradise</strong></a> – a boutique resort facing the ocean, with 25 elegantly furnished rooms and excellent food. The rooms are divided into several categories, each with its own special touches.<br />
-Finally, in the Platinum category (drumroll….. ) – <a href="/accommodation/qambani-luxury-resort/"><strong>Qambani Luxury Resort</strong></a>. With flawless service across its six individually themed villas, this resort offers the most beautiful and indulgent stay on Zanzibar. Thanks to the refined, elegant touches in the interiors and artwork, every villa tells a story of its own while still feeling like a home away from home. Qambani is luxury and comfort at their very best!</p>
-<h3>A rich culture and history</h3>
-<p>The Zanzibar islands are known as the Spice Islands, a name earned through their long history of spice trading and their many spice plantations. Historic Stone Town is a fascinating blend of cultures, where food lovers and culture enthusiasts can explore spots such as the Sultan's Palace, the House of Wonders and the Darajani and Forodhani food markets. There really is no end to what you can do here!</p>
-<h2>Excursions and activities Zanzibar</h2>
-<ul style="content-visibility: auto;contain-intrinsic-size: auto 780px;">
-<li>Spice tour: walk with a guide between plantations where pepper, cinnamon, ginger, cloves, nutmeg and fruit are grown.</li>
-<li>Kitesurfing: on the beaches of Paje, Kiwengwa and Nungwi.</li>
-<li>Mountainbike excursion</li>
-<li>Stone Town excursion: wander the narrow lanes of this bustling town, taking in a few local markets and the former slave market.</li>
-<li>Prison Island excursion: a 30 minute boat ride brings you to this island, once used to hold slaves. Today it serves as a nature reserve for giant tortoises, and you can also see the ruins of the old prison.</li>
-<li>Safari Blue: an excursion to 3 islands with time to swim, snorkel and enjoy a tasty BBQ.</li>
-<li>Jozani forest visit: a wonderful jungle walk through Zanzibar's last remaining native forest, home to plenty of monkeys, including the rare red colobus.</li>
-<li>Scuba diving and snorkelling on any of the many superb reefs.</li>
-<li>Cultural tour: this outing shows you how local people live their daily lives.</li>
-<li>Mnemba Island tour: a snorkelling trip to Zanzibar's most popular snorkelling site.</li>
-</ul>
-<h2>Travel time to Zanzibar</h2>
-<p>The flight from Dar es Salaam to Zanzibar lasts a mere 20 minutes, and pairing Zanzibar with a mainland safari is easy too. Between Arusha, the safari capital, and Zanzibar lies a distance of roughly 420 kilometres.</p>
-<ul>
-<li>Arusha to Zanzibar: € 285 (one way)</li>
-<li>Dar Es Salaam to Zanzibar: € 90 (one way)</li>
-<li>Kilimanjaro to Zanzibar: € 350 (one way)</li>
-</ul>
-<h2>Best time for kitesurfing in Zanzibar</h2>
-<p>For anyone keen on great kitesurfing, Zanzibar is an ideal spot<em>. </em>The top kitesurfing period is:</p>
+<h3>Where to stay</h3>
+<p>There are beaches on every side of the island. We usually send guests to the east coast: wide, quiet beaches, a reef you can walk to at low tide, plenty of activities and good restaurants within reach. It gives the most rounded stay. From the many resorts we have visited, these are our three picks, one per comfort level.<br>
+<a href="/accommodation/fun-beach/"><strong>Silver: Fun Beach</strong></a>, a relaxed resort with 42 rooms looking at the pool or the sea, and everything you need without fuss.<br>
+<a href="/accommodation/next-paradise-boutique-resort/"><strong>Gold: Next Paradise</strong></a>, a boutique resort on the ocean with 25 rooms in several categories and a kitchen we keep hearing about.<br>
+<a href="/accommodation/qambani-luxury-resort/"><strong>Platinum: Qambani Luxury Resort</strong></a>, six villas, each with its own theme and its own staff. If one place on the island is worth the splurge, it is this one.</p>
+<h3>Culture and history</h3>
+<p>The islands were called the Spice Islands for a reason: cloves, pepper, cinnamon and nutmeg have been traded from here for centuries, and the farms are still there to visit. Stone Town, the old heart of Zanzibar City, is a mix of Swahili, Arab, Indian and European influences. Walk the lanes, see the former Sultan's Palace and the House of Wonders, and eat at the Forodhani night market or shop at Darajani.</p>
+<h2>Things to do on Zanzibar</h2>
+<ul style="content-visibility: auto;contain-intrinsic-size: auto 780px;"><li>Spice farm visit: a guide walks you through plantations of cloves, cinnamon, pepper, ginger, nutmeg and fruit, with tasting along the way.</li>
+<li>Kitesurfing on the beaches of Paje, Kiwengwa and Nungwi.</li>
+<li>Mountain bike tour through the villages inland.</li>
+<li>Stone Town walk: the lanes, the markets and the site of the old slave market, with a guide who grew up there.</li>
+<li>Prison Island: a half-hour boat ride to the island once used to hold slaves, now home to giant tortoises and the ruins of the prison.</li>
+<li>Safari Blue: a day by dhow to three islands with swimming, snorkelling and a seafood barbecue on a sandbank.</li>
+<li>Jozani forest: a walk through the island's last native forest, home to the red colobus monkey found only on Zanzibar.</li>
+<li>Diving and snorkelling on the reefs around the island.</li>
+<li>Village visit: half a day with a local family to see how the island lives away from the beach.</li>
+<li>Mnemba atoll: a boat trip to the island's clearest snorkelling water, with dolphins on a good day.</li></ul>
+<h2>Getting to Zanzibar</h2>
+<p>From Dar es Salaam the flight takes about 20 minutes; from Arusha, the safari base some 420 kilometres away, about an hour and a half. We book the flight as part of your trip. Indicative one-way fares:</p>
+<ul><li>Arusha – Zanzibar: from € 285, one way</li>
+<li>Dar es Salaam – Zanzibar: from € 90, one way</li>
+<li>Kilimanjaro Airport – Zanzibar: from € 350, one way</li></ul>
+<h2>When to go for kitesurfing</h2>
+<p>Zanzibar has two wind seasons, and the east coast around Paje is the place for them:</p>
 <ul>
 <li>December till mid-March</li>
 <li>June till October</li>
@@ -209,18 +169,14 @@ Finally, in the Platinum category (drumroll….. ) – <a href="/accommodation/q
 
                                                                                                         <div class="col-span-12 px-8 py-8 -mx-5 single-information-content bg-sand ts-mask-top md:mx-0 lg:col-span-5 lg:px-12 lg:py-14">
                                     <div class="ts-prose ts-prose--info-block">
-                                        <p>Zanzibar Island is Africa's tropical paradise, blessed with the most beautiful beaches in the world. Alongside relaxed beach living, it offers an enormous range of activities and a colourful culture and history.</p>
-<h3>What makes Zanzibar Island special</h3>
-<ul>
-<li>Palm-fringed beaches of crystal white sand</li>
-<li>Azure blue Indian Ocean</li>
-<li>Beautiful coral reefs</li>
-<li>Breathtaking sceneries</li>
-<li>Culture and history in Stone Town</li>
-<li>Friendly people</li>
-<li>Good service</li>
-<li>Delicious foo</li>
-</ul>
+                                        <p>Zanzibar is the beach at the end of a safari, and a holiday on its own: white sand inside the reef, warm water, spice farms and Stone Town.</p>
+<h3>What Zanzibar is known for</h3>
+<ul><li>White beaches lined with palms</li>
+<li>Warm, clear water inside the coral reef</li>
+<li>Snorkelling and diving on the reefs</li>
+<li>Stone Town, a UNESCO World Heritage Site</li>
+<li>Spice farms and Swahili food</li>
+<li>Easy to combine with a safari: an hour by air from Arusha</li></ul>
 <h3>Zanzibar facts</h3>
 <ul>
 <li>Total surface 1554 km2 (965 mi)</li>
@@ -240,15 +196,14 @@ Finally, in the Platinum category (drumroll….. ) – <a href="/accommodation/q
     
     <div class="col-span-full pt-12 mx-auto my-12 w-full related-posts bg-green ts-mask-top md:mt-6 lg:py-24">
         <div class="px-5 mx-auto max-w-7xl container-2xl">
-            <h2 class="mb-8 font-black uppercase tracking-wide text-white text-[25px] lg:text-[34px] lg:mb-12 lg:px-0"
-                style="text-wrap: balance;">
+            <h2 class="mb-8 font-black uppercase tracking-wide text-white text-[25px] lg:text-[34px] lg:mb-12 lg:px-0" style="text-wrap: balance;">
                                     One-way trips on this island                            </h2>
 
             <div class="grid auto-rows-auto gap-5 lg:grid-cols-3" style="content-visibility: auto;contain-intrinsic-size: auto 625px;">
                                                             
 <article class="flex isolate relative flex-col related-post-item bg-sand md:mx-0">
     <div class="relative w-full select-none">
-                    <img width="1024" height="683" src="/wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1024x683.jpg" class="attachment-large size-large wp-post-image" alt="Neushoorn Your Tanzania Trip" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1024x683.jpg 1024w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-300x200.jpg 300w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-768x512.jpg 768w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1536x1024.jpg 1536w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-60x40.jpg 60w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar.jpg 1920w" sizes="auto"  fetchpriority="low"/>        
+                    <img width="1024" height="683" src="/wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1024x683.jpg" class="attachment-large size-large wp-post-image" alt="Neushoorn Your Tanzania Trip" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1024x683.jpg 1024w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-300x200.jpg 300w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-768x512.jpg 768w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1536x1024.jpg 1536w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-60x40.jpg 60w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar.jpg 1920w" sizes="auto" fetchpriority="low">        
         <!-- <div class="absolute top-4 left-4 lg:top-5 lg:left-5">
             <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
@@ -271,7 +226,7 @@ Finally, in the Platinum category (drumroll….. ) – <a href="/accommodation/q
             <div class="relative mb-6">
                 <div class="mb-4 max-w-sm">
                     <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
-                        <a class="block" href="/itineraries/12-day-honeymoon-tanzania-and-zanzibar/">12 days honeymoon Tanzania and Zanzibar</a>
+                        <a class="block" href="/itineraries/12-day-honeymoon-tanzania-and-zanzibar/">12 Days Honeymoon: Safari & Zanzibar</a>
                     </h3>
                 </div>
                                     <ul class="ml-4 flex list-disc flex-col gap-2 text-sm font-bold tracking-wider max-w-[255px] text-anthracite">
@@ -291,7 +246,7 @@ Finally, in the Platinum category (drumroll….. ) – <a href="/accommodation/q
                                                                                 
 <article class="flex isolate relative flex-col related-post-item bg-sand md:mx-0">
     <div class="relative w-full select-none">
-                    <img width="810" height="540" src="/wp-content/uploads/2023/11/Sayari-Pool-with-lounge-area.jpg" class="attachment-large size-large wp-post-image" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/11/Sayari-Pool-with-lounge-area.jpg 810w, /wp-content/uploads/2023/11/Sayari-Pool-with-lounge-area-300x200.jpg 300w, /wp-content/uploads/2023/11/Sayari-Pool-with-lounge-area-768x512.jpg 768w, /wp-content/uploads/2023/11/Sayari-Pool-with-lounge-area-60x40.jpg 60w" sizes="auto"  fetchpriority="low"/>        
+                    <img width="810" height="540" src="/wp-content/uploads/2023/11/Sayari-Pool-with-lounge-area.jpg" class="attachment-large size-large wp-post-image" alt decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/11/Sayari-Pool-with-lounge-area.jpg 810w, /wp-content/uploads/2023/11/Sayari-Pool-with-lounge-area-300x200.jpg 300w, /wp-content/uploads/2023/11/Sayari-Pool-with-lounge-area-768x512.jpg 768w, /wp-content/uploads/2023/11/Sayari-Pool-with-lounge-area-60x40.jpg 60w" sizes="auto" fetchpriority="low">        
         <!-- <div class="absolute top-4 left-4 lg:top-5 lg:left-5">
             <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
@@ -314,7 +269,7 @@ Finally, in the Platinum category (drumroll….. ) – <a href="/accommodation/q
             <div class="relative mb-6">
                 <div class="mb-4 max-w-sm">
                     <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
-                        <a class="block" href="/itineraries/12-days-tanzania-zanzibar-diamond-luxury-holiday/">12 Days Tanzania &#8211; Zanzibar Diamond Luxury holiday!</a>
+                        <a class="block" href="/itineraries/12-days-tanzania-zanzibar-diamond-luxury-holiday/">12 Days Diamond Luxury: Safari & Zanzibar</a>
                     </h3>
                 </div>
                                     <ul class="ml-4 flex list-disc flex-col gap-2 text-sm font-bold tracking-wider max-w-[255px] text-anthracite">
@@ -334,7 +289,7 @@ Finally, in the Platinum category (drumroll….. ) – <a href="/accommodation/q
                                                                                 
 <article class="flex isolate relative flex-col related-post-item bg-sand md:mx-0">
     <div class="relative w-full select-none">
-                    <img width="1024" height="653" src="/wp-content/uploads/2023/07/zanzibar_island_boat-1024x653.jpg" class="attachment-large size-large wp-post-image" alt="zanzibar island boat" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/07/zanzibar_island_boat-1024x653.jpg 1024w, /wp-content/uploads/2023/07/zanzibar_island_boat-300x191.jpg 300w, /wp-content/uploads/2023/07/zanzibar_island_boat-768x490.jpg 768w, /wp-content/uploads/2023/07/zanzibar_island_boat-1536x979.jpg 1536w, /wp-content/uploads/2023/07/zanzibar_island_boat-60x38.jpg 60w, /wp-content/uploads/2023/07/zanzibar_island_boat.jpg 1920w" sizes="auto"  fetchpriority="low"/>        
+                    <img width="1024" height="653" src="/wp-content/uploads/2023/07/zanzibar_island_boat-1024x653.jpg" class="attachment-large size-large wp-post-image" alt="zanzibar island boat" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/07/zanzibar_island_boat-1024x653.jpg 1024w, /wp-content/uploads/2023/07/zanzibar_island_boat-300x191.jpg 300w, /wp-content/uploads/2023/07/zanzibar_island_boat-768x490.jpg 768w, /wp-content/uploads/2023/07/zanzibar_island_boat-1536x979.jpg 1536w, /wp-content/uploads/2023/07/zanzibar_island_boat-60x38.jpg 60w, /wp-content/uploads/2023/07/zanzibar_island_boat.jpg 1920w" sizes="auto" fetchpriority="low">        
         <!-- <div class="absolute top-4 left-4 lg:top-5 lg:left-5">
             <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
@@ -357,7 +312,7 @@ Finally, in the Platinum category (drumroll….. ) – <a href="/accommodation/q
             <div class="relative mb-6">
                 <div class="mb-4 max-w-sm">
                     <h3 class="text-lg font-bold tracking-wider leading-6 text-gray-900 uppercase text-anthracite group-hover:text-yellow">
-                        <a class="block" href="/itineraries/10-days-zanzibar-island/">10 days Zanzibar - Find out what paradise looks like</a>
+                        <a class="block" href="/itineraries/10-days-zanzibar-island/">10 Days Zanzibar Island</a>
                     </h3>
                 </div>
                                     <ul class="ml-4 flex list-disc flex-col gap-2 text-sm font-bold tracking-wider max-w-[255px] text-anthracite">
@@ -386,28 +341,24 @@ Finally, in the Platinum category (drumroll….. ) – <a href="/accommodation/q
                         <p class="cta-subtitle">Receive a free, no obligation quote</p>
 
                         
-                        <a class="mx-auto mt-7 w-full max-w-sm text-sm leading-none btn btn-yellow"
-                            href="/travel-proposal/"
-                            target="">
+                        <a class="mx-auto mt-7 w-full max-w-sm text-sm leading-none btn btn-yellow" href="/travel-proposal/" target>
                             Start planning your dream trip                        </a>
                     </div>
 
                     <div class="col-span-12 row-start-1 lg:col-span-6 lg:col-start-7 lg:flex-auto">
-                        <img width="1230" height="580" src="/wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg" class="block w-full object-cover object-center cta-image" alt="" decoding="async" loading="lazy"  fetchpriority="low"/>                    </div>
+                        <img width="1230" height="580" src="/wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg" class="block w-full object-cover object-center cta-image" alt decoding="async" loading="lazy" fetchpriority="low">                    </div>
                 </div>
             
                             <div class="grid grid-cols-12 -mx-5 ts-mask-bottom md:mx-0">
                     <div class="flex flex-col-reverse col-span-12 gap-x-10 justify-center items-center px-5 py-12 lg:px-7 bg-sand lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:flex-row lg:py-7">
-                        <img width="641" height="641" src="/brand/partner/baraka-dalali.webp" class="hidden lg:block mask-img w-48 h-48" alt="" decoding="async" loading="lazy" srcset="/brand/partner/baraka-dalali.webp 641w, /brand/partner/baraka-dalali.webp 300w, /brand/partner/baraka-dalali.webp 150w, /brand/partner/baraka-dalali.webp 60w, /brand/partner/baraka-dalali.webp 580w" sizes="auto"  fetchpriority="low"/>
+                        <img width="641" height="641" src="/brand/partner/baraka-dalali.webp" class="hidden lg:block mask-img w-48 h-48" alt decoding="async" loading="lazy" srcset="/brand/partner/baraka-dalali.webp 641w, /brand/partner/baraka-dalali.webp 300w, /brand/partner/baraka-dalali.webp 150w, /brand/partner/baraka-dalali.webp 60w, /brand/partner/baraka-dalali.webp 580w" sizes="auto" fetchpriority="low">
                         <div class="flex flex-col justify-center text-center md:text-left" style="content-visibility: auto;contain-intrinsic-size: auto 262px;">
                             <h3 class="cta-title text-brown">Call an expert</h3>
                             <p class="mt-2 mb-7 font-black tracking-widest uppercase text-brown md:mt-0 md:text-sm md:tracking-wider">Tijs Krops in the Netherlands and Baraka Dalali in Arusha are here to help</p>
 
-                            <img width="641" height="641" src="/brand/partner/baraka-dalali.webp" class="mt-4 mx-auto hidden mask-img w-36 h-36" alt="" decoding="async" loading="lazy" srcset="/brand/partner/baraka-dalali.webp 641w, /brand/partner/baraka-dalali.webp 300w, /brand/partner/baraka-dalali.webp 150w, /brand/partner/baraka-dalali.webp 60w, /brand/partner/baraka-dalali.webp 580w" sizes="auto"  fetchpriority="low"/>
+                            <img width="641" height="641" src="/brand/partner/baraka-dalali.webp" class="mt-4 mx-auto hidden mask-img w-36 h-36" alt decoding="async" loading="lazy" srcset="/brand/partner/baraka-dalali.webp 641w, /brand/partner/baraka-dalali.webp 300w, /brand/partner/baraka-dalali.webp 150w, /brand/partner/baraka-dalali.webp 60w, /brand/partner/baraka-dalali.webp 580w" sizes="auto" fetchpriority="low">
                                                                                                 
-                                    <a class="mx-auto !pl-5 !py-3 gap-x-4 flex items-center justify-center cursor-pointer lg:justify-normal mt-2.5 w-auto lg:w-full max-w-sm text-center leading-none tracking-widest btn btn-small btn-red"
-                                        href="tel:+31629351377"
-                                        target="">
+                                    <a class="mx-auto !pl-5 !py-3 gap-x-4 flex items-center justify-center cursor-pointer lg:justify-normal mt-2.5 w-auto lg:w-full max-w-sm text-center leading-none tracking-widest btn btn-small btn-red" href="tel:+31629351377" target>
                                         <span class="flex gap-2.5 items-center">
                                             <span class="!w-[2.01em] !h-[1.50em] text-white ts-flag-nl"></span>
 <span class="!text-base">NL: </span>
@@ -422,7 +373,7 @@ Finally, in the Platinum category (drumroll….. ) – <a href="/accommodation/q
                     </div>
 
                     <div class="flex-auto col-span-12 lg:col-span-6 md:col-start-1 md:row-start-1">
-                        <img width="800" height="423" src="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg" class="block w-full object-cover object-top cta-image" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg 800w, /wp-content/uploads/2023/09/Serengetei-NP-2-300x159.jpeg 300w, /wp-content/uploads/2023/09/Serengetei-NP-2-768x406.jpeg 768w, /wp-content/uploads/2023/09/Serengetei-NP-2-60x32.jpeg 60w" sizes="auto"  fetchpriority="low"/>                    </div>
+                        <img width="800" height="423" src="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg" class="block w-full object-cover object-top cta-image" alt decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg 800w, /wp-content/uploads/2023/09/Serengetei-NP-2-300x159.jpeg 300w, /wp-content/uploads/2023/09/Serengetei-NP-2-768x406.jpeg 768w, /wp-content/uploads/2023/09/Serengetei-NP-2-60x32.jpeg 60w" sizes="auto" fetchpriority="low">                    </div>
                 </div>
                     </div>
     
