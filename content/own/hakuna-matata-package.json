@@ -1,6 +1,6 @@
 {
   "title": "Free Hakuna Matata support package | Your Tanzania Trip",
-  "description": "Every trip includes our free Hakuna Matata Package: travel file, airport pick-up, private guide, 24/7 support, replacement vehicle and help with disrupted flights.",
+  "description": "Every trip includes our free Hakuna Matata Package: travel file, airport pick-up, private guide, 24/7 support, replacement vehicle and help with flights.",
   "replace": [
     {
       "selector": "[class*=ts-jumbotron-content] p",

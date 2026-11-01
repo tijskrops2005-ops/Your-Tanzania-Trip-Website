@@ -421,7 +421,7 @@ See https://yourtanzaniatrip.com/llms.txt for the summary. One line per page: ti
 - [Great Migration: where and when to go](https://yourtanzaniatrip.com/great-wildebeest-migration/): Where the wildebeest herds are each month, when the Mara and Grumeti crossings happen, where to stay and how far ahead to book. Advice from our team in Arusha.
 
 ## hakuna-matata-package
-- [Free Hakuna Matata support package](https://yourtanzaniatrip.com/hakuna-matata-package/): Every trip includes our free Hakuna Matata Package: travel file, airport pick-up, private guide, 24/7 support, replacement vehicle and help with disrupted flights.
+- [Free Hakuna Matata support package](https://yourtanzaniatrip.com/hakuna-matata-package/): Every trip includes our free Hakuna Matata Package: travel file, airport pick-up, private guide, 24/7 support, replacement vehicle and help with flights.
 
 ## honeymoon-faq
 - [Honeymoon FAQ](https://yourtanzaniatrip.com/honeymoon-faq/): Questions couples ask us about a Tanzania honeymoon: safari and beach combinations, private guides, romantic lodges, the best months and what it costs.
@@ -456,7 +456,7 @@ See https://yourtanzaniatrip.com/llms.txt for the summary. One line per page: ti
 - [4-day Tanzania Safari Extension](https://yourtanzaniatrip.com/itineraries/4-days-tanzania-safari-extension-north/): Visit the beautiful Ngorongoro Crater and the elephant paradise Tarangire National Park in 4 days on this short Tanzania Safari. Book now!
 - [4-day Tanzania safari extension: Nyerere National Park](https://yourtanzaniatrip.com/itineraries/4-days-tanzania-safari-extension-south/): Make the most of your safari in Nyerere. Ask our consultants to make you a tailor made proposal. This way you will see the best…
 - [5-day Tanzania Safari extension](https://yourtanzaniatrip.com/itineraries/5-day-tanzania-safari-extension-northern-parks/): Visit the amazing Ngorongoro Crater and Tarangire National Park, elephant and birds paradise, on this Tanzania Safari. Book this safari now.
-- [5-Day Small Group Safari Tanzania](https://yourtanzaniatrip.com/itineraries/5-day-tanzania-safari-small-group-trip/): Five days in a small group of 3 to 6 travellers: Tarangire, Serengeti and the Ngorongoro Crater. Monthly departures from Arusha, single room included. From $1,570.
+- [5-Day Small Group Safari Tanzania](https://yourtanzaniatrip.com/itineraries/5-day-tanzania-safari-small-group-trip/): Five days in a small group of 3 to 6 travellers: Tarangire, Serengeti and the Ngorongoro Crater. Monthly departures from Arusha, single room included.
 - [6 days Mafia Island Vacation - safari extension](https://yourtanzaniatrip.com/itineraries/6-days-mafia-island/): You like to extend your safari in Tanzania with a few days Mafia Island? Relax and enjoy the beautiful Mafia Island on this 6 days itinerary.
 - [6 Days Pemba Island (safari extension)](https://yourtanzaniatrip.com/itineraries/6-days-pemba-island/): You want to extend your safari in Tanzania with a few days on Pemba Island? Relax and enjoy the beautiful Pemba Island on this 6-day itineray.
 - [6 Days Zanzibar Island – extension to a safari](https://yourtanzaniatrip.com/itineraries/6-days-zanzibar-island-extension-to-a-safari/): You like to extend your safari in Tanzania with Zanzibar Island? Relax and enjoy the beautiful Zanzibar Island on this 6 days Zanzibar Island itinerary.
@@ -586,7 +586,7 @@ See https://yourtanzaniatrip.com/llms.txt for the summary. One line per page: ti
 - [Traveller Guide](https://yourtanzaniatrip.com/traveller-guide/): Our traveller guide to Tanzania: FAQs, distances and travel times, honeymoons, family trips and the safari vehicles you ride in, all in one place.
 
 ## vehicles
-- [Our safari vehicles in Tanzania](https://yourtanzaniatrip.com/vehicles/): The safari vehicles we use in Tanzania, run by our partner Kilimanjaro Nature Tours: comfort, safety and good wildlife viewing, with a replacement vehicle if needed.
+- [Our safari vehicles in Tanzania](https://yourtanzaniatrip.com/vehicles/): The safari vehicles we use in Tanzania, run by our partner Kilimanjaro Nature Tours: comfort, safety, good wildlife viewing and a replacement vehicle if needed.
 - [Our safari jeeps for your Tanzania safari](https://yourtanzaniatrip.com/vehicles/tanzania/): Our own 4x4 Toyota Land Cruisers prioritize safety and comfort, offering you a smooth and private safari experience in Tanzania.
 
 ## what-to-expect
