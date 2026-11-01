@@ -1,0 +1,99 @@
+{
+  "_note": "Home page. Applied by scripts/own-content.mjs. H1 variants considered: 'Tailor-made Tanzania trips with a private guide' (chosen), 'Your Tanzania trip, planned with care', 'Safari, Kilimanjaro and Zanzibar, planned around you'. Title options: 'Tailor-made Tanzania trips & safaris | Your Tanzania Trip' (chosen, 57), 'Tanzania safari, Kilimanjaro & Zanzibar | Your Tanzania Trip' (59), 'Private Tanzania safaris, planned for you | Your Tanzania Trip' (62).",
+  "title": "Tailor-made Tanzania trips & safaris | Your Tanzania Trip",
+  "description": "Tailor-made Tanzania safaris, Kilimanjaro climbs and Zanzibar trips. Private guide, own vehicle, run by our team in Arusha. Free proposal within 24 hours.",
+  "ogTitle": "Tailor-made Tanzania trips & safaris | Your Tanzania Trip",
+  "ogDescription": "Tailor-made Tanzania safaris, Kilimanjaro climbs and Zanzibar trips. Private guide, own vehicle, run by our team in Arusha. Free proposal within 24 hours.",
+  "h1": "Tailor-made Tanzania trips with a private guide",
+  "replace": [
+    { "selector": "div[class*=popular-themes] > div > h2", "text": "Planned in the Netherlands, guided by our own team in Arusha" },
+
+    { "selector": "li.usp-item", "index": 0, "tail": true, "text": "Every trip is tailor-made" },
+    { "selector": "li.usp-item", "index": 1, "tail": true, "text": "Private guide and your own safari vehicle" },
+    { "selector": "li.usp-item", "index": 2, "tail": true, "text": "Local partner rated 5.0 on Tripadvisor" },
+    { "selector": "li.usp-item", "index": 3, "tail": true, "text": "Free proposal, reply within 24 hours" },
+    { "selector": "li.usp-item", "index": 4, "tail": true, "text": "24/7 support during your trip" },
+
+    { "selector": "p.ts-item-overlay-text", "index": 0, "text": "Northern parks first, then the beaches of Zanzibar" },
+    { "selector": "p.ts-item-text", "index": 0, "text": "Northern parks first, then the beaches of Zanzibar" },
+    { "selector": "p.ts-item-overlay-text", "index": 1, "text": "Two weeks at an easy pace, from Arusha to the coast" },
+    { "selector": "p.ts-item-text", "index": 1, "text": "Two weeks at an easy pace, from Arusha to the coast" },
+    { "selector": "p.ts-item-overlay-text", "index": 2, "text": "Follow the herds to the Mara River" },
+    { "selector": "p.ts-item-text", "index": 2, "text": "Follow the herds to the Mara River" },
+    { "selector": "p.ts-item-overlay-text", "index": 3, "text": "Lake Manyara, Serengeti and the Ngorongoro Crater in one week" },
+    { "selector": "p.ts-item-text", "index": 3, "text": "Lake Manyara, Serengeti and the Ngorongoro Crater in one week" },
+    { "selector": "p.ts-item-overlay-text", "index": 4, "text": "Seven days to Uhuru Peak with Baraka's crew" },
+    { "selector": "p.ts-item-text", "index": 4, "text": "Seven days to Uhuru Peak with Baraka's crew" },
+    { "selector": "p.ts-item-overlay-text", "index": 5, "text": "Ten days of beach, reef and Stone Town" },
+    { "selector": "p.ts-item-text", "index": 5, "text": "Ten days of beach, reef and Stone Town" },
+    { "selector": "p.ts-item-overlay-text", "index": 6, "text": "Mikumi, Udzungwa, Ruaha and Nyerere, far from the crowds" },
+    { "selector": "p.ts-item-text", "index": 6, "text": "Mikumi, Udzungwa, Ruaha and Nyerere, far from the crowds" },
+    { "selector": "p.ts-item-overlay-text", "index": 7, "text": "Five days in a small group: Tarangire, Serengeti, Ngorongoro" },
+    { "selector": "p.ts-item-text", "index": 7, "text": "Five days in a small group: Tarangire, Serengeti, Ngorongoro" },
+    { "selector": "a[href=\"/tanzania-travel/\"][class*=lg\\:hidden]", "text": "See all trips" },
+
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"Your dream trip to Tanzania\"))",
+      "html": "<h2>Karibu. We plan your Tanzania trip from start to finish</h2>\n<p>Your Tanzania Trip began with an internship in Arusha. Tijs Krops and Edrian Waterman spent it at <a href=\"/our-partner/\">Kilimanjaro Nature Tours</a>, helping founder Baraka Dalali and his crew prepare for international guests. The work did not stop when the internship did. Today we plan and book your trip from the Netherlands, and Baraka's team runs it on the ground. Safari in the north or the south, the Great Migration, <a href=\"/climbing-kilimanjaro/\">Kilimanjaro</a>, <a href=\"/islands/zanzibar-island/\">Zanzibar</a>: every trip is built around you.</p>\n<h3>Travel without worries with the Hakuna Matata Package</h3>\n<p><img decoding=\"async\" class=\"alignright wp-image-24636\" src=\"/wp-content/uploads/2026/07/Hakuna-Matata-LogoPayoff-1c-Black-1-300x170.avif\" alt=\"Hakuna Matata Package logo: the free support package of Your Tanzania Trip\" width=\"250\" height=\"141\" loading=\"lazy\">Every trip includes our free <a href=\"/hakuna-matata-package/\">Hakuna Matata Package</a>: a complete travel file, pick-up and drop-off at the airport, a private guide, 24/7 support during your trip and help when a flight booked through us is disrupted. No add-on, no small print.</p>\n<h3>The team you meet in Tanzania</h3>\n<p>Baraka Dalali founded Kilimanjaro Nature Tours in Arusha. His guides, drivers and mountain crew are the people who pick you up and drive you through the parks. Our local partner Kilimanjaro Nature Tours is rated 5.0 on <a href=\"https://www.tripadvisor.com/Attraction_Review-g297913-d12179305-Reviews-Kilimanjaro_Nature_Tours-Arusha_Arusha_Region.html\" target=\"_blank\" rel=\"noopener noreferrer\">Tripadvisor</a> (208 reviews, checked 27 October 2026).</p>\n<p>We have visited more than 100 hotels and lodges ourselves, so we know which one suits you. Tell us how you like to travel and we put the trip together.</p>\n<a class=\"mt-10 btn btn-yellow md:mt-8 md:inline-block\" href=\"/tanzania-travel/\" target=\"_self\">See all our trips</a>"
+    },
+
+    { "selector": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why choose\")) h2", "text": "Why Your Tanzania Trip" },
+    { "selector": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why Your Tanzania Trip\")) h3", "text": "What you can count on" },
+    { "selector": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why Your Tanzania Trip\")) p.p1", "html": "A trip with us has two teams behind it. Tijs and Edrian plan and book from the Netherlands and are your contact until you leave. Baraka and his crew in Arusha pick you up, guide you and look after you until you fly home. This is what we promise, and nothing we cannot keep." },
+    { "selector": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why Your Tanzania Trip\")) ul > li", "index": 0, "tail": true, "text": "Free travel proposal, no obligation, reply within 24 hours" },
+    { "selector": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why Your Tanzania Trip\")) ul > li", "index": 1, "tail": true, "text": "Everything arranged to fit you before you book" },
+    { "selector": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why Your Tanzania Trip\")) ul > li", "index": 2, "tail": true, "text": "Private guide and your own safari vehicle" },
+    { "selector": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why Your Tanzania Trip\")) ul > li", "index": 3, "tail": true, "text": "Pick-up and drop-off at the airport" },
+    { "selector": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why Your Tanzania Trip\")) ul > li", "index": 4, "tail": true, "text": "24/7 support during your trip, replacement vehicle if yours breaks down" },
+    { "selector": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why Your Tanzania Trip\")) ul > li", "index": 5, "tail": true, "text": "Free Hakuna Matata Package on every trip" },
+    { "selector": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why Your Tanzania Trip\")) a.btn", "text": "Request your free travel proposal" },
+
+    { "selector": "h2.ai-optimize-6", "text": "Start exploring" },
+    { "selector": "h3.ai-optimize-7", "text": "Parks, activities and places to stay" },
+    { "selector": "p.ai-optimize-8", "html": "Browse the parks and islands, the activities you can add, and the lodges and camps we have seen ourselves. Then tell us what you like, and we turn it into a proposal." },
+    { "selector": "h4:contains(\"Great customer experiences\")", "text": "What travellers say" },
+    { "selector": "a[href=\"/tanzania-traveller-reviews/\"] p[class*=max-w-lg]", "html": "Read how guests describe their days with Baraka and his crew. We link to the Tripadvisor profile of our local partner and show the date we last checked the score." },
+    { "selector": "a[href=\"/national-parks-tanzania/\"] p[class*=max-w-lg]", "html": "Serengeti, Ngorongoro, Tarangire, Ruaha, Nyerere and more. What each park is known for, and when to go." },
+    { "selector": "a[href=\"/activities/\"] p[class*=max-w-lg]", "html": "Balloon flights, walking safaris, Maasai village visits, snorkelling, Stone Town. Add what suits you; we book it ahead." },
+    { "selector": "a[href=\"/accommodations/\"] p[class*=max-w-lg]", "html": "Lodges, tented camps and beach resorts in three comfort levels. More than 100 of them visited by us, so we can tell you honestly which one fits." }
+  ],
+  "after": [
+    {
+      "selector": "ul[class*=ts-items]",
+      "html": "<p class=\"mx-auto mt-8 max-w-3xl text-center text-sm tracking-wider leading-6 text-brown md:text-base\">* Prices are per person in US dollars, from the low-season rate for a group of 6, excluding international flights. Travelling as 2 or 4? Each trip page shows the price for your group size and season, and every trip is 100% customisable.</p>"
+    }
+  ],
+  "faq": {
+    "heading": "Questions travellers ask us",
+    "headingTag": "h2",
+    "at": "div[class*=\"max-w-5xl\"]:has(h2:contains(\"Why Your Tanzania Trip\"))",
+    "mode": "append",
+    "wrapClass": "mx-auto mt-16 ts-prose ts-prose-xl",
+    "items": [
+      {
+        "q": "What does a trip with Your Tanzania Trip cost?",
+        "a": "<p>It depends on the parks, the season, the comfort level and the group size. As a guide: our 7-day northern safari starts at $1,599 per person and the 11-day safari with Zanzibar at $2,181, both based on 6 travellers in low season and excluding international flights. Your proposal shows the exact price for your group and dates. Fair prices, no middlemen.</p>"
+      },
+      {
+        "q": "How does the free travel proposal work?",
+        "a": "<p>Tell us your wishes through the <a href=\"/travel-proposal/\">form</a> or on WhatsApp. Within 24 hours you receive a proposal with a day-by-day plan, the lodges and the price. It is free and without obligation, and we adjust it until it fits. We design your trip, you decide.</p>"
+      },
+      {
+        "q": "Who guides us in Tanzania?",
+        "a": "<p>Our local partner <a href=\"/our-partner/\">Kilimanjaro Nature Tours</a> in Arusha, founded by Baraka Dalali. On safari you travel with a private, English-speaking guide in your own safari vehicle. Kilimanjaro climbs are led by licensed guides with their own crew of cooks and porters.</p>"
+      },
+      {
+        "q": "When is the best time to visit Tanzania?",
+        "a": "<p>The dry months, June to October and December to February, give the easiest wildlife viewing and the sunniest beach days; they are also the busiest. March and November are quieter, with moderate rates. April and May bring the long rains and the lowest prices: green parks, few vehicles, and showers that rarely last all day.</p>"
+      },
+      {
+        "q": "What is included in the price?",
+        "a": "<p>Your accommodation, meals during the safari, park fees, a private guide and vehicle, game drives and airport transfers. Not included: international flights, visas and travel insurance. Each trip page lists exactly what is in and what is out.</p>"
+      },
+      {
+        "q": "How do I book, and what do I pay when?",
+        "a": "<p>Once you are happy with the proposal, you confirm and pay a deposit. The balance is due before departure. You receive an invoice and a complete travel file from us, and our team in Arusha takes over the moment you land.</p>"
+      }
+    ]
+  }
+}

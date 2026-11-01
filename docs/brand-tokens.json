@@ -355,7 +355,9 @@
       "knt": "Kilimanjaro Nature Tours provides the guides, drivers, vehicles, mountain crew, park permits and bookings, and looks after you during the trip."
     },
     "google": {
-      "url": "https://www.google.com/search?q=Kilimanjaro+Nature+Tours+Arusha+reviews"
+      "url": "https://www.google.com/search?q=Kilimanjaro+Nature+Tours+Arusha+reviews",
+      "reviewUrl": "",
+      "_note": "reviewUrl: direct link to the Google Business Profile reviews of Kilimanjaro Nature Tours. The quotes on the site stay hidden while it is empty."
     },
     "youtube": "https://www.youtube.com/channel/UCeIh_GNu50hBjGoUz7PV9hA",
     "founderBio": "Baraka grew up in the Udzungwa Mountains, came to Kilimanjaro as a porter and worked his way up to licensed guide (KINAPA) before founding Kilimanjaro Nature Tours in Arusha. He is certified in Wilderness First Response, teaches first aid and CPR to his crew, and still answers every message himself.",

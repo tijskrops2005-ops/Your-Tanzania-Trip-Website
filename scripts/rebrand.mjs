@@ -11,6 +11,7 @@
 //  - pages removed by the rebrand get redirects (content/redirects-brand.json)
 import fs from "node:fs";
 import path from "node:path";
+import { applyOwnContent, ownMeta } from "./own-content.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const tokens = JSON.parse(fs.readFileSync(path.join(root, "docs/brand-tokens.json"), "utf8"));
@@ -258,7 +259,35 @@ const svgColorRules = [
   [/#f7f4ee\b/gi, tokens.color.ivory.hex],
 ];
 
-const allRules = [...brandRules, ...contactRules, ...founderRules, ...sisterRules, ...membershipRules, ...reviewRules, ...svgColorRules];
+// Shared marketing copy (header CTA, footer quiz and newsletter, form options) in our own words.
+const QUIZ_INTRO = "<p>Not sure which Tanzania trip suits you? Answer five short questions and we point you to a fitting itinerary: a classic northern safari, safari and Zanzibar, the Great Migration, the southern parks or Kilimanjaro.</p>\n<p>It takes two minutes, and the result is a starting point, not a commitment.</p>";
+const copyRules = [
+  // quizData JSON in the footer first (escaped slashes), then the HTML version
+  [/("description":")<p>Dreaming of Tanzania(?:\\.|[^"\\])*"/, (m, pre) => pre + JSON.stringify(QUIZ_INTRO + "\n").slice(1)],
+  [/<p>Dreaming of Tanzania but not sure which safari[\s\S]*?a few minutes\.<\/p>/g, QUIZ_INTRO],
+  [/START THE ADVENTURE!/g, "Plan your trip"],
+  [/Tell us your preferences and get inspired by our unique travel ideas\. All sample itineraries are 100% customisable\. Contact us now and start your dream adventure!/g, "Tell us how you like to travel and we send you a free proposal within 24 hours. Every itinerary on this site is 100% customisable."],
+  [/Receive travel ideas, destination guides, and inspiration directly in your inbox\./g, "Travel ideas and practical Tanzania tips, a few times a year. No spam."],
+  [/Sign up for our Newsletter/g, "Tanzania tips in your inbox"],
+  [/By signing up for our mailing list, you agree to our/g, "By subscribing you accept our"],
+  [/This field is for validation purposes and should be left unchanged\./g, ""],
+  [/The classic highlights: Serengeti, Ngorongoro and incredible wildlife/g, "The northern classics: Serengeti, Ngorongoro, Tarangire"],
+  [/A combined safari and beach holiday on Zanzibar/g, "Safari first, then the beaches of Zanzibar"],
+  [/The ultimate luxury experience \(~€2,000–3,000 p\.p\. per day\)/g, "Top-end lodges and camps (roughly €2,000–3,000 p.p. per day)"],
+  [/Travelling with a group to keep costs affordable/g, "A small-group trip with a shared vehicle"],
+  [/Yes, but I(?:'|’|&#039;)d love to experience more of Tanzania/g, "Yes, and I want to see other parts of Tanzania"],
+  [/Yes, multiple times\. This time I(?:'|’|&#039;)m specifically looking for chimpanzees or southern parks like Ruaha or Nyerere/g, "Yes, more than once. Now I am after chimpanzees or the southern parks, Ruaha and Nyerere"],
+  [/Ultra-luxury lodges with private service and exclusivity/g, "Top-end lodges with private service"],
+  [/Remote wilderness camps away from the most popular National parks, only for experienced safari travellers/g, "Remote camps far from the busy parks, for seasoned safari travellers"],
+  [/High season \(June–October\) for the best wildlife/g, "June to October, the dry season with the easiest game viewing"],
+  [/Low season for quieter parks and lower prices/g, "The quieter months, with fewer vehicles and lower rates"],
+  [/A private hot air balloon ride over the Serengeti/g, "A balloon flight at sunrise over the Serengeti"],
+  [/A mix of safari lodges and a beach resort/g, "Some nights in safari lodges, then a beach resort"],
+  [/International flights \(can be booked for you on request\)/g, "International flights (we can book these for you)"],
+  [/Is there anything you absolutely don(?:'|’|&#039;)t want to miss\?/g, "Which experiences are on your must-do list?"],
+];
+
+const allRules = [...brandRules, ...contactRules, ...founderRules, ...sisterRules, ...membershipRules, ...reviewRules, ...svgColorRules, ...copyRules];
 
 function rebrandText(s) {
   for (const [re, to] of allRules) s = s.replace(re, to);
@@ -288,12 +317,15 @@ const BARAKA_IMG = "/brand/partner/baraka-dalali.webp";
 const CREW_IMG = "/brand/partner/crew-summit.webp";
 const AWARDS = TA.awards.join(" · ");
 const scoreLine = () => `${TA.score}/${TA.scale} on Tripadvisor · ${TA.count} reviews · checked ${TA.checkedOn}`;
+// Review quotes are shown only with a direct link to the profile they come from (partner.google.reviewUrl).
 const quoteCards = (cls = "") =>
-  P.quotes
+  !P.google.reviewUrl
+    ? "<!-- [INVULLEN: Google reviews of Kilimanjaro Nature Tours: source and direct link (partner.google.reviewUrl in docs/brand-tokens.json); the quotes stay hidden until then] -->"
+    : P.quotes
     .map(
       (q) => `<figure class="quote-card ${cls}">
   <blockquote><p>“${q.text}”</p></blockquote>
-  <figcaption>${q.name} · review on <a href="${GOOGLE_HREF}"${EXT}>${q.platform}</a></figcaption>
+  <figcaption>${q.name} · review on <a href="${P.google.reviewUrl}"${EXT}>${q.platform}</a></figcaption>
 </figure>`
     )
     .join("\n");
@@ -804,6 +836,21 @@ fs.writeFileSync(path.join(root, "content/pages/our-partner.html"), partnerPageB
   console.log(`old-company claims fixed on ${fixed} pages`);
 }
 
+// 2c. Own content (content/own/<slug>.json): pages written from scratch. Applied last, so the
+// paraphrases and the rules above never touch the new text.
+{
+  let own = 0;
+  for (const p of walk(path.join(root, "content/pages"), [".html"])) {
+    const before = fs.readFileSync(p, "utf8");
+    const after = applyOwnContent(path.basename(p, ".html"), before);
+    if (after !== before) {
+      fs.writeFileSync(p, after);
+      own++;
+    }
+  }
+  console.log(`own content applied to ${own} pages`);
+}
+
 // 2b. Practical-information fragments (public/ajax/fetch_post_content/<id>.html) are the article body of the
 // page with that id; regenerate them from the rebranded pages so tabs and pages never drift apart.
 {
@@ -886,6 +933,22 @@ function fixJsonLd(json) {
   return rebrandText(JSON.stringify(data)); // second pass: image paths were escaped before parsing
 }
 
+/** The WebPage node of the Yoast graph repeats the title and description; keep them in sync. */
+function syncWebPage(json, pg) {
+  try {
+    const data = JSON.parse(json);
+    for (const n of Array.isArray(data["@graph"]) ? data["@graph"] : [data]) {
+      if (String(n["@type"]).includes("WebPage")) {
+        if (pg.title) n.name = pg.title;
+        if (pg.description) n.description = pg.description;
+      }
+    }
+    return JSON.stringify(data);
+  } catch {
+    return json;
+  }
+}
+
 {
   const file = path.join(root, "content/pages.json");
   const pages = JSON.parse(fs.readFileSync(file, "utf8")).filter((pg) => !removed[pg.path]);
@@ -902,6 +965,15 @@ function fixJsonLd(json) {
     pg.extraStyles = (pg.extraStyles || []).map(rebrandText);
     pg.ldJson = (pg.ldJson || []).map(fixJsonLd).filter(Boolean);
     if (pg.stickyCta) pg.stickyCta.label = rebrandText(pg.stickyCta.label);
+    // Pages with own content: their title, description and schema (FAQPage, TouristTrip)
+    const own = ownMeta(pg.slug, pg.path);
+    if (own) {
+      if (own.title) pg.title = pg.ogTitle = own.title;
+      if (own.description) pg.description = pg.ogDescription = own.description;
+      if (own.ogTitle) pg.ogTitle = own.ogTitle;
+      if (own.ogDescription) pg.ogDescription = own.ogDescription;
+      pg.ldJson = pg.ldJson.map((j) => syncWebPage(j, pg)).concat(own.ldJson);
+    }
   }
   pages.push({
     slug: "our-partner",
