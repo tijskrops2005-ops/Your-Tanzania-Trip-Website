@@ -1,31 +1,89 @@
 {
   "title": "Free Hakuna Matata support package | Your Tanzania Trip",
-  "description": "Every trip includes our Hakuna Matata Package at no cost: a complete travel file, airport pick-up, a private guide, 24/7 support, a replacement vehicle if needed and help with disrupted flights.",
+  "description": "Every trip includes our free Hakuna Matata Package: travel file, airport pick-up, private guide, 24/7 support, replacement vehicle and help with disrupted flights.",
   "replace": [
     {
       "selector": "[class*=ts-jumbotron-content] p",
       "index": 0,
       "html": "Hakuna Matata means no worries. On a trip with us it means something concrete: a support package that is part of every trip, at no extra cost, from the moment you book until you are home."
     },
-    { "selector": "div.ts-prose > h3:contains(\"No worries, just wonder\")", "text": "No worries, in practice" },
-    { "selector": "div.ts-prose > h3:contains(\"No worries, in practice\") + p", "html": "Flight cancelled on the way out? A puncture an hour from the nearest town? Things like that happen, and the question is who sorts them out. With us, that is settled before you leave. Here is what the Hakuna Matata Package covers." },
-    { "selector": "div.ts-prose > h3:contains(\"What is the Hakuna Matata Package?\") + p", "html": "The Hakuna Matata Package is the support that comes with every trip we plan. It is not an upgrade and it has no price tag. It covers the preparation before you leave, the people and the vehicle during the trip, and help when something unexpected changes the plan. A few extras, such as travel insurance, a VIP airport service and a local SIM, can be added for a fee." },
-    { "selector": "div.ts-prose:has(h2:contains(\"Before your safari\")) h2 + p", "html": "The trip starts at home, and we want you to know what to expect before you board." },
-    { "selector": "div.ts-prose:has(h2:contains(\"Before your safari\")) p:contains(\"Ahead of your safari\")", "html": "After booking you receive a travel file with your route day by day, the lodges, the activities, the contact numbers in Tanzania and practical notes on visas, money and packing. Your airport pick-up is arranged. You pay a deposit when you confirm and the balance before departure; the amounts and dates are on your proposal. Plans change sometimes, so our cancellation terms are written down plainly in point 5.3 of our <a href=\"/terms-conditions/\">terms and conditions</a>." },
-    { "selector": "div.ts-prose:has(h2:contains(\"Flight delay and cancellation support\")) h2", "text": "Help with disrupted flights" },
-    { "selector": "div.ts-prose:has(h2:contains(\"Help with disrupted flights\")) h2 + p", "html": "This part applies to international flights you book through us." },
-    { "selector": "div.ts-prose:has(h2:contains(\"Help with disrupted flights\")) h2 + p + p", "html": "Delayed, cancelled, missed connection: you call us, and we get to work." },
-    { "selector": "div.ts-prose:has(h2:contains(\"Help with disrupted flights\")) h2 + p + p + p", "keepImages": true, "html": "If a flight booked through us is cancelled or badly delayed, we look for an alternative, arrange a hotel if you need one and rework the first days of your itinerary so nothing is lost. We deal with the airline on your behalf and pass on any refund. Flights you book yourself are outside this cover; your travel insurance applies then." },
-    { "selector": "div.ts-prose:has(h2:contains(\"What help can you count on\")) h2", "text": "Support during your trip" },
-    { "selector": "div.ts-prose:has(h2:contains(\"Support during your trip\")) h2 + p", "html": "Out in the parks, the question is not whether something can go wrong, but who fixes it. That is our team in Arusha." },
-    { "selector": "div.ts-prose:has(h2:contains(\"Support during your trip\")) p:contains(\"On safari you ride\")", "html": "You travel in a maintained 4×4 from Kilimanjaro Nature Tours, with a network of bush garages along the routes and replacement vehicles in Arusha if one is needed. Your private guide stays with you from pick-up to drop-off, and the office in Arusha and we in the Netherlands can be reached 24 hours a day." },
-    { "selector": "div.ts-prose:has(h2:contains(\"Exclusive add-ons\")) h2", "text": "Optional extras" },
-    { "selector": "div.ts-prose:has(h2:contains(\"Optional extras\")) h2 + p", "html": "A few services fall outside the package and can be added at a cost: a VIP airport service, a local SIM or eSIM, travel insurance, and a farewell experience on your last day. Ask for them when you request your proposal." },
-    { "selector": "td:contains(\"Flight disruption support when your flight\")", "text": "✓ Help with disrupted flights, for flights booked through us" },
-    { "selector": "td:contains(\"Vehicle support during your safari\")", "text": "✓ Replacement vehicle and roadside help on safari" },
-    { "selector": "p[class*=mt-8]:contains(\"Experience Hakuna Matata yourself\")", "html": "Trips that come with the package, like every trip we plan." },
-    { "selector": "div.ts-prose:has(> h2:contains(\"How our support works\")) > p", "html": "Because our partner has its own office, vehicles and crew in Arusha, help does not have to come from far away. Depending on what has happened we call your guide, the lodge, the airline or the transfer company, and we adjust the rest of the trip with you." },
-    { "selector": "div.ts-prose:has(> h3:contains(\"Common questions\")) > h3", "text": "Questions about the Hakuna Matata Package" }
+    {
+      "selector": "div.ts-prose > h3:contains(\"No worries, just wonder\")",
+      "text": "No worries, in practice"
+    },
+    {
+      "selector": "div.ts-prose > h3:contains(\"No worries, in practice\") + p",
+      "html": "Flight cancelled on the way out? A puncture an hour from the nearest town? Things like that happen, and the question is who sorts them out. With us, that is settled before you leave. Here is what the Hakuna Matata Package covers."
+    },
+    {
+      "selector": "div.ts-prose > h3:contains(\"What is the Hakuna Matata Package?\") + p",
+      "html": "The Hakuna Matata Package is the support that comes with every trip we plan. It is not an upgrade and it has no price tag. It covers the preparation before you leave, the people and the vehicle during the trip, and help when something unexpected changes the plan. A few extras, such as travel insurance, a VIP airport service and a local SIM, can be added for a fee."
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"Before your safari\")) h2 + p",
+      "html": "The trip starts at home, and we want you to know what to expect before you board."
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"Before your safari\")) p:contains(\"Ahead of your safari\")",
+      "html": "After booking you receive a travel file with your route day by day, the lodges, the activities, the contact numbers in Tanzania and practical notes on visas, money and packing. Your airport pick-up is arranged. You pay a deposit when you confirm and the balance before departure; the amounts and dates are on your proposal. Plans change sometimes, so our cancellation terms are written down plainly in point 5.3 of our <a href=\"/terms-conditions/\">terms and conditions</a>."
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"Flight delay and cancellation support\")) h2",
+      "text": "Help with disrupted flights"
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"Help with disrupted flights\")) h2 + p",
+      "html": "This part applies to international flights you book through us."
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"Help with disrupted flights\")) h2 + p + p",
+      "html": "Delayed, cancelled, missed connection: you call us, and we get to work."
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"Help with disrupted flights\")) h2 + p + p + p",
+      "keepImages": true,
+      "html": "If a flight booked through us is cancelled or badly delayed, we look for an alternative, arrange a hotel if you need one and rework the first days of your itinerary so nothing is lost. We deal with the airline on your behalf and pass on any refund. Flights you book yourself are outside this cover; your travel insurance applies then."
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"What help can you count on\")) h2",
+      "text": "Support during your trip"
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"Support during your trip\")) h2 + p",
+      "html": "Out in the parks, the question is not whether something can go wrong, but who fixes it. That is our team in Arusha."
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"Support during your trip\")) p:contains(\"On safari you ride\")",
+      "html": "You travel in a maintained 4×4 from Kilimanjaro Nature Tours, with a network of bush garages along the routes and replacement vehicles in Arusha if one is needed. Your private guide stays with you from pick-up to drop-off, and the office in Arusha and we in the Netherlands can be reached 24 hours a day."
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"Exclusive add-ons\")) h2",
+      "text": "Optional extras"
+    },
+    {
+      "selector": "div.ts-prose:has(h2:contains(\"Optional extras\")) h2 + p",
+      "html": "A few services fall outside the package and can be added at a cost: a VIP airport service, a local SIM or eSIM, travel insurance, and a farewell experience on your last day. Ask for them when you request your proposal."
+    },
+    {
+      "selector": "td:contains(\"Flight disruption support when your flight\")",
+      "text": "✓ Help with disrupted flights, for flights booked through us"
+    },
+    {
+      "selector": "td:contains(\"Vehicle support during your safari\")",
+      "text": "✓ Replacement vehicle and roadside help on safari"
+    },
+    {
+      "selector": "p[class*=mt-8]:contains(\"Experience Hakuna Matata yourself\")",
+      "html": "Trips that come with the package, like every trip we plan."
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"How our support works\")) > p",
+      "html": "Because our partner has its own office, vehicles and crew in Arusha, help does not have to come from far away. Depending on what has happened we call your guide, the lodge, the airline or the transfer company, and we adjust the rest of the trip with you."
+    },
+    {
+      "selector": "div.ts-prose:has(> h3:contains(\"Common questions\")) > h3",
+      "text": "Questions about the Hakuna Matata Package"
+    }
   ],
   "faq": {
     "at": "div.ts-prose:has(> h3:contains(\"Questions about the Hakuna Matata Package\")) .faq-wrapper",

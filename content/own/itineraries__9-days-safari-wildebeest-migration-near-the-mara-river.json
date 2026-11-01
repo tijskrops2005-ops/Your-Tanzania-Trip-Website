@@ -1,10 +1,18 @@
 {
   "title": "9 Days Migration Safari, Mara River | Your Tanzania Trip",
-  "description": "Nine days built around the Great Migration: Tarangire, the central Serengeti, two days by the Mara River in the northern Serengeti and the Ngorongoro Crater. From $2,365 p.p.",
+  "description": "Nine days built around the Great Migration: Tarangire, the central Serengeti, two days by the Mara River and the Ngorongoro Crater. From $2,365 p.p.",
   "h1": "9 Days Safari: Great Migration & Mara River",
   "replace": [
-    { "selector": "div.ts-prose > h2", "index": 0, "text": "9 Days Safari: Great Migration & Mara River" },
-    { "selector": "div[class*=single-trips-sidebar] > h3", "index": 0, "text": "9 Days Safari: Great Migration & Mara River" }
+    {
+      "selector": "div.ts-prose > h2",
+      "index": 0,
+      "text": "9 Days Safari: Great Migration & Mara River"
+    },
+    {
+      "selector": "div[class*=single-trips-sidebar] > h3",
+      "index": 0,
+      "text": "9 Days Safari: Great Migration & Mara River"
+    }
   ],
   "trip": {
     "heroNote": "*Per person, based on 6 travellers in low season. Includes your guide and safari vehicle, accommodation, park and crater fees. International flights not included.",
@@ -58,7 +66,11 @@
       "name": "9 Days Safari: Great Migration & Mara River",
       "description": "Nine-day private safari in northern Tanzania built around the Great Migration: Tarangire, the central Serengeti, two days near the Mara River in the northern Serengeti and the Ngorongoro Crater, with your own guide and vehicle.",
       "price": 2365,
-      "touristType": ["Couples", "Groups of friends", "Photographers"]
+      "touristType": [
+        "Couples",
+        "Groups of friends",
+        "Photographers"
+      ]
     }
   },
   "faq": {

@@ -1,10 +1,18 @@
 {
   "title": "10 Days Zanzibar Beach Holiday | Your Tanzania Trip",
-  "description": "Ten days on Zanzibar: beach hotel in three comfort levels, airport transfers, and reef trips, spice farms or Stone Town added as you like. From $625 p.p. excluding flights.",
+  "description": "Ten days on Zanzibar: a beach hotel in three comfort levels, airport transfers, and reef trips, spice farms or Stone Town added as you like. From $625 p.p.",
   "h1": "10 Days Zanzibar Island",
   "replace": [
-    { "selector": "div.ts-prose > h2", "index": 0, "text": "10 Days Zanzibar Island" },
-    { "selector": "div[class*=single-trips-sidebar] > h3", "index": 0, "text": "10 Days Zanzibar Island" }
+    {
+      "selector": "div.ts-prose > h2",
+      "index": 0,
+      "text": "10 Days Zanzibar Island"
+    },
+    {
+      "selector": "div[class*=single-trips-sidebar] > h3",
+      "index": 0,
+      "text": "10 Days Zanzibar Island"
+    }
   ],
   "trip": {
     "heroNote": "*Per person, based on 6 travellers in low season, with breakfast. International flights not included.",
@@ -46,7 +54,12 @@
       "name": "10 Days Zanzibar Island",
       "description": "Ten-day beach holiday on Zanzibar with a hotel in the comfort level of your choice, airport transfers and optional reef trips, spice farm visits and Stone Town tours.",
       "price": 625,
-      "touristType": ["Couples", "Honeymooners", "Families", "Groups of friends"]
+      "touristType": [
+        "Couples",
+        "Honeymooners",
+        "Families",
+        "Groups of friends"
+      ]
     }
   },
   "faq": {

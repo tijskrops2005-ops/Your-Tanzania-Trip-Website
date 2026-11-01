@@ -1,10 +1,18 @@
 {
   "title": "15 Days Tanzania Safari & Zanzibar | Your Tanzania Trip",
-  "description": "Two weeks at an easy pace: Arusha, Tarangire, three days in the Serengeti, the Ngorongoro Crater and four days on Zanzibar. Private guide and vehicle. From $3,039 p.p.",
+  "description": "Two weeks at an easy pace: Arusha, Tarangire, three days in the Serengeti, the Ngorongoro Crater and four days on Zanzibar. Private guide. From $3,039 p.p.",
   "h1": "15 Days Safari & Zanzibar",
   "replace": [
-    { "selector": "div.ts-prose > h2", "index": 0, "text": "15 Days Safari & Zanzibar" },
-    { "selector": "div[class*=single-trips-sidebar] > h3", "index": 0, "text": "15 Days Safari & Zanzibar" }
+    {
+      "selector": "div.ts-prose > h2",
+      "index": 0,
+      "text": "15 Days Safari & Zanzibar"
+    },
+    {
+      "selector": "div[class*=single-trips-sidebar] > h3",
+      "index": 0,
+      "text": "15 Days Safari & Zanzibar"
+    }
   ],
   "trip": {
     "heroNote": "*Per person, based on 6 travellers in low season. Includes the flight to Zanzibar, your guide and safari vehicle, accommodation and park fees. International flights not included.",
@@ -69,7 +77,11 @@
       "name": "15 Days Safari & Zanzibar",
       "description": "Fifteen-day private trip through northern Tanzania and Zanzibar: Arusha National Park, Tarangire, three days in the Serengeti and the Ngorongoro Crater with your own guide and vehicle, then a flight to Zanzibar for four days on the beach.",
       "price": 3039,
-      "touristType": ["Families", "Couples", "Honeymooners"]
+      "touristType": [
+        "Families",
+        "Couples",
+        "Honeymooners"
+      ]
     }
   },
   "faq": {

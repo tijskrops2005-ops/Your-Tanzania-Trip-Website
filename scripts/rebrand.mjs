@@ -12,6 +12,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { applyOwnContent, ownMeta } from "./own-content.mjs";
+import { applyAltText } from "./alt-text.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const tokens = JSON.parse(fs.readFileSync(path.join(root, "docs/brand-tokens.json"), "utf8"));
@@ -922,6 +923,21 @@ fs.writeFileSync(path.join(root, "content/pages/our-partner.html"), partnerPageB
   console.log(`own content applied to ${own} pages`);
 }
 
+// 2d. Alt text for images without one (scripts/alt-text.mjs)
+{
+  let pages = 0, left = 0;
+  for (const p of walk(path.join(root, "content/pages"), [".html"])) {
+    const before = fs.readFileSync(p, "utf8");
+    const { html, missing } = applyAltText(before);
+    left += missing.length;
+    if (html !== before) {
+      fs.writeFileSync(p, html);
+      pages++;
+    }
+  }
+  console.log(`alt text added on ${pages} pages, ${left} images still without`);
+}
+
 // 2b. Practical-information fragments (public/ajax/fetch_post_content/<id>.html) are the article body of the
 // page with that id; regenerate them from the rebranded pages so tabs and pages never drift apart.
 {
@@ -1086,6 +1102,9 @@ function syncWebPage(json, pg) {
     pg.ldJson = (pg.ldJson || []).map(fixJsonLd).filter(Boolean);
     if (["index", "about-us", "our-partner"].includes(pg.slug) && pg.ldJson[0]) pg.ldJson[0] = addPartnerNode(pg.ldJson[0]);
     if (pg.stickyCta) pg.stickyCta.label = rebrandText(pg.stickyCta.label);
+    // The /itinerary/ tab repeats the day programme of its trip page: keep it out of the index like the
+    // other tabs (/prices/, /accommodations/ ...). Utility pages are not search results either.
+    if (/^\/itineraries\/[^/]+\/itinerary\/$/.test(pg.path) || /^\/(wishlist|processing-your-payment|review-your-opinion-matters)\/$/.test(pg.path)) pg.robots = "noindex, follow";
     // Pages with own content: their title, description and schema (FAQPage, TouristTrip)
     const own = ownMeta(pg.slug, pg.path);
     if (own) {
@@ -1094,6 +1113,21 @@ function syncWebPage(json, pg) {
       if (own.ogTitle) pg.ogTitle = own.ogTitle;
       if (own.ogDescription) pg.ogDescription = own.ogDescription;
       pg.ldJson = pg.ldJson.map((j) => syncWebPage(j, pg)).concat(own.ldJson);
+    }
+    // Titles over 60 characters lose the brand suffix (Google cuts them off anyway).
+    if (pg.title.length > 60) pg.title = pg.title.replace(/\s*[|l·-]\s*Your Tanzania Trip\s*$/i, "");
+    // Pages without a meta description get their first paragraph, cut at a sentence end (max 155).
+    if (!pg.description && !(pg.robots || "").includes("noindex")) {
+      const body = fs.existsSync(path.join(root, "content/pages", pg.slug + ".html")) ? fs.readFileSync(path.join(root, "content/pages", pg.slug + ".html"), "utf8") : "";
+      const m = body.match(/<p(?:\s[^>]*)?>((?:(?!<\/p>)[\s\S]){80,}?)<\/p>/);
+      if (m) {
+        const text = m[1].replace(/<[^>]+>/g, "").replace(/&nbsp;|&#8217;|&amp;/g, (e) => ({ "&nbsp;": " ", "&#8217;": "’", "&amp;": "&" })[e]).replace(/\s+/g, " ").trim();
+        let d = text.slice(0, 155);
+        const end = Math.max(d.lastIndexOf(". "), d.lastIndexOf("! "), d.lastIndexOf("? "));
+        d = end > 80 ? d.slice(0, end + 1) : d.replace(/\s+\S*$/, "") + "…";
+        pg.description = pg.ogDescription = d;
+        pg.descriptionAuto = true;
+      }
     }
   }
   pages.push({
@@ -1118,7 +1152,7 @@ function syncWebPage(json, pg) {
 // 5. Header
 processFile(path.join(root, "src/partials/header.html"), (s) => {
   s = stripRemovedLinks(s);
-  s = s.replace(/<picture>[\s\S]*?<\/picture>/, `<img src="/brand/logo-primary.png" class="brand-logo no-lazyload" width="1888" height="732" alt="${BRAND}" fetchpriority="high" loading="eager" decoding="async">`);
+  s = s.replace(/<picture>[\s\S]*?<\/picture>/, `<img src="/brand/logo-primary-600.png" class="brand-logo no-lazyload" width="600" height="233" alt="${BRAND}" fetchpriority="high" loading="eager" decoding="async">`);
   // Cross-sell to the former sister company (its anchor is already unwrapped by the text rules).
   s = s.replace(/<a href="https:\/\/africasafaritrips\.com"[^>]*class="top-header-cross-sell">[\s\S]*?<\/a>/, "");
   s = s.replace(/<span class="top-header-cross-sell-text">[\s\S]*?<\/span>\s*/, "");
@@ -1138,7 +1172,7 @@ processFile(path.join(root, "src/partials/footer.html"), (s) => {
   const bandStart = s.indexOf('<div class="text-white ts-mask-bottom bg-green">');
   const bandEnd = s.indexOf('<div class="px-5 py-12 mx-auto max-w-7xl md:pb-24 container-2xl">');
   if (bandStart !== -1 && bandEnd > bandStart) s = s.slice(0, bandStart) + footerBand() + "\n " + s.slice(bandEnd);
-  s = s.replace(/<img class="w-auto h-24"[^>]*logo-en-footer\.svg[^>]*>/, `<img src="/brand/logo-reversed.png" class="w-auto h-24" width="1913" height="722" alt="${BRAND}" loading="lazy" decoding="async">`);
+  s = s.replace(/<img class="w-auto h-24"[^>]*logo-en-footer\.svg[^>]*>/, `<img src="/brand/logo-reversed-600.png" class="w-auto h-24" width="600" height="226" alt="${BRAND}" loading="lazy" decoding="async">`);
   // Badge rows: the first held the sister-company and Hakuna Matata logos, the second SGR/ANVR/Travelife.
   s = s.replace(/<ul class="flex gap-x-8 items-center mt-8">([\s\S]*?)<\/ul>/g, (m, inner) => {
     const hakuna = inner.match(/<li>\s*<a href="\/hakuna-matata-package\/"[\s\S]*?<\/li>/);
@@ -1173,6 +1207,44 @@ processFile(path.join(root, "src/partials/footer.html"), (s) => {
     .map((p) => ({ u: p.path, t: (p.title || "").replace(/\s*[|l·-]\s*Your Tanzania Trip\s*$/i, "").trim(), d: (p.description || "").slice(0, 160), k: kind(p.path) }));
   fs.writeFileSync(path.join(root, "public/search-index.json"), JSON.stringify(index));
   console.log(`search index: ${index.length} entries`);
+}
+
+// 6c. llms.txt: a short, plain-text guide to the site for AI assistants (llms-full.txt lists every indexable page).
+{
+  const pages = JSON.parse(fs.readFileSync(path.join(root, "content/pages.json"), "utf8")).filter((p) => !(p.robots || "").includes("noindex"));
+  const line = (p) => `- [${p.title.replace(/\s*[|l·-]\s*Your Tanzania Trip\s*$/i, "").trim()}](${SITE}${p.path})${p.description ? ": " + p.description : ""}`;
+  const pick = (paths) => paths.map((x) => pages.find((p) => p.path === x)).filter(Boolean).map(line).join("\n");
+  const trips = ["/itineraries/11-days-safari-trip-tanzania-zanzibar/", "/itineraries/15-days-trip-tanzania-zanzibar/", "/itineraries/9-days-safari-wildebeest-migration-near-the-mara-river/", "/itineraries/7-days-safari-tanzania/", "/itineraries/machame-route-7-days/", "/itineraries/10-days-zanzibar-island/", "/itineraries/10-days-safari-mikumi-udzungwa-ruaha-nyerere/", "/itineraries/5-day-tanzania-safari-small-group-trip/"];
+  const main = ["/tanzania-safari/", "/climbing-kilimanjaro/", "/zanzibar-holiday/", "/great-wildebeest-migration/", "/islands/zanzibar-island/", "/national-parks-tanzania/", "/accommodations/", "/activities/", "/hakuna-matata-package/", "/practical-information/", "/faqs/tanzania/", "/blog/"];
+  const about = ["/about-us/", "/our-partner/", "/contact/", "/travel-proposal/"];
+  const txt = `# ${BRAND}
+
+> Tailor-made trips through Tanzania: private safaris in the north and the south, Kilimanjaro climbs, Zanzibar beach stays and the Great Migration. Planned and booked from the Netherlands by ${CO.owner} and ${CO.cofounder}; run on the ground by our local partner ${P.name} in Arusha, founded by ${P.owner}. Private guide and your own safari vehicle on every safari. A free, no-obligation travel proposal within 24 hours. Prices on the site are per person in USD, based on 6 travellers in low season, excluding international flights.
+
+Company: ${BRAND} (${CO.legalName}), ${CO.address}. KvK ${CO.kvk}, VAT ${CO.vat}. Phone/WhatsApp ${CO.phone} (English and Dutch).
+Local partner: ${P.name}, ${P.postal}, Tanzania. ${P.phone}, ${P.email}, ${P.url}. Rated ${TA.score} on Tripadvisor (${TA.count} reviews, checked ${TA.checkedOn}); that score belongs to the partner, not to ${BRAND}.
+
+## Trips
+${pick(trips)}
+
+## Destinations and planning
+${pick(main)}
+
+## About and contact
+${pick(about)}
+
+## Full page list
+${SITE}/llms-full.txt
+`;
+  fs.writeFileSync(path.join(root, "public/llms.txt"), txt);
+  const sections = {};
+  for (const p of pages) {
+    const seg = p.path.split("/")[1] || "home";
+    (sections[seg] ||= []).push(line(p));
+  }
+  const full = `# ${BRAND}: all pages\n\nSee ${SITE}/llms.txt for the summary. One line per page: title, URL, description.\n\n` + Object.entries(sections).map(([k, v]) => `## ${k}\n${v.join("\n")}`).join("\n\n") + "\n";
+  fs.writeFileSync(path.join(root, "public/llms-full.txt"), full);
+  console.log(`llms.txt written (${pages.length} pages in llms-full.txt)`);
 }
 
 // 7. Layout text (og:site_name etc.)

@@ -2,13 +2,8 @@
 
 
     <div class="ts-jumbotron relative isolate lg:ts-mask-bottom">
-        <div
-            class="ts-jumbotron-wrapper  "
-            >
-                                            <video
-                    class="ts-jumbotron-video no-lazyload absolute inset-0 -z-10 h-full w-full object-cover ts-object-center"
-                    poster="/brand/video/safari-loop-poster.jpg"
-                    autoplay muted loop playsinline>
+        <div class="ts-jumbotron-wrapper  ">
+                                            <video class="ts-jumbotron-video no-lazyload absolute inset-0 -z-10 h-full w-full object-cover ts-object-center" poster="/brand/video/safari-loop-poster.jpg" autoplay muted loop playsinline>
                     <source src="/brand/video/safari-loop.mp4" type="video/mp4">
                 </video>
             
@@ -108,18 +103,8 @@
                 Save filter            </button>
         </div>
     </div>
-    <img
-        width="1700"
-        height="1644"
-        decoding="async"
-        fetchpriority="high"
-        loading="eager"
-        class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 top-36"
-        src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png"
-        alt=""
-        aria-hidden="true"
-        role="presentation" />
-<div class="relative z-10 px-5 mx-auto max-w-7xl container-2xl"><ul id="breadcrumbs" class="flex items-center py-4 md:py-6 gap-x-3"></span><li><a href="/">Home</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li>  <li class="active"><a href="/tanzania-travel/">Tanzania Travel</a></li></span></ul></div>
+    <img width="1700" height="1644" decoding="async" fetchpriority="high" loading="eager" class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 top-36" src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png" alt aria-hidden="true" role="presentation">
+<div class="relative z-10 px-5 mx-auto max-w-7xl container-2xl"><ul id="breadcrumbs" class="flex items-center py-4 md:py-6 gap-x-3"><li><a href="/">Home</a><span class="breadcrumb-separator i-ion-chevron-right"></span></li>  <li class="active"><a href="/tanzania-travel/">Tanzania Travel</a></li></ul></div>
 
 <div class="mx-auto px-0 pt-0 pb-10 max-w-7xl container-2xl lg:px-5 lg:pb-24 lg:pt-8 overview-trips">
     <div class="grid grid-cols-12 gap-y-5 gap-x-8 overview-grid">
@@ -128,10 +113,10 @@
             <div class="sidebar sidebar-facetwp-1 make-sticky flex flex-col gap-y-7">
                 <section id="block-5" class="widget widget_block">
 <strong class="wp-block-heading">Type</strong>
-</section><section id="block-6" class="widget widget_block"><p><div class="facetwp-facet facetwp-facet-types facetwp-type-checkboxes" data-name="types" data-type="checkboxes"></div></p>
+</section><section id="block-6" class="widget widget_block"><p></p><div class="facetwp-facet facetwp-facet-types facetwp-type-checkboxes" data-name="types" data-type="checkboxes"></div><p></p>
 </section><section id="block-11" class="widget widget_block">
 <strong class="wp-block-heading">Travel time</strong>
-</section><section id="block-12" class="widget widget_block"><p><div class="facetwp-facet facetwp-facet-duration facetwp-type-checkboxes" data-name="duration" data-type="checkboxes"></div></p>
+</section><section id="block-12" class="widget widget_block"><p></p><div class="facetwp-facet facetwp-facet-duration facetwp-type-checkboxes" data-name="duration" data-type="checkboxes"></div><p></p>
 </section>            </div>
         </div>
     
@@ -148,40 +133,11 @@
                                                     <button id="popularity-info-button" class="items-center ml-3" x-on:click="sortInfoOpen = ! sortInfoOpen">
                                 <i class="text-2xl text-green i-ion-information-circle-outline"></i>
                             </button>
-                            <div
-    x-cloak
-    x-show="sortInfoOpen"
-    class="relative z-[99999999999999999]"
-    aria-labelledby="modal"
-    role="dialog"
-    aria-modal="true"
-    x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="opacity-0"
-    x-transition:enter-end="opacity-100"
-    x-transition:leave="transition ease-in duration-200"
-    x-transition:leave-start="opacity-100"
-    x-transition:leave-end="opacity-0"
-    x-on:keydown.escape.window="sortInfoOpen = false"
-    x-on:keydown.meta.k.window.prevent="sortInfoOpen = !sortInfoOpen"
-    x-on:keydown.ctrl.k.window.prevent="sortInfoOpen = !sortInfoOpen"
-    x-on:toggle-sort-info.window="sortInfoOpen = !sortInfoOpen"
-    style="display: none;">
-    <div
-        x-on:click="sortInfoOpen = false"
-        class="fixed inset-0 bg-black bg-opacity-75 transition-opacity">
+                            <div x-cloak x-show="sortInfoOpen" class="relative z-[99999999999999999]" aria-labelledby="modal" role="dialog" aria-modal="true" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-on:keydown.escape.window="sortInfoOpen = false" x-on:keydown.meta.k.window.prevent="sortInfoOpen = !sortInfoOpen" x-on:keydown.ctrl.k.window.prevent="sortInfoOpen = !sortInfoOpen" x-on:toggle-sort-info.window="sortInfoOpen = !sortInfoOpen" style="display: none;">
+    <div x-on:click="sortInfoOpen = false" class="fixed inset-0 bg-black bg-opacity-75 transition-opacity">
         <div class="fixed inset-0 z-10 over-flow-y-auto">
             <div class="flex justify-center items-center p-4 min-h-full text-center sm:p-0">
-                <div class="relative text-left shadow-xl transition-all transform sm:my-8 sm:w-auto sm:max-w-3xl"
-                    x-on:click.stop
-                    x-on:submit.prevent
-                    x-on:keydown.enter.prevent
-                    x-show="sortInfoOpen"
-                    x-transition:enter="transition ease-out duration-300 delay-150"
-                    x-transition:enter-start="opacity-0 transform -translate-y-4"
-                    x-transition:enter-end="opacity-100 transform translate-y-0"
-                    x-transition:leave="transition ease-in duration-200"
-                    x-transition:leave-start="opacity-100 transform translate-y-0"
-                    x-transition:leave-end="opacity-0 transform -translate-y-4">
+                <div class="relative text-left shadow-xl transition-all transform sm:my-8 sm:w-auto sm:max-w-3xl" x-on:click.stop x-on:submit.prevent x-on:keydown.enter.prevent x-show="sortInfoOpen" x-transition:enter="transition ease-out duration-300 delay-150" x-transition:enter-start="opacity-0 transform -translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform -translate-y-4">
                     <div class="absolute -top-3 -right-3 z-40">
                         <button type="button" x-on:click="sortInfoOpen = ! sortInfoOpen" class="text-gray-400 rounded-md group hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
                             <span class="sr-only">Close</span>
@@ -192,17 +148,7 @@
                     </div>
 
                     <div class="overflow-hidden relative bg-white rounded-lg">
-                            <img
-        width="1700"
-        height="1644"
-        decoding="async"
-        fetchpriority="high"
-        loading="eager"
-        class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 z-10 right-1/2 -top-[200px]"
-        src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png"
-        alt=""
-        aria-hidden="true"
-        role="presentation" />
+                            <img width="1700" height="1644" decoding="async" fetchpriority="high" loading="eager" class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 z-10 right-1/2 -top-[200px]" src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png" alt aria-hidden="true" role="presentation">
 
                         <div class="relative z-20">
                             <div class="px-4 pt-5 pb-4 sm:py-10 sm:px-10">
@@ -233,70 +179,27 @@
                         
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="683" src="/wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="cheetah walking around in Tanzania" decoding="async" fetchpriority="high" srcset="/wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-1024x683.jpg 1024w, /wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-300x200.jpg 300w, /wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-768x512.jpg 768w, /wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-1536x1024.jpg 1536w, /wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-60x40.jpg 60w, /wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px"  loading="eager"/>        
+                    <img width="1024" height="683" src="/wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="cheetah walking around in Tanzania" decoding="async" fetchpriority="high" srcset="/wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-1024x683.jpg 1024w, /wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-300x200.jpg 300w, /wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-768x512.jpg 768w, /wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-1536x1024.jpg 1536w, /wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar-60x40.jpg 60w, /wp-content/uploads/2023/07/11-Days-Safari-trip-Tanzania-Zanzibar.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" loading="eager">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
-                                <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Zanzibar">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg"
-                    alt="Zanzibar"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="eager"  fetchpriority="high"/>
+                                <div class="trip-pill-icon" data-tippy data-tippy-content="Zanzibar">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg" alt="Zanzibar" class="trip-pill-img" width="22" height="22" decoding="async" loading="eager" fetchpriority="high">
             </div>
-                                    <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"  loading="eager" fetchpriority="high"/>
-                        <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Honeymoon">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/honeymoon.svg"
-                    alt="Honeymoon"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="eager"  fetchpriority="high"/>
+                                    <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg" alt aria-hidden="true" class="trip-pill-img" width="22" height="22" decoding="async" loading="eager" fetchpriority="high">
+                        <div class="trip-pill-icon" data-tippy data-tippy-content="Honeymoon">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/honeymoon.svg" alt="Honeymoon" class="trip-pill-img" width="22" height="22" decoding="async" loading="eager" fetchpriority="high">
             </div>
-                                    <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"  loading="eager" fetchpriority="high"/>
-                        <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Family-friendly">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg"
-                    alt="Family-friendly"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="eager"  fetchpriority="high"/>
+                                    <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg" alt aria-hidden="true" class="trip-pill-img" width="22" height="22" decoding="async" loading="eager" fetchpriority="high">
+                        <div class="trip-pill-icon" data-tippy data-tippy-content="Family-friendly">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg" alt="Family-friendly" class="trip-pill-img" width="22" height="22" decoding="async" loading="eager" fetchpriority="high">
             </div>
             </div>
                 </div>
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13826"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13826" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -343,70 +246,27 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="683" src="/wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Mother lion and lion cub on the Tanzania Serengeti" decoding="async" srcset="/wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-1024x683.jpg 1024w, /wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-300x200.jpg 300w, /wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-768x512.jpg 768w, /wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-1536x1024.jpg 1536w, /wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-60x40.jpg 60w, /wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px"  loading="eager" fetchpriority="high"/>        
+                    <img width="1024" height="683" src="/wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Mother lion and lion cub on the Tanzania Serengeti" decoding="async" srcset="/wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-1024x683.jpg 1024w, /wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-300x200.jpg 300w, /wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-768x512.jpg 768w, /wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-1536x1024.jpg 1536w, /wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar-60x40.jpg 60w, /wp-content/uploads/2023/07/15-Days-trip-Tanzania-Zanzibar.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" loading="eager" fetchpriority="high">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
-                                <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Zanzibar">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg"
-                    alt="Zanzibar"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                <div class="trip-pill-icon" data-tippy data-tippy-content="Zanzibar">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg" alt="Zanzibar" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
-                                    <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"  loading="lazy" fetchpriority="low"/>
-                        <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Honeymoon">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/honeymoon.svg"
-                    alt="Honeymoon"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                    <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg" alt aria-hidden="true" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
+                        <div class="trip-pill-icon" data-tippy data-tippy-content="Honeymoon">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/honeymoon.svg" alt="Honeymoon" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
-                                    <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"  loading="lazy" fetchpriority="low"/>
-                        <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Family-friendly">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg"
-                    alt="Family-friendly"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                    <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg" alt aria-hidden="true" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
+                        <div class="trip-pill-icon" data-tippy data-tippy-content="Family-friendly">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg" alt="Family-friendly" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
             </div>
                 </div>
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13840"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13840" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -451,19 +311,12 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 330px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="683" src="/wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Cheetah cub with mother in serengeti national park" decoding="async" srcset="/wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--1024x683.jpg 1024w, /wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--300x200.jpg 300w, /wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--768x512.jpg 768w, /wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--1536x1024.jpg 1536w, /wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--60x40.jpg 60w, /wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA-.jpg 1920w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="683" src="/wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Cheetah cub with mother in serengeti national park" decoding="async" srcset="/wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--1024x683.jpg 1024w, /wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--300x200.jpg 300w, /wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--768x512.jpg 768w, /wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--1536x1024.jpg 1536w, /wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA--60x40.jpg 60w, /wp-content/uploads/2023/07/7-DAYS-SAFARI-TANZANIA-.jpg 1920w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
         <div class="trip-pill-icon">
-            <img
-                src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg"
-                alt="Family-friendly"
-                class="trip-pill-img"
-                width="22"
-                height="22"
-                decoding="async"
-                loading="lazy"  fetchpriority="low"/>
+            <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg" alt="Family-friendly" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
         </div>
                     <span class="trip-pill-label">
                 FAMILY-FRIENDLY            </span>
@@ -472,9 +325,7 @@
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13798"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13798" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -519,15 +370,13 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 430px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="683" src="/wp-content/uploads/2024/07/Mara-River-3-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2024/07/Mara-River-3-1024x683.jpg 1024w, /wp-content/uploads/2024/07/Mara-River-3-300x200.jpg 300w, /wp-content/uploads/2024/07/Mara-River-3-768x512.jpg 768w, /wp-content/uploads/2024/07/Mara-River-3-1536x1024.jpg 1536w, /wp-content/uploads/2024/07/Mara-River-3-2048x1365.jpg 2048w, /wp-content/uploads/2024/07/Mara-River-3-60x40.jpg 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="683" src="/wp-content/uploads/2024/07/Mara-River-3-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Wildebeest crossing the Mara River" decoding="async" srcset="/wp-content/uploads/2024/07/Mara-River-3-1024x683.jpg 1024w, /wp-content/uploads/2024/07/Mara-River-3-300x200.jpg 300w, /wp-content/uploads/2024/07/Mara-River-3-768x512.jpg 768w, /wp-content/uploads/2024/07/Mara-River-3-1536x1024.jpg 1536w, /wp-content/uploads/2024/07/Mara-River-3-2048x1365.jpg 2048w, /wp-content/uploads/2024/07/Mara-River-3-60x40.jpg 60w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                             </div>
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="19146"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="19146" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -573,19 +422,12 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 274px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="653" src="/wp-content/uploads/2023/07/zanzibar_island_boat-1024x653.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="zanzibar island boat" decoding="async" srcset="/wp-content/uploads/2023/07/zanzibar_island_boat-1024x653.jpg 1024w, /wp-content/uploads/2023/07/zanzibar_island_boat-300x191.jpg 300w, /wp-content/uploads/2023/07/zanzibar_island_boat-768x490.jpg 768w, /wp-content/uploads/2023/07/zanzibar_island_boat-1536x979.jpg 1536w, /wp-content/uploads/2023/07/zanzibar_island_boat-60x38.jpg 60w, /wp-content/uploads/2023/07/zanzibar_island_boat.jpg 1920w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="653" src="/wp-content/uploads/2023/07/zanzibar_island_boat-1024x653.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="zanzibar island boat" decoding="async" srcset="/wp-content/uploads/2023/07/zanzibar_island_boat-1024x653.jpg 1024w, /wp-content/uploads/2023/07/zanzibar_island_boat-300x191.jpg 300w, /wp-content/uploads/2023/07/zanzibar_island_boat-768x490.jpg 768w, /wp-content/uploads/2023/07/zanzibar_island_boat-1536x979.jpg 1536w, /wp-content/uploads/2023/07/zanzibar_island_boat-60x38.jpg 60w, /wp-content/uploads/2023/07/zanzibar_island_boat.jpg 1920w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
         <div class="trip-pill-icon">
-            <img
-                src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg"
-                alt="Zanzibar"
-                class="trip-pill-img"
-                width="22"
-                height="22"
-                decoding="async"
-                loading="lazy"  fetchpriority="low"/>
+            <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg" alt="Zanzibar" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
         </div>
                     <span class="trip-pill-label">
                 ZANZIBAR            </span>
@@ -594,9 +436,7 @@
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13938"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13938" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -641,70 +481,27 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 402px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="683" src="/wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Neushoorn Your Tanzania Trip" decoding="async" srcset="/wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1024x683.jpg 1024w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-300x200.jpg 300w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-768x512.jpg 768w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1536x1024.jpg 1536w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-60x40.jpg 60w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar.jpg 1920w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="683" src="/wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Neushoorn Your Tanzania Trip" decoding="async" srcset="/wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1024x683.jpg 1024w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-300x200.jpg 300w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-768x512.jpg 768w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-1536x1024.jpg 1536w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar-60x40.jpg 60w, /wp-content/uploads/2023/07/12-day-honeymoon-Tanzania-and-Zanzibar.jpg 1920w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
-                                <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Zanzibar">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg"
-                    alt="Zanzibar"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                <div class="trip-pill-icon" data-tippy data-tippy-content="Zanzibar">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg" alt="Zanzibar" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
-                                    <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"  loading="lazy" fetchpriority="low"/>
-                        <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Honeymoon">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/honeymoon.svg"
-                    alt="Honeymoon"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                    <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg" alt aria-hidden="true" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
+                        <div class="trip-pill-icon" data-tippy data-tippy-content="Honeymoon">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/honeymoon.svg" alt="Honeymoon" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
-                                    <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"  loading="lazy" fetchpriority="low"/>
-                        <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Family-friendly">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg"
-                    alt="Family-friendly"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                    <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg" alt aria-hidden="true" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
+                        <div class="trip-pill-icon" data-tippy data-tippy-content="Family-friendly">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg" alt="Family-friendly" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
             </div>
                 </div>
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13910"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13910" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -751,19 +548,12 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 282px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="683" src="/wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Four people looking at nature arm in arm" decoding="async" srcset="/wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg 1024w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-300x200.jpg 300w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-768x512.jpg 768w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1536x1024.jpg 1536w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-2048x1365.jpg 2048w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-60x40.jpg 60w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="683" src="/wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Four people looking at nature arm in arm" decoding="async" srcset="/wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg 1024w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-300x200.jpg 300w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-768x512.jpg 768w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1536x1024.jpg 1536w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-2048x1365.jpg 2048w, /wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-60x40.jpg 60w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
         <div class="trip-pill-icon">
-            <img
-                src="/wp-content/themes/tanzania-specialist/public/images/trip-type/group-trip.svg"
-                alt="Small group trip"
-                class="trip-pill-img"
-                width="22"
-                height="22"
-                decoding="async"
-                loading="lazy"  fetchpriority="low"/>
+            <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/group-trip.svg" alt="Small group trip" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
         </div>
                     <span class="trip-pill-label">
                 SMALL GROUP TRIP            </span>
@@ -772,9 +562,7 @@
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="21523"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="21523" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -820,70 +608,27 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 402px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="636" src="/wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-1024x636.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Wildebeest migration" decoding="async" srcset="/wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-1024x636.jpg 1024w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-300x186.jpg 300w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-768x477.jpg 768w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-1536x954.jpg 1536w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-60x37.jpg 60w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration.jpg 1920w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="636" src="/wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-1024x636.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Wildebeest migration" decoding="async" srcset="/wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-1024x636.jpg 1024w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-300x186.jpg 300w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-768x477.jpg 768w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-1536x954.jpg 1536w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration-60x37.jpg 60w, /wp-content/uploads/2023/07/18-Days-Tanzania-Safari-Zanzibar-vacation-Wildebeest-migration.jpg 1920w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
-                                <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Zanzibar">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg"
-                    alt="Zanzibar"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                <div class="trip-pill-icon" data-tippy data-tippy-content="Zanzibar">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg" alt="Zanzibar" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
-                                    <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"  loading="lazy" fetchpriority="low"/>
-                        <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Honeymoon">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/honeymoon.svg"
-                    alt="Honeymoon"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                    <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg" alt aria-hidden="true" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
+                        <div class="trip-pill-icon" data-tippy data-tippy-content="Honeymoon">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/honeymoon.svg" alt="Honeymoon" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
-                                    <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"  loading="lazy" fetchpriority="low"/>
-                        <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Family-friendly">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg"
-                    alt="Family-friendly"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                    <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg" alt aria-hidden="true" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
+                        <div class="trip-pill-icon" data-tippy data-tippy-content="Family-friendly">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg" alt="Family-friendly" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
             </div>
                 </div>
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13847"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13847" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -928,19 +673,12 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 430px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="642" src="/wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-1024x642.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="spotting a lion in on a safari in Tanzania" decoding="async" srcset="/wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-1024x642.jpg 1024w, /wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-300x188.jpg 300w, /wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-768x481.jpg 768w, /wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-1536x962.jpg 1536w, /wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-60x38.jpg 60w, /wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration.jpg 1920w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="642" src="/wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-1024x642.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="spotting a lion in on a safari in Tanzania" decoding="async" srcset="/wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-1024x642.jpg 1024w, /wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-300x188.jpg 300w, /wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-768x481.jpg 768w, /wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-1536x962.jpg 1536w, /wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration-60x38.jpg 60w, /wp-content/uploads/2023/08/9-Days-Safari-vacation-Tanzania-Wildebeest-migration.jpg 1920w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
         <div class="trip-pill-icon">
-            <img
-                src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg"
-                alt="Family-friendly"
-                class="trip-pill-img"
-                width="22"
-                height="22"
-                decoding="async"
-                loading="lazy"  fetchpriority="low"/>
+            <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg" alt="Family-friendly" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
         </div>
                     <span class="trip-pill-label">
                 FAMILY-FRIENDLY            </span>
@@ -949,9 +687,7 @@
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13812"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13812" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -996,19 +732,12 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 298px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="648" src="/wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee-1024x648.webp" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee-1024x648.webp 1024w, /wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee-300x190.webp 300w, /wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee-768x486.webp 768w, /wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee-60x38.webp 60w, /wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee.webp 1405w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="648" src="/wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee-1024x648.webp" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Diamonds mapenzi beach zee" decoding="async" srcset="/wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee-1024x648.webp 1024w, /wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee-300x190.webp 300w, /wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee-768x486.webp 768w, /wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee-60x38.webp 60w, /wp-content/uploads/2023/07/Diamonds-Mapenzi-Beach-zee.webp 1405w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
         <div class="trip-pill-icon">
-            <img
-                src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg"
-                alt="Zanzibar"
-                class="trip-pill-img"
-                width="22"
-                height="22"
-                decoding="async"
-                loading="lazy"  fetchpriority="low"/>
+            <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg" alt="Zanzibar" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
         </div>
                     <span class="trip-pill-label">
                 ZANZIBAR            </span>
@@ -1017,9 +746,7 @@
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13917"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13917" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -1064,19 +791,12 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 458px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="539" src="/wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-1024x539.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="" decoding="async" srcset="/wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-1024x539.jpg 1024w, /wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-300x158.jpg 300w, /wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-768x404.jpg 768w, /wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-60x32.jpg 60w, /wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2.jpg 1441w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="539" src="/wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-1024x539.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Serengeti np by plane lux 2" decoding="async" srcset="/wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-1024x539.jpg 1024w, /wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-300x158.jpg 300w, /wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-768x404.jpg 768w, /wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2-60x32.jpg 60w, /wp-content/uploads/2023/10/Serengeti-NP-by-plane-lux-2.jpg 1441w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
         <div class="trip-pill-icon">
-            <img
-                src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg"
-                alt="Zanzibar"
-                class="trip-pill-img"
-                width="22"
-                height="22"
-                decoding="async"
-                loading="lazy"  fetchpriority="low"/>
+            <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg" alt="Zanzibar" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
         </div>
                     <span class="trip-pill-label">
                 ZANZIBAR            </span>
@@ -1085,9 +805,7 @@
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="19153"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="19153" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -1132,19 +850,12 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 350px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="678" src="/wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-1024x678.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Tanzania elephant by water" decoding="async" srcset="/wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-1024x678.jpg 1024w, /wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-300x199.jpg 300w, /wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-768x509.jpg 768w, /wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-1536x1018.jpg 1536w, /wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-60x40.jpg 60w, /wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration.jpg 1920w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="678" src="/wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-1024x678.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Tanzania elephant by water" decoding="async" srcset="/wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-1024x678.jpg 1024w, /wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-300x199.jpg 300w, /wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-768x509.jpg 768w, /wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-1536x1018.jpg 1536w, /wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration-60x40.jpg 60w, /wp-content/uploads/2023/07/8-Days-Tanzania-holiday-Wildebeest-migration.jpg 1920w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
         <div class="trip-pill-icon">
-            <img
-                src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg"
-                alt="Family-friendly"
-                class="trip-pill-img"
-                width="22"
-                height="22"
-                decoding="async"
-                loading="lazy"  fetchpriority="low"/>
+            <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg" alt="Family-friendly" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
         </div>
                     <span class="trip-pill-label">
                 FAMILY-FRIENDLY            </span>
@@ -1153,9 +864,7 @@
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13805"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13805" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -1200,19 +909,12 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 322px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="683" src="/wp-content/uploads/2023/08/19-Kilimanjaro-marangu-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Kilimanjaro marangu route" decoding="async" srcset="/wp-content/uploads/2023/08/19-Kilimanjaro-marangu-1024x683.jpg 1024w, /wp-content/uploads/2023/08/19-Kilimanjaro-marangu-300x200.jpg 300w, /wp-content/uploads/2023/08/19-Kilimanjaro-marangu-768x512.jpg 768w, /wp-content/uploads/2023/08/19-Kilimanjaro-marangu-1536x1024.jpg 1536w, /wp-content/uploads/2023/08/19-Kilimanjaro-marangu-60x40.jpg 60w, /wp-content/uploads/2023/08/19-Kilimanjaro-marangu.jpg 1920w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="683" src="/wp-content/uploads/2023/08/19-Kilimanjaro-marangu-1024x683.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Kilimanjaro marangu route" decoding="async" srcset="/wp-content/uploads/2023/08/19-Kilimanjaro-marangu-1024x683.jpg 1024w, /wp-content/uploads/2023/08/19-Kilimanjaro-marangu-300x200.jpg 300w, /wp-content/uploads/2023/08/19-Kilimanjaro-marangu-768x512.jpg 768w, /wp-content/uploads/2023/08/19-Kilimanjaro-marangu-1536x1024.jpg 1536w, /wp-content/uploads/2023/08/19-Kilimanjaro-marangu-60x40.jpg 60w, /wp-content/uploads/2023/08/19-Kilimanjaro-marangu.jpg 1920w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
         <div class="trip-pill-icon">
-            <img
-                src="/wp-content/themes/tanzania-specialist/public/images/trip-type/climbing.svg"
-                alt="Kilimanjaro"
-                class="trip-pill-img"
-                width="22"
-                height="22"
-                decoding="async"
-                loading="lazy"  fetchpriority="low"/>
+            <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/climbing.svg" alt="Kilimanjaro" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
         </div>
                     <span class="trip-pill-label">
                 KILIMANJARO            </span>
@@ -1221,9 +923,7 @@
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="14375"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="14375" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -1268,70 +968,27 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 354px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1012" height="1024" src="/wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-1012x1024.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="herd of wildebeest" decoding="async" srcset="/wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-1012x1024.jpg 1012w, /wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-296x300.jpg 296w, /wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-768x777.jpg 768w, /wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-1518x1536.jpg 1518w, /wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-60x60.jpg 60w, /wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday.jpg 1920w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1012" height="1024" src="/wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-1012x1024.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="herd of wildebeest" decoding="async" srcset="/wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-1012x1024.jpg 1012w, /wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-296x300.jpg 296w, /wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-768x777.jpg 768w, /wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-1518x1536.jpg 1518w, /wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday-60x60.jpg 60w, /wp-content/uploads/2023/07/13-Days-Safari-Zanzibar-holiday.jpg 1920w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
-                                <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Zanzibar">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg"
-                    alt="Zanzibar"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                <div class="trip-pill-icon" data-tippy data-tippy-content="Zanzibar">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/beach-holiday-palm.svg" alt="Zanzibar" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
-                                    <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"  loading="lazy" fetchpriority="low"/>
-                        <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Honeymoon">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/honeymoon.svg"
-                    alt="Honeymoon"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                    <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg" alt aria-hidden="true" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
+                        <div class="trip-pill-icon" data-tippy data-tippy-content="Honeymoon">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/honeymoon.svg" alt="Honeymoon" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
-                                    <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"  loading="lazy" fetchpriority="low"/>
-                        <div
-                class="trip-pill-icon"
-                data-tippy data-tippy-content="Family-friendly">
-                <img
-                    src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg"
-                    alt="Family-friendly"
-                    class="trip-pill-img"
-                    width="22"
-                    height="22"
-                    decoding="async"
-                    loading="lazy"  fetchpriority="low"/>
+                                    <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/plus.svg" alt aria-hidden="true" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
+                        <div class="trip-pill-icon" data-tippy data-tippy-content="Family-friendly">
+                <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg" alt="Family-friendly" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
             </div>
             </div>
                 </div>
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13833"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13833" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -1376,19 +1033,12 @@
                                             
 <article class="flex isolate relative flex-col bg-sand md:mx-0 lg:flex-row" style="content-visibility: auto;contain-intrinsic-size: auto 326px;">
     <div class="relative card-media lg:w-5/12 lg:shrink-0 overflow-hidden">
-                    <img width="1024" height="682" src="/wp-content/uploads/2024/06/DSC05518-1024x682.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Zebras Ngorongoro crater" decoding="async" srcset="/wp-content/uploads/2024/06/DSC05518-1024x682.jpg 1024w, /wp-content/uploads/2024/06/DSC05518-300x200.jpg 300w, /wp-content/uploads/2024/06/DSC05518-768x512.jpg 768w, /wp-content/uploads/2024/06/DSC05518-1536x1024.jpg 1536w, /wp-content/uploads/2024/06/DSC05518-60x40.jpg 60w, /wp-content/uploads/2024/06/DSC05518.jpg 2000w" sizes="auto"  loading="lazy" fetchpriority="low"/>        
+                    <img width="1024" height="682" src="/wp-content/uploads/2024/06/DSC05518-1024x682.jpg" class="absolute inset-0 h-full w-full bg-grey object-cover wp-post-image" alt="Zebras Ngorongoro crater" decoding="async" srcset="/wp-content/uploads/2024/06/DSC05518-1024x682.jpg 1024w, /wp-content/uploads/2024/06/DSC05518-300x200.jpg 300w, /wp-content/uploads/2024/06/DSC05518-768x512.jpg 768w, /wp-content/uploads/2024/06/DSC05518-1536x1024.jpg 1536w, /wp-content/uploads/2024/06/DSC05518-60x40.jpg 60w, /wp-content/uploads/2024/06/DSC05518.jpg 2000w" sizes="auto" loading="lazy" fetchpriority="low">        
                             <div class="absolute bottom-4 left-4 z-10">
                 
         <div class="trip-pill">
         <div class="trip-pill-icon">
-            <img
-                src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg"
-                alt="Family-friendly"
-                class="trip-pill-img"
-                width="22"
-                height="22"
-                decoding="async"
-                loading="lazy"  fetchpriority="low"/>
+            <img src="/wp-content/themes/tanzania-specialist/public/images/trip-type/family-friendly.svg" alt="Family-friendly" class="trip-pill-img" width="22" height="22" decoding="async" loading="lazy" fetchpriority="low">
         </div>
                     <span class="trip-pill-label">
                 FAMILY-FRIENDLY            </span>
@@ -1397,9 +1047,7 @@
         
         <!-- Wishlist button -->
         <div class="absolute top-4 left-4">
-            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite"
-                data-wishlist-post-id="13784"
-                data-wishlist-post-type="trips">
+            <a href="#" title="Wishlist" class="flex justify-center items-center w-10 h-10 text-2xl leading-none bg-white rounded-full transition-colors group text-anthracite" data-wishlist-post-id="13784" data-wishlist-post-type="trips">
                 <span class="i-ic-baseline-favorite-border group-hover:hidden"></span>
                 <span class="hidden i-ic-baseline-favorite text-red group-hover:block"></span>
             </a>
@@ -1460,29 +1108,13 @@
 
             <div class="hidden flex-none mx-auto w-full max-w-none lg:block">
             <div class="flex-none max-w-none">
-                <img class="block mask-img mask-contain"
-                     width="1000"
-                     height="667"
-                     src="/wp-content/uploads/2023/07/shutterstock_261822989.webp"
-                     alt="shutterstock_261822989"
-                     decoding="async"
-                     loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/shutterstock_261822989.webp 1000w, /wp-content/uploads/2023/07/shutterstock_261822989-300x200.webp 300w, /wp-content/uploads/2023/07/shutterstock_261822989-768x512.webp 768w, /wp-content/uploads/2023/07/shutterstock_261822989-60x40.webp 60w" sizes="auto">
+                <img class="block mask-img mask-contain" width="1000" height="667" src="/wp-content/uploads/2023/07/shutterstock_261822989.webp" alt="shutterstock_261822989" decoding="async" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/07/shutterstock_261822989.webp 1000w, /wp-content/uploads/2023/07/shutterstock_261822989-300x200.webp 300w, /wp-content/uploads/2023/07/shutterstock_261822989-768x512.webp 768w, /wp-content/uploads/2023/07/shutterstock_261822989-60x40.webp 60w" sizes="auto">
             </div>
         </div>
     </div>
                     </div>
                     <div class="relative isolate -mt-1 overflow-hidden flexible-content flexible-content-row-2 ts-mask-top bg-white content-green">
-                                <img
-        width="1700"
-        height="1644"
-        decoding="async"
-        fetchpriority="high"
-        loading="eager"
-        class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 -top-1/2"
-        src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png"
-        alt=""
-        aria-hidden="true"
-        role="presentation" />
+                                <img width="1700" height="1644" decoding="async" fetchpriority="high" loading="eager" class="no-lazyload mask-overlay overflow-hidden pointer-events-none absolute -z-20 right-1/2 -top-1/2" src="/wp-content/themes/tanzania-specialist/public/images/page-bg.png" alt aria-hidden="true" role="presentation">
 
 
 <div class="px-5 py-12 mx-auto md:py-20" style="content-visibility: auto;contain-intrinsic-size: auto 1158px;">
@@ -1494,32 +1126,20 @@
             <div class="-mx-5 mt-10 md:mx-auto !max-w-7xl 2xl:!max-w-9xl lg:mt-20">
             <div class="grid justify-between gap-5 lg:grid-cols-2 lg:gap-8 3xl:gap-12">
                                     <div class="relative col-span-2 overflow-hidden aspect-[16/9] lg:col-span-1">
-                        <img
-                            class="absolute inset-0 object-cover object-center w-full h-full"
-                            src="/wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg"
-                            alt="Safari jeep in Tanzania"
-                            decoding="async"
-                            loading="lazy" width="1024" height="681" fetchpriority="low" srcset="/wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 1024w, /wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 300w, /wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 768w, /wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 1536w, /wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 60w, /wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 1920w" sizes="auto">
+                        <img class="absolute inset-0 object-cover object-center w-full h-full" src="/wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg" alt="Safari jeep in Tanzania" decoding="async" loading="lazy" width="1024" height="681" fetchpriority="low" srcset="/wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 1024w, /wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 300w, /wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 768w, /wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 1536w, /wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 60w, /wp-content/uploads/2024/12/Africa-Safari-jeep-2-1024x682.jpg 1920w" sizes="auto">
                     </div>
                 
                                     <div class="relative col-span-2 overflow-hidden aspect-[16/9] lg:col-span-1">
-                        <img
-                            class="absolute inset-0 object-cover object-center w-full h-full"
-                            src="/wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg"
-                            alt="Safari jeep in Tanzania"
-                            decoding="async"
-                            loading="lazy" width="1024" height="683" fetchpriority="low" srcset="/wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 1024w, /wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 300w, /wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 768w, /wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 1536w, /wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 60w, /wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 1575w" sizes="auto">
+                        <img class="absolute inset-0 object-cover object-center w-full h-full" src="/wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg" alt="Safari jeep in Tanzania" decoding="async" loading="lazy" width="1024" height="683" fetchpriority="low" srcset="/wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 1024w, /wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 300w, /wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 768w, /wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 1536w, /wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 60w, /wp-content/uploads/2023/07/Elephants-jeep-Tarangire-1024x683.jpg 1575w" sizes="auto">
                     </div>
                             </div>
         </div>
     
             <div class="flex flex-col justify-center gap-5 mt-10 md:mt-16 md:flex-row lg:gap-8 3xl:gap-12">
-                            <a class="btn btn-green btn--stretched"
-                   href="/about-us/" target="_self">
+                            <a class="btn btn-green btn--stretched" href="/about-us/" target="_self">
                     About us                </a>
             
-                            <a class="btn btn-red btn-red--outlined btn--stretched"
-                   href="/about-us/our-tanzania-travel-experts/" target="_self">
+                            <a class="btn btn-red btn-red--outlined btn--stretched" href="/about-us/our-tanzania-travel-experts/" target="_self">
                     Our team                </a>
                     </div>
     </div>
@@ -1537,13 +1157,7 @@
 
             <div class="hidden flex-none mx-auto w-full max-w-none lg:block">
             <div class="flex-none max-w-none">
-                <img class="block mask-img mask-contain"
-                     width="1920"
-                     height="1280"
-                     src="/wp-content/uploads/2023/08/kilimanjaro.jpg"
-                     alt="kilimanjaro"
-                     decoding="async"
-                     loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/08/kilimanjaro.jpg 1920w, /wp-content/uploads/2023/08/kilimanjaro-300x200.jpg 300w, /wp-content/uploads/2023/08/kilimanjaro-1024x683.jpg 1024w, /wp-content/uploads/2023/08/kilimanjaro-768x512.jpg 768w, /wp-content/uploads/2023/08/kilimanjaro-1536x1024.jpg 1536w, /wp-content/uploads/2023/08/kilimanjaro-60x40.jpg 60w" sizes="auto">
+                <img class="block mask-img mask-contain" width="1920" height="1280" src="/wp-content/uploads/2023/08/kilimanjaro.jpg" alt="kilimanjaro" decoding="async" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/08/kilimanjaro.jpg 1920w, /wp-content/uploads/2023/08/kilimanjaro-300x200.jpg 300w, /wp-content/uploads/2023/08/kilimanjaro-1024x683.jpg 1024w, /wp-content/uploads/2023/08/kilimanjaro-768x512.jpg 768w, /wp-content/uploads/2023/08/kilimanjaro-1536x1024.jpg 1536w, /wp-content/uploads/2023/08/kilimanjaro-60x40.jpg 60w" sizes="auto">
             </div>
         </div>
     </div>
@@ -1557,20 +1171,10 @@
     <div class="-mx-5 mt-10 !max-w-7xl 2xl:!max-w-9xl md:mx-auto lg:mt-14">
         <div class="grid justify-between gap-5 lg:grid-cols-2 lg:gap-8 3xl:gap-12">
                             <div class="relative col-span-2 overflow-hidden aspect-[16/9] lg:col-span-1">
-                    <img
-                        class="absolute inset-0 h-full w-full object-cover object-center"
-                        src="/wp-content/uploads/2023/08/local_people_2-1024x576.jpg"
-                        alt="local_people_#2"
-                        decoding="async"
-                        loading="lazy" width="1024" height="576" fetchpriority="low" srcset="/wp-content/uploads/2023/08/local_people_2-1024x576.jpg 1024w, /wp-content/uploads/2023/08/local_people_2-300x169.jpg 300w, /wp-content/uploads/2023/08/local_people_2-768x432.jpg 768w, /wp-content/uploads/2023/08/local_people_2-1536x864.jpg 1536w, /wp-content/uploads/2023/08/local_people_2-60x34.jpg 60w, /wp-content/uploads/2023/08/local_people_2.jpg 1920w" sizes="auto">
+                    <img class="absolute inset-0 h-full w-full object-cover object-center" src="/wp-content/uploads/2023/08/local_people_2-1024x576.jpg" alt="local_people_#2" decoding="async" loading="lazy" width="1024" height="576" fetchpriority="low" srcset="/wp-content/uploads/2023/08/local_people_2-1024x576.jpg 1024w, /wp-content/uploads/2023/08/local_people_2-300x169.jpg 300w, /wp-content/uploads/2023/08/local_people_2-768x432.jpg 768w, /wp-content/uploads/2023/08/local_people_2-1536x864.jpg 1536w, /wp-content/uploads/2023/08/local_people_2-60x34.jpg 60w, /wp-content/uploads/2023/08/local_people_2.jpg 1920w" sizes="auto">
                 </div>
                                         <div class="relative col-span-2 overflow-hidden aspect-[16/9] lg:col-span-1">
-                    <img
-                        class="absolute inset-0 h-full w-full object-cover object-center"
-                        src="/wp-content/uploads/2023/08/local_people_1-1024x533.jpg"
-                        alt="local_people_#1"
-                        decoding="async"
-                        loading="lazy" width="1024" height="533" fetchpriority="low" srcset="/wp-content/uploads/2023/08/local_people_1-1024x533.jpg 1024w, /wp-content/uploads/2023/08/local_people_1-300x156.jpg 300w, /wp-content/uploads/2023/08/local_people_1-768x400.jpg 768w, /wp-content/uploads/2023/08/local_people_1-60x31.jpg 60w, /wp-content/uploads/2023/08/local_people_1.jpg 1280w" sizes="auto">
+                    <img class="absolute inset-0 h-full w-full object-cover object-center" src="/wp-content/uploads/2023/08/local_people_1-1024x533.jpg" alt="local_people_#1" decoding="async" loading="lazy" width="1024" height="533" fetchpriority="low" srcset="/wp-content/uploads/2023/08/local_people_1-1024x533.jpg 1024w, /wp-content/uploads/2023/08/local_people_1-300x156.jpg 300w, /wp-content/uploads/2023/08/local_people_1-768x400.jpg 768w, /wp-content/uploads/2023/08/local_people_1-60x31.jpg 60w, /wp-content/uploads/2023/08/local_people_1.jpg 1280w" sizes="auto">
                 </div>
                     </div>
     </div>
@@ -1595,13 +1199,7 @@
 
             <div class="hidden flex-none mx-auto w-full max-w-none lg:block">
             <div class="flex-none max-w-none">
-                <img class="block mask-img mask-contain"
-                     width="1920"
-                     height="1080"
-                     src="/wp-content/uploads/2023/08/zanzibar_island.jpeg"
-                     alt="zanzibar_island"
-                     decoding="async"
-                     loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/08/zanzibar_island.jpeg 1920w, /wp-content/uploads/2023/08/zanzibar_island-300x169.jpeg 300w, /wp-content/uploads/2023/08/zanzibar_island-1024x576.jpeg 1024w, /wp-content/uploads/2023/08/zanzibar_island-768x432.jpeg 768w, /wp-content/uploads/2023/08/zanzibar_island-1536x864.jpeg 1536w, /wp-content/uploads/2023/08/zanzibar_island-60x34.jpeg 60w" sizes="auto">
+                <img class="block mask-img mask-contain" width="1920" height="1080" src="/wp-content/uploads/2023/08/zanzibar_island.jpeg" alt="zanzibar_island" decoding="async" loading="lazy" fetchpriority="low" srcset="/wp-content/uploads/2023/08/zanzibar_island.jpeg 1920w, /wp-content/uploads/2023/08/zanzibar_island-300x169.jpeg 300w, /wp-content/uploads/2023/08/zanzibar_island-1024x576.jpeg 1024w, /wp-content/uploads/2023/08/zanzibar_island-768x432.jpeg 768w, /wp-content/uploads/2023/08/zanzibar_island-1536x864.jpeg 1536w, /wp-content/uploads/2023/08/zanzibar_island-60x34.jpeg 60w" sizes="auto">
             </div>
         </div>
     </div>
@@ -1615,14 +1213,12 @@
                         <p class="cta-subtitle">Receive a free, no obligation quote</p>
 
                         
-                        <a class="mx-auto mt-7 w-full max-w-sm text-sm leading-none btn btn-yellow"
-                            href="/travel-proposal/"
-                            target="">
+                        <a class="mx-auto mt-7 w-full max-w-sm text-sm leading-none btn btn-yellow" href="/travel-proposal/" target>
                             Start planning your dream trip                        </a>
                     </div>
 
                     <div class="col-span-12 row-start-1 lg:col-span-6 lg:col-start-7 lg:flex-auto">
-                        <img width="1230" height="580" src="/wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg" class="block w-full object-cover object-center cta-image" alt="" decoding="async" loading="lazy"  fetchpriority="low"/>                    </div>
+                        <img width="1230" height="580" src="/wp-content/uploads/2025/10/IM_TZ_SER_Guide-and-guests-looking-at-tree-1024x683.jpg" class="block w-full object-cover object-center cta-image" alt="Guide and guests at a lake on the floor of the Ngorongoro Crater" decoding="async" loading="lazy" fetchpriority="low">                    </div>
                 </div>
             
                             <div class="grid grid-cols-12 -mx-5 ts-mask-bottom md:mx-0">
@@ -1631,9 +1227,7 @@
                             <h3 class="cta-title text-brown">Call an expert</h3>
                             <p class="mt-2 mb-7 font-black tracking-widest uppercase text-brown md:mt-0 md:text-sm md:tracking-wider">Tijs Krops and Edrian Waterman in the Netherlands help you plan</p>
 
-                            <a class="mx-auto !pl-5 !py-3 gap-x-4 flex items-center justify-center cursor-pointer lg:justify-normal mt-2.5 w-auto lg:w-full max-w-sm text-center leading-none tracking-widest btn btn-small btn-red"
-                                        href="tel:+31629351377"
-                                        target="">
+                            <a class="mx-auto !pl-5 !py-3 gap-x-4 flex items-center justify-center cursor-pointer lg:justify-normal mt-2.5 w-auto lg:w-full max-w-sm text-center leading-none tracking-widest btn btn-small btn-red" href="tel:+31629351377" target>
                                         <span class="flex gap-2.5 items-center">
                                             <span class="!w-[2.01em] !h-[1.50em] text-white ts-flag-nl"></span>
 <span class="!text-base">NL: </span>
@@ -1649,7 +1243,7 @@
                     </div>
 
                     <div class="flex-auto col-span-12 lg:col-span-6 md:col-start-1 md:row-start-1">
-                        <img width="800" height="423" src="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg" class="block w-full object-cover object-top cta-image" alt="" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg 800w, /wp-content/uploads/2023/09/Serengetei-NP-2-300x159.jpeg 300w, /wp-content/uploads/2023/09/Serengetei-NP-2-768x406.jpeg 768w, /wp-content/uploads/2023/09/Serengetei-NP-2-60x32.jpeg 60w" sizes="auto"  fetchpriority="low"/>                    </div>
+                        <img width="800" height="423" src="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg" class="block w-full object-cover object-top cta-image" alt="Hot-air balloon over wildebeest herds in the Serengeti" decoding="async" loading="lazy" srcset="/wp-content/uploads/2023/09/Serengetei-NP-2.jpeg 800w, /wp-content/uploads/2023/09/Serengetei-NP-2-300x159.jpeg 300w, /wp-content/uploads/2023/09/Serengetei-NP-2-768x406.jpeg 768w, /wp-content/uploads/2023/09/Serengetei-NP-2-60x32.jpeg 60w" sizes="auto" fetchpriority="low">                    </div>
                 </div>
                     </div>
     

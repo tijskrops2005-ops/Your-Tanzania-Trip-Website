@@ -19,7 +19,7 @@ export default defineConfig({
   site: 'https://yourtanzaniatrip.com',
   trailingSlash: 'always',
   build: { format: 'directory' },
-  compressHTML: false,
+  compressHTML: true,
   redirects,
   devToolbar: { enabled: false },
 });

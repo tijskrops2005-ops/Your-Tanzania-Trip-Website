@@ -1,10 +1,18 @@
 {
   "title": "7 Days Northern Tanzania Safari | Your Tanzania Trip",
-  "description": "One week, three parks: Lake Manyara, two days in the Serengeti and the Ngorongoro Crater, with a private guide and your own 4×4. From $1,599 p.p., based on 6 travellers in low season.",
+  "description": "One week, three parks: Lake Manyara, two days in the Serengeti and the Ngorongoro Crater, with a private guide and your own 4×4. From $1,599 p.p. in low season.",
   "h1": "7 Days Safari Tanzania",
   "replace": [
-    { "selector": "div.ts-prose > h2", "index": 0, "text": "7 Days Safari Tanzania" },
-    { "selector": "div[class*=single-trips-sidebar] > h3", "index": 0, "text": "7 Days Safari Tanzania" }
+    {
+      "selector": "div.ts-prose > h2",
+      "index": 0,
+      "text": "7 Days Safari Tanzania"
+    },
+    {
+      "selector": "div[class*=single-trips-sidebar] > h3",
+      "index": 0,
+      "text": "7 Days Safari Tanzania"
+    }
   ],
   "trip": {
     "heroNote": "*Per person, based on 6 travellers in low season. Includes your guide and safari vehicle, accommodation, park and crater fees. International flights not included.",
@@ -51,7 +59,12 @@
       "name": "7 Days Safari Tanzania",
       "description": "Seven-day private safari in northern Tanzania: Lake Manyara, two days in the Serengeti and the Ngorongoro Crater, with your own guide and 4×4 vehicle.",
       "price": 1599,
-      "touristType": ["Couples", "Families", "Groups of friends", "Solo travellers"]
+      "touristType": [
+        "Couples",
+        "Families",
+        "Groups of friends",
+        "Solo travellers"
+      ]
     }
   },
   "faq": {
