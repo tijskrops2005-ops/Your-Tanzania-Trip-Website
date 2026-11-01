@@ -41,11 +41,11 @@ Meting met `scripts/check-overlap.py`: zichtbare tekst van onze pagina en van de
 | /itineraries/7-days-safari-tanzania/ | 41.9% | **1.2%** | 80 | 1 | “serengeti sametu camp by karibu camps and lodges” |
 | /itineraries/machame-route-7-days/ | 40% | **0%** | 103 | 0 | – |
 | /itineraries/10-days-zanzibar-island/ | 44.2% | **0%** | 67 | 0 | – |
-| /itineraries/10-days-safari-mikumi-udzungwa-ruaha-nyerere/ | 37.1% | **3%** | 99 | 3 | “half day boat safari in nyerere national park”, “stanley s kopje camp by foxes safari camps”, “vuma hills tented camp by foxes safari camps” |
-| /itineraries/5-day-tanzania-safari-small-group-trip/ | 43.5% | **1.3%** | 76 | 1 | “serengeti national park central west east ndutu only from end of december to march during the calving season of the great migration” |
-| /climbing-kilimanjaro/ | 35.7% | **2.3%** | 88 | 2 | “all our trips are tailor made and fully customizable”, “we ll adjust every detail to suit your wishes interests and travel style” |
-| /great-wildebeest-migration/ | 29.7% | **2.2%** | 93 | 2 | “masai mara and northern serengeti to southern serengeti”, “serengeti mara river camp by karibu camps and lodges” |
-| /islands/zanzibar-island/ | 40.3% | **1.9%** | 52 | 1 | “dar es salaam to zanzibar 90 one way” |
+| /itineraries/10-days-safari-mikumi-udzungwa-ruaha-nyerere/ | 37.1% | **2%** | 99 | 2 | “stanley s kopje camp by foxes safari camps”, “vuma hills tented camp by foxes safari camps” |
+| /itineraries/5-day-tanzania-safari-small-group-trip/ | 43.5% | **0%** | 76 | 0 | – |
+| /climbing-kilimanjaro/ | 35.7% | **0%** | 87 | 0 | – |
+| /great-wildebeest-migration/ | 29.7% | **1.1%** | 93 | 1 | “serengeti mara river camp by karibu camps and lodges” |
+| /islands/zanzibar-island/ | 40.3% | **0%** | 52 | 0 | – |
 | /about-us/ | 66.7% | **0%** | 56 | 0 | – |
 | /hakuna-matata-package/ | 46.6% | **0%** | 62 | 0 | – |
 | /faqs/ | 83.3% | **0%** | 22 | 0 | – |
