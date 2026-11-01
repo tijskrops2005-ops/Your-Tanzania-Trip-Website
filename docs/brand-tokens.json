@@ -330,7 +330,15 @@
     "emailNote": "Temporary: switches to info@yourtanzaniatrip.com once that mailbox exists (change here and run npm run rebrand).",
     "iban": "NL74 KNAB 0776 8630 37",
     "bic": "KNABNL2H",
-    "bank": "Knab"
+    "bank": "Knab",
+    "founders": [
+      "Tijs Krops",
+      "Edrian Waterman"
+    ],
+    "foundingDate": "",
+    "_foundingDateNote": "[INVULLEN] year the partnership started; the Organization schema gets foundingDate once filled.",
+    "sameAs": [],
+    "_sameAsNote": "[INVULLEN] Instagram/TikTok/Facebook profile URLs, only once they exist; added to Organization.sameAs."
   },
   "partner": {
     "name": "Kilimanjaro Nature Tours",
@@ -386,7 +394,8 @@
         "text": "I stood at the world's tallest free-standing mountain, 19,341 feet above sea level."
       }
     ],
-    "youtubeVideoId": "IqFgJyubDKg"
+    "youtubeVideoId": "IqFgJyubDKg",
+    "phone": "+255 787 301 259"
   },
   "voice": {
     "values": [

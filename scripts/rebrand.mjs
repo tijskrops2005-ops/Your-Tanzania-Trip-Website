@@ -320,6 +320,9 @@ const copyRules = [
   [/Climbing Kilimanjaro via the 6-day Marangu Route with huts/g, "Kilimanjaro: Marangu Route, 6 days (huts)"],
   [/Climbing Kilimanjaro via the challenging 6-day Rongai Route/g, "Kilimanjaro: Rongai Route, 6 days"],
   [/Climbing Kilimanjaro via the steep 6-day Umbwe Route/g, "Kilimanjaro: Umbwe Route, 6 days"],
+  // USP chips in the hero of the inner pages
+  [/>\s*Best value &amp; free quotation\s*</g, "> Free proposal within 24 hours <"],
+  [/>\s*Local partner rated 5\.0\/5\s*</g, "> Local partner rated 5.0 on Tripadvisor <"],
   // "Why Your Tanzania Trip?" list on the trip pages: claims we can keep
   [/>\s*Highest service\s*</g, "> Personal service <"],
   [/>\s*Quickest response time\s*</g, "> Reply within 24 hours <"],
@@ -420,8 +423,8 @@ function footerBand() {
 }
 
 function footerPartnerLine() {
-  return `<p class="mt-8 text-sm partner-line">Trips operated on the ground by <a href="/our-partner/" class="underline">${P.name}</a>, ${P.city}.</p>
-<p class="mt-2 text-sm partner-line">E-mail <a href="mailto:${CO.email}" class="underline">${CO.email}</a> · WhatsApp <a href="${WA_HREF}"${EXT} class="underline">${CO.whatsapp}</a></p>
+  return `<p class="mt-8 text-sm partner-line">${BRAND} · ${CO.address.replace(", Netherlands", ", The Netherlands")} · ${CO.phone} (WhatsApp) · <span class="fill-marker">[INVULLEN: e-mail]</span> · KvK ${CO.kvk} · BTW ${CO.vat}</p>
+<p class="mt-2 text-sm partner-line">Trips are operated on the ground by our partner <a href="/our-partner/" class="underline">${P.name}</a>, Arusha.</p>
 `;
 }
 
@@ -604,8 +607,12 @@ function callAnExpert(html) {
   // Two office buttons (USA, UK) -> one phone button and a WhatsApp button; the portrait is Baraka's.
   html = html.replace(/<span class="!w-\[2\.01em\] !h-\[1\.50em\] text-white ts-flag-usa"><\/span>\s*<span class="!text-base">USA: <\/span>/g, '<span class="!w-[2.01em] !h-[1.50em] text-white ts-flag-nl"></span>\n<span class="!text-base">NL: </span>');
   html = html.replace(/<a class="([^"]*btn-red)"\s+href="[^"]*"\s+target="">\s*<span class="flex gap-2\.5 items-center">\s*<span class="[^"]*ts-flag-gb"><\/span>[\s\S]*?<\/a>\s*/g, (m, cls) => `<a class="${cls}" href="${WA_HREF}" target="_blank" rel="noopener noreferrer"><span class="flex gap-2.5 items-center"><span class="i-cib-whatsapp text-xl" aria-hidden="true"></span><span class="!text-base">WhatsApp: </span>${CO.whatsapp}</span></a>\n`);
-  html = html.replace(/Our specialists are here to assist you/gi, `${CO.owner} in the Netherlands and ${P.owner} in Arusha are here to help`);
+  html = html.replace(/Our specialists are here to assist you/gi, `${CO.owner} and ${CO.cofounder} in the Netherlands help you plan`);
+  // The portrait next to the Dutch number was Baraka's; he belongs with the Arusha number, during the trip.
+  html = html.replace(/<img[^>]*baraka-dalali\.webp[^>]*class="hidden lg:block mask-img w-48 h-48"[^>]*>\s*/g, "");
+  html = html.replace(/<img[^>]*baraka-dalali\.webp[^>]*class="mt-4 mx-auto hidden mask-img w-36 h-36"[^>]*>\s*/g, "");
   html = html.replace(/<a class="([^"]*)"\s+href="\/contact\/">\s*<u>other countries<\/u>\s*<\/a>/gi, (m, cls) => `<a class="${cls}" href="mailto:${CO.email}"><u>${CO.email}</u></a>`);
+  html = html.replace(/(<a class="mt-5 text-base text-anthracite[^"]*" href="mailto:[^"]*"><u>[^<]*<\/u><\/a>)/g, `$1\n<p class="mt-6 flex items-center justify-center gap-3 text-sm tracking-wide text-anthracite md:justify-start"><img src="${BARAKA_IMG}" alt="${P.owner}, ${P.name}" width="48" height="48" class="w-12 h-12 rounded-full object-cover" loading="lazy"><span>During your trip: ${P.owner}, ${P.name}, Arusha · <a href="tel:${P.phone.replace(/[^\d+]/g, "")}" class="underline">${P.phone}</a></span></p>`);
   return html;
 }
 
@@ -984,9 +991,15 @@ function fixJsonLd(json) {
       n.logo = { "@type": "ImageObject", "@id": "/#/schema/logo/image/", url: `${SITE}/brand/logo-primary.png`, contentUrl: `${SITE}/brand/logo-primary.png`, width: 1888, height: 732, caption: BRAND };
       n.image = { "@id": "/#/schema/logo/image/" };
       n.address = { "@type": "PostalAddress", streetAddress: "Sluitgatweg 10", postalCode: "8308 RE", addressLocality: "Nagele", addressCountry: "NL" };
-      n.email = CO.email;
+      n.legalName = CO.legalName;
       n.telephone = CO.phone;
-      n.sameAs = [];
+      delete n.email; // a Gmail address is not a company identity; added once the business mailbox exists
+      n.vatID = CO.vat;
+      n.founder = (CO.founders || [CO.owner]).map((name) => ({ "@type": "Person", name }));
+      if (CO.foundingDate) n.foundingDate = CO.foundingDate;
+      n.areaServed = { "@type": "Country", name: "Tanzania" };
+      n.contactPoint = { "@type": "ContactPoint", telephone: CO.phone, contactType: "customer service", availableLanguage: ["English", "Dutch"], areaServed: "Worldwide" };
+      n.sameAs = (CO.sameAs || []).filter(Boolean);
     }
     if (n["@type"] === "WebSite") {
       n.name = BRAND;
@@ -995,6 +1008,36 @@ function fixJsonLd(json) {
   }
   if (Array.isArray(data["@graph"])) data["@graph"] = kept;
   return rebrandText(JSON.stringify(data)); // second pass: image paths were escaped before parsing
+}
+
+// The local partner as its own Organization node, on the pages that present it. No aggregateRating:
+// Google only accepts ratings collected on the site itself, and the Tripadvisor score is theirs.
+const PARTNER_ID = `${P.url}/#organization`;
+function partnerNode() {
+  return {
+    "@type": "Organization",
+    "@id": PARTNER_ID,
+    name: P.name,
+    url: P.url,
+    description: `Licensed tour operator in Arusha, Tanzania, founded by ${P.owner}. Operates every ${BRAND} itinerary on the ground. Rated ${TA.score} on Tripadvisor (${TA.count} reviews, checked ${TA.checkedOn}).`,
+    address: { "@type": "PostalAddress", postOfficeBoxNumber: "611", addressLocality: "USA River, Arusha", addressCountry: "TZ" },
+    telephone: P.phone,
+    email: P.email,
+    founder: { "@type": "Person", name: P.owner },
+    sameAs: [TA.url, P.youtube].filter(Boolean),
+  };
+}
+function addPartnerNode(json) {
+  try {
+    const data = JSON.parse(json);
+    if (!Array.isArray(data["@graph"])) return json;
+    data["@graph"] = data["@graph"].filter((n) => n["@id"] !== PARTNER_ID);
+    data["@graph"].push(partnerNode());
+    for (const n of data["@graph"]) if (String(n["@type"]).includes("WebPage")) n.mentions = { "@id": PARTNER_ID };
+    return JSON.stringify(data);
+  } catch {
+    return json;
+  }
 }
 
 /** The WebPage node of the Yoast graph repeats the title and description; keep them in sync. */
@@ -1032,6 +1075,7 @@ function syncWebPage(json, pg) {
     pg.extraScripts = (pg.extraScripts || []).map(rebrandText);
     pg.extraStyles = (pg.extraStyles || []).map(rebrandText);
     pg.ldJson = (pg.ldJson || []).map(fixJsonLd).filter(Boolean);
+    if (["index", "about-us", "our-partner"].includes(pg.slug) && pg.ldJson[0]) pg.ldJson[0] = addPartnerNode(pg.ldJson[0]);
     if (pg.stickyCta) pg.stickyCta.label = rebrandText(pg.stickyCta.label);
     // Pages with own content: their title, description and schema (FAQPage, TouristTrip)
     const own = ownMeta(pg.slug, pg.path);
@@ -1057,7 +1101,7 @@ function syncWebPage(json, pg) {
     extraScripts: [],
     extraStyles: [],
     stickyCta: { href: "/travel-proposal/", label: "Make a request" },
-    ldJson: [],
+    ldJson: [JSON.stringify({ "@context": "https://schema.org", "@graph": [partnerNode()] })],
   });
   fs.writeFileSync(file, JSON.stringify(pages, null, 1));
 }
@@ -1099,7 +1143,7 @@ processFile(path.join(root, "src/partials/footer.html"), (s) => {
   s = s.replace(/(<ul id="menu-footer-reisinformatie"[^>]*>)/, '$1<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/our-partner/">Our local partner</a></li>');
   // "Cookie settings" link after the privacy policy (both copyright menus); opens the consent banner again.
   s = s.replace(/(<li[^>]*menu-item-privacy-policy[^>]*><a rel="privacy-policy" href="\/privacy-policy\/">Privacy policy<\/a><\/li>)/g, '$1\n<li class="menu-item"><a href="#cookie-settings" data-cookie-settings>Cookie settings</a></li>');
-  s = s.replace(/&copy; 2026 Your Tanzania Trip/g, `&copy; 2026 ${BRAND} · KvK ${CO.kvk} · BTW ${CO.vat}`);
+  s = s.replace(/&copy; 2026 Your Tanzania Trip/g, `&copy; 2026 ${BRAND}`);
   s = s.replace(/href="https:\/\/yourtanzaniatrip\.com">\s*<span class="sr-only">/, 'href="/">\n <span class="sr-only">');
   return s;
 });
