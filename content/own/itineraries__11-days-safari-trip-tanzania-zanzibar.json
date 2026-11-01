@@ -1,0 +1,93 @@
+{
+  "title": "11 Days Tanzania Safari & Zanzibar | Your Tanzania Trip",
+  "description": "Five days on safari in Tarangire, the Serengeti and the Ngorongoro Crater, then a flight to Zanzibar for the beach. Private guide and vehicle. From $2,181 p.p.",
+  "h1": "11 Days Safari & Zanzibar",
+  "replace": [
+    { "selector": "div.ts-prose > h2", "index": 0, "text": "11 Days Safari & Zanzibar" },
+    { "selector": "div[class*=single-trips-sidebar] > h3", "index": 0, "text": "11 Days Safari & Zanzibar" }
+  ],
+  "trip": {
+    "heroNote": "*Per person, based on 6 travellers in low season. Includes the flight to Zanzibar, your guide and safari vehicle, accommodation and park fees. International flights not included.",
+    "intro": [
+      "<p>Eleven days, two halves. You start with five days on safari in the north: <a href=\"/national-parks/tarangire/\">Tarangire</a>, the central <a href=\"/national-parks/serengeti/\">Serengeti</a> and the <a href=\"/national-parks/ngorongoro/\">Ngorongoro Crater</a>, with your own guide and vehicle. On day six you fly to Zanzibar, where four days of beach, reef and Stone Town round off the trip.</p>",
+      "<p>This is our most requested combination, and for good reason. The parks lie close together, so you spend your days watching animals rather than driving. The flight to Zanzibar is included, and Baraka's team in Arusha looks after every transfer, from the moment you land until you fly home.</p>"
+    ],
+    "why": {
+      "heading": "Why this trip",
+      "items": [
+        "Three very different parks in five days: elephants and baobabs in Tarangire, open plains in the Serengeti, the crater floor at Ngorongoro.",
+        "The flight to Zanzibar is included, so there is no long drive back to Arusha.",
+        "A private guide and your own 4×4: you set the pace and decide how long you stay with the animals.",
+        "Three comfort levels for every night (Silver, Gold, Platinum); you choose per lodge.",
+        "The free Hakuna Matata Package: travel file, airport transfers and 24/7 support during the trip.",
+        "Works well for couples, honeymooners and families with children."
+      ]
+    },
+    "priceNote": "* Per person in US dollars for the season and group size shown. International flights, visas and travel insurance are not included.",
+    "cta": {
+      "heading": "Request this trip",
+      "text": "Free and without obligation, with a reply within 24 hours. Tell us your dates, group size and comfort level, and we send you a proposal that fits. We design your trip, you decide.",
+      "button": "Request your free travel proposal"
+    },
+    "days": [
+      {
+        "html": "<p>Your guide from Kilimanjaro Nature Tours is waiting at the airport with your name on a board. Karibu. It is a short drive to your lodge near Arusha, where you can shake off the flight, have dinner and get an early night. The vehicle you step into at the airport is yours for the whole safari.</p>"
+      },
+      {
+        "html": "<p>After breakfast you drive to Tarangire, about two hours from Arusha. The park is known for its elephants: in the dry season herds of a hundred or more gather along the Tarangire River, the only water for miles around. Giant baobabs dot the landscape, and lions, giraffes and zebras are regular sightings. You spend the afternoon on a game drive before continuing to your lodge in the Lake Manyara area.</p>"
+      },
+      {
+        "html": "<p>Today you cross the Ngorongoro highlands and descend into the Serengeti. The central Serengeti, around Seronera, has resident wildlife all year: lions on the kopjes, leopards in the trees along the rivers, cheetahs on the open plains. Your guide knows where the cats were seen last, and with a vehicle to yourselves you stay as long as you like.</p><p>On the second day you set out early, when the light is soft and the predators are still active. Depending on the month, the herds of the Great Migration may be nearby; your guide adjusts the route to where the animals are.</p>"
+      },
+      {
+        "html": "<p>You leave the Serengeti early and drive to the Ngorongoro Crater, the floor of a volcano that collapsed around two million years ago. Inside the crater walls live lions, elephants, buffalo, hyenas and a small number of black rhinos, so there is a real chance of seeing all of the Big Five in one morning. Lunch is a picnic by the hippo pool. In the afternoon you climb back to the rim and drive to your lodge.</p>"
+      },
+      {
+        "title": "Flight to Zanzibar (included)",
+        "html": "<p>After breakfast your guide drives you to the airport for the flight to Zanzibar, which is included in the price. On arrival a driver takes you to your beach hotel. The rest of the day is yours: a first swim in the Indian Ocean, a walk along the beach, dinner with your feet in the sand.</p>"
+      },
+      {
+        "html": "<p>Three days to spend as you wish. Stay by the pool, or add activities: a snorkelling trip to the reef, a spice farm tour, a sunset dhow cruise or half a day in Stone Town, the old trading town with its carved doors and narrow streets. We book these for you in advance, or you decide on the spot.</p>"
+      },
+      {
+        "title": "Flight home from Zanzibar (ZNZ)",
+        "html": "<p>Depending on your flight time there may be a last morning on the beach. A driver takes you to Zanzibar airport for your flight home. Not ready to leave? Add days on Zanzibar, or a stay on Pemba or Mafia Island, and we adjust the proposal.</p>"
+      }
+    ],
+    "schema": {
+      "name": "11 Days Safari & Zanzibar",
+      "description": "Eleven-day private trip through Tanzania: five days on safari in Tarangire, the central Serengeti and the Ngorongoro Crater with your own guide and vehicle, then a flight to Zanzibar for four days on the beach.",
+      "price": 2181,
+      "touristType": ["Couples", "Honeymooners", "Families"]
+    }
+  },
+  "faq": {
+    "heading": "Questions about this trip",
+    "items": [
+      {
+        "q": "What does this trip cost for 2 people?",
+        "a": "<p>For two travellers the price is $2,762.70 per person in low season (1 April to 19 May), $2,997.97 in mid season and $3,489.70 in high season (July to September and 20 December to 10 January). The headline price of $2,181 is based on six travellers in low season. All prices exclude international flights.</p>"
+      },
+      {
+        "q": "What is included and excluded?",
+        "a": "<p>Included: all accommodation, full board during the safari, meals on Zanzibar according to your hotel package, the flight to Zanzibar, park fees, a private English-speaking guide with a 4×4 safari vehicle, game drives, airport transfers and 24/7 support. Not included: international flights (we can book them for you), visas and travel insurance.</p>"
+      },
+      {
+        "q": "When is the best time for this trip?",
+        "a": "<p>The dry months, June to October and December to February, give the easiest game viewing and the sunniest beach days, but they are also the busiest and most expensive. March and November are quieter, with moderate rates. April and May bring the long rains and the lowest prices; the parks are green and empty, and showers rarely last all day.</p>"
+      },
+      {
+        "q": "Is this trip suitable for families or honeymooners?",
+        "a": "<p>Yes, both. The drives are short, the lodges have pools, and the Zanzibar days give children and couples alike time to relax. For a honeymoon we can upgrade the beach hotel or arrange a private dinner; for families we pick lodges with family rooms. Tell us who is travelling and we adjust the plan.</p>"
+      },
+      {
+        "q": "Can I change the itinerary?",
+        "a": "<p>Yes. This programme is a starting point. Swap Tarangire for Lake Manyara, add a night in the Serengeti, choose a different beach or change the comfort level per night. We adjust the proposal until it fits, before you book anything.</p>"
+      },
+      {
+        "q": "How do I book, and what do I pay when?",
+        "a": "<p>Request the trip with the button on this page. Within 24 hours you receive a proposal, free and without obligation. When you confirm, you pay a deposit; the balance is due before departure. The exact amounts and dates are on your proposal.</p>"
+      }
+    ]
+  }
+}

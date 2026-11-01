@@ -1,0 +1,122 @@
+{
+  "title": "10 Days Southern Tanzania Safari | Your Tanzania Trip",
+  "description": "Mikumi, the Udzungwa Mountains, Ruaha and Nyerere in ten days: quiet parks, a waterfall hike, a boat safari on the Rufiji and two flights. From $3,180 p.p.",
+  "h1": "10 Days Safari in the South: Mikumi, Udzungwa, Ruaha & Nyerere",
+  "replace": [
+    {
+      "selector": "div.ts-prose > h2",
+      "index": 0,
+      "text": "10 Days Safari in the South"
+    },
+    {
+      "selector": "div[class*=single-trips-sidebar] > h3",
+      "index": 0,
+      "text": "10 Days Safari in the South"
+    },
+    {
+      "selector": "li:contains(\"Half day boat safari in Nyerere\")",
+      "tail": true,
+      "text": "Flight to Nyerere and a boat safari on the Rufiji River"
+    },
+    {
+      "selector": "li:contains(\"Hike in Udzungwa to the Sanje\")",
+      "tail": true,
+      "text": "Udzungwa Mountains and the Sanje waterfalls"
+    },
+    {
+      "selector": "dt span:contains(\"Half day boat safari\")",
+      "text": "Day 7: Flight to Nyerere and a boat safari on the Rufiji River"
+    }
+  ],
+  "trip": {
+    "heroNote": "*Per person, based on 6 travellers in low season. Includes your guide and 4×4, accommodation, park fees and the internal flights. International flights not included.",
+    "intro": [
+      "<p>The south of Tanzania is where you go when you have seen the Serengeti, or when you would rather share a park with a handful of vehicles than a hundred. This route links four very different parks in ten days: Mikumi, with its open plains close to Dar es Salaam; the rainforest of the Udzungwa Mountains, home to monkeys found nowhere else; Ruaha, the second-largest park in the country and known for its elephants; and Nyerere, the former Selous Game Reserve, where you also go out by boat on the Rufiji River.</p>",
+      "<p>You drive the first part with your own guide and 4×4 from <a href=\"/our-partner/\">Kilimanjaro Nature Tours</a>, then fly from Ruaha to Nyerere and from Nyerere back to Dar es Salaam; both flights are in the price. One honest note: the lodges around Udzungwa are simple. The Gold and Platinum levels apply to the other parks, not to those nights.</p>"
+    ],
+    "why": {
+      "heading": "Why this trip",
+      "items": [
+        "Four parks with few visitors: Mikumi, the Udzungwa Mountains, Ruaha and Nyerere.",
+        "More than game drives: a hike to the Sanje waterfalls and a boat safari on the Rufiji River.",
+        "Two internal flights included, so the long distances in the south cost you no full days on the road.",
+        "Ruaha for elephants, wild dogs and more than 570 bird species; Nyerere for hippos, crocodiles and river scenery.",
+        "Private guide and your own 4×4 on the driving days.",
+        "The free Hakuna Matata Package: travel file, airport transfers and 24/7 support."
+      ]
+    },
+    "priceNote": "* Per person in US dollars for the season and group size shown. International flights, visas and travel insurance are not included.",
+    "cta": {
+      "heading": "Request this trip",
+      "text": "Free and without obligation, with a reply within 24 hours. Tell us your dates, group size and comfort level, and we send you a proposal that fits. We design your trip, you decide.",
+      "button": "Request your free travel proposal"
+    },
+    "days": [
+      {
+        "html": "<p>Your guide from Kilimanjaro Nature Tours meets you at Julius Nyerere International Airport in Dar es Salaam and takes you to your hotel in the city. Karibu. Rest, have dinner, and get an early night: tomorrow is a long drive.</p>"
+      },
+      {
+        "title": "Mikumi National Park (two days)",
+        "html": "<p>About six hours by road from Dar es Salaam you reach Mikumi, the fourth-largest park in Tanzania. Its open plains along the Mkata River feel like a small Serengeti: elephants, buffalo, zebras, giraffes and lions are easy to find, and the hippo pool is a fixed stop. You have the afternoon of the first day and the whole second day on game drives, with your camp inside or on the edge of the park.</p>"
+      },
+      {
+        "title": "Udzungwa Mountains and the Sanje waterfalls",
+        "html": "<p>A short drive brings you to the Udzungwa Mountains, a rainforest park with no roads inside, so today is on foot. The walk to the Sanje waterfalls takes around four hours up and down, steep in places, with a swim in the pool at the foot of the falls as the reward. Look up for the Iringa red colobus and the Sanje crested mangabey, two monkeys that live only in these mountains, and keep an eye out for the tracks of the forest elephants. Start early; it gets hot by midday. The lodges here are simple, as mentioned above.</p>"
+      },
+      {
+        "title": "Ruaha National Park (two days)",
+        "html": "<p>A long drive west to Ruaha, Tanzania's second-largest park, along the Great Ruaha River. Ruaha is known for its elephant herds, its big lion prides and the rare African wild dog, and for its birdlife: more than 570 species. Baobabs and rocky hills give it a look of its own. Two days of game drives from your camp on the river, with very few other vehicles.</p>"
+      },
+      {
+        "title": "Flight to Nyerere National Park and a boat safari on the Rufiji",
+        "html": "<p>A small plane takes you from Ruaha across to Nyerere National Park, the former Selous Game Reserve and the largest park in Tanzania. In the afternoon you go out by boat on the Rufiji River for two to three hours: hippos, crocodiles, monkeys in the riverside trees and water birds, with a stop on a sandbank for a drink while the sun goes down.</p>"
+      },
+      {
+        "html": "<p>A full day of game drives in Nyerere, through woodland, savannah and along the lakes and channels of the Rufiji. Elephants, lions, giraffes, wild dogs and, with luck, a leopard; this park is a UNESCO World Heritage Site for its size and its untouched landscapes. Back at camp in time for sunset over the river.</p>"
+      },
+      {
+        "title": "Flight to Dar es Salaam and your flight home",
+        "html": "<p>A morning flight takes you back to Dar es Salaam, timed to connect with your international flight home. Want more? Add a few days on Zanzibar, Mafia or Pemba Island; from Dar es Salaam they are a short flight away.</p>"
+      }
+    ],
+    "schema": {
+      "name": "10 Days Safari in the South",
+      "description": "Ten-day private safari through southern Tanzania: Mikumi, a waterfall hike in the Udzungwa Mountains, two days in Ruaha and a boat safari and game drives in Nyerere National Park, with two internal flights included.",
+      "price": 3180,
+      "touristType": [
+        "Couples",
+        "Groups of friends",
+        "Repeat safari travellers"
+      ]
+    }
+  },
+  "faq": {
+    "heading": "Questions about this trip",
+    "items": [
+      {
+        "q": "What does this trip cost for 2 people?",
+        "a": "<p>For two travellers the price is $4,389.43 per person in low season (1 April to 19 May), $4,808.14 in mid season and $5,587.59 in high season (July to September and 20 December to 10 January). The headline price of $3,180 is based on six travellers in low season. All prices exclude international flights; the two internal flights are included.</p>"
+      },
+      {
+        "q": "What is included and excluded?",
+        "a": "<p>Included: all accommodation, full board during the safari, park fees, a private English-speaking guide with a 4×4 safari vehicle on the driving days, game drives, the boat safari, the flights from Ruaha to Nyerere and from Nyerere to Dar es Salaam, airport transfers and 24/7 support. Not included: international flights (we can book them for you), visas and travel insurance.</p>"
+      },
+      {
+        "q": "When is the best time for this trip?",
+        "a": "<p>The dry months, June to October, are best for the south: the grass is short, the animals gather at the rivers and the roads are good. December to February is green and still good. In April and May some camps in Ruaha and Nyerere close because of the rains; ask us before you fix your dates.</p>"
+      },
+      {
+        "q": "Is this trip suitable for families or honeymooners?",
+        "a": "<p>It suits travellers who want quiet parks and do not mind long drives and simple nights around Udzungwa. For families with young children we would rather suggest the northern circuit. Honeymooners who want remote camps and a boat on the river at sunset will like it; add Zanzibar at the end for the beach.</p>"
+      },
+      {
+        "q": "Can I change the itinerary?",
+        "a": "<p>Yes. Skip Udzungwa and spend the extra night in Ruaha, fly instead of driving to Mikumi, add a walking safari in Nyerere or finish on Zanzibar. The comfort level can differ per park. We adjust the proposal until it fits, before you book anything.</p>"
+      },
+      {
+        "q": "How do I book, and what do I pay when?",
+        "a": "<p>Request the trip with the button on this page. Within 24 hours you receive a proposal, free and without obligation. When you confirm, you pay a deposit; the balance is due before departure. The exact amounts and dates are on your proposal.</p>"
+      }
+    ]
+  }
+}

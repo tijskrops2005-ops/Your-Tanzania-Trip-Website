@@ -11,6 +11,10 @@ import '../styles/brand.css';
 
 const { page } = Astro.props;
 const canonical = new URL(page.path, Astro.site).href;
+// Language per page (default English). A later Dutch version sets `lang: "nl"` and `alternates`
+// ({ en: "/path/", nl: "/nl/path/" }) in pages.json; the hreflang links below are printed only then.
+const lang = page.lang || 'en';
+const alternates = page.alternates ? Object.entries(page.alternates) : [];
 
 const [headLinks, headScripts, header, footer] = await Promise.all(
   ['head-links.html', 'head-scripts.html', 'header.html', 'footer.html'].map(readPartial)
@@ -45,7 +49,7 @@ const gtagSnippet = `<!-- Google tag (gtag.js) -->
 const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', email: tokens.company.email });
 ---
 <!doctype html>
-<html lang="en-US">
+<html lang={lang === 'en' ? 'en-US' : lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -55,7 +59,9 @@ const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', ema
     {page.description && <meta name="description" content={page.description} />}
     {page.robots && <meta name="robots" content={page.robots} />}
     <link rel="canonical" href={canonical} />
-    <meta property="og:locale" content="en_US" />
+    {alternates.map(([l, p]) => <link rel="alternate" hreflang={l} href={new URL(p, Astro.site).href} />)}
+    {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(page.alternates.en || page.path, Astro.site).href} />}
+    <meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : 'en_US'} />
     {page.ogType && <meta property="og:type" content={page.ogType} />}
     {page.ogTitle && <meta property="og:title" content={page.ogTitle} />}
     {page.ogDescription && <meta property="og:description" content={page.ogDescription} />}

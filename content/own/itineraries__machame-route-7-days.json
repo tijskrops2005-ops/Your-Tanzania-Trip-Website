@@ -1,0 +1,124 @@
+{
+  "title": "Climb Kilimanjaro, Machame Route 7 days | Your Tanzania Trip",
+  "description": "Seven days on the Machame Route to Uhuru Peak with Baraka's licensed guides, cook and porters; nine days including arrival and departure. From $2,329 p.p.",
+  "h1": "Climbing Kilimanjaro: Machame Route, 7 days",
+  "replace": [
+    {
+      "selector": "div.ts-prose > h2",
+      "index": 0,
+      "text": "Climbing Kilimanjaro: Machame Route, 7 days"
+    },
+    {
+      "selector": "div[class*=single-trips-sidebar] > h3",
+      "index": 0,
+      "text": "Climbing Kilimanjaro: Machame Route, 7 days"
+    },
+    {
+      "selector": "div.ts-prose > h3",
+      "index": 0,
+      "text": "On the mountain with Baraka's crew"
+    }
+  ],
+  "trip": {
+    "heroNote": "*Per person, based on 6 climbers in low season. Includes transfers, guides, cook and porters, tents, meals and drinks on the mountain and park fees. International flights and hotel nights before and after the climb not included.",
+    "intro": [
+      "<p>The Machame Route is the climb most of our guests choose, and the one Baraka's guides know best. It takes seven days: five up, with a loop around the mountain that helps your body get used to the altitude, and two down by a different trail. You pass the Shira plateau, the Lava Tower and the Barranco Wall before the night walk to Uhuru Peak, at 5,895 metres the highest point in Africa.</p>",
+      "<p>You do not need to be a mountaineer. You need good boots, a steady pace and a crew that watches you closely. That crew comes from <a href=\"/our-partner/\">Kilimanjaro Nature Tours</a> in Arusha, founded by Baraka Dalali, a licensed Kilimanjaro guide who started as a porter himself. Pole pole, slowly slowly, is how you get to the top.</p>"
+    ],
+    "why": {
+      "heading": "Why this climb",
+      "items": [
+        "Seven days on the mountain instead of six: the extra acclimatisation day raises your chance of reaching the summit.",
+        "The most varied scenery on Kilimanjaro: rainforest, moorland, the Shira plateau, the Barranco Wall and the summit glaciers.",
+        "A licensed guide, a cook and porters for your group only, with health checks twice a day.",
+        "Good tents, a dining tent, tables and chairs and a private toilet tent.",
+        "Porters hired fairly: proper gear, weighed loads and fair pay.",
+        "A briefing before the climb and a preparation guide from us, so you know what to pack and rent."
+      ]
+    },
+    "priceNote": "* Per person in US dollars for the season and group size shown. International flights, visas, travel insurance, hotel nights before and after the climb and tips are not included.",
+    "cta": {
+      "heading": "Request this climb",
+      "text": "Free and without obligation, with a reply within 24 hours. Tell us your dates and group size, and we send you a proposal with the climb, the hotel nights and, if you like, a safari or Zanzibar afterwards.",
+      "button": "Request your free travel proposal"
+    },
+    "days": [
+      {
+        "html": "<p>Your driver from Kilimanjaro Nature Tours meets you at Kilimanjaro International Airport and takes you to your hotel near Moshi or Arusha. In the afternoon or evening your head guide comes by for the briefing: he checks your gear piece by piece, explains the daily rhythm and answers your questions. Anything missing can be rented.</p>",
+        "title": "Arrival at Kilimanjaro Airport and gear check"
+      },
+      {
+        "title": "Day 1 of 7: Machame Gate (1,800 m / 5,905 ft) to Machame Camp (2,835 m / 9,301 ft)",
+        "html": "<p>After breakfast you drive to Machame Gate, register with the park and meet the full crew. The first day is a five- to six-hour walk through rainforest, with the trees thinning out to heather as you gain height. The camp lies at the edge of the forest. Drink more than you think you need; the altitude starts to count from today.</p>"
+      },
+      {
+        "title": "Day 2 of 7: Machame Camp (2,835 m / 9,301 ft) to Shira Camp (3,839 m / 12,595 ft)",
+        "html": "<p>A shorter but steeper day. You climb out of the heather onto a rocky ridge with the first views of Kibo, the summit cone, and the Shira peaks. Lunch and the afternoon are at Shira Camp on the plateau. Those who feel good can take a short acclimatisation walk towards the Lava Tower and back.</p>"
+      },
+      {
+        "title": "Day 3 of 7: Shira Camp (3,839 m / 12,595 ft) via Lava Tower (4,630 m / 15,190 ft) to Barranco Camp (3,950 m / 12,959 ft)",
+        "html": "<p>Climb high, sleep low. The trail rises steadily to the Lava Tower, where you eat lunch at 4,630 metres; most people feel the altitude here. After lunch you descend into the Barranco valley, past the giant groundsels, to camp at the foot of the Barranco Wall. The drop in height overnight is exactly what your body needs.</p>"
+      },
+      {
+        "title": "Day 4 of 7: Barranco Camp (3,950 m / 12,959 ft) to Karanga Camp (4,040 m / 13,254 ft)",
+        "html": "<p>The morning is the Barranco Wall: a scramble rather than a climb, with hands on the rock in a few places and a guide in front of you. From the top you look across to Mount Meru. The rest of the day crosses ridges and valleys to Karanga Camp, where you arrive for lunch and rest. An afternoon walk towards Barafu helps acclimatisation.</p>"
+      },
+      {
+        "title": "Day 5 of 7: Karanga Camp (4,040 m / 13,254 ft) to Barafu Camp (4,645 m / 15,239 ft)",
+        "html": "<p>A short walk to Barafu Camp, the base for the summit. You arrive around midday, eat, and rest. Your guide may take you up towards Kosovo Camp (4,870 m) for a last acclimatisation walk. Dinner is early. You sleep in your clothes, because the summit attempt starts around midnight.</p>"
+      },
+      {
+        "title": "Day 6 of 7: Barafu Camp (4,645 m / 15,239 ft) to Uhuru Peak (5,895 m / 19,340 ft) and down to Millennium Camp (3,820 m / 12,532 ft)",
+        "html": "<p>Summit night. You leave Barafu around midnight by headlamp, walking slowly in a line behind your guide. The trail is good; the altitude is the hard part. Stella Point on the crater rim comes with the first light, and Uhuru Peak about an hour later, with the glaciers glowing pink at sunrise. After photos and a short rest you descend, past Barafu for a meal, down to Millennium Camp in the moorland. A long day, and the one you will remember.</p>"
+      },
+      {
+        "title": "Day 7 of 7: Millennium Camp (3,820 m / 12,532 ft) to Mweka Gate (1,640 m / 5,380 ft) and your hotel",
+        "html": "<p>You wake up with thick air and a summit certificate to collect. The last walk goes down through the rainforest to Mweka Gate, where you sign out of the park and say goodbye to the crew. A driver takes you back to your hotel for a shower and a proper bed.</p>"
+      },
+      {
+        "title": "Flight home from Kilimanjaro International Airport (JRO)",
+        "html": "<p>Our driver takes you to Kilimanjaro International Airport for your flight home. Many climbers add a few days of safari or Zanzibar afterwards; tell us and we build it into the proposal.</p>"
+      }
+    ],
+    "schema": {
+      "name": "Climbing Kilimanjaro: Machame Route, 7 days",
+      "description": "Nine-day Kilimanjaro trip with seven days on the Machame Route to Uhuru Peak (5,895 m), led by licensed guides from Kilimanjaro Nature Tours with a cook and porters, including arrival and departure days.",
+      "price": 2329,
+      "touristType": [
+        "Hikers",
+        "Groups of friends",
+        "Solo travellers",
+        "Couples"
+      ]
+    }
+  },
+  "faq": {
+    "heading": "Questions about this climb",
+    "items": [
+      {
+        "q": "What does this climb cost for 2 people?",
+        "a": "<p>For two climbers the price is $2,758.33 per person in low season (1 April to 19 May), $3,250.82 in mid season and $3,384.09 in high season (July to September and 20 December to 10 January). The headline price of $2,329 applies to the low season; the price table shows the rates for 2, 4 and 6 climbers. All prices exclude international flights.</p>"
+      },
+      {
+        "q": "What is included and excluded?",
+        "a": "<p>Included: airport transfers, park and rescue fees, a private English-speaking guide, a private cook, porters for your luggage, good tents with a dining tent, tables and chairs, a portable toilet, and all meals and drinks on the mountain. Not included: international flights (we can book them for you), visas, travel insurance, the hotel nights before and after the climb, and tips for the crew.</p>"
+      },
+      {
+        "q": "When is the best time for this climb?",
+        "a": "<p>The dry months are the most comfortable: June to October and December to February. March and November are in between. April and May are the wettest months, with muddy trails and cloud, but also the quietest mountain and the lowest prices. Summit nights are cold in every season; expect well below freezing.</p>"
+      },
+      {
+        "q": "Do I need climbing experience?",
+        "a": "<p>No. The Machame Route is a walk, with one short scramble on the Barranco Wall; there is no rope work. What you need is good fitness, broken-in boots and the patience to walk slowly. Your guides check your health twice a day and decide with you if the altitude becomes a problem. A seven-day schedule gives more time to acclimatise than a six-day one.</p>"
+      },
+      {
+        "q": "Can I change the itinerary?",
+        "a": "<p>Yes. Add an extra acclimatisation day, choose another route such as Lemosho or Rongai, or add a safari or days on Zanzibar after the climb. We adjust the proposal until it fits, before you book anything.</p>"
+      },
+      {
+        "q": "How do I book, and what do I pay when?",
+        "a": "<p>Request the climb with the button on this page. Within 24 hours you receive a proposal, free and without obligation. When you confirm, you pay a deposit; the balance is due before departure. The exact amounts and dates are on your proposal. We then send you our preparation guide with the packing list.</p>"
+      }
+    ]
+  }
+}

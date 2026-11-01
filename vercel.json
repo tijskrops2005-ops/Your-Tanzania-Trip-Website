@@ -1,5 +1,490 @@
 {
   "rewrites": [
-    { "source": "/api/blog-publish/:path*", "destination": "/api/blog-publish?path=:path*" }
+    {
+      "source": "/api/blog-publish/:path*",
+      "destination": "/api/blog-publish?path=:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/5-questions-with-tanzania-specialist-director-epimark-bernard{/}?",
+      "destination": "/blog/5-questions-with-tanzania-specialist-director-epimark-bernard/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zanzibar-island{/}?",
+      "destination": "/islands/zanzibar-island/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jambiani{/}?",
+      "destination": "/blog/jambiani/",
+      "statusCode": 301
+    },
+    {
+      "source": "/5-questions-with-tanzania-specialist-founder-robbin-meulemans{/}?",
+      "destination": "/blog/5-questions-with-tanzania-specialist-founder-robbin-meulemans/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/mahale-mountains-national-park{/}?",
+      "destination": "/national-parks/mahale-mountains-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/tarangire{/}?",
+      "destination": "/national-parks/tarangire/",
+      "statusCode": 301
+    },
+    {
+      "source": "/highlights/wildebeest-migration{/}?",
+      "destination": "/great-wildebeest-migration/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/ngorongoro{/}?",
+      "destination": "/national-parks/ngorongoro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/serengeti{/}?",
+      "destination": "/national-parks/serengeti/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/arusha{/}?",
+      "destination": "/wp-content/uploads/2023/06/arusha.jpeg",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/mount-kilimanjaro{/}?",
+      "destination": "/national-parks/mount-kilimanjaro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tanzania-facts-and-useful-tips{/}?",
+      "destination": "/blog/tanzania-facts-and-useful-tips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/highlights/great-wildebeest-migration{/}?",
+      "destination": "/great-wildebeest-migration/",
+      "statusCode": 301
+    },
+    {
+      "source": "/highlights/national-parks-tanzania{/}?",
+      "destination": "/national-parks-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/islands/zanzibar{/}?",
+      "destination": "/islands/zanzibar-island/",
+      "statusCode": 301
+    },
+    {
+      "source": "/east-african-cheetah{/}?",
+      "destination": "/blog/east-african-cheetah/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-ultimate-beginners-guide-to-kilimanjaro-trekking-have-you-got-what-it-takes{/}?",
+      "destination": "/blog/the-ultimate-beginners-guide-to-kilimanjaro-trekking-have-you-got-what-it-takes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mountains-in-tanzania{/}?",
+      "destination": "/blog/mountains-in-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks/selous-game-reserve{/}?",
+      "destination": "/national-parks/nyerere-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tribes-in-tanzania{/}?",
+      "destination": "/blog/tribes-in-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/masai-mara-national-reserve{/}?",
+      "destination": "/national-parks/masai-mara-national-reserve/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-to-expect-when-visiting-a-masaai-village-in-tanzania{/}?",
+      "destination": "/blog/what-to-expect-when-visiting-a-masaai-village-in-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/lake-manyara{/}?",
+      "destination": "/national-parks/lake-manyara/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tanzania-travel-tips{/}?",
+      "destination": "/blog/tanzania-travel-tips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/books-to-read-before-you-travel-to-tanzania{/}?",
+      "destination": "/blog/must-reads-before-travelling-to-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tipping-tanzania{/}?",
+      "destination": "/blog/tipping-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/activity/rundugai-hotspring{/}?",
+      "destination": "/activity/rundugai-hotsprings/",
+      "statusCode": 301
+    },
+    {
+      "source": "/wildebeest-calving-season{/}?",
+      "destination": "/blog/wildebeest-calving-season/",
+      "statusCode": 301
+    },
+    {
+      "source": "/say-hello-in-swahili{/}?",
+      "destination": "/blog/say-hello-in-swahili/",
+      "statusCode": 301
+    },
+    {
+      "source": "/press-release-increased-sightings-of-rare-albino-animals{/}?",
+      "destination": "/blog/press-release-increased-sightings-of-rare-albino-animals/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/ruaha-national-park{/}?",
+      "destination": "/national-parks/ruaha-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/big-five-destination-tanzania{/}?",
+      "destination": "/blog/big-five-destination-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/responsible-tourism-tanzania{/}?",
+      "destination": "/blog/responsible-tourism-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/best-beaches-in-tanzania{/}?",
+      "destination": "/blog/best-beaches-in-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/dar-es-salaam{/}?",
+      "destination": "/national-parks/dar-es-salaam/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/katavi-national-park{/}?",
+      "destination": "/national-parks/katavi-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/gombe-stream-national-park{/}?",
+      "destination": "/national-parks/gombe-stream-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/safari-cost-tanzania{/}?",
+      "destination": "/blog/safari-cost-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/must-reads-before-travelling-to-tanzania{/}?",
+      "destination": "/blog/must-reads-before-travelling-to-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/preparing-for-kilimanjaro{/}?",
+      "destination": "/blog/preparing-for-kilimanjaro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/frequently-asked-questions{/}?",
+      "destination": "/faqs/tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tanzania-with-kids{/}?",
+      "destination": "/blog/tanzania-with-kids/",
+      "statusCode": 301
+    },
+    {
+      "source": "/best-time-to-visit-tanzania{/}?",
+      "destination": "/blog/best-time-to-visit-tanzania/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tanzania-safe{/}?",
+      "destination": "/blog/tanzania-safe/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-to-plan-your-first-safari-vacation{/}?",
+      "destination": "/blog/how-to-plan-your-first-safari-vacation/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hotel/pemba-lodge{/}?",
+      "destination": "/accommodation/pemba-paradise-lodge/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hotel/andbeyond-mnemba-island-lodge{/}?",
+      "destination": "/accommodation/andbeyond-mnemba-island-lodge/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hotel/the-manta-resort{/}?",
+      "destination": "/accommodation/the-manta-resort/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hotel/pole-pole-bungalows{/}?",
+      "destination": "/accommodation/pole-pole-bungalows/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hotel/fundu-lagoon{/}?",
+      "destination": "/accommodation/fundu-lagoon/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hotel/fun-beach{/}?",
+      "destination": "/accommodation/fun-beach/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hotel/qambani-luxury-resort{/}?",
+      "destination": "/accommodation/qambani-luxury-resort/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hotel/next-paradise-boutique-resort{/}?",
+      "destination": "/accommodation/next-paradise-boutique-resort/",
+      "statusCode": 301
+    },
+    {
+      "source": "/highlights/islands{/}?",
+      "destination": "/islands/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/mikumi-national-park{/}?",
+      "destination": "/national-parks/mikumi-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/usambara-mountains{/}?",
+      "destination": "/national-parks/usambara-mountains/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/mkomazi-national-park{/}?",
+      "destination": "/national-parks/mkomazi-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/saadani-national-park{/}?",
+      "destination": "/national-parks/saadani-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/highlights/activities-in-tanzania{/}?",
+      "destination": "/activities/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/bagamoyo{/}?",
+      "destination": "/national-parks/bagamoyo/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/udzungwa-mountains-national-park{/}?",
+      "destination": "/national-parks/udzungwa-mountains-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/itineraries/11-days-climbing-kilimanjaro-northern-circuit-route{/}?",
+      "destination": "/itineraries/climbing-kilimanjaro-northern-circuit-route/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/kitulo-national-park{/}?",
+      "destination": "/national-parks/kitulo-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/pangani{/}?",
+      "destination": "/national-parks/pangani/",
+      "statusCode": 301
+    },
+    {
+      "source": "/national-parks-tanzania/tanga{/}?",
+      "destination": "/national-parks/tanga/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-to-wear-on-a-tanzania-safari{/}?",
+      "destination": "/blog/what-to-wear-on-a-tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/itineraries/5-days-tanzania-safari{/}?",
+      "destination": "/itineraries/4-days-tanzania-safari-extension-north/",
+      "statusCode": 301
+    },
+    {
+      "source": "/certified-responsible-climbing-on-kilimanjaro{/}?",
+      "destination": "/blog/certified-responsible-climbing-on-kilimanjaro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tanzania-holiday-for-couples{/}?",
+      "destination": "/blog/tanzania-holiday-for-couples/",
+      "statusCode": 301
+    },
+    {
+      "source": "/itineraries/practical-information{/}?",
+      "destination": "/itineraries/4-days-tanzania-safari-extension-north/practical-information/",
+      "statusCode": 301
+    },
+    {
+      "source": "/itineraries/itinerary{/}?",
+      "destination": "/itineraries/4-days-tanzania-safari-extension-north/itinerary/",
+      "statusCode": 301
+    },
+    {
+      "source": "/itineraries/make-a-request{/}?",
+      "destination": "/itineraries/16-days-long-safari-in-the-northern-circuit/make-a-request/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/5-questions-with-tanzania-specialist-founder-robbin-meulemans{/}?",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/5-questions-with-tanzania-specialist-director-epimark-bernard{/}?",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/africa-safari-trips{/}?",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/practical-information/travelife-partner-status{/}?",
+      "destination": "/practical-information/responsible-travel/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/get-to-know-the-faces-behind-tanzania-specialist-in-the-hot-seat-killow{/}?",
+      "destination": "/our-partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/get-to-know-the-faces-behind-tanzania-specialist-in-the-hot-seat-tyo{/}?",
+      "destination": "/our-partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/get-to-know-the-team-esther{/}?",
+      "destination": "/our-partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/get-to-know-the-faces-behind-tanzania-specialist-in-the-hot-seat-elke{/}?",
+      "destination": "/our-partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/get-to-know-the-team-romina{/}?",
+      "destination": "/our-partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/meet-our-experts-mathanje-tanzania{/}?",
+      "destination": "/our-partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/meet-our-experts-willemijn-tanzania{/}?",
+      "destination": "/our-partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/safari-guide-tanzania-interview-albino-animals{/}?",
+      "destination": "/our-partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/serengeti-safari-marathon-2022{/}?",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/serengeti-safari-marathon-2023{/}?",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/serengeti-safari-marathon-photos{/}?",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/press-release-increased-sightings-of-rare-albino-animals{/}?",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/why-choose-tanzania-specialist{/}?",
+      "destination": "/about-us/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-tanzania-specialist{/}?",
+      "destination": "/about-us/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/certified-responsible-climbing-on-kilimanjaro{/}?",
+      "destination": "/climbing-kilimanjaro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/why-chapka-travel-insurance{/}?",
+      "destination": "/practical-information/travel-insurance/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-tanzania-specialist/our-tanzania-travel-experts{/}?",
+      "destination": "/our-partner/",
+      "statusCode": 301
+    },
+    {
+      "source": "/job-offers{/}?",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/job-offers-content-writer-translator{/}?",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/app{/}?",
+      "destination": "/",
+      "statusCode": 301
+    }
   ]
 }

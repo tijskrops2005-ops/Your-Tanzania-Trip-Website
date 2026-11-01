@@ -11,6 +11,8 @@
 //  - pages removed by the rebrand get redirects (content/redirects-brand.json)
 import fs from "node:fs";
 import path from "node:path";
+import { applyOwnContent, ownMeta } from "./own-content.mjs";
+import { applyAltText } from "./alt-text.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const tokens = JSON.parse(fs.readFileSync(path.join(root, "docs/brand-tokens.json"), "utf8"));
@@ -258,7 +260,84 @@ const svgColorRules = [
   [/#f7f4ee\b/gi, tokens.color.ivory.hex],
 ];
 
-const allRules = [...brandRules, ...contactRules, ...founderRules, ...sisterRules, ...membershipRules, ...reviewRules, ...svgColorRules];
+// Shared marketing copy (header CTA, footer quiz and newsletter, form options) in our own words.
+const QUIZ_INTRO = "<p>Not sure which Tanzania trip suits you? Answer five short questions and we point you to a fitting itinerary: a classic northern safari, safari and Zanzibar, the Great Migration, the southern parks or Kilimanjaro.</p>\n<p>It takes two minutes, and the result is a starting point, not a commitment.</p>";
+const copyRules = [
+  // quizData JSON in the footer first (escaped slashes), then the HTML version
+  [/("description":")<p>Dreaming of Tanzania(?:\\.|[^"\\])*"/, (m, pre) => pre + JSON.stringify(QUIZ_INTRO + "\n").slice(1)],
+  [/<p>Dreaming of Tanzania but not sure which safari[\s\S]*?a few minutes\.<\/p>/g, QUIZ_INTRO],
+  [/START THE ADVENTURE!/g, "Plan your trip"],
+  [/Tell us your preferences and get inspired by our unique travel ideas\. All sample itineraries are 100% customisable\. Contact us now and start your dream adventure!/g, "Tell us how you like to travel and we send you a free proposal within 24 hours. Every itinerary on this site is 100% customisable."],
+  [/Receive travel ideas, destination guides, and inspiration directly in your inbox\./g, "Travel ideas and practical Tanzania tips, a few times a year. No spam."],
+  [/Sign up for our Newsletter/g, "Tanzania tips in your inbox"],
+  [/By signing up for our mailing list, you agree to our/g, "By subscribing you accept our"],
+  [/This field is for validation purposes and should be left unchanged\./g, ""],
+  [/The classic highlights: Serengeti, Ngorongoro and incredible wildlife/g, "The northern classics: Serengeti, Ngorongoro, Tarangire"],
+  [/A combined safari and beach holiday on Zanzibar/g, "Safari first, then the beaches of Zanzibar"],
+  [/The ultimate luxury experience \(~€2,000–3,000 p\.p\. per day\)/g, "Top-end lodges and camps (roughly €2,000–3,000 p.p. per day)"],
+  [/Travelling with a group to keep costs affordable/g, "A small-group trip with a shared vehicle"],
+  [/Yes, but I(?:'|’|&#039;)d love to experience more of Tanzania/g, "Yes, and I want to see other parts of Tanzania"],
+  [/Yes, multiple times\. This time I(?:'|’|&#039;)m specifically looking for chimpanzees or southern parks like Ruaha or Nyerere/g, "Yes, more than once. Now I am after chimpanzees or the southern parks, Ruaha and Nyerere"],
+  [/Ultra-luxury lodges with private service and exclusivity/g, "Top-end lodges with private service"],
+  [/Remote wilderness camps away from the most popular National parks, only for experienced safari travellers/g, "Remote camps far from the busy parks, for seasoned safari travellers"],
+  [/High season \(June–October\) for the best wildlife/g, "June to October, the dry season with the easiest game viewing"],
+  [/Low season for quieter parks and lower prices/g, "The quieter months, with fewer vehicles and lower rates"],
+  [/A private hot air balloon ride over the Serengeti/g, "A balloon flight at sunrise over the Serengeti"],
+  [/A mix of safari lodges and a beach resort/g, "Some nights in safari lodges, then a beach resort"],
+  // /about-tanzania-specialist/ becomes /about-us/ (the file is renamed below; the old path gets a 301)
+  [/\/about-tanzania-specialist\//g, "/about-us/"],
+  // WordPress mega-menu holders carried a placeholder title
+  [/<span class="menu-title">\[SUBMENU-HOLDER\]<\/span>/g, '<span class="menu-title sr-only">Submenu</span>'],
+  // Request block on every trip page and the sidebar of the information pages
+  [/Make your dream trip come true with Your Tanzania Trip\.?/g, "Plan your trip with us"],
+  [/At Your Tanzania Trip, you can customize your trip\. Our sample itineraries are adjustable to your preferences\. Our specialists work together with you to create your dream journey!/g, "Free and without obligation, with a reply within 24 hours. Every itinerary is a starting point: tell us your dates, group size and comfort level, and we send you a proposal that fits."],
+  [/At Your Tanzania Trip, you can tailor your trip to your preferences\. Our sample itineraries are customizable, and our specialists work with you to create your dream trip!/g, "Every itinerary on this site is a starting point. Tell us your wishes and we send you a free proposal within 24 hours."],
+  [/Customized Travel Proposal/g, "Your free travel proposal"],
+  // Overview pages: sorting tooltip and the "sample itineraries" note
+  [/The popularity sorting is based on how often items on the website are viewed\. Rankings are entirely organic and not influenced by paid promotions\. Only real visitors are included — bots, search engines, and logged-in staff are automatically excluded\./g, "Popular means most viewed on this site by real visitors. Nothing here is paid for; the order is organic."],
+  [/All our trips are tailor-made and fully customizable\*\. We(?:’|'|&#8217;)ll adjust every detail to suit your wishes, interests, and travel style\./g, "Every one is a starting point: we adjust the route, the lodges and the pace to you*."],
+  // Names of other trips, in our own words (cards, headings, titles)
+  [/18 Days Tanzania Safari \+ Zanzibar vacation \[Suitable to include the Wildebeest Migration\]/g, "18 Days Safari & Zanzibar (migration season)"],
+  [/10 Days Tanzania safari, all northern parks in 1 trip! \[Suitable to include the wildebeest migration\]/g, "10 Days Safari: all northern parks"],
+  [/12 days safari and beach \[chance to see the Mara River crossing plus a flight to Zanzibar\]/g, "12 Days Mara River & Zanzibar"],
+  [/16 Days long safari in the Northern Circuit/g, "16 Days Northern Circuit Safari"],
+  [/12 days honeymoon Tanzania and Zanzibar/g, "12 Days Honeymoon: Safari & Zanzibar"],
+  [/12 Days Tanzania (?:–|&#8211;|-) Zanzibar Diamond Luxury holiday!/g, "12 Days Diamond Luxury: Safari & Zanzibar"],
+  [/10 days Zanzibar - Find out what paradise looks like/g, "10 Days Zanzibar Island"],
+  [/Ndutu \(only from end of December to March during the calving season of the Great Migration\)/g, "Ndutu (late December to March, calving season)"],
+  // Typos and inclusions on the Kilimanjaro pages
+  [/\bCimbing Kilimanjaro\b/g, "Climbing Kilimanjaro"],
+  [/\bclimbling\b/g, "climbing"],
+  [/Chairs and tables for breakfast, lunch and dinner/g, "Dining tent with tables and chairs"],
+  [/Rescue fee \(up to 11\.483 feet above sea level by car\)/g, "Rescue fee (vehicle evacuation up to 3,500 m / 11,483 ft)"],
+  // Kilimanjaro trip names in our own words (cards, titles and headings)
+  [/(?:Climbing|Cimbing) Kilimanjaro via the 5-day Marangu Route with huts/g, "Kilimanjaro: Marangu Route, 5 days (huts)"],
+  [/Climbing Kilimanjaro via the popular 7-day Machame Route/g, "Kilimanjaro: Machame Route, 7 days"],
+  [/Climbing Kilimanjaro via the successful 7-day Lemosho Route/g, "Kilimanjaro: Lemosho Route, 7 days"],
+  [/Climbing Kilimanjaro via the popular 6-day Machame Route/g, "Kilimanjaro: Machame Route, 6 days"],
+  [/Climbing Kilimanjaro via the successful 8-day Lemosho Route/g, "Kilimanjaro: Lemosho Route, 8 days"],
+  [/Wander up Kilimanjaro via the 8-day Northern Circuit Route/g, "Kilimanjaro: Northern Circuit, 8 days"],
+  [/Climbing Kilimanjaro, starting at a high altitude on the 6-day Lemosho-Shira Route/g, "Kilimanjaro: Lemosho-Shira Route, 6 days"],
+  [/Climbing Kilimanjaro via the 6-day Marangu Route with huts/g, "Kilimanjaro: Marangu Route, 6 days (huts)"],
+  [/Climbing Kilimanjaro via the challenging 6-day Rongai Route/g, "Kilimanjaro: Rongai Route, 6 days"],
+  [/Climbing Kilimanjaro via the steep 6-day Umbwe Route/g, "Kilimanjaro: Umbwe Route, 6 days"],
+  // USP chips in the hero of the inner pages
+  [/>\s*Best value &amp; free quotation\s*</g, "> Free proposal within 24 hours <"],
+  [/>\s*Local partner rated 5\.0\/5\s*</g, "> Local partner rated 5.0 on Tripadvisor <"],
+  // "Why Your Tanzania Trip?" list on the trip pages: claims we can keep
+  [/>\s*Highest service\s*</g, "> Personal service <"],
+  [/>\s*Quickest response time\s*</g, "> Reply within 24 hours <"],
+  [/>\s*100% specialized in Tanzania\s*</g, "> Tanzania only, nothing else <"],
+  [/>\s*Skilled travel consultants living in Tanzania\s*</g, "> Our own team in Arusha <"],
+  [/>\s*World class safari guides\s*</g, "> Licensed, English-speaking guides <"],
+  [/>\s*Competitive rates\s*</g, "> Fair prices, no middlemen <"],
+  [/>\s*Top rated private safaris\s*</g, "> Private guide and vehicle <"],
+  [/>\s*Worry-free Hakuna Matata package\s*</g, "> Free Hakuna Matata Package <"],
+  [/International flights \(can be booked for you on request\)/g, "International flights (we can book these for you)"],
+  [/Is there anything you absolutely don(?:'|’|&#039;)t want to miss\?/g, "Which experiences are on your must-do list?"],
+];
+
+const allRules = [...brandRules, ...contactRules, ...founderRules, ...sisterRules, ...membershipRules, ...reviewRules, ...svgColorRules, ...copyRules];
 
 function rebrandText(s) {
   for (const [re, to] of allRules) s = s.replace(re, to);
@@ -288,12 +367,15 @@ const BARAKA_IMG = "/brand/partner/baraka-dalali.webp";
 const CREW_IMG = "/brand/partner/crew-summit.webp";
 const AWARDS = TA.awards.join(" · ");
 const scoreLine = () => `${TA.score}/${TA.scale} on Tripadvisor · ${TA.count} reviews · checked ${TA.checkedOn}`;
+// Review quotes are shown only with a direct link to the profile they come from (partner.google.reviewUrl).
 const quoteCards = (cls = "") =>
-  P.quotes
+  !P.google.reviewUrl
+    ? "<!-- [INVULLEN: Google reviews of Kilimanjaro Nature Tours: source and direct link (partner.google.reviewUrl in docs/brand-tokens.json); the quotes stay hidden until then] -->"
+    : P.quotes
     .map(
       (q) => `<figure class="quote-card ${cls}">
   <blockquote><p>“${q.text}”</p></blockquote>
-  <figcaption>${q.name} · review on <a href="${GOOGLE_HREF}"${EXT}>${q.platform}</a></figcaption>
+  <figcaption>${q.name} · review on <a href="${P.google.reviewUrl}"${EXT}>${q.platform}</a></figcaption>
 </figure>`
     )
     .join("\n");
@@ -342,8 +424,8 @@ function footerBand() {
 }
 
 function footerPartnerLine() {
-  return `<p class="mt-8 text-sm partner-line">Trips operated on the ground by <a href="/our-partner/" class="underline">${P.name}</a>, ${P.city}.</p>
-<p class="mt-2 text-sm partner-line">E-mail <a href="mailto:${CO.email}" class="underline">${CO.email}</a> · WhatsApp <a href="${WA_HREF}"${EXT} class="underline">${CO.whatsapp}</a></p>
+  return `<p class="mt-8 text-sm partner-line">${BRAND} · ${CO.address.replace(", Netherlands", ", The Netherlands")} · ${CO.phone} (WhatsApp) · <span class="fill-marker">[INVULLEN: e-mail]</span> · KvK ${CO.kvk} · BTW ${CO.vat}</p>
+<p class="mt-2 text-sm partner-line">Trips are operated on the ground by our partner <a href="/our-partner/" class="underline">${P.name}</a>, Arusha.</p>
 `;
 }
 
@@ -526,8 +608,12 @@ function callAnExpert(html) {
   // Two office buttons (USA, UK) -> one phone button and a WhatsApp button; the portrait is Baraka's.
   html = html.replace(/<span class="!w-\[2\.01em\] !h-\[1\.50em\] text-white ts-flag-usa"><\/span>\s*<span class="!text-base">USA: <\/span>/g, '<span class="!w-[2.01em] !h-[1.50em] text-white ts-flag-nl"></span>\n<span class="!text-base">NL: </span>');
   html = html.replace(/<a class="([^"]*btn-red)"\s+href="[^"]*"\s+target="">\s*<span class="flex gap-2\.5 items-center">\s*<span class="[^"]*ts-flag-gb"><\/span>[\s\S]*?<\/a>\s*/g, (m, cls) => `<a class="${cls}" href="${WA_HREF}" target="_blank" rel="noopener noreferrer"><span class="flex gap-2.5 items-center"><span class="i-cib-whatsapp text-xl" aria-hidden="true"></span><span class="!text-base">WhatsApp: </span>${CO.whatsapp}</span></a>\n`);
-  html = html.replace(/Our specialists are here to assist you/gi, `${CO.owner} in the Netherlands and ${P.owner} in Arusha are here to help`);
+  html = html.replace(/Our specialists are here to assist you/gi, `${CO.owner} and ${CO.cofounder} in the Netherlands help you plan`);
+  // The portrait next to the Dutch number was Baraka's; he belongs with the Arusha number, during the trip.
+  html = html.replace(/<img[^>]*baraka-dalali\.webp[^>]*class="hidden lg:block mask-img w-48 h-48"[^>]*>\s*/g, "");
+  html = html.replace(/<img[^>]*baraka-dalali\.webp[^>]*class="mt-4 mx-auto hidden mask-img w-36 h-36"[^>]*>\s*/g, "");
   html = html.replace(/<a class="([^"]*)"\s+href="\/contact\/">\s*<u>other countries<\/u>\s*<\/a>/gi, (m, cls) => `<a class="${cls}" href="mailto:${CO.email}"><u>${CO.email}</u></a>`);
+  html = html.replace(/(<a class="mt-5 text-base text-anthracite[^"]*" href="mailto:[^"]*"><u>[^<]*<\/u><\/a>)/g, `$1\n<p class="mt-6 flex items-center justify-center gap-3 text-sm tracking-wide text-anthracite md:justify-start"><img src="${BARAKA_IMG}" alt="${P.owner}, ${P.name}" width="48" height="48" class="w-12 h-12 rounded-full object-cover" loading="lazy"><span>During your trip: ${P.owner}, ${P.name}, Arusha · <a href="tel:${P.phone.replace(/[^\d+]/g, "")}" class="underline">${P.phone}</a></span></p>`);
   return html;
 }
 
@@ -536,7 +622,7 @@ function contactPage(html) {
   html = html.replace(/<p><strong>To speak with one of our amazing travel consultants:<\/strong><\/p>\s*<ul[^>]*>[\s\S]*?<\/ul>/, `<p><strong>To talk about your trip:</strong></p>\n<ul>\n<li>Email: <a href="mailto:${CO.email}">${CO.email}</a></li>\n<li>Phone: <a href="${PHONE_TEL}">${CO.phone}</a> (Netherlands, English and Dutch)</li>\n<li>WhatsApp: <a href="${WA_HREF}" target="_blank" rel="noopener noreferrer">${CO.whatsapp}</a></li>\n</ul>`);
   html = html.replace(/<p><strong>For suppliers to get in touch with our reservations team:<\/strong><\/p>\s*<ul>[\s\S]*?<\/ul>/, `<p><strong>During your trip in Tanzania:</strong></p>\n<ul>\n<li>${P.name}, ${P.city}: <a href="mailto:${P.email}">${P.email}</a> · <a href="${P.url}" target="_blank" rel="noopener noreferrer">${P.url.replace("https://", "")}</a></li>\n</ul>`);
   html = html.replace(/<p><strong>Questions about our <a[^>]*>sustainability policy<\/a>:<\/strong><\/p>\s*<ul>[\s\S]*?<\/ul>/, `<p><strong>Suppliers, partners and press:</strong></p>\n<ul>\n<li>Email: <a href="mailto:${CO.email}">${CO.email}</a></li>\n</ul>`);
-  html = html.replace(/<h2>Financial Information<\/h2>\s*<p>[\s\S]*?<\/p>/, `<h2>Company details</h2>\n<p><span style="text-decoration: underline">Company</span>: ${CO.legalName}, trading as ${BRAND}<br />\n<span style="text-decoration: underline">Chamber of Commerce (KvK)</span>: ${CO.kvk}<br />\n<span style="text-decoration: underline">VAT (BTW)</span>: ${CO.vat}<br />\n<span style="text-decoration: underline">Bank</span>: ${CO.bank} · IBAN ${CO.iban} · BIC ${CO.bic}</p>`);
+  html = html.replace(/<h2>Financial Information<\/h2>\s*<p>[\s\S]*?<\/p>/, `<h2>Company details</h2>\n<p><span style="text-decoration: underline">Company</span>: ${CO.legalName}, trading as ${BRAND}<br />\n<span style="text-decoration: underline">Chamber of Commerce (KvK)</span>: ${CO.kvk}<br />\n<span style="text-decoration: underline">VAT (BTW)</span>: ${CO.vat}</p>\n<p>Bank details are on your invoice, never on this website.</p>`);
   html = html.replace(/<p><span class='flying-press-youtube'[\s\S]*?<\/span><\/p>/, "");
   html = html.replace(/\s*Check out all the latest travel stories from our guests on the <a[^>]*>[^<]*<\/a> page!/, "");
   return html;
@@ -649,7 +735,8 @@ const removed = {
   "/blog/serengeti-safari-marathon-2023/": "/blog/",
   "/blog/serengeti-safari-marathon-photos/": "/blog/",
   "/blog/press-release-increased-sightings-of-rare-albino-animals/": "/blog/",
-  "/blog/why-choose-tanzania-specialist/": "/about-tanzania-specialist/",
+  "/blog/why-choose-tanzania-specialist/": "/about-us/",
+  "/about-tanzania-specialist/": "/about-us/",
   "/blog/certified-responsible-climbing-on-kilimanjaro/": "/climbing-kilimanjaro/",
   "/blog/why-chapka-travel-insurance/": "/practical-information/travel-insurance/",
   "/about-tanzania-specialist/our-tanzania-travel-experts/": "/our-partner/",
@@ -703,8 +790,25 @@ const imageRules = [
   [/alt="request_thumbnail"/g, 'alt="Request a proposal at no charge"'],
 ];
 fs.writeFileSync(path.join(root, "content/redirects-brand.json"), JSON.stringify(removed, null, 1));
+// vercel.json: the same redirects as real 301s (Astro's static output only makes meta-refresh pages).
+{
+  const file = path.join(root, "vercel.json");
+  const vercel = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {};
+  const old = JSON.parse(fs.readFileSync(path.join(root, "content/redirects.json"), "utf8"));
+  const all = { ...old, ...removed };
+  vercel.redirects = Object.entries(all)
+    .filter(([from, to]) => from !== to && !/[:*()?]/.test(from))
+    .map(([from, to]) => ({ source: from.replace(/\/$/, "") + "{/}?", destination: to, statusCode: 301 }));
+  fs.writeFileSync(file, JSON.stringify(vercel, null, 2) + "\n");
+  console.log(`vercel.json: ${vercel.redirects.length} redirects`);
+}
 
 // 2. Page content
+// The about page moves to /about-us/ (the old slug carried the former operator's name).
+{
+  const from = path.join(root, "content/pages/about-tanzania-specialist.html");
+  if (fs.existsSync(from)) fs.renameSync(from, path.join(root, "content/pages/about-us.html"));
+}
 for (const p of walk(path.join(root, "content/pages"), [".html"])) {
   const slug = path.basename(p, ".html");
   const urlPath = slug === "index" ? "/" : "/" + slug.replace(/__/g, "/") + "/";
@@ -721,7 +825,7 @@ for (const p of walk(path.join(root, "content/pages"), [".html"])) {
     s = s.replace(/<!--VIDEO-->/g, "");
     if (slug === "index") s = replaceDivs(s, /<div class="pt-8 pb-12 -mb-1\.5 bg-green ts-mask-bottom md:pt-20 md:pb-24">/, partnerHomeSection(), (inner) => inner.includes("What Travellers Say"));
     if (slug === "contact") s = contactPage(s);
-    if (slug === "about-tanzania-specialist") s = aboutPage(s);
+    if (slug === "about-us") s = aboutPage(s);
     if (slug === "practical-information__guarantees") s = guaranteesPage(s);
     // Traveller guide: the reviews tile lost its badge image and title with the old awards
     if (slug === "traveller-guide") s = s.replace(/(Read the reviews from our travellers[\s\S]*?<h3 class="theme-card-title">)\s*(<\/h3>\s*<\/div>)(\s*<\/div>\s*<\/a>)/, `$1Partner reviews$2\n<img width="920" height="580" src="${CREW_IMG}" class="object-cover" alt="Baraka's crew on the summit of Kilimanjaro" loading="lazy" decoding="async"/>$3`);
@@ -804,6 +908,36 @@ fs.writeFileSync(path.join(root, "content/pages/our-partner.html"), partnerPageB
   console.log(`old-company claims fixed on ${fixed} pages`);
 }
 
+// 2c. Own content (content/own/<slug>.json): pages written from scratch. Applied last, so the
+// paraphrases and the rules above never touch the new text.
+{
+  let own = 0;
+  for (const p of walk(path.join(root, "content/pages"), [".html"])) {
+    const before = fs.readFileSync(p, "utf8");
+    const after = applyOwnContent(path.basename(p, ".html"), before);
+    if (after !== before) {
+      fs.writeFileSync(p, after);
+      own++;
+    }
+  }
+  console.log(`own content applied to ${own} pages`);
+}
+
+// 2d. Alt text for images without one (scripts/alt-text.mjs)
+{
+  let pages = 0, left = 0;
+  for (const p of walk(path.join(root, "content/pages"), [".html"])) {
+    const before = fs.readFileSync(p, "utf8");
+    const { html, missing } = applyAltText(before);
+    left += missing.length;
+    if (html !== before) {
+      fs.writeFileSync(p, html);
+      pages++;
+    }
+  }
+  console.log(`alt text added on ${pages} pages, ${left} images still without`);
+}
+
 // 2b. Practical-information fragments (public/ajax/fetch_post_content/<id>.html) are the article body of the
 // page with that id; regenerate them from the rebranded pages so tabs and pages never drift apart.
 {
@@ -863,6 +997,14 @@ function fixJsonLd(json) {
     return rebrandText(json);
   }
   const nodes = Array.isArray(data["@graph"]) ? data["@graph"] : [data];
+  // Yoast's URLs were made site-relative by extract.mjs; structured data needs absolute ones.
+  const absolutize = (v, key) => {
+    if (typeof v === "string") return /^\/(?!\/)/.test(v) && ["@id", "url", "item", "target", "thumbnailUrl", "contentUrl"].includes(key) ? SITE + v : v;
+    if (Array.isArray(v)) return v.map((x) => absolutize(x, key));
+    if (v && typeof v === "object") for (const k of Object.keys(v)) v[k] = absolutize(v[k], k);
+    return v;
+  };
+  absolutize(data, "");
   const kept = nodes.filter((n) => !["AggregateRating", "Review"].includes(n["@type"]));
   for (const n of kept) {
     delete n.aggregateRating;
@@ -870,15 +1012,22 @@ function fixJsonLd(json) {
     if (n["@type"] === "Organization") {
       n.name = BRAND;
       n.url = SITE + "/";
-      n.logo = { "@type": "ImageObject", "@id": "/#/schema/logo/image/", url: `${SITE}/brand/logo-primary.png`, contentUrl: `${SITE}/brand/logo-primary.png`, width: 1888, height: 732, caption: BRAND };
-      n.image = { "@id": "/#/schema/logo/image/" };
+      n.logo = { "@type": "ImageObject", "@id": `${SITE}/#/schema/logo/image/`, url: `${SITE}/brand/logo-primary.png`, contentUrl: `${SITE}/brand/logo-primary.png`, width: 1888, height: 732, caption: BRAND };
+      n.image = { "@id": `${SITE}/#/schema/logo/image/` };
       n.address = { "@type": "PostalAddress", streetAddress: "Sluitgatweg 10", postalCode: "8308 RE", addressLocality: "Nagele", addressCountry: "NL" };
-      n.email = CO.email;
+      n.legalName = CO.legalName;
       n.telephone = CO.phone;
-      n.sameAs = [];
+      delete n.email; // a Gmail address is not a company identity; added once the business mailbox exists
+      n.vatID = CO.vat;
+      n.founder = (CO.founders || [CO.owner]).map((name) => ({ "@type": "Person", name }));
+      if (CO.foundingDate) n.foundingDate = CO.foundingDate;
+      n.areaServed = { "@type": "Country", name: "Tanzania" };
+      n.contactPoint = { "@type": "ContactPoint", telephone: CO.phone, contactType: "customer service", availableLanguage: ["English", "Dutch"], areaServed: "Worldwide" };
+      n.sameAs = (CO.sameAs || []).filter(Boolean);
     }
     if (n["@type"] === "WebSite") {
       n.name = BRAND;
+      delete n.potentialAction; // Google retired the sitelinks search box; the search works client-side anyway
       n.description = "Tailor-made safaris, Kilimanjaro climbs and Zanzibar trips in Tanzania";
     }
   }
@@ -886,10 +1035,60 @@ function fixJsonLd(json) {
   return rebrandText(JSON.stringify(data)); // second pass: image paths were escaped before parsing
 }
 
+// The local partner as its own Organization node, on the pages that present it. No aggregateRating:
+// Google only accepts ratings collected on the site itself, and the Tripadvisor score is theirs.
+const PARTNER_ID = `${P.url}/#organization`;
+function partnerNode() {
+  return {
+    "@type": "Organization",
+    "@id": PARTNER_ID,
+    name: P.name,
+    url: P.url,
+    description: `Licensed tour operator in Arusha, Tanzania, founded by ${P.owner}. Operates every ${BRAND} itinerary on the ground. Rated ${TA.score} on Tripadvisor (${TA.count} reviews, checked ${TA.checkedOn}).`,
+    address: { "@type": "PostalAddress", postOfficeBoxNumber: "611", addressLocality: "USA River, Arusha", addressCountry: "TZ" },
+    telephone: P.phone,
+    email: P.email,
+    founder: { "@type": "Person", name: P.owner },
+    sameAs: [TA.url, P.youtube].filter(Boolean),
+  };
+}
+function addPartnerNode(json) {
+  try {
+    const data = JSON.parse(json);
+    if (!Array.isArray(data["@graph"])) return json;
+    data["@graph"] = data["@graph"].filter((n) => n["@id"] !== PARTNER_ID);
+    data["@graph"].push(partnerNode());
+    for (const n of data["@graph"]) if (String(n["@type"]).includes("WebPage")) n.mentions = { "@id": PARTNER_ID };
+    return JSON.stringify(data);
+  } catch {
+    return json;
+  }
+}
+
+/** The WebPage node of the Yoast graph repeats the title and description; keep them in sync. */
+function syncWebPage(json, pg) {
+  try {
+    const data = JSON.parse(json);
+    for (const n of Array.isArray(data["@graph"]) ? data["@graph"] : [data]) {
+      if (String(n["@type"]).includes("WebPage")) {
+        if (pg.title) n.name = pg.title;
+        if (pg.description) n.description = pg.description;
+      }
+    }
+    return JSON.stringify(data);
+  } catch {
+    return json;
+  }
+}
+
 {
   const file = path.join(root, "content/pages.json");
-  const pages = JSON.parse(fs.readFileSync(file, "utf8")).filter((pg) => !removed[pg.path]);
+  const pages = JSON.parse(fs.readFileSync(file, "utf8")).filter((pg) => !removed[pg.path] || pg.slug === "about-tanzania-specialist");
   for (const pg of pages) {
+    if (pg.slug === "about-tanzania-specialist") {
+      pg.slug = "about-us";
+      pg.path = "/about-us/";
+    }
     for (const k of ["title", "description", "ogTitle", "ogDescription"]) if (pg[k]) pg[k] = rebrandText(pg[k]);
     if (!pg.ogImage || /DSC04060|social\.png/.test(pg.ogImage)) pg.ogImage = "/brand/og-image.jpg";
     pg.ogImage = rebrandText(pg.ogImage);
@@ -901,7 +1100,35 @@ function fixJsonLd(json) {
     pg.extraScripts = (pg.extraScripts || []).map(rebrandText);
     pg.extraStyles = (pg.extraStyles || []).map(rebrandText);
     pg.ldJson = (pg.ldJson || []).map(fixJsonLd).filter(Boolean);
+    if (["index", "about-us", "our-partner"].includes(pg.slug) && pg.ldJson[0]) pg.ldJson[0] = addPartnerNode(pg.ldJson[0]);
     if (pg.stickyCta) pg.stickyCta.label = rebrandText(pg.stickyCta.label);
+    // The /itinerary/ tab repeats the day programme of its trip page: keep it out of the index like the
+    // other tabs (/prices/, /accommodations/ ...). Utility pages are not search results either.
+    if (/^\/itineraries\/[^/]+\/itinerary\/$/.test(pg.path) || /^\/(wishlist|processing-your-payment|review-your-opinion-matters)\/$/.test(pg.path)) pg.robots = "noindex, follow";
+    // Pages with own content: their title, description and schema (FAQPage, TouristTrip)
+    const own = ownMeta(pg.slug, pg.path);
+    if (own) {
+      if (own.title) pg.title = pg.ogTitle = own.title;
+      if (own.description) pg.description = pg.ogDescription = own.description;
+      if (own.ogTitle) pg.ogTitle = own.ogTitle;
+      if (own.ogDescription) pg.ogDescription = own.ogDescription;
+      pg.ldJson = pg.ldJson.map((j) => syncWebPage(j, pg)).concat(own.ldJson);
+    }
+    // Titles over 60 characters lose the brand suffix (Google cuts them off anyway).
+    if (pg.title.length > 60) pg.title = pg.title.replace(/\s*[|l·-]\s*Your Tanzania Trip\s*$/i, "");
+    // Pages without a meta description get their first paragraph, cut at a sentence end (max 155).
+    if (!pg.description && !(pg.robots || "").includes("noindex")) {
+      const body = fs.existsSync(path.join(root, "content/pages", pg.slug + ".html")) ? fs.readFileSync(path.join(root, "content/pages", pg.slug + ".html"), "utf8") : "";
+      const m = body.match(/<p(?:\s[^>]*)?>((?:(?!<\/p>)[\s\S]){80,}?)<\/p>/);
+      if (m) {
+        const text = m[1].replace(/<[^>]+>/g, "").replace(/&nbsp;|&#8217;|&amp;/g, (e) => ({ "&nbsp;": " ", "&#8217;": "’", "&amp;": "&" })[e]).replace(/\s+/g, " ").trim();
+        let d = text.slice(0, 155);
+        const end = Math.max(d.lastIndexOf(". "), d.lastIndexOf("! "), d.lastIndexOf("? "));
+        d = end > 80 ? d.slice(0, end + 1) : d.replace(/\s+\S*$/, "") + "…";
+        pg.description = pg.ogDescription = d;
+        pg.descriptionAuto = true;
+      }
+    }
   }
   pages.push({
     slug: "our-partner",
@@ -917,7 +1144,7 @@ function fixJsonLd(json) {
     extraScripts: [],
     extraStyles: [],
     stickyCta: { href: "/travel-proposal/", label: "Make a request" },
-    ldJson: [],
+    ldJson: [JSON.stringify({ "@context": "https://schema.org", "@graph": [partnerNode()] })],
   });
   fs.writeFileSync(file, JSON.stringify(pages, null, 1));
 }
@@ -925,7 +1152,7 @@ function fixJsonLd(json) {
 // 5. Header
 processFile(path.join(root, "src/partials/header.html"), (s) => {
   s = stripRemovedLinks(s);
-  s = s.replace(/<picture>[\s\S]*?<\/picture>/, `<img src="/brand/logo-primary.png" class="brand-logo no-lazyload" width="1888" height="732" alt="${BRAND}" fetchpriority="high" loading="eager" decoding="async">`);
+  s = s.replace(/<picture>[\s\S]*?<\/picture>/, `<img src="/brand/logo-primary-600.png" class="brand-logo no-lazyload" width="600" height="233" alt="${BRAND}" fetchpriority="high" loading="eager" decoding="async">`);
   // Cross-sell to the former sister company (its anchor is already unwrapped by the text rules).
   s = s.replace(/<a href="https:\/\/africasafaritrips\.com"[^>]*class="top-header-cross-sell">[\s\S]*?<\/a>/, "");
   s = s.replace(/<span class="top-header-cross-sell-text">[\s\S]*?<\/span>\s*/, "");
@@ -933,8 +1160,8 @@ processFile(path.join(root, "src/partials/header.html"), (s) => {
   s = s.replace(/<a href="\/"[^>]*class="flex items-center px-1 py-1\.5[^"]*">\s*<span class="mr-2 text-base text-white ts-flag ts-flag-(?!en)[a-z]+"><\/span>[^<]*<\/a>\s*/g, "");
   s = s.replace(/(<div class="px-3\.5 py-3 w-44[^"]*">)\s*(<\/div>)/, '$1 <a href="/" class="flex items-center px-1 py-1.5 leading-[normal] hover:underline"><span class="mr-2 text-base text-white ts-flag ts-flag-en"></span> English </a> $2');
   s = s.replace(/<div class="flex relative gap-4 items-center md:gap-6 lg:mx-auto">[\s\S]*?(?=\s*<ul id="menu-header-secondary")/, headerTrustItem());
-  s = s.replace(/(<li id="menu-item-212"[^>]*><a href="\/about-tanzania-specialist\/">[^<]*<\/a><\/li>)/, '$1\n <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/our-partner/">Our local partner</a></li>');
-  s = s.replace(/(<li id="menu-item-14294"[^>]*><a href="\/about-tanzania-specialist\/">About us<\/a><\/li>)/, '$1\n<li class="mobile-menu-divider menu-item menu-item-type-post_type menu-item-object-page"><a href="/our-partner/">Our local partner</a></li>');
+  s = s.replace(/(<li id="menu-item-212"[^>]*><a href="\/about-us\/">[^<]*<\/a><\/li>)/, '$1\n <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/our-partner/">Our local partner</a></li>');
+  s = s.replace(/(<li id="menu-item-14294"[^>]*><a href="\/about-us\/">About us<\/a><\/li>)/, '$1\n<li class="mobile-menu-divider menu-item menu-item-type-post_type menu-item-object-page"><a href="/our-partner/">Our local partner</a></li>');
   s = s.replace(/href="https:\/\/yourtanzaniatrip\.com" class="header-logo-link"/, 'href="/" class="header-logo-link"');
   return s;
 });
@@ -945,7 +1172,7 @@ processFile(path.join(root, "src/partials/footer.html"), (s) => {
   const bandStart = s.indexOf('<div class="text-white ts-mask-bottom bg-green">');
   const bandEnd = s.indexOf('<div class="px-5 py-12 mx-auto max-w-7xl md:pb-24 container-2xl">');
   if (bandStart !== -1 && bandEnd > bandStart) s = s.slice(0, bandStart) + footerBand() + "\n " + s.slice(bandEnd);
-  s = s.replace(/<img class="w-auto h-24"[^>]*logo-en-footer\.svg[^>]*>/, `<img src="/brand/logo-reversed.png" class="w-auto h-24" width="1913" height="722" alt="${BRAND}" loading="lazy" decoding="async">`);
+  s = s.replace(/<img class="w-auto h-24"[^>]*logo-en-footer\.svg[^>]*>/, `<img src="/brand/logo-reversed-600.png" class="w-auto h-24" width="600" height="226" alt="${BRAND}" loading="lazy" decoding="async">`);
   // Badge rows: the first held the sister-company and Hakuna Matata logos, the second SGR/ANVR/Travelife.
   s = s.replace(/<ul class="flex gap-x-8 items-center mt-8">([\s\S]*?)<\/ul>/g, (m, inner) => {
     const hakuna = inner.match(/<li>\s*<a href="\/hakuna-matata-package\/"[\s\S]*?<\/li>/);
@@ -959,7 +1186,7 @@ processFile(path.join(root, "src/partials/footer.html"), (s) => {
   s = s.replace(/(<ul id="menu-footer-reisinformatie"[^>]*>)/, '$1<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/our-partner/">Our local partner</a></li>');
   // "Cookie settings" link after the privacy policy (both copyright menus); opens the consent banner again.
   s = s.replace(/(<li[^>]*menu-item-privacy-policy[^>]*><a rel="privacy-policy" href="\/privacy-policy\/">Privacy policy<\/a><\/li>)/g, '$1\n<li class="menu-item"><a href="#cookie-settings" data-cookie-settings>Cookie settings</a></li>');
-  s = s.replace(/&copy; 2026 Your Tanzania Trip/g, `&copy; 2026 ${BRAND} · KvK ${CO.kvk} · BTW ${CO.vat}`);
+  s = s.replace(/&copy; 2026 Your Tanzania Trip/g, `&copy; 2026 ${BRAND}`);
   s = s.replace(/href="https:\/\/yourtanzaniatrip\.com">\s*<span class="sr-only">/, 'href="/">\n <span class="sr-only">');
   return s;
 });
@@ -980,6 +1207,44 @@ processFile(path.join(root, "src/partials/footer.html"), (s) => {
     .map((p) => ({ u: p.path, t: (p.title || "").replace(/\s*[|l·-]\s*Your Tanzania Trip\s*$/i, "").trim(), d: (p.description || "").slice(0, 160), k: kind(p.path) }));
   fs.writeFileSync(path.join(root, "public/search-index.json"), JSON.stringify(index));
   console.log(`search index: ${index.length} entries`);
+}
+
+// 6c. llms.txt: a short, plain-text guide to the site for AI assistants (llms-full.txt lists every indexable page).
+{
+  const pages = JSON.parse(fs.readFileSync(path.join(root, "content/pages.json"), "utf8")).filter((p) => !(p.robots || "").includes("noindex"));
+  const line = (p) => `- [${p.title.replace(/\s*[|l·-]\s*Your Tanzania Trip\s*$/i, "").trim()}](${SITE}${p.path})${p.description ? ": " + p.description : ""}`;
+  const pick = (paths) => paths.map((x) => pages.find((p) => p.path === x)).filter(Boolean).map(line).join("\n");
+  const trips = ["/itineraries/11-days-safari-trip-tanzania-zanzibar/", "/itineraries/15-days-trip-tanzania-zanzibar/", "/itineraries/9-days-safari-wildebeest-migration-near-the-mara-river/", "/itineraries/7-days-safari-tanzania/", "/itineraries/machame-route-7-days/", "/itineraries/10-days-zanzibar-island/", "/itineraries/10-days-safari-mikumi-udzungwa-ruaha-nyerere/", "/itineraries/5-day-tanzania-safari-small-group-trip/"];
+  const main = ["/tanzania-safari/", "/climbing-kilimanjaro/", "/zanzibar-holiday/", "/great-wildebeest-migration/", "/islands/zanzibar-island/", "/national-parks-tanzania/", "/accommodations/", "/activities/", "/hakuna-matata-package/", "/practical-information/", "/faqs/tanzania/", "/blog/"];
+  const about = ["/about-us/", "/our-partner/", "/contact/", "/travel-proposal/"];
+  const txt = `# ${BRAND}
+
+> Tailor-made trips through Tanzania: private safaris in the north and the south, Kilimanjaro climbs, Zanzibar beach stays and the Great Migration. Planned and booked from the Netherlands by ${CO.owner} and ${CO.cofounder}; run on the ground by our local partner ${P.name} in Arusha, founded by ${P.owner}. Private guide and your own safari vehicle on every safari. A free, no-obligation travel proposal within 24 hours. Prices on the site are per person in USD, based on 6 travellers in low season, excluding international flights.
+
+Company: ${BRAND} (${CO.legalName}), ${CO.address}. KvK ${CO.kvk}, VAT ${CO.vat}. Phone/WhatsApp ${CO.phone} (English and Dutch).
+Local partner: ${P.name}, ${P.postal}, Tanzania. ${P.phone}, ${P.email}, ${P.url}. Rated ${TA.score} on Tripadvisor (${TA.count} reviews, checked ${TA.checkedOn}); that score belongs to the partner, not to ${BRAND}.
+
+## Trips
+${pick(trips)}
+
+## Destinations and planning
+${pick(main)}
+
+## About and contact
+${pick(about)}
+
+## Full page list
+${SITE}/llms-full.txt
+`;
+  fs.writeFileSync(path.join(root, "public/llms.txt"), txt);
+  const sections = {};
+  for (const p of pages) {
+    const seg = p.path.split("/")[1] || "home";
+    (sections[seg] ||= []).push(line(p));
+  }
+  const full = `# ${BRAND}: all pages\n\nSee ${SITE}/llms.txt for the summary. One line per page: title, URL, description.\n\n` + Object.entries(sections).map(([k, v]) => `## ${k}\n${v.join("\n")}`).join("\n\n") + "\n";
+  fs.writeFileSync(path.join(root, "public/llms-full.txt"), full);
+  console.log(`llms.txt written (${pages.length} pages in llms-full.txt)`);
 }
 
 // 7. Layout text (og:site_name etc.)

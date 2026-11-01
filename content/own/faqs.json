@@ -1,0 +1,16 @@
+{
+  "title": "Frequently asked questions | Your Tanzania Trip",
+  "description": "Everything travellers ask us before a Tanzania trip, in one place: safaris, Kilimanjaro, Zanzibar, visas, money, safety and how booking with us works.",
+  "h1": "Get ready for your trip",
+  "replace": [
+    { "selector": "[class*=ts-jumbotron-content] p", "index": 0, "html": "We only do Tanzania, so these are Tanzania questions: safari, Kilimanjaro, Zanzibar, visas, money, safety, packing and how booking with us works. Written by us, from what guests actually ask." },
+    { "selector": "h1[class*=mb-2]", "text": "Frequently asked questions" },
+    { "selector": "h2[class*=font-serif]:contains(\"next travel destination\")", "text": "All questions, by topic" },
+    { "selector": "div.ts-prose:has(> p:contains(\"Still have questions\")) > p", "html": "Not in the list? Send us a <a href=\"https://wa.me/31629351377\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp</a> or use the <a href=\"/contact/\">contact form</a>; we answer within 24 hours." }
+  ],
+  "retag": [{ "selector": "h1[class*=mb-2]", "tag": "h2" }],
+  "remove": [
+    "li:has(.theme-card-title:contains(\"Kenya\"))",
+    "li:has(.theme-card-title:contains(\"Uganda\"))"
+  ]
+}

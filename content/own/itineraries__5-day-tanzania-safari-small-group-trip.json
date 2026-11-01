@@ -1,0 +1,104 @@
+{
+  "title": "5-Day Small Group Safari Tanzania | Your Tanzania Trip",
+  "description": "Five days in a small group of 3 to 6 travellers: Tarangire, Serengeti and the Ngorongoro Crater. Monthly departures from Arusha, single room included.",
+  "h1": "5-Day Tanzania Group Safari",
+  "replace": [
+    {
+      "selector": "div.ts-prose > h2",
+      "index": 0,
+      "text": "Join a small-group safari"
+    },
+    {
+      "selector": "div[class*=single-trips-sidebar] > h3",
+      "index": 0,
+      "text": "5-Day Tanzania Group Safari"
+    },
+    {
+      "selector": "div.ts-prose > ul",
+      "index": 0,
+      "html": "<li>Day 1: Tarangire National Park</li>\n<li>Day 2: Serengeti National Park (central), with Ndutu from late December to March, when the migration herds give birth there</li>\n<li>Day 3: Serengeti National Park (central)</li>\n<li>Day 4: Ngorongoro Conservation Area and the crater</li>\n<li>Day 5: Back to Arusha, end of the safari</li>"
+    },
+    {
+      "selector": "dt span:contains(\"Ndutu\")",
+      "text": "Day 2: Serengeti (central), with Ndutu from late December to March during the calving season"
+    }
+  ],
+  "trip": {
+    "intro": [
+      "<p>Travelling alone, or as a couple on a budget? On this five-day safari you share the vehicle with a small group: at least three and at most six travellers per 4×4. You get the same parks as our private northern safaris, Tarangire, the Serengeti and the Ngorongoro Crater, with a guide from <a href=\"/our-partner/\">Kilimanjaro Nature Tours</a> and a single room to yourself at every lodge.</p>",
+      "<p>Departures are on the first Wednesday of each month, with pick-up at your hotel in Arusha. A trip is confirmed at the latest 20 days before departure. If fewer than three people have booked by then, it does not run; you can then cancel free of charge or move to a later date. The dates and prices are in the table below.</p>"
+    ],
+    "why": {
+      "heading": "Why this trip",
+      "items": [
+        "The three classic northern parks in five days, at a group price.",
+        "Never more than six people in the vehicle, so everyone has a window seat.",
+        "A single room included: no supplement for solo travellers.",
+        "From late December to March the second day includes Ndutu, where the migration herds calve.",
+        "Fixed monthly departures, easy to combine with Zanzibar or a Kilimanjaro climb.",
+        "The free Hakuna Matata Package: travel file, transfers and 24/7 support."
+      ]
+    },
+    "cta": {
+      "heading": "Join this safari",
+      "text": "Free and without obligation, with a reply within 24 hours. Tell us which departure date suits you and whether you want to add Zanzibar or a climb, and we send you a proposal.",
+      "button": "Request your free travel proposal"
+    },
+    "days": [
+      {
+        "html": "<p>Pick-up at your hotel in Arusha in the morning, then about two hours to Tarangire. The park is elephant country: in the dry season herds of a hundred or more line the Tarangire River, the only water for miles, among giant baobabs. Lions, giraffes and zebras are regular sightings. After the game drive you drive on to your lodge for the night.</p>"
+      },
+      {
+        "title": "Serengeti National Park (two days)",
+        "html": "<p>Over the Ngorongoro highlands and down into the Serengeti. The central park around Seronera has wildlife all year: lions on the kopjes, leopards in the trees along the river, cheetahs on the plains. The second day starts early, when the light is soft and the cats are still active.</p><p>From late December to March the group also visits Ndutu, in the south of the Serengeti, where the migration herds gather to give birth on the short grass plains. Newborn wildebeest and zebras, and the predators that follow them, make for a busy day.</p>"
+      },
+      {
+        "html": "<p>An early departure for the Ngorongoro Crater, the floor of a volcano that collapsed around two million years ago. Inside the crater walls live lions, elephants, buffalo, hyenas and a small number of black rhinos. Picnic lunch at the hippo pool, then up to the rim and on to your lodge.</p>"
+      },
+      {
+        "title": "Back to Arusha, end of the safari",
+        "html": "<p>A relaxed morning, then the drive back to Arusha, where your driver drops you at your hotel or at the airport. Continuing to Zanzibar or to Kilimanjaro? We connect the trips for you.</p>"
+      }
+    ],
+    "schema": {
+      "name": "5-Day Tanzania Group Safari",
+      "description": "Five-day small-group safari in northern Tanzania with 3 to 6 travellers per vehicle: Tarangire, two days in the Serengeti and the Ngorongoro Crater, departing from Arusha on the first Wednesday of each month.",
+      "price": 1570,
+      "priceNote": "Per person, lowest departure price in the date table, single room included, excluding international flights",
+      "touristType": [
+        "Solo travellers",
+        "Couples",
+        "Groups of friends"
+      ]
+    }
+  },
+  "faq": {
+    "heading": "Questions about this trip",
+    "items": [
+      {
+        "q": "What does this trip cost for 2 people?",
+        "a": "<p>The price is per person and depends on the departure date; the table above shows every date, from $1,570. Two people pay twice the per-person price and each get a single room, so there is no supplement. International flights are not included.</p>"
+      },
+      {
+        "q": "What is included and excluded?",
+        "a": "<p>Included: four nights in a single room, full board during the safari, park fees, the shared 4×4 with an English-speaking guide, game drives, pick-up and drop-off in Arusha and 24/7 support. Not included: international flights (we can book them for you), visas, travel insurance and the hotel nights in Arusha before and after the safari.</p>"
+      },
+      {
+        "q": "When is the best time for this trip?",
+        "a": "<p>The safari runs every month. June to October is dry, with the easiest game viewing; late December to March adds Ndutu and the calving season; April and May are green and quiet. Pick the departure that fits your calendar and we tell you what to expect in that month.</p>"
+      },
+      {
+        "q": "Is this trip suitable for families or honeymooners?",
+        "a": "<p>It is made for solo travellers and couples who are happy to share the vehicle. For families with children or for a honeymoon we recommend a private safari instead, where the vehicle and the pace are yours; our 7-day safari covers the same parks.</p>"
+      },
+      {
+        "q": "Can I change the itinerary?",
+        "a": "<p>The five days are fixed, because the group travels together. What you can change is what comes before and after: extra nights in Arusha, days on Zanzibar, or a Kilimanjaro climb. Want a different route? Ask for a private proposal.</p>"
+      },
+      {
+        "q": "How do I book, and what do I pay when?",
+        "a": "<p>Choose a departure date and request it with the button on this page. Within 24 hours you receive a proposal, free and without obligation. When you confirm, you pay a deposit; the balance is due before departure. The trip is confirmed at the latest 20 days before departure, once three or more travellers have booked.</p>"
+      }
+    ]
+  }
+}

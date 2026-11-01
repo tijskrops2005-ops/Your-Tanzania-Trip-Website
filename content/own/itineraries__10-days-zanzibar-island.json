@@ -1,0 +1,94 @@
+{
+  "title": "10 Days Zanzibar Beach Holiday | Your Tanzania Trip",
+  "description": "Ten days on Zanzibar: a beach hotel in three comfort levels, airport transfers, and reef trips, spice farms or Stone Town added as you like. From $625 p.p.",
+  "h1": "10 Days Zanzibar Island",
+  "replace": [
+    {
+      "selector": "div.ts-prose > h2",
+      "index": 0,
+      "text": "10 Days Zanzibar Island"
+    },
+    {
+      "selector": "div[class*=single-trips-sidebar] > h3",
+      "index": 0,
+      "text": "10 Days Zanzibar Island"
+    }
+  ],
+  "trip": {
+    "heroNote": "*Per person, based on 6 travellers in low season, with breakfast. International flights not included.",
+    "intro": [
+      "<p>Ten days on one island, with nothing you have to do. Zanzibar lies just off the coast of Tanzania: white beaches, warm, shallow water inside the reef, and Stone Town, the old trading town with its carved doors and spice market. You can fly in directly, or add these days to a safari in the north.</p>",
+      "<p>We book your beach hotel in the comfort level you choose, arrange the airport transfers and, if you want, the activities: a boat trip to the reef, a spice farm, a sunset dhow cruise, a day in Stone Town. The rest is yours. Our team at <a href=\"/our-partner/\">Kilimanjaro Nature Tours</a> is a phone call away for the whole stay.</p>"
+    ],
+    "why": {
+      "heading": "Why this trip",
+      "items": [
+        "Enough days to do nothing and still see the island: reef, spice farms and Stone Town fit in without hurry.",
+        "Three comfort levels: from a friendly beach resort to a small luxury hotel on the water.",
+        "Transfers included, so no haggling at the airport.",
+        "Activities booked ahead with people we know, or decided on the spot.",
+        "Easy to combine with a safari or a Kilimanjaro climb; the flight from Arusha is short.",
+        "The free Hakuna Matata Package: travel file, airport transfers and 24/7 support."
+      ]
+    },
+    "priceNote": "* Per person in US dollars for the season and group size shown, with breakfast. International flights, visas and travel insurance are not included.",
+    "cta": {
+      "heading": "Request this trip",
+      "text": "Free and without obligation, with a reply within 24 hours. Tell us your dates, who is travelling and which beach you prefer, and we send you a proposal that fits. We design your trip, you decide.",
+      "button": "Request your free travel proposal"
+    },
+    "days": [
+      {
+        "html": "<p>A driver meets you at Zanzibar airport and takes you to your beach hotel, about an hour away depending on the coast you chose. Check in, drop the bags, and walk to the water before dinner. Karibu Zanzibar.</p>"
+      },
+      {
+        "title": "Beach days on Zanzibar",
+        "html": "<p>Seven days to use as you wish. The east coast has the widest beaches and the tides that uncover the reef at low water; the north has swimming all day and the sunsets. From either side you can add a snorkelling or diving trip, a visit to a spice farm, a sunset dhow cruise, or half a day in Stone Town with its market, museums and rooftop restaurants. We book ahead or you decide on the spot; nothing is compulsory.</p>"
+      },
+      {
+        "title": "Flight home from Zanzibar (ZNZ)",
+        "html": "<p>Depending on your flight time there is a last morning on the beach. A driver takes you to the airport for your flight home. Want to stay longer? Add days on Pemba or Mafia Island, or put a safari in front of the beach, and we adjust the proposal.</p>"
+      }
+    ],
+    "schema": {
+      "name": "10 Days Zanzibar Island",
+      "description": "Ten-day beach holiday on Zanzibar with a hotel in the comfort level of your choice, airport transfers and optional reef trips, spice farm visits and Stone Town tours.",
+      "price": 625,
+      "touristType": [
+        "Couples",
+        "Honeymooners",
+        "Families",
+        "Groups of friends"
+      ]
+    }
+  },
+  "faq": {
+    "heading": "Questions about this trip",
+    "items": [
+      {
+        "q": "What does this trip cost for 2 people?",
+        "a": "<p>For two travellers the price is $664.09 per person in low season (1 April to 19 May), $665.29 in mid season and $692.53 in high season (July to September and 20 December to 10 January), with breakfast. The headline price of $625 is based on the low season rate in the price table. All prices exclude international flights.</p>"
+      },
+      {
+        "q": "What is included and excluded?",
+        "a": "<p>Included: nine nights in the hotel of your comfort level with breakfast, and the airport transfers. Not included: international flights (we can book them for you), visas, travel insurance, lunches and dinners, and the activities you choose to add.</p>"
+      },
+      {
+        "q": "When is the best time for this trip?",
+        "a": "<p>June to October and December to February are the driest and sunniest months on Zanzibar. March and November are in between. April and May are the rainy months, with the lowest hotel rates and showers that often clear by the afternoon.</p>"
+      },
+      {
+        "q": "Is this trip suitable for families or honeymooners?",
+        "a": "<p>Yes, both. For families we pick a resort with a pool, family rooms and a beach that is safe at every tide. For a honeymoon we choose a smaller hotel, add a private dinner on the beach or a sunset cruise. Tell us who is travelling and we adjust the hotel.</p>"
+      },
+      {
+        "q": "Can I change the itinerary?",
+        "a": "<p>Yes. Shorten or lengthen the stay, split it between two coasts, add a night in Stone Town, or put a safari or a Kilimanjaro climb in front of it. We adjust the proposal until it fits, before you book anything.</p>"
+      },
+      {
+        "q": "How do I book, and what do I pay when?",
+        "a": "<p>Request the trip with the button on this page. Within 24 hours you receive a proposal, free and without obligation. When you confirm, you pay a deposit; the balance is due before departure. The exact amounts and dates are on your proposal.</p>"
+      }
+    ]
+  }
+}

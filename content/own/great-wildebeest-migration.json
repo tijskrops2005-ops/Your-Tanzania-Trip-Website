@@ -1,0 +1,83 @@
+{
+  "title": "Great Migration: where and when to go | Your Tanzania Trip",
+  "description": "Where the wildebeest herds are each month, when the Mara and Grumeti crossings happen, where to stay and how far ahead to book. Advice from our team in Arusha.",
+  "h1": "The Great Wildebeest Migration",
+  "replace": [
+    {
+      "selector": "[class*=ts-jumbotron-content] p",
+      "index": 0,
+      "html": "Close to two million wildebeest, zebras and gazelles move around the Serengeti in a loop that never stops, following the rain and the fresh grass. It is the largest movement of land animals on earth, and for many travellers the river crossings in the north are the reason to come to Tanzania. This page tells you where the herds are in each month, and how to plan around them."
+    },
+    {
+      "selector": "div.ts-prose:has(> p:contains(\"tell you\"))",
+      "html": "<p>The migration is on most wish lists, and it is the question we get asked most: where will the herds be on my dates? The honest answer is that nobody knows for certain, because the animals follow the rain. What we can do is tell you where they usually are, month by month, and plan your camps accordingly.</p>\n<p>On this page:</p>\n<ul>\n<li>where the herds are in each month of the year,</li>\n<li>when the river crossings happen,</li>\n<li>where to stay to be close to the action, and</li>\n<li>how to plan a migration safari without disappointment.</li>\n</ul>"
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"Quick facts\"))",
+      "html": "<h2>The migration in numbers</h2>\n<ul>\n<li>Around two million animals take part: mostly wildebeest, with zebras, topi and gazelles in between.</li>\n<li>The herds cover roughly 1,000 kilometres in a full cycle, in a clockwise loop through the Serengeti and into the Masai Mara in Kenya.</li>\n<li>The cycle has no start and no end; by convention it is described from the calving season in the south, around December and January.</li>\n<li>Some 250,000 wildebeest die each year on the way, from predators, drowning and exhaustion. About half a million calves are born in the south every year to replace them.</li>\n<li>The herds are not one mass: they move in groups of hundreds of thousands, spread over a wide front.</li>\n</ul>"
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"Where and when does\"))",
+      "html": "<h2>Where and when does the migration happen?</h2>\n<p>The herds move with the rain. When the short rains start in the south, around November and December, they head for the short-grass plains around Ndutu; when those plains dry out in April, they move north and west again. The timing shifts from year to year with the weather, and in recent years the rains have been less predictable, so the pattern below is a guide, not a timetable.</p>\n<p>What does not change is the geography. Calving happens in the south, the Grumeti crossings in the west, the Mara crossings in the north. If you know the month, you know roughly which part of the Serengeti to stay in, and that is how we plan it: camps in the right area, and a guide from <a href=\"/our-partner/\">Kilimanjaro Nature Tours</a> who hears on the radio each morning where the herds were seen.</p>"
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"MONTH-BY-MONTH\"))",
+      "keepImages": true,
+      "html": "<h2>Month by month</h2>\n<h3>December to April: the south and the calving season</h3>\n<p>From late November or December the herds arrive on the short-grass plains of the southern Serengeti around Ndutu, which also stretch into the Ngorongoro Conservation Area. The grass here is rich in minerals, and the animals stay for months.</p>\n<p>Calving peaks in February: around half a million calves in a few weeks. The predators know it, and this is the best time of year to see lions, cheetahs and hyenas hunting. For many of our guests it beats the river crossings: fewer vehicles, green plains, and action all day.</p>\n<p>In April the plains dry out and the herds start moving north and west in long columns. The rains bring the rutting season, with the bulls fighting for territory.</p>\n<!--IMG-->\n<h3>May to June: west towards the Grumeti</h3>\n<p>In May and June the columns move through the central and western Serengeti, the Western Corridor, towards the Grumeti River. The Grumeti crossings are smaller than the Mara crossings but have the same ingredients: steep banks and large crocodiles. Some herds pass through the Grumeti and Ikorongo reserves on the edge of the park, others cut straight through the middle. June is a good month: the first dry weeks, few vehicles, and the herds on the move.</p>"
+    },
+    {
+      "selector": "div.ts-prose:has(> h3:contains(\"July to September\"))",
+      "keepImages": true,
+      "html": "<h3>July to September: the Mara River</h3>\n<p>From July the herds reach the northern Serengeti and the Mara River, which they cross back and forth into the Masai Mara in Kenya. The crossings are the famous images: thousands of animals bunching on the bank, then plunging into fast water with crocodiles waiting. A crossing can take an hour to build up and ten minutes to happen; patience is part of the day.</p>\n<p>Not every year brings big crossings. In some recent seasons a large part of the herds stayed on the Tanzanian side because the grass in the north was good enough. Our <a href=\"/itineraries/9-days-safari-wildebeest-migration-near-the-mara-river/\">9-day migration safari</a> spends two nights by the river for exactly that reason.</p>\n<!--IMG-->\n<h3>October to December: back south</h3>\n<p>In October and November the herds leave the north and move back south through the Seronera area towards Ndutu. They arrive in time for the short rains and the next calving season, and the loop starts again.</p>"
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"best time to see\")) > h2",
+      "text": "When is the best time to see the migration?"
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"best time to see\")) > p",
+      "index": 0,
+      "html": "There is no single best month; it depends on what you want to see. The crossings in the north are the most dramatic, the calving season in the south has the most predator action, and the months in between have the fewest vehicles. Because the rains have become less regular, we never promise a crossing on a date."
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"best time to see\")) > p",
+      "index": 1,
+      "html": "Roughly, the year falls into five stages:"
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"best time to see\")) > p",
+      "index": 2,
+      "html": "Most travellers who come for the migration choose July to September, for the Mara crossings. That is also high season, with the highest prices and the fullest camps. If you can travel in February or in June, you get the migration with far fewer people around you."
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"best place to see\"))",
+      "keepImages": true,
+      "html": "<h2>Where is the best place to see the migration?</h2>\n<p>Where to stay follows the month. From December to April you want the southern Serengeti and Ndutu: that is where the herds spread out for the calving season, and where the predators concentrate. Many of the camps there are mobile and move with the season.</p>\n<p>For the river crossings you need the northern Serengeti, around Kogatende and the Lamai wedge, or the Masai Mara on the Kenyan side. The camps are further from Arusha, so plan a flight or a long drive.</p>\n<!--IMG-->\n<p>In May and June the Western Corridor along the Grumeti is the place, and in October and November the central Serengeti around Seronera, which has resident lions and leopards all year anyway.</p>\n<p>We have stayed at or visited the camps we list below and on the trip pages. Tell us your dates and we suggest the area first, then the camp.</p>"
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"How do you experience\"))",
+      "keepImages": true,
+      "html": "<h2>How to experience the migration</h2>\n<p>A migration safari is a safari with a plan. The herds are big, but the Serengeti is bigger, and a guide who knows the area and talks to the other guides each morning makes the difference between seeing a column of dust and sitting among the animals. Every safari we plan is private: your own guide and 4×4, so you can wait at a crossing point for as long as it takes.</p>\n<!--IMG-->\n<h2>How to plan a migration safari</h2>\n<p>Now you know where and when. The rest is planning, and a few things need to be fixed early. Below is what we tell every guest who asks about the migration.</p>"
+    },
+    {
+      "selector": "div.ts-prose:has(> h3:contains(\"Book Early\"))",
+      "html": "<h3>Book early</h3>\n<p>The camps near the river and near Ndutu are small and fill up months ahead. For July to September, book a year in advance if you can; six months is the minimum for a good choice of camps. Other months are easier.</p>\n<h3>Choose the month for what you want to see</h3>\n<p>Crossings: July to September. Calving and hunting: February. Few vehicles: May, June, November. If crowds bother you, avoid the busiest weeks around the crossings and choose camps a little away from the main crossing points; we know which ones.</p>\n<h3>Add more than the migration</h3>\n<p>The herds are the headline, not the whole story. The Ngorongoro Crater, Tarangire's elephants and a balloon flight at sunrise over the Serengeti fit easily into the same trip. See our <a href=\"/blog/how-to-plan-your-first-safari/\">guide to planning a first safari</a> for the practical side.</p>"
+    },
+    {
+      "selector": "div.ts-prose:has(> h2:contains(\"WRAPPING UP\"))",
+      "html": "<h2>In short</h2>\n<p>The Great Migration is one of the seven natural wonders of Africa and worth building a trip around. Pick the month for what you want to see, stay in the right part of the Serengeti, book early and travel with a guide who knows where the herds were this morning.</p>\n<p>That guide works for our partner Kilimanjaro Nature Tours in Arusha, and we plan the rest from the Netherlands. Tell us your dates and we tell you honestly what you can expect.</p>\n<p>See you on the plains.</p>"
+    },
+    {
+      "selector": "p[class*=mt-8]:contains(\"Get inspired by these wonderful itineraries\")",
+      "html": "Trips that follow the herds; every one of them can be adjusted to your month."
+    },
+    {
+      "selector": "p[class*=mt-8]:contains(\"Experience the thrill\")",
+      "html": "Camps in the areas the herds pass through, visited by us."
+    },
+    {
+      "selector": "td:contains(\"Masai Mara and Northern Serengeti to Southern\")",
+      "text": "From the Mara back to the southern Serengeti"
+    }
+  ]
+}
