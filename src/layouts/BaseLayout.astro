@@ -1,5 +1,6 @@
 ---
 import fs from 'node:fs';
+import { redesignHeader, redesignFooter, redesignBody, redesignCss } from '../lib/redesign.js';
 import { readPartial, markCurrentMenu } from '../lib/site.js';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/600.css';
@@ -27,6 +28,19 @@ const ogImage = new URL(page.ogImage || '/brand/og-image.jpg', Astro.site).href;
 // Form delivery (public/assets/js/forms.js): endpoint and company e-mail from the brand tokens.
 const tokens = JSON.parse(fs.readFileSync(new URL('../../docs/brand-tokens.json', import.meta.url), 'utf8'));
 // Cache-busting version for the site's own scripts (changes with every build).
+const renderedBody = redesignBody(await Astro.slots.render('default'), page, tokens);
+// The new homepage uses its own concise questions; do not retain obsolete FAQ markup.
+const pageSchemas = page.ldJson.map(json => {
+  if (page.slug !== 'index') return json;
+  const prune = value => {
+    if (Array.isArray(value)) return value.map(prune).filter(Boolean);
+    if (!value || typeof value !== 'object') return value;
+    if ([value['@type']].flat().includes('FAQPage')) return null;
+    return Object.fromEntries(Object.entries(value).map(([key, val]) => [key, prune(val)]));
+  };
+  const result = prune(JSON.parse(json));
+  return result ? JSON.stringify(result) : null;
+}).filter(Boolean);
 const v = Date.now().toString(36);
 // Google Analytics 4 with Google consent mode v2. Before any tag runs, consent defaults to
 // "denied" (cookieless pings only) unless the visitor accepted earlier in the cookie banner
@@ -75,16 +89,17 @@ const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', ema
     <link rel="icon" href="/brand/favicon-16.png" sizes="16x16" type="image/png" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
-    {page.ldJson.map(json => <script type="application/ld+json" set:html={json} />)}
+    {pageSchemas.map(json => <script type="application/ld+json" set:html={json} />)}
     <script is:inline src="/assets/js/static-ajax.js"></script>
     <Fragment set:html={headLinks} />
     <Fragment set:html={page.extraStyles.join('\n')} />
     <Fragment set:html={headScripts} />
+    <style is:inline set:html={redesignCss}></style>
   </head>
   <body class={page.bodyClass}>
-    <Fragment set:html={markCurrentMenu(header, page.path)} />
-    <slot />
-    <Fragment set:html={markCurrentMenu(footer, page.path).replace('<!--STICKY_CTA-->', stickyCta)} />
+    <Fragment set:html={markCurrentMenu(redesignHeader(header), page.path)} />
+    <Fragment set:html={renderedBody} />
+    <Fragment set:html={markCurrentMenu(redesignFooter(footer), page.path).replace('<!--STICKY_CTA-->', stickyCta)} />
     <Fragment set:html={page.extraScripts.join('\n')} />
     {hasFacets && <script is:inline src={`/assets/js/facetwp-static.js?v=${v}`} data-facets={`/facetwp-static/${page.slug}.json`}></script>}
     <script is:inline set:html={`window.YTT_FORMS=${formsConfig};`} />
