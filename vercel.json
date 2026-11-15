@@ -1,4 +1,6 @@
 {
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/api/blog-publish/:path*",
@@ -484,6 +486,1091 @@
     {
       "source": "/app{/}?",
       "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/africa-safari-arusha{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/africa-safari-ikoma{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/africa-safari-maasai-boma{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/africa-safari-south-serengeti-ndutu{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/african-view-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ahadi-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/aluna-paje{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/amani-villa{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/amariah-hotel-city-centre{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/anantya-seasonal-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/andbeyond-grumeti-serengeti-river-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/andbeyond-lake-manyara-tree-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/andbeyond-mnemba-island-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/andbeyond-ngorongoro-crater-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/angata-migration-bologonja-camp-north{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/angata-migration-ndutu-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/angata-ngorongoro-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/angata-tarangire-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/arusha-coffee-lodge-by-elewana{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/arusha-planet-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/arusha-serena-hotel-resort-spa{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/arusha-villa{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/asanja-moru{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/asanja-nyasirori{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/asanja-ruaha{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/bamboo-zanzibar{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/baobab-central-serengeti-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/baobab-mara-luxury-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/baraza-resort-spa{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/basecamp-mafia-island{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/blue-moon-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/bluebay-beach-resort-and-spa{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/bush-rover-migration-camp-kogatende{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/camp-bastian{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/chanya-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/chem-chem-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/dar-es-salaam-serena-hotel{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/elephant-springs-by-karibu-camps-and-lodges{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/entamanu-ngorongoro-camp-by-nomads{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/forest-hill-carnival-hotel{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/four-points-by-sheraton{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/fun-beach{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/fun-retreat-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/fundu-lagoon{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/gibbs-farm{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/giraffe-manor-tanzania{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/gnu-mara-river-camp-by-mawe-lodges{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/gold-zanzibar-beach-house-and-spa{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/golden-safari-camps{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/golden-tulip-dar-city-center{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/golden-tulip-dar-es-salaam-masaki{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/gran-melia-arusha{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/hakuna-majiwe-beach-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/haradali-home-stay{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/hatari-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/hondo-hondo-udzungwa-forest-tented-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ilboru-safari-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/inoga-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/into-wild-africa-tented-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/jongomero-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kahawa-house{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kankari-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/karanga-river-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/karatu-tented-lodge-by-mawe-lodges{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kenzan-central-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kenzan-migration-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kenzan-tented-camp-ndutu{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kidoti-villas-zanzibar{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kigoma-hilltop-hotel{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kijongo-bay-beach-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kili-seasons-hotel{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kili-villa{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kilimanjaro-coffee-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kiriche-luxury-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kisiwa-house{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kisiwa-on-the-beach{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/kwanza-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/lake-duluti-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/lake-eyasi-safari-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/lake-manyara-kilimamoja-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/lake-masek-tented-lodge-by-tanganyika-wilderness-camps{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/lake-natron-camp-ngare-sero{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/lake-natron-halisi-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/legendary-lodge-2{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/legendary-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/legendary-zanzibar-beach-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/lemala-nanyukie-tented-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/little-chem-chem{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/lolkisale-tarangire-camp-by-top-guides{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/luwela-camp-by-lake-duluti-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/lux-marijaniformerly-marijani-zanzibar{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/mafia-kivulini-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/magoroto-forest-estate-eco-tourism-and-camping{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/mambo-view-point-eco-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/mandhari-lodge-by-nasikia-camps{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/manya-luxury-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/manyara-best-view-lodge-spa-upgrade{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/manyara-best-view-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/manyaras-secret{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/marera-valley-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/marera-view-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/matawi-serengeti-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/mawe-mawe-manyara-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/mbali-mbali-gombe-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/mbali-mbali-mahale-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/mbugwe-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/meru-house-lekisilai{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/mila-tented-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/mkomazi-view-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/moja-tuu-luxury-villas-nature-retreat{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/mount-meru-game-lodge-sanctuary{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/naona-moru-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/nasikia-mobile-migration-camp-kogatende{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/nasikia-mobile-migration-camp-small-marsh{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/natural-garden-hotel-zanzibar{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/natural-kendwa-villa{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/natural-park-villa-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ndutu-wilderness-camp-by-tanzania-wilderness-camps{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/next-paradise-boutique-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ngare-sero-mountain-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ngorongoro-coffee-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ngorongoro-kuhama-camp-by-tns-hospitality{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ngorongoro-lions-paw-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ngorongoro-lodge-by-melia{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ngorongoro-serena-safari-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/nimali-central-serengeti{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/nimali-mara{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/nimali-tarangire{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/nyabogati-serengeti-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/oldeani-mountain-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ole-serai-luxury-camp-kogatende{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ole-serai-luxury-camp-moru-kopjes{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ole-serai-luxury-camp-seronera{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ole-serai-luxury-camp-turner-springs{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/one-nature-nyaruswiga-serengeti{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/pamoja-migration-camp-ndutu{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/pazuri-inn-arusha{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/pemba-paradise-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/pole-pole-bungalows{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/pongwe-bay-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/protea-hotel-dar-es-salaam-amani-beach{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/qambani-luxury-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/rhotia-valley-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/rivertrees-country-inn{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/ruaha-river-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/rufiji-explorers-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/rufiji-river-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/saadani-safari-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/salinero-kilimanjaro-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/salinero-serengeti-tented-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/sametu-camp-by-karibu-camps-and-lodges{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/sanctuary-ngorongoro-crater-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/sanctuary-swala{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/sand-rivers-selous{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/sangaiwe-tented-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/sea-cliff-hotel{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/selous-river-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/serena-mivumo-river-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/serene-beach-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/serengeti-explorer-formerly-serengeti-sopa-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/serengeti-four-seasons-safari-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/serengeti-north-wilderness-camp-by-tanzania-wilderness-camps{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/serengeti-pioneer-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/serengeti-river-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/serengeti-sound-of-silence-tented-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/sharazad-boutique-hotel-jambiani{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/sharazad-wonders-boutique-hotel-stone-town{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/shose-chalets{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/signature-serengeti-luxury-tented-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/simba-farm-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/singita-sasakwa-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/siringit-villa{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/southern-sun-dar-es-salaam{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/stanleys-kopje-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/suenos-de-africa-luxury-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/sunshine-bay-zanzibar{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/tarangire-baobab-tented-camp-by-mawe-lodges{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/tarangire-ndovu-tented-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/tarangire-safari-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/tarangire-treetops{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/tarangire-view-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/tembo-villas-karatu{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/the-canopy-migration-camp-ndutu{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/the-kilimanjaro-luxury-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/the-manor-at-ngorongoro{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/the-manta-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/the-maridadi-hotel{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/the-safari-house{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/the-whisper-serengeti{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/toa-hotel-spa{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/tukaone-serengeti-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/tukaone-weavers-serengeti-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/tulia-zanzibar-unique-beach-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/turaco-ngorongoro-valley{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/udzungwa-falls-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/under-the-shade-safari-lodge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/upendo-beach{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/villa-maua{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/vuma-hills-tented-camp{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/white-sands-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/wilderness-collection-craters-edge{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/wildlife-residence{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/zanzibar-bay-resort{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/zanzibar-coffee-house-hotel{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/zanzibar-queen-hotel{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/zanzistar{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodation/zondela-house{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/accommodations{/}?",
+      "destination": "/tanzania-safari/",
+      "statusCode": 301
+    },
+    {
+      "source": "/activity/a-wonderful-relaxing-day-in-arusha{/}?",
+      "destination": "/activities/",
+      "statusCode": 301
+    },
+    {
+      "source": "/activity/arusha-national-park{/}?",
+      "destination": "/national-parks/arusha-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/activity/hike-in-udzungwa-to-the-sanje-waterfalls{/}?",
+      "destination": "/activities/",
+      "statusCode": 301
+    },
+    {
+      "source": "/activity/lake-manyara-national-park{/}?",
+      "destination": "/national-parks/lake-manyara-national-park/",
+      "statusCode": 301
+    },
+    {
+      "source": "/activity/pemba-island{/}?",
+      "destination": "/islands/pemba/",
+      "statusCode": 301
+    },
+    {
+      "source": "/activity/visit-lake-eyasi-and-the-hadzabe-tribe{/}?",
+      "destination": "/activities/",
+      "statusCode": 301
+    },
+    {
+      "source": "/activity/zanzibar{/}?",
+      "destination": "/islands/zanzibar-island/",
+      "statusCode": 301
+    },
+    {
+      "source": "/review-your-opinion-matters{/}?",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tanzania-traveller-reviews{/}?",
+      "destination": "/our-partner/",
       "statusCode": 301
     }
   ]

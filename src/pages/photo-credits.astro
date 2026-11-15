@@ -1,0 +1,30 @@
+---
+// Photo credits: every freely licensed photo the site can show (docs/photo-pool.json).
+import fs from 'node:fs';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pool = JSON.parse(fs.readFileSync(new URL('../../docs/photo-pool.json', import.meta.url), 'utf8'));
+const seen = new Set();
+const photos = Object.values(pool).flat().filter(([id]) => !seen.has(id) && seen.add(id));
+const page = { slug: 'photo-credits', path: '/photo-credits/', title: 'Photo credits | Your Tanzania Trip', description: 'Who took the photos on Your Tanzania Trip, and under which licence we use them.', robots: '', ogType: 'website', bodyClass: 'page', extraScripts: [], extraStyles: [], stickyCta: null, ldJson: [] };
+---
+<BaseLayout page={page}>
+  <main class="ytt-credits-page">
+    <h1>Photo credits</h1>
+    <p>Most photos on this site come from Unsplash and are used under the <a href="https://unsplash.com/license">Unsplash License</a>. Photos of our partner's team and trips come from <a href="https://kilimanjaronaturetours.com">Kilimanjaro Nature Tours</a> and are used with permission. Photos are illustrative: a lodge, vehicle or animal in a photo is not necessarily the one you will see on your trip.</p>
+    <p>Do you see a photo of yours that should not be here? Email <a href="mailto:info@yourtanzaniatrip.com">info@yourtanzaniatrip.com</a> and we will remove it.</p>
+    <ul>
+      {photos.map(([id, slug, , author]) => (
+        <li><a href={`https://unsplash.com/photos/${slug}`} target="_blank" rel="noopener noreferrer"><img src={`https://images.unsplash.com/${id}?auto=format&fit=crop&w=320&h=220&q=60`} alt="" loading="lazy" width="320" height="220" /></a><span>Photo by {author} on Unsplash</span></li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>
+<style is:global>
+.ytt-credits-page{width:min(1240px,calc(100% - 48px));margin:0 auto;padding:64px 0 96px;font:17px/1.65 Inter,Arial,sans-serif;color:#183e35}
+.ytt-credits-page h1{font-size:40px;margin:0 0 20px}
+.ytt-credits-page>p{max-width:70ch;margin:0 0 14px}
+.ytt-credits-page ul{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+.ytt-credits-page li{font-size:13px;color:#52635b}
+.ytt-credits-page img{width:100%;height:auto;aspect-ratio:32/22;object-fit:cover;border-radius:12px;display:block;margin-bottom:8px;background:#dde6db}
+.ytt-credits-page a{color:#183e35}
+</style>

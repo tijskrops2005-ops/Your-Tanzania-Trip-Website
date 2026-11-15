@@ -3,7 +3,11 @@ import path from 'node:path';
 
 const contentDir = path.resolve('content');
 
-export const pages = JSON.parse(await fs.readFile(path.join(contentDir, 'pages.json'), 'utf8'));
+import { isRemoved } from './scope.js';
+
+export const allPages = JSON.parse(await fs.readFile(path.join(contentDir, 'pages.json'), 'utf8'));
+// Only the core set is built (see scope.js).
+export const pages = allPages.filter(p => !isRemoved(p.path));
 
 export const readPageBody = slug => fs.readFile(path.join(contentDir, 'pages', `${slug}.html`), 'utf8');
 

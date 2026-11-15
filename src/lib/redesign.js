@@ -10,7 +10,7 @@ export function redesignHeader(html) {
     .replace(/(<a\b[^>]*href="\/travel-proposal\/"[^>]*>)\s*(Make a Request|Make a request|Travel proposal|Request Travel Proposal)\s*(<\/a>)/g, '$1Plan my Trip$3');
 }
 export function redesignFooter(html) {
-  const credits = `<div class="ytt-credits"><details id="image-credits"><summary>Photography &amp; video credits</summary><p>Homepage elephant photograph: <a href="${photoSource}" target="_blank" rel="noopener noreferrer">Brett Bennett / Pexels</a>, used under the <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels License</a>. Displayed with a responsive crop.</p><p>Homepage destination images, Baraka portrait and safari film: <a href="https://kilimanjaronaturetours.com" target="_blank" rel="noopener noreferrer">Kilimanjaro Nature Tours</a>, used with permission as recorded in this project's asset documentation. Other existing page images retain their existing rights. These credits do not transfer copyright.</p></details></div>`;
+  const credits = `<div class="ytt-credits"><p><strong>About the photos on this site.</strong> Photos come from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>, used under the <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash License</a>, from <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer">Pexels</a> under the <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels License</a>, and from our partner <a href="https://kilimanjaronaturetours.com" target="_blank" rel="noopener noreferrer">Kilimanjaro Nature Tours</a>, used with permission. Most photos are illustrative and do not show the exact lodge, vehicle or guide of your trip. Photographers are credited on our <a href="/photo-credits/" id="image-credits">photo credits page</a>. Do you see a photo of yours that should not be here? Email <a href="mailto:info@yourtanzaniatrip.com">info@yourtanzaniatrip.com</a> and we will remove it.</p></div>`;
   return html.replace(/<img\b[^>]*src="\/brand\/logo-reversed[^\"]*"[^>]*>/g, `<span role="img" aria-label="Your Tanzania Trip">${wordmark}</span>`).replace('</footer>', credits + '</footer>');
 }
 const btn = (label, href, secondary = false) => `<a class="ytt-button${secondary ? ' ytt-button-secondary' : ''}" href="${esc(href)}">${esc(label)}</a>`;
@@ -52,5 +52,73 @@ body:not(.home) .ts-prose h2{line-height:1.25;letter-spacing:-.025em}body:not(.h
 @media(min-width:1280px){.js-header #primary-navigation{gap:24px}.js-header .primary-menu{gap:18px}.js-header .menu-title{font-size:13px!important}}
 @media(max-width:1100px){.ytt-hero-copy{padding:40px 28px}.ytt-hero,.ytt-hero-photo{min-height:510px}.ytt-finder{align-items:start;flex-direction:column;gap:20px}.ytt-team{gap:36px}.ytt-wordmark{font-size:24px}.header-logo-link{min-width:220px!important}}
 @media(max-width:760px){.ytt-width{width:calc(100% - 36px)}.ytt-section{padding-block:52px}.ytt-hero{display:flex;flex-direction:column}.ytt-hero-copy{padding:36px 22px 40px}.ytt-hero-photo{min-height:280px;height:280px}.ytt-hero h1{font-size:40px}.ytt-hero-photo figcaption{font-size:12px}.ytt-finder{padding:24px;margin-top:18px}.ytt-finder-links{display:grid;grid-template-columns:1fr 1fr;width:100%}.ytt-finder-links a{text-align:center;padding:12px 8px;font-size:13px}.ytt-assurance{flex-direction:column;gap:8px;padding-block:22px}.ytt-section-head{align-items:start;flex-direction:column;gap:18px}.ytt-trip-grid{grid-template-columns:1fr;gap:24px}.ytt-trip-image{aspect-ratio:16/10}.ytt-trip-copy{padding:22px}.ytt-steps{grid-template-columns:1fr;gap:28px;margin-top:24px}.ytt-team{grid-template-columns:1fr;gap:30px}.ytt-team-image img{height:360px;object-position:center 30%}.ytt-film{grid-template-columns:1fr;gap:24px}.ytt-questions summary{font-size:16px}.ytt-last{padding:48px 0}.ytt-wordmark{font-size:22px;letter-spacing:-1px}.header-logo-link{min-width:200px!important}.ytt-home .ytt-button{padding:12px 16px;font-size:14px}.ytt-actions{gap:12px}.ytt-credits{padding:24px 20px}}
+/* ===== Site-wide layer: every page shares the homepage design language ===== */
+body:not(.home){background:var(--ytt-ivory)!important;color:var(--ytt-forest)}
+body:not(.home) main, body:not(.home) #content{background:transparent}
+/* Remove the legacy torn-paper edges, photo masks and paper textures */
+.ts-mask-top,.ts-mask-bottom,.mask-img,.btn:hover,.button:hover,.gform-button:hover,.sticky-travel-proposal-btn:hover,.travel-proposal-button:hover{-webkit-mask:none!important;mask:none!important}
+.single-trips-sidebar-mask-y:before,.single-trips-sidebar-mask-y:after,.single-trips-sidebar-mask-x:before,.single-trips-sidebar-mask-x:after,.timeline-item-mask-y:before,.timeline-item-mask-y:after,.timeline-item-mask-x:before,.timeline-item-mask-x:after{display:none!important;background:none!important}
+.ts-items .ts-item-overlay{background-image:none!important;background-color:#183e35d9!important}
+.hamburger-wrapper.menu-open .cover{background-image:none!important;background-color:var(--ytt-forest)!important}
+[style*="page-bg.png"]{background-image:none!important}
+.mask-img img,.mask-img{border-radius:12px;overflow:hidden}
+/* Typography: Inter headings, sentence case, calm tracking */
+body:not(.home) h1,body:not(.home) h2,body:not(.home) h3,body:not(.home) h4,body:not(.home) .font-marcellus,body:not(.home) [class*="font-heading"]{font-family:Inter,Arial,sans-serif!important;font-weight:600!important;letter-spacing:-.03em!important;text-transform:none!important}
+body:not(.home) h1{line-height:1.1!important}
+body:not(.home) .uppercase:not(.sr-only){text-transform:none!important;letter-spacing:0!important}
+body:not(.home) .tracking-wider,body:not(.home) .tracking-widest{letter-spacing:0!important}
+body:not(.home) .font-black{font-weight:700!important}
+/* Palette mapping: legacy orange/sand/red become forest, gold and sage */
+body:not(.home) .bg-yellow{background-color:var(--ytt-gold)!important;color:var(--ytt-forest)!important}
+body:not(.home) .text-yellow{color:#a8741f!important}
+body:not(.home) .bg-sand{background-color:#fff!important;border:1px solid #183e3518;border-radius:12px}
+body:not(.home) .bg-green,body:not(.home) .bg-anthracite{background-color:var(--ytt-forest)!important}
+body:not(.home) .text-red{color:var(--ytt-forest)!important}
+body:not(.home) .border-yellow{border-color:var(--ytt-gold)!important}
+/* Buttons: one shape everywhere */
+body:not(.home) .btn,body:not(.home) .button,body:not(.home) .gform_button,body:not(.home) .gform-button,body:not(.home) input[type=submit]{border-radius:8px!important;text-transform:none!important;letter-spacing:0!important;font-weight:600!important;background:var(--ytt-forest)!important;border-color:var(--ytt-forest)!important;color:#fff!important;padding:14px 24px!important;font-size:15px!important;line-height:1.4!important}
+body:not(.home) .btn:hover,body:not(.home) .button:hover,body:not(.home) .gform_button:hover{background:#285448!important;border-color:#285448!important}
+body:not(.home) .btn-small{padding:10px 16px!important;font-size:14px!important}
+.sticky-travel-proposal-btn{border-radius:8px!important;background:var(--ytt-gold)!important;color:var(--ytt-forest)!important;text-transform:none!important;letter-spacing:0!important}
+/* Hero banners: calm forest overlay instead of black gradient */
+body:not(.home) .custom-bg-gradient-black{background:linear-gradient(180deg,#183e3533,#183e35cc)!important}
+/* Cards, tabs and panels */
+body:not(.home) .rounded-full:not(img):not(.trip-pill-img){border-radius:8px!important}
+body:not(.home) img.object-cover:not(.rounded-full){border-radius:12px}
+body:not(.home) header img,body:not(.home) footer img{border-radius:0}
+body:not(.home) input:not([type=checkbox]):not([type=radio]),body:not(.home) select,body:not(.home) textarea{border:1px solid var(--ytt-border)!important;border-radius:8px!important;background:#fff!important}
+body:not(.home) .ts-prose a,body:not(.home) article a:not(.btn){color:var(--ytt-forest);text-decoration:underline;text-underline-offset:4px}
+body:not(.home) details summary{font-weight:600}
+[class*="ts-mask"]{-webkit-mask:none!important;mask:none!important}
+body:not(.home) p,body:not(.home) li,body:not(.home) td{letter-spacing:0!important}
+body:not(.home) .bg-orange,body:not(.home) [class*="md:bg-orange"]{background-color:var(--ytt-gold)!important;color:var(--ytt-forest)!important}
+body:not(.home) .bg-red,body:not(.home) .call-to-action{background-color:var(--ytt-forest)!important;color:#fff!important;border-radius:12px}
+body:not(.home) .bg-red .btn,body:not(.home) .call-to-action .btn{background:var(--ytt-gold)!important;border-color:var(--ytt-gold)!important;color:var(--ytt-forest)!important}
+.trip-pill,.timeline-pointer,.f-progress,.quiz-image-panel{background-color:var(--ytt-sage)!important}
+.f-carousel__dot{background-color:var(--ytt-border)!important}.f-carousel__dot[aria-current],.f-carousel__dot.is-selected{background-color:var(--ytt-forest)!important}
+.quiz-start-btn,.ytt-consent__btn--accept{background-color:var(--ytt-forest)!important;border-color:var(--ytt-forest)!important;border-radius:8px!important;text-transform:none!important;letter-spacing:0!important}
+.currency-symbol{color:inherit!important;opacity:.8}
+body:not(.home) a:not(.btn):not(.button){color:inherit}
+body:not(.home) .ts-prose a,body:not(.home) main p a{color:var(--ytt-forest)!important;text-decoration:underline;text-underline-offset:4px}
+body:not(.home) a.btn,body:not(.home) a.button,body:not(.home) main p a.btn{color:#fff!important;text-decoration:none!important}
+body:not(.home) .bg-green a.btn,body:not(.home) .bg-red a.btn,body:not(.home) [class*="bg-mountain"] a.btn{background:var(--ytt-gold)!important;border-color:var(--ytt-gold)!important;color:var(--ytt-forest)!important}
+img[src*="page-bg.png"],.timeline-line{display:none!important}
+body:not(.home) .bg-green .gform_button,body:not(.home) .bg-green input[type=submit],body:not(.home) .bg-green button[type=submit],body:not(.home) .bg-anthracite .gform_button{background:var(--ytt-gold)!important;border-color:var(--ytt-gold)!important;color:var(--ytt-forest)!important}
+body:not(.home) :is(p,li) a:not(.btn):not(.button):not(header a):not(footer a):not(nav a):not(#ts-footer a){color:inherit!important;text-decoration:underline;text-underline-offset:4px}
+.mask-from-price{background:var(--ytt-forest)!important;border-radius:0 12px 0 12px;padding:10px 16px!important;text-transform:none!important;letter-spacing:0!important}
+body:not(.home) .usp-row-title,body:not(.home) .cta-subtitle,body:not(.home) .gsection_title,body:not(.home) .travel-proposal-form-intro{text-transform:none!important;letter-spacing:0!important}
+body:not(.home) .travel-proposal-form-title{color:#fff!important;font-family:Inter,Arial,sans-serif!important;font-weight:600!important;letter-spacing:-.03em!important}
+body:not(.home) .gfield_required,body:not(.home) .range-value-container,body:not(.home) small{color:var(--ytt-gold)!important}
+.quantity-button{background-color:var(--ytt-gold)!important;border-radius:8px!important}
+.facetwp-page.next,.facetwp-page.prev{background-color:var(--ytt-sage)!important;border-radius:8px}
+.currency-symbol.ts-currency-usd,.menu-toggle--icon-down{background-color:transparent}
+.ytt-consent__btn{text-transform:none!important;letter-spacing:0!important;border-radius:8px!important}
+#ts-footer .text-green,#ts-footer .text-anthracite,#ts-footer .text-red,#ts-footer .text-brown,#ts-footer h2,#ts-footer h3,#ts-footer h4,#ts-footer p{color:#fff!important}
+#ts-footer img[src*="hakuna-matata"],#ts-footer a:has(img[src*="hakuna-matata"]){display:none!important}
+body:not(.home) .btn-yellow,body:not(.home) .ts-jumbotron-pre-form .btn{background:var(--ytt-gold)!important;border-color:var(--ytt-gold)!important;color:var(--ytt-forest)!important}
+#ts-footer .wp-block-heading,#ts-footer strong,#ts-footer .gform_wrapper,#ts-footer .gform_wrapper *:not(input):not(button){color:#fff!important}
+/* Photo notice in the footer */
+.ytt-photo-note{max-width:1240px;margin:0 auto;padding:0 24px 28px;color:#d4e0d5;font:13px/1.6 Inter,Arial,sans-serif}
+.ytt-photo-note a{color:#fff!important;text-decoration:underline}
 @media(prefers-reduced-motion:reduce){.ytt-home *, .ytt-home *:before{transition:none!important;scroll-behavior:auto!important}}
 `;
