@@ -4,8 +4,8 @@ Status: 2026-10-27. Everything the site needs is filled in; there are no placeho
 
 ## Three things only you can do
 
-- [ ] **Activate the form delivery (one click).** The forms (travel proposal, contact, newsletter, quiz) send to tijskrops2005@gmail.com through FormSubmit. The first submission on the live site triggers a one-time e-mail from FormSubmit ("Confirm your e-mail") to that address; click the button in it once. Until then the visitor's own e-mail app opens with the request as fallback, so nothing is lost.
-- [ ] **Switch to info@yourtanzaniatrip.com** once that mailbox exists: change `company.email` and `forms.endpoint` (`https://formsubmit.co/ajax/info@yourtanzaniatrip.com`) in `docs/brand-tokens.json`, run `npm run rebrand && npx astro build`, push, and confirm the new FormSubmit activation e-mail.
+- [ ] **Activate the form delivery (one click).** The forms (travel proposal, contact, newsletter, quiz) send to bookings@yourtanzaniatrip.com through FormSubmit (since 2026-11-16). The first submission on the live site triggers a one-time e-mail from FormSubmit ("Confirm your e-mail") to that address; click the button in it once. Until then the visitor's own e-mail app opens with the request as fallback, so nothing is lost.
+- [ ] **Make sure bookings@yourtanzaniatrip.com receives mail** (mailbox or forwarding at your domain host). The first form submission after the push sends a FormSubmit activation e-mail there; click it once.
 - [ ] **www or not (Vercel, one click).** Vercel serves `www.yourtanzaniatrip.com` as the main address while the pages declare `https://yourtanzaniatrip.com` as canonical. In Vercel → Domains → Edit `www.yourtanzaniatrip.com` → redirect to `yourtanzaniatrip.com` (308). Or say so and I switch the canonical to www instead.
 
 ## Keep up to date (every few months)
@@ -19,7 +19,20 @@ Status: 2026-10-27. Everything the site needs is filled in; there are no placeho
 - Partner: Kilimanjaro Nature Tours, Arusha, Baraka Dalali. Tripadvisor 5.0 (208 reviews, Travellers' Choice 2023 and 2024, checked 27 October 2026), Google profile link, three Google review quotes, badges (TATO, TANAPA, TTB), crew and founder story, one YouTube clip from their channel. Material from kilimanjaronaturetours.com (your own production).
 - Removed from the old site: founders, staff posts, awards, SGR/ANVR/Travelife/KRTO claims, sister company, Facebook/SafariBookings links of the old operator.
 - Photos and videos: every hero image on the site was checked. Photos showing the old logo on jeeps, or the old team, were replaced in place by logo-free photos (`scripts/clean-photos.py`, originals in `.cache/photos-original/`). The six hero videos of the old operator were replaced by our own 20-second slow-pan loop made from the partner's photos (`public/brand/video/safari-loop.mp4`). The Kilimanjaro Nature Tours YouTube clip is embedded on `/our-partner/`. If you ever shoot your own footage, drop the file in `public/brand/video/` and tell me.
-- Kept as products: Hakuna Matata Package / Academy.
+- Kept as product: Hakuna Matata Package. (The Academy page was removed on 2026-11-16: it is the previous operator's project.)
+
+## Done on 2026-11-16 (site audit + planner)
+
+- **Plan my Trip on the homepage:** a four-step planner in the hero (what, how long, when, who). It passes the answers to `/travel-proposal/`, which fills them in (`public/assets/js/planner.js`). Bottom-of-page buttons and every new blog post link to it.
+- **Honesty fixes:** the Hakuna Matata Academy page and menu item are gone (301 to Responsible Travel), because the academy belongs to the previous operator. Tree planting, street-kids training, the dispensary donation, "our own office in Tanzania", "nearly ten years of experience", "best price guarantee", "proposal within 24 hours", our "international team", "our guides", "we inspect every lodge" and "read our reviews" were rewritten to what is true now (`src/lib/fixes.js`). FAQ schema follows the same answers.
+- **Errors fixed:** the wrong office address (Soctratesstraat) and "Rabobank" in the payment FAQ (the account is at Knab); the dead "Our Experts" link on all 800 pages; 14 other dead links; 15 pages with zero or two H1s; 250+ missing or duplicate titles and descriptions on itinerary tabs; invisible text (top bar, newsletter heading, price tables, form links); the old orange and copper colours in the forms, sliders and checkboxes; the `[INVULLEN: e-mail]` placeholder in the footer of every page; off-topic stock photos (zoo animals, desert tents, leopard print, Madagascar baobabs) taken out of the photo pool.
+- **Checks you can rerun:** `node scripts/audit-site.mjs` (links, images, markers, titles) and `node scripts/contrast-probe.mjs 1440 /path/` (unreadable text) after `npm run build` and `node serve.mjs`.
+
+## Still open (needs you)
+
+- [ ] **About us:** start year, a photo and 2–3 sentences about Tijs (`[INVULLEN]` markers on `/about-us/`).
+- [ ] **Blog depth:** 243 of the 250 new posts are under 300 words (average 159). Google can treat that as thin content. Ask me to expand them in batches (around 500–800 words each, with facts and internal links).
+- [ ] **Reply time:** we removed "within 24 hours". If you can promise a reply time, tell me and it goes back in everywhere.
 
 ## Done on 2026-10-28
 

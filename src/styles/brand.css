@@ -5,14 +5,14 @@
  * Loaded last (Astro bundle), so it wins at equal specificity.
  */
 :root {
-  --c-forest: #20281b;
-  --c-copper: #a83800;
-  --c-copper-dark: #8c2f00;
-  --c-gold: #e69016;
-  --c-amber: #fcab2a;
+  --c-forest: #183e35;
+  --c-copper: #183e35; /* 2026-11-15 redesign: links and buttons in forest */
+  --c-copper-dark: #285448;
+  --c-gold: #d5a34d;
+  --c-amber: #e4b763;
   --c-mountain: #355248;
-  --c-sand: #dcc496;
-  --c-ivory: #faf6ec;
+  --c-sand: #c9d2c8;
+  --c-ivory: #f7f4ec;
   --c-white: #ffffff;
   --font-heading: "Marcellus", Georgia, serif;
   --font-body: "Inter", Arial, sans-serif;
@@ -513,7 +513,7 @@ body {
 .gfield_error select,
 .gfield_error textarea {
   border-color: var(--c-copper) !important;
-  box-shadow: 0 0 0 2px rgba(168, 56, 0, 0.35) !important;
+  box-shadow: 0 0 0 2px rgba(213, 163, 77, 0.45) !important;
 }
 
 /* Cookie consent banner (public/assets/js/cookie-consent.js) */

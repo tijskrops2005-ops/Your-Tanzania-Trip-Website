@@ -11,10 +11,11 @@ const page = { slug: 'photo-credits', path: '/photo-credits/', title: 'Photo cre
   <main class="ytt-credits-page">
     <h1>Photo credits</h1>
     <p>Most photos on this site come from Unsplash and are used under the <a href="https://unsplash.com/license">Unsplash License</a>. Photos of our partner's team and trips come from <a href="https://kilimanjaronaturetours.com">Kilimanjaro Nature Tours</a> and are used with permission. Photos are illustrative: a lodge, vehicle or animal in a photo is not necessarily the one you will see on your trip.</p>
+    <p>The elephants at the top of our homepage are a <a href="https://www.pexels.com/photo/elephants-on-savanna-20095107/">photo from Pexels</a>, used under the <a href="https://www.pexels.com/license/">Pexels License</a>. The safari film on the homepage is made from photos by Kilimanjaro Nature Tours.</p>
     <p>Do you see a photo of yours that should not be here? Email <a href="mailto:info@yourtanzaniatrip.com">info@yourtanzaniatrip.com</a> and we will remove it.</p>
     <ul>
-      {photos.map(([id, slug, , author]) => (
-        <li><a href={`https://unsplash.com/photos/${slug}`} target="_blank" rel="noopener noreferrer"><img src={`https://images.unsplash.com/${id}?auto=format&fit=crop&w=320&h=220&q=60`} alt="" loading="lazy" width="320" height="220" /></a><span>Photo by {author} on Unsplash</span></li>
+      {photos.map(([id, slug, desc, author]) => (
+        <li><a href={`https://unsplash.com/photos/${slug}`} target="_blank" rel="noopener noreferrer" aria-label={`${desc} — photo by ${author} on Unsplash (opens in a new tab)`}><img src={`https://images.unsplash.com/${id}?auto=format&fit=crop&w=320&h=220&q=60`} alt={desc} loading="lazy" width="320" height="220" /></a><span>Photo by {author} on Unsplash</span></li>
       ))}
     </ul>
   </main>

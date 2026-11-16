@@ -315,7 +315,7 @@
     "address": "Sluitgatweg 10, 8308 RE Nagele, Netherlands",
     "kvk": "97223344",
     "vat": "NL005256557B94",
-    "email": "tijskrops2005@gmail.com",
+    "email": "bookings@yourtanzaniatrip.com",
     "phone": "+31 6 29351377",
     "whatsapp": "+31 6 29351377",
     "tagline": "Your trip, planned with care",
@@ -327,7 +327,7 @@
     "protection": "none",
     "legalName": "Tijs Krops",
     "cofounder": "Edrian Waterman",
-    "emailNote": "Temporary: switches to info@yourtanzaniatrip.com once that mailbox exists (change here and run npm run rebrand).",
+    "emailNote": "bookings@yourtanzaniatrip.com since 2026-11-16. Generated content still holds the old address; src/lib/fixes.js swaps it at build time.",
     "iban": "NL74 KNAB 0776 8630 37",
     "bic": "KNABNL2H",
     "bank": "Knab",
@@ -423,7 +423,7 @@
   ],
   "forms": {
     "_note": "Form delivery for the static site (public/assets/js/forms.js). FormSubmit sends every submission to the company e-mail; the first submission triggers a one-time activation e-mail that must be confirmed.",
-    "endpoint": "https://formsubmit.co/ajax/tijskrops2005@gmail.com"
+    "endpoint": "https://formsubmit.co/ajax/bookings@yourtanzaniatrip.com"
   },
   "story": {
     "en": "Your Tanzania Trip started with an internship. Tijs Krops and Edrian Waterman, two students from the Netherlands, spent their internship in Arusha with Baraka Dalali and his crew at Kilimanjaro Nature Tours. They helped Baraka with marketing and with setting up his company for international guests, climbed with his guides and drove along on safari. When it was time to go home, none of us wanted to stop working together. So we set up this partnership: Your Tanzania Trip plans and books your trip from the Netherlands, and Baraka and his crew run it in Tanzania. It works because both sides do what they are best at."

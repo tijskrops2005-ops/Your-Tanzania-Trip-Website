@@ -15,6 +15,33 @@ export function redesignFooter(html) {
 }
 const btn = (label, href, secondary = false) => `<a class="ytt-button${secondary ? ' ytt-button-secondary' : ''}" href="${esc(href)}">${esc(label)}</a>`;
 const image = (file, alt) => `<img src="/brand/partner/${file}" alt="${esc(alt)}" loading="lazy" decoding="async" width="1280" height="800">`;
+
+const months = () => {
+  const out = []; const d = new Date(); d.setDate(1);
+  for (let i = 1; i <= 18; i++) {
+    const m = new Date(d.getFullYear(), d.getMonth() + i, 1);
+    out.push([`${m.getFullYear()}-${String(m.getMonth() + 1).padStart(2, '0')}`, m.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })]);
+  }
+  return out;
+};
+const chip = (type, name, value, label, extra = '') => `<label class="ytt-chip"><input type="${type}" name="${name}" value="${esc(value)}"${extra}><span>${label}</span></label>`;
+function plannerForm(whatsapp) {
+  const what = [['safari', 'Safari'], ['climbing', 'Climb Kilimanjaro'], ['beach', 'Zanzibar beach'], ['migration', 'Great Migration'], ['unsure', 'Help me choose']];
+  const days = [['7', 'Up to 7 days'], ['10', '8 to 10 days'], ['14', '11 to 14 days'], ['18', '15 days or more'], ['', 'Not sure yet']];
+  const group = [['couple', 'Couple'], ['honeymoon', 'Honeymoon'], ['family', 'Family'], ['friends', 'Friends'], ['solo', 'Solo'], ['other', 'Other']];
+  const stepper = (name, label, val, min) => `<div class="ytt-count"><span id="ytt-${name}-l">${label}</span><div class="ytt-stepper"><button type="button" value="-" aria-label="Fewer ${label.toLowerCase()}">−</button><input type="number" name="${name}" value="${val}" min="${min}" max="20" inputmode="numeric" aria-labelledby="ytt-${name}-l"><button type="button" value="+" aria-label="More ${label.toLowerCase()}">+</button></div></div>`;
+  return `<form id="ytt-planner" class="ytt-planner" action="${planner}" method="get" novalidate aria-label="Plan my Trip">
+  <div class="ytt-planner-head"><strong>Plan my Trip</strong><span class="ytt-planner-count" aria-live="polite">4 quick questions</span></div>
+  <div class="ytt-planner-bar" aria-hidden="true"><span></span></div>
+  <fieldset class="ytt-step"><legend>What would you like to do?</legend><div class="ytt-chips">${what.map(([v, l]) => chip('checkbox', 'what', v, l)).join('')}</div></fieldset>
+  <fieldset class="ytt-step" data-auto><legend>How long would you like to travel?</legend><div class="ytt-chips">${days.map(([v, l]) => chip('radio', 'days', v, l)).join('')}</div></fieldset>
+  <fieldset class="ytt-step"><legend>When would you like to go?</legend><label class="ytt-select"><span class="ytt-sr">Month of travel</span><select name="when"><option value="">Not sure yet</option>${months().map(([v, l]) => `<option value="${v}">${l}</option>`).join('')}</select></label><p class="ytt-hint">Dates can stay flexible. We advise on the best time for what you want to see.</p></fieldset>
+  <fieldset class="ytt-step"><legend>Who is travelling?</legend><div class="ytt-chips">${group.map(([v, l]) => chip('radio', 'group', v, l)).join('')}</div><div class="ytt-counts">${stepper('adults', 'Adults', 2, 1)}${stepper('children', 'Children', 0, 0)}</div></fieldset>
+  <p class="ytt-planner-error" role="alert"></p>
+  <div class="ytt-planner-nav"><button type="button" class="ytt-planner-back" hidden>Back</button><button type="button" class="ytt-planner-next" hidden>Next</button><button type="submit" class="ytt-planner-submit">Continue to my proposal</button></div>
+  <p class="ytt-planner-foot">Free and without obligation. Rather talk first? <a href="${esc(whatsapp)}">WhatsApp us</a>.</p>
+</form>`;
+}
 export function redesignBody(html, page, tokens) {
   if (page.slug !== 'index') return html;
   const whatsapp = `https://wa.me/${String(tokens.company.whatsapp || tokens.company.phone).replace(/\D/g,'')}`;
@@ -25,17 +52,18 @@ export function redesignBody(html, page, tokens) {
   ];
   return `<main id="ytt-main" class="ytt-home">
 <section class="ytt-hero" aria-labelledby="ytt-hero-title">
- <div class="ytt-hero-copy"><p class="ytt-intro">Safari. Summit. Sea.</p><h1 id="ytt-hero-title">Your Tanzania trip.<br>Planned around you.</h1><p>Tell us what you love. We bring together your safari, mountain adventure and island escape, with personal planning and a local team in Arusha.</p><div class="ytt-actions">${btn('Plan my Trip',planner)}${btn('Talk on WhatsApp',whatsapp,true)}</div><p class="ytt-note">A personal proposal. Free and without obligation.</p></div>
+ <div class="ytt-hero-copy"><p class="ytt-intro">Safari. Summit. Sea.</p><h1 id="ytt-hero-title">Your Tanzania trip.<br>Planned around you.</h1><p>Answer four quick questions. We turn them into a personal trip proposal, planned from the Netherlands and run on the ground by our partner in Arusha.</p>
+ ${plannerForm(whatsapp)}
+ </div>
  <figure class="ytt-hero-photo" style="background-image:url('/brand/partner/safari-lions.webp')"><img src="${elephantPhoto}" alt="Elephants walking through the savanna in Serengeti, Tanzania" width="1600" height="1100" fetchpriority="high" decoding="async"><figcaption>More time for the moments that matter.</figcaption></figure>
 </section>
-<section class="ytt-finder ytt-width" aria-label="Start planning your trip"><div><h2>Where would you like to begin?</h2><p>You don’t need to have it all figured out.</p></div><div class="ytt-finder-links"><a href="/tanzania-safari/">Safari</a><a href="/itineraries/11-days-safari-trip-tanzania-zanzibar/">Safari &amp; Zanzibar</a><a href="/climbing-kilimanjaro/">Kilimanjaro</a><a href="${planner}">Help me choose</a></div></section>
-<div class="ytt-assurance ytt-width"><span>Made around your wishes</span><span>Personal contact in the Netherlands</span><span>Local partner in Arusha</span></div>
+<div class="ytt-assurance ytt-width"><span>Free and without obligation</span><span>Personal contact in the Netherlands</span><span>Local partner in Arusha</span></div>
 <section class="ytt-section ytt-width" aria-labelledby="ytt-trips"><div class="ytt-section-head"><div><h2 id="ytt-trips">A starting point for your adventure</h2><p>Explore a route you like. We’ll make it yours.</p></div><a class="ytt-text-link" href="/tanzania-travel/">Explore all trips</a></div><div class="ytt-trip-grid">${trips.map(([days,title,desc,file,alt,href])=>`<article class="ytt-trip"><a class="ytt-trip-image" href="${href}" tabindex="-1" aria-hidden="true">${image(file,alt)}<span>${days}</span></a><div class="ytt-trip-copy"><h3><a href="${href}">${title}</a></h3><p>${desc}</p><a class="ytt-text-link" href="${href}">View itinerary &amp; prices</a></div></article>`).join('')}</div></section>
-<section class="ytt-how"><div class="ytt-width ytt-section"><div class="ytt-section-head"><div><h2>Your ideas. Our local knowledge.</h2><p>From your first message to the day you arrive.</p></div>${btn('Plan my Trip',planner)}</div><ol class="ytt-steps"><li><span>1</span><div><h3>Tell us your wishes</h3><p>Your dates, your travel style, the things you don’t want to miss. An idea is enough to start.</p></div></li><li><span>2</span><div><h3>Shape your trip together</h3><p>We put together the route, places to stay and a clear quote. We adjust it with you before you decide.</p></div></li><li><span>3</span><div><h3>Travel with people who know</h3><p>Our partner Kilimanjaro Nature Tours organises the guides, transfers and arrangements in Tanzania.</p></div></li></ol></div></section>
+<section class="ytt-how"><div class="ytt-width ytt-section"><div class="ytt-section-head"><div><h2>Your ideas. Our local knowledge.</h2><p>From your first message to the day you arrive.</p></div>${btn('Plan my Trip','#ytt-planner')}</div><ol class="ytt-steps"><li><span>1</span><div><h3>Tell us your wishes</h3><p>Your dates, your travel style, the things you don’t want to miss. An idea is enough to start.</p></div></li><li><span>2</span><div><h3>Shape your trip together</h3><p>We put together the route, places to stay and a clear quote. We adjust it with you before you decide.</p></div></li><li><span>3</span><div><h3>Travel with people who know</h3><p>Our partner Kilimanjaro Nature Tours organises the guides, transfers and arrangements in Tanzania.</p></div></li></ol></div></section>
 <section class="ytt-section ytt-width ytt-team"><div class="ytt-team-image">${image('baraka-dalali.webp','Baraka Dalali, founder of Kilimanjaro Nature Tours')}<p>Baraka Dalali · Our local partner in Arusha</p></div><div><h2>Real people.<br>On both sides of your journey.</h2><p>We’re Tijs and Edrian. An internship in Arusha brought us together with Baraka and his team. That partnership became Your Tanzania Trip.</p><p>We plan and book your trip from the Netherlands. Kilimanjaro Nature Tours takes care of the journey on the ground. You know who you’re travelling with, and who to contact.</p><div class="ytt-actions">${btn('Meet our team','/about-us/',true)}<a class="ytt-text-link" href="/our-partner/">Meet our local partner</a></div><div class="ytt-review"><h3>Read about the team on the ground</h3><p>See travellers’ experiences with Kilimanjaro Nature Tours, our local partner. These are reviews of their service, not reviews of Your Tanzania Trip.</p><a class="ytt-text-link" href="${esc(tokens.partner.tripadvisor.url)}" target="_blank" rel="noopener noreferrer">Read partner reviews on Tripadvisor</a></div></div></section>
 <section class="ytt-width ytt-film"><div><h2>A glimpse of Tanzania</h2><p>Take a moment to explore the landscape before we plan your route.</p><a class="ytt-text-link" href="#image-credits">Photography &amp; video credits</a></div><video controls playsinline preload="none" poster="/brand/video/safari-loop-poster.jpg" aria-label="Safari landscape film from Kilimanjaro Nature Tours"><source src="/brand/video/safari-loop.mp4" type="video/mp4">Your browser does not support this video. <a href="/brand/video/safari-loop.mp4">Download the safari film</a>.</video></section>
 <section class="ytt-section ytt-width ytt-questions"><h2>Before you start planning</h2><details><summary>Do I need to choose a complete itinerary?</summary><p>No. Choose a trip as a starting point, or tell us what interests you. We can combine safari, Kilimanjaro and Zanzibar around your dates and preferences.</p></details><details><summary>Who will organise my trip?</summary><p>Your Tanzania Trip plans and books your trip with you from the Netherlands. Kilimanjaro Nature Tours provides the local guides, drivers, vehicles and arrangements in Tanzania. <a href="/our-partner/">Learn about our partnership</a>.</p></details><details><summary>Where can I see prices and what is included?</summary><p>Each trip page has its itinerary and pricing information. Your personal proposal confirms your dates, accommodation, inclusions and price. <a href="/tanzania-travel/">Explore the trips</a>.</p></details><details><summary>Can I talk to someone first?</summary><p>Of course. <a href="${esc(whatsapp)}">Send us a WhatsApp message</a> or visit our <a href="/contact/">contact page</a>. You can start with a question, without choosing a trip.</p></details><a class="ytt-text-link" href="/faqs/">More practical questions</a></section>
-<section class="ytt-last"><div class="ytt-width"><h2>Let’s make it your Tanzania trip.</h2><p>Share your ideas. We’ll help with the details.</p><div class="ytt-actions">${btn('Plan my Trip',planner)}${btn('Talk on WhatsApp',whatsapp,true)}</div></div></section>
+<section class="ytt-last"><div class="ytt-width"><h2>Let’s make it your Tanzania trip.</h2><p>Share your ideas. We’ll help with the details.</p><div class="ytt-actions">${btn('Plan my Trip','#ytt-planner')}${btn('Talk on WhatsApp',whatsapp,true)}</div></div></section>
 </main>`;
 }
 export const redesignCss = `
@@ -120,5 +148,52 @@ body:not(.home) .btn-yellow,body:not(.home) .ts-jumbotron-pre-form .btn{backgrou
 /* Photo notice in the footer */
 .ytt-photo-note{max-width:1240px;margin:0 auto;padding:0 24px 28px;color:#d4e0d5;font:13px/1.6 Inter,Arial,sans-serif}
 .ytt-photo-note a{color:#fff!important;text-decoration:underline}
+
+/* ===== Homepage trip planner (2026-11-16) ===== */
+.ytt-hero{min-height:640px}.ytt-hero-copy{padding-block:44px 56px}.ytt-hero h1{font-size:clamp(36px,3.3vw,50px)}.ytt-intro{margin-bottom:14px!important}.ytt-hero-copy>p:not(.ytt-intro){max-width:44ch}
+.ytt-planner{margin-top:28px;background:#fff;color:var(--ytt-forest);border-radius:12px;padding:22px 24px 18px;box-shadow:0 1px 0 #0000000d,0 24px 48px -28px #0b1f1a99;max-width:560px}
+.ytt-planner-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px}.ytt-planner-head strong{font-size:18px;letter-spacing:-.02em}.ytt-planner-count{font-size:13px;color:var(--ytt-muted)}
+.ytt-planner-bar{height:3px;background:var(--ytt-sage);border-radius:3px;margin:12px 0 18px;overflow:hidden}.ytt-planner-bar span{display:block;height:100%;background:var(--ytt-gold);transform-origin:left;transform:scaleX(.25);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.ytt-planner fieldset{border:0;margin:0;padding:0;min-width:0}.ytt-planner fieldset+fieldset{margin-top:18px}.ytt-planner.is-stepped fieldset+fieldset{margin-top:0}
+.ytt-planner legend{font-weight:600;font-size:16px;margin-bottom:12px;padding:0}.ytt-planner legend:focus{outline:none}
+.ytt-chips{display:flex;flex-wrap:wrap;gap:8px}.ytt-chip{position:relative;cursor:pointer}.ytt-chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.ytt-chip span{display:inline-flex;align-items:center;min-height:42px;padding:9px 15px;border:1px solid var(--ytt-border);border-radius:8px;font-size:14px;font-weight:600;background:#fff;transition:background-color .15s,border-color .15s}
+.ytt-chip:hover span{border-color:var(--ytt-forest);background:var(--ytt-ivory)}.ytt-chip input:checked+span{background:var(--ytt-forest);border-color:var(--ytt-forest);color:#fff}.ytt-chip input:checked+span:before{content:'✓';margin-right:8px;color:var(--ytt-gold)}
+.ytt-chip input:focus-visible+span{outline:2px solid var(--ytt-gold);outline-offset:2px}
+.ytt-select select{width:100%;min-height:46px;border:1px solid var(--ytt-border);border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;color:var(--ytt-forest);background:#fff}
+.ytt-hint{font-size:13px!important;color:var(--ytt-muted);margin-top:10px!important}
+.ytt-counts{display:flex;gap:24px;flex-wrap:wrap;margin-top:16px}.ytt-count{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600}
+.ytt-stepper{display:flex;align-items:center;border:1px solid var(--ytt-border);border-radius:8px;overflow:hidden}.ytt-stepper button{width:38px;height:38px;border:0;background:var(--ytt-ivory);color:var(--ytt-forest);font-size:18px;cursor:pointer}.ytt-stepper button:hover{background:var(--ytt-sage)}.ytt-stepper input{width:44px;height:38px;border:0;text-align:center;font:inherit;font-weight:600;color:var(--ytt-forest);-moz-appearance:textfield}.ytt-stepper input::-webkit-inner-spin-button{-webkit-appearance:none}
+.ytt-planner-error{color:#9b2c1f;font-size:13px!important;min-height:0;margin-top:10px!important}.ytt-planner-error:empty{display:none}
+.ytt-planner-nav{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}.ytt-planner-nav button{min-height:46px;padding:11px 20px;border-radius:8px;font:600 15px/1.3 Inter,Arial,sans-serif;cursor:pointer;border:1px solid var(--ytt-forest);transition:background-color .15s}
+.ytt-planner-back{margin-right:auto;background:#fff;color:var(--ytt-forest);border-color:var(--ytt-border)!important}.ytt-planner-back:hover{background:var(--ytt-ivory)}
+.ytt-planner-next{background:var(--ytt-forest);color:#fff}.ytt-planner-next:hover{background:#285448}
+.ytt-planner-submit{background:var(--ytt-gold);border-color:var(--ytt-gold)!important;color:var(--ytt-forest)}.ytt-planner-submit:hover{background:#e4b763}
+.ytt-planner-nav button[hidden]{display:none}.ytt-planner .ytt-step[hidden]{display:none}
+.ytt-planner-foot{font-size:13px!important;color:var(--ytt-muted);margin-top:14px!important;padding-top:12px;border-top:1px solid #183e3514}.ytt-planner-foot a{color:var(--ytt-forest)!important;text-decoration:underline!important;text-underline-offset:3px}
+.ytt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.ytt-home .ytt-assurance{border-bottom:1px solid var(--ytt-border)}
+.ytt-prefill-note{background:var(--ytt-gold);color:var(--ytt-forest)!important;border-radius:8px;padding:12px 16px;font-weight:600;margin:0 0 18px!important}
+body:not(.home) .ytt-post-cta{margin:48px 0 0;padding:28px 28px 22px;background:#fff;border:1px solid #183e3518;border-radius:12px}body:not(.home) .ytt-post-cta-title{font-size:20px;margin:0 0 8px!important}body:not(.home) .ytt-post-cta p{margin:0 0 14px}
+@media(min-width:900px){.ytt-consent{left:auto!important;right:24px!important;bottom:24px!important}}
+/* Mobile sticky menu (2026-11-16): a compact white bar behind the floating button, so it no longer sits on top of the text that scrolls under it. */
+@media(max-width:1279px){html{scroll-padding-top:64px}body:has(.js-hamburger-sticky.is--active)::before{content:"Your Tanzania Trip";position:fixed;top:0;left:0;right:0;height:56px;z-index:49;display:flex;align-items:center;padding:0 16px;background:#fff;box-shadow:0 1px 0 #183e351c,0 8px 24px -16px #0b1f1a66;font:600 19px/1 Inter,Arial,sans-serif;letter-spacing:-.02em;color:var(--ytt-forest)}.js-hamburger-sticky.is--active{top:4px!important;right:12px!important;box-shadow:none!important;border-color:transparent!important}}
+@media(max-width:760px){.ytt-hero{min-height:0}.ytt-hero-copy{padding:32px 18px 28px}.ytt-planner{padding:18px 16px 14px;margin-top:22px}.ytt-chip span{min-height:40px;padding:8px 12px;font-size:13.5px}.ytt-planner-nav button{flex:1}.ytt-planner-back{flex:0 0 auto!important}}
+
+/* ===== Contrast fixes found in the site audit (2026-11-16) ===== */
+body:not(.home) .top-header>div>a,body:not(.home) .top-header>div>a strong,body:not(.home) .top-header>div>a span,body:not(.home) #menu-header-secondary>li>a,body:not(.home) #menu-header-secondary>li>a .menu-title,body:not(.home) #menu-header-secondary>li>.menu-title,body:not(.home) .top-header .language-switcher>button,body:not(.home) .top-header .currency-switcher>button{color:#fff!important}
+@media(min-width:768px){body:not(.home) [class~="bg-green"][class~="md:bg-transparent"],body:not(.home) [class~="md:bg-green"][class~="md:bg-transparent"]{background-color:transparent!important}}
+#ts-footer .ts-footer-form strong,#ts-footer .ts-footer-form .wp-block-heading{color:#fff!important}
+body:not(.home) #gform_wrapper_5 a:not(.btn),body:not(.home) .gform_wrapper_5 a:not(.btn),body:not(.home) .travel-proposal-form a:not(.btn),#ts-footer .gform_wrapper a{color:#fff!important}
+body:not(.home) .ts-items .ts-item-overlay p,body:not(.home) .ts-items .ts-item-overlay span{color:#fff!important}
+body:not(.home) .theme-card-title{color:var(--ytt-forest)!important}
+body:not(.home) small,body:not(.home) .range-value-container{color:inherit!important;opacity:.85}
+body:not(.home) .gfield_required{color:#e8d6ac!important}
+body:not(.home) .text-yellow,body:not(.home) [class~="!text-yellow"]{color:#8a5a12!important}
+body:not(.home) .bg-green .text-yellow,body:not(.home) .bg-anthracite .text-yellow,body:not(.home) [class*="bg-mountain"] .text-yellow{color:var(--ytt-gold)!important}
+body:not(.home) :is(.bg-yellow,.bg-orange) :is(.text-white,h2,h3,h4,p,span,small){color:var(--ytt-forest)!important}
+body:not(.home) a.btn.btn-yellow,body:not(.home) .btn-yellow{color:var(--ytt-forest)!important}
+body:not(.home) figure figcaption:not([class*="absolute"]){color:var(--ytt-muted)}
+.single-trips-sidebar [class*="i-ic"],.travel-proposal-usps [class*="i-"],body:not(.home) .bg-orange.rounded-full{background-color:var(--ytt-gold)!important}
 @media(prefers-reduced-motion:reduce){.ytt-home *, .ytt-home *:before{transition:none!important;scroll-behavior:auto!important}}
 `;

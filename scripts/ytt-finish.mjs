@@ -111,6 +111,24 @@ for (const file of walk(dist)) {
   if (out !== src) { fs.writeFileSync(file, out); files++; }
 }
 
+// Palette of the 2026-11-15 redesign (forest, ivory, gold) in the legacy theme CSS: copper buttons,
+// orange checkboxes and sliders and the sand tones of the first rebrand become the homepage colours.
+const THEME_CSS = path.join(dist, 'wp-content/themes/tanzania-specialist/public/css/app.css');
+if (fs.existsSync(THEME_CSS)) {
+  const PALETTE = [
+    [/#a83800\b|#A83800\b/g, '#183e35'], [/168 56 0\b/g, '24 62 53'], [/168,\s?56,\s?0\b/g, '24,62,53'],
+    [/#8c2f00\b|#8C2F00\b/g, '#285448'],
+    [/#e69016\b|#E69016\b/g, '#d5a34d'], [/230 144 22\b/g, '213 163 77'], [/230,\s?144,\s?22\b/g, '213,163,77'],
+    [/#fcab2a\b|#FCAB2A\b/g, '#e4b763'], [/252 171 42\b/g, '228 183 99'],
+    [/#20281b\b|#20281B\b/g, '#183e35'], [/32 40 27\b/g, '24 62 53'], [/32,\s?40,\s?27\b/g, '24,62,53'],
+    [/#dcc496\b|#DCC496\b/g, '#c9d2c8'], [/220 196 150\b/g, '201 210 200'],
+    [/#faf6ec\b|#FAF6EC\b/g, '#f7f4ec'], [/250 246 236\b/g, '247 244 236'],
+  ];
+  let css = fs.readFileSync(THEME_CSS, 'utf8');
+  for (const [re, to] of PALETTE) css = css.replace(re, to);
+  fs.writeFileSync(THEME_CSS, css);
+}
+
 // Legacy photos are no longer referenced: keep only uploads that are still linked (PDFs and the like).
 const uploads = path.join(dist, 'wp-content/uploads');
 let removedFiles = 0;

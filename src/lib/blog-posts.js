@@ -55,22 +55,25 @@ export const blogPosts = (fs.existsSync(dir) ? fs.readdirSync(dir) : [])
 const template = pages.find((p) => p.slug === TEMPLATE_SLUG);
 const templateBody = template ? fs.readFileSync(path.resolve('content/pages', `${TEMPLATE_SLUG}.html`), 'utf8') : '';
 
+// End of every post: from reading to planning (the homepage planner, four quick questions).
+const POST_CTA = `<aside class="ytt-post-cta" aria-label="Plan your trip"><p class="ytt-post-cta-title"><strong>Turn this into your own trip</strong></p><p>Answer four quick questions about what, when and with whom. We send you a free, personal proposal, planned from the Netherlands and run on the ground by our partner in Arusha.</p><p><a class="btn" href="/#ytt-planner">Plan my Trip</a></p></aside>`;
+
 function pageBody(post) {
   const $ = cheerio.load(templateBody, null, false);
   const url = `/blog/${post.slug}/`;
   const cover = localUrl(post.cover_url) || DEFAULT_COVER;
 
-  $('.ts-jumbotron-image').attr('src', cover).attr('alt', '').removeAttr('srcset').removeAttr('sizes');
+  $('.ts-jumbotron-image').attr('src', cover).attr('alt', post.cover_alt || '').removeAttr('srcset').removeAttr('sizes');
   $('.ts-jumbotron h1').text(post.title);
   $('#breadcrumbs li.active a').attr('href', url).text(post.title);
   $('.post-date p').text(longDate(post.published_at));
-  $('.ts-content-area').html(`\n${marked.parse(post.body)}\n`);
+  $('.ts-content-area').html(`\n${marked.parse(post.body)}\n${POST_CTA}\n`);
   $('.ts-content-area img').first().attr('loading', 'eager');
   $('.social-share [data-url]').attr('data-url', url);
   $('.social-share [data-title]').attr('data-title', post.title);
 
-  // Related posts: the newest other API posts first, then the template's own picks.
-  const others = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  // Related posts: most shared tags and title words first, newest as tie-break.
+  const others = relatedPosts(post, 3);
   const grid = $('.related-posts .grid');
   if (others.length) {
     const keep = grid.find('article').slice(0, Math.max(0, 3 - others.length)).toArray().map((a) => $.html(a));
@@ -79,12 +82,30 @@ function pageBody(post) {
   return $.html();
 }
 
+const STOP = new Set(['the', 'a', 'an', 'and', 'or', 'of', 'in', 'to', 'for', 'on', 'with', 'your', 'tanzania', 'what', 'how', 'guide', 'is', 'do', 'you', 'vs', 'from', 'at', 'by', 'best']);
+const terms = (p) => {
+  const tags = Array.isArray(p.tags) ? p.tags : String(p.tags || '').split(',');
+  const words = `${p.title} ${tags.join(' ')}`.toLowerCase().match(/[a-z]{3,}/g) || [];
+  return new Set(words.filter((w) => !STOP.has(w)));
+};
+const termCache = new Map();
+const termsOf = (p) => termCache.get(p.slug) || termCache.set(p.slug, terms(p)).get(p.slug);
+function relatedPosts(post, n) {
+  const mine = termsOf(post);
+  return blogPosts
+    .filter((p) => p.slug !== post.slug)
+    .map((p) => [p, [...termsOf(p)].filter((w) => mine.has(w)).length])
+    .sort((a, b) => b[1] - a[1] || b[0].published_at.localeCompare(a[0].published_at))
+    .slice(0, n)
+    .map(([p]) => p);
+}
+
 /** A post card in the theme's markup (blog overview, related posts). */
 export function cardHtml(post) {
   const cover = localUrl(post.cover_url) || DEFAULT_COVER;
   return `<article class="post-item flex flex-col post type-post status-publish format-standard has-post-thumbnail hentry category-blog">
     <div class="relative w-full select-none">
-        <img width="1024" height="682" src="${escapeHtml(cover)}" class="attachment-large size-large wp-post-image" alt="" decoding="async" loading="lazy" fetchpriority="low" style="aspect-ratio:3/2;object-fit:cover"/>
+        <img width="1024" height="682" src="${escapeHtml(cover)}" class="attachment-large size-large wp-post-image" alt="${escapeHtml(post.cover_alt || '')}" decoding="async" loading="lazy" fetchpriority="low" style="aspect-ratio:3/2;object-fit:cover"/>
         <time datetime="${post.published_at.slice(0, 10)}" class="post-card-date">${shortDate(post.published_at)}</time>
     </div>
     <div class="h-full">

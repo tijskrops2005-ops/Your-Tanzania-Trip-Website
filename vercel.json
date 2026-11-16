@@ -1572,6 +1572,11 @@
       "source": "/tanzania-traveller-reviews{/}?",
       "destination": "/our-partner/",
       "statusCode": 301
+    },
+    {
+      "source": "/practical-information/hakuna-matata-academy{/}?",
+      "destination": "/practical-information/responsible-travel/",
+      "statusCode": 301
     }
   ]
 }
