@@ -103,7 +103,10 @@
     var button = form.querySelector(".gform_button");
     if (button) button.disabled = true;
     fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload) })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r; })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json().catch(function () { return {}; }); })
+      // FormSubmit answers 200 with success "false" while the address is not activated yet: then the
+      // request did not reach anyone, so fall back to the visitor's e-mail app instead of saying thanks.
+      .then(function (j) { if (j && String(j.success) === "false") throw new Error(j.message || "not sent"); })
       .then(function () { message(form, "<h3>Thank you</h3><p>We have received your request and will get back to you personally as soon as possible. A confirmation is on its way to your inbox. Want to add something? E-mail <a href=\"mailto:" + email + "\">" + email + "</a>.</p>"); })
       .catch(function () { if (button) button.disabled = false; fallback(form, subject, data); });
   }
