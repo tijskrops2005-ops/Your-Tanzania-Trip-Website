@@ -83,6 +83,14 @@
     location.href = link;
   }
 
+  // Automatic confirmation to the visitor (FormSubmit "_autoresponse": plain text, sent to the "email" field).
+  var SIGN = "\n\nKind regards,\n\nTijs Krops & Edrian Waterman\nYour Tanzania Trip\n" + email + " | WhatsApp +31 6 29351377\nwww.yourtanzaniatrip.com";
+  function autoresponse(form) {
+    if (form.id === "gform_2") return "Hello,\n\nThank you for signing up for Tanzania tips from Your Tanzania Trip. A few times a year we send you travel ideas and practical advice about safaris, Kilimanjaro and Zanzibar. No spam, and you can unsubscribe at any time by replying to one of our e-mails." + SIGN;
+    if (form.id === "gform_3") return "Hello,\n\nThank you for your message to Your Tanzania Trip. We have received it and will get back to you personally as soon as possible.\n\nWould you like to add something in the meantime? Simply reply to this e-mail." + SIGN;
+    return "Hello,\n\nThank you for your trip request to Your Tanzania Trip. We have received your wishes and will look at them carefully.\n\nWhat happens next:\n1. We review your dates, travel style and wishes together with our local partner in Arusha, Kilimanjaro Nature Tours.\n2. We contact you personally as soon as possible, with a few questions or a first proposal.\n3. Together we adjust the route, accommodation and price until it fits you. Only then do you decide.\n\nYour request is free and without obligation. Your details are used only to prepare your proposal and are never shared with third parties for marketing.\n\nWould you like to add something, such as flight times or special wishes? Simply reply to this e-mail." + SIGN;
+  }
+
   function send(form) {
     if (!validate(form)) return;
     var subject = subjectFor(form);
@@ -91,11 +99,12 @@
     // FormSubmit-style endpoint: _subject/_template/_replyto are delivery hints, the rest is the message.
     var replyTo = Object.keys(data).filter(function (k) { return /mail/i.test(k); }).map(function (k) { return data[k]; })[0] || "";
     var payload = Object.assign({ _subject: subject, _template: "table", _replyto: replyTo, _captcha: "false", page: location.href }, data);
+    if (replyTo) { payload.email = replyTo; payload._autoresponse = autoresponse(form); }
     var button = form.querySelector(".gform_button");
     if (button) button.disabled = true;
     fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload) })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r; })
-      .then(function () { message(form, "<h3>Thank you</h3><p>We have received your request and will reply within one working day. Want to add something? E-mail <a href=\"mailto:" + email + "\">" + email + "</a>.</p>"); })
+      .then(function () { message(form, "<h3>Thank you</h3><p>We have received your request and will get back to you personally as soon as possible. A confirmation is on its way to your inbox. Want to add something? E-mail <a href=\"mailto:" + email + "\">" + email + "</a>.</p>"); })
       .catch(function () { if (button) button.disabled = false; fallback(form, subject, data); });
   }
 

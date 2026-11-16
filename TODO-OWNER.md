@@ -28,6 +28,8 @@ Status: 2026-10-27. Everything the site needs is filled in; there are no placeho
 - **Errors fixed:** the wrong office address (Soctratesstraat) and "Rabobank" in the payment FAQ (the account is at Knab); the dead "Our Experts" link on all 800 pages; 14 other dead links; 15 pages with zero or two H1s; 250+ missing or duplicate titles and descriptions on itinerary tabs; invisible text (top bar, newsletter heading, price tables, form links); the old orange and copper colours in the forms, sliders and checkboxes; the `[INVULLEN: e-mail]` placeholder in the footer of every page; off-topic stock photos (zoo animals, desert tents, leopard print, Madagascar baobabs) taken out of the photo pool.
 - **Checks you can rerun:** `node scripts/audit-site.mjs` (links, images, markers, titles) and `node scripts/contrast-probe.mjs 1440 /path/` (unreadable text) after `npm run build` and `node serve.mjs`.
 
+- **2026-11-16, later:** homepage hero rebuilt after the Tanzania Specialist pattern (photo with a planner card: trip, arrival date, length, adults, children); "Start exploring" destination tiles; the zoomed safari loop under "A glimpse of Tanzania" replaced by a YouTube film (loads only after a click, credited under the player). Every form now sends the visitor an automatic thank-you e-mail through FormSubmit (`_autoresponse` in `public/assets/js/forms.js`).
+
 ## Still open (needs you)
 
 - [ ] **About us:** start year, a photo and 2–3 sentences about Tijs (`[INVULLEN]` markers on `/about-us/`).
