@@ -14,7 +14,8 @@
     "check-links": "node scripts/check-links.mjs",
     "rebrand": "node scripts/extract.mjs && node scripts/rebrand.mjs && node scripts/brand-theme.mjs && node scripts/blog-reserved.mjs && node scripts/lastmod.mjs",
     "images": "/usr/bin/python3 scripts/clean-photos.py && /usr/bin/python3 scripts/debrand.py && node scripts/render-cards.mjs",
-    "leads": "node tools/leads/leads.mjs"
+    "leads": "node tools/leads/leads.mjs",
+    "godaddy": "npm run build && node scripts/godaddy-package.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",

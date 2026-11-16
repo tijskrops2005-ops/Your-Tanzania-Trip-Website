@@ -1,0 +1,34 @@
+---
+// Not-found page. Astro writes it as dist/404.html: Vercel serves it automatically and the
+// Apache config for GoDaddy (scripts/godaddy-package.mjs) points ErrorDocument 404 to it.
+import BaseLayout from '../layouts/BaseLayout.astro';
+const page = { slug: '404', path: '/404/', title: 'Page not found | Your Tanzania Trip', description: '', robots: 'noindex, follow', ogType: 'website', bodyClass: 'page error404', extraScripts: [], extraStyles: [], stickyCta: null, ldJson: [] };
+---
+<BaseLayout page={page}>
+  <main class="ytt-notfound">
+    <p class="ytt-notfound-code">404</p>
+    <h1>We can’t find that page</h1>
+    <p>The page may have moved while we were rebuilding the site, or the address has a typo. These pages are a good place to continue.</p>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/tanzania-travel/">All trips</a></li>
+      <li><a href="/tanzania-safari/">Safari</a></li>
+      <li><a href="/climbing-kilimanjaro/">Kilimanjaro</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+    <a class="ytt-button" href="/travel-proposal/">Plan my Trip</a>
+  </main>
+</BaseLayout>
+<style is:global>
+.ytt-notfound{width:min(720px,calc(100% - 48px));margin:0 auto;padding:80px 0 112px;font:17px/1.65 Inter,Arial,sans-serif;color:#183e35}
+.ytt-notfound-code{font-size:14px;font-weight:600;color:#52635b;margin:0 0 12px}
+.ytt-notfound h1{font-size:clamp(32px,4vw,44px);line-height:1.1;letter-spacing:-.03em;margin:0 0 18px;text-transform:none}
+.ytt-notfound>p{max-width:60ch;margin:0}
+.ytt-notfound ul{list-style:none;padding:0;margin:28px 0 36px;display:flex;flex-wrap:wrap;gap:10px}
+.ytt-notfound li a{display:inline-block;border:1px solid #c9d2c8;border-radius:7px;padding:10px 16px;color:#183e35;font-size:14px;font-weight:600;text-decoration:none}
+.ytt-notfound li a:hover{background:#dde6db;border-color:#183e35}
+.ytt-notfound .ytt-button{display:inline-flex;align-items:center;min-height:50px;padding:13px 23px;background:#183e35;color:#fff!important;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none}
+.ytt-notfound .ytt-button:hover{background:#285448}
+.ytt-notfound a:focus-visible{outline:3px solid #d5a34d;outline-offset:4px}
+</style>
