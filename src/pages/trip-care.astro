@@ -1,0 +1,104 @@
+---
+// Trip Care (owner, 2026-11-23): our own support package, replacing the previous operator's
+// "Hakuna Matata Package" (/hakuna-matata-package/ redirects here, see src/lib/scope.js).
+// Only what is true or confirmed by the owner: no replacement-vehicle or garage promises.
+import fs from 'node:fs';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const tokens = JSON.parse(fs.readFileSync(new URL('../../docs/brand-tokens.json', import.meta.url), 'utf8'));
+const co = tokens.company;
+const wa = `https://wa.me/${co.whatsapp.replace(/\D/g, '')}`;
+const page = {
+  slug: 'trip-care', path: '/trip-care/',
+  title: 'Trip Care: included in every trip | Your Tanzania Trip',
+  description: 'Every trip with Your Tanzania Trip includes Trip Care: personal planning, everything confirmed before you pay, airport pick-up, a private guide and support day and night from us and our local partner in Arusha.',
+  ogTitle: 'Trip Care: included in every trip', ogType: 'website', robots: '', bodyClass: 'page',
+  extraScripts: [], extraStyles: [], stickyCta: { href: '/travel-proposal/', label: 'Plan my Trip' },
+  ldJson: [JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebPage', name: 'Trip Care', url: 'https://yourtanzaniatrip.com/trip-care/', isPartOf: { '@type': 'WebSite', name: 'Your Tanzania Trip', url: 'https://yourtanzaniatrip.com/' } })],
+};
+const before = [
+  ['Personal planning', 'You plan with Tijs and Edrian, in English or Dutch. We listen to what you want and put together a route that fits your dates, budget and pace.'],
+  ['Everything confirmed before you pay', 'Lodges, activities, park permits and transfers are confirmed with Baraka’s team in writing before we send you an invoice.'],
+  ['A clear payment schedule', 'A deposit when you confirm and the balance before departure. The amounts and dates are on your proposal, and our bank details are on the Easy payments page.'],
+  ['Your travel documents', 'Before you leave you receive your route day by day, the places you stay, the contact numbers in Tanzania and practical notes on visas, money and packing.'],
+  ['Flights on request', 'We can book your international flights for you, from $250 extra per person. Prefer to book them yourself? That works too.'],
+];
+const during = [
+  ['Met at the airport', 'Baraka’s team waits for you at arrivals and takes you to your first place to stay. On your last day they bring you back for your flight home.'],
+  ['A private guide and vehicle', 'On safari the 4×4 and the guide are yours alone. On Kilimanjaro you climb with your own guide, cook and porters.'],
+  ['Support day and night', 'During your trip you can reach Baraka’s team in Arusha and us 24/7. If a plan needs to change, we sort it out with you.'],
+];
+const faqs = [
+  ['Is Trip Care included in every trip?', 'Yes. It comes with every safari, climb and beach trip you book with us, at no extra cost.'],
+  ['Who do I contact during my trip?', `Your guide and Baraka’s team in Arusha are closest by. You can also reach us at any time on WhatsApp: ${co.whatsapp}.`],
+  ['What if my plans change before I travel?', 'Tell us as soon as you can and we look at the options with you. Our cancellation terms are written down plainly in our terms and conditions.'],
+  ['Do I still need travel insurance?', 'Yes. Trip Care is not an insurance. Take out travel insurance that covers a safari and, if you climb, trekking above 5,000 metres.'],
+];
+---
+<BaseLayout page={page}>
+  <main class="ytt-care">
+    <section class="ytt-care-hero">
+      <div class="ytt-care-hero-inner">
+        <nav class="ytt-care-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <span>Trip Care</span></nav>
+        <h1>Trip Care, included in every trip</h1>
+        <p>From your first question to your flight home, you are never on your own. Trip Care is how we and Baraka’s team look after every traveller, at no extra cost.</p>
+        <div class="ytt-care-actions"><a class="ytt-care-btn" href="/travel-proposal/">Plan my Trip</a><a class="ytt-care-btn ytt-care-btn-ghost" href={wa}>Ask us on WhatsApp</a></div>
+      </div>
+      <img src="/brand/partner/safari.webp" alt="A safari vehicle of our local partner on the plains" width="1280" height="800" fetchpriority="high" decoding="async" />
+    </section>
+
+    <section class="ytt-care-block">
+      <h2>Before you travel</h2>
+      <ul class="ytt-care-list">
+        {before.map(([t, d]) => <li><h3>{t}</h3><p>{d}</p></li>)}
+      </ul>
+    </section>
+
+    <section class="ytt-care-block ytt-care-block-tint">
+      <h2>During your trip</h2>
+      <ul class="ytt-care-list">
+        {during.map(([t, d]) => <li><h3>{t}</h3><p>{d}</p></li>)}
+      </ul>
+    </section>
+
+    <section class="ytt-care-block">
+      <h2>Questions about Trip Care</h2>
+      <div class="ytt-care-faq">
+        {faqs.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
+      </div>
+      <p class="ytt-care-more">Read more about <a href="/practical-information/guarantees/">our guarantees</a>, <a href="/practical-information/easy-payments/">payments</a> and <a href="/our-partner/">Baraka and his team</a>.</p>
+    </section>
+
+    <section class="ytt-care-last">
+      <h2>Ready to plan your trip?</h2>
+      <p>Tell us your dates and wishes. You get a personal proposal, free and without obligation.</p>
+      <div class="ytt-care-actions"><a class="ytt-care-btn" href="/travel-proposal/">Plan my Trip</a></div>
+    </section>
+  </main>
+</BaseLayout>
+<style is:global>
+.ytt-care{font:400 17px/1.65 Inter,Arial,sans-serif;color:#183e35}
+.ytt-care *{box-sizing:border-box}
+.ytt-care-hero{display:grid;grid-template-columns:1.1fr 1fr;background:#183e35;color:#fff;min-height:440px}
+.ytt-care-hero-inner{padding:56px 48px 56px max(24px,calc((100vw - 1240px)/2));align-self:center}
+.ytt-care-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.ytt-care-crumbs{font-size:14px;margin-bottom:20px;color:#ffffffcc}.ytt-care-crumbs a{color:#fff!important;text-decoration:underline}
+.ytt-care-hero h1{color:#fff!important;font-size:clamp(34px,4vw,52px)!important;line-height:1.08!important;margin:0 0 18px}
+.ytt-care-hero p{max-width:46ch;color:#ffffffe6;margin:0}
+.ytt-care-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.ytt-care-btn{display:inline-flex;align-items:center;min-height:48px;padding:12px 22px;border-radius:8px;background:#d5a34d;color:#183e35!important;font-weight:700;text-decoration:none!important;transition:transform .15s cubic-bezier(.2,.8,.2,1)}
+.ytt-care-btn:hover{background:#e4b763}.ytt-care-btn:active{transform:translateY(1px)}.ytt-care-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.ytt-care-btn-ghost{background:transparent;border:1.5px solid #fff;color:#fff!important}.ytt-care-btn-ghost:hover{background:#ffffff1a}
+.ytt-care-block{width:min(1240px,calc(100% - 48px));margin:0 auto;padding:64px 0}
+.ytt-care-block h2,.ytt-care-last h2{font-size:clamp(26px,3vw,36px)!important;margin:0 0 28px}
+.ytt-care-block-tint{width:100%;padding-inline:max(24px,calc((100% - 1240px)/2));background:#dde6db}
+.ytt-care-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.ytt-care-list li{background:#fff;border:1px solid #183e3518;border-radius:12px;padding:22px 24px;margin:0}
+.ytt-care-list h3{font-size:19px!important;margin:0 0 8px}.ytt-care-list p{margin:0;color:#3b4d45}
+.ytt-care-faq{max-width:820px}.ytt-care-faq details{border-bottom:1px solid #c9d2c8;padding:16px 0}
+.ytt-care-faq summary{cursor:pointer;font-weight:600;font-size:18px}.ytt-care-faq summary:focus-visible{outline:2px solid #d5a34d;outline-offset:4px}
+.ytt-care-faq p{margin:10px 0 0;color:#3b4d45}
+.ytt-care-more{margin-top:28px}.ytt-care-more a,.ytt-care-faq a{color:#183e35!important;text-decoration:underline}
+.ytt-care-last{background:#183e35;color:#fff;text-align:center;padding:64px 24px}.ytt-care-last h2{color:#fff!important}.ytt-care-last p{color:#ffffffe6;margin:0 auto;max-width:52ch}.ytt-care-last .ytt-care-actions{justify-content:center}
+@media(max-width:860px){.ytt-care-hero{grid-template-columns:1fr}.ytt-care-hero img{height:260px;order:-1}.ytt-care-hero-inner{padding:32px 20px 40px}.ytt-care-block{width:calc(100% - 36px);padding:48px 0}.ytt-care-block-tint{width:100%;padding-inline:18px}}
+@media(prefers-reduced-motion:reduce){.ytt-care-btn{transition:none}}
+</style>

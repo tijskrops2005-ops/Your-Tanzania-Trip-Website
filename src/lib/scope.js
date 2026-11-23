@@ -15,6 +15,8 @@ const EXPLICIT = {
   '/activity/zanzibar/': '/islands/zanzibar-island/',
   // Academy of the previous operator, presented as ours (audit 2026-11-16): not our project.
   '/practical-information/hakuna-matata-academy/': '/practical-information/responsible-travel/',
+  // The previous operator's package; our own version is Trip Care (owner, 2026-11-23).
+  '/hakuna-matata-package/': '/trip-care/',
 };
 /** Redirect target for a removed page, or null when the page stays. */
 export function removedTarget(path) {

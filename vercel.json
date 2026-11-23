@@ -1577,6 +1577,11 @@
       "source": "/practical-information/hakuna-matata-academy{/}?",
       "destination": "/practical-information/responsible-travel/",
       "statusCode": 301
+    },
+    {
+      "source": "/hakuna-matata-package{/}?",
+      "destination": "/trip-care/",
+      "statusCode": 301
     }
   ]
 }

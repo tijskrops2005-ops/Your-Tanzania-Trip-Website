@@ -316,7 +316,7 @@
     "kvk": "97223344",
     "vat": "NL005256557B94",
     "email": "bookings@yourtanzaniatrip.com",
-    "phone": "+31 6 29351377",
+    "phone": "+31 6 12729607",
     "whatsapp": "+31 6 12729607",
     "tagline": "Your trip, planned with care",
     "taglineProposals": [
@@ -339,7 +339,10 @@
     "_foundingDateNote": "[INVULLEN] year the partnership started; the Organization schema gets foundingDate once filled.",
     "sameAs": [],
     "_sameAsNote": "[INVULLEN] Instagram/TikTok/Facebook profile URLs, only once they exist; added to Organization.sameAs.",
-    "_whatsappNote": "WhatsApp number since 2026-11-23 (owner request). The phone line stays +31 6 29351377 until the owner says otherwise. src/lib/polish.js swaps old WhatsApp links and labels at build time."
+    "_whatsappNote": "Phone and WhatsApp +31 6 12729607 since 2026-11-23 (owner: the old number +31 6 29351377 is no longer in use). src/lib/polish.js replaces every former number at build time; generated content keeps the old one until the next npm run rebrand.",
+    "formerPhones": [
+      "+31 6 29351377"
+    ]
   },
   "partner": {
     "name": "Kilimanjaro Nature Tours",
@@ -397,7 +400,7 @@
     ],
     "youtubeVideoId": "IqFgJyubDKg",
     "phone": "+255 787 301 259",
-    "_publicNote": "Since 2026-11-23 the site presents Baraka Dalali and his team as \"our local partner in Arusha\". The company name stays only where it is legally relevant (licensed operator sentence, Recognised by on /our-partner/). url, email and phone below are for internal use and are not shown on the site (src/lib/polish.js strips them)."
+    "_publicNote": "Since 2026-11-23 the company name of the partner is not shown anywhere on the site: always \"Baraka\" or \"our local partner (in Arusha)\", also in the licensed-operator sentence. url, email and phone below are internal only (src/lib/polish.js strips them)."
   },
   "voice": {
     "values": [
@@ -428,7 +431,8 @@
     "endpoint": "https://formsubmit.co/ajax/bookings@yourtanzaniatrip.com"
   },
   "story": {
-    "en": "Your Tanzania Trip started with an internship. Tijs Krops and Edrian Waterman, two students from the Netherlands, spent their internship in Arusha with Baraka Dalali and his crew at Kilimanjaro Nature Tours. They helped Baraka with marketing and with setting up his company for international guests, climbed with his guides and drove along on safari. When it was time to go home, none of us wanted to stop working together. So we set up this partnership: Your Tanzania Trip plans and books your trip from the Netherlands, and Baraka and his crew run it in Tanzania. It works because both sides do what they are best at."
+    "en": "Your Tanzania Trip started on safari. Tijs Krops and Edrian Waterman travelled through Tanzania with Baraka Dalali and his team, and kept in touch after the trip. Out of that contact grew the idea to work together: Your Tanzania Trip plans and books your trip, and Baraka and his team run it in Tanzania as our local partner in Arusha.",
+    "_note": "Owner, 2026-11-23: the cooperation began with a safari with Baraka (not an internship). Year still to be supplied."
   },
   "analytics": {
     "_note": "Google Analytics 4. The Google tag is in the <head> of every page (BaseLayout.astro) with Google consent mode v2: analytics cookies only after 'Accept' in the cookie banner (public/assets/js/cookie-consent.js); without consent GA receives cookieless pings. Vercel Web Analytics (cookieless) runs independently.",

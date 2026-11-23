@@ -3,6 +3,8 @@
 // so it survives `npm run rebrand` and later update folders that replace those two files.
 // The client-side part lives in public/assets/js/site-ui.js; plain-text files are handled by
 // scripts/polish-finish.mjs after the build.
+import fs from 'node:fs';
+import path from 'node:path';
 import * as cheerio from 'cheerio';
 
 const digits = s => String(s || '').replace(/\D/g, '');
@@ -11,16 +13,15 @@ const digits = s => String(s || '').replace(/\D/g, '');
 export const whatsappUrl = tokens => `https://wa.me/${digits(tokens.company.whatsapp)}`;
 
 // ---------------------------------------------------------------------------------------------
-// 1. Brand positioning: Your Tanzania Trip is the brand visitors deal with; Baraka Dalali and his
-//    team are "our local partner in Arusha". The legal name of the partner company stays only in the
-//    sentence that says who operates the trip (consumer information) and in "Recognised by".
+// 1. Brand positioning (owner, 2026-11-23): Your Tanzania Trip is the brand visitors deal with; the
+//    partner is always "Baraka" or "our local partner (in Arusha)". The company name of the partner is
+//    not shown anywhere, also not in the licensed-operator sentence, and none of its links remain.
 // ---------------------------------------------------------------------------------------------
-const LEGAL = '⁣KNT⁣';
-const PROTECT = [
-  // "your trip is operated by Kilimanjaro Nature Tours, a licensed Tanzanian tour operator and member of TATO"
-  [/(operated (?:in Tanzania )?by\s*(?:<a\b[^>]*>)?\s*)Kilimanjaro Nature Tours(\s*(?:<\/a>)?\s*,\s*a licensed Tanzanian tour operator)/g, `$1${LEGAL}$2`],
-];
 const PARTNER = [
+  // Licensed-operator sentence (Terms, Guarantees, Easy payments, FAQ): same meaning, no company name.
+  [/(\s*)(<a\b[^>]*>)?\s*Kilimanjaro Nature Tours\s*(<\/a>)?\s*,\s*a licensed Tanzanian tour operator and member of the Tanzania Association of Tour Operators(?:, founded by Baraka Dalali)?/g,
+    (m, sp, a) => `${sp || ' '}${a ? a + 'our local partner in Arusha</a>' : 'our local partner in Arusha'}, a licensed Tanzanian tour operator led by Baraka Dalali and a member of the Tanzania Association of Tour Operators`],
+  [/Baraka’s company, Kilimanjaro Nature Tours, is/g, 'Baraka’s company is'],
   // Shared header, sidebar and footer blocks
   [/208 reviews of our local partner Kilimanjaro Nature Tours/g, '208 Tripadvisor reviews of our local partner in Arusha'],
   [/208 reviews of Kilimanjaro Nature Tours/g, '208 Tripadvisor reviews of our local partner in Arusha'],
@@ -70,9 +71,10 @@ const PARTNER = [
   // Anything left: plain wording, with a capital at the start of a sentence
   [/(^|[.!?:>]\s*|"\s*)Kilimanjaro Nature Tours/g, '$1Our local partner'],
   [/Kilimanjaro Nature Tours/g, 'our local partner'],
-  // Contact details and links of the partner company
+  // Contact details and links of the partner company: the e-mail goes, a website link keeps its text.
   [/\s*·?\s*<a\b[^>]*href="mailto:info@kilimanjaronaturetours\.com"[^>]*>[\s\S]*?<\/a>/g, ''],
-  [/\s*·?\s*<a\b[^>]*href="https?:\/\/(?:www\.)?kilimanjaronaturetours\.com[^"]*"[^>]*>[\s\S]*?<\/a>/g, ''],
+  [/(\s*·\s*)?<a\b[^>]*href="https?:\/\/(?:www\.)?kilimanjaronaturetours\.com[^"]*"[^>]*>([\s\S]*?)<\/a>/g,
+    (m, sep, text) => (/kilimanjaronaturetours/i.test(text) || !text.trim() ? '' : (sep || '') + text)],
   [/\s*·?\s*<a\b[^>]*href="tel:\+255787301259"[^>]*>[\s\S]*?<\/a>/g, ''],
 ];
 // Plain text (titles, descriptions, schema, llms.txt): same rules without markup.
@@ -88,38 +90,35 @@ const PARTNER_TEXT = [
 
 function rewritePartner(html, rules = PARTNER) {
   if (!/Kilimanjaro Nature Tours|kilimanjaronaturetours|255 ?787/.test(html)) return html;
-  for (const [re, to] of PROTECT) html = html.replace(re, to);
   for (const [re, to] of rules) html = html.replace(re, to);
-  return html.split(LEGAL).join('Kilimanjaro Nature Tours');
+  return html;
 }
 
 // ---------------------------------------------------------------------------------------------
-// 2. WhatsApp: one number from the tokens. The phone line (company.phone) stays as it is.
+// 2. Phone and WhatsApp from the tokens (both +31 6 12729607 since 2026-11-23). Every former number
+//    (company.formerPhones) is replaced in links, labels, schema and text.
 // ---------------------------------------------------------------------------------------------
-function rewriteWhatsapp(html, tokens) {
-  const phone = tokens.company.phone;              // +31 6 29351377
-  const wa = tokens.company.whatsapp;              // +31 6 12729607
-  if (!wa || digits(wa) === digits(phone)) return html;
-  const oldDigits = digits(phone);
-  const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const p = esc(phone);
-  return html
-    .replace(new RegExp(`(wa\\.me/|api\\.whatsapp\\.com/send/?\\?phone=)${oldDigits}`, 'g'), `$1${digits(wa)}`)
-    .replace(new RegExp(`(WhatsApp:\\s*</span>\\s*)${p}`, 'g'), `$1${wa}`)
-    .replace(new RegExp(`(href="https://wa\\.me/${digits(wa)}"[^>]*>\\s*)${p}`, 'g'), `$1${wa}`)
-    .replace(new RegExp(`${p} \\(WhatsApp\\)`, 'g'), `${phone} (phone) · WhatsApp <a href="https://wa.me/${digits(wa)}">${wa}</a>`)
-    .replace(new RegExp(`Phone and WhatsApp ${p}`, 'g'), `Phone ${phone}, WhatsApp ${wa}`)
-    .replace(new RegExp(`Phone/WhatsApp ${p}`, 'g'), `Phone ${phone}, WhatsApp ${wa}`)
-    .replace(new RegExp(`WhatsApp or call ${p}`, 'g'), `WhatsApp ${wa} or call ${phone}`);
-}
-function rewriteWhatsappText(text, tokens) {
-  const phone = tokens.company.phone, wa = tokens.company.whatsapp;
-  if (!wa || digits(wa) === digits(phone)) return text;
-  const p = phone.replace(/[+]/g, '\\+');
-  return text
-    .replace(new RegExp(`WhatsApp or call ${p}`, 'g'), `WhatsApp ${wa} or call ${phone}`)
-    .replace(new RegExp(`Phone/WhatsApp ${p}`, 'g'), `Phone ${phone}, WhatsApp ${wa}`)
-    .replace(new RegExp(`wa\\.me/${digits(phone)}`, 'g'), `wa.me/${digits(wa)}`);
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function rewriteContacts(html, tokens, text = false) {
+  const phone = tokens.company.phone, wa = tokens.company.whatsapp || phone;
+  const same = digits(phone) === digits(wa);
+  for (const old of tokens.company.formerPhones || []) {
+    const d = digits(old), spaced = reEsc(old), local = '0' + d.slice(2);
+    if (!html.includes(d.slice(3))) continue;
+    html = html
+      .replace(new RegExp(`(wa\\.me/|api\\.whatsapp\\.com/send/?\\?phone=)${d}`, 'g'), `$1${digits(wa)}`)
+      .replace(new RegExp(`tel:\\+?${d}`, 'g'), `tel:+${digits(phone)}`)
+      .replace(new RegExp(`(WhatsApp:\\s*(?:</span>)?\\s*)${spaced}`, 'g'), `$1${wa}`)
+      .replace(new RegExp(`(href="https://wa\\.me/${digits(wa)}"[^>]*>\\s*)${spaced}`, 'g'), `$1${wa}`)
+      .replace(new RegExp(`${spaced} \\(WhatsApp\\)`, 'g'), same || text ? `${phone} (phone and WhatsApp)` : `${phone} (phone) · WhatsApp <a href="https://wa.me/${digits(wa)}">${wa}</a>`)
+      .replace(new RegExp(`Phone(?: and |/)WhatsApp ${spaced}`, 'g'), same ? `Phone and WhatsApp ${phone}` : `Phone ${phone}, WhatsApp ${wa}`)
+      .replace(new RegExp(`WhatsApp or call ${spaced}`, 'g'), same ? `WhatsApp or call ${phone}` : `WhatsApp ${wa} or call ${phone}`)
+      .replace(new RegExp(spaced, 'g'), phone)
+      .replace(new RegExp(`\\b${local}\\b|\\b06[ -]${d.slice(3)}\\b`, 'g'), phone);
+  }
+  // Payment page: one phone line instead of five country labels with the same number.
+  return html.replace(/<p><strong>Phone Number \(if required\):<\/strong><\/p>(?:\s*<p><strong>[A-Z]{2}:<\/strong>\s*[^<]*<\/p>)+/g,
+    `<p><strong>Phone number (if your bank asks for one):</strong> ${phone}</p>`);
 }
 
 // Promises nobody has confirmed (reply time, "100 lodges visited").
@@ -127,6 +126,13 @@ const PROMISES = [
   [/ We reply within 24 hours, usually sooner\./g, ' We reply personally.'],
   [/Free travel proposal within 24 hours\./g, 'Free, personal travel proposal.'],
   [/A free, no-obligation travel proposal within 24 hours\./g, 'A free, no-obligation travel proposal.'],
+  [/Free proposal within 24 hours\./g, 'Free, personal proposal.'],
+  [/(>\s*)Free proposal within 24 hours(\s*<)/g, '$1Free, personal proposal$2'],
+  [/(>\s*)Reply within 24 hours(\s*<)/g, '$1Personal reply$2'],
+  [/, with a reply within 24 hours\./g, ', with a personal reply.'],
+  [/; we answer within 24 hours\./g, '; we reply personally.'],
+  [/Every trip includes Trip Care: travel file, airport pick-up, private guide, 24\/7 support, replacement vehicle and help with flights\./g,
+    'Every trip includes Trip Care: personal planning, everything confirmed before you pay, airport pick-up, a private guide and support day and night.'],
   [/Budget EXCLUDING INTERNATIONAL FLIGHTS\. Of course, we can book the flights for you as well, if you want!/g,
     'Your budget per person, excluding international flights. We can also arrange your flights if you like.'],
   [/Pick one, two,\.\.\. or even all of the following options\./g, 'Choose one or more.'],
@@ -140,6 +146,29 @@ const PROMISES = [
   [/value="\/\?page_id=184"/g, 'value="/about-us/"'],
   // Phone buttons that still carry the flag and label of an old foreign office.
   [/ts-flag-(?:gb|us)("[^>]*><\/span>\s*<span class="!text-base"[^>]*>)(?:UK|USA): /g, 'ts-flag-nl$1NL: '],
+  // How it began (owner, 2026-11-23): a safari with Baraka, not an internship.
+  [/An internship in Arusha brought us together with Baraka and his team\. That partnership became Your Tanzania Trip\./g,
+    'A safari with Baraka and his team brought us together, and we kept in touch. That contact became Your Tanzania Trip.'],
+  [/Both did an internship in Arusha\./g, 'Both travelled through Tanzania with Baraka and his team.'],
+  [/did their internship with him in Arusha, helped him set up his company for international guests, and decided to keep working together\./g,
+    'did a safari with him and his team, kept in touch after the trip, and decided to work together.'],
+  [/from his months in Arusha/g, 'from his own travels in Tanzania'],
+  [/Your Tanzania Trip started with an internship\.[^\n"]*?(?=\n|"|$)/g, 'Your Tanzania Trip started on safari with Baraka Dalali and his team. We kept in touch after the trip, and today Baraka is our local partner in Arusha.'],
+  // Our own support package instead of the previous operator's "Hakuna Matata Package".
+  [/<li>\s*<a href="\/hakuna-matata-package\/"[^>]*>\s*<img[^>]*logo-hakuna-matata[^>]*>\s*<\/a>\s*<\/li>/g, ''],
+  [/\/hakuna-matata-package\//g, '/trip-care/'],
+  [/alt="Hakuna Matata[^"]*"/g, 'alt=""'],
+  [/No worries… or… Hakuna Matata!/g, 'No worries: what we guarantee'],
+  [/A well-known phrase to anyone who has ever travelled to Africa, and exactly how we want you to feel when you book with us\./g, 'That is how we want you to feel when you book with us.'],
+  [/From A to Z, we take care of everything for a true Hakuna Matata journey/g, 'From your first question to your flight home, we take care of the details'],
+  [/(>\s*)Flight disruption support(\s*<)/g, '$1Flights on request$2'],
+  [/Booked international flights with us\? We handle any delays and cancellations!/g, 'We can book your international flights for you, from $250 extra per person.'],
+  [/That is Hakuna Matata\./g, 'That is how we travel.'],
+  [/Free Hakuna Matata (?:support )?(?:P|p)ackage/g, 'Trip Care included'],
+  [/Hakuna Matata,? [Tt]he [Ww]orry-free [Pp]ackage/g, 'Trip Care'],
+  [/(?:our (?:free |exclusive )?)?Hakuna Matata (?:support )?(?:P|p)ackage/g, 'Trip Care'],
+  // Bank details are on the Easy payments page (owner confirmed 2026-11-23).
+  [/Bank details are on your invoice, never on this website\./g, 'Bank details are on your invoice and on our <a href="/practical-information/easy-payments/">Easy payments</a> page.'],
   // A company "based in Africa" that runs trips in four countries was the previous operator.
   [/Your Tanzania Trip is a company based in Africa with Dutch roots\s*\.?/g, 'Your Tanzania Trip is a Dutch travel company for trips to Tanzania.'],
   [/We jointly organise safaris in Tanzania, Kenya, Uganda and South Africa\.?/g, 'Together we organise safaris, Kilimanjaro climbs and Zanzibar stays in Tanzania.'],
@@ -150,7 +179,7 @@ const PROMISES = [
 // ---------------------------------------------------------------------------------------------
 function footerColumn() {
   const links = [
-    ['/about-us/', 'About us'], ['/our-partner/', 'Our local partner'], ['/travel-proposal/', 'Plan my Trip'],
+    ['/about-us/', 'About us'], ['/our-partner/', 'Our local partner'], ['/trip-care/', 'Trip Care'], ['/travel-proposal/', 'Plan my Trip'],
     ['/contact/', 'Contact'], ['/faqs/tanzania/', 'Frequently asked questions'], ['/blog/', 'Blog'],
   ];
   return `<div class="ytt-footer-company"><section class="widget widget_nav_menu"><h2 class="text-lg font-bold tracking-widest uppercase text-anthracite">Your Tanzania Trip</h2><ul class="menu">${
@@ -187,27 +216,51 @@ function polishHeader(html) {
 // 5. About us and Our local partner pages.
 // ---------------------------------------------------------------------------------------------
 const fill = text => `<span class="fill-marker">[INVULLEN: ${text}]</span>`;
+// Safari photos with Baraka: every image dropped in public/brand/safari-with-baraka/ appears on About us.
+// The file name becomes the description (baraka-with-guests-in-the-serengeti.jpg).
+const SAFARI_DIR = 'public/brand/safari-with-baraka';
+function safariPhotos() {
+  const dir = path.resolve(SAFARI_DIR);
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir).filter(f => /\.(jpe?g|png|webp|avif)$/i.test(f)).sort().map(f => {
+    const words = f.replace(/\.[^.]+$/, '').replace(/^\d+[-_ ]*/, '').replace(/[-_]+/g, ' ').trim();
+    return { src: `/brand/safari-with-baraka/${encodeURIComponent(f)}`, alt: words ? words[0].toUpperCase() + words.slice(1) : 'On safari with Baraka' };
+  });
+}
+function safariGallery() {
+  const photos = safariPhotos();
+  if (!photos.length) {
+    return `<figure class="ytt-about-figure"><img src="/brand/partner/crew-summit.webp" alt="Baraka’s crew on the summit of Kilimanjaro" width="1280" height="800" loading="lazy" decoding="async"><figcaption>Baraka’s crew on the summit of Kilimanjaro.</figcaption></figure>
+<p>${fill('foto’s van jullie safari met Baraka (zet ze in public/brand/safari-with-baraka/)')}</p>`;
+  }
+  return `<div class="ytt-safari-gallery">${photos.map(ph => `<figure><img src="${ph.src}" alt="${esc(ph.alt)}" loading="lazy" decoding="async"><figcaption>${esc(ph.alt)}</figcaption></figure>`).join('')}</div>`;
+}
+const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 function aboutHtml(tokens) {
   const co = tokens.company, p = tokens.partner, wa = whatsappUrl(tokens);
   const bio = rewritePartner(p.founderBio, PARTNER);
+  const same = digits(co.phone) === digits(co.whatsapp);
+  const reach = same
+    ? `phone and WhatsApp <a href="${wa}">${co.phone}</a>`
+    : `WhatsApp <a href="${wa}">${co.whatsapp}</a>, phone <a href="tel:${co.phone.replace(/[^\d+]/g, '')}">${co.phone}</a>`;
   return `
-<p class="ytt-lead">Your Tanzania Trip is a travel company for tailor-made trips to Tanzania: safaris, Kilimanjaro climbs, Zanzibar and combinations of all three. We plan and book your trip with you from the Netherlands. Our local partner in Arusha, Baraka Dalali, and his team run it on the ground.</p>
+<p class="ytt-lead">Your Tanzania Trip is a travel company for tailor-made trips to Tanzania: safaris, Kilimanjaro climbs, Zanzibar and combinations of all three. We plan and book your trip with you. Our local partner in Arusha, Baraka Dalali, and his team run it on the ground.</p>
 <h2>Our story</h2>
-<p>Your Tanzania Trip started with an internship. Tijs Krops and Edrian Waterman, two students from the Netherlands, spent their internship in Arusha with Baraka Dalali and his crew. They helped Baraka with marketing and with preparing his company for international guests, climbed with his guides and drove along on safari.</p>
-<p>When it was time to go home, none of us wanted to stop working together. So we set up this partnership ${fill('startjaar')}: Your Tanzania Trip plans and books your trip from the Netherlands, and Baraka and his crew run it in Tanzania. It works because both sides do what they are best at.</p>
-<p>${fill('meer over hoe de samenwerking met Baraka is begonnen (aan te leveren door de eigenaar)')}</p>
-<figure class="ytt-about-figure"><img src="/brand/partner/crew-summit.webp" alt="Baraka’s crew on the summit of Kilimanjaro" width="1280" height="800" loading="lazy" decoding="async"><figcaption>Baraka’s crew on the summit of Kilimanjaro.</figcaption></figure>
+<p>Your Tanzania Trip started on safari. Tijs Krops and Edrian Waterman travelled through Tanzania with Baraka Dalali and his team ${fill('jaar van de safari')}. On the road and in the parks we saw how much Baraka knows: the wildlife, the routes, the lodges and the people.</p>
+<p>After the trip we kept in touch, and the idea grew to work together. Today Baraka is our local partner in Arusha: Your Tanzania Trip plans and books your trip, and Baraka and his team run it in Tanzania. It works because both sides do what they are best at.</p>
+<p>That is what you get when you travel with us: our own knowledge and experience of Tanzania, combined with Baraka’s years as a guide in the parks and on Kilimanjaro.</p>
+${safariGallery()}
 <h2>Why we work this way</h2>
 <ul>
-<li><strong>Planning with a team in Europe.</strong> You plan in English or Dutch, with people who know what international travellers ask about: flights, insurance, payments and a clear quote.</li>
+<li><strong>Personal planning.</strong> You plan in English or Dutch, with people who know what international travellers ask about: flights, insurance, payments and a clear quote.</li>
 <li><strong>Local knowledge in Tanzania.</strong> Baraka and his team live and work in Tanzania. They know the parks, the routes, the lodges and the mountain, and they look after you during your trip.</li>
-<li><strong>Everything confirmed before you pay.</strong> Lodges, activities and transfers are confirmed with our partner in writing before we send an invoice.</li>
-<li><strong>A private trip.</strong> On safari the vehicle and the guide are yours alone; on Kilimanjaro you climb with your own crew.</li>
+<li><strong>Everything confirmed before you pay.</strong> Lodges, activities and transfers are confirmed with Baraka’s team in writing before we send an invoice.</li>
+<li><strong>A private trip with support day and night.</strong> On safari the vehicle and the guide are yours alone; on Kilimanjaro you climb with your own crew. During your trip you can reach us and Baraka’s team 24/7.</li>
 </ul>
 <h2>Who you deal with</h2>
 <div class="ytt-people">
-<div class="ytt-person"><h3>Tijs Krops</h3><p>Plans and books your trip from Nagele in the Netherlands and is your contact before departure: the proposal, your questions, the invoice and the travel documents. Speaks English and Dutch.</p><p>${fill('foto en 2–3 zinnen over Tijs')}</p></div>
-<div class="ytt-person"><h3>Edrian Waterman</h3><p>Plans and books trips together with Tijs, and knows the lodges and the routes from his months in Arusha.</p><p>${fill('foto en 2–3 zinnen over Edrian')}</p></div>
+<div class="ytt-person"><h3>Tijs Krops</h3><p>Plans and books your trip and is your contact before departure: the proposal, your questions, the invoice and the travel documents. Speaks English and Dutch.</p><p>${fill('foto en 2–3 zinnen over Tijs')}</p></div>
+<div class="ytt-person"><h3>Edrian Waterman</h3><p>Plans and books trips together with Tijs and knows the lodges and the routes from his own travels in Tanzania. You can reach Edrian on ${co.phone}.</p><p>${fill('foto en 2–3 zinnen over Edrian')}</p></div>
 <div class="ytt-person ytt-person-photo"><img src="/brand/partner/baraka-dalali.webp" alt="Baraka Dalali, our local partner in Arusha" width="160" height="160" loading="lazy" decoding="async"><h3>Baraka Dalali</h3><p>${bio}</p><p><a href="/our-partner/">More about Baraka and his team</a></p></div>
 </div>
 <h2>How we work</h2>
@@ -215,18 +268,26 @@ function aboutHtml(tokens) {
 <li>You tell us what you have in mind: dates, who is travelling, budget and pace.</li>
 <li>We send you a personal proposal, free and without obligation, and adjust it with you until it fits.</li>
 <li>When you confirm, you pay a deposit and later the balance, and you receive your travel documents.</li>
-<li>In Tanzania, Baraka’s team welcomes you and looks after you. We stay reachable on WhatsApp throughout your trip.</li>
+<li>In Tanzania, Baraka’s team welcomes you and looks after you. You can reach us and Baraka’s team day and night.</li>
 </ol>
-<p>Read what every trip includes in the <a href="/hakuna-matata-package/">Hakuna Matata Package</a>, and why you need <a href="/practical-information/travel-insurance/">travel insurance</a>.</p>
+<p>Everything that comes with every trip is on our <a href="/trip-care/">Trip Care</a> page. Also read why you need <a href="/practical-information/travel-insurance/">travel insurance</a>.</p>
 <h2>Reviews of our local partner</h2>
-<p>Baraka’s team is rated ${p.tripadvisor.score} out of 5 on Tripadvisor (${p.tripadvisor.count} reviews, checked ${p.tripadvisor.checkedOn}) and received the Travellers’ Choice award in 2023 and 2024. <a href="${p.tripadvisor.url}" target="_blank" rel="noopener noreferrer">Read the reviews on Tripadvisor</a>. These reviews are about our partner’s service in Tanzania. Your Tanzania Trip is new and does not have reviews of its own yet.</p>
+<p>Baraka’s team is rated ${p.tripadvisor.score} out of 5 on Tripadvisor (${p.tripadvisor.count} reviews, checked ${p.tripadvisor.checkedOn}) and received the Travellers’ Choice award in 2023 and 2024. <a href="${p.tripadvisor.url}" target="_blank" rel="noopener noreferrer">Read the reviews on Tripadvisor</a>. These reviews are about Baraka’s service in Tanzania. Your Tanzania Trip is new and does not have reviews of its own yet.</p>
 <h2>Contact</h2>
-<p>Your Tanzania Trip, ${co.address.replace(', Netherlands', ', the Netherlands')}. E-mail <a href="mailto:${co.email}">${co.email}</a>, WhatsApp <a href="${wa}">${co.whatsapp}</a>, phone <a href="tel:${co.phone.replace(/[^\d+]/g, '')}">${co.phone}</a>. <a href="/contact/">All contact details</a>.</p>
+<p>Your Tanzania Trip, ${co.address.replace(', Netherlands', ', the Netherlands')}. E-mail <a href="mailto:${co.email}">${co.email}</a>, ${reach}. <a href="/contact/">All contact details</a>.</p>
 <h2>Ready to start?</h2>
 <p>Browse the <a href="/tanzania-travel/">sample itineraries</a> or <a href="/travel-proposal/">plan your trip with us</a>. Karibu.</p>`;
 }
 
 const PAGE = {
+  '/blog/preparing-your-first-safari-in-tanzania/': $ => {
+    const h = $('h2').filter((_, e) => /Hakuna Matata Package/.test($(e).text())).first();
+    if (!h.length) return;
+    h.text('Peace of mind: Trip Care, included in every trip');
+    h.nextAll('p').filter((_, e) => /Pumbaa/.test($(e).text())).first().remove();
+    h.nextAll('p').filter((_, e) => /Hakuna Matata Package/.test($(e).text())).first()
+      .html('Travelling far can bring the odd surprise. That is why every trip with us comes with <a href="/trip-care/">Trip Care</a>: your trip confirmed in writing before you pay, Baraka’s team waiting for you at the airport, a private guide, and support day and night from Baraka’s team in Arusha and from us.');
+  },
   '/travel-proposal/': $ => {
     // International visitors: no country preselected (it was United States).
     const country = $('#input_5_16');
@@ -248,7 +309,7 @@ const PAGE = {
         el.html(el.html().replace(/is operated in Tanzania by Kilimanjaro Nature Tours\./, 'is run in Tanzania by Baraka Dalali and his team in Arusha.'));
       }
       if (/^Kilimanjaro Nature Tours is a member of the Tanzania Association of Tour Operators/.test(t)) {
-        el.html(el.html().replace(/^Kilimanjaro Nature Tours is/, `Baraka’s company, ${LEGAL}, is`));
+        el.html(el.html().replace(/^Kilimanjaro Nature Tours is/, 'Baraka’s company is'));
       }
       if (/^More videos on the Kilimanjaro Nature Tours channel/.test(t)) el.remove();
       if (/During the trip you also have the direct contact details of Kilimanjaro Nature Tours/.test(t)) {
@@ -283,14 +344,14 @@ export function polishBody(html, page, tokens) {
   const edit = PAGE[page.path];
   if (edit) { const $ = cheerio.load(html, null, false); edit($, tokens); html = $.html(); }
   html = rewritePartner(html);
-  html = rewriteWhatsapp(html, tokens);
+  html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
   return html;
 }
 export function polishChrome(html, tokens, part) {
   html = part === 'footer' ? polishFooter(html) : polishHeader(html);
   html = rewritePartner(html);
-  html = rewriteWhatsapp(html, tokens);
+  html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
   return html;
 }
@@ -303,7 +364,7 @@ export function polishScripts(js, page) {
 /** HTML fragments that skip BaseLayout (dist/ajax/**, loaded by static-ajax.js). */
 export function polishFragment(html, tokens) {
   html = rewritePartner(html);
-  html = rewriteWhatsapp(html, tokens);
+  html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
   return html;
 }
@@ -311,7 +372,7 @@ export function polishFragment(html, tokens) {
 export function polishText(text, tokens) {
   if (!text) return text;
   text = rewritePartner(text, [...PARTNER_TEXT, ...PARTNER]);
-  text = rewriteWhatsappText(text, tokens);
+  text = rewriteContacts(text, tokens, true);
   for (const [re, to] of PROMISES) text = text.replace(re, to);
   return text;
 }
@@ -367,6 +428,7 @@ export const polishCss = `
 .video-frame{padding-top:0!important;aspect-ratio:16/9;height:auto}
 
 /* About us */
+.ytt-safari-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:24px 0}.ytt-safari-gallery figure{margin:0}.ytt-safari-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}.ytt-safari-gallery figcaption{font-size:13px;margin-top:6px;color:var(--ytt-muted)}
 .ytt-about .ytt-lead{font-size:20px;line-height:1.6;font-weight:500}
 .ytt-about-figure{margin:28px 0}.ytt-about-figure img{width:100%;height:auto;border-radius:12px}.ytt-about-figure figcaption{font-size:14px;margin-top:8px;color:var(--ytt-muted)}
 .ytt-people{display:grid;gap:20px;margin:20px 0 8px}@media(min-width:900px){.ytt-people{grid-template-columns:1fr 1fr}}

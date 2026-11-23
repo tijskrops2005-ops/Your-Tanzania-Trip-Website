@@ -68,12 +68,20 @@ Status: 2026-10-27. Everything the site needs is filled in; there are no placeho
 - **Footer:** "About the photos" removed; new column Your Tanzania Trip (About us, Our local partner, Plan my Trip, Contact, FAQ, Blog); link columns now also on phones.
 - **Checked:** no sideways scrolling at 375, 390, 768, 1024 and 1440 px on 14 key pages; menus, counters, validation and form sending tested in a browser; `node scripts/audit-site.mjs` clean.
 
-## Your input needed (2026-11-23)
+## Done on 2026-11-23, second round (owner answers)
 
-- [ ] **Phone number:** is +31 6 29351377 still the phone line, or should calls also go to +31 6 12729607? (Only WhatsApp was changed.)
-- [ ] **About us:** start year of the partnership, how the cooperation with Baraka began, a photo and 2–3 sentences about Tijs and about Edrian (visible `[INVULLEN]` markers on `/about-us/`).
-- [ ] **Photos with Baraka** (we only have five): Baraka on safari or with guests, the safari vehicles, the crew on Kilimanjaro, Zanzibar handover, Serengeti wildlife from your trips. Landscape, at least 1600 px wide.
-- [ ] **Check these inherited promises** (still on the site, not invented by us, not confirmed either): Hakuna Matata Package (24/7 support, replacement vehicle, network of bush garages, flight disruption support), the safari page highlights "Flight disruption support" and "Worry-free travel", and "from $250 extra p.p." for a flight quote on Plan my Trip.
-- [ ] **Contradiction:** the contact page says "Bank details are on your invoice, never on this website", while Easy payments shows the Knab IBAN. Which one is right?
-- [ ] **Legal sentence:** confirm that "your trip is operated by Kilimanjaro Nature Tours, a licensed Tanzanian tour operator" may stay as is (it is the only place the company name is still shown).
-- [ ] **Social media:** add Instagram/Facebook/TikTok URLs to `company.sameAs` once they exist; the footer has no social links until then.
+- **No company name of the partner anywhere:** always "Baraka" or "our local partner in Arusha", also in the licensed-operator sentence ("operated by our local partner in Arusha, a licensed Tanzanian tour operator led by Baraka Dalali") and in "Recognised by". No links, e-mail, phone, address or logo of the partner company remain (also not in llms.txt, the search index and the pop-up texts).
+- **Phone and WhatsApp +31 6 12729607** (Edrian's number) everywhere; +31 6 29351377 is gone (`company.formerPhones`).
+- **About us:** the story now starts with your safari with Baraka, keeping in touch and working together; the internship is no longer mentioned anywhere.
+- **Trip Care** replaces the previous operator's Hakuna Matata Package: new page `/trip-care/` (old URL redirects), with personal planning, everything confirmed before you pay, payment schedule, travel documents, flights on request from $250 p.p., airport pick-up, private guide and vehicle, 24/7 support. No replacement-vehicle or garage promises.
+- **Bank details:** the contact page now points to Easy payments (IBAN confirmed).
+- Removed pages (lodges, academy) no longer appear in llms-full.txt and the site search; the remaining "reply within 24 hours" promises are now "personal reply".
+
+## Still to deliver (then the site is complete)
+
+- [ ] **Year of the safari with Baraka** (one number, shown in "Our story" on About us).
+- [ ] **Tijs:** a portrait photo (square, at least 600 × 600 px) and 2–3 sentences about yourself.
+- [ ] **Edrian:** a portrait photo (same size) and 2–3 sentences about him.
+- [ ] **Photos of your safari with Baraka:** put them in `public/brand/safari-with-baraka/` (JPG/WebP, landscape, at least 1600 px wide). They appear on About us automatically; the file name becomes the caption, e.g. `baraka-with-us-in-the-serengeti.jpg`.
+- [ ] **FormSubmit activation:** click the one-time confirmation e-mail on bookings@yourtanzaniatrip.com after the first form submission.
+- [ ] Later: Instagram/Facebook/TikTok URLs for the footer (`company.sameAs`).
