@@ -71,6 +71,8 @@ const PARTNER = [
   // Anything left: plain wording, with a capital at the start of a sentence
   [/(^|[.!?:>]\s*|"\s*)Kilimanjaro Nature Tours/g, '$1Our local partner'],
   [/Kilimanjaro Nature Tours/g, 'our local partner'],
+  // A capital is only right at the start of a sentence, not after "from", "with" or a link tag mid-sentence.
+  [/([a-z,]\s+(?:<a\b[^>]*>\s*)?)Our local partner/g, '$1our local partner'],
   // Contact details and links of the partner company: the e-mail goes, a website link keeps its text.
   [/\s*·?\s*<a\b[^>]*href="mailto:info@kilimanjaronaturetours\.com"[^>]*>[\s\S]*?<\/a>/g, ''],
   [/(\s*·\s*)?<a\b[^>]*href="https?:\/\/(?:www\.)?kilimanjaronaturetours\.com[^"]*"[^>]*>([\s\S]*?)<\/a>/g,
@@ -167,6 +169,50 @@ const PROMISES = [
   [/Free Hakuna Matata (?:support )?(?:P|p)ackage/g, 'Trip Care included'],
   [/Hakuna Matata,? [Tt]he [Ww]orry-free [Pp]ackage/g, 'Trip Care'],
   [/(?:our (?:free |exclusive )?)?Hakuna Matata (?:support )?(?:P|p)ackage/g, 'Trip Care'],
+  // A small team: no "consultants" or "experts" departments.
+  [/Call an expert/g, 'Talk to us'],
+  [/Our travel consultants know the country through and through/g, 'We know the country well'],
+  [/(O|o)ur (?:travel )?(?:experts|consultants)( will| are| know)?/g, (m, o, verb) => `${o}ur team${verb ? { ' will': ' will', ' are': ' is', ' know': ' knows' }[verb] : ''}`],
+  [/with our travel (?:experts|consultants)/gi, 'with our team'],
+  // Old team: a named consultant of the previous operator and claims of specialists in Tanzania.
+  [/In this article our experienced travel consultant Julia Trento shares her insights, tips and tricks/g, 'In this article we share our insights, tips and tricks'],
+  [/But let’s hear what Julia suggests\./g, 'Here is what we suggest.'],
+  [/Julia has one more good tip for families on the road:/g, 'One more good tip for families on the road:'],
+  [/Julia also has five further tips/g, 'And five more tips'],
+  [/At Your Tanzania Trip, everything revolves around our team\. With experienced travel consultants, multilingual specialists and well-trained local guides, we bring together international standards and genuine local knowledge\. Our specialists live and work in Tanzania, so every itinerary is put together with real expertise and first-hand experience\./g,
+    'Your Tanzania Trip is a small, personal team. Tijs and Edrian plan your trip with you, and Baraka and his licensed guides run it in Tanzania. That way you get personal planning and real local knowledge in one trip.'],
+  [/Our professional Tanzania travel consultants are specialists in/g, 'We specialise in'],
+  [/(O|o)ur (?:luxury |professional |experienced |Serengeti )*(?:Tanzania )?travel (?:experts|consultants)(?: in Tanzania)?( are| curate| put together| know)?/g,
+    (m, o, verb) => `${o}ur team${verb ? { ' are': ' is', ' curate': ' curates', ' put together': ' puts together', ' know': ' knows' }[verb] : ''}`],
+  [/the travel experts at Your Tanzania Trip/g, 'Your Tanzania Trip'],
+  [/ask your travel consultant/g, 'ask us'],
+  // Claims of the previous operator about itself (local operator in Arusha, own team, own projects).
+  [/We are a local tour operator with our base in Arusha, Tanzania, and we organise and oversee your whole trip from A to Z\. Our team brings together many nationalities, among them Tanzanians who know the country and its culture inside out\. Our professional (<a href="\/tanzania-travel\/">)Tanzania travel(<\/a>) consultants are specialists in Tanzania safaris,/g,
+    'We plan your whole trip with you, and our local partner in Arusha, Baraka Dalali and his team, run it on the ground. Baraka’s guides know the country and its culture inside out. Together we specialise in $1Tanzania safaris$2,'],
+  [/Our <strong>luxury travel consultants <\/strong>are carefully creating/g, 'We are carefully creating'],
+  [/(let |asking |with |contact )your travel consultant/g, '$1us'],
+  [/just let us know\. They can give you/g, 'just let us know. We can give you'],
+  [/As a company, we are committed to supporting Tanzania’s social and economic development, and we take part in several initiatives with that aim\./g,
+    'As a company, we want our trips to support Tanzania’s social and economic development.'],
+  [/As a trusted Tanzanian travel company offering outstanding wildlife and nature experiences, we know that Tanzania’s vast wilderness needs to be protected and preserved\. We are therefore committed to sustainable business practices and actively support environmental projects across the country\./g,
+    'Because our trips are built around Tanzania’s wildlife and nature, we know how much its wilderness needs to be protected. That is why we plan private trips with a local partner and can suggest lodges with a lower footprint.'],
+  [/our drivers and guides will take you wherever you need to go!/g, 'Baraka’s drivers and guides take you wherever you need to go.'],
+  [/Holland \/ The Netherlands/g, 'the Netherlands'],
+  [/Our jeeps always have bottles of water in the fridge\./g, 'Your safari vehicle has bottles of water in the fridge.'],
+  // A Google search for the partner's company name is not a review link; it returns once
+  // partner.google.reviewUrl (the direct link to Baraka's Google reviews) is filled in.
+  [/\s*<a\b[^>]*href="https:\/\/www\.google\.com\/search\?q=Kilimanjaro\+Nature\+Tours[^"]*"[^>]*>[\s\S]*?<\/a>/g, ''],
+  // Family page highlights: titles that match their own text, no unconfirmed discounts.
+  [/(<p class="usp-row-title">)30% off for children up to 15(<\/p>)/g, '$1Family-friendly stays$2'],
+  [/(<p class="usp-row-title">)Babies travel for free(<\/p>)/g, '$1Car seats on request$2'],
+  // Old certification logo of the previous operator, replaced by a random photo in the hero.
+  [/<img\b[^>]*class="jumbotron-custom-logo-img"[^>]*>/g, ''],
+  // Calm, concrete tone on the main landing pages.
+  [/The Zanzibar Archipelago is an awesome world class beach destination!/g, 'The Zanzibar Archipelago has white beaches, warm turquoise water and the old streets of Stone Town.'],
+  [/Start planning your dream trip/g, 'Start planning your trip'],
+  // Countries we do not sell: an honest invitation instead of a promise.
+  [/Exceptional Travel Beyond Tanzania/g, 'Combining Tanzania with another country?'],
+  [/Keen to add gorilla trekking in Uganda or the Great Migration in Kenya\?/g, 'Ask us what is possible. We tell you honestly what we can arrange, and what we cannot.'],
   // Bank details are on the Easy payments page (owner confirmed 2026-11-23).
   [/Bank details are on your invoice, never on this website\./g, 'Bank details are on your invoice and on our <a href="/practical-information/easy-payments/">Easy payments</a> page.'],
   // A company "based in Africa" that runs trips in four countries was the previous operator.
@@ -202,6 +248,8 @@ function polishFooter(html) {
 function polishHeader(html) {
   return html
     .replace(/(<li\b[^>]*menu-item-has-children hide[^>]*>\s*<a\b)(?![^>]*aria-haspopup)/g, '$1 aria-haspopup="true" aria-expanded="false"')
+    // An old "Currency selector has been added" announcement popped up on every first visit.
+    .replace(/\s*data-tooltip(?:-title|-content|-close-btn)?(?:="[^"]*")?/g, '')
     // The mobile menu still showed the old label; the desktop button already says "Plan my Trip".
     .replace(/(<li\b[^>]*mobile-menu-cta-btn[^>]*>\s*<a href="\/travel-proposal\/">)Travel proposal(<\/a>)/g, '$1Plan my Trip$2')
     // "Accommodations" pointed at a page that is no longer part of the site (it redirects); the review tile goes to the partner reviews.
@@ -215,7 +263,6 @@ function polishHeader(html) {
 // ---------------------------------------------------------------------------------------------
 // 5. About us and Our local partner pages.
 // ---------------------------------------------------------------------------------------------
-const fill = text => `<span class="fill-marker">[INVULLEN: ${text}]</span>`;
 // Safari photos with Baraka: every image dropped in public/brand/safari-with-baraka/ appears on About us.
 // The file name becomes the description (baraka-with-guests-in-the-serengeti.jpg).
 const SAFARI_DIR = 'public/brand/safari-with-baraka';
@@ -230,8 +277,7 @@ function safariPhotos() {
 function safariGallery() {
   const photos = safariPhotos();
   if (!photos.length) {
-    return `<figure class="ytt-about-figure"><img src="/brand/partner/crew-summit.webp" alt="Baraka’s crew on the summit of Kilimanjaro" width="1280" height="800" loading="lazy" decoding="async"><figcaption>Baraka’s crew on the summit of Kilimanjaro.</figcaption></figure>
-<p>${fill('foto’s van jullie safari met Baraka (zet ze in public/brand/safari-with-baraka/)')}</p>`;
+    return `<figure class="ytt-about-figure"><img src="/brand/partner/crew-summit.webp" alt="Baraka’s crew on the summit of Kilimanjaro" width="1280" height="800" loading="lazy" decoding="async"><figcaption>Baraka’s crew on the summit of Kilimanjaro.</figcaption></figure>`;
   }
   return `<div class="ytt-safari-gallery">${photos.map(ph => `<figure><img src="${ph.src}" alt="${esc(ph.alt)}" loading="lazy" decoding="async"><figcaption>${esc(ph.alt)}</figcaption></figure>`).join('')}</div>`;
 }
@@ -246,8 +292,8 @@ function aboutHtml(tokens) {
   return `
 <p class="ytt-lead">Your Tanzania Trip is a travel company for tailor-made trips to Tanzania: safaris, Kilimanjaro climbs, Zanzibar and combinations of all three. We plan and book your trip with you. Our local partner in Arusha, Baraka Dalali, and his team run it on the ground.</p>
 <h2>Our story</h2>
-<p>Your Tanzania Trip started on safari. Tijs Krops and Edrian Waterman travelled through Tanzania with Baraka Dalali and his team ${fill('jaar van de safari')}. On the road and in the parks we saw how much Baraka knows: the wildlife, the routes, the lodges and the people.</p>
-<p>After the trip we kept in touch, and the idea grew to work together. Today Baraka is our local partner in Arusha: Your Tanzania Trip plans and books your trip, and Baraka and his team run it in Tanzania. It works because both sides do what they are best at.</p>
+<p>Your Tanzania Trip started on safari. Tijs Krops and Edrian Waterman travelled through Tanzania with Baraka Dalali and his team. On the road and in the parks we saw how much Baraka knows: the wildlife, the routes, the lodges and the people.</p>
+<p>After the trip we kept in touch, and the idea grew to work together. In ${co.foundingDate || '2025'} we started, and today Baraka is our local partner in Arusha: Your Tanzania Trip plans and books your trip, and Baraka and his team run it in Tanzania. It works because both sides do what they are best at.</p>
 <p>That is what you get when you travel with us: our own knowledge and experience of Tanzania, combined with Baraka’s years as a guide in the parks and on Kilimanjaro.</p>
 ${safariGallery()}
 <h2>Why we work this way</h2>
@@ -259,8 +305,8 @@ ${safariGallery()}
 </ul>
 <h2>Who you deal with</h2>
 <div class="ytt-people">
-<div class="ytt-person"><h3>Tijs Krops</h3><p>Plans and books your trip and is your contact before departure: the proposal, your questions, the invoice and the travel documents. Speaks English and Dutch.</p><p>${fill('foto en 2–3 zinnen over Tijs')}</p></div>
-<div class="ytt-person"><h3>Edrian Waterman</h3><p>Plans and books trips together with Tijs and knows the lodges and the routes from his own travels in Tanzania. You can reach Edrian on ${co.phone}.</p><p>${fill('foto en 2–3 zinnen over Edrian')}</p></div>
+<div class="ytt-person"><h3>Tijs Krops</h3><p>Plans and books your trip and is your contact before departure: the proposal, your questions, the invoice and the travel documents. Speaks English and Dutch.</p></div>
+<div class="ytt-person"><h3>Edrian Waterman</h3><p>Plans and books trips together with Tijs and knows the lodges and the routes from his own travels in Tanzania. You can reach Edrian on ${co.phone}.</p></div>
 <div class="ytt-person ytt-person-photo"><img src="/brand/partner/baraka-dalali.webp" alt="Baraka Dalali, our local partner in Arusha" width="160" height="160" loading="lazy" decoding="async"><h3>Baraka Dalali</h3><p>${bio}</p><p><a href="/our-partner/">More about Baraka and his team</a></p></div>
 </div>
 <h2>How we work</h2>
@@ -346,7 +392,7 @@ export function polishBody(html, page, tokens) {
   html = rewritePartner(html);
   html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
-  return html;
+  return uspIcons(fixCapsHeadings(html));
 }
 export function polishChrome(html, tokens, part) {
   html = part === 'footer' ? polishFooter(html) : polishHeader(html);
@@ -361,12 +407,67 @@ export function polishScripts(js, page) {
   if (page.path === '/travel-proposal/') js = js.replace(/"16":"US"/g, '"16":""');
   return js;
 }
+// ---------------------------------------------------------------------------------------------
+// 6. Presentation details: headings in capitals, highlight icons.
+// ---------------------------------------------------------------------------------------------
+const SMALL = new Set(['a', 'an', 'and', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'or', 'the', 'to', 'with']);
+const KEEP_CAPS = new Set(['UNESCO', 'USD', 'EUR', 'KLM', 'TATO']);
+function titleCase(text) {
+  return text.trim().replace(/!+$/, '').replace(/\.$/, '').split(/(\s+)/).map((w, i) => {
+    if (/^\s+$/.test(w) || KEEP_CAPS.has(w)) return w;
+    const lower = w.toLowerCase();
+    if (i > 0 && SMALL.has(lower)) return lower;
+    return lower.replace(/(^|[-(])([a-z])/g, (m, a, b) => a + b.toUpperCase());
+  }).join('');
+}
+function fixCapsHeadings(html) {
+  return html.replace(/(<h([1-3])\b[^>]*>)([^<]{6,})(<\/h\2>)/g, (m, open, lvl, text, close) => {
+    const letters = text.replace(/&[a-z]+;|[^A-Za-z]/g, '');
+    if (letters.length < 5 || letters !== letters.toUpperCase() || KEEP_CAPS.has(text.trim())) return m;
+    return open + titleCase(text) + close;
+  });
+}
+const USP_ICON = {
+  'Worry-free travel': '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+  'Flights on request': '<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>',
+  'Safari &amp; Beach': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>',
+  'Private guides': '<circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/>',
+  'Family-friendly stays': '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/>',
+  'Car seats on request': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+};
+function uspIcons(html) {
+  return html.replace(/<img\b[^>]*>(\s*<div class="usp-row-text">\s*<p class="usp-row-title">([^<]*)<\/p>)/g, (m, rest, title) => {
+    const paths = USP_ICON[title.trim()];
+    return paths ? `<span class="ytt-usp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${paths}</svg></span>${rest}` : m;
+  });
+}
+
 /** HTML fragments that skip BaseLayout (dist/ajax/**, loaded by static-ajax.js). */
 export function polishFragment(html, tokens) {
   html = rewritePartner(html);
   html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
   return html;
+}
+/** JSON-LD: no separate, nameless partner organisation; founding year on our own organisation. */
+export function polishSchema(json, tokens) {
+  let data;
+  try { data = JSON.parse(json); } catch { return json; }
+  const isPartner = v => v && typeof v === 'object' && v['@id'] === '#organization';
+  const walk = v => {
+    if (Array.isArray(v)) return v.filter(x => !isPartner(x)).map(walk);
+    if (!v || typeof v !== 'object') return v;
+    const out = {};
+    for (const [k, x] of Object.entries(v)) {
+      if (isPartner(x)) continue;                      // "mentions": {"@id": "#organization"}
+      out[k] = walk(x);
+    }
+    if (out['@type'] === 'Organization' && /\/#organization$/.test(out['@id'] || '') && tokens.company.foundingDate && !out.foundingDate) {
+      out.foundingDate = tokens.company.foundingDate;
+    }
+    return out;
+  };
+  return JSON.stringify(walk(data));
 }
 /** Titles, descriptions, Open Graph text, JSON-LD and plain-text files. */
 export function polishText(text, tokens) {
@@ -426,6 +527,11 @@ export const polishCss = `
 
 /* Partner video: 16:9 from its own width (percentage padding followed the wider grid) */
 .video-frame{padding-top:0!important;aspect-ratio:16/9;height:auto}
+
+/* Highlight icons (outline, gold on sage) */
+.ytt-usp-icon{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#dde6db;color:var(--ytt-forest);flex:none}
+.ytt-usp-icon svg{color:var(--ytt-forest)}
+@media(max-width:1023px){.ytt-usp-icon{width:44px;height:44px}.ytt-usp-icon svg{width:22px;height:22px}}
 
 /* About us */
 .ytt-safari-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:24px 0}.ytt-safari-gallery figure{margin:0}.ytt-safari-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}.ytt-safari-gallery figcaption{font-size:13px;margin-top:6px;color:var(--ytt-muted)}

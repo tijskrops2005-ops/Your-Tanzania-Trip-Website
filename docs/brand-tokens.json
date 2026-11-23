@@ -335,8 +335,8 @@
       "Tijs Krops",
       "Edrian Waterman"
     ],
-    "foundingDate": "",
-    "_foundingDateNote": "[INVULLEN] year the partnership started; the Organization schema gets foundingDate once filled.",
+    "foundingDate": "2025",
+    "_foundingDateNote": "Owner, 2026-11-23: the cooperation with Baraka started in 2025.",
     "sameAs": [],
     "_sameAsNote": "[INVULLEN] Instagram/TikTok/Facebook profile URLs, only once they exist; added to Organization.sameAs.",
     "_whatsappNote": "Phone and WhatsApp +31 6 12729607 since 2026-11-23 (owner: the old number +31 6 29351377 is no longer in use). src/lib/polish.js replaces every former number at build time; generated content keeps the old one until the next npm run rebrand.",
@@ -427,12 +427,12 @@
     "photos from other travel sites"
   ],
   "forms": {
-    "_note": "Form delivery for the static site (public/assets/js/forms.js). FormSubmit sends every submission to the company e-mail; the first submission triggers a one-time activation e-mail that must be confirmed.",
+    "_note": "Form delivery for the static site (public/assets/js/forms.js). FormSubmit sends every submission to the company e-mail; the first submission triggers a one-time activation e-mail that must be confirmed. Activated by the owner on 2026-11-23; requests arrive at bookings@.",
     "endpoint": "https://formsubmit.co/ajax/bookings@yourtanzaniatrip.com"
   },
   "story": {
-    "en": "Your Tanzania Trip started on safari. Tijs Krops and Edrian Waterman travelled through Tanzania with Baraka Dalali and his team, and kept in touch after the trip. Out of that contact grew the idea to work together: Your Tanzania Trip plans and books your trip, and Baraka and his team run it in Tanzania as our local partner in Arusha.",
-    "_note": "Owner, 2026-11-23: the cooperation began with a safari with Baraka (not an internship). Year still to be supplied."
+    "en": "Your Tanzania Trip started on safari. Tijs Krops and Edrian Waterman travelled through Tanzania with Baraka Dalali and his team, and kept in touch after the trip. Out of that contact grew the idea to work together, and in 2025 we started: Your Tanzania Trip plans and books your trip, and Baraka and his team run it in Tanzania as our local partner in Arusha.",
+    "_note": "Owner, 2026-11-23: the cooperation began with a safari with Baraka (not an internship) and started in 2025."
   },
   "analytics": {
     "_note": "Google Analytics 4. The Google tag is in the <head> of every page (BaseLayout.astro) with Google consent mode v2: analytics cookies only after 'Accept' in the cookie banner (public/assets/js/cookie-consent.js); without consent GA receives cookieless pings. Vercel Web Analytics (cookieless) runs independently.",

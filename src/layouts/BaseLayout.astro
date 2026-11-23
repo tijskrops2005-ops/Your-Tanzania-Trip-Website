@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import { redesignHeader, redesignFooter, redesignBody, redesignCss } from '../lib/redesign.js';
 import { readPartial, markCurrentMenu } from '../lib/site.js';
 import { fixBody, fixChrome, fixSchema, pageTitle, pageDescription } from '../lib/fixes.js';
-import { polishBody, polishChrome, polishText, polishCss, polishScripts, whatsappUrl } from '../lib/polish.js';
+import { polishBody, polishChrome, polishText, polishCss, polishScripts, polishSchema, whatsappUrl } from '../lib/polish.js';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
@@ -36,7 +36,7 @@ const description = polishText(pageDescription(page), tokens);
 const ogTitle = polishText(page.ogTitle, tokens);
 const ogDescription = polishText(page.ogDescription, tokens);
 // The new homepage uses its own concise questions; do not retain obsolete FAQ markup.
-const pageSchemas = page.ldJson.map(json => polishText(fixSchema(json, tokens), tokens)).map(json => {
+const pageSchemas = page.ldJson.map(json => polishSchema(polishText(fixSchema(json, tokens), tokens), tokens)).map(json => {
   if (page.slug !== 'index') return json;
   const prune = value => {
     if (Array.isArray(value)) return value.map(prune).filter(Boolean);

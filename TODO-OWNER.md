@@ -77,11 +77,18 @@ Status: 2026-10-27. Everything the site needs is filled in; there are no placeho
 - **Bank details:** the contact page now points to Easy payments (IBAN confirmed).
 - Removed pages (lodges, academy) no longer appear in llms-full.txt and the site search; the remaining "reply within 24 hours" promises are now "personal reply".
 
+## Done on 2026-11-23, third round (trust and polish)
+
+- Start year 2025 in "Our story" and as `foundingDate` in the Organization schema; FormSubmit is active (requests arrive at bookings@).
+- No visible [INVULLEN] markers on the live site any more; About us reads complete and gets the photos and bios as soon as they arrive.
+- Old claims of the previous operator rewritten: "local tour operator based in Arusha with many nationalities", "travel consultants/experts", a named former consultant (Julia Trento), "multilingual specialists", "trusted Tanzanian travel company" with environmental projects, "our jeeps", "30% off for children" and "babies travel for free".
+- Headings in capitals now in normal case, the benefit blocks have clean outline icons, the old certification-logo photo on Kilimanjaro is gone, the currency pop-up is gone, the nameless partner entry in the schema is gone, the Google search button with the company name is gone.
+
 ## Still to deliver (then the site is complete)
 
-- [ ] **Year of the safari with Baraka** (one number, shown in "Our story" on About us).
 - [ ] **Tijs:** a portrait photo (square, at least 600 × 600 px) and 2–3 sentences about yourself.
 - [ ] **Edrian:** a portrait photo (same size) and 2–3 sentences about him.
-- [ ] **Photos of your safari with Baraka:** put them in `public/brand/safari-with-baraka/` (JPG/WebP, landscape, at least 1600 px wide). They appear on About us automatically; the file name becomes the caption, e.g. `baraka-with-us-in-the-serengeti.jpg`.
-- [ ] **FormSubmit activation:** click the one-time confirmation e-mail on bookings@yourtanzaniatrip.com after the first form submission.
-- [ ] Later: Instagram/Facebook/TikTok URLs for the footer (`company.sameAs`).
+- [ ] **Photos of your safari with Baraka:** landscape, at least 1600 px wide. Send them, or put them in `public/brand/safari-with-baraka/`; the file name becomes the caption.
+- [ ] **Google reviews (optional):** the direct link to Baraka's Google reviews page; then the "Reviews on Google" button and three Google quotes come back.
+- [ ] **Social media:** Instagram/Facebook/TikTok URLs for the footer and the schema.
+- [ ] **Check:** do you offer the optional "flight to Kigali" (Rwanda gorilla add-on) that appears in a few itineraries? If not, it goes.
