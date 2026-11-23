@@ -123,6 +123,25 @@ function rewriteContacts(html, tokens, text = false) {
     `<p><strong>Phone number (if your bank asks for one):</strong> ${phone}</p>`);
 }
 
+// Reviews (owner, 2026-11-23): Baraka's Tripadvisor and Google reviews, both linked, for trust.
+function quotesHtml(tokens) {
+  const p = tokens.partner, g = (p.google?.reviewUrl || '').replace(/&/g, '&amp;');
+  return (p.quotes || []).map(q => `<figure class="ytt-quote"><blockquote>“${esc(q.text)}”</blockquote><figcaption>${esc(q.name)}, review on <a href="${g}" target="_blank" rel="noopener noreferrer">Google</a></figcaption></figure>`).join('');
+}
+function rewriteReviews(html, tokens) {
+  const g = tokens.partner?.google?.reviewUrl;
+  if (!g) return html;
+  const gEsc = g.replace(/&/g, '&amp;');
+  html = html.replace(/href="https:\/\/www\.google\.com\/search\?q=Kilimanjaro\+Nature\+Tours[^"]*"/g, `href="${gEsc}"`);
+  html = html.replace(/<!--\s*\[INVULLEN: Google reviews[\s\S]*?-->/g, quotesHtml(tokens));
+  // A Google link next to every "Read … reviews on Tripadvisor" link (unless one is already there).
+  return html.replace(/<a\b([^>]*?)href="https:\/\/www\.tripadvisor\.com\/[^"]*"([^>]*)>\s*(Read (?:partner |the )?reviews on Tripadvisor)\s*<\/a>/g, (m, a, b, label, off, str) => {
+    if (str.slice(off, off + m.length + 700).includes('google.com/maps')) return m;
+    const sep = /\bbtn\b/.test(a + b) ? ' ' : '<span class="ytt-sep" aria-hidden="true"> · </span>';
+    return `${m}${sep}<a${a}href="${gEsc}"${b}>${label.replace('Tripadvisor', 'Google')}</a>`;
+  });
+}
+
 // Promises nobody has confirmed (reply time, "100 lodges visited").
 const PROMISES = [
   [/ We reply within 24 hours, usually sooner\./g, ' We reply personally.'],
@@ -199,9 +218,6 @@ const PROMISES = [
   [/our drivers and guides will take you wherever you need to go!/g, 'Baraka’s drivers and guides take you wherever you need to go.'],
   [/Holland \/ The Netherlands/g, 'the Netherlands'],
   [/Our jeeps always have bottles of water in the fridge\./g, 'Your safari vehicle has bottles of water in the fridge.'],
-  // A Google search for the partner's company name is not a review link; it returns once
-  // partner.google.reviewUrl (the direct link to Baraka's Google reviews) is filled in.
-  [/\s*<a\b[^>]*href="https:\/\/www\.google\.com\/search\?q=Kilimanjaro\+Nature\+Tours[^"]*"[^>]*>[\s\S]*?<\/a>/g, ''],
   // Family page highlights: titles that match their own text, no unconfirmed discounts.
   [/(<p class="usp-row-title">)30% off for children up to 15(<\/p>)/g, '$1Family-friendly stays$2'],
   [/(<p class="usp-row-title">)Babies travel for free(<\/p>)/g, '$1Car seats on request$2'],
@@ -211,8 +227,12 @@ const PROMISES = [
   [/The Zanzibar Archipelago is an awesome world class beach destination!/g, 'The Zanzibar Archipelago has white beaches, warm turquoise water and the old streets of Stone Town.'],
   [/Start planning your dream trip/g, 'Start planning your trip'],
   // Countries we do not sell: an honest invitation instead of a promise.
-  [/Exceptional Travel Beyond Tanzania/g, 'Combining Tanzania with another country?'],
-  [/Keen to add gorilla trekking in Uganda or the Great Migration in Kenya\?/g, 'Ask us what is possible. We tell you honestly what we can arrange, and what we cannot.'],
+  // We only sell Tanzania (owner, 2026-11-23: no gorilla trips in Rwanda or Uganda).
+  [/Exceptional Travel Beyond Tanzania/g, 'Safari, summit and sea in one trip'],
+  [/Keen to add gorilla trekking in Uganda or the Great Migration in Kenya\?/g, 'Combine your safari with a Kilimanjaro climb or a few days on Zanzibar. We plan it as one trip, with one point of contact.'],
+  [/Replace the south with Kilimanjaro, or add (?:<a\b[^>]*>)?Rwanda(?:’|')s gorillas(?:<\/a>)?\s*\./g, 'Replace the south with Kilimanjaro, or end with a few days on Zanzibar.'],
+  // The optional "Flight to Kigali" (Rwanda) is not offered: its activity card goes.
+  [/<article\b[^>]*>(?:(?!<article\b)[\s\S])*?data-wishlist-post-id="21932"[\s\S]*?<\/article>/g, ''],
   // Bank details are on the Easy payments page (owner confirmed 2026-11-23).
   [/Bank details are on your invoice, never on this website\./g, 'Bank details are on your invoice and on our <a href="/practical-information/easy-payments/">Easy payments</a> page.'],
   // A company "based in Africa" that runs trips in four countries was the previous operator.
@@ -277,7 +297,15 @@ function safariPhotos() {
 function safariGallery() {
   const photos = safariPhotos();
   if (!photos.length) {
-    return `<figure class="ytt-about-figure"><img src="/brand/partner/crew-summit.webp" alt="Baraka’s crew on the summit of Kilimanjaro" width="1280" height="800" loading="lazy" decoding="async"><figcaption>Baraka’s crew on the summit of Kilimanjaro.</figcaption></figure>`;
+    // Until the owner's own safari photos arrive: photos of Baraka's team and Tanzania (public/brand/partner).
+    photos.push(
+      { src: '/brand/partner/crew-summit.webp', alt: 'Baraka’s crew on the summit of Kilimanjaro' },
+      { src: '/brand/partner/safari-lions.webp', alt: 'Lions on a game drive' },
+      { src: '/brand/partner/safari.webp', alt: 'On the plains of northern Tanzania' },
+      { src: '/brand/partner/kilimanjaro-dawn.webp', alt: 'Kilimanjaro at dawn' },
+      { src: '/brand/partner/great-migration.jpg', alt: 'The Great Migration in the Serengeti' },
+      { src: '/brand/partner/zanzibar.webp', alt: 'The coast of Zanzibar' },
+    );
   }
   return `<div class="ytt-safari-gallery">${photos.map(ph => `<figure><img src="${ph.src}" alt="${esc(ph.alt)}" loading="lazy" decoding="async"><figcaption>${esc(ph.alt)}</figcaption></figure>`).join('')}</div>`;
 }
@@ -305,8 +333,8 @@ ${safariGallery()}
 </ul>
 <h2>Who you deal with</h2>
 <div class="ytt-people">
-<div class="ytt-person"><h3>Tijs Krops</h3><p>Plans and books your trip and is your contact before departure: the proposal, your questions, the invoice and the travel documents. Speaks English and Dutch.</p></div>
-<div class="ytt-person"><h3>Edrian Waterman</h3><p>Plans and books trips together with Tijs and knows the lodges and the routes from his own travels in Tanzania. You can reach Edrian on ${co.phone}.</p></div>
+<div class="ytt-person"><span class="ytt-initials" aria-hidden="true">TK</span><h3>Tijs Krops</h3><p>Plans and books your trip and is your contact before departure: the proposal, your questions, the invoice and the travel documents. Speaks English and Dutch.</p></div>
+<div class="ytt-person"><span class="ytt-initials" aria-hidden="true">EW</span><h3>Edrian Waterman</h3><p>Plans and books trips together with Tijs and knows the lodges and the routes from his own travels in Tanzania. You can reach Edrian on ${co.phone}.</p></div>
 <div class="ytt-person ytt-person-photo"><img src="/brand/partner/baraka-dalali.webp" alt="Baraka Dalali, our local partner in Arusha" width="160" height="160" loading="lazy" decoding="async"><h3>Baraka Dalali</h3><p>${bio}</p><p><a href="/our-partner/">More about Baraka and his team</a></p></div>
 </div>
 <h2>How we work</h2>
@@ -326,6 +354,13 @@ ${safariGallery()}
 }
 
 const PAGE = {
+  '/adventure-trips-tanzania/': $ => {
+    // "Kenya & Uganda with our partners in East Africa": we have no partners there and only sell Tanzania.
+    const h = $('h2').filter((_, e) => /Adventure Travel Beyond Tanzania/.test($(e).text())).first();
+    if (!h.length) return;
+    h.nextAll().remove();
+    h.html('More adventure in Tanzania').after('<p>Add a day of something active to your trip: a <a href="/activity/walking-safari-in-arusha-national-park/">walking safari in Arusha National Park</a>, <a href="/activity/canoeing-on-lake-duluti/">canoeing on Lake Duluti</a> or a <a href="/activity/mountainbike-tour-mto-wa-mbu/">mountain bike tour around Mto wa Mbu</a>. Tell us what you like and we fit it into your route.</p>');
+  },
   '/blog/preparing-your-first-safari-in-tanzania/': $ => {
     const h = $('h2').filter((_, e) => /Hakuna Matata Package/.test($(e).text())).first();
     if (!h.length) return;
@@ -392,14 +427,14 @@ export function polishBody(html, page, tokens) {
   html = rewritePartner(html);
   html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
-  return uspIcons(fixCapsHeadings(html));
+  return rewriteReviews(uspIcons(fixCapsHeadings(html)), tokens);
 }
 export function polishChrome(html, tokens, part) {
   html = part === 'footer' ? polishFooter(html) : polishHeader(html);
   html = rewritePartner(html);
   html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
-  return html;
+  return rewriteReviews(html, tokens);
 }
 /** Inline scripts of a page (Gravity Forms settings). */
 export function polishScripts(js, page) {
@@ -532,6 +567,13 @@ export const polishCss = `
 .ytt-usp-icon{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#dde6db;color:var(--ytt-forest);flex:none}
 .ytt-usp-icon svg{color:var(--ytt-forest)}
 @media(max-width:1023px){.ytt-usp-icon{width:44px;height:44px}.ytt-usp-icon svg{width:22px;height:22px}}
+
+/* Reviews: Google quotes and the second review link */
+.ytt-quote{margin:0;background:#fff;border:1px solid #183e3518;border-radius:12px;padding:20px 22px}
+.ytt-quote blockquote{margin:0;font-size:17px;line-height:1.6;color:var(--ytt-forest);font-style:normal;border:0;padding:0}
+.ytt-quote figcaption{margin-top:12px;font-size:14px;font-weight:600;color:var(--ytt-muted)}.ytt-quote figcaption a{color:var(--ytt-forest)!important;text-decoration:underline}
+.ytt-sep{color:inherit;opacity:.7}
+.ytt-initials{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--ytt-forest);color:#fff;font:700 18px/1 Inter,Arial,sans-serif;letter-spacing:.02em;margin-bottom:12px}
 
 /* About us */
 .ytt-safari-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:24px 0}.ytt-safari-gallery figure{margin:0}.ytt-safari-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}.ytt-safari-gallery figcaption{font-size:13px;margin-top:6px;color:var(--ytt-muted)}

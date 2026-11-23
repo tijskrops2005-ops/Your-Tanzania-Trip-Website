@@ -54,3 +54,16 @@ for (const file of walkDir('dist/ajax').filter(f => f.endsWith('.html'))) {
   if (after !== before) { fs.writeFileSync(file, after); updated++; }
 }
 console.log(`polish-finish: ${updated} AJAX fragments updated, ${dropped} of removed pages left out`);
+
+// 4. Activities we do not offer: out of the filter data and the wishlist data.
+const DROP_IDS = new Set(['21932']); // Flight to Kigali (Rwanda)
+const dropIds = v => Array.isArray(v) ? v.filter(x => !DROP_IDS.has(String(x))).map(dropIds)
+  : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).filter(([k]) => !DROP_IDS.has(k)).map(([k, x]) => [k, dropIds(x)])) : v;
+let facetFiles = 0;
+for (const file of [...walkDir('dist/facetwp-static'), 'dist/ajax/wishlist-posts.json'].filter(f => f.endsWith('.json') && fs.existsSync(f))) {
+  const before = fs.readFileSync(file, 'utf8');
+  if (![...DROP_IDS].some(id => before.includes(id))) continue;
+  const after = JSON.stringify(dropIds(JSON.parse(before)));
+  if (after !== before) { fs.writeFileSync(file, after); facetFiles++; }
+}
+console.log(`polish-finish: ${facetFiles} filter/wishlist files without unoffered activities`);

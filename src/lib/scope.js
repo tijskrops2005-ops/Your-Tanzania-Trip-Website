@@ -17,6 +17,8 @@ const EXPLICIT = {
   '/practical-information/hakuna-matata-academy/': '/practical-information/responsible-travel/',
   // The previous operator's package; our own version is Trip Care (owner, 2026-11-23).
   '/hakuna-matata-package/': '/trip-care/',
+  // Rwanda add-on we do not offer (owner, 2026-11-23).
+  '/activity/flight-to-kigali-excluded-in-the-price/': '/activities/',
 };
 /** Redirect target for a removed page, or null when the page stays. */
 export function removedTarget(path) {

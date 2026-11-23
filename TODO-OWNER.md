@@ -84,11 +84,15 @@ Status: 2026-10-27. Everything the site needs is filled in; there are no placeho
 - Old claims of the previous operator rewritten: "local tour operator based in Arusha with many nationalities", "travel consultants/experts", a named former consultant (Julia Trento), "multilingual specialists", "trusted Tanzanian travel company" with environmental projects, "our jeeps", "30% off for children" and "babies travel for free".
 - Headings in capitals now in normal case, the benefit blocks have clean outline icons, the old certification-logo photo on Kilimanjaro is gone, the currency pop-up is gone, the nameless partner entry in the schema is gone, the Google search button with the company name is gone.
 
-## Still to deliver (then the site is complete)
+## Done on 2026-11-23, fourth round
 
-- [ ] **Tijs:** a portrait photo (square, at least 600 × 600 px) and 2–3 sentences about yourself.
-- [ ] **Edrian:** a portrait photo (same size) and 2–3 sentences about him.
-- [ ] **Photos of your safari with Baraka:** landscape, at least 1600 px wide. Send them, or put them in `public/brand/safari-with-baraka/`; the file name becomes the caption.
-- [ ] **Google reviews (optional):** the direct link to Baraka's Google reviews page; then the "Reviews on Google" button and three Google quotes come back.
-- [ ] **Social media:** Instagram/Facebook/TikTok URLs for the footer and the schema.
-- [ ] **Check:** do you offer the optional "flight to Kigali" (Rwanda gorilla add-on) that appears in a few itineraries? If not, it goes.
+- Reviews: Baraka's Tripadvisor and Google reviews are linked side by side (header, footer, homepage, About us, partner page, sidebars); the three Google quotes (Deanne, Alex, Kara) are on the partner page. Google link: the Google Maps listing of his company (`partner.google.reviewUrl`).
+- Photos: About us shows six photos of Baraka's team and Tanzania until your own safari photos arrive; Tijs and Edrian have initials badges until their portraits arrive (no stock faces).
+- Rwanda: the optional "Flight to Kigali" is gone from all itineraries (page redirects to Activities), the blog post about gorillas in Rwanda is unpublished (redirects to the blog), and the "Kenya & Uganda with our partners" section on the adventure page is replaced by Tanzanian activities.
+
+## Still to deliver (whenever you are ready; the site is complete without them)
+
+- [ ] Portrait photos of Tijs and Edrian (square, at least 600 × 600 px) and 2–3 sentences each.
+- [ ] Photos of your safari with Baraka (landscape, at least 1600 px), or put them in `public/brand/safari-with-baraka/`.
+- [ ] Optional: a direct share link from Baraka's Google Business Profile, to replace the Maps link.
+- [ ] Social media URLs once the accounts exist.

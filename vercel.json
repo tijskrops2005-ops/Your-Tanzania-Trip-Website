@@ -1582,6 +1582,16 @@
       "source": "/hakuna-matata-package{/}?",
       "destination": "/trip-care/",
       "statusCode": 301
+    },
+    {
+      "source": "/blog/tanzania-and-rwanda-gorillas/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/activity/flight-to-kigali-excluded-in-the-price{/}?",
+      "destination": "/activities/",
+      "statusCode": 301
     }
   ]
 }

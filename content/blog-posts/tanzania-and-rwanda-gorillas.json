@@ -12,8 +12,9 @@
     "gorilla trekking",
     "safari and gorillas"
   ],
-  "published": true,
+  "published": false,
   "published_at": "2026-11-15T09:18:00.000Z",
   "created_at": "2026-11-15T09:18:00.000Z",
-  "updated_at": "2026-11-15T09:18:00.000Z"
+  "updated_at": "2026-11-15T09:18:00.000Z",
+  "_unpublishedNote": "Owner, 2026-11-23: we do not offer gorilla trips in Rwanda. /blog/tanzania-and-rwanda-gorillas/ redirects to /blog/ (vercel.json)."
 }
