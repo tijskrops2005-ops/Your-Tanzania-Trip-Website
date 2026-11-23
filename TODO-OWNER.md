@@ -57,3 +57,23 @@ Status: 2026-10-27. Everything the site needs is filled in; there are no placeho
 - Colours and fonts: `scripts/brand-theme.mjs` (from `.cache/theme-original/`) plus `src/styles/brand.css`. Content, header, footer, partner pages, image swaps and removals: `scripts/rebrand.mjs`. Forms: `public/assets/js/forms.js`. Practical-information tabs are regenerated from the pages (`public/ajax/fetch_post_content/`).
 - Compare with the example site: `node scripts/compare.mjs / /blog/ …` → `temporary screenshots/compare/`.
 - Known, pre-existing broken links from the source site (12 missing uploads / old park URLs): `node scripts/check-links.mjs`.
+
+## Done on 2026-11-23 (website polish brief)
+
+- **WhatsApp +31 6 12729607** everywhere (wa.me/31612729607): header and sidebar buttons, homepage, contact page, footer, mobile menu, confirmation e-mails, llms.txt. One setting: `company.whatsapp` in `docs/brand-tokens.json`. The phone line stays +31 6 29351377 (see question below).
+- **Brand positioning:** Your Tanzania Trip is the brand; Baraka Dalali and his team are "our local partner in Arusha". The name Kilimanjaro Nature Tours stays only where it is legally relevant: the sentence that says who operates your trip as licensed Tanzanian tour operator (Terms, Guarantees, Easy payments, FAQ) and "Recognised by" on `/our-partner/`. Removed: links to kilimanjaronaturetours.com, info@kilimanjaronaturetours.com, the +255 number, the postal address, the partner logo and the channel link.
+- **Navigation:** dropdown arrows always visible (Itineraries, Discover Tanzania, Practical info); dropdowns open on hover, with the keyboard (Escape closes) and with a first tap on touch screens; one type style in the menus; mobile menu with a visible close button and "Plan my Trip".
+- **Plan my Trip:** readable counters (− 2 adults +, minimum 1 adult, 0 children), adult ages optional and child ages required with clear labels, 10 days as starting length, no preselected country, "Fields marked * are required", a clear message under every field that still needs an answer, an e-mail check, and question/answer labels in the e-mail you receive.
+- **About us** rebuilt: story, why we work this way, who you deal with, how we work, partner reviews, contact. Removed claims nobody confirmed (proposal within 24 hours, "more than 100 lodges visited", 24/7 support).
+- **Footer:** "About the photos" removed; new column Your Tanzania Trip (About us, Our local partner, Plan my Trip, Contact, FAQ, Blog); link columns now also on phones.
+- **Checked:** no sideways scrolling at 375, 390, 768, 1024 and 1440 px on 14 key pages; menus, counters, validation and form sending tested in a browser; `node scripts/audit-site.mjs` clean.
+
+## Your input needed (2026-11-23)
+
+- [ ] **Phone number:** is +31 6 29351377 still the phone line, or should calls also go to +31 6 12729607? (Only WhatsApp was changed.)
+- [ ] **About us:** start year of the partnership, how the cooperation with Baraka began, a photo and 2–3 sentences about Tijs and about Edrian (visible `[INVULLEN]` markers on `/about-us/`).
+- [ ] **Photos with Baraka** (we only have five): Baraka on safari or with guests, the safari vehicles, the crew on Kilimanjaro, Zanzibar handover, Serengeti wildlife from your trips. Landscape, at least 1600 px wide.
+- [ ] **Check these inherited promises** (still on the site, not invented by us, not confirmed either): Hakuna Matata Package (24/7 support, replacement vehicle, network of bush garages, flight disruption support), the safari page highlights "Flight disruption support" and "Worry-free travel", and "from $250 extra p.p." for a flight quote on Plan my Trip.
+- [ ] **Contradiction:** the contact page says "Bank details are on your invoice, never on this website", while Easy payments shows the Knab IBAN. Which one is right?
+- [ ] **Legal sentence:** confirm that "your trip is operated by Kilimanjaro Nature Tours, a licensed Tanzanian tour operator" may stay as is (it is the only place the company name is still shown).
+- [ ] **Social media:** add Instagram/Facebook/TikTok URLs to `company.sameAs` once they exist; the footer has no social links until then.

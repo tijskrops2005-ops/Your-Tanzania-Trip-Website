@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/ytt-finish.mjs",
+    "build": "astro build && node scripts/ytt-finish.mjs && node scripts/polish-finish.mjs",
     "preview": "astro preview",
     "serve": "node serve.mjs",
     "screenshot": "node screenshot.mjs",

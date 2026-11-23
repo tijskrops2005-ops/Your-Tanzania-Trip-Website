@@ -317,7 +317,7 @@
     "vat": "NL005256557B94",
     "email": "bookings@yourtanzaniatrip.com",
     "phone": "+31 6 29351377",
-    "whatsapp": "+31 6 29351377",
+    "whatsapp": "+31 6 12729607",
     "tagline": "Your trip, planned with care",
     "taglineProposals": [
       "Your trip, planned with care",
@@ -338,7 +338,8 @@
     "foundingDate": "",
     "_foundingDateNote": "[INVULLEN] year the partnership started; the Organization schema gets foundingDate once filled.",
     "sameAs": [],
-    "_sameAsNote": "[INVULLEN] Instagram/TikTok/Facebook profile URLs, only once they exist; added to Organization.sameAs."
+    "_sameAsNote": "[INVULLEN] Instagram/TikTok/Facebook profile URLs, only once they exist; added to Organization.sameAs.",
+    "_whatsappNote": "WhatsApp number since 2026-11-23 (owner request). The phone line stays +31 6 29351377 until the owner says otherwise. src/lib/polish.js swaps old WhatsApp links and labels at build time."
   },
   "partner": {
     "name": "Kilimanjaro Nature Tours",
@@ -395,7 +396,8 @@
       }
     ],
     "youtubeVideoId": "IqFgJyubDKg",
-    "phone": "+255 787 301 259"
+    "phone": "+255 787 301 259",
+    "_publicNote": "Since 2026-11-23 the site presents Baraka Dalali and his team as \"our local partner in Arusha\". The company name stays only where it is legally relevant (licensed operator sentence, Recognised by on /our-partner/). url, email and phone below are for internal use and are not shown on the site (src/lib/polish.js strips them)."
   },
   "voice": {
     "values": [

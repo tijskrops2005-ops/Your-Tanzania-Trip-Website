@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import { redesignHeader, redesignFooter, redesignBody, redesignCss } from '../lib/redesign.js';
 import { readPartial, markCurrentMenu } from '../lib/site.js';
 import { fixBody, fixChrome, fixSchema, pageTitle, pageDescription } from '../lib/fixes.js';
+import { polishBody, polishChrome, polishText, polishCss, polishScripts, whatsappUrl } from '../lib/polish.js';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
@@ -29,11 +30,13 @@ const ogImage = new URL(page.ogImage || '/brand/og-image.jpg', Astro.site).href;
 // Form delivery (public/assets/js/forms.js): endpoint and company e-mail from the brand tokens.
 const tokens = JSON.parse(fs.readFileSync(new URL('../../docs/brand-tokens.json', import.meta.url), 'utf8'));
 // Cache-busting version for the site's own scripts (changes with every build).
-const renderedBody = fixBody(redesignBody(await Astro.slots.render('default'), page, tokens), page, tokens);
-const title = pageTitle(page);
-const description = pageDescription(page);
+const renderedBody = polishBody(fixBody(redesignBody(await Astro.slots.render('default'), page, tokens), page, tokens), page, tokens);
+const title = polishText(pageTitle(page), tokens);
+const description = polishText(pageDescription(page), tokens);
+const ogTitle = polishText(page.ogTitle, tokens);
+const ogDescription = polishText(page.ogDescription, tokens);
 // The new homepage uses its own concise questions; do not retain obsolete FAQ markup.
-const pageSchemas = page.ldJson.map(json => fixSchema(json, tokens)).map(json => {
+const pageSchemas = page.ldJson.map(json => polishText(fixSchema(json, tokens), tokens)).map(json => {
   if (page.slug !== 'index') return json;
   const prune = value => {
     if (Array.isArray(value)) return value.map(prune).filter(Boolean);
@@ -63,7 +66,7 @@ const gtagSnippet = `<!-- Google tag (gtag.js) -->
 
   gtag('config', '${ga4}');
 </script>`;
-const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', email: tokens.company.email });
+const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', email: tokens.company.email, whatsapp: tokens.company.whatsapp, whatsappUrl: whatsappUrl(tokens) });
 ---
 <!doctype html>
 <html lang={lang === 'en' ? 'en-US' : lang}>
@@ -80,8 +83,8 @@ const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', ema
     {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(page.alternates.en || page.path, Astro.site).href} />}
     <meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : 'en_US'} />
     {page.ogType && <meta property="og:type" content={page.ogType} />}
-    {page.ogTitle && <meta property="og:title" content={page.ogTitle} />}
-    {page.ogDescription && <meta property="og:description" content={page.ogDescription} />}
+    {ogTitle && <meta property="og:title" content={ogTitle} />}
+    {ogDescription && <meta property="og:description" content={ogDescription} />}
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Your Tanzania Trip" />
     <meta property="og:image" content={ogImage} />
@@ -97,17 +100,18 @@ const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', ema
     <Fragment set:html={headLinks} />
     <Fragment set:html={page.extraStyles.join('\n')} />
     <Fragment set:html={headScripts} />
-    <style is:inline set:html={redesignCss}></style>
+    <style is:inline set:html={redesignCss + polishCss}></style>
   </head>
   <body class={page.bodyClass}>
-    <Fragment set:html={markCurrentMenu(fixChrome(redesignHeader(header), tokens), page.path)} />
+    <Fragment set:html={markCurrentMenu(polishChrome(fixChrome(redesignHeader(header), tokens), tokens, 'header'), page.path)} />
     <Fragment set:html={renderedBody} />
-    <Fragment set:html={markCurrentMenu(fixChrome(redesignFooter(footer), tokens), page.path).replace('<!--STICKY_CTA-->', stickyCta)} />
-    <Fragment set:html={page.extraScripts.join('\n')} />
+    <Fragment set:html={markCurrentMenu(polishChrome(fixChrome(redesignFooter(footer), tokens), tokens, 'footer'), page.path).replace('<!--STICKY_CTA-->', stickyCta)} />
+    <Fragment set:html={polishScripts(page.extraScripts.join('\n'), page)} />
     {hasFacets && <script is:inline src={`/assets/js/facetwp-static.js?v=${v}`} data-facets={`/facetwp-static/${page.slug}.json`}></script>}
     <script is:inline set:html={`window.YTT_FORMS=${formsConfig};`} />
     <script is:inline src={`/assets/js/forms.js?v=${v}`}></script>
     <script is:inline src={`/assets/js/site-search.js?v=${v}`}></script>
+    <script is:inline src={`/assets/js/site-ui.js?v=${v}`}></script>
     {(page.slug === 'index' || page.path === '/travel-proposal/') && <script is:inline src={`/assets/js/planner.js?v=${v}`}></script>}
     <script is:inline src={`/assets/js/currency.js?v=${v}`}></script>
     <script is:inline src={`/assets/js/translate.js?v=${v}`}></script>
