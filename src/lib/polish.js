@@ -226,6 +226,10 @@ const PROMISES = [
   // Calm, concrete tone on the main landing pages.
   [/The Zanzibar Archipelago is an awesome world class beach destination!/g, 'The Zanzibar Archipelago has white beaches, warm turquoise water and the old streets of Stone Town.'],
   [/Start planning your dream trip/g, 'Start planning your trip'],
+  // Phone button: same number as WhatsApp, so name what it does.
+  [/(<span class="!text-base"[^>]*>)NL: (<\/span>)/g, '$1Call: $2'],
+  // Old orange in inline icons (zoom button on itinerary photos) becomes the house gold.
+  [/<use fill="#E69016"/g, '<use fill="#d5a34d"'],
   // Countries we do not sell: an honest invitation instead of a promise.
   // We only sell Tanzania (owner, 2026-11-23: no gorilla trips in Rwanda or Uganda).
   [/Exceptional Travel Beyond Tanzania/g, 'Safari, summit and sea in one trip'],
@@ -427,14 +431,14 @@ export function polishBody(html, page, tokens) {
   html = rewritePartner(html);
   html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
-  return rewriteReviews(uspIcons(fixCapsHeadings(html)), tokens);
+  return shortName(rewriteReviews(uspIcons(fixCapsHeadings(html)), tokens));
 }
 export function polishChrome(html, tokens, part) {
   html = part === 'footer' ? polishFooter(html) : polishHeader(html);
   html = rewritePartner(html);
   html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
-  return rewriteReviews(html, tokens);
+  return shortName(rewriteReviews(html, tokens));
 }
 /** Inline scripts of a page (Gravity Forms settings). */
 export function polishScripts(js, page) {
@@ -477,12 +481,27 @@ function uspIcons(html) {
   });
 }
 
+// Photos that must not appear (another operator's logo on a jeep, Madagascar baobabs, camping tents),
+// also where a blog cover links to them directly: swapped for photos from the pool.
+const PHOTO_SWAP = {
+  'photo-1779388762527-0d4c5d8f4a92': 'photo-1564101160531-4838e8a5f4e7',
+  'photo-1632315152441-465a943cc211': 'photo-1709420838688-ccd0517d6a2d',
+  'photo-1659944984855-776187144baf': 'photo-1728238054897-05023133fe90',
+  'photo-1659944975073-453265ccf3a6': 'photo-1728238054897-05023133fe90',
+};
+const swapPhotos = s => s.replace(/photo-1779388762527-0d4c5d8f4a92|photo-1632315152441-465a943cc211|photo-1659944984855-776187144baf|photo-1659944975073-453265ccf3a6/g, id => PHOTO_SWAP[id]);
+
+// Owner, 2026-11-24: the partner is just "Baraka" (no surname) everywhere on the site.
+function shortName(s) {
+  return swapPhotos(s).replace(/Baraka Dalali(’|'|&#8217;)s/g, 'Baraka$1s').replace(/\bBaraka Dalali\b/g, 'Baraka').replace(/\bMr\.? Dalali\b/g, 'Baraka');
+}
+
 /** HTML fragments that skip BaseLayout (dist/ajax/**, loaded by static-ajax.js). */
 export function polishFragment(html, tokens) {
   html = rewritePartner(html);
   html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
-  return html;
+  return shortName(html);
 }
 /** JSON-LD: no separate, nameless partner organisation; founding year on our own organisation. */
 export function polishSchema(json, tokens) {
@@ -510,7 +529,7 @@ export function polishText(text, tokens) {
   text = rewritePartner(text, [...PARTNER_TEXT, ...PARTNER]);
   text = rewriteContacts(text, tokens, true);
   for (const [re, to] of PROMISES) text = text.replace(re, to);
-  return text;
+  return shortName(text);
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -546,6 +565,74 @@ export const polishCss = `
 .hamburger-wrapper.menu-open .js-hamburger .hamburger-inner,.hamburger-wrapper.menu-open .js-hamburger .hamburger-inner:before,.hamburger-wrapper.menu-open .js-hamburger .hamburger-inner:after{background-color:#fff!important}
 .hamburger-wrapper.menu-open .js-hamburger:focus-visible{outline:2px solid var(--ytt-gold);outline-offset:4px}
 .hamburger-wrapper .mobile-menu-switchers>div>button,.hamburger-wrapper .mobile-menu-switchers>div>button span{color:#fff!important}
+
+/* ===== Footer, refined (2026-11-24) ===== */
+body.home #ts-footer{margin-top:0!important}
+#ts-footer{margin-top:64px!important}
+#ts-footer .ts-mask-bottom{background:#1f4a40!important;border-bottom:1px solid #ffffff14}
+#ts-footer .ts-mask-bottom>div{padding-top:28px!important;padding-bottom:28px!important;gap:24px!important}
+#ts-footer .ts-mask-bottom>div>a{font:700 18px/1.35 Inter,Arial,sans-serif!important;letter-spacing:-.01em!important;text-transform:none!important;max-width:420px}
+#ts-footer .ts-mask-bottom i{font-style:normal}
+#ts-footer .ts-mask-bottom .partner-line{gap:28px!important;align-items:center}
+#ts-footer .ts-mask-bottom .partner-line p{font-size:14px!important;line-height:1.5;opacity:.85;max-width:460px}
+#ts-footer .ts-mask-bottom .partner-line a{font:600 14px/1.3 Inter,Arial,sans-serif!important;letter-spacing:0!important;text-transform:none!important;white-space:nowrap}
+#ts-footer .ts-mask-bottom .ytt-sep{display:none}
+#ts-footer .px-5.py-12{padding-top:56px!important;padding-bottom:40px!important}
+#ts-footer h2,#ts-footer .wp-block-heading{font:700 16px/1.3 Inter,Arial,sans-serif!important;letter-spacing:0!important;text-transform:none!important;margin-bottom:18px!important}
+#ts-footer .menu{margin:0;padding:0;list-style:none}
+#ts-footer .menu{row-gap:12px!important;gap:12px!important}
+#ts-footer .menu li{margin:0!important}
+#ts-footer .menu a,#ts-footer .ytt-footer-company a,#ts-footer .ytt-footer-links a{font:500 15px/1.45 Inter,Arial,sans-serif!important;letter-spacing:0!important;text-transform:none!important;color:#ffffffd9!important;text-decoration:none!important}
+#ts-footer .menu a:hover,#ts-footer .ytt-footer-company a:hover,#ts-footer .ytt-footer-links a:hover{color:#fff!important;text-decoration:underline!important;text-underline-offset:4px}
+#ts-footer a[href^="tel:"].text-xl{font:700 20px/1.2 Inter,Arial,sans-serif!important;letter-spacing:0!important;margin-top:24px!important;align-items:center;gap:4px}
+#ts-footer a[href^="tel:"].text-xl svg{width:24px;height:24px}
+#ts-footer a[href^="tel:"].text-xl svg path{fill:var(--ytt-gold)}
+#ts-footer p.partner-line{font-size:13px!important;line-height:1.65!important;opacity:.8;margin-top:18px!important}
+#ts-footer .ts-footer-copyright ul{display:flex;flex-wrap:wrap;gap:6px 18px}
+#ts-footer .ts-footer-copyright li{margin:0!important}
+#ts-footer .ts-footer-copyright a{font-size:13px!important;font-weight:500!important;opacity:.75;text-decoration:none!important}
+#ts-footer .ts-footer-copyright a:hover{opacity:1;text-decoration:underline!important}
+#ts-footer p.font-bold.mt-8,#ts-footer p.hidden.mt-12{font-size:13px!important;font-weight:500!important;opacity:.75;margin-top:24px!important}
+#ts-footer .ts-footer-form input[type=text],#ts-footer .ts-footer-form input[type=email]{border-radius:8px!important;min-height:46px;border:0!important}
+#ts-footer .ts-footer-form .gform_button,#ts-footer .ts-footer-form button[type=submit],#ts-footer .ts-footer-form input[type=submit]{border-radius:8px!important;text-transform:none!important;letter-spacing:0!important;background:var(--ytt-gold)!important;color:var(--ytt-forest)!important;border:0!important;font-weight:700!important;min-height:46px}
+#ts-footer .ts-footer-form p,#ts-footer .ts-footer-form .gfield_html,#ts-footer .ts-footer-form .gfield_html *{font-size:14px!important;font-weight:400!important;letter-spacing:0!important;line-height:1.55!important;opacity:.9}
+#ts-footer .ts-footer-form input::placeholder{letter-spacing:0}
+@media(min-width:1280px){#ts-footer .xl\:grid.xl\:grid-cols-3{gap:48px}}
+
+#ts-footer .ts-footer-form strong.wp-block-heading{text-transform:none!important;letter-spacing:0!important;font-size:16px!important;line-height:1.3!important;margin-bottom:12px!important}
+
+/* ===== Homepage rhythm (2026-11-24): calmer spacing, aligned blocks ===== */
+@media(min-width:761px){
+.ytt-home .ytt-section{padding-block:64px}
+.ytt-home .ytt-film{padding-block:8px 64px}
+.ytt-home .ytt-questions{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);column-gap:72px;align-items:start}
+.ytt-home .ytt-questions h2{grid-column:1;grid-row:1 / span 6;margin:0!important;position:sticky;top:120px}
+.ytt-home .ytt-questions details,.ytt-home .ytt-questions>.ytt-text-link{grid-column:2}
+.ytt-home .ytt-questions details:first-of-type{padding-top:0}
+}
+.ytt-home .ytt-last{padding:72px 0;text-align:center}
+.ytt-home .ytt-last p{margin-inline:auto}
+.ytt-home .ytt-last .ytt-actions{justify-content:center}
+.ytt-home .ytt-assurance{justify-content:center;gap:48px}
+
+/* ===== Itinerary days and closing blocks (2026-11-24) ===== */
+.timeline-pointer,.timeline-item-mask-y,.timeline-item-mask-x{display:none!important}
+.timeline-inner>*+*{margin-top:28px!important}
+.timeline-item{background:#fff!important;border:1px solid #183e3518;border-radius:12px;box-shadow:0 18px 40px -32px #0b1f1a40}
+@media(min-width:1024px){.timeline-item{padding-bottom:48px!important}}
+.grid.grid-cols-12:has(.cta-title){border-radius:16px;overflow:hidden;box-shadow:0 24px 48px -36px #0b1f1a66}
+.grid.grid-cols-12:has(.cta-title) img,.grid.grid-cols-12:has(.cta-title)>div{border-radius:0!important}
+.grid.grid-cols-12:has(.cta-title) .bg-white{border:0!important}
+.grid.grid-cols-12:has(.cta-title) img.rounded-full,.grid.grid-cols-12:has(.cta-title) img[class*="rounded-full"]{border-radius:50%!important}
+.grid.grid-cols-12:has(.cta-title)>div:has(>img:only-child){position:relative;min-height:280px}
+.grid.grid-cols-12:has(.cta-title)>div>img:only-child{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover}
+
+/* ===== One calm type style everywhere (2026-11-24) ===== */
+.tracking-wide,.tracking-wider,.tracking-widest,[class*="!tracking-wide"]{letter-spacing:0!important}
+.font-black{font-weight:700!important}
+body:not(.home) .widget h2.uppercase,body:not(.home) h2.text-lg.uppercase{text-transform:none!important}
+body:not(.home) .child-pages-tab{border-radius:8px!important;letter-spacing:0!important}
+body:not(.home) .ts-prose li a,body:not(.home) .sidebar a{letter-spacing:0!important}
 
 /* Footer: four tidy columns, link columns on phones too, no photo notice */
 #ts-footer .ytt-footer-company h2,#ts-footer .ytt-footer-links h2{text-transform:none!important;letter-spacing:0!important;font-size:17px!important}
