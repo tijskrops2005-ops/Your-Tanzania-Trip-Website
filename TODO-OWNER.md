@@ -104,12 +104,12 @@ Done:
 - Category pages with their own title, description, H1 and intro: Private Tanzania Safaris, Climb Kilimanjaro With a Local Crew, Zanzibar Beach Holidays, Tanzania Trips and Sample Itineraries, and a new real page **/safari-and-zanzibar/** (was only a filter); all menu links point to it.
 - All 42 trips have their own name; H1 = title; the new names also appear on all cards, in the menus, the search and the trip data for Google. All 42 trips now carry TouristTrip data with price for Google (was 8).
 - Language switcher (machine translation) removed.
-- Fixed: "95% of our guests reach the top", "we run our own safari jeeps / our office", "TanazaniaSpecialist.com" in the privacy policy, old file names as image descriptions, sustainability targets with past dates.
+- Fixed: "TanazaniaSpecialist.com" in the privacy policy and old file names as image descriptions. Kept on purpose (owner, 2026-11-24): the 95% summit line, the vehicles text and the sustainability targets.
 
 For you:
-- [ ] **Google Search Console:** add the property yourtanzaniatrip.com (domain verification via your domain host, or send me the HTML meta tag code and I add it), submit https://yourtanzaniatrip.com/sitemap.xml, and after a few weeks check Pages > "Duplicate, Google chose different canonical than user".
+- [ ] **Google Search Console:** the domain (GoDaddy DNS) already has a google-site-verification TXT record; check whether a property exists in your Google account, otherwise add a Domain property (TXT at GoDaddy). Submit https://yourtanzaniatrip.com/sitemap.xml. HTML tag alternative: put the code in `seo.googleSiteVerification` in docs/brand-tokens.json.
 - [ ] **Own Google Business Profile** for Your Tanzania Trip (Nagele, service-area business) and ask your first travellers for a review on your own name.
-- [ ] **Dutch version?** A real Dutch version (own pages + hreflang) is a separate project; say if you want it, starting with the main pages.
-- [ ] **Check:** the Marangu trip page says "8-day trip" in the old name but shows 7 days in the programme; the new name is "5-Day Kilimanjaro Climb via Marangu" (7 days in total). Correct?
+- [ ] **Dutch version:** later (owner, 2026-11-24).
+- Marangu: "5-Day Kilimanjaro Climb via Marangu" (7 days in total) confirmed by the owner.
 - [ ] **Legal texts:** Terms and conditions (92 % the previous operator's text) and the sustainability policy are still largely the old operator's; have them checked or rewritten for your own company.
 - [ ] Optional: one article per week on a niche topic (safari with children, honeymoon, best month per park) via the blog API.

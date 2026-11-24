@@ -83,6 +83,7 @@ const formsConfig = JSON.stringify({ endpoint: tokens.forms?.endpoint || '', ema
     {description && <meta name="description" content={description} />}
     {page.robots && <meta name="robots" content={page.robots} />}
     <link rel="canonical" href={canonical} />
+    {tokens.seo?.googleSiteVerification && <meta name="google-site-verification" content={tokens.seo.googleSiteVerification} />}
     {alternates.map(([l, p]) => <link rel="alternate" hreflang={l} href={new URL(p, Astro.site).href} />)}
     {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(page.alternates.en || page.path, Astro.site).href} />}
     <meta property="og:locale" content={lang === 'nl' ? 'nl_NL' : 'en_US'} />

@@ -437,5 +437,9 @@
   "analytics": {
     "_note": "Google Analytics 4. The Google tag is in the <head> of every page (BaseLayout.astro) with Google consent mode v2: analytics cookies only after 'Accept' in the cookie banner (public/assets/js/cookie-consent.js); without consent GA receives cookieless pings. Vercel Web Analytics (cookieless) runs independently.",
     "ga4": "G-SR9WMJQWTD"
+  },
+  "seo": {
+    "googleSiteVerification": "",
+    "_note": "googleSiteVerification: only the content=\"...\" value of the Google Search Console HTML tag (URL-prefix property). Not needed when the domain is verified via DNS at GoDaddy."
   }
 }

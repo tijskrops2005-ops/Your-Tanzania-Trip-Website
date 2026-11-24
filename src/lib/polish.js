@@ -310,17 +310,10 @@ const PROMISES = [
   [/<use fill="#E69016"/g, '<use fill="#d5a34d"'],
   // Safari + Zanzibar has its own page now (was a filter on the overview).
   [/href="\/tanzania-travel\/\?_types=safari(?:%2C|,)zanzibar"/g, 'href="/safari-and-zanzibar/"'],
-  // Claims of the previous operator found in the SEO review (2026-11-24).
-  [/Our experienced, professional team will get you to the top safely\.(<\/p>\s*<p>)That is why 95% of our guests make it to the top of Africa’s highest mountain\./g,
-    'With enough days to acclimatise and an experienced crew from our local partner, most healthy climbers reach the top.$1Choosing a longer route is the best thing you can do for your chances.'],
-  [/Our safari jeeps for your Tanzania safari/g, 'The safari vehicles on your Tanzania safari'],
-  [/At Your Tanzania Trip we run our own safari jeeps, all of them 4(?:&#215;|×)4 Toyota Land Cruisers\./g, 'On safari you travel in a 4×4 Toyota Land Cruiser from our local partner in Arusha.'],
-  [/reach other guides and our office whenever needed/g, 'reach other guides and the team in Arusha whenever needed'],
+  // Old brand leftovers found in the SEO review (2026-11-24). The owner keeps the 95% summit line,
+  // the vehicles text and the sustainability targets as they are.
   [/TanazaniaSpecialist\.com/g, 'Your Tanzania Trip'],
   [/alt="[^"]*tanzaniaspecialist[^"]*"/gi, 'alt=""'],
-  // Sustainability targets with dates that have passed.
-  [/(across all tour operations) by 2025\./g, '$1.'],
-  [/(habitat protection) by 2024\./g, '$1.'],
   // Countries we do not sell: an honest invitation instead of a promise.
   // We only sell Tanzania (owner, 2026-11-23: no gorilla trips in Rwanda or Uganda).
   [/Exceptional Travel Beyond Tanzania/g, 'Safari, summit and sea in one trip'],
