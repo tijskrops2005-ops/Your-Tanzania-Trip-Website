@@ -67,7 +67,7 @@
 - Componenten: knoppen en velden 8px radius, kaarten 12px, sand-rand, zachte schaduw. Eén copper primaire knop per scherm. Focus = forest-rand + 2px gold ring. Links copper, onderstreept. Eén outline-iconenset (Lucide) in forest of gold, 1.5px.
 - Logo: `logo-primary.png` in de header (op licht), `logo-reversed.png` in de footer (op donker); hoogte 56–64px desktop, 44px mobiel; min. 160px breed; nooit uitrekken, verkleuren, draaien of effecten; alt "Your Tanzania Trip". Nooit samen met het KNT-logo als één merk.
 - Toon: persoonlijk, eerlijk, rustig, concreet. Nederlands altijd "je/jouw", nooit "u". Vaste termen: reis, reisprogramma, offerte, Plan je reis, Prijs op aanvraag. Geen superlatieven, geen nepschaarste.
-- Bedrijf: Tijs Krops, Sluitgatweg 10, 8308 RE Nagele · KvK 97223344 · BTW NL005256557B94 · info@yourtanzaniatrip.com · +31 6 29351377. WhatsApp, tagline en reisgarantie zijn nog `[FILL]`. Partner: Kilimanjaro Nature Tours, Arusha (Baraka Dalali).
+- Bedrijf: Tijs Krops, Sluitgatweg 10, 8308 RE Nagele · KvK 97223344 · BTW NL005256557B94 · bookings@yourtanzaniatrip.com · +31 6 12729607 (telefoon en WhatsApp). WhatsApp, tagline en reisgarantie zijn nog `[FILL]`. Partner: Kilimanjaro Nature Tours, Arusha (Baraka Dalali).
 - Eerlijkheid: reviews alleen per bron met datum en link; nooit geleende scores of awards; prijzen alleen na bevestiging door de partner; geen AggregateRating/Review-schema op partnerscores; alleen eigen of gelicentieerde foto's.
 
 ## Project: Your Tanzania Trip (gaat voor op de regels hierboven)

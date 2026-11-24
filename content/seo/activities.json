@@ -1,0 +1,318 @@
+{
+  "/activity/night-game-drive-in-mikumi-national-park/": {
+    "title": "Night Safari Drive in Mikumi National Park | Your Tanzania Trip",
+    "description": "Head out from 7 PM to 11:30 PM in Mikumi National Park, when leopards hunt, hyenas roam and bush babies move through the trees. We can add it to your safari."
+  },
+  "/activity/empakaai-crater/": {
+    "title": "Empakaai Crater Hike to the Flamingo Lake | Your Tanzania Trip",
+    "description": "Hike 45 minutes from the Empakaai Crater rim down to a lake often pink with flamingos, near Ngorongoro. Half day, from age 12. A fine add-on to your safari."
+  },
+  "/activity/sunset-cruise-mafia-island/": {
+    "title": "Sunset Dhow Cruise off Mafia Island | Your Tanzania Trip",
+    "description": "Sail out at 5:30 pm on a traditional dhow with drinks on board and watch the sun set over the ocean off Mafia Island. 1.5 hours. A calm end to a day on Mafia."
+  },
+  "/activity/arusha-city-tour/": {
+    "title": "Full-Day Arusha City Tour with Local Lunch | Your Tanzania Trip",
+    "description": "A day in Arusha with a guide: a market, a school, a church and a coffee farm, plus a Tanzanian lunch and a drink in a local pub. Easy to add before a safari."
+  },
+  "/activity/amboni-caves/": {
+    "title": "Amboni Caves Near Tanga on the North Coast | Your Tanzania Trip",
+    "description": "Walk into the one open cave of the vast Amboni system north of Tanga, with its stalactites and stalagmites. 1-3 hours. Fits a route along the north coast."
+  },
+  "/activity/chole-island/": {
+    "title": "Chole Island Ruins and Fruit Bats, Mafia | Your Tanzania Trip",
+    "description": "Boat from Mafia to Chole Island, walk past old ruins to a fruit bat sanctuary and a boatyard, and end with a sundowner. 3 hours. A good outing on Mafia."
+  },
+  "/activity/a-wonderful-relaxing-day-in-babati/": {
+    "title": "Relaxing Day in Babati Near Lake Babati | Your Tanzania Trip",
+    "description": "Slow down for a day in Babati: walk the green countryside, take a boat ride near Lake Babati and try local food in town. A calm pause between safari days."
+  },
+  "/activity/nakupenda-sandbank/": {
+    "title": "Nakupenda Sandbank Trip with Seafood BBQ | Your Tanzania Trip",
+    "description": "Spend a full day on Nakupenda, a small sandbank in the sea: swim, walk the waterline and eat the seafood BBQ lunch that is included. Fits a beach stay."
+  },
+  "/activity/semi-submarine-experience-the-sunset-moon-tour-sunset-underworld-at-night/": {
+    "title": "Sunset Semi-Submarine Tour at Bawe Island | Your Tanzania Trip",
+    "description": "Watch the sunset near Bawe Island off Stone Town, then see the reef after dark through underwater windows lit by LED lights. 1 hour, age 5 and up."
+  },
+  "/activity/stone-town-tour/": {
+    "title": "Guided Half-Day Walk Through Stone Town | Your Tanzania Trip",
+    "description": "Walk Stone Town's lanes with a guide past the old slave market, House of Wonders and Sultans' Palace Museum, then the spice and fish markets. Half day."
+  },
+  "/activity/walking-safari-in-arusha-national-park/": {
+    "title": "Short Walking Safari, Arusha National Park | Your Tanzania Trip",
+    "description": "Walk 1.5 to 4 hours with a ranger among zebras, giraffes and buffalos, past Lake Momella and Ngurdoto Crater. From age 12. A good start to your safari."
+  },
+  "/activity/hot-air-balloon-flight-in-serengeti/": {
+    "title": "Hot Air Balloon Flight Over the Serengeti | Your Tanzania Trip",
+    "description": "Drift low over the Serengeti plains at sunrise for 45-60 minutes, then a bush breakfast. 3-4 hours door to door, minimum 4 guests. A safari add-on."
+  },
+  "/activity/sunset-dinner-cruise/": {
+    "title": "Private Dhow Dinner Cruise from Stone Town | Your Tanzania Trip",
+    "description": "Sail from Stone Town at 5 pm on a private dhow, eat grilled seafood on board and watch the sunset, back at 7 pm. Up to 8 guests. An evening on Zanzibar."
+  },
+  "/activity/relax-in-maasai-style/": {
+    "title": "Maasai Lodge Day: Spear Throwing and Dance | Your Tanzania Trip",
+    "description": "A day at the Original Maasai Lodge: try spear throwing, donkey rides, sunset dancing and nature walks, or relax by the pool. Ideal with an overnight stay."
+  },
+  "/activity/dolphin-tour/": {
+    "title": "Dolphin Watching Boat Trip Near Mnemba | Your Tanzania Trip",
+    "description": "Go out early by boat off Zanzibar's northeast coast near Mnemba Island to watch spinner and bottlenose dolphins. Half day; sightings are likely, not certain."
+  },
+  "/activity/discover-mto-wa-mbu-in-a-tuktuk/": {
+    "title": "Mto wa Mbu Village Tour by Tuktuk | Your Tanzania Trip",
+    "description": "Ride a tuktuk through Mto wa Mbu near Lake Manyara, past farms and forest, stopping at a brewery, a local artist and a school. 1-2 hours on a safari day."
+  },
+  "/activity/treetop-walk-lake-manyara/": {
+    "title": "Lake Manyara Canopy Walk in the Treetops | Your Tanzania Trip",
+    "description": "Cross narrow bridges 15 metres up and over 370 metres long in Lake Manyara National Park, among monkeys and birds. About 30 minutes. A short safari add-on."
+  },
+  "/activity/bush-dinner-in-the-serengeti/": {
+    "title": "Bush Dinner Under the Stars in the Serengeti | Your Tanzania Trip",
+    "description": "Eat dinner on the Serengeti plains by a campfire under the stars, just outside camp, with animals moving in the dark. About 2 hours. A safari evening."
+  },
+  "/activity/visit-a-souvenir-market/": {
+    "title": "Tanzanian Souvenir Market Visit with a Guide | Your Tanzania Trip",
+    "description": "Browse paintings, woodwork, African-print clothes and jewellery at a Tanzanian souvenir market while your guide helps you haggle. 2-3 hours. Fits any trip."
+  },
+  "/activity/visit-a-maasai-village/": {
+    "title": "Maasai Village Visit in Tanzania | Your Tanzania Trip",
+    "description": "Visit a Maasai village to see daily life around the homes and learn about their survival skills and traditions. 1-2 hours. We can fit it into your route."
+  },
+  "/activity/walking-safari-arusha-national-park-full-day/": {
+    "title": "Full-Day Walking Safari in Arusha Park | Your Tanzania Trip",
+    "description": "Walk 6 to 8 hours through Arusha National Park with a ranger, past Lake Momella, Ngurdoto Crater and a waterfall. Lunch provided, from age 12."
+  },
+  "/activity/kuza-cave-traditional-dance-drumming-lesson/": {
+    "title": "Kuza Cave Swim and Cultural Workshop | Your Tanzania Trip",
+    "description": "Swim in the turquoise water of Kuza Cave in the Zanzibar forest, spot red colobus, and add a Swahili cooking, drumming or history lesson if you like. 6 hours."
+  },
+  "/activity/day-hike-on-mount-kilimanjaro/": {
+    "title": "Kilimanjaro Day Hike to Mandara Huts | Your Tanzania Trip",
+    "description": "Walk the Marangu route through rainforest to Mandara Huts at 2,700 m, 4-6 hours up and 2-3 down, with views of Mawenzi on clear days. Kili without the summit."
+  },
+  "/activity/sunset-cruise-on-a-yacht-charter-walkabout-50ft-voyage-yacht-at-nungwi-bay/": {
+    "title": "Catamaran Sunset Cruise from Nungwi | Your Tanzania Trip",
+    "description": "Sail from Nungwi in north Zanzibar at 3:30 pm on a catamaran with music, cold drinks and seafood snacks, back at 6:30 as the sky turns orange. 3 hours."
+  },
+  "/activity/stone-town-and-spice-farm-tour/": {
+    "title": "Stone Town and Spice Farm Day Tour | Your Tanzania Trip",
+    "description": "See the slave market and Sultan's Palace in Stone Town, then visit a spice farm to taste and smell spices where they grow. A full day on Zanzibar."
+  },
+  "/activity/rundugai-hotsprings/": {
+    "title": "Rundugai Hot Springs Near Arusha and Moshi | Your Tanzania Trip",
+    "description": "Swim in the clear, blue, warm water of the Rundugai springs, shaded by palms and fig roots between Arusha and Moshi. A 6-hour outing around your safari."
+  },
+  "/activity/unguja-ukuu/": {
+    "title": "Menai Bay Island Trip from Unguja Ukuu | Your Tanzania Trip",
+    "description": "Take a dhow from Unguja Ukuu in south Zanzibar to Mimi and Nianembe, two empty islands in Menai Bay, to walk, snorkel and eat fresh fish. Private, full day."
+  },
+  "/activity/hot-air-balloon-flight-in-ruaha-mid-june-to-end-of-october-only/": {
+    "title": "Ruaha Hot Air Balloon Flight, June-October | Your Tanzania Trip",
+    "description": "Float over Ruaha National Park at sunrise for 45-60 minutes, 3-4 hours in total. Mid June to end of October only, minimum 4 guests. A Ruaha safari add-on."
+  },
+  "/activity/local-lunch-in-mto-wa-mbu-optional-cooking-class/": {
+    "title": "Mto wa Mbu Local Lunch and Cooking Class | Your Tanzania Trip",
+    "description": "Eat a local lunch on a banana farm in Mto wa Mbu and learn to cook pilau, makande or ndizi nyama if you like. 1 hour, or 3 with the class. Fits a Manyara day."
+  },
+  "/activity/mount-longido/": {
+    "title": "Mount Longido Hike with Maasai Guides | Your Tanzania Trip",
+    "description": "Climb Mount Longido near the Kenyan border with Maasai warriors as guides, through woodland and rainforest with buffaloes, to the 2637 m top. One day, or two."
+  },
+  "/activity/zanzibar-cooking-lesson/": {
+    "title": "Swahili Cooking Class in Zanzibar | Your Tanzania Trip",
+    "description": "Shop at a local market, then cook chapatis, coconut curry or pilau rice and learn about Zanzibar's spices. 2 hours, up to 4 people. A break from the beach."
+  },
+  "/activity/coffee-tour/": {
+    "title": "Coffee Plantation Tour Near Arusha | Your Tanzania Trip",
+    "description": "See how coffee beans are grown, picked and processed on a plantation near Arusha, then taste freshly brewed kahawa. Half day. Easy to fit around your safari."
+  },
+  "/activity/visit-the-iraqw-tribe/": {
+    "title": "Iraqw Village Visit Near Ngorongoro | Your Tanzania Trip",
+    "description": "Visit an Iraqw village near the Ngorongoro Conservation Area, step inside traditional houses and hear the tribe's history. 2-3 hours. Fits a northern safari."
+  },
+  "/activity/mange-sandbank/": {
+    "title": "Mange Sandbank Snorkel Trip, Mafia | Your Tanzania Trip",
+    "description": "Sail 1.5 hours to Mange Sandbank in south Mafia, snorkel or dive the reefs and eat a Swahili fish barbecue on the sand. Full day, at low tide, 6+ guests."
+  },
+  "/activity/arusha-city-tour-half-day/": {
+    "title": "Half-Day Arusha Tour Ending at Twiga Brewery | Your Tanzania Trip",
+    "description": "Visit a market, a school and a church in Arusha with a guide, then taste four beers at Twiga Brewery (18+). 3-4 hours, children welcome. Fits before a safari."
+  },
+  "/activity/night-game-drive-in-tarangire-national-park/": {
+    "title": "Tarangire Night Game Drive After Dark | Your Tanzania Trip",
+    "description": "Look for porcupines, civets, genets, bush babies, lions and leopards by jeep headlight in Tarangire National Park, 8 to 10 PM. We can add it to your safari."
+  },
+  "/activity/snake-park-maasai-museum-camel-ride/": {
+    "title": "Meserani Snake Park and Maasai Museum Outing | Your Tanzania Trip",
+    "description": "See Tanzania's snake species at Meserani Snake Park, learn how the Maasai build homes at the Maasai Museum and ride a camel. Half day, good with children."
+  },
+  "/activity/whale-shark-tour-mafia/": {
+    "title": "Swim with Whale Sharks off Mafia Island | Your Tanzania Trip",
+    "description": "Snorkel beside gentle whale sharks that pass Mafia Island, usually November to March. They eat only plankton and small fish. Half day, weather dependent."
+  },
+  "/activity/mountainbike-tour-mto-wa-mbu/": {
+    "title": "Mountain Biking in Mto wa Mbu Village | Your Tanzania Trip",
+    "description": "Cycle 2 to 3 hours through Mto wa Mbu near Lake Manyara, past banana and coffee farms and a school, with lake views. Easy level. A change between game drives."
+  },
+  "/activity/2-day-hike-on-kilimanjaro/": {
+    "title": "Two-Day Kilimanjaro Hike to Horombo | Your Tanzania Trip",
+    "description": "Walk the Marangu route to Mandara Huts on day one and Horombo on day two, with views of Kibo on clear days, then descend 5-6 hours. Kili without the summit."
+  },
+  "/activity/a-taste-of-culture-mto-wa-mbu-mountain-bike-ride-maasai-village/": {
+    "title": "Mto wa Mbu Bike Ride and Maasai Village | Your Tanzania Trip",
+    "description": "Cycle flat trails through Mto wa Mbu and its banana farms near Lake Manyara, then visit a nearby Maasai village to hear how people live. 2-3 hours."
+  },
+  "/activity/prison-island-tour/": {
+    "title": "Prison Island Giant Tortoises, Zanzibar | Your Tanzania Trip",
+    "description": "Boat 20 minutes from Stone Town to Prison Island to see giant tortoises, some over 100 years old, walk the trails and swim. Half day. Fits a Zanzibar stay."
+  },
+  "/activity/visit-the-ruins-of-the-city-of-kua/": {
+    "title": "Kua Ruins on Juani Island, Mafia | Your Tanzania Trip",
+    "description": "Explore the 12th-century ruins of Kua on Juani Island, Mafia, wrapped in strangler figs and roamed by vervet monkeys. 3 hours, high tide only, min. 2 guests."
+  },
+  "/activity/maasai-wedding-experience/": {
+    "title": "Maasai Wedding or Vow Renewal Ceremony | Your Tanzania Trip",
+    "description": "Marry or renew your vows in a Maasai ceremony on the savannah, in Maasai attire, with a blessing from an elder and a goat barbecue afterwards. About 2 hours."
+  },
+  "/activity/gibbs-farm-walk-lunch/": {
+    "title": "Gibb's Farm Walk and Lunch, Ngorongoro | Your Tanzania Trip",
+    "description": "Walk Gibb's Farm in the Ngorongoro Highlands to see coffee roasted and cows milked, then eat lunch made from its gardens. 1.5 hours. An easy safari stop."
+  },
+  "/activity/night-game-drive-lake-manyara/": {
+    "title": "Lake Manyara Night Game Drive | Your Tanzania Trip",
+    "description": "Look for porcupines, civets, bush babies, hippos and leopards by jeep headlight in Lake Manyara National Park, 8 to 10 pm. Easiest if you stay nearby."
+  },
+  "/activity/blue-lagoon/": {
+    "title": "Blue Lagoon Swim and Snorkel, Mafia | Your Tanzania Trip",
+    "description": "Boat 30 minutes through a mangrove channel near Juani Island to the Blue Lagoon, a tidal pool for swimming and snorkelling on Mafia. 3 hours, high tide only."
+  },
+  "/activity/kilimanjaro-scenic-tour/": {
+    "title": "Scenic Flight Over Mount Kilimanjaro | Your Tanzania Trip",
+    "description": "Fly 45 minutes over Kilimanjaro to see its peaks and glaciers from several sides, early morning or late afternoon. A good option if climbing is not for you."
+  },
+  "/activity/marimbani-sandbank/": {
+    "title": "Marimbani Sandbank Dhow Trip, Mafia | Your Tanzania Trip",
+    "description": "Sail a dhow into the Mafia marine park to snorkel, then walk the half-moon Marimbani sandbank while the crew grills Swahili fish. 6 hours, min. 2 guests."
+  },
+  "/activity/deep-sea-fishing/": {
+    "title": "Half-Day Deep Sea Fishing off Zanzibar | Your Tanzania Trip",
+    "description": "Fish for blue marlin, dorado, yellowfin tuna and kingfish with a local captain off Zanzibar. 5 hours, boat for up to 5 guests. A change from the beach."
+  },
+  "/activity/explore-karatu/": {
+    "title": "Karatu Village Walk and Market Visit | Your Tanzania Trip",
+    "description": "Walk Karatu, between Lake Manyara and Ngorongoro, with your guide: the market, handmade souvenirs, or lunch with a local mama. 2-3 hours on a safari day."
+  },
+  "/activity/bike-tour-zanzibar/": {
+    "title": "Zanzibar Village Bike Tour with Local Lunch | Your Tanzania Trip",
+    "description": "Bike Zanzibar on one of three routes: Stone Town to a spice farm and forest, or village loops near Jambiani, one with a swim in Kuza Cave. 5 hours with lunch."
+  },
+  "/activity/spice-farm-tour-zanzibar/": {
+    "title": "Half-Day Spice Farm Tour in Zanzibar | Your Tanzania Trip",
+    "description": "See, smell and taste cinnamon, nutmeg, vanilla, cardamom and cloves on a spice farm in Zanzibar, with an optional tasting. Half day, easy from the beach."
+  },
+  "/activity/humpback-whale-watching-tour-mafia/": {
+    "title": "Humpback Whale Watching off Mafia | Your Tanzania Trip",
+    "description": "Look for migrating humpback whales near Mafia from a traditional dhow, late August to early October. Half day; sightings not guaranteed. Fits a Mafia stay."
+  },
+  "/activity/horse-riding-in-arusha/": {
+    "title": "Horseback Safari Near Mount Meru, Arusha | Your Tanzania Trip",
+    "description": "Ride around Mount Meru on an estate 45 minutes from Arusha, among zebras, wildebeest, eland and gazelles. About 2 hours, at 8 am or 2.30 pm, from age 6."
+  },
+  "/activity/2-day-hike-from-ngorongoro-to-lake-natron/": {
+    "title": "Two-Day Walk from Empakaai to Lake Natron | Your Tanzania Trip",
+    "description": "Walk from Empakaai Crater to Lake Natron with Maasai guides, a ranger and pack donkeys, camping near remote villages and passing Ol Doinyo Lengai on day two."
+  },
+  "/activity/chumbe-island-snorkeling-paradise/": {
+    "title": "Chumbe Island Snorkel and Forest Day Trip | Your Tanzania Trip",
+    "description": "Snorkel the protected reef of Chumbe Island off west Zanzibar, walk the forest, climb the old lighthouse and eat lunch. Full day; closed 1 April to 3 June."
+  },
+  "/activity/walking-safari-in-selous/": {
+    "title": "Nyerere National Park Bush Walk with Ranger | Your Tanzania Trip",
+    "description": "Walk 2 hours in Nyerere National Park with an expert guide and an armed ranger, reading animal signs and nearing elephant herds quietly. From age 16."
+  },
+  "/activity/jozani-forest-half-day/": {
+    "title": "Jozani Forest Red Colobus Walk, Zanzibar | Your Tanzania Trip",
+    "description": "Walk Jozani Forest in central Zanzibar with a park ranger, learn about healing plants and watch red colobus monkeys up close. Half day from your hotel."
+  },
+  "/activity/mountainbike-tour-arusha/": {
+    "title": "Mountain Bike Tour Near Arusha | Your Tanzania Trip",
+    "description": "Cycle shaded trails past banana and coffee fields and through villages outside Arusha. 2 hours, morning or afternoon, bikes and helmets included."
+  },
+  "/activity/walk-from-materuni-village-to-kuringe-waterfall/": {
+    "title": "Materuni Village to Kuringe Waterfall Walk | Your Tanzania Trip",
+    "description": "Walk 40 minutes from Materuni with a local guide to the 70 m Kuringe waterfall on Kilimanjaro's slopes, past coffee, banana and avocado farms. Lunch provided."
+  },
+  "/activity/olduvai-gorge/": {
+    "title": "Olduvai Gorge Archaeological Site Visit | Your Tanzania Trip",
+    "description": "Stop at Olduvai Gorge, between the Serengeti and Ngorongoro, where early human remains and ancient fossils were found. About 1 hour, easy on a transfer day."
+  },
+  "/activity/tanzanite-museum/": {
+    "title": "Tanzanite Museum Visit in Arusha | Your Tanzania Trip",
+    "description": "See and hold tanzanite, a gem found only in Tanzania, and learn in a replica mine shaft how it is mined, cut and processed at the museum in Arusha. Half day."
+  },
+  "/activity/canoeing-on-lake-duluti/": {
+    "title": "Canoe Trip on Lake Duluti Near Arusha | Your Tanzania Trip",
+    "description": "Paddle 1.5 hours across Lake Duluti, a small forest-ringed crater lake near Arusha, looking for eagles, kingfishers and darters. A calm outing on safari."
+  },
+  "/activity/sunset-dhow-cruise/": {
+    "title": "Sunset Dhow Sail with Live Music, Stone Town | Your Tanzania Trip",
+    "description": "Leave Stone Town at 4:30 pm on a traditional dhow with snacks, drinks and live music as the sun sets over the Indian Ocean. 1.5 hours. Fits any Zanzibar stay."
+  },
+  "/activity/day-trip-to-shira-plateau/": {
+    "title": "Kilimanjaro Day Hike on the Shira Plateau | Your Tanzania Trip",
+    "description": "Start at Londorossi Gate (3,407 m) on Kilimanjaro's west side and hike 5 hours through mountain forest, climbing over 1,000 m. Kilimanjaro without the summit."
+  },
+  "/activity/walking-safari-in-ruaha-national-park-half-day/": {
+    "title": "Half-Day Walking Safari in Ruaha | Your Tanzania Trip",
+    "description": "Explore Ruaha National Park on foot for half a day with a guide who explains the plants and animals around you. From age 15. A quiet contrast to game drives."
+  },
+  "/activity/hot-air-balloon-flight-in-tarangire/": {
+    "title": "Tarangire Hot Air Balloon Flight at Sunrise | Your Tanzania Trip",
+    "description": "Fly 45-60 minutes over Tarangire at first light, above baobabs, elephants and the Tarangire River, then a bush breakfast. 3-4 hours total, minimum 4 guests."
+  },
+  "/activity/mnemba-snorkelling-private-boat-tour/": {
+    "title": "Private Snorkelling Boat Trip to Mnemba | Your Tanzania Trip",
+    "description": "Snorkel the reefs around Mnemba Island off Zanzibar from a private boat, fine for beginners, with beach time and a chance of dolphins. A day off the beach."
+  },
+  "/activity/kondoa-rock/": {
+    "title": "Kondoa Rock Art Sites South of Tarangire | Your Tanzania Trip",
+    "description": "See red and white rock paintings over 1,500 years old in caves and rock shelters at Kondoa, west of the Rift Valley and just south of Tarangire. 3-4 hours."
+  },
+  "/activity/deep-sea-fishing-full-day/": {
+    "title": "Full-Day Deep Sea Fishing off Zanzibar | Your Tanzania Trip",
+    "description": "A full day offshore from Zanzibar with a local captain, fishing for marlin, sailfish, dorado, yellowfin tuna, wahoo or barracuda by season. Up to 5 guests."
+  },
+  "/activity/hike-to-mount-meru-waterfall/": {
+    "title": "Mount Meru Waterfall Hike from Arusha | Your Tanzania Trip",
+    "description": "Hike 1.5 to 2 hours each way on forest trails to a waterfall on Mount Meru with an English-speaking guide, 30 minutes from Arusha. Half day, good shoes."
+  },
+  "/activity/semi-submarine-experience-the-classic-reef-tour-corals-reef/": {
+    "title": "Semi-Submarine Reef Tour at Bawe Island | Your Tanzania Trip",
+    "description": "See the reef around Bawe Island, west of Stone Town, through the underwater windows of a semi-submarine without getting wet. 2 hours, age 5 and up."
+  },
+  "/activity/relaxing-day-in-manyara-best-view-lodge/": {
+    "title": "Rest Day at Manyara Best View Lodge | Your Tanzania Trip",
+    "description": "A rest day between safaris at Manyara Best View Lodge: stay by the infinity pool, or cycle, visit a market, hike the Rift Valley wall or join a night drive."
+  },
+  "/activity/semi-submarine-experience-the-royal-beach-tour-reef-and-sandbank/": {
+    "title": "Semi-Submarine Reef and Sandbank Brunch Trip | Your Tanzania Trip",
+    "description": "View the Bawe Island reef from a semi-submarine off Stone Town, then speedboat to a quiet sandbank for a picnic brunch and a swim. 3 hours, age 5 and up."
+  },
+  "/activity/1-excursion-in-zanzibar-safari-blue/": {
+    "title": "Safari Blue Dhow Trip in Menai Bay, Zanzibar | Your Tanzania Trip",
+    "description": "Sail a wooden dhow through Menai Bay off Zanzibar, snorkel at two reef spots, swim at a sandbank and eat a Swahili seafood lunch. Full day, gear included."
+  },
+  "/activity/walking-safari-inside-lake-manyara-national-park/": {
+    "title": "Lake Manyara Walking Safari with a Ranger | Your Tanzania Trip",
+    "description": "Follow trails through acacia woodland and forest in Lake Manyara National Park with a guide and armed ranger, among monkeys and giraffes. 1-2 hours, 12+."
+  },
+  "/activity/canoeing-in-arusha-national-park/": {
+    "title": "Canoe Safari in Arusha National Park | Your Tanzania Trip",
+    "description": "Paddle 1.5 hours on a lake in Arusha National Park with an armed ranger, among birds, with a chance of giraffes, hippos and buffaloes on the shore."
+  },
+  "/activity/bush-walk-cultural-tour/": {
+    "title": "Rift Valley Walk and Mto wa Mbu Village Tour | Your Tanzania Trip",
+    "description": "Hike in the Great Rift Valley with views over Lake Manyara, then walk through Mto wa Mbu past banana farms and a school with your guide. 3-4 hours in all."
+  }
+}

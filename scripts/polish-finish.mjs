@@ -3,7 +3,7 @@
 // AJAX fragments (dist/ajax/, opened as pop-ups from the itinerary tabs).
 import fs from 'node:fs';
 import path from 'node:path';
-import { polishText, polishBody } from '../src/lib/polish.js';
+import { polishText, polishBody, polishFragment } from '../src/lib/polish.js';
 import { fixBody } from '../src/lib/fixes.js';
 import { isRemoved } from '../src/lib/scope.js';
 
@@ -59,11 +59,14 @@ console.log(`polish-finish: ${updated} AJAX fragments updated, ${dropped} of rem
 const DROP_IDS = new Set(['21932']); // Flight to Kigali (Rwanda)
 const dropIds = v => Array.isArray(v) ? v.filter(x => !DROP_IDS.has(String(x))).map(dropIds)
   : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).filter(([k]) => !DROP_IDS.has(k)).map(([k, x]) => [k, dropIds(x)])) : v;
+// The cards in the filter data go through the same rules as the pages (trip names, partner, photos).
+const polishStrings = v => typeof v === 'string' ? (v.includes('<') ? polishFragment(v, tokens) : v)
+  : Array.isArray(v) ? v.map(polishStrings)
+  : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, polishStrings(x)])) : v;
 let facetFiles = 0;
 for (const file of [...walkDir('dist/facetwp-static'), 'dist/ajax/wishlist-posts.json'].filter(f => f.endsWith('.json') && fs.existsSync(f))) {
   const before = fs.readFileSync(file, 'utf8');
-  if (![...DROP_IDS].some(id => before.includes(id))) continue;
-  const after = JSON.stringify(dropIds(JSON.parse(before)));
+  const after = JSON.stringify(polishStrings(dropIds(JSON.parse(before))));
   if (after !== before) { fs.writeFileSync(file, after); facetFiles++; }
 }
-console.log(`polish-finish: ${facetFiles} filter/wishlist files without unoffered activities`);
+console.log(`polish-finish: ${facetFiles} filter/wishlist files updated (cards, names, unoffered activities)`);

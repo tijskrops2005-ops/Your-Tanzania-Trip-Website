@@ -1,0 +1,78 @@
+---
+// Safari and Zanzibar (2026-11-24): a real category page instead of a filter on the overview
+// (/tanzania-travel/?_types=safari,zanzibar). The trip cards come from the overview's filter data,
+// so they look exactly like the cards elsewhere; names and photos are rewritten by the build layers.
+import fs from 'node:fs';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const tokens = JSON.parse(fs.readFileSync(new URL('../../docs/brand-tokens.json', import.meta.url), 'utf8'));
+const facets = JSON.parse(fs.readFileSync(new URL('../../public/facetwp-static/tanzania-travel.json', import.meta.url), 'utf8'));
+const types = facets.matches?.types || {};
+const ids = (types.safari || []).filter(id => (types.zanzibar || []).includes(id));
+const days = html => Number((html.match(/(\d+)\s*Days?/i) || [])[1] || 99);
+const cards = ids.map(id => facets.items[String(id)]).filter(Boolean).sort((a, b) => days(a) - days(b));
+const wa = `https://wa.me/${tokens.company.whatsapp.replace(/\D/g, '')}`;
+const site = 'https://yourtanzaniatrip.com';
+const page = {
+  slug: 'safari-and-zanzibar', path: '/safari-and-zanzibar/',
+  title: 'Tanzania Safari and Zanzibar Trips | Your Tanzania Trip',
+  description: 'Combine a private safari in the Serengeti and Ngorongoro with beach days on Zanzibar. Sample routes from 11 to 18 days, adjusted to your dates and budget.',
+  ogTitle: 'Tanzania Safari and Zanzibar Trips', ogType: 'website', robots: '', bodyClass: 'page',
+  extraScripts: [], extraStyles: [], stickyCta: { href: '/travel-proposal/', label: 'Plan my Trip' },
+  ldJson: [JSON.stringify({ '@context': 'https://schema.org', '@graph': [
+    { '@type': 'CollectionPage', '@id': `${site}/safari-and-zanzibar/`, name: 'Tanzania Safari and Zanzibar Trips', url: `${site}/safari-and-zanzibar/`, isPartOf: { '@id': `${site}/#website` } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+      { '@type': 'ListItem', position: 2, name: 'Safari and Zanzibar', item: `${site}/safari-and-zanzibar/` } ] },
+  ] })],
+};
+const steps = [
+  ['Safari first', 'Most trips start in Arusha. Baraka’s team picks you up and you spend five to ten days in the northern parks: Tarangire, the Serengeti and the Ngorongoro Crater.'],
+  ['A short flight to the coast', 'A domestic flight takes you from Arusha or straight from the Serengeti to Zanzibar, so you do not lose a day on the road.'],
+  ['Beach days on the island', 'Three to seven nights on the east or north coast, with time for Stone Town, a spice farm or a day on the reef if you like.'],
+];
+const faqs = [
+  ['How many days do I need for a safari and Zanzibar?', 'Eleven days is a comfortable minimum: about six days on safari and four or five on the island. With two weeks or more you can add the southern Serengeti or more beach time.'],
+  ['When is the best time to combine them?', 'June to October is dry in the parks and sunny on the coast. January and February are also good, with calving season in the southern Serengeti. April and May bring the long rains.'],
+  ['Can I change the route?', 'Yes. Every itinerary on this page is a starting point. Tell us your dates and wishes and we send you a personal proposal, free and without obligation.'],
+];
+---
+<BaseLayout page={page}>
+  <main class="ytt-care">
+    <section class="ytt-care-hero">
+      <div class="ytt-care-hero-inner">
+        <nav class="ytt-care-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <span>Safari and Zanzibar</span></nav>
+        <h1>Safari and Zanzibar in One Trip</h1>
+        <p>Wildlife first, then the beach. Start with a private safari through the northern parks and end with a few calm days on Zanzibar. We plan both parts as one trip, with one point of contact before and during your journey.</p>
+        <div class="ytt-care-actions"><a class="ytt-care-btn" href="/travel-proposal/?what=safari,beach&from=planner#gform_5">Plan my safari and beach trip</a><a class="ytt-care-btn ytt-care-btn-ghost" href={wa}>Ask us on WhatsApp</a></div>
+      </div>
+      <img src="/brand/partner/zanzibar.webp" alt="The coast of Zanzibar with turquoise water" width="1280" height="800" fetchpriority="high" decoding="async" />
+    </section>
+
+    <section class="ytt-care-block">
+      <h2>How a safari and Zanzibar trip works</h2>
+      <ul class="ytt-care-list">
+        {steps.map(([t, d]) => <li><h3>{t}</h3><p>{d}</p></li>)}
+      </ul>
+    </section>
+
+    <section class="ytt-care-block ytt-care-block-tint">
+      <h2>Sample itineraries</h2>
+      <p class="ytt-care-sub">From 11 to 18 days. Each one is private and can be adjusted to your dates, budget and pace.</p>
+      <div class="flex flex-col gap-y-5 ytt-sz-cards" set:html={cards.join('\n')} />
+    </section>
+
+    <section class="ytt-care-block">
+      <h2>Questions about safari and Zanzibar</h2>
+      <div class="ytt-care-faq">
+        {faqs.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
+      </div>
+      <p class="ytt-care-more">Read more about <a href="/zanzibar-holiday/">Zanzibar</a>, <a href="/tanzania-safari/">private safaris</a> and <a href="/trip-care/">Trip Care</a>, included in every trip.</p>
+    </section>
+
+    <section class="ytt-care-last">
+      <h2>Ready to plan your safari and beach trip?</h2>
+      <p>Tell us your dates and wishes. You get a personal proposal, free and without obligation.</p>
+      <div class="ytt-care-actions"><a class="ytt-care-btn" href="/travel-proposal/?what=safari,beach&from=planner#gform_5">Plan my Trip</a></div>
+    </section>
+  </main>
+</BaseLayout>

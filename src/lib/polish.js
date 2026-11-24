@@ -7,6 +7,84 @@ import fs from 'node:fs';
 import path from 'node:path';
 import * as cheerio from 'cheerio';
 
+// ---------------------------------------------------------------------------------------------
+// 0. SEO (2026-11-24): own titles, descriptions and trip names (content/seo/*.json), category pages.
+// ---------------------------------------------------------------------------------------------
+const SEO_DIR = path.resolve('content/seo');
+const SEO = Object.assign({}, ...(fs.existsSync(SEO_DIR) ? fs.readdirSync(SEO_DIR) : [])
+  .filter(f => f.endsWith('.json')).map(f => JSON.parse(fs.readFileSync(path.join(SEO_DIR, f), 'utf8'))));
+// Category pages, written by hand.
+const CATEGORY = {
+  '/tanzania-safari/': {
+    title: 'Private Tanzania Safaris With a Local Team | Your Tanzania Trip',
+    description: 'Private safaris in Tanzania, planned with you and run by our local partner in Arusha: the Serengeti, Ngorongoro, Tarangire and the south, at your own pace.',
+    h1: 'Private Tanzania Safaris',
+    intro: 'Your own vehicle, your own guide and a route built around your dates. We plan your safari with you, and Baraka’s team in Arusha runs it on the ground: from the Serengeti and the Ngorongoro Crater to Tarangire and the quiet parks of the south. Start from one of the sample itineraries below, or tell us what you would like to see.',
+  },
+  '/climbing-kilimanjaro/': {
+    title: 'Climb Kilimanjaro With a Local Crew | Your Tanzania Trip',
+    h1: 'Climb Kilimanjaro With a Local Crew',
+  },
+  '/zanzibar-holiday/': {
+    title: 'Zanzibar Beach Holidays, Tailor-Made | Your Tanzania Trip',
+    description: 'Zanzibar, Pemba and Mafia: white beaches, Stone Town and trips to the reef. Stay on the island only or add a few beach days to your safari, planned around you.',
+    h1: 'Zanzibar Beach Holidays',
+    intro: 'White beaches on the east coast, the old streets of Stone Town, spice farms and snorkelling on the reef. Zanzibar works on its own or as the relaxed end of a safari, and Pemba and Mafia are quieter islands for divers and anyone who wants space. Below are sample itineraries; we adjust each one to your dates and travel style.',
+  },
+  '/tanzania-travel/': {
+    title: 'Tanzania Trips and Sample Itineraries | Your Tanzania Trip',
+    description: 'All our sample itineraries in one place: private safaris, Kilimanjaro climbs, Zanzibar stays and combinations. Each one is a starting point we adapt to you.',
+    h1: 'Tanzania Trips and Sample Itineraries',
+    intro: 'All our sample itineraries in one place: private safaris, Kilimanjaro climbs, Zanzibar stays and combinations of all three. Each one is a starting point. We adapt the route, the lodges and the pace to your dates, budget and wishes.',
+  },
+};
+const metaFor = p => ({ ...(SEO[p] || {}), ...(CATEGORY[p] || {}) });
+/** Title, description and H1 for a page path (empty fields fall back to the page's own). */
+export function seoMeta(pagePath) {
+  const m = metaFor(pagePath);
+  return { title: m.title || '', description: m.description || '', h1: m.h1 || m.name || '' };
+}
+// Old trip names of the previous operator -> our own names, everywhere they appear (cards, menus, links).
+const RENAMES = (() => {
+  const pairs = Object.values(SEO).filter(v => v && v.oldName && v.name && v.oldName !== v.name).map(v => [v.oldName, v.name]);
+  // Card titles (the original post names, sometimes different from the H1), linked to the trip by its URL.
+  const facetFile = path.resolve('public/facetwp-static/tanzania-travel.json');
+  if (fs.existsSync(facetFile)) {
+    const items = JSON.parse(fs.readFileSync(facetFile, 'utf8')).items || {};
+    for (const card of Object.values(items)) {
+      const href = (String(card).match(/href="(\/itineraries\/[^"/]+\/)"/) || [])[1];
+      const title = (String(card).match(/<h[23]\b[^>]*>\s*<a\b[^>]*>([\s\S]*?)<\/a>/) || String(card).match(/<h[23]\b[^>]*>([\s\S]*?)<\/h[23]>/) || [])[1];
+      const name = href && SEO[href]?.name;
+      const old = title && title.replace(/<[^>]+>/g, '').replace(/&amp;|&#038;/g, '&').replace(/\s+/g, ' ').trim();
+      if (name && old && old !== name && !pairs.some(([o]) => o.toLowerCase() === old.toLowerCase())) pairs.push([old, name]);
+    }
+  }
+  return pairs.sort((a, b) => b[0].length - a[0].length);
+})();
+const reEscName = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/&/g, '(?:&|&amp;|&#038;)').replace(/[–—]/g, '(?:–|—|&#8211;|&#8212;|&ndash;|&mdash;)').replace(/['’]/g, "(?:'|’|&#8217;|&#039;|&#39;)").replace(/\s+/g, '\\s+');
+function renameTrips(html) {
+  for (const [from, to] of RENAMES) {
+    const f = reEscName(from);
+    html = html.replace(new RegExp(`(>\\s*(?:“|&#8220;)?)${f}((?:”|&#8221;)?\\s*<)`, 'gi'), `$1${to}$2`)
+      .replace(new RegExp(`((?:alt|title|aria-label)=")${f}(")`, 'gi'), `$1${to}$2`)
+      .replace(new RegExp(`("(?:name|t)":")${f}(")`, 'gi'), `$1${to}$2`)
+      .replace(new RegExp(`(\\[)${f}(\\])`, 'gi'), `$1${to}$2`)
+      .replace(new RegExp(`^(\\s*)${f}(\\s*)$`, 'i'), `$1${to}$2`);
+  }
+  return html;
+}
+function seoBody(html, page) {
+  const m = metaFor(page.path);
+  const h1 = m.h1 || m.name;
+  if (h1) html = html.replace(/(<h1\b[^>]*>)([\s\S]*?)(<\/h1>)/, (all, a, inner, c) => a + h1 + c);
+  if (m.intro) {
+    // The intro paragraph directly under the page heading (category heroes).
+    html = html.replace(/(<\/h1>[\s\S]{0,1200}?<p\b[^>]*>)([\s\S]*?)(<\/p>)/, (all, a, inner, c) => a + m.intro + c);
+  }
+  return renameTrips(html);
+}
+
+
 const digits = s => String(s || '').replace(/\D/g, '');
 
 /** WhatsApp link from the brand tokens (company.whatsapp). */
@@ -230,6 +308,19 @@ const PROMISES = [
   [/(<span class="!text-base"[^>]*>)NL: (<\/span>)/g, '$1Call: $2'],
   // Old orange in inline icons (zoom button on itinerary photos) becomes the house gold.
   [/<use fill="#E69016"/g, '<use fill="#d5a34d"'],
+  // Safari + Zanzibar has its own page now (was a filter on the overview).
+  [/href="\/tanzania-travel\/\?_types=safari(?:%2C|,)zanzibar"/g, 'href="/safari-and-zanzibar/"'],
+  // Claims of the previous operator found in the SEO review (2026-11-24).
+  [/Our experienced, professional team will get you to the top safely\.(<\/p>\s*<p>)That is why 95% of our guests make it to the top of Africa’s highest mountain\./g,
+    'With enough days to acclimatise and an experienced crew from our local partner, most healthy climbers reach the top.$1Choosing a longer route is the best thing you can do for your chances.'],
+  [/Our safari jeeps for your Tanzania safari/g, 'The safari vehicles on your Tanzania safari'],
+  [/At Your Tanzania Trip we run our own safari jeeps, all of them 4(?:&#215;|×)4 Toyota Land Cruisers\./g, 'On safari you travel in a 4×4 Toyota Land Cruiser from our local partner in Arusha.'],
+  [/reach other guides and our office whenever needed/g, 'reach other guides and the team in Arusha whenever needed'],
+  [/TanazaniaSpecialist\.com/g, 'Your Tanzania Trip'],
+  [/alt="[^"]*tanzaniaspecialist[^"]*"/gi, 'alt=""'],
+  // Sustainability targets with dates that have passed.
+  [/(across all tour operations) by 2025\./g, '$1.'],
+  [/(habitat protection) by 2024\./g, '$1.'],
   // Countries we do not sell: an honest invitation instead of a promise.
   // We only sell Tanzania (owner, 2026-11-23: no gorilla trips in Rwanda or Uganda).
   [/Exceptional Travel Beyond Tanzania/g, 'Safari, summit and sea in one trip'],
@@ -431,14 +522,14 @@ export function polishBody(html, page, tokens) {
   html = rewritePartner(html);
   html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
-  return shortName(rewriteReviews(uspIcons(fixCapsHeadings(html)), tokens));
+  return shortName(rewriteReviews(uspIcons(seoBody(fixCapsHeadings(html), page)), tokens));
 }
 export function polishChrome(html, tokens, part) {
   html = part === 'footer' ? polishFooter(html) : polishHeader(html);
   html = rewritePartner(html);
   html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
-  return shortName(rewriteReviews(html, tokens));
+  return shortName(renameTrips(rewriteReviews(html, tokens)));
 }
 /** Inline scripts of a page (Gravity Forms settings). */
 export function polishScripts(js, page) {
@@ -496,15 +587,38 @@ function shortName(s) {
   return swapPhotos(s).replace(/Baraka Dalali(’|'|&#8217;)s/g, 'Baraka$1s').replace(/\bBaraka Dalali\b/g, 'Baraka').replace(/\bMr\.? Dalali\b/g, 'Baraka');
 }
 
+/** TouristTrip with price for itinerary pages that do not have one yet (from the page itself). */
+export function tripSchema(html, page, seo, schemas, image) {
+  if (!/^\/itineraries\/[^/]+\/$/.test(page.path) || schemas.some(j => j.includes('"TouristTrip"'))) return null;
+  const site = 'https://yourtanzaniatrip.com', url = site + page.path;
+  const strip = v => String(v || '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+  const name = seo.h1 || strip((html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/) || [])[1]);
+  if (!name) return null;
+  const price = ((html.match(/From \$([\d,]+)/) || [])[1] || '').replace(/,/g, '');
+  const note = strip((html.match(/\*(Per person[^<]{0,200})/) || [])[1]);
+  const days = [...html.matchAll(/<strong\b[^>]*>\s*(Day\s*[\d\s–-]+?)\s*:?\s*<\/strong>\s*([^<]+)/g)]
+    .map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: `${strip(m[1])}: ${strip(m[2])}` }));
+  const trip = {
+    '@context': 'https://schema.org', '@type': 'TouristTrip', '@id': url + '#trip', name, url,
+    description: seo.description || undefined, image: image || undefined,
+    provider: { '@id': site + '/#organization' },
+    itinerary: days.length ? { '@type': 'ItemList', numberOfItems: days.length, itemListElement: days } : undefined,
+    offers: price ? { '@type': 'Offer', price, priceCurrency: 'USD', availability: 'https://schema.org/InStock', url,
+      priceSpecification: { '@type': 'UnitPriceSpecification', price, priceCurrency: 'USD', unitText: 'per person', description: note || undefined } } : undefined,
+  };
+  return JSON.stringify(trip);
+}
+
 /** HTML fragments that skip BaseLayout (dist/ajax/**, loaded by static-ajax.js). */
 export function polishFragment(html, tokens) {
   html = rewritePartner(html);
   html = rewriteContacts(html, tokens);
   for (const [re, to] of PROMISES) html = html.replace(re, to);
-  return shortName(html);
+  return shortName(renameTrips(html));
 }
 /** JSON-LD: no separate, nameless partner organisation; founding year on our own organisation. */
 export function polishSchema(json, tokens) {
+  json = renameTrips(json);
   let data;
   try { data = JSON.parse(json); } catch { return json; }
   const isPartner = v => v && typeof v === 'object' && v['@id'] === '#organization';
@@ -529,7 +643,7 @@ export function polishText(text, tokens) {
   text = rewritePartner(text, [...PARTNER_TEXT, ...PARTNER]);
   text = rewriteContacts(text, tokens, true);
   for (const [re, to] of PROMISES) text = text.replace(re, to);
-  return shortName(text);
+  return shortName(renameTrips(text));
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -626,6 +740,39 @@ body.home #ts-footer{margin-top:0!important}
 .grid.grid-cols-12:has(.cta-title) img.rounded-full,.grid.grid-cols-12:has(.cta-title) img[class*="rounded-full"]{border-radius:50%!important}
 .grid.grid-cols-12:has(.cta-title)>div:has(>img:only-child){position:relative;min-height:280px}
 .grid.grid-cols-12:has(.cta-title)>div>img:only-child{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover}
+
+/* Language switcher removed (2026-11-24): the site is in English; machine translation is not offered */
+.language-switcher{display:none!important}
+
+/* ===== Content pages built here (Trip Care, Safari & Zanzibar) ===== */
+.ytt-care{font:400 17px/1.65 Inter,Arial,sans-serif;color:#183e35}
+.ytt-care *{box-sizing:border-box}
+.ytt-care-hero{display:grid;grid-template-columns:1.1fr 1fr;background:#183e35;color:#fff;min-height:440px}
+.ytt-care-hero-inner{padding:56px 48px 56px max(24px,calc((100vw - 1240px)/2));align-self:center}
+.ytt-care-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.ytt-care-crumbs{font-size:14px;margin-bottom:20px;color:#ffffffcc}.ytt-care-crumbs a{color:#fff!important;text-decoration:underline}
+.ytt-care-hero h1{color:#fff!important;font-size:clamp(34px,4vw,52px)!important;line-height:1.08!important;margin:0 0 18px}
+.ytt-care-hero p{max-width:46ch;color:#ffffffe6;margin:0}
+.ytt-care-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.ytt-care-btn{display:inline-flex;align-items:center;min-height:48px;padding:12px 22px;border-radius:8px;background:#d5a34d;color:#183e35!important;font-weight:700;text-decoration:none!important;transition:transform .15s cubic-bezier(.2,.8,.2,1)}
+.ytt-care-btn:hover{background:#e4b763}.ytt-care-btn:active{transform:translateY(1px)}.ytt-care-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.ytt-care-btn-ghost{background:transparent;border:1.5px solid #fff;color:#fff!important}.ytt-care-btn-ghost:hover{background:#ffffff1a}
+.ytt-care-block{width:min(1240px,calc(100% - 48px));margin:0 auto;padding:64px 0}
+.ytt-care-block h2,.ytt-care-last h2{font-size:clamp(26px,3vw,36px)!important;margin:0 0 28px}
+.ytt-care-block-tint{width:100%;padding-inline:max(24px,calc((100% - 1240px)/2));background:#dde6db}
+.ytt-care-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.ytt-care-list li{background:#fff;border:1px solid #183e3518;border-radius:12px;padding:22px 24px;margin:0}
+.ytt-care-list h3{font-size:19px!important;margin:0 0 8px}.ytt-care-list p{margin:0;color:#3b4d45}
+.ytt-care-faq{max-width:820px}.ytt-care-faq details{border-bottom:1px solid #c9d2c8;padding:16px 0}
+.ytt-care-faq summary{cursor:pointer;font-weight:600;font-size:18px}.ytt-care-faq summary:focus-visible{outline:2px solid #d5a34d;outline-offset:4px}
+.ytt-care-faq p{margin:10px 0 0;color:#3b4d45}
+.ytt-care-more{margin-top:28px}.ytt-care-more a,.ytt-care-faq a{color:#183e35!important;text-decoration:underline}
+.ytt-care-last{background:#183e35;color:#fff;text-align:center;padding:64px 24px}.ytt-care-last h2{color:#fff!important}.ytt-care-last p{color:#ffffffe6;margin:0 auto;max-width:52ch}.ytt-care-last .ytt-care-actions{justify-content:center}
+@media(max-width:860px){.ytt-care-hero{grid-template-columns:1fr}.ytt-care-hero img{height:260px;order:-1}.ytt-care-hero-inner{padding:32px 20px 40px}.ytt-care-block{width:calc(100% - 36px);padding:48px 0}.ytt-care-block-tint{width:100%;padding-inline:18px}}
+@media(prefers-reduced-motion:reduce){.ytt-care-btn{transition:none}}
+
+.ytt-care-sub{margin:-12px 0 24px;color:#3b4d45}
+.ytt-sz-cards article{border-radius:12px;overflow:hidden;background:#fff!important}
 
 /* ===== One calm type style everywhere (2026-11-24) ===== */
 .tracking-wide,.tracking-wider,.tracking-widest,[class*="!tracking-wide"]{letter-spacing:0!important}

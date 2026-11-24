@@ -10,11 +10,11 @@ export function GET() {
   // Real change dates from git (content/lastmod.json, written by scripts/lastmod.mjs).
   const lastmodFile = new URL('../../content/lastmod.json', import.meta.url);
   const lastmod = fs.existsSync(lastmodFile) ? JSON.parse(fs.readFileSync(lastmodFile, 'utf8')) : {};
-  const priority = (p) => (p === '/' ? '1.0' : /^\/(itineraries|tanzania-safari|zanzibar-holiday|climbing-kilimanjaro|tanzania-travel|our-partner)\//.test(p) ? '0.8' : /^\/blog\//.test(p) ? '0.6' : '0.5');
+  const priority = (p) => (p === '/' ? '1.0' : /^\/(itineraries|tanzania-safari|zanzibar-holiday|climbing-kilimanjaro|tanzania-travel|safari-and-zanzibar|our-partner)\//.test(p) ? '0.8' : /^\/blog\//.test(p) ? '0.6' : '0.5');
   const urls = pages
     .filter((p) => !(p.robots || '').includes('noindex') && !isRemoved(p.path))
     .concat(blogPostPages)
-    .concat([{ path: '/trip-care/', slug: 'trip-care' }])
+    .concat([{ path: '/trip-care/', slug: 'trip-care' }, { path: '/safari-and-zanzibar/', slug: 'safari-and-zanzibar' }])
     .map((p) => `  <url><loc>${site}${p.path}</loc><lastmod>${p.lastmod || lastmod[p.slug] || today}</lastmod><priority>${priority(p.path)}</priority></url>`);
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
   return new Response(xml, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });

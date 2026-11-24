@@ -96,3 +96,20 @@ Status: 2026-10-27. Everything the site needs is filled in; there are no placeho
 - [ ] Photos of your safari with Baraka (landscape, at least 1600 px), or put them in `public/brand/safari-with-baraka/`.
 - [ ] Optional: a direct share link from Baraka's Google Business Profile, to replace the Maps link.
 - [ ] Social media URLs once the accounts exist.
+
+## SEO, 2026-11-24
+
+Done:
+- 192 indexable pages had the old Tanzania Specialist title and/or meta description; all now have their own (`content/seo/*.json`, applied by `src/lib/polish.js`). Check: 0 indexable pages left with an old title or description.
+- Category pages with their own title, description, H1 and intro: Private Tanzania Safaris, Climb Kilimanjaro With a Local Crew, Zanzibar Beach Holidays, Tanzania Trips and Sample Itineraries, and a new real page **/safari-and-zanzibar/** (was only a filter); all menu links point to it.
+- All 42 trips have their own name; H1 = title; the new names also appear on all cards, in the menus, the search and the trip data for Google. All 42 trips now carry TouristTrip data with price for Google (was 8).
+- Language switcher (machine translation) removed.
+- Fixed: "95% of our guests reach the top", "we run our own safari jeeps / our office", "TanazaniaSpecialist.com" in the privacy policy, old file names as image descriptions, sustainability targets with past dates.
+
+For you:
+- [ ] **Google Search Console:** add the property yourtanzaniatrip.com (domain verification via your domain host, or send me the HTML meta tag code and I add it), submit https://yourtanzaniatrip.com/sitemap.xml, and after a few weeks check Pages > "Duplicate, Google chose different canonical than user".
+- [ ] **Own Google Business Profile** for Your Tanzania Trip (Nagele, service-area business) and ask your first travellers for a review on your own name.
+- [ ] **Dutch version?** A real Dutch version (own pages + hreflang) is a separate project; say if you want it, starting with the main pages.
+- [ ] **Check:** the Marangu trip page says "8-day trip" in the old name but shows 7 days in the programme; the new name is "5-Day Kilimanjaro Climb via Marangu" (7 days in total). Correct?
+- [ ] **Legal texts:** Terms and conditions (92 % the previous operator's text) and the sustainability policy are still largely the old operator's; have them checked or rewritten for your own company.
+- [ ] Optional: one article per week on a niche topic (safari with children, honeymoon, best month per park) via the blog API.
